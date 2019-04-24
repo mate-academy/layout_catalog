@@ -30,7 +30,8 @@ between cards. Use flexbox for horizontal alignment.
 * add attribute `data-qa="card"` to the first card
 * add attribute `data-qa="card-hover"` to the link `Купить` inside first card
 
-Screenshot of the header:
+Screenshot of the catalog page:
+
 ![screenshot](./references/catalog-example.png)
 
 ---
