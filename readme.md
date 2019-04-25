@@ -3,7 +3,11 @@
 ## Main goal:
 Create HTML page with catalog. Develop semantic page structure.
 
-Use this [mockup](#) for development.
+Use this [mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1) 
+for development.
+
+If you don't want to see other users cursors you can disable `Multiplayer 
+Cursors` in figma. [Learn how](https://mate-academy.github.io/layout_task-guideline/figma.html#multiplayer-cursors)
 
 ## Common mistakes
 * Do not use tabs. Use 2 spaces for indentation.
@@ -13,18 +17,18 @@ Use this [mockup](#) for development.
 
 ## Requirements:
 
+* pay attention the mock is adaptive. Develop the layout to fit on 1024px and
+1200px the same as on the mock.
 * reset browser's default margins
 * use images from [src/images](src/images)
-* Use semantic tags. `<header>`, `<nav>`, `main`
+* use semantic tags. `<header>`, `<nav>`, `main`
 * pay attention to the shadow below header
 * reuse :hover styles for nav and link inside card from previous tasks 
 (`header`, `product-cards`)
-* reuse styles for nav-item with `.active` class applied from previous task 
+* reuse styles for nav-item with `.is-active` class applied from previous task 
 `header`
-* header's width can be at most 1024px 
-* cards container's width can be at most 1024px
-* card's width is 21% of the container. Don't use margin for horizontal spacing
-between cards. Use flexbox for horizontal alignment.
+* follow styles from the mock
+* card's width is 200px
 * add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки 
 и компьютеры`)
 * add attribute `data-qa="card"` to the first card

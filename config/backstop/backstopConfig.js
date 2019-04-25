@@ -26,8 +26,13 @@ module.exports = {
   onReadyScript: 'puppet/onReady.js',
   viewports: [
     {
-      name: 'tablet_h',
+      name: 'desktop_s',
       width: 1024,
+      height: 768
+    },
+    {
+      name: 'desktop_m',
+      width: 1200,
       height: 768
     }
   ],
@@ -53,6 +58,11 @@ module.exports = {
       selectors: ['[data-qa="nav-hover"]'],
       hoverSelector: '[data-qa="nav-hover"]',
       postInteractionWait: 1000
+    },
+    {
+      ...basicScenario,
+      label: 'nav-item-active',
+      selectors: ['a.is-active']
     },
     {
       ...basicScenario,
