@@ -4,7 +4,7 @@
 const basicScenario = {
   label: 'test', // name of the test
   url: 'http://localhost:8080',
-  referenceUrl: '', // put here reference to github-pages with ready project
+  referenceUrl: 'https://mate-academy.github.io/layout_solutions/catalog/',
   readyEvent: '',
   readySelector: '',
   delay: 1000,
@@ -26,13 +26,62 @@ module.exports = {
   onReadyScript: 'puppet/onReady.js',
   viewports: [
     {
-      name: 'tablet_h',
+      name: 'desktop_s',
       width: 1024,
+      height: 768
+    },
+    {
+      name: 'desktop_m',
+      width: 1200,
       height: 768
     }
   ],
   scenarios: [
-    { ...basicScenario }
+    {
+      ...basicScenario,
+      label: 'entire-document',
+      selectors: ['document']
+    },
+    {
+      ...basicScenario,
+      label: 'header-tag',
+      selectors: ['header']
+    },
+    {
+      ...basicScenario,
+      label: 'nav-tag',
+      selectors: ['nav']
+    },
+    {
+      ...basicScenario,
+      label: 'nav-item-hovered',
+      selectors: ['[data-qa="nav-hover"]'],
+      hoverSelector: '[data-qa="nav-hover"]',
+      postInteractionWait: 1000
+    },
+    {
+      ...basicScenario,
+      label: 'nav-item-active',
+      selectors: ['a.is-active']
+    },
+    {
+      ...basicScenario,
+      label: 'main-tag',
+      selectors: ['main']
+    },
+    {
+      ...basicScenario,
+      label: 'test-card-default',
+      selectors: ['[data-qa="card"]']
+    },
+    {
+      ...basicScenario,
+      label: 'test-card-hover',
+      hoverSelector: '[data-qa="card-hover"]',
+      postInteractionWait: 1000,
+      selectors: ['[data-qa="card"]']
+    }
+
     // define here scenarios for testing
   ],
   paths: {
