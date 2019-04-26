@@ -17,7 +17,7 @@ Cursors` in figma. [Learn how](https://mate-academy.github.io/layout_task-guidel
 
 ## Requirements:
 
-* pay attention the mock is adaptive. Develop the layout to fit on 1024px and
+* pay attention the mock is responsive. Develop the layout to fit on 1024px and
 1200px the same as on the mock.
 * reset browser's default margins
 * use images from [src/images](src/images)
