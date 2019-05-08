@@ -120,8 +120,7 @@ body {
   transition: var(--trans-default);
 }
 
-.product-card[data-special]::before {
-  content: attr(data-special);
+.product-special { 
   position: absolute;
   height: 24px;
   top: 5px;
@@ -134,19 +133,19 @@ body {
   line-height: 24px;
 }
 
-.product-card[data-special="топ продаж"]::before {
+.product-special.top-sells {
   background-color: orange;
 }
 
-.product-card[data-special="акция"]::before {
+.product-special.action {
   background-color: orangered;
 }
 
-.product-card[data-special="суперцена"]::before {
+.product-special.super-price {
   background-color: coral;
 }
 
-.product-card[data-special="только в moyo"]::before {
+.super-price.only-in-moyo {
   background-color: purple;
 }
 
@@ -194,27 +193,27 @@ body {
   color: #FFDE6A;
 }
 
-.product-card[data-star-rate="0"] .card-rate-stars span {
+.product-card.star-rate-0 .card-rate-stars span {
   color: #E5E5E5;
 }
 
-.product-card[data-star-rate="1"] .card-rate-stars span:first-of-type~span {
+.product-card.star-rate-1 .card-rate-stars:first-child~span {
   color: #E5E5E5;
 }
 
-.product-card[data-star-rate="2"] .card-rate-stars span:nth-of-type(2)~span {
+.product-card.star-rate-2 .card-rate-stars:nth-child(2)~span {
   color: #E5E5E5;
 }
 
-.product-card[data-star-rate="3"] .card-rate-stars span:nth-of-type(3)~span {
+.product-card.star-rate-3 .card-rate-stars:nth-child(3)~span {
   color: #E5E5E5;
 }
 
-.product-card[data-star-rate="4"] .card-rate-stars span:nth-of-type(4)~span {
+.product-card.star-rate-4 .card-rate-stars:nth-child(4)~span {
   color: #E5E5E5;
 }
 
-.product-card[data-star-rate="5"] .card-rate-stars span {
+.product-card.star-rate-5 .card-rate-stars span {
   color: #FFDE6A;
 }
 
@@ -238,8 +237,8 @@ body {
 }
 
 /* old price */
-.product-card[data-special="акция"] span.price-amount::before,
-.product-card[data-special="суперцена"] span.price-amount::before {
+.product-card.action .price-amount::before,
+.product-card.super-price .price-amount::before {
   content: attr(data-old-price);
   position: absolute;
   bottom: 20px;
@@ -251,8 +250,8 @@ body {
 }
 
 /* discount */
-.product-card[data-special="акция"] span.price-amount::after,
-.product-card[data-special="суперцена"] span.price-amount::after {
+.product-card.action .price-amount::after,
+.product-card.super-price .price-amount::after {
   content: attr(data-discount);
   position: absolute;
   left: 0;
@@ -264,7 +263,7 @@ body {
   font-size: 14px;
 }
 
-span.price-amount {
+.price-amount {
   font-size: 24px;
   font-weight: 700;
 }
