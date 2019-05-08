@@ -28,7 +28,7 @@ Cursors` in figma. [Learn how](https://mate-academy.github.io/layout_task-guidel
 * reuse styles for nav-item with `.is-active` class applied from previous task 
 `header`
 * follow styles from the mock
-* card's width is 200px
+* card's width is 200px without borders
 * add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки 
 и компьютеры`)
 * add attribute `data-qa="card"` to the first card
