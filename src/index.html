@@ -488,44 +488,44 @@
     // navigation
     const navBar = document.querySelector('.main-nav');
     const toggle = document.querySelector('.toggle-bar');
-    toggle.addEventListener("click", (e) => {
-      toggle.classList.toggle("active");
-      navBar.classList.toggle("active");
+    toggle.addEventListener('click', (e) => {
+      toggle.classList.toggle('active');
+      navBar.classList.toggle('active');
     })
   
     // side-bar opening
-    const mainContent = document.querySelector(".container");
-    const sidebarOpenerLeft = document.querySelector(".sidebar-opener-left");
-    const sidebar = document.querySelector("section.side-bar");
-    sidebarOpenerLeft.addEventListener("click", (e) => {
-      sidebar.classList.toggle("sidebar-shown");
-      if (sidebar.classList.contains("sidebar-shown")) {
-        mainContent.classList.add("pushed-right");
-        sidebarOpenerLeft.classList.add("rotate");
+    const mainContent = document.querySelector('.container');
+    const sidebarOpenerLeft = document.querySelector('.sidebar-opener-left');
+    const sidebar = document.querySelector('section.side-bar');
+    sidebarOpenerLeft.addEventListener('click', (e) => {
+      sidebar.classList.toggle('sidebar-shown');
+      if (sidebar.classList.contains('sidebar-shown')) {
+        mainContent.classList.add('pushed-right');
+        sidebarOpenerLeft.classList.add('rotate');
       } else {
-        mainContent.classList.remove("pushed-right");
-        sidebarOpenerLeft.classList.remove("rotate");
+        mainContent.classList.remove('pushed-right');
+        sidebarOpenerLeft.classList.remove('rotate');
       }
     })
-    const sidebarOpenerTop = document.querySelector(".sidebar-opener-top");
-    sidebarOpenerTop.addEventListener("click", (e) => {
-      sidebar.classList.toggle("sidebar-shown");
-      if (sidebar.classList.contains("sidebar-shown")) {
-        sidebarOpenerTop.classList.add("rotate");
+    const sidebarOpenerTop = document.querySelector('.sidebar-opener-top');
+    sidebarOpenerTop.addEventListener('click', (e) => {
+      sidebar.classList.toggle('sidebar-shown');
+      if (sidebar.classList.contains('sidebar-shown')) {
+        sidebarOpenerTop.classList.add('rotate');
       } else {
-        sidebarOpenerTop.classList.remove("rotate");
+        sidebarOpenerTop.classList.remove('rotate');
       }
     })
   
     // I had an issue with radio inputs — it was needed to cancel the checked input
     // so I made radio inputs from checkboxes
     // side-bar group "Special offers"
-    const inputsRadioOffers = document.querySelectorAll("input[name='special-offers']");
+    const inputsRadioOffers = document.querySelectorAll('input[name="special-offers"]');
     inputsRadioOffers.forEach(input => {
-      input.addEventListener("mousedown", (e) => {
+      input.addEventListener('mousedown', (e) => {
         e.target.checked = e.target.checked == true ? false : true;
       })
-      input.addEventListener("click", (e) => {
+      input.addEventListener('click', (e) => {
         inputsRadioOffers.forEach(item => {
           if (item !== e.target) {
             item.checked = false;
