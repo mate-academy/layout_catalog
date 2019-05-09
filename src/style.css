@@ -1,20 +1,13 @@
-html,
-body {
-  box-sizing: border-box;
-  font-size: 11px;
-}
-
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
   color: #000;
 }
 
-*:before,
-*:after {
-  box-sizing: inherit;
+body {
+  font-size: 11px;
 }
 
 .page-header {
@@ -27,6 +20,11 @@ body {
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.logotype {
+  position: relative;
+  top: 1px;
 }
 
 nav a {
@@ -59,19 +57,15 @@ nav li:last-child {
   position: relative;
 }
 
-.is-bolder {
-  font-weight: bold;
-}
-
 .is-active::after {
   content: "";
-  width: 100%;
+  width: 102%;
   height: 4px;
   background: #00acdc;
   border-radius: 8px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: -1px;
 }
 
 /* Product Card */
@@ -106,22 +100,51 @@ nav li:last-child {
   padding: 0 15px;
 }
 
-h3 {
+.product-card__info > h3 {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   margin: 0;
 }
 
-p {
-  margin: 5px 0 0;
+.product-card__info span {
+  position: relative;
+  display: block;
+  padding-left: 12px;
 }
 
-.card-star:not(:last-child) {
+.product-card__info span:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  bottom: 1.5px;
+  left: 0;
+  background-image: url(images/diagonal.png);
+}
+
+.product-card__info > p {
+  margin: 5px 0 16px;
+}
+
+.feedback-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-stars {
+  display: flex;
+}
+
+.card-stars > div {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  justify-content: center;
+  align-items: center;
   margin-right: 4px;
 }
 
-.feedback-price,
 .card-price {
   display: flex;
   justify-content: space-between;
@@ -135,10 +158,6 @@ p {
 .price__buy {
   font-size: 16px;
   font-weight: bold;
-}
-
-.feedback-price {
-  margin-top: 16px;
 }
 
 .price-cost {
