@@ -46,5 +46,5 @@ Screenshot of the catalog page:
 
 **Result**
 
-- [UPDATE DEMO LINK](https://jka4.github.io/layout_catalog/)
-- [UPDATE TEST REPORT LINK](https://jka4.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://jka4.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://jka4.github.io/layout_catalog/report/html_report/)
