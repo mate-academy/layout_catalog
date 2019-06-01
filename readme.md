@@ -44,6 +44,7 @@ Screenshot of the catalog page:
 [Guideline](https://mate-academy.github.io/layout_task-guideline/)
 
 **Result**
+
 `SASS and BEM refactoring`
 
 - [DEMO LINK](https://sviatoslv.github.io/layout_catalog/)
