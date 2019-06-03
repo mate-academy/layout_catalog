@@ -15,4 +15,4 @@ var menu = '\
     </nav>\
   </header>';
 
-document.write(menu);
+document.write(menu); 

@@ -25,4 +25,4 @@ var prodItem = '\
     <a class="buy" href="#" data-qa="hover">КУПИТЬ</a>\
   </article>';
 
-document.write(prodItem);
+document.write(prodItem); 
