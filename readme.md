@@ -43,7 +43,7 @@ Screenshot of the catalog page:
 
 [Guideline](https://mate-academy.github.io/layout_task-guideline/)
 
-**Result**
+**Result** 
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://ovchinnikovs.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://ovchinnikovs.github.io/layout_catalog/report/html_report/)
