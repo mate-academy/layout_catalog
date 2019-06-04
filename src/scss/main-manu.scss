@@ -3,23 +3,27 @@ $card-color: #00acdc;
 .main-menu {
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
 
   &--item {
     list-style: none;
-    margin: 22.5px 0;
+  }
+
+  .&--item:not(:last-child) {
+    margin-right: 20px;
   }
 
   &--item a {
+    position: relative;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
 
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 14px;
+    height: 60px;
+    line-height: 60px;
     color: #000;
-    margin-left: 20px;
-
   }
 
   &--item a:hover {
@@ -33,12 +37,12 @@ $card-color: #00acdc;
 
   &--item_active a::after {
     display: block;
-    position: relative;
-    top: 19px;
+    position: absolute;
+    top: 56px;
     width: 100%;
     height: 4px;
     background-color: $card-color;
-    border-radius: 8px;
+    border-radius: 2px;
     content: "";
   }
 }
