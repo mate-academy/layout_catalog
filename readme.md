@@ -45,5 +45,5 @@ Screenshot of the catalog page:
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://githubfordmitry.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://githubfordmitry.github.io/layout_catalog/report/html_report/)
