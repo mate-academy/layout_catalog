@@ -1,6 +1,11 @@
 * {
   margin: 0;
+}
+
+body {
   font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .header {
@@ -8,11 +13,23 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  font-size: 12px;
-  text-transform: uppercase;
+  background-color: #fff;
   padding: 0 50px;
+  margin-bottom: 50px;
+}
+
+.header-navigation {
+  color: #000;
+  line-height: 14;
   font-weight: 500;
-  line-height: 14px;
+}
+
+.header__navigation-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
 }
 
 .logo {
@@ -20,16 +37,14 @@
   width: 40px;
 }
 
-.item {
-  display: inline-flex;
-  margin: 0 0 0 20px;
+.item:not(:last-child) {
+  margin-right: 20px;
 }
 
 .link {
   color: #000;
   text-decoration: none;
   line-height: 60px;
-  height: 100%;
   display: block;
 }
 
@@ -55,32 +70,35 @@
 }
 
 .main__content {
+  width: 944px;
+  margin: 0 auto;
+  padding: 0 40px 50px;
   display: grid;
-  grid-template-columns: repeat(4, 198px);
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
   grid-row-gap: 50px;
   grid-column-gap: 48px;
-  justify-content: center;
-  margin-top: 50px;
 }
 
 .card {
   width: 200px;
   background: #fff;
-  border-radius: 5px;
   border: 1px solid #f3f3f3;
-  padding-bottom: 15px;
+  border-radius: 5px;
+  padding: 30px 15px 15px;
+  box-sizing: border-box;
+
 }
 
 .content-wrapper {
   margin: 0 auto;
-  width: 170px;
 }
 
 .photo {
   width: 160px;
   height: 134px;
   display: block;
-  margin: 30px auto 0;
+  margin: 0 auto 45px;
 }
 
 .product_title {
@@ -99,19 +117,19 @@ p {
 
 .sku {
   margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .rating {
-  margin-top: 15px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: stretch;
+  margin-bottom: 20px;
+
 }
 
 .stars {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }
 
 .star {
@@ -119,7 +137,7 @@ p {
   height: 15px;
   background: url("./images/star.svg") center no-repeat;
   cursor: pointer;
-  margin-right: 3px;
+  margin-right: 4px;
 }
 
 .star.active {
@@ -132,10 +150,10 @@ p {
 }
 
 .price {
-  margin-top: 19px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 20px;
 }
 
 .value {
@@ -149,7 +167,7 @@ p {
   width: 170px;
   height: 40px;
   background: #00acdc;
-  margin-top: 21px;
+  margin-top: 20px;
   box-sizing: border-box;
   border-radius: 5px;
   text-align: center;
