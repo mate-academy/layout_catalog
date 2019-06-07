@@ -41,7 +41,6 @@ body {
 }
 
 .link {
-  position: relative;
   display: block;
   height: 60px;
   line-height: 60px;
@@ -50,8 +49,12 @@ body {
   text-transform: uppercase;
 }
 
-.link:hover,
+.link:hover {
+  color: #00acdc;
+}
+
 .is-active {
+  position: relative;
   color: #00acdc;
 }
 
@@ -63,24 +66,17 @@ body {
   width: 100%;
   height: 4px;
   background-color: #00acdc;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .page-catalog {
-  padding: 0 128px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-
-@media (max-width: 1024px) {
-  body {
-    width: 1024px;
-  }
-  .page-catalog {
-    padding: 0 40px;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-column-gap: 48px;
+  grid-row-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 50px 0;
 }
 
 .card {
@@ -88,7 +84,7 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 11px;
   line-height: 13px;
-  width: 202px;
+  width: 200px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 30px 15px 15px;
@@ -135,7 +131,7 @@ body {
 
 }
 
-.active {
+.star--active {
   background-image: url(images/star-active.svg);
 }
 
@@ -156,8 +152,6 @@ body {
   display: block;
   box-sizing: border-box;
   border: 1px solid #00acdc;
-  width: 170px;
-  height: 40px;
   color: #fff;
   background: #00acdc;
   font-size: 14px;
