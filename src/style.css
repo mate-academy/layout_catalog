@@ -21,10 +21,15 @@ header {
 ul {
   display: flex;
   list-style: none;
+  padding: 0;
 }
 
 li {
   margin-left: 20px;
+}
+
+li:first-child {
+  margin-left: 0;
 }
 
 nav a {
@@ -33,7 +38,7 @@ nav a {
   line-height: 60px;
   font-weight: 500;
   text-decoration: none;
-  display: list-item;
+  display: inline-block;
   position: relative;
 }
 
@@ -69,14 +74,15 @@ Cards styles
 .single_card {
   width: 200px;
   border: 1px solid #f3f3f3;
-  font-family: Roboto, sans-serif;
   margin-bottom: 50px;
+  box-sizing: border-box;
 }
 
 .single_card_image {
   display: flex;
   justify-content: center;
-  margin: 30px 20px 45px;
+  padding: 30px 19px 45px;
+  width: 160px;
 }
 
 .single_card_image img {
@@ -85,7 +91,7 @@ Cards styles
 }
 
 .single_card_text {
-  padding: 0 15px 15px;
+  padding: 0 14px 15px;
 }
 
 .single_card_info {
@@ -128,7 +134,7 @@ Cards styles
   display: block;
   height: 15px;
   width: 15px;
-  margin-right: 3px;
+  margin-right: 4px;
 }
 
 .single_card_price {
@@ -142,6 +148,14 @@ Cards styles
 }
 
 .single_card_button {
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+.button_link {
+  text-decoration: none;
+  color: #fff;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
@@ -150,16 +164,12 @@ Cards styles
   border-radius: 5px;
   padding: 11px 10px;
   border: 1px solid transparent;
-  width: 100%;
+  display: block;
+  text-align: center;
 }
 
-.button_link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.single_card_button:hover {
+.button_link:hover {
+  border-color: #00acdc;
   color: #00acdc;
   background-color: #fff;
-  border-color: #00acdc;
 }
