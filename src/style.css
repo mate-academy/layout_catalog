@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic,cyrillic-ext");
 
 body {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1200px;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -70,22 +73,26 @@ body {
 }
 
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px 0 78px 128px;
+  display: grid;
+  grid-template-columns: repeat(4, 202px);
+  justify-content: center;
+  padding: 50px 0;
+  grid-column-gap: 48px;
+  grid-row-gap: 50px;
 }
 
 .container {
-  border: 1px solid #f3f3f3;
-  margin: 0 0 50px 48px;
-  width: 200px;
-  border-radius: 5px;
-  padding: 30px 15px 15px;
   box-sizing: border-box;
-  font-family: Roboto;
+  width: 202px;
+  padding: 30px 15px 15px;
+  font-family: Roboto, sans-serif;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  font-size: 11px;
+  line-height: 13px;
 }
 
-.photoOfMonitor {
+.goods--image {
   width: 160px;
   height: 134px;
   text-align: center;
@@ -96,21 +103,30 @@ body {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  margin: 0 0 5px;
+  margin-bottom: 5px;
 }
 
-.codeOfGoods {
-  font-size: 11px;
-  line-height: 13px;
-  margin: 0 0 14px;
+.goods--code {
+  margin-bottom: 15px;
 }
 
-.mark,
+.mark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stars {
+  display: flex;
+}
+
+/* .mark,
 .cost,
 .stars {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .star {
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0%0D%0APSIxMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDEzIDEyIj4KICAgIDxwYXRoIGZpbGw9IiNF%0D%0ANUU1RTUiIGQ9Ik01Ljc5Mi4zNTZhLjUxNS41MTUgMCAwIDEgLjk4IDBsMS4xMyAzLjQ3N2EuNTE1%0D%0ALjUxNSAwIDAgMCAuNDkuMzU2aDMuNjU2Yy40OTkgMCAuNzA3LjYzOS4zMDMuOTMybC0yLjk1OCAy%0D%0ALjE1YS41MTUuNTE1IDAgMCAwLS4xODcuNTc1bDEuMTMgMy40NzdhLjUxNS41MTUgMCAwIDEtLjc5%0D%0AMy41NzZMNi41ODUgOS43NWEuNTE1LjUxNSAwIDAgMC0uNjA2IDBMMy4wMjIgMTEuOWEuNTE1LjUx%0D%0ANSAwIDAgMS0uNzkzLS41NzdsMS4xMy0zLjQ3N2EuNTE1LjUxNSAwIDAgMC0uMTg4LS41NzZMLjIx%0D%0AMyA1LjEyMWEuNTE1LjUxNSAwIDAgMSAuMzAzLS45MzJoMy42NTZhLjUxNS41MTUgMCAwIDAgLjQ5%0D%0ALS4zNTZMNS43OTIuMzU2eiIvPgo8L3N2Zz4K") center no-repeat;
@@ -129,16 +145,16 @@ body {
 }
 
 .price {
-  font-size: 11px;
-  line-height: 13px;
-  padding: 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
 }
 
 .amount {
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  margin: 0 0 20px;
 }
 
 .button {
