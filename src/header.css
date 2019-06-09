@@ -1,0 +1,240 @@
+header {
+  display: grid;
+  grid-template-columns: 3fr 11fr 5fr 1fr;
+  grid-template-rows: 72px 16px 60px 1px;
+  grid-template-areas:
+    "logo address buttons bascket"
+    "shadow shadow shadow shadow"
+    "search search search search"
+    "devider devider devider devider";
+  align-content: center;
+  align-items: center;
+  width: 956px;
+  background-color: #fff;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #626262;
+  box-sizing: border-box;
+}
+
+.shadow {
+  grid-area: shadow;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 16px;
+  box-shadow: inset 0 16px 32px -16px rgba(38, 38, 38, 0.16);
+}
+
+/* HEADER LOGO SECTION */
+
+.headerLogo {
+  grid-area: logo;
+  width: 120px;
+  height: 20px;
+}
+
+/* HEADER ADDRESS SECTION */
+
+.headerAddress {
+  grid-area: address;
+  display: grid;
+  grid-template-columns: 65px 12px 250px;
+  grid-template-areas: "asap to delivery";
+  grid-column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.when {
+  grid-area: when;
+  display: none;
+}
+
+.headerASAP {
+  grid-area: asap;
+  margin-right: 9px;
+  width: 65px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #fff;
+
+}
+
+.to {
+  grid-area: to;
+}
+
+.headerInput {
+  grid-area: delivery;
+  width: 290px;
+  height: 40px;
+  border: 1px solid #000;
+
+  background: url(./images/location.png) no-repeat 10px center;
+  background-size: 18px;
+  padding-left: 40px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #1d1d1d;
+}
+
+/* HEADER BUTTONS SECTION */
+
+.headerButtonsContainer {
+  grid-area: buttons;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.headerButtonSignin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  padding: auto 0;
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  margin-right: 16px;
+}
+
+.headerButtonRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+  padding: auto 0;
+  background-color: #262626;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+}
+
+.headerButtonSignin:hover {
+  background-color: #59bd5a;
+  color: #fff;
+}
+
+.headerButtonRegister:hover {
+  background-color: #59bd5a;
+  color: #fff;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.headerBascket {
+  grid-area: bascket;
+}
+
+.headerBascket:hover {
+  opacity: 0.3;
+}
+
+/* SEARCH SECTION */
+
+.searchBar {
+  grid-area: search;
+  align-self: end;
+
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+
+  background: url(./images/search.svg) no-repeat 5px center;
+  background-size: 22px;
+  padding-left: 30px;
+  margin-bottom: 8px;
+}
+
+/* MEDIA SECTION */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  header {
+    padding: 0 8px;
+    width: 100%;
+  }
+
+  .headerLogo {
+    width: 105px;
+    height: 11px;
+  }
+
+  .headerAddress {
+    grid-template-columns: 57px 12px 215px;
+    grid-template-areas:
+      "asap to delivery";
+    grid-column-gap: 7px;
+  }
+
+  .headerASAP {
+    width: 57px;
+  }
+
+  .headerInput {
+    width: 215px;
+  }
+}
+
+@media (max-width: 639px) {
+  header {
+    padding: 0 5px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 72px 16px 50px 1px 85px;
+    grid-template-areas:
+      "logo buttons"
+      "shadow shadow"
+      "search search"
+      "devider devider"
+      "address address";
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .headerLogo {
+    width: 105px;
+    height: 11px;
+  }
+
+  .headerAddress {
+    grid-template-columns: 65px 230px;
+    grid-template-rows: 15px 40px;
+    grid-template-areas: 
+      "when to"
+      "asap delivery";
+  }
+
+  .when {
+    display: block;
+  }
+
+  .headerASAP {
+    margin-right: 20px;
+  }
+
+  .headerInput {
+    width: 225px;
+
+    font-size: 13px;
+    line-height: 25px;
+  }
+
+  .searchBar {
+    font-size: 13px;
+    line-height: 15px;
+
+    background-size: 15px;
+    padding-left: 25px;
+  }
+
+  .headerBascket {
+    display: none;
+  }
+}
