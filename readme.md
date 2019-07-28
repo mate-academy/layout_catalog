@@ -46,4 +46,4 @@ Screenshot of the catalog page:
 **Result**
 
 - [DEMO LINK](https://vladgritsenko.github.io/layout_catalog/)
-- [UPDATE TEST REPORT LINK](https://vladgritsenko.github.io/layout_catalog/report/html_report/)
+- [REPORT LINK](https://vladgritsenko.github.io/layout_catalog/report/html_report/)
