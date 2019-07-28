@@ -45,5 +45,5 @@ Screenshot of the catalog page:
 
 **Result**
 
-- [UPDATE DEMO LINK](https://kseniiamazan.github.io/layout_catalog/)
-- [UPDATE TEST REPORT LINK](https://kseniiamazan.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://kseniiamazan.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://kseniiamazan.github.io/layout_catalog/report/html_report/)
