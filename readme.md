@@ -47,3 +47,4 @@ Screenshot of the catalog page:
 
 - [UPDATE DEMO LINK](https://igaryok.github.io/layout_catalog/)
 - [UPDATE TEST REPORT LINK](https://igaryok.github.io/layout_catalog/report/html_report/)
+- [PR](https://github.com/mate-academy/layout_catalog/pull/117)
