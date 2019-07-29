@@ -45,6 +45,6 @@ Screenshot of the catalog page:
 
 **Result**
 
-- [UPDATE DEMO LINK](https://igaryok.github.io/layout_catalog/)
-- [UPDATE TEST REPORT LINK](https://igaryok.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://igaryok.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://igaryok.github.io/layout_catalog/report/html_report/)
 - [PR](https://github.com/mate-academy/layout_catalog/pull/117)
