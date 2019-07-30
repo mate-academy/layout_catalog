@@ -47,4 +47,3 @@ Screenshot of the catalog page:
 
 - [UPDATE DEMO LINK](https://ivansafiulin.github.io/layout_catalog/)
 - [UPDATE TEST REPORT LINK](https://ivansafiulin.github.io/layout_catalog/report/html_report/)
-
