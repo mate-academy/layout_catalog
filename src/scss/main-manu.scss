@@ -1,0 +1,48 @@
+$card-color: #00acdc;
+
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+
+  &--item {
+    list-style: none;
+  }
+
+  &--item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &--item a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    height: 60px;
+    line-height: 60px;
+    color: #000;
+  }
+
+  &--item a:hover {
+    color: $card-color;
+  }
+
+  &--item_active a,
+  &--item a:active {
+    color: $card-color;
+  }
+
+  &--item_active a::after {
+    display: block;
+    position: absolute;
+    top: 56px;
+    width: 100%;
+    height: 4px;
+    background-color: $card-color;
+    border-radius: 2px;
+    content: "";
+  }
+}
