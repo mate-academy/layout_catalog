@@ -1,0 +1,101 @@
+$width-card: 200px;
+$card-gap: 48px;
+$width-catalog: $width-card * 4 + $card-gap * 3;
+
+.center {
+  align-self: center;
+}
+
+.top {
+  @extend %flex-just_between;
+  margin-top: 15px;
+}
+
+.box:not(:nth-child(4n)) {
+  margin-right: $card-gap;
+}
+
+.box {
+  @extend %flex-just_between;
+  flex-flow: column;
+  box-sizing: border-box;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: $width-card;
+  padding: 14px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  line-height: 13px;
+
+  .logo {
+    width: 160px;
+    height: 134px;
+    margin-top: 16px;
+  }
+
+  .description {
+    margin: 45px 0 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .stars {
+    display: flex;
+
+    .star {
+      background: no-repeat center;
+      margin-right: 4px;
+      width: 15px;
+      height: 15px;
+      background-image: url("images/star.svg");
+    }
+
+    .star-active {
+      background-image: url("images/star-active.svg");
+    }
+
+
+  }
+
+  .price {
+    @extend %flex-just_between;
+    align-items: flex-end;
+    margin: 20px 0;
+
+    :first-child {
+      margin-bottom: 1px;
+    }
+
+    .bold {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .button {
+    text-decoration: none;
+    padding-top: 11px;
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    background: #00acdc;
+    color: white;
+    border: 1px solid #00acdc;
+    box-sizing: border-box;
+  }
+
+  .button:hover {
+    color: #00acdc;
+    background: white;
+  }
+}
