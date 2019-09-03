@@ -45,5 +45,6 @@ Screenshot of the catalog page:
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://shklyarigor2015.github.io/layout_catalog/)<br>
+- [TEST REPORT LINK](https://shklyarigor2015.github.io/layout_catalog/report/html_report/)<br>
+  [PR](https://github.com/mate-academy/layout_catalog/pull/137)<br> 

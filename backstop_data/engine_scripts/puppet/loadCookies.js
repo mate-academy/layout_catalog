@@ -25,5 +25,6 @@ module.exports = async (page, scenario) => {
     );
   };
   await setCookies();
+  await page.setDefaultNavigationTimeout(0);
   console.log('Cookie state restored with:', JSON.stringify(cookies, null, 2));
 };
