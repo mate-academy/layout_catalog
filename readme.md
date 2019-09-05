@@ -46,4 +46,4 @@ Screenshot of the catalog page:
 **Result**
 
 - [DEMO LINK](https://veronika-donets.github.io/layout_catalog/index.html)
-- [TEST REPORT LINK](https:/пш/veronika-donets.github.io/layout_catalog/report/html_report/)
+- [TEST REPORT LINK](https://veronika-donets.github.io/layout_catalog/report/html_report/)
