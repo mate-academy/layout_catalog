@@ -45,5 +45,5 @@ Screenshot of the catalog page:
 
 **Result**
 
-- [LINK](https://nikakarelets.github.io/layout_catalog//)
-- [TEST REPORT LINK](https://nikakarelets.github.io/layout_catalog//report/html_report/)
+- [LINK](https://nikakarelets.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://nikakarelets.github.io/layout_catalog/report/html_report/)
