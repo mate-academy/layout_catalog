@@ -45,5 +45,10 @@ Screenshot of the catalog page:
 
 **Result**
 
+<<<<<<< HEAD
 - [DEMO LINK](https://felineking.github.io/layout_catalog/)
 - [TEST REPORT LINK](https://felineking.github.io/layout_catalog/report/html_report/)
+=======
+- [DEMO LINK](https://feelineking.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://feelineking.github.io/layout_catalog/report/html_report/)
+>>>>>>> 0eac2802cca28fafbc23d23261f8eefff061a3e1
