@@ -45,5 +45,5 @@ Screenshot of the catalog page:
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [UPDATE DEMO LINK](https://chepa17.github.io/layout_catalog/)
+- [UPDATE TEST REPORT LINK](https://chepa17.github.io/layout_catalog/report/html_report/)
