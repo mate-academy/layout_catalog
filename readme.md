@@ -45,5 +45,5 @@ Screenshot of the catalog page:
 
 **Result**
 
- - [DEMO LINK](https://vitya63.github.io/layout_catalog-grid/)
- - [TEST REPORT LINK](https://vitya63.github.io/layout_catalog-grid/report/html_report/)
+ - [DEMO LINK](https://vitya63.github.io/layout_catalog/)
+ - [TEST REPORT LINK](https://vitya63.github.io/layout_catalog/report/html_report/)
