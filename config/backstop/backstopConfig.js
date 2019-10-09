@@ -1,29 +1,28 @@
 'use strict';
-
 // https://github.com/garris/BackstopJS#advanced-scenarios
 
 const backstop = require('@mate-academy/backstop-config');
-
 const { basicScenario } = backstop;
 
 const basic = {
   ...basicScenario,
   label: 'Elementary test',
-  referenceUrl: 'https://mate-academy.github.io/layout_solutions/catalog/',
+  referenceUrl: basicScenario.referenceUrl + '/catalog/',
 };
 
 const config = {
   ...backstop,
+  fileNameTemplate: '{scenarioLabel}_{viewportLabel}',
   onBeforeScript: 'puppet/onBefore.js',
   onReadyScript: 'puppet/onReady.js',
   viewports: [
     {
-      name: 'desktop_s',
+      name: '1024px',
       width: 1024,
       height: 768,
     },
     {
-      name: 'desktop_m',
+      name: '1200px',
       width: 1200,
       height: 768,
     },
@@ -31,47 +30,47 @@ const config = {
   scenarios: [
     {
       ...basic,
-      label: 'entire-document',
+      label: 'Entire document',
       selectors: ['document'],
     },
     {
       ...basic,
-      label: 'header-tag',
+      label: 'Header tag',
       selectors: ['header'],
     },
     {
       ...basic,
-      label: 'nav-tag',
+      label: 'Nav tag',
       selectors: ['nav'],
     },
     {
       ...basic,
-      label: 'nav-item-hovered',
+      label: 'Link with data-qa_hover',
       selectors: ['[data-qa="nav-hover"]'],
       hoverSelector: '[data-qa="nav-hover"]',
       postInteractionWait: 1000,
     },
     {
       ...basic,
-      label: 'nav-item-active',
+      label: 'Link with class_is-active',
       selectors: ['a.is-active'],
     },
     {
       ...basic,
-      label: 'main-tag',
+      label: 'Main tag',
       selectors: ['main'],
     },
     {
       ...basic,
-      label: 'test-card-default',
+      label: 'Card with data-qa_card',
       selectors: ['[data-qa="card"]'],
     },
     {
       ...basic,
-      label: 'test-card-hover',
+      label: 'Card with data-qa_card-hover',
+      selectors: ['[data-qa="card"]'],
       hoverSelector: '[data-qa="card-hover"]',
       postInteractionWait: 1000,
-      selectors: ['[data-qa="card"]'],
     },
   ],
 };
