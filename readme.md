@@ -16,6 +16,8 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - Pay attention to `:hover` state
 
 ## Requirements:
+- **IMPORTANT** Save and push your changes to github manually after `deploy`
+- use SCSS in this task
 - pay attention the mock is responsive. Develop the layout to fit on `1024px` and `1200px` the same as on the mock.
 - reset browser's default margins
 - use images from [src/images](src/images)
