@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
-1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-    - [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+1. Replace `isaacklark` with your Github username in the links
+    - [DEMO LINK](https://isaacklark.github.io/layout_catalog/)
+    - [TEST REPORT LINK](https://isaacklark.github.io/layout_catalog/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
 
