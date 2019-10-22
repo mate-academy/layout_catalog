@@ -1,0 +1,44 @@
+@import "variables";
+
+.header {
+  @include flex-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 47px;
+}
+
+.logo {
+  padding: 10px 0 10px 50px;
+}
+
+.nav {
+  display: flex;
+  margin-right: 50px;
+}
+
+.nav__link {
+  @include text(12px, 500, 60px);
+  color: black;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.nav__link:hover {
+  color: $color-2;
+}
+
+.is-active {
+  color: $color-2;
+  margin-left: 0;
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  border-radius: 8px;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  background-color: $color-2;
+}
