@@ -1,3 +1,176 @@
+$text-fonts: "Roboto",sans-serif;
+$margin-h-centered: 0 auto;
+$blue: #00acdc;
+
 body {
-  margin: 0;
+  margin: $margin-h-centered;
+  font-family: $text-fonts;
+}
+
+.header {
+  margin: $margin-h-centered;
+  max-width: 1200px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 1024px) {
+    max-width: 1024px;
+  }
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 10px 307px 0 50px;
+
+  @media (max-width: 1024px) {
+    margin: 10px 131px 0 50px;
+  }
+}
+
+.nav {
+  height: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.links {
+  text-decoration: none;
+  font-family: $text-fonts;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: black;
+  margin-right: 20px;
+  line-height: 14px;
+  position: relative;
+}
+
+.links:hover {
+  color: $blue;
+}
+
+.is-active::after {
+  border-radius: 2px;
+  content: "";
+  height: 4px;
+  background: $blue;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.main {
+  margin: $margin-h-centered;
+  max-width: 944px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.card {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: url("/images/imac.jpeg") 20px 30px /160px 134px no-repeat;
+
+  &-description {
+    width: 170px;
+    margin-top: 209px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    &--about-product {
+      margin: 0;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &--product-code {
+      font-size: 11px;
+      line-height: 13px;
+      margin-top: 6px;
+    }
+
+    &--stars {
+      display: flex;
+      justify-content: space-between;
+      width: 91px;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      margin-top: 5px;
+    }
+
+    &--comment {
+      width: 170px;
+      font-size: 11px;
+      line-height: 13px;
+      text-align: right;
+      margin-top: -15px;
+    }
+
+    &--price {
+      width: 170px;
+      display: flex;
+      margin-top: 18px;
+      justify-content: space-between;
+
+      &-word {
+        font-size: 11px;
+        line-height: 13px;
+        text-align: left;
+        align-self: flex-end;
+      }
+
+      &--in-hrn {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: bold;
+      }
+    }
+
+    &--buy {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      background: $blue;
+      border-radius: 5px;
+      width: 170px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    &--buy:hover {
+      background: #fff;
+      border: 1px solid $blue;
+      color: $blue;
+    }
+  }
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+}
+
+.star--active {
+  background: url("/images/star-active.svg") no-repeat;
+}
+
+.star--no-active {
+  background: url("/images/star.svg") no-repeat;
 }
