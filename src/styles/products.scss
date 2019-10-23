@@ -1,18 +1,25 @@
 @import "mixins";
 @import "variables";
 
-.product__info {
+.product__description {
   margin: 0 14px 15px;
-}
 
-.product__item {
-  @include flex_centered;
-  flex-direction: column;
-  width: 200px;
-  box-sizing: border-box;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  font-family: $main_font;
+  &__item {
+    @include flex_centered;
+    flex-direction: column;
+    width: 200px;
+    box-sizing: border-box;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    font-family: $main_font;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
 }
 
 .paragraph {
@@ -22,29 +29,22 @@
   line-height: 1.18em;
 }
 
-.product__item__image {
-  width: 160px;
-  height: 134px;
-  margin-top: 30px;
-  margin-bottom: 45px;
-}
-
-.product__info__link {
+.product__link {
   @include title_link;
 }
 
-.product__info__article {
+.product__article {
   margin-top: 6px;
 }
 
-.product__info__rating {
+.product__rating {
   @include flex_jc-space-between_ai_center;
   margin-top: 15px;
-}
 
-.rating-image {
-  @include flex_jc-space-between_ai_center;
-  width: 90px;
+  &-image {
+    @include flex_jc-space-between_ai_center;
+    width: 90px;
+  }
 }
 
 .box-star {
@@ -57,23 +57,23 @@
   background: url("../images/star.svg") center no-repeat;
 }
 
-.product__info__price {
+.product__price {
   @include flex_centered_main_axis_sb;
   align-items: baseline;
   margin: 20px 0 19px;
+
+  &-label {
+    line-height: 1.18em;
+  }
+
+  &-value {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.25em;
+  }
 }
 
-.label-price {
-  line-height: 1.18em;
-}
-
-.value-price {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.25em;
-}
-
-.product__info__buy {
+.product__buy {
   @include flex_centered;
   @include buy_bottom;
 
