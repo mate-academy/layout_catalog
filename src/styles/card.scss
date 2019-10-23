@@ -1,0 +1,108 @@
+@import "variables";
+@import "mixins";
+
+.main-content__container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  font-family: $font_family;
+  color: #000;
+  margin-bottom: 50px;
+
+  $self_name: &;
+
+  .&__img {
+    height: 134px;
+    width: 160px;
+    margin: 30px 0 45px;
+  }
+
+  .&__content {
+    padding: 0 14px 15px;
+
+    #{$self_name}__text {
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    #{$self_name}__label {
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0 0 5px;
+      line-height: 15px;
+    }
+
+    #{$self_name}__product-code {
+      margin-bottom: 15px;
+    }
+
+    #{$self_name}__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      #{$self_name}__stars {
+        display: flex;
+
+        #{$self_name}__rating-star {
+          @include stars;
+          margin-right: 4px;
+          background-image: $stars-active__image;
+        }
+
+        #{$self_name}__rating-star-inactive {
+          @include stars;
+          background-image: $stars-inactive__image;
+        }
+      }
+    }
+
+    #{$self_name}__price {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      #{$self_name}__price-amount {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    #{$self_name}__buy-button {
+      display: block;
+      padding: 11px;
+      background-color: #00acdc;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 16px;
+
+      &:hover {
+        border-color: #00acdc;
+        color: #00acdc;
+        background-color: #fff;
+      }
+    }
+  }
+}
