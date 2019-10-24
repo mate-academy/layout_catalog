@@ -1,14 +1,7 @@
 @import "variables-mixins";
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .header {
   display: flex;
-  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
@@ -17,22 +10,21 @@ ul {
 
 .menu {
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
 
   &__element {
-    display: block;
     margin-left: 20px;
-    padding: 22.5px 0;
+  }
+
+  &__link {
+    display: block;
+    padding: 22.5px 0 23px;
     color: black;
-    text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 500;
 
     &.is-active {
       color: $moyo-color;
-      margin-left: 0;
       position: relative;
 
       &::after {
@@ -42,7 +34,7 @@ ul {
         border-radius: 2px;
         background-color: $moyo-color;
         position: absolute;
-        top: 56px;
+        bottom: 0;
         left: 0;
       }
     }

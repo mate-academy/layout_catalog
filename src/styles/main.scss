@@ -1,4 +1,5 @@
 @import "variables-mixins";
+@import "reset";
 @import "header";
 @import "product-card";
 
@@ -7,28 +8,27 @@ html {
   font-size: 11px;
 }
 
-body {
-  margin: 0;
-}
-
 .card-list {
-  @include flex--center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 950px;
+  margin: auto;
 
   &--with-external {
-    margin-top: 51px;
-  }
-
-  &__first-line {
-    @include flex--center;
-    margin-bottom: 50px;
-    flex-basis: 100%;
+    margin-top: 50px;
   }
 
   &__card {
     margin-right: 48px;
-  }
-}
+    margin-top: 50px;
 
-.card--last-in-line {
-  margin-right: 0;
+    &:nth-child(-n+4) {
+      margin-top: 0;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
 }

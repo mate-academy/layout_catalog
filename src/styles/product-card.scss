@@ -1,61 +1,46 @@
 @import "variables-mixins";
 
-p,
-h2 {
-  margin: 0;
-}
-
 .card {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-end;
   padding: 15px 14px;
   box-sizing: border-box;
   border: 1px solid #f3f3f3;
   width: 200px;
   border-radius: 5px;
 
-  &__element {
-    display: flex;
-
-    &--image {
-      width: 160px;
-      height: 134px;
-      position: relative;
-      top: 15px;
-      margin-bottom: 60px;
-      align-self: center;
-    }
-
-    &--title {
-      margin-bottom: 5px;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 15px;
-    }
-
-    &--reviews {
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    &--price {
-      margin-bottom: 20px;
-      justify-content: space-between;
-      align-items: baseline;
-    }
+  &__image {
+    width: 160px;
+    height: 134px;
+    position: relative;
+    top: 15px;
+    margin-bottom: 60px;
+    align-self: center;
   }
 
-  &__reviews-image {
-    display: inline-block;
-    width: 15px;
-    height: 47px;
-    margin-right: 1px;
-    background: url(../images/star-active.svg) no-repeat center;
+  &__title {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
 
-    &--inactive {
-      background: url(../images/star.svg) no-repeat center;
-    }
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   &__sum {
@@ -67,14 +52,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 170px;
     height: 40px;
     border: 1px solid $moyo-color;
     background-color: $moyo-color;
     border-radius: 5px;
     box-sizing: border-box;
-    text-decoration: none;
     color: white;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
 
@@ -83,6 +67,23 @@ h2 {
       color: $moyo-color;
       border: 1px solid $moyo-color;
       border-radius: 5px;
+    }
+  }
+}
+
+.rating {
+
+  &__star {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    background: url(../images/star.svg) no-repeat center;
+  }
+
+  @for $i from 5 through 1 {
+    &--#{$i} :nth-child(-n+#{$i}) {
+      background: url(../images/star-active.svg) no-repeat center;
     }
   }
 }
