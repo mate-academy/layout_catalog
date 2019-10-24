@@ -1,16 +1,22 @@
 @import "mixins";
+$iStar: 4;
 
 .stars {
   height: 14px;
   width: 91px;
   @include between;
 
-  &__item {
+  &__star {
     width: 14px;
-    background: url(../images/star-active.svg) no-repeat 0 0 / 13px;
 
-    &--inactive {
+    &:nth-child(-n + 5) {
       background: url(../images/star.svg) no-repeat 0 0 / 13px;
     }
+  }
+}
+
+@for $i from 1 to $iStar + 1 {
+  .stars__star:nth-child(-n + #{$i}) {
+    background: url(../images/star-active.svg) no-repeat 0 0 / 13px;
   }
 }
