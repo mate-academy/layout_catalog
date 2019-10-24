@@ -1,6 +1,11 @@
 @import "variables";
 @import "mixins";
 
+%isActive {
+  background-image: url("../images/star-active.svg");
+  cursor: pointer;
+}
+
 .cards {
   box-sizing: border-box;
   width: 200px;
@@ -20,14 +25,12 @@
     height: 134px;
     background-image: url("../images/imac.jpeg");
     background-size: cover;
-    margin-top: 16px;
   }
 
   &__item-title {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-    margin: 44px 0 5px;
 
   }
 
@@ -46,7 +49,6 @@
   &__item-price {
     @include flex-space-between;
     width: 100%;
-    margin-top: 21px;
     align-items: baseline;
   }
 }
@@ -68,11 +70,7 @@
     height: 12px;
     background-image: url("../images/star.svg");
     background-size: cover;
-
-    &--isActive {
-      background-image: url("../images/star-active.svg");
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 }
 
@@ -125,5 +123,24 @@
 @media screen and (min-width: 1200px) {
   .products {
     margin: 0 128px;
+  }
+}
+
+.card-img-background {
+  background-color: red;
+  margin-top: 16px;
+}
+
+.cards-title {
+  margin: 44px 0 5px;
+}
+
+.price__details {
+  margin-top: 21px;
+}
+
+@for $i from 1 through 4 {
+  .rate__details-star:nth-child(#{$i}) {
+    @extend %isActive;
   }
 }
