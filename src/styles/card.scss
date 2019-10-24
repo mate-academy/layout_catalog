@@ -1,33 +1,35 @@
 @import "variables";
+@import "mixins";
 
-h2,
-p {
-  margin: 0;
-  font-size: 11px;
+.catalog {
+  display: flex;
+  max-width: 4 * $card-width + 3 * $card-list-gapX + 2 * $card-list-paddingX;
+  margin: 0 auto;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 $card-list-paddingX;
 }
 
 .card {
-  width: 200px;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
+  width: $card-width;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 30px 14px 15px;
   margin-bottom: 50px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
 
   &__photo {
+    display: block;
     width: 160px;
     height: 134px;
-    margin-bottom: 45px;
+    margin: 0 auto 45px;
   }
 
   &__product-name {
     font-size: 12px;
     line-height: 15px;
     font-weight: 500;
-    font-style: normal;
     margin-bottom: 5px;
   }
 
@@ -35,25 +37,36 @@ p {
     margin-bottom: 15px;
   }
 
-  &__product-feedback,
-  &__product-price,
-  &__product-rating {
+  &__product-feedback {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
-  &__product-feedback,
+  &__stars {
+    display: flex;
+
+    div:nth-child(-n + 5) {
+      @include star;
+      background-image: $star--inactive__image;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
   &__product-price {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
+    align-items: baseline;
   }
 
   &__product-price-amount {
     font-size: 16px;
     font-weight: bold;
-  }
-
-  &__product-price-text {
-    align-self: center;
   }
 
   &__product-button-buy {
@@ -63,34 +76,25 @@ p {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
-    background: $button-hover-color;
+    background: $main-color;
     border-radius: 5px;
+    border: 1px solid $main_color;
     height: 40px;
     text-decoration: none;
     color: white;
     line-height: 16px;
     box-sizing: border-box;
-    
+
     &:hover {
       background-color: white;
-      color: $button-hover-color;
-      border: 1px solid $button-hover-color;
+      color: $main-color;
     }
   }
 }
 
-.rating-star {
-  background-image: url("/images/star-active.svg");
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-repeat: no-repeat;
-
-  &:first-child {
-    margin-left: 0;
+@for $star_number from 1 through 5 {
+  .stars--#{$star_number} > div:nth-child(-n + #{$star_number}) {
+    @include star;
+    background-image: $star--active__image;
   }
-}
-
-.not-active-rating-star {
-  background-image: url("/images/star.svg");
 }
