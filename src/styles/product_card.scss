@@ -39,20 +39,22 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
+}
 
-  &--4 {
-    display: flex;
-    &-star {
-      background: url("../images/star-active.svg") center no-repeat;
-      width: 15px;
-      height: 15px;
-      padding-right: 4px;
-    }
+.stars {
+  display: flex;
+}
 
-    &-star:last-child {
-      background: url("../images/star.svg") center no-repeat;
-    }
+.stars__star {
+  background: url("../images/star.svg") center no-repeat;
+  width: 15px;
+  height: 15px;
+  padding-right: 4px;
+}
 
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
   }
 }
 
