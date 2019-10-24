@@ -1,7 +1,7 @@
 @import "variables-mixins";
 
 .wrapblock__cost,
-.wrapblock__comments,
+.comments,
 .wrapblock__cost-num {
   margin: 0;
 }
@@ -44,28 +44,6 @@
     margin: 5px 0 0 14px;
   }
 
-  &__stars {
-    @include flexdefault;
-    margin: 16px 0 0 15px;
-    align-items: flex-end;
-  }
-  &__star-yellow {
-    margin-right: 6px;
-    background-image: url(../images/star-active.svg);
-  }
-
-  &__starlight {
-    background-image: url(../images/star.svg);
-  }
-
-  &__comments {
-    @include text-tstyle;
-    margin-left: 22px;
-    width: 58px;
-    display: flex;
-    justify-content: flex-end;
-  }
-
   &__price {
     @include flexdefault;
     justify-content: space-between;
@@ -88,25 +66,31 @@
   }
 
   &_link {
-    background-color: $lifhtblue;
+    background-color: $maincolor;
     margin: 21px 14px 26px;
     font-weight: 600;
     font-size: 14px;
     line-height: 40px;
     text-align: center;
     text-transform: uppercase;
-    color: $white;
+    color: $buy-color;
     border-radius: 5px;
     text-decoration: none;
     box-sizing: border-box;
   }
 
   &_link:hover {
-    border: 1px solid $lifhtblue;
-    background-color: $white;
-    color: $lifhtblue;
+    border: 1px solid $maincolor;
+    background-color: $buy-color;
+    color: $maincolor;
     line-height: 38px;
   }
+}
+
+.stars {
+  @include flexdefault;
+  margin: 16px 0 0 15px;
+  align-items: flex-end;
 }
 
 .star {
@@ -114,4 +98,45 @@
   height: 12px;
   background-repeat: no-repeat;
   background-size: inherit;
+  margin-right: 6px;
+}
+
+.star-yellow {
+  background-image: url(../images/star-active.svg);
+}
+
+.star-empty {
+  background-image: url(../images/star.svg);
+}
+
+.comments {
+  @include text-tstyle;
+  margin-left: 16px;
+  width: 58px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reiting-0 {
+  @include loop(0);
+}
+
+.reiting-1 {
+  @include loop(1);
+}
+
+.reiting-2 {
+  @include loop(2);
+}
+
+.reiting-3 {
+  @include loop(3);
+}
+
+.reiting-4 {
+  @include loop(4);
+}
+
+.reiting-5 {
+  @include loop(5);
 }

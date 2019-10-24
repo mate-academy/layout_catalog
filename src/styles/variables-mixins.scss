@@ -1,7 +1,9 @@
-$fiftypix: 50px;
-$otstup: 0 $fiftypix;
-$lifhtblue: #00acdc;
-$white: white;
+$awaypad: 50px;
+$otstup: 0 $awaypad;
+$maincolor: #00acdc;
+$buy-color: white;
+$card-width: 200px;
+$card-margside: 24px;
 @mixin flexdefault {
   display: flex;
   flex-wrap: nowrap;
@@ -10,4 +12,12 @@ $white: white;
   font-family: Roboto, sans-serif;
   font-size: 11px;
   line-height: 13px;
+}
+
+@mixin loop($reit) {
+  @for $i from 1 through 5 {
+    :nth-child(#{$i + $reit}) {
+      display: none;
+    }
+  }
 }
