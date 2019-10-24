@@ -1,55 +1,46 @@
+@import "variables";
 @import "mixins";
 
 .nav {
-  @include flex-centered;
 
   &__list {
     display: flex;
     list-style-type: none;
+  }
 
-    &__item {
-      margin-left: 20px;
-    }
+  &__item {
+    margin-left: 20px;
 
-    &__item:first-of-type {
+    &__item:first-child {
       margin-left: 0;
     }
+  }
 
-    &__link {
-      @include font(500, 12px, 60px);
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #000;
-      font-size: 12px;
-      display: inline-block;
-      line-height: 60px;
-      font-weight: 500;
+  &__link {
+    @include font(500, 12px, 60px);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
 
-      &__is-active {
-        color: $link-hover-color;
-        position: relative;
-        margin-left: 0;
-      }
-
-      &__is-active::after {
-        content: "";
-        position: absolute;
-        height: 4px;
-        background-color: $link-hover-color;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 8px;
-      }
-
+    &.is-active {
+      color: $main-color;
+      position: relative;
     }
 
-    &__link:last-child {
-      margin-right: 0;
+    &.is-active::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      background-color: $main-color;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 2px;
     }
 
-    &__link:hover {
-      color: $link-hover-color;
+    &:hover {
+      color: $main-color;
     }
 
   }
