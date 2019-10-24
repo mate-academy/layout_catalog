@@ -1,0 +1,119 @@
+@import "variables";
+
+.flex__container {
+  $cardWidth: 200px;
+  $cardListGapX: 48px;
+  $cardPadding: 40px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 4 * $cardWidth + 3 * $cardListGapX + 2 * $cardPadding;
+  margin: 0 auto;
+  padding: 0 $cardPadding;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 403px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background: #fff;
+  box-sizing: border-box;
+  margin: 0 48px 50px 0;
+  padding: 30px 14px 15px;
+
+  &:nth-of-type(4),
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &__image {
+    display: block;
+    height: 134px;
+    width: 160px;
+    margin: 0 auto 45px;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 5px;
+  }
+
+  &__code,
+  &__feedback,
+  &__price {
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 13px;
+  }
+
+  &__feedback,
+  &__price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__feedback-stars {
+    display: flex;
+    justify-content: space-between;
+    width: 91px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__feedback {
+    margin-bottom: 20px;
+
+    &__review {
+      margin-top: 1px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+
+    &__text {
+      padding-top: 5px;
+    }
+
+    &__bolt {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 16px;
+      font-style: normal;
+      line-height: 19px;
+    }
+  }
+
+  &__buy-button {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    background: $color;
+    border-radius: 5px;
+    width: 170px;
+    height: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 16px;
+
+    &:hover {
+      background: #fff;
+      border: 1px solid $color;
+      color: $color;
+    }
+  }
+}

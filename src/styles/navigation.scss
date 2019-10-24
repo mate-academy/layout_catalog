@@ -1,0 +1,62 @@
+@import "variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+  margin: 0 0 50px; //не нужен тут> в main padding
+}
+
+.nav {
+  &__ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    margin: 0 0 0 20px;
+    padding: 0;
+    &:first-of-type {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 60px;
+    letter-spacing: 0;
+    &:hover {
+      color: $color;
+    }
+    &.is-active {
+      color: $color;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
