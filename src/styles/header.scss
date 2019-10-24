@@ -7,68 +7,58 @@
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 0 50px;
-  margin-bottom: 50px;
 
-  &__navbar-logo {
+  &__logo {
     height: 40px;
     width: 40px;
-    background-size: cover;
   }
 
-  .navbar__nav-links {
+}
+
+.nav {
+  .&__list {
     display: flex;
-    align-self: center;
-    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
-    .navbar__list {
-      display: flex;
-      list-style-type: none;
+  .&__item {
+    margin-left: 20px;
+
+    &:first-child {
       margin: 0;
-      padding: 0;
-
-      .navbar__item {
-        height: 60px;
-        margin: 0 0 0 20px;
-
-        &:first-of-type {
-          margin: 0;
-        }
-      }
-      .nav__link {
-        display: inline-block;
-        height: 60px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        font-family: $font_family;
-        font-size: 12px;
-        font-weight: 500;
-        color: #000;
-        text-transform: uppercase;
-        text-decoration: none;
-        line-height: 60px;
-        white-space: nowrap;
-
-        &:hover {
-          color: #00acdc;
-        }
-      }
-      .last-link {
-        margin-right: 0;
-      }
-      .is-active {
-        margin-left: 0;
-        color: #00acdc;
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          border-radius: 2px;
-          background-color: #00acdc;
-        }
-      }
     }
+  }
+}
+
+.nav__link {
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+  line-height: 60px;
+  white-space: nowrap;
+
+  &:hover {
+    color: $main_color;
+  }
+}
+
+.is-active {
+  color: $main_color;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $main_color;
   }
 }
