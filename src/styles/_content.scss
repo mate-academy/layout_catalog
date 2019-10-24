@@ -1,0 +1,128 @@
+$size-star: 15px;
+$color: #00acdc;
+$mainWidth: 200px;
+$space: 48px;
+$padding: 40px;
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin font-size {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  max-width: 4 * $mainWidth + 3 * $space + 2* $padding;
+}
+
+.card {
+  margin-bottom: 50px;
+  width: 200px;
+  height: 403px;
+  background: white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 14px 14px;
+
+  &__photo {
+    width: 160px;
+    height: 134px;
+    margin-right: 20px;
+    margin-left: 5px;
+  }
+
+  &__title {
+    line-height: 15px;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 45px;
+  }
+
+  &__cod {
+    margin-top: 5px;
+    @include font-size;
+  }
+
+  &__numb {
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 20px;
+  }
+  &__feedback {
+    @include flex-space-between;
+    align-items: center;
+    margin-top: 15px;
+
+  }
+  &__revie {
+    font-weight: normal;
+    @include font-size;
+  }
+
+  &__price-numb {
+    @include flex-space-between;
+    align-items: center;
+  }
+
+  &__price {
+    margin-top: 25px;
+    @include font-size;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    width: 170px;
+    height: 40px;
+    background: $color;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  &__buy:hover {
+    background-color: #fff;
+    border: 1px solid $color;
+    color: $color;
+  }
+
+}
+
+.stars {
+  width: 91px;
+  @include flex-space-between;
+  &__star:nth-child(-n+4) {
+    background: url("../images/star-active.svg") no-repeat;
+    width: $size-star;
+    height: $size-star;
+  }
+  &__star:last-child {
+    background: url("../images/star.svg") no-repeat;
+    width: $size-star;
+    height: $size-star;
+  }
+}
