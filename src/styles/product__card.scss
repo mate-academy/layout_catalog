@@ -5,20 +5,16 @@
   flex-direction: column;
   box-sizing: border-box;
   width: $product-card-width;
-  height: 403px;
+  height: $product-card-height;
   background: white;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 15px 14px;
-  line-height: 15px;
-}
-
-.product__img-box {
-  display: flex;
-  justify-content: center;
 }
 
 .product__img {
+  display: block;
+  align-self: center;
   width: 160px;
   height: 134px;
   margin: 15px 0 45px;
@@ -28,6 +24,7 @@
   margin: 0;
   font-weight: 500;
   font-size: 12px;
+  line-height: 15px;
 }
 
 .product__item-code {
@@ -45,22 +42,7 @@
   margin-top: 15px;
 }
 
-.product__stars-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-star {
-  margin-right: 4px;
-  background: url("../images/star-active.svg") no-repeat;
-  height: 14px;
-  width: 15px;
-}
-
-.product-star-not-active {
-  background: url("../images/star.svg") no-repeat;
-}
+@import "rating-stars";
 
 .product__rate {
   margin: 0;
@@ -71,19 +53,16 @@
 .product__price {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
   margin-top: 20px;
 }
 
 .product__price-name {
-  margin: 0;
-  padding-bottom: 1px;
   font-size: 11px;
   line-height: 13px;
 }
 
 .product__price-number {
-  margin: 0;
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
@@ -105,11 +84,9 @@
   line-height: 38px;
 }
 
-.product__card:hover {
-  .product__buy-button {
-    color: $main-blue-color;
-    background: white;
-    border: 1px solid $main-blue-color;
-    border-radius: 5px;
-  }
+.product__buy-button:hover {
+  color: $main-blue-color;
+  background: white;
+  border: 1px solid $main-blue-color;
+  border-radius: 5px;
 }
