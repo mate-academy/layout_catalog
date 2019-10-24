@@ -37,24 +37,23 @@
     margin-bottom: 16px;
   }
 
-  .reviews__star--active {
-    background-image: url("../images/star-active.svg");
-  }
-
-  .reviews__star--empty {
+  .stars__star {
     background-image: url("../images/star.svg");
-  }
-
-  .reviews__stars {
-    margin-left: -5px;
-  }
-
-  .star {
     margin-left: 6px;
     background-size: contain;
     background-repeat: no-repeat;
     width: 13px;
     height: 13px;
+  }
+
+  @for $i from 1 to 6 {
+    .stars-#{$i} > div:nth-child(-n + #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+
+  .stars {
+    margin-left: -5px;
   }
 
   &__price {
