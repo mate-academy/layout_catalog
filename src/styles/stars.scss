@@ -8,13 +8,16 @@
   &__item {
     height: $starSize;
     width: $starSize;
-    background: url("../images/star-active.svg") no-repeat;
   }
 
   @for $i from 1 through 5 {
     &_#{$i} {
       .stars__item:nth-child(#{$i}) ~ .stars__item {
         background: url("../images/star.svg") no-repeat;
+      }
+
+      .stars__item:nth-child(-n + #{$i}) {
+        background: url("../images/star-active.svg") no-repeat;
       }
     }
   }
