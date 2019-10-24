@@ -1,68 +1,65 @@
 @import "variables";
-@import "mixin";
+@import "reset";
 
 .container {
-  max-width: 945px;
+  max-width: $card-width * 4 + $card-Space-BetwX * 3 + $container-paddX * 2;
   display: flex;
   flex-wrap: wrap;
-  padding: 0 40px 50px;
-  justify-content: space-between;
+  padding: 0 $container-paddX;
+  justify-content: space-around;
   margin: 0 auto;
 }
 
 .card {
   box-sizing: border-box;
-  width: 200px;
+  width: $card-width;
   height: 403px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  padding: 30px 15px 14px;
-  font-family: $main-font;
+  padding: 14px;
   margin-bottom: 50px;
 }
 
 .img {
   height: 134px;
   width: 160px;
-  margin: 0 5px;
+  margin: 16px 5px 42px;
 }
 
 .desc {
   display: inline-block;
-  margin: 41px 0 0;
   line-height: 15px;
-  @include regular-font;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .code {
-  @include small-font;
-  margin: 6px 0 0;
-  display: inline-block;
-  line-height: 13px;
+  display: block;
+  height: 13px;
+  margin: 5px 0 0;
 }
 
-.feedback {
+.rating {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
-  @include small-font;
+}
 
-  &__star {
-    display: flex;
-    justify-content: space-between;
-    width: 91px;
+.stars {
+  display: flex;
 
-    &-img {
-      background-image: url(../images/star-active.svg);
-      background-repeat: no-repeat;
-      height: 15px;
-      width: 15px;
-      margin: 0;
+  &__img {
+    background-image: url(../images/star-active.svg);
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+    padding-right: 4px;
+  }
 
-      &gray {
-        background-image: url(../images/star.svg);
-      }
+  @for $i from 1 through 5 {
+    &-#{$i} div:nth-child(#{$i}) ~ div {
+      background-image: url(../images/star.svg);
     }
   }
 }
@@ -73,41 +70,31 @@
   margin-top: 20px;
   align-items: center;
 
-  &__name {
-    @include small-font;
-  }
-
   &__sum {
     font-size: 16px;
     font-weight: bold;
   }
 }
 
-.buy {
-  display: flex;
-  align-items: center;
-  margin: 20px 0 15px;
+.link {
+  display: block;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: $main-color;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+  margin-top: 20px;
 
-  &__link {
-    box-sizing: border-box;
-    display: inline-block;
-    text-decoration: none;
+  &__text {
     color: white;
     font-weight: bold;
     font-size: 14px;
-    height: 40px;
-    width: 100%;
-    background-color: $main-color;
-    border-radius: 5px;
-    line-height: 40px;
     text-align: center;
+    line-height: 40px;
+  }
 
-    &:hover {
-      color: $main-color;
-      background-color: #fff;
-      border: 1px solid $main-color;
-      box-sizing: border-box;
-      border-radius: 5px;
-    }
+  &:hover {
+    color: $main-color;
+    background-color: #fff;
   }
 }
