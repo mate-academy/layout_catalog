@@ -1,0 +1,132 @@
+@import "variables";
+
+.product {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $cardWidth;
+  height: 403px;
+  margin-bottom: $marginBottom;
+  padding: 30px 14px 15px;
+  border: 1px solid #f3f3f3;
+  margin-right: 48px;
+  font-style: normal;
+  font-weight: 500;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__title--ahead {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  &__title--code {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  &__rating {
+    @include flexPack;
+    margin-bottom: 18px;
+    height: 14px;
+  }
+
+  &__evaluation {
+    display: flex;
+    padding-left: 1px;
+    margin-top: 1px;
+  }
+
+  &__rating--star {
+    @include flexPack;
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+  }
+
+  @for $i from 1 through 5 {
+    @if $i != 5 {
+      &__rating--star:nth-child(#{$i}) {
+        background-image: url("../images/star-active.svg");
+      }
+    }
+    @else {
+      &__rating--star:nth-child(#{$i}) {
+        background-image: url("../images/star.svg");
+      }
+    }
+  }
+
+  &__rating--reviews {
+    align-self: flex-start;
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  &__price {
+    @include flexPack;
+    margin-bottom: 20px;
+  }
+
+  &__price--text {
+    align-self: flex-end;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  &__price--sum {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 1px;
+  }
+
+  &__button {
+    display: block;
+    padding: 12px 58px 11px 57px;
+    background: #00acdc;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  &__button:hover {
+    color: #00acdc;
+    border: 1px solid #00acdc;
+    background-color: white;
+  }
+}
+
+.product:nth-child(4n) {
+  margin-right: 0;
+}
