@@ -9,7 +9,6 @@
 
 .product {
   &__card {
-    background: #fff;
     border: 1px solid #f3f3f3;
     box-sizing: border-box;
     border-radius: 5px;
@@ -38,6 +37,8 @@
   &__img {
     width: 160px;
     height: 134px;
+    margin: 0 auto;
+    display: block;
   }
 
   &__name {
@@ -74,24 +75,24 @@
 
 }
 
-.stars-rate {
+.stars__rate {
   display: flex;
-  width: 91px;
-  height: 15px;
-  justify-content: space-between;
-
 }
 
-.logo-star-active {
-  height: 15px;
-  width: 15px;
-  background: url(../images/star-active.svg) no-repeat;
-}
-
-.logo-star-not_active {
+.logo-star {
   height: 15px;
   width: 15px;
   background: url(../images/star.svg) no-repeat;
+  margin-left: 4px;
+  &:first-child {
+    margin: 0;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars__rate-#{$i} .logo-star:nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
+  }
 }
 
 .feedbacks {
@@ -119,13 +120,14 @@
 }
 
 .button-buy {
+  font-family: $main-font;
+  border: none;
   margin-top: 20px;
-  display: block;
   background: $main-color;
   border-radius: 5px;
   font-weight: bold;
   font-size: 14px;
-  line-height: 40px;
+  line-height: 16px;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
@@ -138,6 +140,7 @@
     border: 1px solid $main-color;
     box-sizing: border-box;
     color: $main-color;
+    cursor: pointer;
   }
 }
 
