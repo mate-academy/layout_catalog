@@ -1,0 +1,50 @@
+@import "mixins";
+@import "variebles";
+
+.header {
+  padding: 0 50px ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  @include flex-between-ceter;
+
+  &__nav {
+    display: flex;
+  }
+
+  &__logo_moyo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__line-link {
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    color: black;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+      color: $style-color;
+    }
+  }
+
+  .is-active {
+    color: $style-color;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 4px;
+      background-color: $style-color;
+      display: block;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 2px;
+      position: absolute;
+    }
+  }
+}
