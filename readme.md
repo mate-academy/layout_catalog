@@ -23,7 +23,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - use images from [src/images](src/images)
 - use semantic tags. `<header>`, `<nav>`, `main`
 - pay attention to the shadow below the header
-- reuse the card from [Product cards](https://github.com/mate-academy/layout_product-cards#product-cards)
+- reuse the card from [card cards](https://github.com/mate-academy/layout_card-cards#card-cards)
 - reuse the header from [Moyo header](https://github.com/mate-academy/layout_moyo-header#moyo-header)
 - card's width is `200px` without borders
 - add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки и компьютеры`)

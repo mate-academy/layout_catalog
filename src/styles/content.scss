@@ -1,12 +1,12 @@
 @import "variables-mixins";
 
-.card__cost,
-.comments,
-.card__cost-num {
+.article__cost,
+.stars__comments,
+.article__cost-num {
   margin: 0;
 }
 
-.card {
+.article {
   @include flexdefault;
   @include text-tstyle;
   width: 200px;
@@ -71,13 +71,13 @@
     border-radius: 5px;
     text-decoration: none;
     box-sizing: border-box;
-  }
 
-  &_link:hover {
-    border: 1px solid $maincolor;
-    background-color: $buy-color;
-    color: $maincolor;
-    line-height: 38px;
+    &:hover {
+      border: 1px solid $maincolor;
+      background-color: $buy-color;
+      color: $maincolor;
+      line-height: 38px;
+    }
   }
 }
 
@@ -85,34 +85,27 @@
   @include flexdefault;
   margin: 16px 0 0 15px;
   align-items: flex-end;
+
+  &__star {
+    width: 13px;
+    height: 12px;
+    background-size: inherit;
+    margin-right: 6px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__comments {
+    @include text-tstyle;
+    margin-left: 16px;
+    width: 58px;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
-.star {
-  width: 13px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-size: inherit;
-  margin-right: 6px;
-}
-
-.star-yellow {
-  background-image: url(../images/star-active.svg);
-}
-
-.star-empty {
-  background-image: url(../images/star.svg);
-}
-
-.comments {
-  @include text-tstyle;
-  margin-left: 16px;
-  width: 58px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-@each $number in $reiting-numbers {
-  .reiting-#{$number} {
+@each $number in $rating-numbers {
+  .rating-#{$number} {
     @include loop($number);
   }
 }
