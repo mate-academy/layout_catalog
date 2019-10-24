@@ -1,0 +1,121 @@
+@import "mixins";
+@import "variables";
+@import "reset";
+
+$cardWidth:200px;
+$cardGapX: 48px;
+$cardPaddingListX: 40px;
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 4 * $cardWidth + 3 * $cardGapX + 2 * $cardPaddingListX;
+  margin: 0 auto;
+  padding: 0 $cardPaddingListX;
+}
+
+.card__block {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: $cardWidth;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 30px 14px 15px;
+  margin-bottom: 50px;
+
+  &-image {
+    padding: 0 5px;
+    padding-bottom: 45px;
+  }
+
+  &-photo {
+    width: 160px;
+    height: 134px;
+  }
+}
+
+.card__title {
+  @include text_style;
+  font-weight: 500;
+  line-height: 15px;
+  font-size: 12px;
+}
+
+.card__code {
+  @include text_style;
+  margin-top: 5px;
+}
+
+.card__rating {
+  @include text_style;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 21px;
+}
+// поменять классы, доработать 
+.card__stars-block {
+  width: 91px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__stars-active {
+  @include stars;
+  background: url("../images/star-active.svg") no-repeat;
+}
+
+.сard__stars-non-active {
+  @include stars;
+  background: url("../images/star.svg") no-repeat;
+}
+
+.card__value {
+  @include text_style;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  &-price {
+    display: inline-block;
+    text-align: center;
+    line-height: 13px;
+  }
+
+  &-sum {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 40px;
+  background: $main_color;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin-top: 21px;
+}
+
+.button:hover {
+  background-color: #fff;
+  border: 1px solid $main_color;
+  color: $main_color;
+}
