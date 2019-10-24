@@ -1,132 +1,129 @@
 @import "variables";
 @import "mixins";
-@media screen and (min-width: 1023px) {
 
-  .cards {
-    box-sizing: border-box;
-    width: 200px;
-    height: 403px;
-    padding: 15px;
-    border: 1px solid #f3f3f3;
-    border-radius: 5px;
-    margin-top: 50px;
+.cards {
+  box-sizing: border-box;
+  width: 200px;
+  height: 403px;
+  padding: 15px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
 
-    &__item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &__item-img {
-      width: 160px;
-      height: 134px;
-      background-image: url("../images/imac.jpeg");
-      background-size: cover;
-      margin-top: 16px;
-    }
-
-    &__item-title {
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 15px;
-      margin: 44px 0 5px;
-
-    }
-
-    &__item-code {
-      width: 101px;
-      height: 13px;
-      align-self: flex-start;
-      margin-bottom: 16px;
-    }
-
-    &__item-rate {
-      @include flex-space-between;
-      width: 100%;
-    }
-
-    &__item-price {
-      @include flex-space-between;
-      width: 100%;
-      margin-top: 21px;
-      align-items: baseline;
-    }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .rate {
-    &__details-stars {
-      @include flex-space-between;
-      flex-direction: row;
-      width: 91px;
-      align-self: flex-start;
-    }
-
-    &__details-star {
-      width: 13px;
-      height: 12px;
-      background-image: url("../images/star.svg");
-      background-size: cover;
-      &--isActive {
-        background-image: url("../images/star-active.svg");
-        cursor: pointer;
-      }
-    }
+  &__item-img {
+    width: 160px;
+    height: 134px;
+    background-image: url("../images/imac.jpeg");
+    background-size: cover;
+    margin-top: 16px;
   }
 
-  .price {
-    &__details-title {
-      @include descriptionTitle;
-    }
+  &__item-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 44px 0 5px;
 
-    &__details-sum {
-      @include descriptionTitle;
-    }
   }
 
-  .card {
-    &__button {
-      background: $hoverColor;
-      border-radius: 5px;
-      outline: none;
-      border: none;
-      margin-top: 20px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 16px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #fff;
-      width: 170px;
-      height: 40px;
-      cursor: pointer;
-      &:hover {
-        background-color: #fff;
-        color: $hoverColor;
-      }
-    }
+  &__item-code {
+    width: 101px;
+    height: 13px;
+    align-self: flex-start;
+    margin-bottom: 16px;
   }
 
-  .products {
-    margin: 0 40px 78px;
+  &__item-rate {
     @include flex-space-between;
-    flex-wrap: wrap;
-
+    width: 100%;
   }
 
-  .description {
-    @include description;
+  &__item-price {
+    @include flex-space-between;
+    width: 100%;
+    margin-top: 21px;
+    align-items: baseline;
   }
+}
+
+.cards-container {
+  margin-top: 50px;
+}
+
+.rate {
+  &__details-stars {
+    @include flex-space-between;
+    flex-direction: row;
+    width: 91px;
+    align-self: flex-start;
+  }
+
+  &__details-star {
+    width: 13px;
+    height: 12px;
+    background-image: url("../images/star.svg");
+    background-size: cover;
+
+    &--isActive {
+      background-image: url("../images/star-active.svg");
+      cursor: pointer;
+    }
+  }
+}
+
+.price {
+  &__details-title {
+    @include descriptionTitle;
+  }
+
+  &__details-sum {
+    @include descriptionTitle;
+  }
+}
+
+.card {
+  &__button {
+    background: $hoverColor;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    width: 170px;
+    height: 40px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: $hoverColor;
+    }
+  }
+}
+
+.products {
+  margin: 0 40px;
+  @include flex-space-between;
+  flex-wrap: wrap;
+
+}
+
+.description {
+  @include description;
 }
 
 @media screen and (min-width: 1200px) {
   .products {
     margin: 0 128px;
-  }
-}
-
-@media screen and (min-width: 1250px) {
-  .products {
-    justify-content: flex-start;
   }
 }
