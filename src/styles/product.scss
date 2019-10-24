@@ -1,31 +1,24 @@
-@import "variables";
+@import "vars-mixins";
 
-.product__name,
-.product__code,
-.reviews__text,
-.product__price__number,
-.product__price__text {
-  margin: 0;
+.main__product {
+  margin-bottom: $catalogItemsGapY;
 }
 
 .product {
-  border: 1px solid white;
+  border: 1px solid #f3f3f3;
   box-sizing: border-box;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  align-items: center;
-  padding: 30px 14px 14px;
-  margin-bottom: 51px;
+  width: $cardWidth;
+  padding: 14px;
 
   &__photo {
+    display: block;
     width: 160px;
     height: 134px;
-    margin-bottom: 45px;
+    margin: 16px auto 45px;
   }
 
-  &__name {
+  &__title {
     @include text(12px, 500, 15px);
   }
 
@@ -33,61 +26,38 @@
     margin-top: 5px;
   }
 
-  &__price,
-  &__review {
+  &__rating {
     @include flex-between;
+    align-items: flex-start;
     margin-top: 16px;
   }
 
-  &__review {
-    align-items: flex-start;
-
-    &__stars {
-      @include flex-between;
-      width: 91px;
-      padding: 1px 0 0 1px;
-
-      &__item {
-        height: 15px;
-        width: 15px;
-
-        &_checked {
-          background: url("../images/star-active.svg") no-repeat;
-        }
-
-        &_empty {
-          background: url("../images/star.svg") no-repeat;
-        }
-      }
-    }
+  &__price {
+    @include flex-between;
+    align-items: baseline;
+    margin-top: 17px;
   }
 
-  &__price {
-    align-items: baseline;
-    margin-top: 18px;
-
-    &__number {
-      @include text(16px, bold, 19px);
-    }
+  &__price-number {
+    @include text(16px, bold, 19px);
   }
 
   &__buy {
     @include text(14px, 700, 16px);
     display: flex;
-    margin-top: 20px;
-    background: $color-2;
-    border-radius: 5px;
-    height: 40px;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    text-decoration: none;
+    background: $color-2;
+    border-radius: 5px;
+    height: 40px;
     text-transform: uppercase;
-    color: #f3f3f3;
+    border: 1px solid $color-2;
+    color: white;
+    margin-top: 20px;
 
     &:hover {
       background-color: white;
-      border: 1px solid $color-2;
       color: $color-2;
     }
   }

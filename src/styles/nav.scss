@@ -1,0 +1,37 @@
+@import "vars-mixins";
+
+.nav {
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__link {
+    @include text(12px, 500, 60px);
+    display: inline-block;
+    color: black;
+    text-transform: uppercase;
+    margin-left: 20px;
+
+    &:hover {
+      color: $color-2;
+    }
+  }
+
+  .is-active {
+    color: $color-2;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      border-radius: 2px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $color-2;
+    }
+  }
+}
