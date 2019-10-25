@@ -2,15 +2,16 @@
 @import "variables";
 @import "mixin";
 
-* {
-  margin: 0;
-}
-
-body {
+html {
   font-family: $main-font;
 }
 
-h1 {
+body,
+p {
+  margin: 0;
+}
+
+.visually-hidden {
   position: absolute;
   z-index: -5;
   height: 0;
@@ -92,6 +93,12 @@ h1 {
     line-height: 19px;
     text-align: right;
   }
+  &__rating-star {
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+  }
   &__btn {
     display: block;
     padding: 11px 10px;
@@ -112,14 +119,6 @@ h1 {
       color: #00acdc;
     }
   }
-}
-
-.card__rating-star {
-  height: 15px;
-  width: 15px;
-  margin-right: 4px;
-  //background-image: url("../images/star-active.svg");
-  background-repeat: no-repeat;
 }
 
 @for $i from 1 through 5 {
