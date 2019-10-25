@@ -1,0 +1,58 @@
+@import "variables";
+
+.header {
+  @include flex-space-between;
+  align-items: center;
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+}
+
+.logotype {
+  @include w-h(40px, 40px);
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+  }
+  &__box {
+    margin: 0 0 0 20px;
+    padding: 0;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: #000;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 60px;
+    letter-spacing: 0;
+    &:hover {
+      color: $color;
+    }
+    &.is-active {
+      color: $color;
+      position: relative;
+      &::after {
+        @include w-h(100%, 4px);
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 2px;
+        background-color: $color;
+      }
+    }
+  }
+}
