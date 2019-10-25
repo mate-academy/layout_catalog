@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .card {
   width: 200px;
@@ -29,12 +30,8 @@
   }
 
   &__subtitle,
-  &__review,
   &__price-title {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 13px;
+    @include style-font;
   }
 
   .class__feedback {
@@ -48,6 +45,7 @@
     justify-content: flex-end;
     margin-top: 1px;
     margin-left: auto;
+    @include style-font;
   }
 
   &__price {
@@ -74,7 +72,6 @@
     box-sizing: border-box;
     background: $main-color;
     border-radius: 5px;
-
     text-transform: uppercase;
     color: #fff;
     font-style: normal;
@@ -82,11 +79,6 @@
     font-size: 14px;
     line-height: 16px;
     text-align: center;
-  }
-
-  &__link--hover {
-    background: #fff;
-    color: $main-color;
   }
 
   &__link:hover {
