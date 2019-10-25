@@ -1,4 +1,11 @@
 @import "variables";
+@import "mixins";
+
+.title {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
 
 .flex__container {
   $cardWidth: 200px;
@@ -40,14 +47,6 @@
     font-style: normal;
     margin-bottom: 5px;
   }
-  &__code,
-  &__feedback,
-  &__price {
-    font-size: 11px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 13px;
-  }
   &__feedback,
   &__price {
     display: flex;
@@ -55,16 +54,18 @@
   }
   &__code {
     margin-bottom: 15px;
+    @include font-style;
   }
   &__feedback {
     margin-bottom: 20px;
-
+    @include font-style;
     &__review {
       margin-top: 1px;
     }
   }
   &__price {
     margin-bottom: 20px;
+    @include font-style;
     &__text {
       padding-top: 5px;
     }
