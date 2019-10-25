@@ -25,7 +25,7 @@ $cardPaddingListX: 40px;
   box-sizing: border-box;
   border-radius: 5px;
   padding: 30px 14px 15px;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
 
   &-image {
     padding: 0 5px;
@@ -52,28 +52,34 @@ $cardPaddingListX: 40px;
 
 .card__rating {
   @include text_style;
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-top: 15px;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
 }
-// поменять классы, доработать 
-.card__stars-block {
-  width: 91px;
+
+.stars {
   display: flex;
-  justify-content: space-between;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  div:nth-child(-n + 5) {
+    @include stars;
+    background: url("../images/star.svg") no-repeat;
+  }
 }
 
-.card__stars-active {
-  @include stars;
-  background: url("../images/star-active.svg") no-repeat;
+.stars__star {
+  margin-right: 5px;
 }
 
-.сard__stars-non-active {
-  @include stars;
-  background: url("../images/star.svg") no-repeat;
+@for $star_number from 1 to 6 {
+  .stars-#{$star_number} > div:nth-child(-n + #{$star_number}) {
+    @include stars;
+    background: url("../images/star-active.svg") no-repeat;
+  }
 }
 
 .card__value {
@@ -111,7 +117,7 @@ $cardPaddingListX: 40px;
   font-size: 14px;
   text-transform: uppercase;
   box-sizing: border-box;
-  margin-top: 21px;
+  margin-top: 20px;
 }
 
 .button:hover {
