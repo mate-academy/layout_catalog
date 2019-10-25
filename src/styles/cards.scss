@@ -44,20 +44,16 @@
 
     &--price {
       width: 170px;
-      display: flex;
       margin-top: 18px;
+      display: flex;
       justify-content: space-between;
 
-      &-word {
-        font-size: 11px;
-        line-height: 13px;
-        text-align: left;
+      &--word {
         align-self: flex-end;
       }
 
       &--in-hrn {
         font-size: 16px;
-        line-height: 19px;
         font-weight: bold;
       }
     }
@@ -94,11 +90,13 @@
 .stars__star {
   width: 15px;
   height: 15px;
+  background: url("../images/star.svg") no-repeat;
+}
 
-  &--active {
-    background: url("../images/star-active.svg") no-repeat;
-  }
-  &--no-active {
-    background: url("../images/star.svg") no-repeat;
+@for $i from 1 through 5 {
+  .stars-#{$i} {
+    .stars__star:nth-child(-n + #{$i}) {
+      background: url("../images/star-active.svg") no-repeat;
+    }
   }
 }
