@@ -1,12 +1,7 @@
 @import "variables";
 @import "mixins";
 
-%isActive {
-  background-image: url("../images/star-active.svg");
-  cursor: pointer;
-}
-
-.cards {
+.card {
   box-sizing: border-box;
   width: 200px;
   height: 403px;
@@ -51,40 +46,6 @@
     width: 100%;
     align-items: baseline;
   }
-}
-
-.cards-container {
-  margin-top: 50px;
-}
-
-.rate {
-  &__details-stars {
-    @include flex-space-between;
-    flex-direction: row;
-    width: 91px;
-    align-self: flex-start;
-  }
-
-  &__details-star {
-    width: 13px;
-    height: 12px;
-    background-image: url("../images/star.svg");
-    background-size: cover;
-    cursor: pointer;
-  }
-}
-
-.price {
-  &__details-title {
-    @include descriptionTitle;
-  }
-
-  &__details-sum {
-    @include descriptionTitle;
-  }
-}
-
-.card {
   &__button {
     background: $hoverColor;
     border-radius: 5px;
@@ -109,7 +70,37 @@
   }
 }
 
+.card-container {
+  margin-top: 50px;
+}
+
+.stars {
+  @include flex-space-between;
+  flex-direction: row;
+  width: 91px;
+  align-self: flex-start;
+
+  &__star {
+    width: 13px;
+    height: 12px;
+    background-image: url("../images/star.svg");
+    background-size: cover;
+    cursor: pointer;
+  }
+}
+
+.price {
+  &__details-title {
+    @include descriptionTitle;
+  }
+
+  &__details-sum {
+    @include descriptionTitle;
+  }
+}
+
 .products {
+  max-width: 944px;
   margin: 0 40px;
   @include flex-space-between;
   flex-wrap: wrap;
@@ -131,7 +122,7 @@
   margin-top: 16px;
 }
 
-.cards-title {
+.card-title {
   margin: 44px 0 5px;
 }
 
@@ -139,8 +130,8 @@
   margin-top: 21px;
 }
 
-@for $i from 1 through 4 {
-  .rate__details-star:nth-child(#{$i}) {
-    @extend %isActive;
+@for $i from 1 through 5 {
+  .stars-#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
   }
 }
