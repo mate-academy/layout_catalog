@@ -100,30 +100,31 @@ $padding: 40px;
     line-height: 40px;
     text-transform: uppercase;
     margin-top: 20px;
+    &:hover {
+      background-color: #fff;
+      border: 1px solid $color;
+      color: $color;
+    }
   }
-
-  &__buy:hover {
-    background-color: #fff;
-    border: 1px solid $color;
-    color: $color;
-  }
-
 }
 
 .stars {
-  width: 91px;
   @include flex-space-between;
+  width: 91px;
 
-  @for  $i from 1 through 4 {
-    &__star:nth-child(-n+#{$i}) {
-      background: url("../images/star-active.svg") no-repeat;
-      width: $size-star;
-      height: $size-star;
-    }
-    &__star:last-child {
-      background: url("../images/star.svg") no-repeat;
-      width: $size-star;
-      height: $size-star;
+  div:nth-child(-n + 5) {
+    background: url("../images/star.svg") no-repeat;
+    width: $size-star;
+    height: $size-star;
+  }
+
+  @for $i  from 1 through 5 {
+    &-#{$i} {
+      .stars__star:nth-child(-n+#{$i}) {
+        background: url("../images/star-active.svg") no-repeat ;
+        width: $size-star;
+        height: $size-star;
+      }
     }
   }
 }
