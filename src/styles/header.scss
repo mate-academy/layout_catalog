@@ -1,64 +1,46 @@
-@import "variables";
 @import "mixin";
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin-bottom: 50px;
 }
 
-.logo {
-  height: 40px;
-  width: 40px;
-  align-self: center;
-
-  & img {
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.nav {
-  list-style: none;
+.menu {
   display: flex;
-  justify-content: space-around;
-  margin: 0;
 
-  &__item {
+  &__element {
     margin-left: 20px;
+  }
 
-    &-link {
-      display: inline-block;
+  &__link {
+    display: block;
+    padding: 22.5px 0 23px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+
+    &.is-active {
+      color: $moyo-color;
       position: relative;
-      line-height: 60px;
-      white-space: nowrap;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: black;
-      font-family: $main-font;
-      @include regular-font;
 
-      &:hover {
-        color: $main-color;
+      &::after {
+        content: "";
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        background-color: $moyo-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
       }
     }
-  }
-}
 
-.is-active {
-  color: $main-color;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    height: 4px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: $main-color;
-    border-radius: 8px;
+    &:hover {
+      color: $moyo-color;
+    }
   }
 }

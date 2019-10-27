@@ -1,113 +1,89 @@
-@import "variables";
 @import "mixin";
 
-.container {
-  max-width: 945px;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 40px 50px;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-
 .card {
-  box-sizing: border-box;
-  width: 200px;
-  height: 403px;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  padding: 30px 15px 14px;
-  font-family: $main-font;
-  margin-bottom: 50px;
-}
-
-.img {
-  height: 134px;
-  width: 160px;
-  margin: 0 5px;
-}
-
-.desc {
-  display: inline-block;
-  margin: 41px 0 0;
-  line-height: 15px;
-  @include regular-font;
-}
-
-.code {
-  @include small-font;
-  margin: 6px 0 0;
-  display: inline-block;
-  line-height: 13px;
-}
-
-.feedback {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-  @include small-font;
+  flex-flow: column nowrap;
+  padding: 15px 14px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  width: 200px;
+  border-radius: 5px;
 
-  &__star {
+  &__image {
+    width: 160px;
+    height: 134px;
+    position: relative;
+    top: 15px;
+    margin-bottom: 60px;
+    align-self: center;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__reviews {
     display: flex;
     justify-content: space-between;
-    width: 91px;
-
-    &-img {
-      background-image: url(../images/star-active.svg);
-      background-repeat: no-repeat;
-      height: 15px;
-      width: 15px;
-      margin: 0;
-
-      &gray {
-        background-image: url(../images/star.svg);
-      }
-    }
+    align-items: center;
+    margin-bottom: 17px;
   }
-}
 
-.price {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  align-items: center;
-
-  &__name {
-    @include small-font;
+  &__price {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   &__sum {
     font-size: 16px;
     font-weight: bold;
   }
-}
-
-.buy {
-  display: flex;
-  align-items: center;
-  margin: 20px 0 15px;
 
   &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $moyo-color;
+    background-color: $moyo-color;
+    border-radius: 5px;
     box-sizing: border-box;
-    display: inline-block;
-    text-decoration: none;
     color: white;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
-    height: 40px;
-    width: 100%;
-    background-color: $main-color;
-    border-radius: 5px;
-    line-height: 40px;
-    text-align: center;
 
     &:hover {
-      color: $main-color;
       background-color: #fff;
-      border: 1px solid $main-color;
-      box-sizing: border-box;
+      color: $moyo-color;
+      border: 1px solid $moyo-color;
       border-radius: 5px;
+    }
+  }
+}
+
+.rating {
+
+  &__star {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    background: url(../images/star.svg) no-repeat center;
+  }
+
+  @for $i from 5 through 1 {
+    &--#{$i} :nth-child(-n+#{$i}) {
+      background: url(../images/star-active.svg) no-repeat center;
     }
   }
 }
