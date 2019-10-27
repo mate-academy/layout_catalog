@@ -1,0 +1,89 @@
+@import "mixin";
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 15px 14px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  width: 200px;
+  border-radius: 5px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    position: relative;
+    top: 15px;
+    margin-bottom: 60px;
+    align-self: center;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__sum {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $moyo-color;
+    background-color: $moyo-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+
+    &:hover {
+      background-color: #fff;
+      color: $moyo-color;
+      border: 1px solid $moyo-color;
+      border-radius: 5px;
+    }
+  }
+}
+
+.rating {
+
+  &__star {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    background: url(../images/star.svg) no-repeat center;
+  }
+
+  @for $i from 5 through 1 {
+    &--#{$i} :nth-child(-n+#{$i}) {
+      background: url(../images/star-active.svg) no-repeat center;
+    }
+  }
+}
