@@ -1,4 +1,4 @@
-@import "variables";
+@import "mixins","variables";
 
 .product {
   display: flex;
@@ -23,86 +23,67 @@
   &__title {
     width: 100%;
     margin-bottom: 16px;
-  }
 
-  &__title--ahead {
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: 500;
-    font-style: normal;
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-
-  &__title--code {
-    display: block;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 13px;
+    &--ahead {
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 500;
+      font-style: normal;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  
+    &--code {
+      display: block;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 13px;
+    }
   }
 
   &__rating {
     @include flexPack;
     margin-bottom: 18px;
     height: 14px;
-  }
 
-  &__evaluation {
-    display: flex;
-    padding-left: 1px;
-    margin-top: 1px;
-  }
-
-  &__rating--star {
-    @include flexPack;
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
-    background-repeat: no-repeat;
-  }
-
-  @for $i from 1 through 5 {
-    @if $i != 5 {
-      &__rating--star:nth-child(#{$i}) {
-        background-image: url("../images/star-active.svg");
-      }
+    &--star {
+      @include flexPack;
+      width: 15px;
+      height: 15px;
+      margin-right: 4px;
+      background-repeat: no-repeat;
     }
-    @else {
-      &__rating--star:nth-child(#{$i}) {
-        background-image: url("../images/star.svg");
-      }
+  
+    &--reviews {
+      align-self: flex-start;
+      display: block;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 14px;
     }
-  }
-
-  &__rating--reviews {
-    align-self: flex-start;
-    display: block;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 14px;
   }
 
   &__price {
     @include flexPack;
     margin-bottom: 20px;
-  }
 
-  &__price--text {
-    align-self: flex-end;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 13px;
-  }
-
-  &__price--sum {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    margin-top: 1px;
+    &--text {
+      align-self: flex-end;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 13px;
+    }
+  
+    &--sum {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      margin-top: 1px;
+    }
   }
 
   &__button {
@@ -127,6 +108,38 @@
   }
 }
 
+.stars {
+  @include flexPack;
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+  }
+}
+
+@for $i from 1 through 5 {
+  @for $k from 1 through 5 {
+    .stars-#{$i} .stars__star:nth-child(#{$k}) {
+      background-image: url("../images/star-active.svg");
+      @if $k > $i {
+        background-image: url("../images/star.svg");
+      }
+    }
+  }
+}
+
 .product:nth-child(4n) {
   margin-right: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .product:nth-child(4n) {
+    margin-right: 48px;
+  }
+
+  .product:nth-child(3n) {
+    margin-right: 0;
+  }
 }
