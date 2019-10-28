@@ -1,22 +1,12 @@
 @import "variables";
 @import "mixins";
 
-.title {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-}
-
 .flex__container {
-  $cardWidth: 200px;
-  $cardListGapX: 48px;
-  $cardPadding: 40px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   justify-content: center;
-  max-width: 4 * $cardWidth + 3 * $cardListGapX + 2 * $cardPadding;
-  margin: 0 auto;
-  padding: 0 $cardPadding;
+  grid-template-columns: repeat(4, 200px);
+  column-gap: 48px;
+  row-gap: 50px;
 }
 
 .product-card {
@@ -28,12 +18,7 @@
   border-radius: 5px;
   background: #fff;
   box-sizing: border-box;
-  margin: 0 48px 50px 0;
   padding: 30px 14px 15px;
-  &:nth-of-type(4),
-  &:last-of-type {
-    margin-right: 0;
-  }
   &__image {
     display: block;
     height: 134px;
