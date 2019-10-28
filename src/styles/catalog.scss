@@ -1,16 +1,10 @@
 @import "variables";
 
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   justify-content: center;
-  $cardWidth: 200px;
-  $cardGapX: 48px;
-  $padX: 40px;
-  $padY: 50px;
-  width: 2 * $padX + 2 * $padY + 4 * $cardWidth + 3 * $cardGapX;
-  padding: $padY $padX;
-  margin: 0 auto;
+  grid-template-columns: repeat(4, $cardWidth);
+  grid-gap: $cardGapY $cardGapX;
 }
 
 .product {
@@ -22,11 +16,6 @@
   background: #fff;
   box-sizing: border-box;
   padding: 30px 14px 15px;
-  margin: 0 48px 50px 0;
-  &:nth-of-type(4),
-  &:last-of-type {
-    margin-right: 0;
-  }
   &__picture {
     display: block;
     @include w-h(160px, 134px);
