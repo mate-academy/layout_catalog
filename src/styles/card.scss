@@ -29,12 +29,8 @@
   }
 
   &__subtitle,
-  &__review,
   &__price-title {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 13px;
+    @include style-font;
   }
 
   .class__feedback {
@@ -48,6 +44,7 @@
     justify-content: flex-end;
     margin-top: 1px;
     margin-left: auto;
+    @include style-font;
   }
 
   &__price {
@@ -55,13 +52,13 @@
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 21px;
-  }
 
-  &__price-number {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
+    &-number {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 
   &__link {
@@ -74,7 +71,6 @@
     box-sizing: border-box;
     background: $main-color;
     border-radius: 5px;
-
     text-transform: uppercase;
     color: #fff;
     font-style: normal;
@@ -82,16 +78,11 @@
     font-size: 14px;
     line-height: 16px;
     text-align: center;
-  }
 
-  &__link--hover {
-    background: #fff;
-    color: $main-color;
-  }
-
-  &__link:hover {
-    background: #fff;
-    color: $main-color;
+    &:hover {
+      background: #fff;
+      color: $main-color;
+    }
   }
 }
 
@@ -100,15 +91,15 @@
     display: flex;
     justify-content: space-between;
     width: 91px;
-  }
 
-  &-block__star {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background-image: url("../images/star.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+    &__star {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-image: url("../images/star.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   @for $i from 1 through 5 {
