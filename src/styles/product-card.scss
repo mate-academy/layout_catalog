@@ -1,24 +1,25 @@
 @import "variables-mixins";
 
 .card {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 15px 14px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(6, auto);
+  padding: 30px 14px 15px;
   box-sizing: border-box;
   border: 1px solid #f3f3f3;
   width: 200px;
   border-radius: 5px;
 
   &__image {
+    grid-column: 1 / 3;
     width: 160px;
     height: 134px;
-    position: relative;
-    top: 15px;
-    margin-bottom: 60px;
-    align-self: center;
+    margin-bottom: 45px;
+    justify-self: center;
   }
 
   &__title {
+    grid-column: 1 / 3;
     margin-bottom: 5px;
     font-size: 12px;
     font-weight: 500;
@@ -26,31 +27,31 @@
   }
 
   &__code {
+    grid-column: 1 / 3;
     margin-bottom: 15px;
   }
 
   &__reviews {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 17px;
+    justify-self: end;
+    margin-bottom: 22px;
   }
 
   &__price {
     margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    align-self: end;
   }
 
   &__sum {
+    margin-bottom: 20px;
+    justify-self: end;
     font-size: 16px;
     font-weight: bold;
   }
 
   &__link {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-column: 1 / 3;
+    justify-items: center;
     align-items: center;
     height: 40px;
     border: 1px solid $moyo-color;
@@ -72,6 +73,7 @@
 }
 
 .rating {
+  width: max-content;
 
   &__star {
     display: inline-block;
