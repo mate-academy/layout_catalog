@@ -6,14 +6,13 @@ h1 {
   font-size: 0;
 }
 
-.nav {
+.header {
   @include flex-space-between;
   align-items: center;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
-  padding: 8px 50px;
+  padding: 0 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &__logo {
@@ -26,40 +25,34 @@ h1 {
   @include flex-space-between;
   flex-wrap: nowrap;
   white-space: nowrap;
-  width: 753px;
   font-weight: 500;
 
   &__link {
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 14px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 60px;
+    margin-left: 20px;
 
     &:not(.menu__link--active) {
       color: black;
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      cursor: pointer;
     }
 
     &--active {
       color: $hoverColor;
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      text-decoration: none;
-      cursor: pointer;
 
       &::after {
         background-color: $hoverColor;
         display: block;
         content: "";
-        height: 4px;
+        height: 2px;
         border-radius: 8px;
         width: 100%;
         position: absolute;
-        top: 32px;
+        bottom: 0;
       }
     }
 
@@ -70,7 +63,7 @@ h1 {
 }
 
 @media screen and (max-width: 900px) {
-  .nav {
+  .header {
     display: none;
   }
 }

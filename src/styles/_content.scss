@@ -1,6 +1,13 @@
 @import "variables";
 @import "mixins";
 
+.products {
+  margin: 0 auto;
+  max-width: 944px;
+  @include flex-space-between;
+  flex-wrap: wrap;
+}
+
 .card {
   box-sizing: border-box;
   width: 200px;
@@ -46,13 +53,13 @@
     width: 100%;
     align-items: baseline;
   }
+
   &__button {
     background: $hoverColor;
     border-radius: 5px;
     outline: none;
     border: none;
     margin-top: 20px;
-    font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
@@ -78,11 +85,10 @@
   @include flex-space-between;
   flex-direction: row;
   width: 91px;
-  align-self: flex-start;
 
   &__star {
-    width: 13px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     background-image: url("../images/star.svg");
     background-size: cover;
     cursor: pointer;
@@ -93,18 +99,13 @@
   &__details-title {
     @include descriptionTitle;
   }
+  &__details {
+    margin-top: 19px;
+  }
 
   &__details-sum {
     @include descriptionTitle;
   }
-}
-
-.products {
-  max-width: 944px;
-  margin: 0 40px;
-  @include flex-space-between;
-  flex-wrap: wrap;
-
 }
 
 .description {
@@ -113,21 +114,17 @@
 
 @media screen and (min-width: 1200px) {
   .products {
-    margin: 0 128px;
+    margin: 0 auto;
   }
 }
 
 .card-img-background {
   background-color: red;
-  margin-top: 16px;
+  margin-top: 15px;
 }
 
 .card-title {
-  margin: 44px 0 5px;
-}
-
-.price__details {
-  margin-top: 21px;
+  margin: 45px 0 5px;
 }
 
 @for $i from 1 through 5 {
