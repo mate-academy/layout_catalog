@@ -4,8 +4,9 @@
 .products {
   margin: 0 auto;
   max-width: 944px;
-  @include flex-space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-column-gap: 48px;
+  grid-template-areas: ". . . .";
 }
 
 .card {
@@ -15,40 +16,41 @@
   padding: 15px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
+  justify-self: start;
 
-  &__item {
+  &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__item-img {
+  &__inner-img {
     width: 160px;
     height: 134px;
     background-image: url("../images/imac.jpeg");
     background-size: cover;
   }
 
-  &__item-title {
+  &__inner-title {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
 
   }
 
-  &__item-code {
+  &__inner-code {
     width: 101px;
     height: 13px;
     align-self: flex-start;
     margin-bottom: 16px;
   }
 
-  &__item-rate {
+  &__inner-rate {
     @include flex-space-between;
     width: 100%;
   }
 
-  &__item-price {
+  &__inner-price {
     @include flex-space-between;
     width: 100%;
     align-items: baseline;
