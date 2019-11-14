@@ -50,3 +50,13 @@ current[0].className = current[0].className.replace(" isActive", "");
 this.className += " isActive";
 });
 }
+
+let menu = document.getElementById("nav-link");
+let link = menu.getElementsByClassName("nav-ref");
+for (let i = 0; i < link.length; i++) {
+    link[i].addEventListener("click", function() {
+    let current = document.getElementsByClassName("is-active");
+  current[0].className = current[0].className.replace(" is-active", "");
+  this.className += " is-active";
+  });
+}
