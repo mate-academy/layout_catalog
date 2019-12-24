@@ -1,15 +1,14 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-.product {
-  width: 202px;
+.product--item {
+  width: 200px;
   height: 403px;
-  padding: 30px 15px 15px;
+  padding: 30px 14px 15px;
   box-sizing: border-box;
   background: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  text-align: center;
   font-family: $text-font;
 }
 
@@ -22,8 +21,6 @@
 
 .product--name {
   margin: 0 0 6px;
-  text-align: justify;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
@@ -36,32 +33,29 @@
 
 .product--code {
   margin: 0 0 15px;
-  font-family: $text-font;
   font-size: 11px;
   line-height: 13px;
-  text-align: left;
 }
 
 .product--stars {
   display: flex;
-}
-
-.product--stars div {
-  background: url(../images/star-active.svg) no-repeat center;
-  width: 15px;
-  height: 15px;
-  margin-right: 4px;
-}
-
-.product--stars div:last-child {
-  background-image: url(../images/star.svg);
-  margin: 0;
+  div {
+    background: url(../images/star-active.svg) no-repeat center;
+    width: 15px;
+    height: 15px;
+    margin: 0 4px 0 0;
+    &:last-child {
+      background-image: url(../images/star.svg);
+      margin: 0;
+    }
+  }
 }
 
 .product--reviews {
-  @include flex-vertical-centered;
   margin: 0 0 21px;
+  display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .review--link {
@@ -71,11 +65,11 @@
   font-weight: normal;
   font-size: 11px;
   line-height: 13px;
-  text-align: right;
 }
 
 .product--price {
   @include flex-vertical-centered;
+
   margin: 0 0 20px;
   font-size: 11px;
   line-height: 13px;
@@ -105,10 +99,11 @@
   border: $decoration-color solid 1px;
   background-color: $decoration-color;
   border-radius: 5px;
-}
-
-.button:hover {
-  background-color: #fff;
-  border: $decoration-color solid 1px;
-  color: $decoration-color;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    border: $decoration-color solid 1px;
+    color: $decoration-color;
+    outline: none;
+  }
 }
