@@ -1,3 +1,202 @@
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+}
+
+$color-lightblue: #00acdc;
+
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  @include flex-centered;
+  justify-content: space-between;
+  height: 60px;
+  padding-right: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+
+  .logo {
+    margin-left: 50px;
+    width: 40px;
+    height: 40px;
+    .logo-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .header-nav {
+    height: 100%;
+
+    .nav-list {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+      height: 100%;
+      padding: 0;
+      list-style: none;
+
+      .nav-item:not(:last-of-type) {
+        margin-right: 20px;
+      }
+
+      .nav-link {
+        @include flex-centered;
+        height: 100%;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+        color: #000;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .is-active,
+      .nav-link:hover {
+        color: $color-lightblue;
+      }
+
+      .is-active::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 8px;
+        background-color: $color-lightblue;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 40px;
+  max-width: 999px;
+  margin: auto;
+
+  &__item {
+    width: 200px;
+    box-sizing: border-box;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding: 15px;
+    padding-left: 14px;
+    margin-bottom: 50px;
+  }
+
+  &__item:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0;
+    background-size: cover;
+    padding: 15px 5px 41px;
+  }
+
+  &__information {
+    padding-bottom: 20px;
+  }
+
+  &__about {
+    margin: 0;
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &__code {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  &__feedback {
+    @include flex-centered;
+    justify-content: space-between;
+    padding-top: 15px;
+    height: 16px;
+    margin-left: 1px; /* нужно что бы stars и price не прыгали*/
+    margin-right: -1px; /* нужно что бы stars и price не прыгали*/
+  }
+
+  &__stars {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    background: url("../images/star.svg");
+    background-repeat: no-repeat;
+    border-radius: 0.5px;
+    margin-right: 4px;
+  }
+
+  &__star:nth-child(-n+4) {
+    background: url("../images/star-active.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__review {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  &__price {
+    @include flex-centered;
+    justify-content: space-between;
+    padding-top: 18px;
+  }
+
+  &__word {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0;
+    align-self: flex-end;
+  }
+
+  &__number {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  &__link {
+    width: 170px;
+    height: 40px;
+    @include flex-centered;
+    justify-content: center;
+    border: 1px solid $color-lightblue;
+    background-color: $color-lightblue;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 16px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__link:hover {
+    color: $color-lightblue;
+    background-color: #fff;
+  }
+
 }
