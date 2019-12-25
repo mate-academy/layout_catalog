@@ -1,14 +1,18 @@
 # Frontend practice with catalog page
+
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-    - [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+   - [DEMO LINK](https://Mikhail-88.github.io/layout_catalog/)
+   - [TEST REPORT LINK](https://Mikhail-88.github.io/layout_catalog/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
-___
+
+---
 
 ## The task
+
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
 
 ## Common mistakes
+
 - **IMPORTANT** Save and push your changes to github manually after `deploy`
 - Add **ALL** the `data-qa` attributes and `class="is-active"` required in the task
 - Do not use tabs. Use 2 spaces for indentation.
@@ -17,6 +21,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - Pay attention to `:hover` state
 
 ## Requirements:
+
 - use SCSS in this task
 - pay attention the mock is responsive. Develop the layout to fit on `1024px` and `1200px` the same as on the mock.
 - reset browser's default margins
@@ -29,5 +34,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки и компьютеры`)
 - add attribute `data-qa="card"` to the first card
 - add attribute `data-qa="card-hover"` to the link `Купить` inside first card
+
 ---
+
 ![screenshot](./references/catalog-example.png)
