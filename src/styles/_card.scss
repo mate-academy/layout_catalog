@@ -1,3 +1,12 @@
+@mixin positions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+$main-color: #fff;
+$active-color: #00acdc;
+
 .card {
   box-sizing: border-box;
   width: 200px;
@@ -34,16 +43,12 @@
   }
 
   &__value {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include positions;
     margin-top: 15px;
   }
 
   &__price {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include positions;
     margin-top: 20px;
   }
 
@@ -58,15 +63,15 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 40px;
-    color: #fff;
-    background-color: #00acdc;
+    color: $main-color;
+    background-color: $active-color;
     border-radius: 5px;
   }
 
   &__bottom:hover {
-    background-color: #fff;
-    border: 1px solid #00acdc;
-    color: #00acdc;
+    background-color: $main-color;
+    border: 1px solid;
+    color: $active-color;
   }
 
   &__price-number {
