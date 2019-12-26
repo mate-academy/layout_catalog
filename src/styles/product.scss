@@ -1,8 +1,11 @@
 @import "variables";
-
-.products {
+@mixin flex-space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.products {
+  @include flex-space-between;
   flex-wrap: wrap;
   margin: 50px auto 0;
   max-width: 992px;
@@ -12,7 +15,7 @@
   max-width: 200px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  padding: 30px 14px 14px;
+  padding: 30px 14px 15px;
   margin: 0 24px 50px;
 
   &__image {
@@ -22,10 +25,6 @@
     margin: 0 auto 45px;
   }
 
-  &__info {
-    margin-bottom: 15px;
-  }
-
   &__title {
     font-size: 12px;
     font-weight: 500;
@@ -33,43 +32,33 @@
     line-height: 15px;
   }
 
-  &__code,
+  &__code {
+    display: block;
+    font-size: 11px;
+    margin: 0 0 15px;
+  }
+
   &__feedback,
-  &__price_title {
+  &__price-label {
     font-size: 11px;
     margin: 0;
+    line-height: 13px;
   }
 
-  &__price_title {
-    line-height: 19px;
-  }
-
-  &__rate,
   &__price {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__rate {
+    @include flex-space-between;
     align-items: center;
     margin-bottom: 20px;
   }
 
-  &__stars {
-    display: flex;
-  }
-
-  &__stars > &__star {
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
-    background-image: url(/images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &__stars > &__star:nth-child(-n+4) {
-    background-image: url(/images/star-active.svg);
-  }
-
-  &__price_amount {
+  &__price-amount {
     font-weight: bold;
     line-height: 19px;
   }
@@ -93,6 +82,23 @@
   &__btn:hover {
     color: $moyo-color;
     background-color: #fff;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__item {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:nth-child(-n+4) {
+      background-image: url(/images/star-active.svg);
+    }
   }
 }
 
