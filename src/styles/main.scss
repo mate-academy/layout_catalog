@@ -10,6 +10,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+// HEADER
 .header {
   @include flex-centered;
   justify-content: space-between;
@@ -17,84 +18,77 @@ body {
   padding-right: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 50px;
+}
 
-  .logo {
-    margin-left: 50px;
-    width: 40px;
-    height: 40px;
-    .logo-img {
-      width: 40px;
-      height: 40px;
-    }
+.logo {
+  margin-left: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+.navigation {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    list-style: none;
   }
 
-  .header-nav {
+  &__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    @include flex-centered;
     height: 100%;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+  }
 
-    .nav-list {
-      display: flex;
-      justify-content: flex-end;
-      margin: 0;
-      height: 100%;
-      padding: 0;
-      list-style: none;
+  &--is-active,
+  &__link:hover {
+    color: $color-lightblue;
+  }
 
-      .nav-item:not(:last-of-type) {
-        margin-right: 20px;
-      }
-
-      .nav-link {
-        @include flex-centered;
-        height: 100%;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 14px;
-        text-transform: uppercase;
-        color: #000;
-        text-decoration: none;
-        position: relative;
-      }
-
-      .is-active,
-      .nav-link:hover {
-        color: $color-lightblue;
-      }
-
-      .is-active::after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 4px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        border-radius: 8px;
-        background-color: $color-lightblue;
-      }
-    }
+  &--is-active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 8px;
+    background-color: $color-lightblue;
   }
 }
 
-.row {
+// MAIN SECTION (card)
+.main-section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+}
 
-  &__item {
-    width: 200px;
-    box-sizing: border-box;
-    border: 1px solid #f3f3f3;
-    border-radius: 5px;
-    padding: 15px;
-    padding-left: 14px;
-    margin: 0 24px 50px;
-  }
-
-  &__item:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
-  }
+.card {
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 15px;
+  padding-left: 14px;
+  margin: 0 24px 50px;
 
   &__img {
     width: 160px;
@@ -102,10 +96,6 @@ body {
     margin: 0;
     background-size: cover;
     padding: 15px 5px 41px;
-  }
-
-  &__information {
-    padding-bottom: 20px;
   }
 
   &__about {
@@ -127,25 +117,6 @@ body {
     height: 16px;
     margin-left: 1px; /* нужно что бы stars и price не прыгали*/
     margin-right: -1px; /* нужно что бы stars и price не прыгали*/
-  }
-
-  &__stars {
-    display: flex;
-    align-self: flex-end;
-  }
-
-  &__star {
-    width: 15px;
-    height: 15px;
-    background: url("../images/star.svg");
-    background-repeat: no-repeat;
-    border-radius: 0.5px;
-    margin-right: 4px;
-  }
-
-  &__star:nth-child(-n+4) {
-    background: url("../images/star-active.svg");
-    background-repeat: no-repeat;
   }
 
   &__review {
@@ -175,27 +146,73 @@ body {
     margin: 0;
     align-self: flex-start;
   }
+}
 
-  &__link {
-    width: 170px;
-    height: 40px;
-    @include flex-centered;
+.card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+}
+
+.card-stars {
+  display: flex;
+  align-self: flex-end;
+
+  &__item {
+    width: 15px;
+    height: 15px;
+    background: url("../images/star.svg");
+    background-repeat: no-repeat;
+    border-radius: 0.5px;
+    margin-right: 4px;
+  }
+
+  &__item:nth-child(-n+4) {
+    background: url("../images/star-active.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.card-link {
+  width: 170px;
+  height: 40px;
+  margin-top: 20px;
+  @include flex-centered;
+  justify-content: center;
+  border: 1px solid $color-lightblue;
+  background-color: $color-lightblue;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 16px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.card-link:hover {
+  color: $color-lightblue;
+  background-color: #fff;
+}
+
+@media  screen and (max-width: 950px) {
+  .header {
+    height: 100%;
     justify-content: center;
-    border: 1px solid $color-lightblue;
-    background-color: $color-lightblue;
-    border-radius: 5px;
-    box-sizing: border-box;
-    text-decoration: none;
-    line-height: 16px;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #fff;
+    padding: 15px 0 20px;
   }
 
-  &__link:hover {
-    color: $color-lightblue;
-    background-color: #fff;
+  .navigation__list {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
   }
 
+  li {
+    height: 20px;
+    margin-top: 5px;
+  }
+
+  .logo {
+    margin: 0 50px 0 0;
+  }
 }
