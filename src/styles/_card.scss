@@ -1,6 +1,7 @@
 @import "_variables", "_mixins";
 
 .card {
+  box-sizing: border-box;
   width: 200px;
   height: 402px;
   background: $white;
@@ -9,15 +10,11 @@
   padding: 30px 14px 15px;
   margin: 0 24px 51px;
 
-  &__photo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 45px;
-
-    &-img {
-      width: 160px;
-      height: 134px;
-    }
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 45px;
   }
 
   &__name {
@@ -57,7 +54,6 @@
   &__reviews {
     @include font-normal(11px);
     line-height: 13px;
-    text-align: right;
   }
 
   &__price {
@@ -69,38 +65,36 @@
     &-caption {
       @include font-normal(11px);
       line-height: 13px;
-      text-align: right;
     }
 
     &-value {
       @include font-bold(16px);
       line-height: 19px;
-      text-align: right;
     }
   }
 
-  &__buy {
+  &__link {
     display: flex;
     width: 170px;
+    text-decoration: none;
+  }
 
-    &-button {
-      width: 100%;
-      height: 40px;
-      background-color: $sky-blue;
-      border: 1px solid $sky-blue;
-      border-radius: 5px;
-      color: $white;
-      font-style: normal;
-      @include font-bold(14px);
-      text-transform: uppercase;
-      line-height: 16px;
-      text-align: center;
-      cursor: pointer;
+  &__button {
+    width: 100%;
+    height: 40px;
+    background-color: $sky-blue;
+    border: 1px solid $sky-blue;
+    border-radius: 5px;
+    color: $white;
+    @include font-bold(14px);
+    text-transform: uppercase;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
 
-      &:hover {
-        color: $sky-blue;
-        background-color: $white;
-      }
+    &:hover {
+      color: $sky-blue;
+      background-color: $white;
     }
   }
 }
