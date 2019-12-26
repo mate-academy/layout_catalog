@@ -27,7 +27,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - reuse the header from [Moyo header](https://github.com/mate-academy/layout_moyo-header#moyo-header)
 - card's width is `200px` without borders
 - add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки и компьютеры`)
-- add attribute `data-qa="card"` to the first card
+- add attribute `data-qa="card"` to the first card 
 - add attribute `data-qa="card-hover"` to the link `Купить` inside first card
 ---
 ![screenshot](./references/catalog-example.png)
