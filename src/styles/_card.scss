@@ -10,14 +10,14 @@
   padding: 14px;
   margin: 0 24px 50px;
 
-  &--image {
+  &__image {
     align-self: center;
     width: 160px;
     height: 134px;
     margin: 16px 5px 0;
   }
 
-  &--name {
+  &__name {
     @include display-inline-block;
 
     font-size: 12px;
@@ -26,19 +26,19 @@
     margin-top: 41px;
   }
 
-  &--id {
+  &__id {
     @include display-inline-block;
     font-size: 11px;
     line-height: 13px;
     margin-top: 5px;
   }
 
-  .review--box {
+  .review-box {
     @include display-flex-sb;
 
     margin-top: 14px;
 
-    &-stars {
+    &__stars {
       @include display-flex;
     
       .star {
@@ -47,14 +47,10 @@
         height: 15px;
         width: 15px;
         margin-right: 4px;
-    
-        &:nth-child(-n+4) {
-          background-image: url("../images/star-active.svg");
-        }
       }
     }
 
-    &-reviews {
+    &__reviews {
       font-size: 11px;
       line-height: 13px;
       align-self: center;
@@ -67,25 +63,25 @@
     align-items: center;
     margin-top: 20px;
 
-    &--name {
+    &__name {
       font-size: 11px;
       line-height: 13px;
     }
 
-    &--price {
+    &__price {
       font-size: 16px;
       font-weight: bold;
       line-height: 19px;
     }
   }
 
-  &--link {
+  &__link {
     @include display-flex;
 
     margin-top: 20px;
   }
 
-  &--buy-button {
+  &__buy-button {
     @include border-5px-radius ($blue-color);
 
     width: 100%;
@@ -103,5 +99,11 @@
       background: $white-color;
       color: $blue-color;
     }
+  }
+}
+
+@for $i from 1 to 5 {
+  .stars__#{$i} .star:nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
   }
 }

@@ -1,4 +1,5 @@
-@import "_variables";
+@import "variables";
+@import "mixins";
 
 .header {
   @include display-flex-sb;
@@ -11,16 +12,22 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 50px;
 
-  &--logo {
+  &__logo {
     height: 40px;
     vertical-align: middle;
   }
 }
 
-.nav--menu {
+.nav__list {
   @include display-flex;
 
-  &-item {
+  &_item {
+    list-style: none;
+    margin-left: 20px;
+  }
+
+  &_link {
+    display: block;
     color: #000;
     font-weight: 500;
     font-size: 12px;
@@ -28,14 +35,11 @@
     text-decoration: none;
     line-height: 60px;
 
-    &:not(:last-of-type) {
-      margin-right: 20px;
-    }
-
     &:hover {
       color: $blue-color;
     }
   }
+
 }
 
 .is-active {
