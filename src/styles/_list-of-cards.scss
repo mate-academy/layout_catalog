@@ -1,16 +1,16 @@
 @import "variables";
 
-.card__wrapper {
+.main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 999px;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
   width: 200px;
-  padding: 30px 14px 15px;
+  padding: 30px 14px 14px;
   margin: 0 24px 50px;
   font-size: 11px;
   border: 1px solid $border-color;
@@ -19,41 +19,40 @@
   &:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
   }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 0 auto 45px;
+  }
+  
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    margin: 0 auto 5px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__rate {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.card__img {
-  width: 160px;
-  height: 134px;
-  display: block;
-  margin: 0 auto;
-}
-
-.card__info {
-  margin-top: 45px;
-  margin-bottom: 15px;
-}
-
-.card__title {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 15px;
-  margin-bottom: 5px;
-}
-
-.card__rate {
-  width: 100%;
-  margin-bottom: 20px;
+.stars {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.card__stars {
-  display: flex;
-  align-items: center;
-}
-
-.card__star {
+.stars__item {
   width: 15px;
   height: 15px;
 
@@ -79,11 +78,12 @@
 }
 
 .card__value {
+  margin: 0;
   font-size: 16px;
   font-weight: bold;
 }
 
-.card__button {
+.button {
   width: 100%;
   font-family: $font-stack;
   font-size: 14px;
@@ -94,6 +94,8 @@
   border-radius: 5px;
   background-color: $active-color;
   line-height: 36px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 
   &:hover {
     color: $active-color;
