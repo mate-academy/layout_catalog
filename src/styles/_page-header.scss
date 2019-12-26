@@ -1,59 +1,78 @@
 @import "variables";
 
-.menu__wrapper {
-  width: 100%;
-  height: 60px;
-  padding: 0 50px;
-  margin-bottom: 50px;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+.menu {
+  
+  &__wrapper {
+    width: 100%;
+    height: 60px;
+    padding: 0 50px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
 
-.menu__logo {
-  height: 40px;
-}
+  &__logo {
+    height: 40px;
+  }
 
-.menu__list {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__list {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.menu__item {
-  position: relative;
-  height: 100%;
-  line-height: 60px;
-  font-weight: 500;
-  font-size: $font-size-medium;
-  text-transform: uppercase;
-  color: #000;
-  text-decoration: none;
-  transition: 0.2s;
-}
+  &__item {
+    position: relative;
+    height: 100%;
+    line-height: 60px;
+    font-weight: 500;
+    font-size: $font-size-medium;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    transition: 0.2s;
+  }
 
-.menu__item:not(:last-child) {
-  margin-right: 20px;
-}
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
 
-.is-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  border-radius: 8px;
-  background-color: $accent-color;
-  transition: 0.2s;
-  display: block;
-}
+  &__list .is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $accent-color;
+    transition: background-color 0.2s,
+      color 0.2s;
+    display: block;
+  }
 
-.menu__item:hover,
-.is-active {
-  color: $accent-color;
-  transition: 0.2s;
+  &__item:hover,
+  &__list .is-active {
+    color: $accent-color;
+  }
+
+  @media (max-width: 980px) {
+    &__item {
+      font-size: $font-size-small;
+    }
+  
+    &__item:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    &__list {
+      display: none;
+    }
+  }
 }
