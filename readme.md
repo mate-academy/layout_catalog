@@ -9,7 +9,7 @@ ___
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
 
 ## Common mistakes
-- **IMPORTANT** Save and push your changes to github manually after `deploy` 
+- **IMPORTANT** Save and push your changes to github manually after `deploy`
 - Add **ALL** the `data-qa` attributes and `class="is-active"` required in the task
 - Do not use tabs. Use 2 spaces for indentation.
 - Don't use repeated styles.
