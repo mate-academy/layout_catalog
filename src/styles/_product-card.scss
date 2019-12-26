@@ -62,6 +62,9 @@ p {
   line-height: 40px;
   font-size: 14px;
   text-decoration: none;
+
+  transition: color 500ms,
+    background-color 500ms;
 }
 
 .card__button:hover {
@@ -76,7 +79,7 @@ p {
   align-items: flex-end;
 }
 
-.raiting__stars {
+.stars {
   height: 15px;
 }
 
@@ -87,6 +90,8 @@ p {
   background: url(/images/star.svg) no-repeat center;
 }
 
-.count-stars > .stars__element:nth-child(-n+4) {
-  background-image: url(/images/star-active.svg);
+@for $i from 0 through 5 {
+  .stars--#{$i} > .stars__element:nth-child(-n+#{$i}) {
+    background-image: url(/images/star-active.svg);
+  }
 }
