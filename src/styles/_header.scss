@@ -1,0 +1,72 @@
+@import "variables";
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  $size: 40px;
+  width: $size;
+  height: $size;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 60px;
+  line-height: 14px;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  @include reset-list;
+}
+
+.nav__item .is-active {
+  color: $color-decor;
+  position: relative;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav-link {
+  display: block;
+  line-height: 14px;
+  padding: 23px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-style: normal;
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.nav-link:hover {
+  color: $color-decor;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  display: block;
+  background: $color-decor;
+  border-radius: 8px;
+}

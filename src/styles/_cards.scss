@@ -1,0 +1,130 @@
+@import "variables";
+$line-height: 13px;
+$font-weight: bold;
+
+.card__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.card {
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  padding: 30px 14px 15px;
+  margin: 0 auto;
+  font-size: 11px;
+  line-height: 15px;
+  color: #000;
+}
+
+.card__image {
+  display: block;
+  width: 160px;
+  height: 134px;
+  margin: 0 auto 45px;
+}
+
+.card__title {
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.card__code {
+  line-height: $line-height;
+  margin: 2px 0 5px;
+}
+
+.card__rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  line-height: $line-height;
+}
+
+.card__stars {
+  display: flex;
+
+  .card__star {
+    background: url("../images/star.svg") no-repeat center;
+    margin-right: 4px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .card__star:nth-child(-1n + 4) {
+    background: url("../images/star-active.svg") no-repeat center;
+  }
+}
+
+.card__price {
+  margin: 10px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: $line-height;
+}
+
+.price__value {
+  font-size: 16px;
+  font-weight: $font-weight;
+  line-height: 19px;
+}
+
+.card__button {
+  width: 170px;
+  height: 40px;
+  border-radius: 5px;
+  background: $color-decor;
+  border: none;
+  cursor: pointer;
+}
+
+.card__link {
+  font-family: $main-font;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-style: normal;
+  font-weight: $font-weight;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.card__button:hover {
+  border: 1px solid $color-decor;
+  background: #fff;
+}
+
+.card__button:hover .card__link {
+  color: $color-decor;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    margin: 0 24px 50px;
+  }
+
+  .card:nth-child(4n) {
+    margin-right: 128px;
+  }
+
+  .card:nth-child(4n+1) {
+    margin-left: 128px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card:nth-child(4n) {
+    margin-right: 40px;
+  }
+
+  .card:nth-child(4n+1) {
+    margin-left: 40px;
+  }
+}
