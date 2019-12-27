@@ -1,0 +1,122 @@
+@import "mixin";
+@import "variables";
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 403px;
+  padding: 30px 15px 15px;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    display: block;
+
+    max-width: 160px;
+    height: 134px;
+    margin: 0 auto 45px;
+
+    background: url("images/imac.jpeg") no-repeat;
+  }
+
+  &__description {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 6px;
+  }
+
+  &__code {
+    font-weight: normal;
+    font-size: $font-size-s;
+    line-height: 13px;
+    margin-bottom: 15px;
+  }
+
+  &__rate {
+    @include flex-center;
+    // display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .stars {
+      @include flex-center;
+      // display: flex;
+      // align-items: center;
+
+      &__star {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 4px;
+        background: url(../images/star-active.svg) center no-repeat;
+      }
+    }
+    .stars--4 .stars__star:nth-child(5) {
+      background: url(../images/star.svg) center no-repeat;
+      margin-right: 0;
+    }
+
+    &__feedback {
+      font-weight: normal;
+      font-size: $font-size-s;
+      line-height: $line-height;
+      text-align: right;
+    }
+  }
+
+  .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+
+    &__name {
+      font-weight: normal;
+      font-size: $font-size-s;
+      line-height: $line-height;
+      text-align: right;
+    }
+
+    &__price {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: right;
+    }
+  }
+
+  &__button {
+    display: block;
+
+    width: 100%;
+    margin: 0 auto;
+
+    line-height: 40px;
+    height: 40px;
+    font-weight: 700;
+    font-size: $font-size-m;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background-color: $color-blue;
+    color: $color-white;
+    border: 1px solid transparent;
+  }
+
+  &__button:hover {
+    border: 1px solid $color-blue;
+    color: $color-blue;
+    background-color: $color-white;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+}
