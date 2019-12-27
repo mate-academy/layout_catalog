@@ -1,0 +1,121 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  height: 403px;
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 30px auto 45px;
+  }
+
+  .info {
+    width: 170px;
+    margin: 0 auto 15px;
+
+    &__description {
+      font-weight: 500;
+      width: 170px;
+      font-size: $font-size-s;
+      line-height: 15px;
+    }
+
+    &__code {
+      margin-top: 5px;
+      font-weight: normal;
+      font-size: $font-size-es;
+      line-height: 13px;
+    }
+
+    &__rate {
+      @include flex-center;
+
+      // display: flex;
+      // justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+
+      .stars {
+        display: flex;
+        align-items: center;
+
+        &__star {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          margin-right: 4px;
+          background: url(../images/star-active.svg) center no-repeat;
+        }
+      }
+
+      .stars--4 .stars__star:nth-child(5) {
+        background: url(../images/star.svg) center no-repeat;
+        margin-right: 0;
+      }
+
+      &__feedback {
+        font-size: $font-size-es;
+        line-height: 13px;
+        text-align: right;
+      }
+    }
+
+    &__price {
+      @include flex-center;
+
+      // display: flex;
+      // justify-content: space-between;
+      align-items: baseline;
+      margin: 20px 0;
+
+      &__name {
+        font-size: $font-size-es;
+        line-height: 13px;
+      }
+
+      &__number {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+      }
+    }
+
+    &__button {
+      display: block;
+      box-sizing: border-box;
+
+      width: 170px;
+      height: 40px;
+      line-height: 38px;
+      margin: 0 auto;
+      text-align: center;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: $font-size-m;
+      text-decoration: none;
+      color: $color-white;
+
+      border-radius: 5px;
+      background-color: $color-blue;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    &__button:hover {
+      border: 1px solid $color-blue;
+      color: $color-blue;
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+}
