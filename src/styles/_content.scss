@@ -1,14 +1,16 @@
 .main {
   margin: 50px auto;
   font-size: 11px;
-  display: flex;
+  display: grid;
+  grid-template: 1fr 1fr / 200px 200px 200px 200px;
   justify-content: space-between;
-  flex-wrap: wrap;
   max-width: 944px;
 
   @media screen and (max-width: 980px) {
     padding: 10px 40px;
     justify-content: space-around;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
@@ -22,7 +24,7 @@
   box-sizing: border-box;
 
   @media screen and (max-width: 980px) {
-    margin: 0 20px;
+    margin: auto;
   }
 
   &__image {

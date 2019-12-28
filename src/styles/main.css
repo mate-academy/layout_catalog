@@ -1,7 +1,6 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 40px 1fr;
   font-weight: 500;
   height: 60px;
   padding: 0 50px;
@@ -17,15 +16,12 @@
 
 .header__logo {
   height: 40px;
-}
-@media screen and (max-width: 980px) {
-  .header__logo {
-    margin: 10px auto;
-  }
+  margin: auto;
 }
 
 .nav {
   text-transform: uppercase;
+  text-align: right;
 }
 @media screen and (max-width: 980px) {
   .nav {
@@ -35,6 +31,7 @@
 
 .nav__menu {
   display: flex;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -92,15 +89,17 @@
 .main {
   margin: 50px auto;
   font-size: 11px;
-  display: flex;
+  display: grid;
+  grid-template: 1fr 1fr/200px 200px 200px 200px;
   justify-content: space-between;
-  flex-wrap: wrap;
   max-width: 944px;
 }
 @media screen and (max-width: 980px) {
   .main {
     padding: 10px 40px;
     justify-content: space-around;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
@@ -115,43 +114,53 @@
 }
 @media screen and (max-width: 980px) {
   .product {
-    margin: 0 20px;
+    margin: auto;
   }
 }
+
 .product__image {
   width: 160px;
   height: 134px;
   display: block;
   margin: 16px auto 5px;
 }
+
 .product__title {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   margin: 45px 0 5px;
 }
+
 .product__description {
   line-height: 13px;
   margin: 0;
 }
-.product__cost, .product__rate {
+
+.product__cost,
+.product__rate {
   display: flex;
   justify-content: space-between;
 }
+
 .product__rate {
   margin: 4px 0 2px;
 }
+
 .product__feedback {
   line-height: 14px;
   margin: 12px 0 8px;
 }
+
 .product__cost {
   margin: 1px 0 8px;
   align-items: baseline;
 }
+
 .product__price {
   margin: 13px 0;
 }
+
 .product__value {
   font-size: 16px;
   line-height: 19px;
@@ -161,10 +170,12 @@
 .stars {
   display: flex;
 }
+
 .stars__star {
   content: url(../images/star.svg);
   margin: 4px 5px 0 1px;
 }
+
 .stars__star:nth-child(-n+4) {
   content: url(../images/star-active.svg);
 }
