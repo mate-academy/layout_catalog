@@ -3,16 +3,18 @@
 .stars {
   display: flex;
   height: 15px;
-}
 
-.stars__star {
-  width: 15px;
-  margin-right: 4px;
-  background: no-repeat center url(../images/star.svg);
-}
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      width: 15px;
+      margin-right: 4px;
+      background: no-repeat center url(../images/star.svg);
+    }
+  }
 
-@for $i from 1 through 4 {
-  .stars__star--#{$i} {
-    background: no-repeat center url(../images/star-active.svg);
+  @for $i from 1 through 4 {
+    &--#{$i} {
+      background: no-repeat center url(../images/star-active.svg);
+    }
   }
 }

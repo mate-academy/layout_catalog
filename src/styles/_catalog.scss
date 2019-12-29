@@ -1,17 +1,29 @@
 @import "variables";
 
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1024px;
-  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-row-gap: 50px;
+  grid-column-gap: 48px;
+  justify-content: center;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1023px) {
   .catalog {
-    max-width: 280px;
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (max-width: 780px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (max-width: 530px) {
+  .catalog {
+    grid-template-columns: repeat(1, 200px);
   }
 }
