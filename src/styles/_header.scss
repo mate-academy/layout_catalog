@@ -1,0 +1,60 @@
+@import "variables";
+@import "mixins";
+
+.header {
+  @include display-flex-sb;
+  
+  font-family: $font-main;
+  font-weight: 500;
+  height: 60px;
+  padding: 0 50px;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+
+  &__logo {
+    height: 40px;
+    vertical-align: middle;
+  }
+}
+
+.nav {
+  &__list {
+    @include display-flex;
+  }
+
+  &__item {
+    list-style: none;
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: block;
+    color: #000;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 60px;
+
+    &--is-active {
+      position: relative;
+      color: $blue-color;
+    
+      &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background: $blue-color;
+      }
+    }
+    
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
