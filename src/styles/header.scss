@@ -17,23 +17,26 @@
   }
 }
 
-.nav,
-.nav__list,
-.nav__item,
-.nav__link {
+.nav {
   display: flex;
   align-items: center;
-  height: 100%;
-}
-
-.nav {
   flex-direction: row;
   justify-content: space-around;
+  height: 100%;
 
   &__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   &__item:not(:last-child) {
@@ -41,6 +44,9 @@
   }
 
   &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
     position: relative;
     line-height: 14px;
     font-family: $font;
@@ -49,7 +55,10 @@
     text-transform: uppercase;
     color: $color-black;
     text-decoration: none;
-    transition: color 300ms ease-in-out;
+  }
+
+  &__button {
+    display: none;
   }
 }
 
@@ -68,63 +77,65 @@
   background-color: $color-blue;
 }
 
-.nav__toggler-label {
-  display: none;
-  padding: 20px;
-  color: $color-blue;
-
-}
-
-.nav__toggler-label::before {
-  content: "=";
-}
-
-.nav__toggler:checked ~ .nav__toggler-label::before {
-  content: "x";
-}
-
-.nav__toggler {
-  display: none;
-}
-
 @media screen and (max-width: 949px) {
-  .nav__toggler-label {
-    display: block;
-    font-size: 30px;
-  }
-
   .header {
     position: sticky;
     top: 0;
+    width: 100%;
   }
 
   .nav {
-    justify-content: flex-start;
     width: 100%;
-  }
 
-  .nav__list {
-    display: block;
-    width: 100%;
-  }
+    &__list {
+      display: none;
+      background-color: $color-white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 60px;
+      right: 0;
+      left: 0;
+    }
 
-  .nav__item {
-    margin-right: 20px;
-    border: 1px solid $color-blue;
-  }
+    &__item {
+      width: 100%;
+    }
 
-  .nav__link {
-    background-color: $color-white;
-    color: #35477d;
-    width: 100%;
-    padding-left: 10px;
-  }
+    &__link {
+      width: 100%;
+      background-color: $color-white;
+      color: #35477d;
+      padding-left: 15px;
+      text-align: center;
+      transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+    }
 
-  .nav__link:hover {
-    color: $color-blue;
-  }
+    &__link:hover {
+      color: $color-white;
+      background-color: $color-blue;
+    }
 
-  .nav__toggler:not(:checked) ~ .nav__list {
-    display: none;
+    &__button {
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 2px 2px 3px rgb(55, 89, 128);
+      background-color: $color-blue;
+      outline: none;
+
+      &:active,
+      &:focus ~ .nav__list {
+        display: block;
+      }
+
+      &:hover {
+        background-color: #00b7dc;
+      }
+    }
   }
 }
