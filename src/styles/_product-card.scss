@@ -1,3 +1,9 @@
+@mixin small-text {
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 400;
+}
+
 p {
   margin: 0;
   font-family: Roboto, sans-serif;
@@ -27,6 +33,7 @@ p {
 
   &__id {
     margin-top: 5px;
+    @include small-text;
   }
 
   &__price {
@@ -36,13 +43,11 @@ p {
     align-items: flex-end;
   }
 
-  &__small--text {
-    font-size: 11px;
-    line-height: 13px;
-    font-weight: 400;
+  &__price-text {
+    @include small-text;
   }
 
-  &__huge--text {
+  &__price-value {
     font-size: 16px;
     line-height: 20px;
     font-weight: bold;
@@ -77,6 +82,10 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  &__comment-count {
+    @include small-text;
+  }
 }
 
 .stars {
