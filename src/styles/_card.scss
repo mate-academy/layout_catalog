@@ -7,6 +7,10 @@
   border-radius: 5px;
   padding: 30px 14px 15px;
 
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
   &__img {
     display: block;
     width: 160px;
@@ -39,54 +43,50 @@
     align-items: center;
   }
 
-  &__cost {
+  &__star {
+    height: 15px;
+    width: 15px;
+    background: url(/images/star.svg) no-repeat center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+
+    &:nth-child(-n+4) {
+      background: url(/images/star-active.svg) no-repeat center;
+    }
+  }
+
+  &-cost {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     width: 100%;
     margin-bottom: 20px;
+
+    &__value {
+      font-size: 16px;
+      font-weight: bold;
+    }
   }
 
-  &__value {
-    font-size: 16px;
+  &__button {
+    width: 100%;
+    line-height: 36px;
+    background-color: $color-blue;
+    border-radius: 5px;
+    border: 1px solid $color-blue;
+    color: $color-white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
     font-weight: bold;
+    font-family: $font;
+    transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+
+    &:hover {
+      color: $color-blue;
+      background-color: $color-white;
+    }
   }
-}
-
-.card__button {
-  width: 100%;
-  line-height: 36px;
-  background-color: $color-blue;
-  border-radius: 5px;
-  border: 1px solid $color-blue;
-  color: $color-white;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: $font;
-  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
-}
-
-.card__star {
-  height: 15px;
-  width: 15px;
-  background: url(/images/star.svg) no-repeat center;
-
-  &:not(:last-child) {
-    margin-right: 4px;
-  }
-
-  &:nth-child(-n+4) {
-    background: url(/images/star-active.svg) no-repeat center;
-  }
-}
-
-.card:hover {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
-}
-
-.card__button:hover {
-  color: $color-blue;
-  background-color: $color-white;
 }
