@@ -1,12 +1,10 @@
 @import "variables";
-@mixin flex-space-between {
-  display: flex;
-  justify-content: space-between;
-}
 
 .products {
-  @include flex-space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 25%);
+  justify-items: center;
+  grid-gap: 50px 0;
   margin: 50px auto 0;
   max-width: 992px;
 }
@@ -16,7 +14,7 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 30px 14px 15px;
-  margin: 0 24px 50px;
+  // margin: 0 24px 50px;
 
   &__image {
     display: block;
@@ -53,7 +51,8 @@
   }
 
   &__rate {
-    @include flex-space-between;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
@@ -102,9 +101,20 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .products {
-    max-width: 500px;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, calc(100% / 3));
+  }
+}
+
+@media (max-width: 750px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, 50%);
+  }
+}
+
+@media (max-width: 500px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, 100%);
   }
 }
