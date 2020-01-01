@@ -1,0 +1,92 @@
+@import "variables";
+
+.card {
+  width: 200px;
+  background-color: $color-white;
+  border: 1px solid $color-lightgray;
+  border-radius: 5px;
+  padding: 30px 14px 15px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    margin-top: 45px;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+  }
+
+  &__star {
+    height: 15px;
+    width: 15px;
+    background: url(/images/star.svg) no-repeat center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+
+    &:nth-child(-n+4) {
+      background: url(/images/star-active.svg) no-repeat center;
+    }
+  }
+
+  &-cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &__value {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    line-height: 36px;
+    background-color: $color-blue;
+    border-radius: 5px;
+    border: 1px solid $color-blue;
+    color: $color-white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: $font;
+    transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+
+    &:hover {
+      color: $color-blue;
+      background-color: $color-white;
+    }
+  }
+}
