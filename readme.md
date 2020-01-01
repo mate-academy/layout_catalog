@@ -1,6 +1,6 @@
 # Frontend practice with catalog page
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://Viktorianeimesh.io/layout_catalog/)
+    - [DEMO LINK](https://Viktorianeimesh.github.io/layout_catalog/)
     - [TEST REPORT LINK](https://Viktorianeimesh.github.io/layout_catalog/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
