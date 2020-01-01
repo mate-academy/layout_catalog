@@ -1,3 +1,32 @@
-body {
-  margin: 0;
+@import "mixins";
+@import "variables";
+@import "reset";
+@import "header";
+@import "card";
+
+.body {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  justify-content: center;
+  grid-gap: 51px 48px;
+  max-width: 1024px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: 200px;
+  }
 }

@@ -1,0 +1,105 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  width: 200px;
+  padding: 14px;
+  background: $main-light;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 16px auto 45px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: right;
+  }
+
+  &__text {
+    font-size: 11px;
+    margin: 0;
+  }
+
+  &__code {
+    display: block;
+    margin-bottom: 15px;
+  }
+}
+
+.btn {
+  @include flex-center;
+  width: 100%;
+  line-height: 38px;
+  background: $accent;
+  border-radius: 5px;
+  color: $main-light;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid $accent;
+  transition: border 0.2s  ease-in-out, color 0.2s ease-in-out;
+}
+
+.card:hover .btn {
+  background: $main-light;
+  border: 1px solid $accent;
+  color: $accent;
+}
+
+.rating {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/star.svg);
+    -webkit-background-size: auto;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &__star--active {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  line-height: 14px;
+  margin-bottom: 20px;
+
+  &__value {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+  }
+}
