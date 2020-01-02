@@ -2,10 +2,10 @@
 @import "_mixins.scss";
 
 .cards {
-  @include centered-justify;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-column-gap: 48px;
+  justify-items: center;
 
   .card__wrapper {
     width: 200px;
@@ -95,5 +95,12 @@
       cursor: pointer;
       transition: color 500ms ease-in-out;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 200px);
+    justify-content: center;
   }
 }
