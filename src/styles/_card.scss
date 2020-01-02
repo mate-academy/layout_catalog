@@ -1,0 +1,95 @@
+$button-color:  #00acdc;
+
+@mixin rate-price-display {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
+
+.card {
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 30px 14px 15px;
+  // margin: 0 24px 50px;
+
+  &__photo {
+    width: 100%;
+    height: 134px;
+    margin-bottom: 42px;
+    padding: 0 5px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0 0 6px;
+  }
+
+  &__code {
+    margin: 0 0 15px;
+  }
+
+  .regular-text {
+    font-weight: normal;
+    font-size: 11px;
+  }
+}
+
+.rate,
+.price {
+  @include rate-price-display;
+}
+
+.stars {
+  display: flex;
+
+  &__item {
+    background: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+  }
+
+  &__item:nth-child(-n+4) {
+    background: url(../images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.price {
+  &__value {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: $button-color;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+
+  &__title {
+    display: inline-block;
+  }
+
+  &:hover {
+    border: 1px solid $button-color;
+    border-radius: 5px;
+    background: #fff;
+    color: $button-color;
+  }
+}
