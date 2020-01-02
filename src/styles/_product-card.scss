@@ -1,10 +1,10 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   max-width: 944px;
   min-height: 856px;
   margin: 50px auto;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-items: space-between;
 }
 
 .product-card {
@@ -40,8 +40,9 @@
   }
 
   .price-stroke {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: space-between;
     align-items: baseline;
     margin-top: 20px;
 
@@ -55,14 +56,14 @@
   }
 
   .product-card__button {
-    display: flex;
+    display: grid;
     box-sizing: border-box;
     background-color: #00acdc;
     height: 40px;
     width: 170px;
     border-radius: 5px;
     margin-top: 20px;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     color: #fff;
     font-weight: bold;
@@ -89,18 +90,22 @@
 }
 
 .rate {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  // justify-items: space-between;
   margin-top: 15px;
 
   &__stars {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 15px);
+    // justify-items: ;
+    grid-gap: 4px;
 
     .rate__star {
       background: url("../images/star-active.svg") center no-repeat;
       height: 15px;
       width: 15px;
-      margin-right: 4px;
+      // margin-right: 4px;
     }
 
     .rate__star:last-child {
