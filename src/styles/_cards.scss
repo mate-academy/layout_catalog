@@ -3,9 +3,11 @@ $line-height: 13px;
 $font-weight: bold;
 
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 977px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-gap: 50px 48px;
+  justify-content: center;
+  width: 1100px;
   margin: 50px auto;
 }
 
@@ -13,11 +15,8 @@ $font-weight: bold;
   width: 200px;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
-  box-sizing: border-box;
   padding: 30px 14px 15px;
-  margin: 0 auto;
   font-size: 11px;
-  line-height: 15px;
   color: #000;
 
   &__image {
@@ -106,34 +105,20 @@ $font-weight: bold;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   .card-list {
-    width: 1200px;
-  }
-
-  .card {
-    margin: 0 24px 50px;
-  }
-
-  .card:nth-child(4n) {
-    margin-right: 128px;
-  }
-
-  .card:nth-child(4n+1) {
-    margin-left: 128px;
+    grid-template-columns: repeat(3, 200px);
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 750px) {
   .card-list {
-    width: 1024px;
+    grid-template-columns: repeat(2, 200px);
   }
+}
 
-  .card:nth-child(4n) {
-    margin-right: 40px;
-  }
-
-  .card:nth-child(4n+1) {
-    margin-left: 40px;
+@media screen and (max-width: 500px) {
+  .card-list {
+    grid-template-columns: 200px;
   }
 }
