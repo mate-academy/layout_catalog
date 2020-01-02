@@ -1,0 +1,125 @@
+@import "variables";
+$line-height: 13px;
+$font-weight: bold;
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-gap: 50px 48px;
+  justify-content: center;
+  width: 1100px;
+  margin: 50px auto;
+}
+
+.card {
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding: 30px 14px 15px;
+  font-size: 11px;
+  color: #000;
+  box-sizing: border-box;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 45px;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  &__code {
+    line-height: $line-height;
+    margin: 2px 0 5px;
+  }
+
+  .card-rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    line-height: $line-height;
+  }
+
+  .card-price {
+    margin: 10px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: $line-height;
+
+    &__value {
+      font-size: 16px;
+      font-weight: $font-weight;
+      line-height: 19px;
+    }
+  }
+
+  .card__button {
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    background: $color-decor;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $color-decor;
+      background: #fff;
+    }
+  }
+
+  .card-rate__stars {
+    display: flex;
+
+    .card-rate__star {
+      background: url("../images/star.svg") no-repeat center;
+      margin-right: 4px;
+      width: 15px;
+      height: 15px;
+    }
+
+    .card-rate__star:nth-child(-1n + 4) {
+      background: url("../images/star-active.svg") no-repeat center;
+    }
+  }
+
+  .card__link {
+    font-family: $main-font;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: $font-weight;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .card__button:hover .card__link {
+    color: $color-decor;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card-list {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .card-list {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-list {
+    grid-template-columns: 200px;
+  }
+}
