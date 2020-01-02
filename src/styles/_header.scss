@@ -1,0 +1,58 @@
+@import "_variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    @include centered;
+  }
+}
+
+.navigation {
+  @include centered;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__list li:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__item {
+    @include centered;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: $font-size-normal;
+    line-height: 14px;
+    text-transform: uppercase;
+    height: 60px;
+  }
+
+  &__item:hover {
+    color: $blue-color;
+  }
+
+  &__item--is-active {
+    color: $blue-color;
+    position: relative;
+  }
+
+  &__item--is-active::after {
+    content: "";
+    background-color: $blue-color;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
+  }
+}
