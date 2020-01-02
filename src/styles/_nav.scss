@@ -1,0 +1,66 @@
+.header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__wraper {
+    @include flex-sb-c;
+    padding: 0 50px;
+  }
+
+  &__logo {
+    align-self: center;
+    justify-content: center;
+    height: 40px;
+    margin-right: 20px;
+  }
+}
+
+.navigation {
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: $color-black;
+    height: 60px;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &:active {
+      color: $color-blue;
+      box-shadow: 0 4px 0 $color-blue;
+    }
+  }
+
+}
+
+.is-active {
+  position: relative;
+  color: $color-blue;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-blue;
+    border-radius: 8px;
+  }
+}
