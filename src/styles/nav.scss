@@ -1,0 +1,48 @@
+@import "variables";
+@import "mixins";
+
+.nav {
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    @include font(500, 12px, 60px);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+
+    &.is-active {
+      color: $main-color;
+      position: relative;
+    }
+
+    &.is-active::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      background-color: $main-color;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 2px;
+    }
+
+    &:hover {
+      color: $main-color;
+    }
+
+  }
+
+}
