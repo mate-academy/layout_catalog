@@ -1,0 +1,19 @@
+@import "mixins";
+@import "variables";
+
+.stars {
+  @include flex-space-between;
+  width: 91px;
+  height: 15px;
+
+  &__star {
+    width: 15px;
+    background: url(../images/star.svg) no-repeat;
+
+    @for $i from 1 through 5 {
+      .stars-#{$i} &:nth-child(-n+#{$i}) {
+        background: url(../images/star-active.svg) no-repeat;
+      }
+    }
+  }
+}
