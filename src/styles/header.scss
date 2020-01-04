@@ -1,0 +1,51 @@
+@import "variables";
+
+.header {
+  @include flex-space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 47px;
+}
+
+.logotype {
+  padding: 10px 50px;
+}
+
+.nav--box {
+  list-style-type: none;
+  display: flex;
+  margin: 0 50px 0 0;
+}
+
+.nav--box__link {
+  display: inline-block;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 60px;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 20px;
+
+  &:hover {
+    color: #00acdc;
+  }
+}
+
+.is-active {
+  position: relative;
+  margin-left: 0;
+  color: #00acdc;
+
+  &::after {
+    position: absolute;
+    content: "";
+    @include w-h(100%, 4px);
+    border-radius: 8px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00acdc;
+  }
+}
