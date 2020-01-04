@@ -1,3 +1,27 @@
+@import "reset";
+@import "vars-mixins";
+@import "header";
+@import "nav";
+
 body {
+  font-family: Roboto, sans-serif;
+  @include text(11px, normal, 13px);
+}
+
+.catalog-heading {
+  visibility: hidden;
+  height: 0;
   margin: 0;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, $cardWidth);
+  column-gap: $catalogItemsGapX;
+  row-gap: $catalogItemsGapY;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+@import "product";
+@import "stars";
