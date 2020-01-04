@@ -1,3 +1,133 @@
-body {
+@import "header";
+@import "variables";
+@import "mixin";
+
+html {
+  font-family: $main-font;
+}
+
+body,
+p {
   margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  z-index: -5;
+  height: 0;
+  visibility: hidden;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, #{$cardBoxWidth});
+  justify-content: center;
+  grid-gap: 50px 48px;
+  margin-top: 50px;
+}
+
+.card {
+  width: $cardBoxWidth;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-style: normal;
+  color: #000;
+  padding: 0 15px;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*margin-bottom: 50px;*/
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: auto;
+    padding: 30px 0 45px;
+  }
+  &__description-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+  }
+  &__description-product-code {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    margin-top: 5px;
+  }
+  &__rating {
+    @include flex-space-between;
+    align-items: center;
+    padding: 15px 0 21px;
+  }
+  &__rating-stars {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  &__price-box {
+    @include flex-space-between;
+    align-items: baseline;
+    padding-bottom: 19px;
+  }
+  &__item-text {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+  }
+  &__btn-box {
+    width: 170px;
+    padding-bottom: 15px;
+  }
+  &__price-total {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+  }
+  &__rating-star {
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+  }
+  &__btn {
+    display: block;
+    padding: 11px 10px;
+    background-color: #00acdc;
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 16px;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #fff;
+      color: #00acdc;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} {
+    .card__rating-star:nth-child(#{$i}) ~ .card__rating-star {
+      background-image: url("../images/star.svg");
+    }
+    .card__rating-star:nth-child(-n + #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
 }
