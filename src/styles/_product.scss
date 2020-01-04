@@ -1,0 +1,135 @@
+@import "mixins";
+$prodListGapX: 48px;
+$prodListPaddingX: 40px;
+$prodWidth: 200px;
+
+.card__container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-row-gap: 50px;
+  justify-items: center;
+  margin: 40 auto;
+  padding: 50px 40px;
+
+  .product {
+    display: grid;
+    grid-column-gap: auto;
+    box-sizing: border-box;
+    width: 200px;
+    height: 403px;
+    background: white;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding: 15px 14px;
+    line-height: 15px;
+    @include font-type;
+    text-transform: none;
+    font-weight: normal;
+
+    &__img-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__img {
+      width: 160px;
+      height: 134px;
+      margin: 15px 0 45px;
+    }
+
+    &__description {
+      width: 170px;
+      height: 31px;
+      margin: 0;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    &__item-code {
+      margin: 6px 0 15px;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    &__rate-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 91px;
+    }
+
+    .stars__star {
+      width: 15px;
+      height: 15px;
+      margin-right: 4px;
+      background: url(../images/star.svg) no-repeat;
+    }
+
+    @for $i from 1 to 6 {
+      .stars-#{$i} > div:nth-child(-n + #{$i}) {
+        background-image: url("../images/star-active.svg");
+      }
+    }
+
+    &__rate {
+      margin: 0;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 20px;
+    }
+
+    &__price-name {
+      margin: 0;
+      padding-bottom: 1px;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    &__price-number {
+      margin: 0;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    &__buy-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      background: #00acdc;
+      border: 1px solid white;
+      border-radius: 5px;
+      height: 40px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    &__buy-button:hover {
+      color: #00acdc;
+      background: white;
+      border: 1px solid #00acdc;
+      border-radius: 5px;
+    }
+  }
+}
