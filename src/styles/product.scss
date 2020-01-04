@@ -1,0 +1,64 @@
+@import "vars-mixins";
+
+.main__product {
+  margin-bottom: $catalogItemsGapY;
+}
+
+.product {
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: $cardWidth;
+  padding: 14px;
+
+  &__photo {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 16px auto 45px;
+  }
+
+  &__title {
+    @include text(12px, 500, 15px);
+  }
+
+  &__code {
+    margin-top: 5px;
+  }
+
+  &__rating {
+    @include flex-between;
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+
+  &__price {
+    @include flex-between;
+    align-items: baseline;
+    margin-top: 17px;
+  }
+
+  &__price-number {
+    @include text(16px, bold, 19px);
+  }
+
+  &__buy {
+    @include text(14px, 700, 16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: $color-2;
+    border-radius: 5px;
+    height: 40px;
+    text-transform: uppercase;
+    border: 1px solid $color-2;
+    color: white;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: white;
+      color: $color-2;
+    }
+  }
+}
