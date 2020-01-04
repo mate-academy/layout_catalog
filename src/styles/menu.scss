@@ -1,0 +1,58 @@
+@import "variables-mixins";
+
+.menu {
+  @include flexdefault;
+  justify-content: space-between;
+  padding: $otstup;
+  width: 100%;
+  font-weight: 500;
+
+  &__list {
+    @include flexdefault;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__punct {
+    @include flexdefault;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 0 10px;
+    height: 37px;
+    align-items: flex-end;
+  }
+
+  &__punct:hover {
+    color: $maincolor;
+  }
+
+  &__img {
+    margin-top: 10px;
+    height: 40px;
+  }
+}
+
+li:last-child > a {
+  margin-right: 0;
+}
+
+.is-active {
+  position: relative;
+  color: $maincolor;
+  margin-left: 0;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  background-color: $maincolor;
+  height: 4px;
+  top: 56px;
+  left: 0;
+  right: 0;
+  border-radius: 2px;
+}

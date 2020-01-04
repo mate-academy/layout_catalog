@@ -1,0 +1,108 @@
+@import "variables-mixins";
+
+.article__cost,
+.stars__comments,
+.article__cost-num {
+  margin: 0;
+}
+
+.article {
+  @include flexdefault;
+  @include text-tstyle;
+  width: 200px;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &__jpg {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  &__h2 {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    margin: 0 14px;
+  }
+
+  &__code {
+    @include text-tstyle;
+    margin: 5px 0 0 14px;
+  }
+
+  &__price {
+    @include flexdefault;
+    justify-content: space-between;
+    margin: 20px 14px 0;
+  }
+
+  &__cost {
+    @include text-tstyle;
+    @include flexdefault;
+    align-items: flex-end;
+  }
+
+  &__cost-num {
+    @include flexdefault;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &_link {
+    background-color: $maincolor;
+    margin: 21px 14px 15px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $buy-color;
+    border-radius: 5px;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    &:hover {
+      border: 1px solid $maincolor;
+      background-color: $buy-color;
+      color: $maincolor;
+      line-height: 38px;
+    }
+  }
+}
+
+.stars {
+  @include flexdefault;
+  margin: 16px 0 0 15px;
+  align-items: flex-end;
+
+  &__star {
+    width: 13px;
+    height: 12px;
+    background-size: inherit;
+    margin-right: 6px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__comments {
+    @include text-tstyle;
+    margin-left: 16px;
+    width: 58px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@each $number in $rating-numbers {
+  .rating-#{$number} {
+    @include loop($number);
+  }
+}

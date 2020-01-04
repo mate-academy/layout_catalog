@@ -62,12 +62,12 @@ const config = {
     },
     {
       ...basic,
-      label: 'Card with data-qa_card',
+      label: 'card with data-qa_card',
       selectors: ['[data-qa="card"]'],
     },
     {
       ...basic,
-      label: 'Card with data-qa_card-hover',
+      label: 'card with data-qa_card-hover',
       selectors: ['[data-qa="card"]'],
       hoverSelector: '[data-qa="card-hover"]',
       postInteractionWait: 1000,
