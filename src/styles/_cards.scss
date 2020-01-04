@@ -1,0 +1,97 @@
+@import "variables";
+@import "mixin";
+
+.product {
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  width: $product-card-width;
+  height: 403px;
+  padding: 30px 14px 14px;
+  font-family: $main-font;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+
+  &__picture {
+    width: 160px;
+    height: 134px;
+    margin: 0 5px 41px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 5px;
+    line-height: 15px;
+  }
+
+  &__code {
+    font-weight: normal;
+    font-size: 11px;
+    margin-bottom: 15px;
+    line-height: 13px;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 11px;
+    font-weight: normal;
+  }
+
+  &__price-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__button {
+    background-color: $main-color;
+    display: block;
+    padding: 11px 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__button:hover {
+    border-color: $main-color;
+    color: $main-color;
+    background-color: #fff;
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div:nth-child(-n + 5) {
+    @include stars;
+    background: url("../images/star.svg") no-repeat;
+  }
+}
+
+@for $star_count from 1 to 6 {
+  .stars--#{$star_count} > div:nth-child(-n + #{$star_count}) {
+    @include stars;
+    background: url("../images/star-active.svg") no-repeat;
+  }
+}
