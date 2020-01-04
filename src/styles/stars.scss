@@ -1,0 +1,23 @@
+@import "mixins";
+
+.stars {
+  height: 14px;
+  width: 91px;
+  @include between;
+
+  &__star {
+    width: 14px;
+
+    &:nth-child(-n + 5) {
+      background: url(../images/star.svg) no-repeat 0 0 / 13px;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &-#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background: url(../images/star-active.svg) no-repeat 0 0 / 13px;
+      }
+    }
+  }
+}
