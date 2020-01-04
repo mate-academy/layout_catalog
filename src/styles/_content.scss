@@ -1,0 +1,126 @@
+@import "variables";
+@import "mixins";
+
+.products {
+  margin: 50px auto;
+  max-width: 944px;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 403px;
+  padding: 15px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  justify-self: start;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__inner-img {
+    width: 160px;
+    height: 134px;
+    background-image: url("../images/imac.jpeg");
+    background-size: cover;
+  }
+
+  &__inner-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+  }
+
+  &__inner-code {
+    width: 101px;
+    height: 13px;
+    align-self: flex-start;
+    margin-bottom: 16px;
+  }
+
+  &__inner-rate {
+    @include flex-space-between;
+    width: 100%;
+  }
+
+  &__inner-price {
+    @include flex-space-between;
+    width: 100%;
+    align-items: baseline;
+  }
+
+  &__button {
+    background: $hoverColor;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    width: 170px;
+    height: 40px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: $hoverColor;
+    }
+  }
+}
+
+.stars {
+  @include flex-space-between;
+  flex-direction: row;
+  width: 91px;
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/star.svg");
+    background-size: cover;
+    cursor: pointer;
+  }
+}
+
+.price {
+  &__details-title {
+    @include descriptionTitle;
+  }
+  &__details {
+    margin-top: 19px;
+  }
+
+  &__details-sum {
+    @include descriptionTitle;
+  }
+}
+
+.description {
+  @include description;
+}
+
+.card-img-background {
+  background-color: red;
+  margin-top: 15px;
+}
+
+.card-title {
+  margin: 45px 0 5px;
+}
+
+@for $i from 1 through 5 {
+  .stars-#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
+  }
+}
