@@ -1,0 +1,111 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  width: 200px;
+  height: 403px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 30px 14px 15px;
+  margin-bottom: 51px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 45px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle,
+  &__price-title {
+    @include style-font;
+  }
+
+  .class__feedback {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 21px;
+  }
+
+  &__review {
+    display: inline-block;
+    justify-content: flex-end;
+    margin-top: 1px;
+    margin-left: auto;
+    @include style-font;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 21px;
+  }
+
+  &__price-number {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 40px;
+    border: 1px solid $main-color;
+    box-sizing: border-box;
+    background: $main-color;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  &__link:hover {
+    background: #fff;
+    color: $main-color;
+  }
+}
+
+.stars {
+  &-block {
+    display: flex;
+    justify-content: space-between;
+    width: 91px;
+  }
+
+  &-block__star {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @for $i from 1 through 5 {
+    &-rating__#{$i} &-block__star:nth-child(-n+#{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+}
