@@ -1,12 +1,18 @@
 # Frontend practice with catalog page
+1. Replace `<your_account>` with your Github username in the links
+    - [DEMO LINK](https://andreas-just.github.io/layout_catalog/)
+    - [TEST REPORT LINK](https://andreas-just.github.io/layout_catalog/report/html_report/)
+    - [PULL REQUEST](https://github.com/mate-academy/layout_catalog/pull/30)
+2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
+___
 
 ## Main goal:
 Create HTML page with catalog. Develop semantic page structure.
 
-Use this [mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1) 
+Use this [mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1)
 for development.
 
-If you don't want to see other users cursors you can disable `Multiplayer 
+If you don't want to see other users cursors you can disable `Multiplayer
 Cursors` in figma. [Learn how](https://mate-academy.github.io/layout_task-guideline/figma.html#multiplayer-cursors)
 
 ## Common mistakes
@@ -23,13 +29,13 @@ Cursors` in figma. [Learn how](https://mate-academy.github.io/layout_task-guidel
 * use images from [src/images](src/images)
 * use semantic tags. `<header>`, `<nav>`, `main`
 * pay attention to the shadow below header
-* reuse :hover styles for nav and link inside card from previous tasks 
+* reuse :hover styles for nav and link inside card from previous tasks
 (`header`, `product-cards`)
-* reuse styles for nav-item with `.is-active` class applied from previous task 
+* reuse styles for nav-item with `.is-active` class applied from previous task
 `header`
 * follow styles from the mock
 * card's width is 200px
-* add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки 
+* add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки
 и компьютеры`)
 * add attribute `data-qa="card"` to the first card
 * add attribute `data-qa="card-hover"` to the link `Купить` inside first card
@@ -38,12 +44,3 @@ Screenshot of the catalog page:
 
 ![screenshot](./references/catalog-example.png)
 
----
-**Read the guideline before start**
-
-[Guideline](https://mate-academy.github.io/layout_task-guideline/)
-
-**Result**
-
-- [UPDATE DEMO LINK](https://andreas-just.github.io/layout_catalog/)
-- [UPDATE TEST REPORT LINK](https://andreas-just.github.io/layout_catalog/report/html_report/)
