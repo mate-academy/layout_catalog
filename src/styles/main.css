@@ -1,34 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
-
 /* Variables */
-
-$main-font: "Roboto", sans-serif;
-$menu-item-active-color: #00acdc;
-$buy-btn-color: #00acdc;
-
 /* Extends */
-
-%flex-centered {
+.product-card__buy-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-%flex-space-between {
+.product-card__rating,
+.product-card__price, .row, .header {
   display: flex;
   justify-content: space-between;
 }
 
 /* Mixins */
-
-@mixin border($width, $style, $color) {
-  border: $width $style $color;
-}
-
 /* General styles */
-
 html {
-  font: 100% $main-font;
+  font: 100% "Roboto", sans-serif;
 }
 
 body {
@@ -36,9 +24,7 @@ body {
 }
 
 /* Header */
-
 .header {
-  @extend %flex-space-between;
   align-items: center;
   height: 60px;
   padding: 0 50px;
@@ -72,12 +58,12 @@ body {
 }
 
 .menu__link:hover {
-  color: $menu-item-active-color;
+  color: #00acdc;
 }
 
 .is-active {
   position: relative;
-  color: $menu-item-active-color;
+  color: #00acdc;
 }
 
 .is-active::after {
@@ -87,20 +73,19 @@ body {
   left: 0;
   height: 4px;
   width: 100%;
-  background-color: $menu-item-active-color;
+  background-color: #00acdc;
   border-radius: 8px;
 }
 
 /* Product card */
 .row {
-  @extend %flex-space-between;
   width: 946px;
   margin: 50px auto;
 }
 
 .product-card {
   width: 200px;
-  @include border(1px, solid, #f3f3f3);
+  border: 1px solid #f3f3f3;
   border-radius: 5px;
 }
 
@@ -155,18 +140,12 @@ body {
   margin-top: 15px;
 }
 
-.product-card__rating,
-.product-card__price {
-  @extend %flex-space-between;
-}
-
 .product-card__price {
   align-items: baseline;
   margin-top: 19px;
 }
 
 .product-card__buy-btn {
-  @extend %flex-centered;
   height: 40px;
   box-sizing: border-box;
   font-size: 14px;
@@ -174,19 +153,21 @@ body {
   font-weight: 500;
   color: #fff;
   margin-top: 20px;
-  background-color: $buy-btn-color;
+  background-color: #00acdc;
   text-transform: uppercase;
   text-decoration: none;
-  @include border(1px, solid, $buy-btn-color);
+  border: 1px solid #00acdc;
   border-radius: 5px;
   transition: all 0.1s ease-in;
 }
 
 .product-card__buy-btn:hover {
-  color: $buy-btn-color;
+  color: #00acdc;
   background-color: #fff;
 }
 
 .mr-0 {
   margin-right: 0;
 }
+
+/*# sourceMappingURL=main.css.map */
