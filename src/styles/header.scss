@@ -1,0 +1,58 @@
+$colorActive: #00acdc;
+
+.header {
+  @include SpaceBetween;
+  max-width: 100%;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+
+  &__nav-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+  }
+}
+
+.nav_item {
+  display: flex;
+  margin-right: 20px;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.nav_link {
+  position: relative;
+  margin: 0;
+  padding: 23px 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    color: $colorActive;
+  }
+}
+
+.is-active {
+  color: $colorActive;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  height: 4px;
+  background: $colorActive;
+  border-radius: 8px;
+}
