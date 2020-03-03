@@ -1,0 +1,46 @@
+@import "variables";
+
+.nav {
+  @include flex-space-between;
+  position: sticky;
+  height: 60px;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: $text-fonts;
+  font-size: 12px;
+  font-weight: 500;
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__link {
+    color: #000;
+    margin: 0 5px;
+    padding: 23px 0;
+  }
+
+  &__link:hover {
+    color: $color-link-active;
+  }
+
+}
+
+.is-active {
+  position: relative;
+  color: $color-link-active;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 56px;
+  height: 4px;
+  width: 100%;
+  background-color: $important-color;
+  border-radius: 8px;
+}
