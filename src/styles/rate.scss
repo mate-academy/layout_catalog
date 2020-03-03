@@ -1,0 +1,37 @@
+@import "variables.scss";
+
+.rate {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+
+  &__reviews {
+    line-height: 15px;
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.rating {
+  display: flex;
+
+  &__star {
+    $size: 15px;
+    height: $size;
+    width: $size;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__star:last-child {
+    margin-right: 0;
+  }
+
+  @for $i from 1 to 6 {
+    &--#{$i} .rating__star:nth-child(-n+#{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
