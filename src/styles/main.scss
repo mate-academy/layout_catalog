@@ -1,3 +1,134 @@
+@import "variables.scss";
+@import "header.scss";
+
 body {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.products {
+  width: 944px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  padding: 30px 0 15px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  color: $text-color;
+
+  transition: all 0.5s ease;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    margin-top: 45px;
+  }
+  &__title {
+    margin: 0 0 5px;
+    padding: 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: $text-color;
+  }
+
+  &__title--link {
+    color: $text-color;
+  }
+
+  &__price,
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__sku {
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    align-items: flex-end;
+  }
+  &__price--value {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__reviews {
+    align-items: center;
+  }
+
+  &__button {
+    display: block;
+    box-sizing: border-box;
+    height: 40px;
+    width: 170px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    background-color: $active-color;
+    border: 1px solid $active-color;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    &:hover {
+      background: #fff;
+      color: $active-color;
+      border: 1px solid $active-color;
+    }
+  }
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.card__sku,
+.reviews,
+.card__price--title {
+  font-size: 11px;
+}
+
+.rating__stars {
+  display: flex;
+}
+
+.rating__star {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+  background-image: url("../images/star.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.stars--4 .rating__star:nth-child(-n + 4) {
+  background-image: url("../images/star-active.svg");
 }
