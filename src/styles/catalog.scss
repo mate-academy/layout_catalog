@@ -1,0 +1,106 @@
+.product_card {
+  width: 200px;
+  margin-right: 48px;
+  margin-bottom: $fiftyPix;
+  box-sizing: border-box;
+  background: $colorWhite;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &--photo {
+    display: block;
+    padding: 30px 19px 45px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &--content {
+    padding: 0 14px 15px;
+  }
+
+  &--title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    margin-bottom: 6px;
+  }
+
+  &--id {
+    @include cardSmalltext();
+    margin-bottom: 15px;
+  }
+
+  &--rating {
+    @include flexSpaseBtwn();
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &--review {
+    @include cardSmalltext();
+    text-align: right;
+  }
+
+  &--price {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &--price span:nth-child(1) {
+    @include cardSmalltext();
+    padding-top: 5px;
+  }
+
+  &--price span:nth-child(2) {
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+.stars {
+  display: flex;
+  box-sizing: border-box;
+
+  & div {
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+  }
+
+  &--4 div:nth-child(-n+4) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+
+.button_buy {
+  display: block;
+  padding: 11px 10px;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: $colorBlue;
+  border-radius: 5px;
+  color: $colorWhite;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    border: 1px solid $colorBlue;
+    background: $colorWhite;
+    color: #00acdc;
+  }
+}
