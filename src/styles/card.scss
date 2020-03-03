@@ -1,0 +1,81 @@
+@import "variables";
+@import "mixins";
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  box-sizing: border-box;
+  @include borders(#F3F3F3);
+  border-radius: 5px;
+  padding: 30px 15px 15px;
+  margin-bottom: 50px;
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: auto;
+  }
+  &__capture {
+    font-weight: 500;
+    font-size: $primary-font-size;
+    margin-top: 45px;
+  }
+  &__item-code {
+    margin-top: 6px;
+    @include subcapture-font;
+  }
+  &__rating-section {
+    display: flex;
+    margin-top: 16px;
+  }
+  &__reviews {
+    font-size: 10px;
+    margin-left: 17px;
+  }
+  &__purchase-button {
+    box-sizing: border-box;
+    width: 170px;
+    height: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 12px 57px;
+    background-color: $moyo-primary-color;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    @include borders($moyo-primary-color);
+    border-radius: 5px;
+    &:hover {
+      background-color: white;
+      @include borders($moyo-primary-color);
+      color: $moyo-primary-color;
+    }
+  }
+  &__price-section {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  &__price {
+    @include subcapture-font;
+  }
+  &__value {
+    font-weight: bold;
+    font-size: $large-font;
+  }
+}
+
+.rating-section {
+  &__star-item {
+    width: 15px;
+    height: 15px;
+    background: url("../images/star.svg") no-repeat;
+    margin-right: 4px;
+    &--active-star:nth-child(-n+4) {
+      background: url("../images/star-active.svg") no-repeat;
+    }
+  }
+}
