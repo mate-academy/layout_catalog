@@ -1,9 +1,9 @@
 @import "variables.scss";
 
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 209px 137px 40px;
+  justify-content: center;
   height: 403px;
   width: 200px;
   box-sizing: border-box;
@@ -21,6 +21,10 @@
 
   &:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    text-align: center;
   }
 
   &__product-photo {
@@ -51,22 +55,27 @@
   }
 
   &__price {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     margin-top: 20px;
   }
 
+  &__price-title {
+    justify-self: left;
+    align-self: end;
+  }
+
   &__price-value {
+    justify-self: right;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
   }
 
   &__button {
+    align-self: end;
     height: 40px;
     width: 170px;
-    margin-top: 20px;
     padding: 0;
     box-sizing: border-box;
 
