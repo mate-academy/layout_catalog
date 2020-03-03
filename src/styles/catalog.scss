@@ -1,0 +1,125 @@
+@import "mixins";
+
+.catalog {
+  min-width: 1024px;
+}
+
+.products {
+  @include flex-sb;
+  flex-wrap: wrap;
+  width: 944px;
+  margin: 50px auto;
+}
+
+.product {
+  @include flex-column;
+  box-sizing: border-box;
+  height: 403px;
+  width: 200px;
+  margin-bottom: 50px;
+  color: $testColor;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__item_link {
+    text-decoration: none;
+    color: $testColor;
+  }
+
+  &__photo {
+    display: block;
+    height: 134px;
+    width: 160px;
+    margin: 30px auto;
+  }
+
+  &__info_block {
+    display: block;
+    width: 170px;
+    margin: 15px auto;
+  }
+
+  &__name {
+    display: block;
+    height: 31px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__article {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 4px 0 0;
+  }
+
+  &__rating {
+    @include flex-sb;
+    height: 15px;
+    margin-top: 15px;
+  }
+
+  &__stars {
+    display: flex;
+
+    .star__item {
+      width: 15px;
+      height: 15px;
+      margin-right: 4px;
+      background: url("../images/star.svg") no-repeat center;
+
+      &:nth-child(-n+4) {
+        background: url("../images/star-active.svg") no-repeat center;
+      }
+    }
+
+  }
+
+  &__reviews {
+    font-size: $mainFontSize - 1px;
+    line-height: $mainLineHeight + 2px;
+  }
+
+  &__price {
+    @include flex-sb;
+    align-items: flex-end;
+    font-size: $mainFontSize;
+    line-height: $mainLineHeight;
+    margin: 20px 0;
+
+    &_title {
+      margin: 0;
+    }
+
+    &_unit {
+      margin: 0;
+      font-weight: 700;
+      font-size: $mainFontSize + 4px;
+      line-height: $mainLineHeight + 6px;
+    }
+  }
+
+  &__buy_link {
+    display: block;
+    box-sizing: border-box;
+    width: 170px;
+    height: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 12px;
+    background: $mainColor;
+    color: white;
+    border-radius: 5px;
+    font-size: $mainFontSize + 2px;
+    line-height: $mainLineHeight +3px;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #fff;
+      color: $mainColor;
+      border: 1px solid $mainColor;
+    }
+  }
+}
