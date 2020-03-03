@@ -1,0 +1,41 @@
+
+@import "variables";
+@import "extend";
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  @extend %link-active-shared;
+
+  &:hover {
+    color: $primary-light-blue;
+  }
+}
+
+.is-active {
+  @extend %link-active-shared;
+  color: $primary-light-blue;
+
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 8px;
+    background-color: $primary-light-blue;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+  }
+}
+
+.nav-links:last-child {
+  margin-right: 0;
+}
