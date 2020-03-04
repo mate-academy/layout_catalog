@@ -4,7 +4,7 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: $product-card-width;
   box-sizing: border-box;
   @include borders(#F3F3F3);
   border-radius: 5px;
@@ -74,7 +74,9 @@
     height: 15px;
     background: url("../images/star.svg") no-repeat;
     margin-right: 4px;
-    &--active:nth-child(-n+4) {
+  }
+  @for $var from 1 through 5 {
+    &--#{$var} .rating-section__star-item:nth-child(-n+#{$var}) {
       background: url("../images/star-active.svg") no-repeat;
     }
   }
