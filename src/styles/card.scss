@@ -1,0 +1,58 @@
+@import "./variables";
+@import "./mixins";
+
+.card {
+  padding: $card-padding-vertical $card-padding-sides;
+  width: $card-width;
+  height: 100%;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &__photo {
+    height: $card-photo-height;
+    width: $card-photo-width;
+    background-image: url("../images/imac.jpeg");
+    background-size: $card-photo-width $card-photo-height;
+    background-repeat: no-repeat;
+    margin: 15px 5px 45px;
+  }
+
+  &__name {
+    @include font-medium;
+  }
+
+  &__code {
+    padding-top: 5px;
+
+    &__link {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+    &__link {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  &__price-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 20px;
+  }
+
+  &__price {
+    @include font-big;
+  }
+}

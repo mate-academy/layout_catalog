@@ -1,0 +1,30 @@
+@import "./variables";
+
+.catalog {
+
+  &__visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: $card-width * $card-count + ($card-count - 1) * $card-gapX;
+    margin: 0 auto;
+    list-style-type: none;
+  }
+
+  &__item {
+    margin: $card-margin-top $card-gapX 0 0;
+  }
+
+  &__item:nth-child(#{$card-count}n) {
+    margin: $card-margin-top 0 0;
+  }
+}
