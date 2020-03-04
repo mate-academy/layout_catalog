@@ -1,17 +1,15 @@
-@import "src/styles/variables.scss";
+@import "variables";
 
-.products__item {
+.card {
+  display: flex;
+  flex-direction: column;
   width: 200px;
   height: 403px;
+  box-sizing: border-box;
+  padding: 30px 14px 14px;
 
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-}
-
-.card {
-  @include flex-column;
-  padding: 30px 14px 14px;
-  box-sizing: border-box;
 
   &__photo {
     margin: 0 auto;
@@ -19,29 +17,21 @@
   }
 
   &__title {
-    margin: 0 0 5px;
-    @include fonts-medium;
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
   }
 
   &__code {
-    margin: 0 0 15px;
+    margin-bottom: 15px;
   }
 
   &__rating {
     display: flex;
-
-    &--4 {
-      width: 15px;
-      height: 15px;
-      background-image: url(../../images/star-active.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-right: 4px;
-    }
-
-    &--4:nth-child(5) {
-      background-image: url(../../images/star.svg);
-    }
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   &__reviews {
@@ -49,15 +39,15 @@
     color: #000;
 
     &:hover {
-      color: #00acdc;
+      color: $color-main;
     }
   }
 
   &__price {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin: 0 0 20px;
+    align-items: baseline;
+    margin-bottom: 20px;
 
     &-number {
       margin: 0;
@@ -67,36 +57,5 @@
     &-title {
       margin: 0;
     }
-  }
-}
-
-.user-voice {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.buy-button {
-  display: block;
-  box-sizing: border-box;
-  width: 170px;
-  height: 40px;
-  padding: 11px;
-  border: 1px solid $color;
-  background-color: $color;
-  border-radius: 5px;
-
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 700;
-
-  &:hover {
-    background-color: #fff;
-    color: $color;
   }
 }

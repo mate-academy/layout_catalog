@@ -1,17 +1,21 @@
-@import "src/styles/variables.scss";
+@import "variables";
 
 .products {
-  width: 944px;
-  max-width: $tablet;
-  display: grid;
-  grid-template-columns: repeat(4, 200px);
-  grid-template-rows: repeat(2, 403px);
-  gap: 50px 48px;
-  margin: 0 auto;
-}
+  &__list {
+    width: $cardWidth * $cardAmount + ($cardAmount - 1) * $gapX;
+    max-width: $tablet-width;
+    display: grid;
+    grid-template-columns: repeat($cardAmount, 200px);
+    gap: 50px $gapX;
+    margin: 0 auto;
 
-@media (min-width: $desktop) {
-  .products {
-    max-width: $desktop;
+    list-style: none;
+    padding: 0;
+
+    @media (min-width: $desktop-width) {
+      .products {
+        max-width: $desktop-width;
+      }
+    }
   }
 }

@@ -1,8 +1,9 @@
-@import "src/styles/variables.scss";
+@import "variables";
 
 .nav {
   &__list {
-    @include reset;
+    margin: 0;
+    padding: 0;
     display: flex;
     list-style: none;
   }
@@ -13,9 +14,9 @@
 
   &__link {
     display: block;
-    font-size: $fs;
-    line-height: $lh + 1;
-    font-weight: $fw;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
     padding: 23px 0;
 
     text-decoration: none;
@@ -23,24 +24,23 @@
     color: #000;
 
     &:hover {
-      color: $color;
+      color: $color-main;
+    }
+
+    &--active {
+      position: relative;
+      color: $color-main;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: $color-main;
+        border-radius: 2px;
+        left: 0;
+        bottom: 0;
+      }
     }
   }
-
-  &__link--active {
-    position: relative;
-    color: $color;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 4px;
-      background-color: $color;
-      border-radius: 8px;
-      left: 0;
-      bottom: 0;
-    }
-  }
-
 }
