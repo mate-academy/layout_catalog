@@ -1,12 +1,16 @@
-@import "variables.scss";
+@import "variables";
+@import "mixins";
 
 .catalog {
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(2, 403px);
-    gap: 50px 48px;
-    width: 944px;
+    grid-template-columns: repeat(#{$columns}, #{$cardWidth}px);
+    gap: #{$gapY}px #{$gapX}px;
+    width: #{$contentWidth}px;
     margin: 0 auto 28px;
+  }
+
+  &__headline {
+    @include visibilityHidden;
   }
 }

@@ -1,0 +1,21 @@
+@import "variables";
+
+.rating {
+  display: grid;
+  grid-template-columns: repeat(5, #{$ratingStarSize}px);
+  gap: 0 4px;
+
+  &__star {
+    height: #{$ratingStarSize}px;
+    width: #{$ratingStarSize}px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @for $i from 1 to 6 {
+    &--#{$i} .rating__star:nth-child(-n+#{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}

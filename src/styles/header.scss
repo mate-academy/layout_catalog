@@ -1,72 +1,23 @@
-@import "variables.scss";
+@import "variables";
 
 .header {
   display: grid;
-  grid-template-columns: 40px auto;
-  justify-items: end;
-  height: 60px;
+  grid-template-columns: #{$logoSize}px auto;
+  justify-items: stretch;
+  align-items: center;
+  height: #{$headerHeight}px;
   max-width: 1200px;
-  padding: 0 50px;
+  text-align: right;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
+  &__logo {
+    display: block;
+    height: #{$logoSize}px;
+    width: #{$logoSize}px;
+  }
+
   &__logo-img {
-    $size: 40px;
-    height: $size;
-    width: $size;
-    padding: 10px 0;
-  }
-
-}
-
-.nav {
-  &__list {
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__item {
-    margin-right: 20px;
-    list-style-type: none;
-  }
-
-  &__item:last-child {
-    margin-right: 0;
-  }
-
-  &__link {
-    position: relative;
-    display: inline-block;
-
-    font-family: $main-font;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 60px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #000;
-
-    &:hover {
-      color: $active-color;
-    }
-  }
-}
-
-.is-active {
-  color: $active-color;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 4px;
-
-    background-color: $active-color;
-    border-radius: 8px;
+    height: 100%;
   }
 }
