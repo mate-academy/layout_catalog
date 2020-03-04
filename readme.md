@@ -3,6 +3,7 @@
     - [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
     - [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
+    - Write styles in `src/styles/main.scss` instead of `src/style.css`.
 ___
 
 ## The task
