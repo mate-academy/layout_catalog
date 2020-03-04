@@ -17,6 +17,7 @@
   }
 
   &__name {
+    margin-top: 0;
     margin-bottom: 5px;
     font-family: $textFonts;
     font-weight: 500;
@@ -26,6 +27,7 @@
   }
 
   &__code {
+    margin-top: 0;
     margin-bottom: 15px;
     font-family: $textFonts;
     font-size: 11px;
@@ -47,14 +49,18 @@
   &__star {
     height: 15px;
     width: 15px;
-    background-image: url("../images/star-active.svg");
+    background-image: url("../images/star.svg");
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 4px;
   }
 
-  &__star:last-child {
-    background-image: url("../images/star.svg");
+  &__stars--1 &__star:nth-child(1),
+  &__stars--2 &__star:nth-child(-n+2),
+  &__stars--3 &__star:nth-child(-n+3),
+  &__stars--4 &__star:nth-child(-n+4),
+  &__stars--5 &__star:nth-child(-n+5) {
+    background-image: url("../images/star-active.svg");
   }
 
   &__reviews {
@@ -89,27 +95,27 @@
     line-height: 19px;
     color: #000;
   }
+}
 
-  &__buy-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $activeColor;
-    border: 1px solid $activeColor;
-    box-sizing: border-box;
-    border-radius: 5px;
-    color: #fff;
-    line-height: 40px;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: $textFonts;
+.buy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $activeColor;
+  border: 1px solid $activeColor;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #fff;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: $textFonts;
 
-    &:hover {
-      background-color: #fff;
-      color: $activeColor;
-    }
+  &:hover {
+    background-color: #fff;
+    color: $activeColor;
   }
 }
