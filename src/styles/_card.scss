@@ -1,0 +1,90 @@
+.card {
+  width: 200px;
+  height: 400px;
+  padding: 31px 15px 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  font-size: 11px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 9px;
+  }
+
+  &__photo {
+    width: 160px;
+    height: 134px;
+    margin-left: 5px;
+    margin-bottom: 23px;
+  }
+
+  .description__text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 6px;
+  }
+
+  .description__code {
+    line-height: 12px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .stars__star {
+    background-image: url("../images/star.svg");
+    margin-left: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+  }
+
+  .stars__star:first-child {
+    margin-left: 0;
+  }
+
+  @for $i from 1 to 6 {
+    .stars-#{$i} > div:nth-child(-n + #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+
+  &__price {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .price__text {
+    width: 100%;
+    align-items: baseline;
+  }
+
+  .price__number {
+    font-weight: 700;
+    font-size: 16px;
+    margin-left: 57px;
+  }
+
+  &__button {
+    text-decoration: none;
+    padding: 11px 10px;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    background-color: $background-color;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid $background-color;
+
+    &:hover {
+      color: $background-color;
+      background-color: #fff;
+    }
+  }
+}
