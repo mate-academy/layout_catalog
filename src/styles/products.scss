@@ -1,0 +1,96 @@
+@import "variables";
+@import "mixins";
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: $products-section-width;
+  padding: 50px 40px;
+
+  &--centered-horizontally {
+    margin: 0 auto;
+  }
+}
+
+.product-card {
+  width: $product-card-width;
+  @include border(1px, solid, $product-card-border-color);
+  border-radius: 5px;
+
+  &--bottom-gap {
+    margin-bottom: 50px;
+  }
+
+  &__inner {
+    padding: 15px;
+  }
+
+  &__photo {
+    margin: 15px 5px;
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    margin-top: 45px;
+    margin-bottom: 0;
+  }
+
+  &__code {
+    margin-top: 5px;
+  }
+
+  &__code,
+  &__reviews,
+  &__price-tag {
+    font-size: 11px;
+  }
+
+  &__price-number {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__rating {
+    margin-top: 16px;
+  }
+
+  &__price,
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    align-items: baseline;
+    margin-top: 19px;
+    margin-bottom: 20px;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
+  }
+}
