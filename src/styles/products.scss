@@ -1,8 +1,7 @@
 @import "./variables.scss";
 
 .products {
-  width: 944px;
-  max-width: 1024px;
+  max-width: 944px;
   display: grid;
   grid-template-columns: repeat(4, 200px);
   grid-template-rows: repeat(2, 403px);
@@ -30,8 +29,7 @@
   }
 
   &__name {
-    font-size: $fs;
-    font-weight: $fw500;
+    @extend %font-size12-weight500;
     line-height: 15px;
     margin: 0;
   }
@@ -46,28 +44,24 @@
   &__rating {
     display: flex;
 
-    &__rating-stars {
+    .stars {
       display: flex;
       justify-content: flex-start;
       padding: 0;
       list-style-type: none;
       margin: 0;
-      padding-top: 1px;
-      padding-left: 1px;
+      // padding-top: 1px;
+      // padding-left: 1px;
 
-      .rating-star {
+      &__star {
         width: 15px;
         height: 15px;
         margin-right: 4px;
         background: url(../images/star.svg) no-repeat;
       }
-
-      .rating-star:nth-child(-n+4) {
-        background: url(../images/star-active.svg) no-repeat;
-      }
     }
 
-    &__rating-count {
+    .count {
       @include font-card;
       margin-left: auto;
       align-items: center;
@@ -77,13 +71,13 @@
   &__price {
     margin: 18px 0 20px;
 
-    &__text {
+    &--text {
       @include font-card;
     }
 
-    &__amount {
+    &--amount {
       font-size: 16px;
-      font-weight: $fwBold;
+      font-weight: bold;
       line-height: 19px;
       float: right;
     }
@@ -94,7 +88,7 @@
     text-decoration: none;
     font-size: 14px;
     font-style: normal;
-    font-weight: $fwBold;
+    font-weight: bold;
     line-height: 16px;
     color: #fff;
     text-align: center;
@@ -111,6 +105,14 @@
       border: 1px solid $blueColor;
       border-radius: 5px;
       color: $blueColor;
+    }
+  }
+}
+
+@each $star in $rating-stars {
+  @for $i from 1 to $star {
+    .star--#{$i} .stars__star:nth-child(-n+#{$i}) {
+      background: url(../images/star-active.svg) no-repeat;
     }
   }
 }
