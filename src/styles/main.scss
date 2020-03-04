@@ -1,7 +1,9 @@
-@import "src/styles/_variables.scss";
-@import "src/styles/_nav.scss";
-@import "src/styles/_card.scss";
-@import "src/styles/header.scss";
+@import "_variables";
+@import "_mixins";
+@import "header";
+@import "_nav";
+@import "_card";
+@import "stars";
 
 body,
 h2,
@@ -11,10 +13,10 @@ p {
   color: $colorOfText;
 }
 
-.container {
+.main-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 50px auto;
-  width: calc(200px * 4 + 48px * 3);
+  width: $cardWidth*$columnCount + ($columnCount - 1) * $gapX;
 }
