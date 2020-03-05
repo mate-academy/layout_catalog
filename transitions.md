@@ -4,7 +4,7 @@
   - Pull Request should show only the changes you made during this task and nothing more.
 
 ## Task
-- Make all the changes smooth on hover.
+- Make all the changes smooth on hover (All links and buttons).
 - Increase the card image by 20 percent on hover smoothly during 1s.
 - Add 3px border to the image when hovering.
   - Border should be the same color as the card border.
