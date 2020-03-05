@@ -1,0 +1,116 @@
+@import "./variables.scss";
+
+.products {
+  max-width: 944px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 403px);
+  gap: 50px 48px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 200px;
+  height: 403px;
+  padding: 30px 14px 14px;
+  background: #ffff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    @include flex-align-center;
+    justify-content: center;
+    margin-bottom: 45px;
+  }
+
+  &__name {
+    @extend %font-size12-weight500;
+    line-height: 15px;
+    margin: 0;
+  }
+
+  &__code {
+    @include font-card;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+
+    .stars {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0;
+      list-style-type: none;
+      margin: 0;
+
+      &__star {
+        width: 15px;
+        height: 15px;
+        margin-right: 4px;
+        background: url(../images/star.svg) no-repeat;
+      }
+    }
+
+    .count {
+      @include font-card;
+      margin-left: auto;
+      align-items: center;
+    }
+  }
+
+  &__price {
+    margin: 18px 0 20px;
+
+    &--text {
+      @include font-card;
+    }
+
+    &--amount {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 19px;
+      float: right;
+    }
+  }
+
+  &__purchace {
+    @include flex-align-center;
+    text-decoration: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $blueColor;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: #fff;
+      border: 1px solid $blueColor;
+      border-radius: 5px;
+      color: $blueColor;
+    }
+  }
+}
+
+@each $star in $rating-stars {
+  @for $i from 1 to $star {
+    .star--#{$i} .stars__star:nth-child(-n+#{$i}) {
+      background: url(../images/star-active.svg) no-repeat;
+    }
+  }
+}
