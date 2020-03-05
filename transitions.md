@@ -1,6 +1,6 @@
 # Catalog transitions
 - Create a new branch (for example `smooth-changes`) in your [catalog solution](readme.md)
-- When ready make a Pull Request from your new branch to your develop branch.
+- When ready make a Pull Request from your new branch to your `develop` branch.
   - Pull Request should show only the changes you made during this task and nothing more.
 
 ## Task
