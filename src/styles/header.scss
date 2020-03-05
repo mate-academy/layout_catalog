@@ -1,0 +1,61 @@
+@import "variables";
+
+.header {
+  box-sizing: border-box;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  &__logo {
+    padding: 10px 0;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    margin-left: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    font-size: $mainFontSize;
+    line-height: 60px;
+    font-family: $mainFontFamily;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__link:hover {
+    color: $mainColor;
+  }
+
+  .is-active {
+    margin-left: 0;
+    color: $mainColor;
+  }
+
+  .is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: $mainColor;
+    border-radius: 8px;
+  }
+}

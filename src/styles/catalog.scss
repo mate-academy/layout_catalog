@@ -1,0 +1,139 @@
+@import "variables";
+
+.catalog {
+  margin: 50px auto;
+  min-width: $desktopWeight;
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: $cardWidth * $columnCount + ($columnCount - 1) * $betweenCardWidth;
+  margin: 0 auto;
+
+  &__card {
+    margin-bottom: 50px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 403px;
+  width: 200px;
+  color: $textColor;
+  background-color: #fff;
+
+  &__item-link {
+    text-decoration: none;
+    color: $textColor;
+  }
+
+  &__photo {
+    display: block;
+    height: 134px;
+    width: 160px;
+    margin: 30px auto;
+  }
+
+  &__info {
+    display: block;
+    margin: 15px 14px;
+  }
+
+  &__name {
+    display: block;
+    height: 31px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .code-unit {
+    display: flex;
+    font-size: 11px;
+    line-height: 13px;
+    margin: 4px 0 0;
+
+    &__value {
+      padding-left: 3px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    height: 15px;
+    margin-top: 15px;
+
+    .stars {
+      display: flex;
+
+      &__item {
+        width: 15px;
+        height: 15px;
+        margin-right: 4px;
+        background: url("../images/star.svg") no-repeat center;
+
+        &:nth-child(-n+4) {
+          background: url("../images/star-active.svg") no-repeat center;
+        }
+      }
+    }
+  }
+
+  &__reviews {
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .price-unit {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: $mainFontSize;
+    line-height: $mainLineHeight;
+    margin: 20px 0;
+
+    &__title {
+      font-size: 11px;
+      line-height: 13px;
+      padding-bottom: 1px;
+    }
+
+    &__value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .__button-link {
+    margin-top: 20px;
+  }
+
+  .button {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid $mainColor;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    background: $mainColor;
+    color: white;
+    font-weight: bold;
+    line-height: 38px;
+
+    &:hover {
+      background-color: #fff;
+      color: $mainColor;
+    }
+  }
+}
