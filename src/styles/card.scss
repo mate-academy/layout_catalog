@@ -1,7 +1,8 @@
 @import "variables";
+@import "mixin";
 
 .container {
-  max-width: calc(200px * 4 + 3 * 48px);
+  max-width: calc(#{$widthCard} * 4 + 3 * #{$gap});
   margin: 50px auto;
 }
 
@@ -16,8 +17,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 50px;
-  padding: 0 14px;
+  margin-bottom: 51px;
+  padding: 14px;
   background: #fff;
   border: 1px solid #f3f3f3;
   box-sizing: border-box;
@@ -26,13 +27,11 @@
   .card__img {
     width: 160px;
     height: 134px;
-    margin: 30px auto 45px;
+    margin: 16px auto 45px;
   }
 
   &__text {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 15px;
+    @include primeryFont;
   }
 
   &__code-product {
@@ -41,7 +40,9 @@
   }
 
   &__reviews {
-    @include flex-space-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
     margin-bottom: 20px;
   }
@@ -49,6 +50,13 @@
   &__price {
     @extend .card__reviews;
     align-items: baseline;
+
+    .cost {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 
   &__button {
@@ -63,7 +71,6 @@
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 15px;
   }
 
   &__button:hover {
@@ -72,31 +79,4 @@
     box-sizing: border-box;
     color: $color-link-active;
   }
-}
-
-.stars__row {
-  display: flex;
-  flex-direction: row;
-
-  div {
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
-    background-image: url("../images/star.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-}
-
-.stars--4 {
-  div:nth-child(-n+4) {
-    background-image: url("../images/star-active.svg");
-  }
-}
-
-.price {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
 }
