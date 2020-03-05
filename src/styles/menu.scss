@@ -1,0 +1,42 @@
+@import "./variables";
+
+.menu {
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  width: 758px;
+  $height: 60px;
+  height: 60px;
+  justify-content: space-between;
+  font-size: 12px;
+
+  &__item {
+    list-style-type: none;
+  }
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 60px;
+    color: black;
+
+    &:hover {
+      color: $main-blue-color;
+    }
+  }
+}
+
+.is-active {
+  color: $main-blue-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border: solid $main-blue-color 2px;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+}
