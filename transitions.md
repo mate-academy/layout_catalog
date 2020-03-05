@@ -12,5 +12,6 @@
   - The picture should not "jump".
 - Add padding so the top left and right borders of the image match the outer borders of the card.
 
-![Start](./description/start.png)
-![End](./description/end.png)
+| start | end |
+| ----- | --- |
+| ![Start](./description/start.png) | ![End](./description/end.png) |
