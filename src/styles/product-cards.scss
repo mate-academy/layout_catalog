@@ -1,19 +1,23 @@
 @import "mixins";
 
-.product-card {
-  width: 200px;
-  height: 403px;
-  padding: 30px 14px 13px;
-  margin-bottom: 50px;
-  box-sizing: border-box;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  background: #fff;
+.catalog {
+  &__item {
+    width: 200px;
+    height: 403px;
+    padding: 30px 14px 13px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    background: #fff;
 
-  &:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    &:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    }
   }
+}
 
+.card {
   &__photo {
     display: block;
     width: 160px;
@@ -34,40 +38,26 @@
 
   &__reviews {
     @include centerSpaceBetween;
-    margin-top: 16px;
-  }
-
-  &__star {
-    display: inline-block;
-    height: 12px;
-    width: 13px;
-    margin-left: 3px;
-    background-image: url(../images/star.svg);
-
-    &:first-child {
-      margin-left: 1px;
-    }
-  }
-
-  &--rating-4 :nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
+    margin-top: 15px;
   }
 
   &__cost {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-top: 19px;
+    margin-top: 20px;
   }
 
   &__price {
     font-size: 16px;
     font-weight: bold;
   }
+
   &__button {
     display: flex;
     margin-top: 20px;
   }
+
   &__link {
     text-align: center;
     width: 100%;
@@ -77,7 +67,6 @@
     text-transform: uppercase;
     background: #00acdc;
     color: #fff;
-    text-decoration: none;
     box-sizing: border-box;
     border: 1px solid #00acdc;
     border-radius: 5px;
@@ -85,6 +74,33 @@
     &:hover {
       background: #fff;
       color: #00acdc;
+    }
+  }
+}
+
+%active-star-bg {
+  background-image: url(../images/star-active.svg);
+}
+
+.stars {
+  height: 15px;
+  display: flex;
+
+  &__star {
+    width: 15px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} &__star:nth-child(-n + #{$i}) {
+      @extend %active-star-bg;
     }
   }
 }

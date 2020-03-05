@@ -1,23 +1,24 @@
 @import "mixins";
+@import "variables";
 
 .header {
+  height: $headerHeight;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
 
-.nav {
-  @include centerSpaceBetween;
-  padding: 0 50px;
-  background: #fff;
+  &__container {
+    @include centerSpaceBetween;
+    padding: 0 50px;
+  }
 
-  &__logo {
+  &__link {
     width: 40px;
     height: 40px;
   }
+}
 
+.nav {
   &__list {
     display: flex;
-    justify-content: space-between;
-    width: 757px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -28,8 +29,12 @@
     display: flex;
   }
 
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
   &__link {
-    padding: 23px 0;
+    line-height: $headerHeight;
     font-size: 12px;
     font-weight: 500;
     text-decoration: none;
@@ -53,6 +58,6 @@
     bottom: 0;
     height: 4px;
     background: #00acdc;
-    border-radius: 8px;
+    border-radius: 2px;
   }
 }
