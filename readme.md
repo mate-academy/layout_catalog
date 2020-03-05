@@ -2,7 +2,7 @@
 1. Replace `<your_account>` with your Github username in the links
     - [DEMO LINK](https://andreas-just.github.io/layout_catalog/)
     - [TEST REPORT LINK](https://andreas-just.github.io/layout_catalog/report/html_report/)
-    - [PULL REQUEST](https://github.com/mate-academy/layout_catalog/pull/30)
+    - [PULL REQUEST](https://github.com/mate-academy/layout_catalog/pull/363)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Write styles in `src/styles/main.scss` instead of `src/style.css`.
 ___
