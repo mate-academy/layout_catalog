@@ -2,9 +2,9 @@
 @import "mixins";
 
 .products {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, $product-card-width);
+  grid-gap: 50px 48px;
   max-width: $products-section-width;
   padding: 50px 40px;
 
@@ -17,10 +17,6 @@
   width: $product-card-width;
   @include border(1px, solid, $product-card-border-color);
   border-radius: 5px;
-
-  &--bottom-gap {
-    margin-bottom: 50px;
-  }
 
   &__inner {
     padding: 15px;
