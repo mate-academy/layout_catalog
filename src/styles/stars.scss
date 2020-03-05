@@ -9,11 +9,9 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-    
-.stars--1 .star:first-child,
-.stars--2 .star:nth-child(-n+2),
-.stars--3 .star:nth-child(-n+3),
-.stars--4 .star:nth-child(-n+4),
-.stars--5 .star:nth-child(-n+5) {
-  background-image: url(../images/star-active.svg);
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .star:nth-child(-n+#{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
 }
