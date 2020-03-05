@@ -19,6 +19,15 @@ body {
   padding: 0 50px;
   align-items: center;
 
+  .nav__logo {
+    transition: transform 1s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+    }
+  }
+
   &__list {
     display: flex;
     margin: 0;
@@ -36,6 +45,7 @@ body {
     line-height: 60px;
     font-size: 12px;
     text-transform: uppercase;
+    transition: color 1s;
 
     &:hover {
       color: #00acdc;
@@ -80,13 +90,17 @@ body {
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
-  .img-wrapper {
-    box-sizing: border-box;
-    text-align: center;
+  .card__img {
+    width: 150px;
+    height: 134px;
+    padding: 5px;
+    border: 2px solid transparent;
+    transition: transform 1s, border 1s;
 
-    &__img {
-      width: 160px;
-      height: 134px;
+    &:hover {
+      transform: scale(1.08);
+      border: 2px solid rgb(243, 239, 239);
+      border-radius: 5px;
     }
   }
 
@@ -98,6 +112,12 @@ body {
     padding-bottom: 5px;
     padding-top: 41px;
     margin: 0;
+    transition: font-weight 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      font-weight: 600;
+    }
   }
 
   &__code {
@@ -112,17 +132,17 @@ body {
     padding-bottom: 25px;
     align-items: center;
 
-    &__star--active {
+    &__star {
       display: flex;
-      background: url(./../images/star-active.svg);
+      background: url(./../images/star.svg);
       width: 13px;
       height: 13px;
       background-size: contain;
       margin: 0;
     }
 
-    &__star {
-      background: url(../images/star.svg);
+    &__star--active {
+      background: url(../images/star-active.svg);
       width: 13px;
       height: 13px;
     }
@@ -153,10 +173,13 @@ body {
     background-color: #00acdc;
     text-align: center;
     margin-top: 20px;
+    border: 1px solid #fff;
+    transition: background-color 1s, border 1s;
 
     &:hover {
       background-color: white;
       border: 1px solid #00acdc;
+
     }
 
     &__link {
@@ -168,6 +191,7 @@ body {
       text-transform: uppercase;
       color: #fff;
       text-decoration: none;
+      transition: color 1s;
 
       &:hover {
         color: #00acdc;
