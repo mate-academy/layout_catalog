@@ -2,6 +2,7 @@
 @import "./mixins";
 
 .card {
+  position: relative;
   padding: $card-padding-vertical $card-padding-sides;
   width: $card-width;
   height: 100%;
@@ -15,17 +16,27 @@
     background-image: url("../images/imac.jpeg");
     background-size: $card-photo-width $card-photo-height;
     background-repeat: no-repeat;
-    margin: 15px 5px 45px;
+    margin: 15px 5px 42px;
   }
+
+  /*&__photo:hover {
+    position: relative;
+    height: $card-photo-height * 1.2;
+    width: $card-photo-width * 1.2;
+    border: 3px solid #f3f3f3;
+    box-sizing: border-box;
+    padding: 15px 5px 45px;
+    margin: 0;
+  }*/
 
   &__name {
     @include font-medium;
   }
 
   &__code {
-    padding-top: 5px;
+    margin-top: 5px;
 
-    &__link {
+    .code--link {
       text-decoration: none;
       color: #000;
     }
@@ -36,23 +47,22 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    padding-top: 15px;
-    padding-bottom: 20px;
+    margin: 15px 0 20px;
 
-    &__link {
+    .review--link {
       text-decoration: none;
       color: #000;
     }
   }
 
-  &__price-title {
+  &__price {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-bottom: 20px;
-  }
+    margin-bottom: 20px;
 
-  &__price {
-    @include font-big;
+    .price__value {
+      @include font-big;
+    }
   }
 }
