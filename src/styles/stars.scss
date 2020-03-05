@@ -1,0 +1,22 @@
+@import "variables";
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    width: 15px;
+    height: 15px;
+    background-image: url(../../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+}
+
+@for $star from 1 through 5 {
+  .stars--#{$star} .stars__item:nth-child(-n+#{$star}) {
+    background-image: url(../../images/star-active.svg);
+  }
+}
