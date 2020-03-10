@@ -3,11 +3,13 @@
 .header {
   @include header-font;
   box-sizing: border-box;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: space-between;
+  grid-template-columns: auto 1fr;
   height: 60px;
   padding: 0 50px;
+  margin-bottom: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &-logo {
@@ -17,19 +19,15 @@
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  grid-gap: 20px;
+  justify-content: end;
   margin: 0;
 }
 
 .item {
-  margin-right: 20px;
   list-style: none;
-}
-
-.item:last-child {
-  margin-right: 0;
 }
 
 .menu-link {
