@@ -1,0 +1,21 @@
+@import "variables";
+
+.products {
+  &__list {
+    width: $cardWidth * $cardAmount + ($cardAmount - 1) * $gapX;
+    max-width: $tablet-width;
+    display: grid;
+    grid-template-columns: repeat($cardAmount, 200px);
+    gap: 50px $gapX;
+    margin: 0 auto;
+
+    list-style: none;
+    padding: 0;
+
+    @media (min-width: $desktop-width) {
+      .products {
+        max-width: $desktop-width;
+      }
+    }
+  }
+}
