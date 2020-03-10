@@ -1,0 +1,119 @@
+@import "mixins";
+
+.main {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  width: 944px;
+  margin: 50px auto 19px;
+}
+
+.card {
+  @include display-flex-column;
+  @include content-font;
+  box-sizing: border-box;
+  width: 200px;
+  height: 403px;
+  margin-bottom: 50px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  
+  &__product_photo {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  &__product_photo img {
+    width: 160px;
+    height: 134px;
+  }
+  
+  &__description {
+    box-sizing: border-box;
+    margin: 0 14px 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__content {
+    @include content-font;
+    box-sizing: border-box;
+    margin: 0 14px 14px;
+  }
+
+  &__code {
+    line-height: 13px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 11px 0;
+    background: #00acdc;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: #00acdc;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 1px solid #00acdc;
+      padding: 10px 0;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.star {
+  margin-left: 5px;
+  background: url("../images/star-active.svg") no-repeat;
+  background-position: center;
+  width: 14px;
+  height: 14px;
+}
+
+.price_text {
+  line-height: 14px;
+}
+
+.price_value {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.star:first-child {
+  margin-left: 0;
+}
+
+.star:last-child {
+  background: url("../images/star.svg") no-repeat;
+  background-position: center;
+}
