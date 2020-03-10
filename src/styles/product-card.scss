@@ -1,8 +1,8 @@
-$cardWidth: 200px;
-$cardHeight: 403px;
+@import "variables";
 
 .product-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: $cardWidth;
   height: $cardHeight;
   background: #fff;
@@ -10,64 +10,71 @@ $cardHeight: 403px;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 14px;
+
   &__img-content {
     position: relative;
     height: 134px;
     width: 160px;
     border: 3px solid transparent;
     padding-top: 13px;
-    margin: auto;
+    margin: 0 auto;
     transition: transform 1s ease-in-out;
-
     &:hover {
       transform: scale(1.2);
       border-radius: 3px;
       border-color: #f3f3f3;
     }
   }
+
   &__img {
     width: 100%;
   }
+
   &__content {
-    margin-top: 45px;
+    margin-top: 42px;
   }
+
   &__title {
     font-size: 12px;
-    line-height: 15px;
     font-weight: 500;
-    margin-bottom: 6px;
+    line-height: 15px;
+    margin-bottom: 5px;
   }
+
   &__id {
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 12px;
     margin-bottom: 15px;
   }
+
   &__review {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
+
+  &__info {
+    text-decoration: none;
+    color: #000;
+    transition: color  0.3s ease-in;
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
+
   &__price-panel {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: baseline;
     margin-bottom: 20px;
   }
+
   &__price-value {
-    display: inline-block;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    width: 100%;
-    text-align: right;
   }
-  &__price-name {
-    display: inline-block;
-    font-size: 11px;
-    line-height: 19px;
-  }
+
   &__btn {
     display: flex;
     align-items: center;
@@ -82,7 +89,7 @@ $cardHeight: 403px;
     color: #fff;
     font-size: 14px;
     line-height: 16px;
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     transition: background 0.3s ease-in, color  0.3s ease-in;
