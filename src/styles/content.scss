@@ -1,0 +1,123 @@
+@import "mixins";
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 50px 48px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.card {
+  @include display-flex-column;
+  @include content-font;
+  box-sizing: border-box;
+  width: 200px;
+  height: 403px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  
+  &__product_photo {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+
+    & img {
+      width: 160px;
+      height: 134px;
+      margin-top: 30px;
+      margin-bottom: 45px;
+      transition: 1s;
+    }
+
+    & img:hover {
+      transform: scale(1.2);
+    }
+  }
+  
+  &__description {
+    box-sizing: border-box;
+    margin: 0 14px 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__content {
+    @include content-font;
+    box-sizing: border-box;
+    margin: 0 14px 14px;
+  }
+
+  &__code {
+    line-height: 13px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #00acdc;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 11px 0;
+    background: #00acdc;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 1s;
+
+    &:hover {
+      color: #00acdc;
+      background-color: #fff;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.star {
+  margin-left: 5px;
+  background: url("../images/star-active.svg") no-repeat;
+  background-position: center;
+  width: 14px;
+  height: 14px;
+}
+
+.price_text {
+  line-height: 14px;
+}
+
+.price_value {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.star:first-child {
+  margin-left: 0;
+}
+
+.star:last-child {
+  background: url("../images/star.svg") no-repeat;
+  background-position: center;
+}
