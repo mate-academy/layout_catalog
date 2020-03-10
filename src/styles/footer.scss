@@ -1,14 +1,21 @@
+@import "variables";
+
 .footer {
   box-shadow: 0 -1px #e1e7ed;
   margin-top: 88px;
 
   &__container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 901px;
+    grid-template-columns: 1fr;
     margin: 0 auto;
+    width: calc(100% - 40px);
+    max-width: 900px;
     padding-top: 44px;
     margin-bottom: 43px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   &__title {
@@ -23,5 +30,21 @@
 
   &__item {
     margin-top: 9px;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+
+    &:visited {
+      color: $text-color;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

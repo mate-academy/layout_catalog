@@ -1,22 +1,26 @@
+@import "mixins";
+@import "variables";
 @import "header";
 @import "nav";
 @import "review";
 @import "footer";
 
 @font-face {
-  font-family: Avenir Book;
+  font-family: Avenir;
   src: url(../fonts/Avenir/Avenir-Book.ttf);
+  font-weight: 300;
 }
 
 @font-face {
-  font-family: Avenir Heavy;
+  font-family: Avenir;
   src: url(../fonts/Avenir/Avenir-Heavy.ttf);
+  font-weight: 900;
 }
 
 html {
-  font-family: "Avenir Book", sans-serif;
+  @include font-style-regular;
   font-size: 16px;
-  color: #3d4e61;
+  color: $text-color;
 }
 
 body {
@@ -31,24 +35,42 @@ p {
 .main {
   &__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 901px;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    width: calc(100% - 40px);
     margin: 0 auto;
     padding-top: 33px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
   }
 
   &__big-image {
     width: 100%;
+    height: auto;
   }
 
   &__title {
-    font-family: "Avenir Heavy", sans-serif;
+    @include font-style-heavy;
     font-size: 36px;
     margin: 0;
   }
 
+  &__sidedar {
+
+    @media screen and (min-width: 768px) {
+      justify-self: end;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-top: 33px;
+    }
+  }
+
   &__detail-title {
-    color: #687c94;
+    color: $detail-title-color;
   }
 
   &__detail-list {
@@ -61,13 +83,21 @@ p {
   }
 
   &__contact-link {
+    @include font-style-heavy;
     display: inline-block;
     margin-top: 20px;
-    font-family: "Avenir Heavy", sans-serif;
     text-decoration: none;
 
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+
     &:visited {
-      color: #3d4e61;
+      color: $text-color;
+    }
+
+    &:hover {
+      color: $primary-color;
     }
   }
 
@@ -76,8 +106,8 @@ p {
   }
 
   &__amenities-title {
+    @include font-style-heavy;
     font-size: 20px;
-    font-family: "Avenir Heavy", sans-serif;
   }
 
   &__amenities-list {
@@ -90,6 +120,19 @@ p {
 
   &__amenities-show-all {
     font-weight: bold;
+    text-decoration: none;
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+
+    &:visited {
+      color: $text-color;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   &__reviews {
@@ -97,7 +140,7 @@ p {
 
   }
   &__reviews-title {
-    font-family: "Avenir Heavy", sans-serif;
+    @include font-style-heavy;
     font-size: 28px;
     margin: 0;
   }
@@ -120,27 +163,38 @@ p {
   }
 
   &__host-button {
+    @include font-style-heavy;
     display: inline-block;
-    color: #118488;
+    color: $secondary-color;
     text-decoration: none;
-    border: 1px solid;
+    border: 1px solid $secondary-color;
     border-radius: 4px;
     width: 150px;
     height: 50px;
     text-align: center;
     line-height: 50px;
-    font-family: "Avenir Heavy", sans-serif;
+    transition: color 300ms, background-color 300ms;
 
-    &:visited {
-      color: #118488;
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $secondary-color;
     }
   }
 
   &__form {
     display: block;
-    border: 1px solid #e1e7ed;
+    justify-self: end;
+    border: 1px solid $border-color;
     border-radius: 3px;
-    width: 330px;
+    max-width: 330px;
+
+    @media screen and (min-width: 768px) {
+      width: 330px;
+    }
   }
 
   &__form-title {
@@ -157,23 +211,38 @@ p {
     margin-top: 16px;
     width: 100%;
     height: 50px;
-    border: 1px solid #e1e7ed;
+    border: 1px solid $border-color;
     border-radius: 3px;
     padding: 14px 17px;
     box-sizing: border-box;
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
   }
 
   &__form-button {
+    @include font-style-heavy;
     margin-top: 24px;
     display: inline-block;
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background-color: #ed5c63;
+    background-color: $primary-color;
+    border: solid 1px $primary-color;
     border-radius: 4px;
     text-align: center;
     text-decoration: none;
     color: white;
-    font-family: "Avenir Heavy", sans-serif;
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+      color: $primary-color;
+      background-color: white;
+    }
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
   }
 }
