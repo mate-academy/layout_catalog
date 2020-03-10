@@ -1,0 +1,64 @@
+@import "mixins";
+@import "variables";
+
+.header {
+  height: $headerHeight;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__container {
+    @include gridCenterSpace-between;
+    padding: 0 50px;
+  }
+
+  &__link {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: grid;
+    position: relative;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    line-height: $headerHeight;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
+}
+
+.is-active {
+  color: #00acdc;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background: #00acdc;
+    border-radius: 2px;
+  }
+}
