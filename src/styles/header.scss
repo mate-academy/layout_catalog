@@ -1,0 +1,75 @@
+@import "variables";
+
+.header {
+  min-width: $tabletWidth;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $tabletWidth;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .header__container {
+      max-width: $desktopWidth;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    padding: 23px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    transition: color  0.3s ease-in;
+
+    &:hover {
+      color: #00acdc;
+    }
+
+    &.is-active {
+      position: relative;
+      color: #00acdc;
+
+      &:after {
+        content: "";
+        background: #00acdc;
+        border-radius: 8px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        height: 4px;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

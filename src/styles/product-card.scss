@@ -1,0 +1,128 @@
+@import "variables";
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: $cardWidth;
+  height: $cardHeight;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 14px;
+
+  &__img-content {
+    position: relative;
+    height: 134px;
+    width: 160px;
+    border: 3px solid transparent;
+    padding-top: 13px;
+    margin: 0 auto;
+    transition: transform 1s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+      border-radius: 3px;
+      border-color: #f3f3f3;
+    }
+  }
+
+  &__img {
+    height: 134px;
+    width: 160px;
+  }
+
+  &__content {
+    margin-top: 42px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__id {
+    margin-bottom: 15px;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    text-decoration: none;
+    color: #000;
+    transition: color  0.3s ease-in;
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
+
+  &__price-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 170px;
+    padding: 9px 15px;
+    background-color: #00acdc;
+    border: 1px solid #00acdc;
+    color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: white;
+      color: #00acdc;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  box-sizing: border-box;
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: url(../../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.stars--4 .stars__star:nth-child(-n+4) {
+  background-image: url("../../images/star-active.svg");
+}
+
+@keyframes zoom-img {
+  from {
+    transform: scale(0,0);
+  }
+  to {
+    transform: scale(0.2,0.2);
+  }
+}
