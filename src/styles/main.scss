@@ -16,6 +16,10 @@ p {
 
 .header {
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
   justify-content: center;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -84,26 +88,23 @@ p {
 }
 
 .products {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-gap: 20px 0;
   justify-content: space-between;
-  flex-wrap: wrap;
-  box-sizing: border-box;
   width: 70%;
   min-width: 931px;
   max-width: 1155px;
   padding: 20px;
 
   &__card {
-    flex: 200px 0 0;
+    justify-self: center;
     padding: 15px;
     display: flex;
     flex-direction: column;
     border: 1px solid #f3f3f3;
     box-sizing: border-box;
     border-radius: 5px;
-    margin: 30px;
-    margin-left: 0 ;
-    margin-bottom: 0;
   }
 
   &__card:nth-child(4n) {
