@@ -1,3 +1,41 @@
-body {
-  margin: 0;
+@mixin contentFlex {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+
+}
+
+@import "header";
+@import "cards";
+
+@media (max-width: 1199px) {
+  .wrap--first,
+  .wrap--second {
+    margin-left: 40px;
+  }
+  .card {
+    margin-right: 48px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .wrap--first,
+  .wrap--second {
+    margin-left: 128px;
+  }
+  .card {
+    margin-right: 48px;
+  }
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 78px;
+}
+
+.wrap--first,
+.wrap--second {
+  @include contentFlex();
 }
