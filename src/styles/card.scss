@@ -1,0 +1,82 @@
+@import "variables";
+@import "mixin";
+
+.container {
+  max-width: calc(#{$widthCard} * 4 + 3 * #{$gap});
+  margin: 50px auto;
+}
+
+.catalog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 51px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  .card__img {
+    width: 160px;
+    height: 134px;
+    margin: 16px auto 45px;
+  }
+
+  &__text {
+    @include primeryFont;
+  }
+
+  &__code-product {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    @extend .card__reviews;
+    align-items: baseline;
+
+    .cost {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 40px;
+    background-color: $important-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__button:hover {
+    background: #fff;
+    border: 1px solid $important-color;
+    box-sizing: border-box;
+    color: $color-link-active;
+  }
+}
