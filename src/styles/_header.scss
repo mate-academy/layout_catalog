@@ -1,0 +1,59 @@
+@import "variables";
+@mixin centered {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  @include centered;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  margin-bottom: 50px;
+  background: $main-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    @include centered;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.navigation {
+  @include centered;
+}
+
+.navigation__item {
+  @include centered;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-right: 20px;
+  line-height: 14px;
+  height: 60px;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+.last-item {
+  margin-right: 0;
+}
+
+.is-active {
+  color: $hover-color;
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $hover-color;
+}
