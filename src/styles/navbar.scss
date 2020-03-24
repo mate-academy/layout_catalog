@@ -1,0 +1,46 @@
+@import "variables";
+
+.navbar {
+  &__list {
+    display: flex;
+    @include reset_indent;
+  }
+
+  &__item {
+    list-style: none;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    @include link_info_size;
+    display: block;
+    line-height: 60px;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $link_color_hover;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $link_color_hover;
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    content: "";
+    bottom: 0;
+    right: 0;
+    background-color: $link_color_hover;
+    border-radius: 2px;
+  }
+}
