@@ -1,0 +1,84 @@
+@import "variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
+
+.header__logo {
+  height: 40px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    text-transform: uppercase;
+    height: 100%;
+    margin: auto;
+  }
+
+  &__link:hover {
+    color: $moyo-color;
+  }
+}
+
+.is-active {
+  color: $moyo-color;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  bottom: 0;
+  width: 100%;
+  background-color: $moyo-color;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+  }
+  .navigation {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .header__logo {
+    display: none;
+  }
+  .nav-list {
+    flex-direction: column;
+    height: 50px;
+
+    &__item {
+      display: flex;
+      margin: 3px 0;
+    }
+
+    &__item:not(:first-child) {
+      margin: 0;
+    }
+  }
+}
