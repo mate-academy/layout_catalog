@@ -1,0 +1,119 @@
+@import "variables";
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 25%);
+  justify-items: center;
+  grid-gap: 50px 0;
+  margin: 50px auto 0;
+  max-width: 992px;
+}
+
+.card {
+  max-width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 30px 14px 15px;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 45px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 0 5px;
+    line-height: 15px;
+  }
+
+  &__code {
+    display: block;
+    font-size: 11px;
+    margin: 0 0 15px;
+  }
+
+  &__feedback,
+  &__price-label {
+    font-size: 11px;
+    margin: 0;
+    line-height: 13px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__price-amount {
+    font-weight: bold;
+    line-height: 19px;
+  }
+
+  &__btn {
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid $moyo-color;
+    text-transform: uppercase;
+    background-color: $moyo-color;
+    cursor: pointer;
+  }
+
+  &__btn:hover {
+    color: $moyo-color;
+    background-color: #fff;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__item {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:nth-child(-n+4) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, calc(100% / 3));
+  }
+}
+
+@media (max-width: 750px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, 50%);
+  }
+}
+
+@media (max-width: 500px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+}
