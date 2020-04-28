@@ -1,0 +1,122 @@
+@import "variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  
+  background: $bg-color;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &__pic {
+    margin: 30px 20px 42px;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+  
+    &__model {
+      width: 170px;
+      
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      margin: 0 0 5px;
+    }
+  
+    &__number {
+      font-weight: 400;
+      line-height: 13px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .rate {
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  
+    &__stars {
+      display: flex;
+    }
+  
+    &__item {
+      width: 15px;
+      height: 15px;
+      background: url($star) no-repeat center;
+    }
+  
+    &__item:not(:first-child) {
+      margin-left: 4px;
+    }
+  }
+  
+  @for $i from 1 through 5 {
+    .stars--#{$i} > :nth-child(-n + #{$i}) {
+      background: url($active_star) no-repeat center;
+    }
+  }
+  
+  .price {
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  
+    &__text {
+      font-weight: normal;
+      line-height: 13px;
+    }
+
+    &__number,
+    &__currancy {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .btn {
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+    
+    &__link {
+      display: block;
+      box-sizing: border-box;
+    
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+    
+      padding: 12px 0 11px;
+    
+      background: $main-color;
+      border-radius: 5px;
+    }
+  
+    &__link:hover {
+      padding: 11px 0;
+    
+      color: $main-color;
+      background: #fff;
+      
+      line-height: 16px;
+      border: 1px solid $main-color;
+    }
+  }
+}
