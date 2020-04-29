@@ -6,7 +6,7 @@
   "scripts": {
     "css:test": "rimraf ./backstop_data/bitmaps_test && backstop test --config=config/backstop/backstopConfig",
     "css:reference": "rimraf ./backstop_data/bitmaps_reference && backstop reference --config=config/backstop/backstopConfig",
-    "lint": "stylelint src/**/*.scss && eslint src/**/*.js && htmllint --rc ./node_modules/@mate-academy/htmllint-config/.htmllintrc src/*.html",
+    "lint": "stylelint src/**/*.scss && eslint src/**/*.js && linthtml src/*.html",
     "postinstall": "bash ./config/hooks/postinstall.sh",
     "build": "gulp build",
     "predeploy": "npm run build && cp -R backstop_data/ dist/report",
@@ -58,7 +58,7 @@
         "git add"
       ],
       "*.html": [
-        "htmllint --rc  ./node_modules/@mate-academy/htmllint-config/.htmllintrc",
+        "linthtml",
         "git add"
       ]
     },
