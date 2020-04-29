@@ -1,4 +1,4 @@
-.product__card__row__item {
+.card {
   width: 200px;
   padding: 15px 14px;
   border: 1px solid #f3f3f3;
@@ -8,74 +8,81 @@
   justify-content: center;
   margin-right: 48px;
 
-  .product__card__small__text {
+  &:first-child {
+    margin-left: 0;
+  }
+  
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__small__text {
     font-size: 11px;
     line-height: 13px;
   }
 
-  .product__card__photo {
+  &__image {
     width: 160px;
     height: 134px;
     margin: 15px 5px;
   }
 
-  .product__card__title {
+  &__title {
     margin: 30px auto 5px;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
   }
 
-  .product__card__rating {
+  &__rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .product__card__rating__stars {
-      height: 15px;
-      width: 91px;
-      display: flex;
+    .card__rating__star {
+      display: inline-block;
       justify-content: space-between;
+      height: 15px;
+      width: 15px;
+      margin-right: 4px;
+      background: url(../images/star.svg) center no-repeat;
     }
     
-    .product__card__rating__star {
-      width: 15px;
-      height: 15px;
-      display: inline-block;
-      background-image: url(../images/star.svg);
-      background-repeat: no-repeat;
-      background-position: center;
+    .stars--4 {
+      display: flex;
+
+      .card__rating__star:nth-child(-n+4) {
+        background-image: url(../images/star-active.svg);
+      }
+
     }
 
-    .product__card__callbacks {
+    .card__review__amount {
       margin: 0;
       justify-content: center;
     }
-
-    .product__card__rating__star:nth-child(-n + 4) {
-      background-image: url(../images/star-active.svg);
-    }
   }
 
-  .product__card__cod_tovaru {
+  &__code {
     margin-bottom: 15px;
     margin-top: 0;
   }
 
-  .product__card__price {
+  &__price {
     margin: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     
-    .product__card__price_number {
+    .card__price__amount {
       font-weight: 700;
       font-size: 16px;
       line-height: 19px;
     }
+
   }
 
-  .product__card__button__buy {
+  &__button__buy {
     width: 170px;
     height: 40px;
     display: flex;
@@ -92,18 +99,10 @@
     text-align: center;
   }
   
-  .product__card__button__buy:hover {
+  &__button__buy:hover {
     background: #fff;
     color: #00acdc;
     border: 1px solid #00acdc;
   }
 
-}
-
-.product__card__row__item:first-child {
-  margin-left: 0;
-}
-
-.product__card__row__item:last-child {
-  margin-right: 0;
 }
