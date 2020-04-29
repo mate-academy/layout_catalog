@@ -1,0 +1,88 @@
+@import "font";
+@mixin logoMix($logoSize) {
+  width: $logoSize;
+  height: $logoSize;
+}
+
+$blueBorder: 1px solid #00acdc;
+$fontSizeSmall: 11px;
+$flexStart: flex-start;
+$center: center;
+$spaceBetween: space-between;
+$borderBox: border-box;
+$flexDisplay: flex;
+$paddingsOfHeader: 50px;
+$lineHeight: 60px;
+$colorButton: #00acdc;
+$white: #fff;
+$zero: 0;
+$topPosition: 56px;
+$navItemsMargin: 20px;
+
+@for $i from 1 through 7 {
+  .nav__item:nth-child(#{$i}) {
+    margin-right: $navItemsMargin;
+  }
+}
+
+.header {
+  margin-bottom: $paddingsOfHeader;
+  display: $flexDisplay;
+  justify-content: $spaceBetween;
+  box-sizing: $borderBox;
+  padding-left: $paddingsOfHeader;
+  align-items: $center;
+  padding-right: $paddingsOfHeader;
+  height: $lineHeight;
+  background-color: $white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  &__logo {
+    @include logoMix(40px);
+  }
+}
+
+.nav {
+  display: $flexDisplay;
+
+  &__list {
+    margin: $zero;
+    padding-left: $zero;
+    list-style-type: none;
+    display: $flexDisplay;
+  }
+
+  &__link {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: $fontFamily;
+    line-height: $lineHeight;
+    font-weight: $fontWeight + 100;
+    font-size: 12px;
+    font-style: normal;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .nav__link:hover {
+    color: $colorButton;
+    transition: 0.15s linear;
+  }
+
+  .is-active {
+    @extend .nav__link:hover;
+    position: relative;
+  }
+
+  .is-active::after {
+    position: absolute;
+    content: "";
+    height: $lineHeight - $topPosition;
+    border-radius: ($lineHeight - $topPosition) * 2;
+    width: $topPosition - $navItemsMargin;
+    background-color: $colorButton;
+    left: $zero;
+    right: $zero;
+    bottom: $zero;
+    top: $topPosition;
+  }
+}
