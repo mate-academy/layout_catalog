@@ -2,12 +2,14 @@
   margin: 0 auto;
   max-width: 944px;
   width: 100%;
+
   .product__items {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-left: -48px;
   }
+
   .product__item {
     flex-basis: calc(25% - 48px);
     max-width: 200px;
@@ -20,68 +22,85 @@
     background-color: #fff;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
-    .product__images {
+
+    .product__image {
       margin: 15px 5px 42px;
-      .product__monitor {
+
+      .product__picture {
         text-align: center;
         width: 160px;
         height: 134px;
       }
     }
+
     .product__title {
-      font-weight: 500;
       font-size: 12px;
       line-height: 15px;
-      padding-bottom: 5px;
-      margin: 0;
+      font-weight: 500;
+      margin-bottom: 5px;
     }
+
+    .product__code {
+      margin-bottom: 15px;
+    }
+    
     .product__rating {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 15px;
+      margin-bottom: 17px;
+
       .product__stars {
+
         .product__star {
           display: inline-block;
           width: 15px;
           height: 15px;
-          background: url(../images/star-active.svg) no-repeat center;
-        }
-        &:not(:last-child) {
-          margin-right: 4px;
-        }
-        .product__star:last-child {
-          width: 15px;
-          height: 15px;
           background: url(../images/star.svg) no-repeat center;
+
+          &:not(:last-child) {
+            margin-right: 1px;
+          }
         }
       }
+
+      .stars--1 .product__star:nth-child(1),
+      .stars--2 .product__star:nth-child(-n+2),
+      .stars--3 .product__star:nth-child(-n+3),
+      .stars--4 .product__star:nth-child(-n+4),
+      .stars--5 .product__star:nth-child(-n+5) {
+        background: url(../images/star-active.svg) no-repeat center;
+      }
     }
+
     .product__price {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 17px 0 20px;
+      margin-bottom: 20px;
+
       .product__cost {
         font-weight: 700;
         font-size: 16px;
         line-height: 19px;
       }
     }
+
     .product__button {
-      font-size: 14px;
-      line-height: 16px;
       font-family: "Roboto", sans-serif;
       font-weight: 700;
-      color: #fff;
+      font-size: 14px;
+      line-height: 16px;
       text-transform: uppercase;
       cursor: pointer;
-      
+      color: #fff;
       background-color: #00acdc;
+      
       width: 170px;
       height: 40px;
       border: none;
       border-radius: 5px;
+      
       &:hover {
         background-color: #fff;
         border: 1px solid #00acdc;
