@@ -1,0 +1,86 @@
+@mixin flexy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  width: 200px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 29px 14px 14px;
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 1px 5px 41px;
+  }
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  &__code {
+    display: block;
+    margin-bottom: 15px;
+  }
+  &__stars {
+    display: flex;
+  }
+  &__feedback {
+    @include flexy;
+  }
+  &__price {
+    margin: 20px 0;
+    @include flexy;
+  }
+  &__amount {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.card__stars .card__star {
+  background: url(/images/star.svg) no-repeat center;
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+}
+
+.stars--5 .card__star,
+.stars--4 .card__star:nth-child(-n+4),
+.stars--2 .card__star:nth-child(-n+2),
+.stars--1 .card__star:nth-child(1),
+.stars--3 .card__star:nth-child(-n+3) {
+  background-image: url(/images/star-active.svg);
+}
+
+.card__button {
+  box-sizing: border-box;
+  border: 1px solid #00acdc;
+  height: 40px;
+  background: #00acdc;
+  border-radius: 5px;
+  &-link {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 11px 56px 10px 57px;
+    &:hover {
+      color: #00acdc;
+    }
+  }
+  &:hover {
+    background: #fff;
+  }
+}
