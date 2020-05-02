@@ -32,3 +32,4 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add attribute `data-qa="card-hover"` to the link `Купить` inside first card
 ---
 ![screenshot](./references/catalog-example.png)
+
