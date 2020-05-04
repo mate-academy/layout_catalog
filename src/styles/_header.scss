@@ -14,16 +14,34 @@
   }
 
   .nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
     &__list {
-      padding: 0;
       display: flex;
       align-items: center;
       list-style: none;
-      height: 60px;
+      margin: 23px 0;
+
+      @media screen and (max-width: 860px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0;
+      }
     }
 
     &__items:not(:last-child) {
       margin-right: 20px;
+      transition: margin-right 0.5s;
+
+      @media screen and (max-width: 960px) {
+        margin-right: 10px;
+      }
+
+      @media screen and (max-width: 860px) {
+        margin: 5px 0;
+      }
     }
 
     &__link {
@@ -34,10 +52,13 @@
       font-weight: 500;
 
       font-size: 12px;
-      line-height: 60px;
       text-decoration: none;
       text-transform: uppercase;
       color: #000;
+
+      @media screen  and (max-width: 860px) {
+        padding: 5px 0;
+      }
       
       &--active {
         color: $main-color;
@@ -52,6 +73,12 @@
         left: 0;
         border-radius: 8px;
         background-color: $main-color;
+
+        @media screen and (max-width: 860px) {
+          width: 4px;
+          left: -5px;
+          height: 100%;
+        }
       }
     }
 
