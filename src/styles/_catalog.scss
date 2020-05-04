@@ -9,7 +9,6 @@
 }
 
 .card {
-  font-family: $roboto-font;
   background: $color-white;
   width: $card-width;
   height: 403px;
@@ -42,43 +41,45 @@
   }
 
   &__rate {
-    @include flex-spaceB;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
     align-items: center;
   }
 
 }
 
-.rate-stars {
+.stars {
   display: flex;
   height: 15px;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 15px;
+    margin-right: 4px;
+  }
 }
 
-.star {
-  background-image: url(../images/star.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-  width: 15px;
-  margin-right: 4px;
-}
-
-.rate-stars--1 .star:nth-child(-n+1),
-.rate-stars--2 .star:nth-child(-n+2),
-.rate-stars--3 .star:nth-child(-n+3),
-.rate-stars--4 .star:nth-child(-n+4),
-.rate-stars--5 .star:nth-child(-n+5) {
+.rate__stars--1 .stars__star:nth-child(-n+1),
+.rate__stars--2 .stars__star:nth-child(-n+2),
+.rate__stars--3 .stars__star:nth-child(-n+3),
+.rate__stars--4 .stars__star:nth-child(-n+4),
+.rate__stars--5 .stars__star:nth-child(-n+5) {
   background-image: url("../images/star-active.svg");
 }
 
-.rate-count {
+.rate__count {
   @include small-font;
   font-weight: normal;
   text-align: right;
 }
 
 .price {
-  @include flex-spaceB;
+  display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 20px;
 
