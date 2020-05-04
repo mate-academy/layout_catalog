@@ -2,40 +2,50 @@
 
 .card {
   box-sizing: border-box;
-  background: #fff;
+  background: $white;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 29px 14px 14px;
+
   &__img {
-    height: 134px;
-    width: 160px;
+    height: $card-width*0.67;
+    width: $card-width*0.8;
     margin: 1px 5px 41px;
   }
+
   &__name {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
+    @extend %font-12;
     display: block;
     margin-bottom: 5px;
   }
+
   &__code {
     display: block;
     margin-bottom: 15px;
+    @extend %font-11;
   }
+
   &__stars {
     display: flex;
   }
+
   &__feedback {
-    @include flexy;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @extend %font-11;
   }
+
   &__price {
+    @extend %font-11;
     margin: 20px 0;
-    @include flexy;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+
   &__amount {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
+    @extend %font-16;
   }
 }
 
@@ -60,22 +70,24 @@
   height: 40px;
   background: $blue;
   border-radius: 5px;
+
   &-link {
     display: block;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
+    @extend %font-14;
     margin: 0;
     text-align: center;
     text-transform: uppercase;
-    color: #fff;
+    color: $white;
     padding: 11px 56px 10px 57px;
+
     &:hover {
       color: $blue;
     }
   }
+
   &:hover {
-    background: #fff;
+    background: $white;
   }
 }
