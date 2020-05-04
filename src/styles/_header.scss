@@ -1,6 +1,5 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  @include flex-spaceB;
   align-items: center;
   padding: 0 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -10,36 +9,36 @@
   height: 40px;
 }
 
-.menu {
+.nav-list {
   display: flex;
   justify-content: flex-end;
   height: 60px;
   padding-left: 0;
 }
 
-.menu__item {
+.nav-list__item {
   list-style: none;
 }
 
-.menu__item:not(:last-child) {
+.nav-list__item:not(:last-child) {
   padding-right: 20px;
 }
 
 .link {
+  display: inline-block;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  font-family: $roboto-font;
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
   transition: 250ms;
-  color: #000;
-  display: inline-block;
+  color: black;
   line-height: 60px;
 }
 
 .link:hover,
 .is-active {
-  color: #00acdc;
+  color: $color-lightBlue;
 }
 
 .is-active {
@@ -49,7 +48,7 @@
 .is-active::after {
   position: absolute;
   content: "";
-  background: #00acdc;
+  background: $color-lightBlue;
   bottom: 0;
   left: 0;
   right: 0;

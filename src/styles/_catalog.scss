@@ -9,20 +9,20 @@
 }
 
 .card {
-  background: #fff;
+  font-family: $roboto-font;
+  background: $color-white;
+  width: $card-width;
+  height: 403px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  width: 200px;
-  height: 403px;
   padding: 30px 14px 13px;
-  font-family: "Roboto", sans-serif;
 
   &:not(:last-child) {
     margin-right: 48px;
   }
 
   &__image {
-    width: 160px;
+    width: $card-width*0.8;
     height: 134px;
     margin: 0 5px;
     margin-bottom: 41px;
@@ -32,19 +32,18 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
+    margin-bottom: 5px;
   }
 
   &__code {
+    @include small-font;
     font-weight: normal;
-    font-size: 11px;
-    line-height: 13px;
-    margin-top: 5px;
+    margin-bottom: 15px;
   }
 
   &__rate {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
+    @include flex-spaceB;
+    margin-bottom: 20px;
     align-items: center;
   }
 
@@ -73,22 +72,19 @@
 }
 
 .rate-count {
+  @include small-font;
   font-weight: normal;
-  font-size: 11px;
-  line-height: 13px;
   text-align: right;
 }
 
 .price {
-  display: flex;
-  justify-content: space-between;
+  @include flex-spaceB;
   align-items: flex-end;
-  margin-top: 20px;
+  margin-bottom: 20px;
 
   &__text {
     font-weight: 400;
-    font-size: 11px;
-    line-height: 13px;
+    @include small-font;
     text-align: right;
   }
 
@@ -103,24 +99,24 @@
 
 .buy {
   display: inline-block;
+  padding: 12px 57px 11px 58px;
+  height: 40px;
+  border-radius: 5px;
+
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-  color: white;
   text-transform: uppercase;
-  height: 40px;
-  width: 170px;
-  background: #00acdc;
-  border-radius: 5px;
-  margin-top: 20px;
-  padding: 12px 57px 11px 58px;
+
+  color: $color-white;
+  background: $color-lightBlue;
   transition: 250ms;
 
   &:hover {
-    color: #00acdc;
-    background: white;
-    border: 1px solid #00acdc;
+    color: $color-lightBlue;
+    background: $color-white;
+    border: 1px solid $color-lightBlue;
   }
 }
