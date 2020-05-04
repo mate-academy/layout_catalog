@@ -10,9 +10,9 @@
   flex-direction: column;
   width: 200px;
   background-color: #fff;
+  padding: 30px 14px 14px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  padding: 30px 14px 14px;
   font-size: 11px;
   line-height: 13px;
 
@@ -74,16 +74,19 @@
     box-sizing: border-box;
     width: 100%;
     padding: 11px 57px;
+
     border-radius: 5px;
     border: 1px solid #00acdc;
     background-color: #00acdc;
     color: white;
+
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
     font-size: 14px;
     line-height: 16px;
     font-weight: 700;
+    transition: color ease 0.5s, background-color ease 0.5s;
   }
 
   &__buy-button:hover {
@@ -103,11 +106,10 @@
     margin-right: 4px;
   }
 
-  .stars--1 &:nth-child(-n+1),
-  .stars--2 &:nth-child(-n+2),
-  .stars--3 &:nth-child(-n+3),
-  .stars--4 &:nth-child(-n+4),
-  .stars--5 &:nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
+  @for $i from 1 through 5 {
+    .stars--#{$i} &:nth-child(-n+#{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
+
 }
