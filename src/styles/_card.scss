@@ -47,24 +47,29 @@
   &__stars {
     display: flex;
   }
-}
 
-.star {
-  width: 15px;
-  height: 15px;
-  background-image: url(../images/star.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 4px;
-  &:nth-child(-n+4) {
+  &__star {
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__stars--active-1 &__star:nth-child(-n+1),
+  &__stars--active-2 &__star:nth-child(-n+2),
+  &__stars--active-3 &__star:nth-child(-n+3),
+  &__stars--active-4 &__star:nth-child(-n+4),
+  &__stars--active-5 &__star:nth-child(-n+5) {
     background-image: url(../images/star-active.svg);
   }
-  &:last-child {
-    margin-right: 0;
-  }
 }
 
-.price__block {
+.price {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -77,14 +82,16 @@
   }
 }
 
-.button__link {
+$blue: #00acdc;
+
+.button {
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #00acdc;
+  background-color: $blue;
   color: #fff;
-  border: 1px solid #00acdc;
+  border: 1px solid $blue;
   border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
@@ -94,6 +101,6 @@
   transition: all 0.25s ease;
   &:hover {
     background-color: #fff;
-    color: #00acdc;
+    color: $blue;
   }
 }
