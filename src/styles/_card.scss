@@ -29,8 +29,22 @@
     margin-bottom: 5px;
   }
 
+  &__code {
+    margin-bottom: 15px;
+    font-size: $card-text;
+  }
+
+  &__review {
+    @include flex-justify-wrap (space-between, center, nowrap);
+    margin-bottom: 20px;
+  }
+
+  &__rating {
+    margin-right: 4px;
+  }
+
   &__text {
-    font-size: 11px;
+    font-size: $card-text;
   }
 
   &__price {
@@ -38,13 +52,14 @@
     margin-bottom: 20px;
   }
 
-  &__code {
-    margin-bottom: 15px;
+  &__value {
+    margin-bottom: 1px;
   }
 
-  &__review {
-    @include flex-justify-wrap (space-between, center, nowrap);
-    margin-bottom: 20px;
+  &__amount {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
   }
 
   &__button {
@@ -65,9 +80,10 @@
   }
 
   &__button:hover {
-    background: #fff;
+    background-color: #fff;
     border: 1px solid $header-active-color;
     color: $header-active-color;
+    transition: $transition-button;
   }
 }
 
@@ -78,7 +94,6 @@
     width: $star-size;
     height: $star-size;
     background: url(../images/star.svg) center no-repeat;
-    margin-right: 4px;
   }
 
   &:last-child {
@@ -88,14 +103,4 @@
   .stars--4 &__item:nth-child(-n + 4) {
     background: url(../images/star-active.svg) center no-repeat;
   }
-}
-
-.price__name {
-  margin-bottom: 1px;
-}
-
-.price__amount {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
 }
