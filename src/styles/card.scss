@@ -9,12 +9,12 @@
 
 .main {
   padding: 0 78px 128px;
-  box-sizing: $borderBox;
+  box-sizing: border-box;
 }
 
 .row {
-  display: $flexDisplay;
-  justify-content: $center;
+  display: flex;
+  justify-content: center;
 }
 
 .row_margin {
@@ -23,7 +23,7 @@
 
 .card {
   padding: 30px 14px 15px;
-  display: $flexDisplay;
+  display: flex;
   flex-direction: column;
   font-family: $fontFamily;
   font-style: $fontStyle;
@@ -31,14 +31,14 @@
   height: 403px;
   background-color: $white;
   border: 1px solid #f3f3f3;
-  box-sizing: $borderBox;
+  box-sizing: border-box;
   border-radius: 5px;
 }
 
-.card__monitor {
+.card__goods {
   width: 160px;
   height: 134px;
-  align-self: $center;
+  align-self: center;
   margin-bottom: 45px;
 }
 
@@ -58,24 +58,28 @@
 }
 
 .card__rating {
-  display: $flexDisplay;
-  justify-content: $spaceBetween;
+  display: flex;
+  justify-content: space-between;
 }
 
-.card__stars {
-  display: $flexDisplay;
+.card__stars_4 {
+  display: flex;
 }
 
 .card__star {
   margin-right: 4px;
   height: 15px;
   width: 15px;
-  background-image: url("../images/star-active.svg");
+  background-image: url("../images/star.svg");
   background-repeat: no-repeat;
 }
 
-.card__stars .card__star:nth-last-child(-n+1) {
-  background-image: url("../images/star.svg");
+.card__stars_5 .card__star,
+.card__stars_1 .card__star:first-child,
+.card__stars_2 .card__star:nth-child(-n+2),
+.card__stars_3 .card__star:nth-child(-n+3),
+.card__stars_4 .card__star:nth-child(-n+4) {
+  background-image: url("../images/star-active.svg");
 }
 
 .card__description {
@@ -85,13 +89,13 @@
 }
 
 .card__cost {
-  display: $flexDisplay;
-  justify-content: $spaceBetween;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .card__price {
-  align-self: $flexStart;
+  align-self: flex-start;
   font-weight: $fontWeight;
   font-size: $fontSizeSmall;
   line-height: 13px;
@@ -99,7 +103,7 @@
 }
 
 .card__digit {
-  align-self: $flexStart;
+  align-self: flex-start;
   font-size: 16px;
   line-height: 19px;
   font-weight: ($fontWeight*2) - 100;
@@ -111,8 +115,8 @@
   display: block;
   text-decoration: none;
   color: $white;
-  text-align: $center;
-  padding-top: $fontSizeSmall;
+  text-align: center;
+  padding-top: 11px;
   font-size: 14px;
   line-height: 16px;
   font-weight: ($fontWeight*2) - 100;
@@ -126,8 +130,7 @@
 }
 
 .card__buy:hover {
-  color: #00acdc;
+  color: $colorButton;
   background-color: $white;
-  border: $blueBorder;
   border-radius: 5px;
 }
