@@ -1,0 +1,129 @@
+$card-width: 200px;
+
+%card-main-text {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+%card-color-style {
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+}
+
+%card-price-text {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+%card-title-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.card {
+  @extend %card-main-text;
+  @extend %card-color-style;
+
+  padding: 30px 14px 14px;
+  width: $card-width;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__photo {
+    width: #{$card-width*0.8};
+    margin: 0 5px 45px;
+    height: 134px;
+  }
+  
+  &__about {
+    margin-bottom: 15px;
+    height: 48px;
+  }
+
+  &__code {
+    margin-top: 5px;
+  }
+
+  &__title {
+    @extend %card-title-text;
+  }
+
+  &__rating {
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 21px;
+  }
+
+  &__price-value {
+    @extend %card-price-text;
+  }
+
+  &__button {
+    text-align: center;
+    display: block;
+    
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #fff;
+    background-color: #00acdb;
+    border: 1px solid #00acdc;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+
+    border-radius: 5px;
+    width: 100%;
+    padding: 11px 57px;
+  }
+
+  &__button:hover {
+    background-color: #fff;
+    color: #00acdc;
+    transition: color, background-color 0.5s;
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    height: 15px;
+    width: 15px;
+    background-image: url(../images/star.svg);
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+}
+
+.rating--5 .rating__star,
+.rating--1 .rating__star:first-child,
+.rating--2 .rating__star:nth-child(-n+2),
+.rating--3 .rating__star:nth-child(-n+3),
+.rating--4 .rating__star:nth-child(-n+4) {
+  background-image: url(../images/star-active.svg);
+}
