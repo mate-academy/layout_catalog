@@ -1,47 +1,45 @@
 @import "variables.scss";
 
 .nav {
-  display: flex;
-  align-items: center;
+  @include flexy;
   font-size: 0;
 }
 
 .navigation {
   margin: 0;
   padding: 0;
+
   &__item {
     display: inline-block;
     position: relative;
     margin-right: 20px;
+
     &--link {
-      font-size: 12px;
-      line-height: 15px;
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
+      @extend %font-12;
       text-transform: uppercase;
       display: inline-block;
-      padding-top: 22.5px;
-      padding-bottom: 22.5px;
+      padding-top: $link-padding;
+      padding-bottom: $link-padding;
+
       &:hover {
         color: $blue;
       }
     }
   }
+
   & :last-child {
     margin-right: 0;
   }
 }
 
-.is-active {
+.navigation__item--link.is-active {
   color: $blue;
   &::after {
+    position: absolute;
     content: "";
     width: 100%;
     height: 4px;
     background-color: $blue;
-    background-size: contain;
-    position: absolute;
     bottom: 0;
     right: 0;
     border-radius: 8px;

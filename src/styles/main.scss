@@ -16,14 +16,40 @@ body {
 }
 
 .row {
-  justify-content: space-between;
-  display: flex;
-  flex: 1024px 0 1;
+  @include flexy;
   margin: 50px auto 51px;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1202px) {
   .row {
     width: 944px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 300px) {
+
+  .header {
+    height: auto;
+    flex-direction: column;
+  }
+  .nav {
+    flex-direction: column;
+  }
+
+  .navigation__item {
+    display: block;
+    width: 100%;
+  }
+
+  .logo {
+    display: block;
+    width: 100%;
+  }
+  .row {
+    width: auto;
+    flex-wrap: wrap;
+  }
+  .card {
+    margin: auto;
   }
 }
