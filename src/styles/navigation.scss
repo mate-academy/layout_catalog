@@ -1,7 +1,9 @@
 @import "variables.scss";
 
 .nav {
-  @include flexy;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 0;
 }
 
@@ -13,17 +15,16 @@
     display: inline-block;
     position: relative;
     margin-right: 20px;
+  }
 
-    &--link {
-      @extend %font-12;
-      text-transform: uppercase;
-      display: inline-block;
-      padding-top: $link-padding;
-      padding-bottom: $link-padding;
-
-      &:hover {
-        color: $blue;
-      }
+  &__link {
+    @extend %font-12;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-top: $link-padding;
+    padding-bottom: $link-padding;
+    &:hover {
+      color: $blue;
     }
   }
 
@@ -32,7 +33,7 @@
   }
 }
 
-.navigation__item--link.is-active {
+.navigation__link.is-active {
   color: $blue;
   &::after {
     position: absolute;
