@@ -1,8 +1,10 @@
 .header {
   font-weight: 500;
-  height: 60px;
   padding: 0 50px 0 40px;
   margin-bottom: 50px;
+
+  display: flex;
+  justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &__logo,
@@ -11,12 +13,11 @@
   }
 
   &__logo {
-    margin: 10px;
+    margin: 10px 10px 7px;
   }
 }
 
 .nav {
-  float: right;
   &__list {
     width: 760px;
     padding: 0;
@@ -31,7 +32,7 @@
   }
   
   &__link {
-    color: #000;
+    color: $color-link-text;
     font-size: 1rem;
     line-height: 14px;
     font-style: normal;
@@ -45,7 +46,7 @@
   
   &__link:hover,
   &__link--active {
-    color: #00acdc;
+    color: $color-moyo-blue;
   }
   
   &__link--active {
@@ -60,6 +61,25 @@
     height: 4px;
     top: 56px;
     border-radius: 2px;
-    background-color: #00acdc;
+    background-color: $color-moyo-blue;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header {
+    padding: 0 3vw;
+  }
+
+  .nav {
+    &__list {
+      width: calc(90vw - 40px);
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+    &__item {
+      margin: 0 10px;
+      max-width: 100px;
+    }
   }
 }
