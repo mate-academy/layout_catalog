@@ -1,49 +1,4 @@
-.header {
-  height: 60px;
-  padding: 0 50px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.header__logo {
-  height: 40px;
-}
-
-.list {
-  list-style: none;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  padding-left: 0;
-  &__item {
-    margin-left: 20px;
-    line-height: 60px;
-  }
-  &__item:first-child {
-    margin-left: 0;
-  }
-  &__item-link {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    height: 60px;
-    position: relative;
-  }
-  &__item-link:hover {
-    color: #00acdc;
-    transition: all 250ms;
-  }
-  &__item-link:active {
-    border-bottom: 4px solid #00acdc;
-  }
-}
-
-.navigation {
+%header-text {
   font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -52,18 +7,69 @@
   text-transform: uppercase;
 }
 
-.is-active {
-  color: #00acdc;
+.header {
+  padding: 0 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  &__logo {
+    height: 40px;
+  }
 }
 
-.is-active::after {
-  content: "";
-  position: absolute;
-  background-size: contain;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #00acdc;
-  border-radius: 8px;
+.navigation {
+  @extend %header-text;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  &__item {
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+  &__item-link {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    position: relative;
+    padding: 23px 0;
+  }
+
+  &__item-link:hover {
+    color: #00acdc;
+    transition: color 250ms;
+  }
+
+  &__item-link:active {
+    border-bottom: 4px solid #00acdc;
+  }
+
+  &__item-link--is-active {
+    color: #00acdc;
+  }
+
+  &__item-link--is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #00acdc;
+    border-radius: 8px;
+  }
 }
