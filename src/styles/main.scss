@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
-@import "./header.scss";
-@import "./card.scss";
+@import "./_header.scss";
+@import "./_card.scss";
+
+$card-width: 200px;
 
 html {
   font-family: "Roboto", Arial, sans-serif;
@@ -15,8 +17,16 @@ body {
 }
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  gap: 50px 48px;
   justify-content: center;
-  margin: 50px auto 0;
+  align-content: center;
+  margin: 50px auto;
+}
+
+@media (max-width: 1023px) {
+  .main {
+    grid-template-columns: repeat(auto-fit, $card-width);
+  }
 }
