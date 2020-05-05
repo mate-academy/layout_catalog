@@ -4,19 +4,22 @@
 @import "card";
 
 .main {
-  margin-top: 50px;
-}
-
-.row {
-  display: flex;
+  // margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, $card-size);
+  grid-template-rows: auto;
   justify-content: center;
-  margin-bottom: 50px;
+  gap: 50px 48px;
 }
 
-@media only screen and (max-width: 900px) {
-  .row {
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 0 85px;
+@media only screen and (max-width: 944px) {
+  .main {
+    grid-template-columns: repeat(2, $card-size);
+  }
+}
+
+@media only screen and (max-width: 448px) {
+  .main {
+    grid-template-columns: $card-size;
   }
 }
