@@ -1,14 +1,19 @@
-.row {
-  display: flex;
-  justify-content: center;
-  min-width: 944px;
+@import "variables";
+
+.grid {
+  display: grid;
   margin: 50px 0;
+  grid-template-columns: repeat(auto-fit, $grid-cell-width);
+  grid-auto-rows: $grid-cell-height;
+  gap: 50px 48px;
+  justify-content: center;
+  // min-width: 944px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 100%;
   background-color: $primary-white;
   padding: 30px 14px 14px;
   border: 1px solid #f3f3f3;
@@ -112,4 +117,9 @@
     }
   }
 
+}
+@media screen and (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, $grid-cell-width);
+  }
 }
