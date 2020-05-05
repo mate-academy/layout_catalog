@@ -3,6 +3,24 @@
 $blue-color: #00acdc;
 $white-color: #fff;
 
+@mixin highlight {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: $blue-color;
+  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+
+  &--s {
+    width: 4px;
+    height: 100%;
+    left: -15px;
+  }
+}
+
 :root {
   --star: url(../images/star.svg);
   --star-active: url(../images/star-active.svg);
@@ -28,47 +46,47 @@ body {
   display: flex;
 }
 
-.nav__container {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.nav {
+  &__container {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  &__item {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: 23px 0;
+    font-size: 12px;
+    line-height: 60px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &:focus {
+      color: $blue-color;
+    }
+    
+    &:focus::after {
+      @extend highlight;
+    }
+  }
+
+  &__item-cell + .nav__item-cell {
+    margin-left: 20px;
+  }
 }
 
-.nav__item {
-  position: relative;
-  text-decoration: none;
-  color: black;
-  padding: 23px 0;
-  font-size: 12px;
-  line-height: 60px;
-  transition: color 0.2s;
-}
-
-.nav__item-cell + .nav__item-cell {
-  margin-left: 20px;
-}
-
-.nav__item:hover {
-  color: $blue-color;
-}
-
-.nav__item:focus,
 .is-active {
   color: $blue-color;
-}
 
-.nav__item:focus::after,
-.is-active::after {
-  position: absolute;
-  display: block;
-  content: "";
-  height: 4px;
-  width: 100%;
-  background-color: $blue-color;
-  border-radius: 8px;
-  bottom: 0;
-  left: 0;
+  &::after {
+    @extend highlight;
+  }
 }
 
 @media only screen and (max-width: 920px) {
@@ -82,35 +100,31 @@ body {
     height: 180px;
   }
   
-  .nav__container {
-    position: absolute;
-    flex-wrap: wrap;
-    flex-direction: column;
-    top: 10px;
-    left: 120px;
+  .nav {
+    &__container {
+      position: absolute;
+      flex-wrap: wrap;
+      flex-direction: column;
+      top: 10px;
+      left: 120px;
+    }
 
+    &__item-cell + .nav__item-cell {
+      margin-left: 0;
+    }
+
+    &__item {
+      margin: 0;
+      padding: 0;
+      line-height: 16px;
+    }
+  
+    &__item:focus::after {
+      @extend highlight--s;
+    }
   }
 
-  .nav__item-cell + .nav__item-cell {
-    margin-left: 0;
-  }
-
-  .nav__item {
-    margin: 0;
-    padding: 0;
-    line-height: 16px;
-  }
-
-  .is-active::after,
-  .nav__item:focus::after {
-    position: absolute;
-    display: block;
-    content: "";
-    width: 4px;
-    height: 100%;
-    background-color: $blue-color;
-    border-radius: 8px;
-    bottom: 0;
-    left: -15px;
+  .is-active::after {
+    @extend highlight--s;
   }
 }
