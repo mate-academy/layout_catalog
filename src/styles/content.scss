@@ -2,22 +2,23 @@
 
 .grid {
   display: grid;
-  margin: 50px 0;
   grid-template-columns: repeat(auto-fit, $grid-cell-width);
   grid-auto-rows: $grid-cell-height;
   gap: 50px 48px;
+  margin: 50px 0;
   justify-content: center;
-  // min-width: 944px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: $primary-white;
   padding: 30px 14px 14px;
+
+  background-color: $primary-white;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
+
   font-size: 11px;
   line-height: 13px;
 
@@ -38,10 +39,11 @@
 
   &__title {
     margin: 0;
+    height: 31px;
+
     font-weight: $medium-font;
     font-size: 12px;
     line-height: 15px;
-    height: 31px;
   }
 
   &:not(:last-child) {
@@ -62,10 +64,10 @@
     display: flex;
   }
   &__price {
-    margin: 20px 0 21px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin: 20px 0 21px;
   }
 
   &__price-amount {
@@ -91,18 +93,24 @@
     font-size: 14px;
     line-height: 16px;
     font-weight: $bold-font;
-    transition: color ease 0.5s, background-color ease 0.5s;
+
+    transition: color ease 0.5s, background-color ease 0.5s, opacity ease 0.3s;
   }
 
   &__buy-button:hover {
     background-color: $primary-white;
     color: $primary-blue;
   }
+
+  &__buy-button:active {
+    color: red;
+  }
 }
 
 .stars__item {
   width: 15px;
   height: 15px;
+
   background-image: url(../images/star.svg);
   background-repeat: no-repeat;
   background-position: center;
