@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, $grid-cell-width);
   grid-auto-rows: $grid-cell-height;
-  gap: 50px 48px;
+  gap: $grid-row-gap $grid-column-gap;
   margin: 50px 0;
   justify-content: center;
 }
@@ -85,7 +85,7 @@
     border-radius: 5px;
     border: 1px solid $primary-blue;
     background-color: $primary-blue;
-    color: white;
+    color: $primary-white;
 
     text-decoration: none;
     text-transform: uppercase;
@@ -103,7 +103,7 @@
   }
 
   &__buy-button:active {
-    color: red;
+    color: $primary-red;
   }
 }
 
@@ -128,6 +128,6 @@
 }
 @media screen and (min-width: 1200px) {
   .grid {
-    grid-template-columns: repeat(4, $grid-cell-width);
+    grid-template-columns: repeat($grid-max-amount-column, $grid-cell-width);
   }
 }
