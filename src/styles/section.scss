@@ -1,13 +1,7 @@
 .section {
-  margin: 50px auto;
-  display: grid;
+  display: flex;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 200px);
-  grid-gap: 48px;
-
-  @media (max-width: 540px) {
-    grid-template-columns: 200px;
-  }
+  margin: 50px 0;
 
 }
 
@@ -21,6 +15,10 @@
   background-color: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
+
+  &:not(:last-child) {
+    margin-right: 48px;
+  }
 
   &__image {
     height: 134px;
@@ -102,10 +100,10 @@
   }
 
   .stars--1 &__star:first-child,
-  .stars--2 &__star:nth-child(-n+2),
-  .stars--3 &__star:nth-child(-n+3),
-  .stars--4 &__star:nth-child(-n+4),
-  .stars--5 &__star:nth-child(-n+5) {
+  .stars--2 &__star:nth-child(-n + 2),
+  .stars--3 &__star:nth-child(-n + 3),
+  .stars--4 &__star:nth-child(-n + 4),
+  .stars--5 &__star:nth-child(-n + 5) {
     background-image: url("../images/star-active.svg");
   }
 }
