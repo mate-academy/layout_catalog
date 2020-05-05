@@ -1,7 +1,14 @@
 .section {
-  display: flex;
+  margin: 50px auto;
+  display: grid;
   justify-content: center;
-  margin: 50px 0;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-gap: 48px;
+
+  @media (max-width: 540px) {
+    grid-template-columns: 200px;
+  }
+
 }
 
 .card {
@@ -14,10 +21,6 @@
   background-color: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-
-  &:not(:last-child) {
-    margin-right: 48px;
-  }
 
   &__image {
     height: 134px;
