@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap");
+@import "header";
+
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 200px;
+  padding: 30px 14px 14px;
+
+  background: $white-color;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &__image-container {
+    display: flex;
+    margin: auto;
+  }
+  
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 45px;
+  }
+  
+  &__description {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+  
+  &__item-code {
+    margin: 5px 0 11px;
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  &__reviews {
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  
+  &__price-description {
+    margin-top: 15px;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  
+  &__price-tag {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__buy-button-link {
+    display: flex;
+    width: 170px;
+    height: 40px;
+    margin-top: 10px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $white-color;
+    text-decoration: none;
+
+    justify-content: center;
+    align-items: center;
+    background: $blue-color;
+    border-radius: 5px;
+    
+    transition: background 0.2s, border 0.1s;
+    
+    &:hover {
+      color: $blue-color;
+      box-sizing: border-box;
+      border: 1px solid $blue-color;
+      border-radius: 5px;
+      background: $white-color;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  margin-top: 4px;
+  
+  &__star {
+    width: 15px;
+    height: 15px;
+    background-image: var(--star);
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+}
+
+@for $var from 1 to 5 {
+  .stars--#{$var} .stars__star:nth-child(-n+#{$var}) {
+    background-image: var(--star-active);
+  }
+}
