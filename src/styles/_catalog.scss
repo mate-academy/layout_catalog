@@ -1,24 +1,22 @@
 .catalog {
-  padding: 0 40px;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
   margin-top: 50px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-column-gap: 48px;
+  justify-content: center;
+  justify-items: center;
 }
 
 .card {
   background: white;
   width: $card-width;
   height: 403px;
+
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 30px 14px 13px;
-
-  &:not(:last-child) {
-    margin-right: 48px;
-  }
+  margin-bottom: 50px;
 
   &__image {
     width: $card-width*0.8;
@@ -122,5 +120,11 @@
     color: $color-lightBlue;
     background: white;
     border: 1px solid $color-lightBlue;
+  }
+}
+
+@media (max-width: 1000px) {
+  .catalog {
+    grid-template-columns: repeat(auto-fill, 200px);
   }
 }
