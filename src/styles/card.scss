@@ -1,36 +1,29 @@
 @import "font";
 @import "header";
 
-@for $i from 2 through 4 {
-  .row .card:nth-child(#{$i}) {
-    margin-left: 48px;
-  }
-}
+$card-size: 200px;
 
 .main {
-  padding: 0 78px 128px;
-  box-sizing: border-box;
-}
-
-.row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, $card-size);
   justify-content: center;
-}
-
-.row_margin {
-  margin-bottom: 50px;
+  grid-gap: 50px 48px;
+  padding-bottom: 78px;
 }
 
 .card {
   padding: 30px 14px 15px;
   display: flex;
   flex-direction: column;
+
   font-family: $fontFamily;
   font-style: $fontStyle;
-  max-width: 200px;
+
   height: 403px;
+
   background-color: $white;
   border: 1px solid #f3f3f3;
+
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -133,4 +126,10 @@
   color: $colorButton;
   background-color: $white;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1023px) {
+  .main {
+    grid-template-columns: repeat(auto-fill, $card-size);
+  }
 }
