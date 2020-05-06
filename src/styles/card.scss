@@ -1,33 +1,31 @@
 $blue: #00acdc;
+$card-width: 200px;
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  gap: 51px 48px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
 
-  @media screen and (min-width: 1200px) {
-    justify-content: center;
-    align-items: center;
+  @media screen and (max-width: 1023px) {
+    .container {
+      grid-template-columns: repeat(auto-fit, $card-width);
+    }
   }
 
   .card {
-    margin: 0 48px 51px 0;
     padding: 30px 14px 14px;
     width: 200px;
     font-weight: 400;
     font-size: 11px;
     line-height: 13px;
+
     background-color: #fff;
     color: #000;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
-
-    @media screen and (max-width: 1271px) {
-      &__fourth,
-      &__eighth {
-        margin: 0 0 51px;
-      }
-    }
 
     &:hover {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
