@@ -5,14 +5,17 @@ $white-color: #fff;
 
 @mixin highlight {
   position: absolute;
-  display: block;
-  content: "";
-  height: 4px;
-  width: 100%;
-  background-color: $blue-color;
-  border-radius: 8px;
   bottom: 0;
   left: 0;
+  
+  display: block;
+  height: 4px;
+  width: 100%;
+  
+  background-color: $blue-color;
+  border-radius: 8px;
+  
+  content: "";
 }
 
 @mixin highlight--s {
@@ -33,12 +36,12 @@ body {
 
 .header {
   display: flex;
+  height: 60px;
+  margin-bottom: 50px;
   padding: 0 50px;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  height: 60px;
-  margin-bottom: 50px;
   font-weight: 500;
 }
 
@@ -56,11 +59,13 @@ body {
   
   &__item {
     position: relative;
+    padding: 23px 0;
+
     text-decoration: none;
     color: black;
-    padding: 23px 0;
     font-size: 12px;
     line-height: 60px;
+
     transition: color 0.2s;
 
     &:hover {
@@ -76,7 +81,7 @@ body {
     }
   }
 
-  &__item-cell + .nav__item-cell {
+  &__item + .nav__item {
     margin-left: 20px;
   }
 }
@@ -103,20 +108,20 @@ body {
   .nav {
     &__container {
       position: absolute;
-      flex-wrap: wrap;
-      flex-direction: column;
       top: 10px;
       left: 120px;
-    }
-
-    &__item-cell + .nav__item-cell {
-      margin-left: 0;
+      flex-wrap: wrap;
+      flex-direction: column;
     }
 
     &__item {
       margin: 0;
       padding: 0;
       line-height: 16px;
+    }
+
+    &__item + .nav__item {
+      margin-left: 0;
     }
   
     &__item:focus::after {
