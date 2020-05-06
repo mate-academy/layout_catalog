@@ -10,23 +10,18 @@ body {
 
   .main {
     margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  }
 
-    .product__row {
-      margin-bottom: 50px;
-      display: flex;
-      flex-direction: row;
-
-      .product__row--element {
-        margin-right: 48px;
-      }
-
-      .product__row--element:last-child {
-        margin-right: 0;
-      }
+  .product__tile {
+    display: grid;
+    grid-row-gap: 50px;
+    grid-column-gap: 48px;
+    grid-template-columns: repeat(4, 200px);
+    justify-content: center;
+  }
+  @media screen and (max-width: 1024px) {
+    .product__tile {
+      grid-template-columns: repeat(auto-fit, 200px);
     }
   }
 }
