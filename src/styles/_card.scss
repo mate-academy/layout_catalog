@@ -1,0 +1,129 @@
+@import "variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 14px 14px;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__photo {
+    width: 160px;
+    height: 134px;
+    margin: 0 0 35px 5px;
+  }
+
+  &__headline {
+    margin-bottom: 5px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+
+    font-size: $card-text;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+  }
+
+  &__rating {
+    margin-right: 4px;
+  }
+
+  &__text {
+    font-size: $card-text;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 20px;
+  }
+
+  &__value {
+    margin-bottom: 1px;
+  }
+
+  &__amount {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 1px;
+
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: inherit; /* no underline */
+
+    background-color: $header-active-color;
+    border-radius: 5px;
+  }
+
+  &__button:hover,
+  &__button:visited,
+  &__button:link,
+  &__button:focus {
+    transition: $transition-color;
+  }
+
+  &__button:visited {
+    color: $transition-color;
+  }
+
+  &__button:link {
+    color: $transition-color;
+  }
+
+  &__button:focus {
+    border-color: #f25c38;
+  }
+
+  &__button:hover {
+    background-color: #fff;
+    border: 1px solid $header-active-color;
+    color: $header-active-color;
+
+    transition: $transition-button;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__item {
+    width: $star-size;
+    height: $star-size;
+    background: url(../images/star.svg) center no-repeat;
+
+    margin-right: 4px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .stars--4 &__item:nth-child(-n + 4) {
+    background: url(../images/star-active.svg) center no-repeat;
+  }
+}
