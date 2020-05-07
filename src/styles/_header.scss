@@ -1,24 +1,41 @@
 .header {
   font-weight: 500;
   max-width: 1200px;
-  padding: 0 50px 0 40px;
+  padding: 0 50px;
   margin: 0 auto 50px;
 
   display: flex;
   justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
+  transition: margin 0.2 ease-in-out;
   &__logo,
   &__link {
     display: inline-block;
   }
 
   &__logo {
-    margin: 10px 10px 7px;
+    margin: 10px 0 7px;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 0 3vw;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 740px) {
+    justify-content: flex-start;
+    margin-bottom: 10px;
   }
 }
 
 .nav {
+
+  &__checkbox {
+    display: none;
+  }
+
   &__list {
     width: 760px;
     padding: 0;
@@ -26,6 +43,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    transition: width 0.2s ease-in-out,
+      left 0.4s ease-in-out;
   }
   
   &__item {
@@ -43,6 +63,8 @@
     display: block;
     height: 12px;
     padding: 23px 0;
+
+    transition: color 0.2s ease;
   }
   
   &__link:hover,
@@ -64,16 +86,11 @@
     border-radius: 2px;
     background-color: $color-moyo-blue;
   }
-}
 
-@media (max-width: 1023px) {
-  .header {
-    padding: 0 3vw;
-  }
+  @media (max-width: 1023px) {
 
-  .nav {
     &__list {
-      width: calc(90vw - 40px);
+      width: calc(60vw - 40px);
       flex-wrap: wrap;
       justify-content: center;
 
@@ -81,6 +98,45 @@
     &__item {
       margin: 0 10px;
       max-width: 100px;
+    }
+  }
+
+  @media (max-width: 740px) {
+    &__list {
+      width: 150px;
+      flex-direction: column;
+      justify-content: start;
+
+      position: absolute;
+      top: 60px;
+      left: -100%;
+      background-color: #fff;
+    }
+
+    &__burger {
+      display: block;
+      box-sizing: border-box;
+      width: 40px;
+      height: 40px;
+      padding-top: 6px;
+  
+      position: relative;
+      top: 10px;
+      left: 36%;
+    }
+  
+    &__burger-line {
+      width: 40px;
+      height: 5px;
+      background-color: $color-moyo-blue;
+      margin-bottom: 6px;
+    }
+  
+    &__checkbox:checked + &__burger > &__burger-line {
+      background-color: blueviolet;
+    }
+    &__checkbox:checked ~ &__list {
+      left: 0;
     }
   }
 }
