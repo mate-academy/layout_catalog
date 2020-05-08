@@ -1,3 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:500&display=swap");
+@import "header.scss";
+@import "navigation.scss";
+@import "product_card.scss";
+
+p,
+h2,
 body {
   margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.main {
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, $card-width);
+  grid-column-gap: 48px;
+  grid-row-gap: 51px;
+}
+
+@media screen and (min-width: 1201px) {
+  .main {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    grid-template-columns: repeat(auto-fit, $card-width);
+  }
 }
