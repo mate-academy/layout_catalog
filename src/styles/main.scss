@@ -1,3 +1,248 @@
+@import "mixins";
+@import "variables";
+@import "header";
+@import "nav";
+@import "review";
+@import "footer";
+
+@font-face {
+  font-family: Avenir;
+  src: url(../fonts/Avenir/Avenir-Book.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../fonts/Avenir/Avenir-Heavy.ttf);
+  font-weight: 900;
+}
+
+html {
+  @include font-style-regular;
+  font-size: 16px;
+  color: $text-color;
+}
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+p {
+  padding: 0;
+}
+
+.main {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding-top: 33px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  &__big-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    @include font-style-heavy;
+    font-size: 36px;
+    margin: 0;
+  }
+
+  &__sidedar {
+
+    @media screen and (min-width: 768px) {
+      justify-self: end;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-top: 33px;
+    }
+  }
+
+  &__detail-title {
+    color: $detail-title-color;
+  }
+
+  &__detail-list {
+    padding: 0;
+  }
+
+  &__detail-item {
+    display: inline;
+    padding-right: 10px;
+  }
+
+  &__contact-link {
+    @include font-style-heavy;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+
+    &:visited {
+      color: $text-color;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__amenities {
+    margin-top: 44px;
+  }
+
+  &__amenities-title {
+    @include font-style-heavy;
+    font-size: 20px;
+  }
+
+  &__amenities-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__amenities-show-all {
+    font-weight: bold;
+    text-decoration: none;
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+
+    &:visited {
+      color: $text-color;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__reviews {
+    margin-top: 66px;
+
+  }
+  &__reviews-title {
+    @include font-style-heavy;
+    font-size: 28px;
+    margin: 0;
+  }
+
+  &__host {
+    margin-top: 66px;
+  }
+
+  &__host-name {
+    margin: 0;
+  }
+
+  &__host-location {
+    margin-top: 11px;
+    font-size: 14px;
+  }
+
+  &__host-text {
+    margin-top: 14px;
+  }
+
+  &__host-button {
+    @include font-style-heavy;
+    display: inline-block;
+    color: $secondary-color;
+    text-decoration: none;
+    border: 1px solid $secondary-color;
+    border-radius: 4px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    transition: color 300ms, background-color 300ms;
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $secondary-color;
+    }
+  }
+
+  &__form {
+    display: block;
+    justify-self: end;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    max-width: 330px;
+
+    @media screen and (min-width: 768px) {
+      width: 330px;
+    }
+  }
+
+  &__form-title {
+    display: block;
+    margin-bottom: 23px;
+  }
+
+  &__form-container {
+    padding: 30px;
+  }
+
+  &__form-input {
+    display: block;
+    margin-top: 16px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    padding: 14px 17px;
+    box-sizing: border-box;
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+  }
+
+  &__form-button {
+    @include font-style-heavy;
+    margin-top: 24px;
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: $primary-color;
+    border: solid 1px $primary-color;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+      color: $primary-color;
+      background-color: white;
+    }
+
+    &:focus {
+      outline-color: $outline-form-color;
+    }
+  }
 }
