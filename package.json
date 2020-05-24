@@ -4,16 +4,15 @@
   "description": "Frontend practice with catalog page",
   "main": "src/main.js",
   "scripts": {
-    "css:test": "rimraf ./backstop_data/bitmaps_test && backstop test --config=config/backstop/backstopConfig",
-    "css:reference": "rimraf ./backstop_data/bitmaps_reference && backstop reference --config=config/backstop/backstopConfig",
-    "lint": "stylelint src/**/*.scss && eslint src/**/*.js && linthtml src/*.html",
-    "postinstall": "bash ./config/hooks/postinstall.sh",
-    "build": "gulp build",
-    "predeploy": "npm run build && cp -R backstop_data/ dist/report",
-    "deploy": "gh-pages -d dist",
-    "publish": "npm run deploy",
-    "start": "gulp",
-    "test": "npm run lint && npm run css:test"
+    "init": "mate-scripts init",
+    "start": "mate-scripts start",
+    "lint": "mate-scripts lint",
+    "test:only": "mate-scripts test",
+    "build": "mate-scripts build",
+    "deploy": "mate-scripts deploy",
+    "update": "mate-scripts update",
+    "postinstall": "npm run update",
+    "test": "npm run lint && npm run test:only"
   },
   "keywords": [],
   "author": "Mate Academy",
@@ -21,9 +20,9 @@
   "devDependencies": {
     "@linthtml/linthtml": "^0.3.2",
     "@mate-academy/backstop-config": "*",
-    "@mate-academy/browsersync-config": "*",
     "@mate-academy/eslint-config": "*",
-    "@mate-academy/htmllint-config": "*",
+    "@mate-academy/linthtml-config": "0.0.1",
+    "@mate-academy/scripts": "^0.2.0",
     "@mate-academy/stylelint-config": "*",
     "backstopjs": "^4.0.3",
     "browser-sync": "^2.26.3",
@@ -31,51 +30,18 @@
     "eslint": "^5.16.0",
     "eslint-plugin-node": "^9.0.1",
     "gh-pages": "2.0.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-eslint": "^5.0.0",
     "gulp-htmllint": "0.0.16",
-    "gulp-replace-path": "^0.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-stylelint": "^9.0.0",
-    "husky": "^2.2.0",
-    "lint-staged": "^8.1.6",
-    "rimraf": "^2.6.3",
+    "node-sass": "^4.14.1",
+    "parcel": "^1.12.4",
     "stylelint": "^10.0.1",
     "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-scss": "^3.6.1"
-  },
-  "lint-staged": {
-    "linters": {
-      "*.scss": [
-        "stylelint",
-        "git add"
-      ],
-      "*.js": [
-        "eslint",
-        "git add"
-      ],
-      "*.html": [
-        "linthtml",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "**/dist/**",
-      "**/lib/**",
-      "**/backstop_data/**",
-      "**/report/**"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "post-commit": "git update-index --again",
-      "pre-commit": "lint-staged"
-    }
+    "stylelint-scss": "^3.17.2"
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "mateAcademy": {
+    "projectType": "layout"
+  },
+  "dependencies": {}
 }
