@@ -31,4 +31,5 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add attribute `data-qa="card"` to the first card
 - add attribute `data-qa="card-hover"` to the link `Купить` inside first card
 ---
+--> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 ![screenshot](./references/catalog-example.png)
