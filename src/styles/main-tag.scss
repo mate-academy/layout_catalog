@@ -1,12 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 11px;
-  line-height: 13px;
-  --moyo-blue: #00acdc;
+  @include fz($fz-small, $lh-small);
 }
 
 .main {
@@ -45,8 +39,7 @@ body {
 .product-card__title {
   display: block;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
+  @include fz($fz-medium, $lh-medium);
   margin-top: 45px;
   margin-bottom: 5px;
   color: inherit;
@@ -76,50 +69,34 @@ body {
   background: url(/images/star.svg) center no-repeat;
 }
 
-.product-stars_one .product-stars__star:nth-child(-n+1) {
-  background-image: url(/images/star-active.svg);
-}
-
-.product-stars_two .product-stars__star:nth-child(-n+2) {
-  background-image: url(/images/star-active.svg);
-}
-
-.product-stars_three .product-stars__star:nth-child(-n+3) {
-  background-image: url(/images/star-active.svg);
-}
-
-.product-stars_four .product-stars__star:nth-child(-n+4) {
-  background-image: url(/images/star-active.svg);
-}
-
-.product-stars_five .product-stars__star:nth-child(-n+5) {
-  background-image: url(/images/star-active.svg);
+@for $i from 1 to 5 {
+  .product-stars_#{$i} .product-stars__star:nth-child(-n+#{$i}) {
+    background-image: url(/images/star-active.svg);
+  }
 }
 
 .product-card__price {
-  font-size: 16px;
-  line-height: 19px;
+  @include fz($fz-ex-large, $lh-ex-large);
   font-weight: bold;
 }
 
 .product-card__buy-button {
   display: block;
-  --buy-button-height: 40px;
-  height: var(--buy-button-height);
+  $buy-button-height: 40px;
+  height: $buy-button-height;
   width: 170px;
-  background-color: var(--moyo-blue);
-  border: 1px solid var(--moyo-blue);
+  background-color: $moyo-blue;
+  border: 1px solid $moyo-blue;
   border-radius: 5px;
   text-align: center;
-  line-height: var(--buy-button-height);
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 14px;
+  @include fz($fz-large, $buy-button-height);
 }
 
 .product-card__buy-button:hover {
   background-color: #fff;
-  color: var(--moyo-blue);
+  color: $moyo-blue;
 }
