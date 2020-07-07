@@ -21,6 +21,14 @@
   list-style: none;
 }
 
+.menu__item {
+  margin-left: 20px;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
 .menu__link {
   display: block;
   position: relative;
@@ -29,28 +37,23 @@
   text-transform: uppercase;
   text-decoration: none;
   color: base.$color_font;
+
+  &:hover {
+    color: base.$color_main;
+  }
 }
 
-.menu__item {
-  margin-left: 20px;
-}
-
-.menu__item:first-child {
-  margin: 0;
-}
-
-.menu__link:hover,
 .is-active {
   color: base.$color_main;
-}
 
-.is-active::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  height: 4px;
-  width: 100%;
-  border-radius: 8px;
-  background-color: base.$color_main;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: base.$color_main;
+  }
 }

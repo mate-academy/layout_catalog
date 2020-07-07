@@ -3,7 +3,7 @@
 .product-card {
   height: 403px;
   width: 200px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid base.$color_br;
   border-radius: 5px;
   padding: 14px;
   background-color: base.$color_bg;
@@ -29,20 +29,18 @@
 
 .stars {
   display: flex;
+
+  &__item {
+    @include base.img-square(15px);
+    margin-right: 4px;
+    background: url("../images/star.svg") no-repeat center;
+  }
 }
 
-.stars__item {
-  @include base.img-square(15px);
-  margin-right: 4px;
-  background: url("../images/star.svg") no-repeat center;
-}
-
-.stars--1 :first-child,
-.stars--2 :nth-child(-n+2),
-.stars--3 :nth-child(-n+3),
-.stars--4 :nth-child(-n+4),
-.stars--5 :nth-child(-n+5) {
-  background-image: url("../images/star-active.svg");
+@for $i from 1 through 5 {
+  .stars--#{$i} :nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
+  }
 }
 
 .product-card__container {
@@ -74,10 +72,9 @@
   background-color: base.$color_main;
   color: base.$color_bg;
 
-}
-
-.product-card__button-link:hover {
-  border: 1px solid base.$color_main;
-  background-color: base.$color_bg;
-  color: base.$color_main;
+  &:hover {
+    border: 1px solid base.$color_main;
+    background-color: base.$color_bg;
+    color: base.$color_main;
+  }
 }
