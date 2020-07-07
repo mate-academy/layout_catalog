@@ -1,0 +1,80 @@
+@use "base";
+
+.product-card {
+  height: 403px;
+  width: 200px;
+  border: 1px solid base.$color_br;
+  border-radius: 5px;
+  padding: 14px;
+  background-color: base.$color_bg;
+}
+
+.product-card__photo {
+  height: 134px;
+  width: 160px;
+  margin: 16px 5px 41px;
+}
+
+.product-card__title {
+  margin: 0 0 6px;
+  @include base.font__size_title;
+  line-height: 15px;
+}
+
+.product-card__description {
+  margin: 0;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.stars {
+  display: flex;
+
+  &__item {
+    @include base.img-square(15px);
+    margin-right: 4px;
+    background: url("../images/star.svg") no-repeat center;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} :nth-child(-n+#{$i}) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+
+.product-card__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 14px 0 19px;
+}
+
+.product-card__price {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.product-card__button-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 170px;
+  border-radius: 5px;
+  margin-top: 20px;
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: base.$color_main;
+  color: base.$color_bg;
+
+  &:hover {
+    border: 1px solid base.$color_main;
+    background-color: base.$color_bg;
+    color: base.$color_main;
+  }
+}

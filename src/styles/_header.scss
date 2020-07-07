@@ -1,0 +1,59 @@
+@use "base";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: base.$header__height;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: base.$color_bg;
+}
+
+.logo {
+  @include base.img-square(40px);
+}
+
+.menu__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu__item {
+  margin-left: 20px;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.menu__link {
+  display: block;
+  position: relative;
+  line-height: base.$header__height;
+  @include base.font__size_title;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: base.$color_font;
+
+  &:hover {
+    color: base.$color_main;
+  }
+}
+
+.is-active {
+  color: base.$color_main;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: base.$color_main;
+  }
+}
