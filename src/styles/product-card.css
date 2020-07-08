@@ -56,12 +56,16 @@ body {
   padding: 1px;
 }
 
-.product-card__stars :nth-child(-n+4) {
-  content: url(../images/star-active.svg);
+.product-card__stars > * {
+  content: url(../images/star.svg);
 }
 
-.product-card__stars :nth-child(5) {
-  content: url(../images/star.svg);
+.product-card__stars--5 :nth-child(-n+5),
+.product-card__stars--4 :nth-child(-n+4),
+.product-card__stars--3 :nth-child(-n+3),
+.product-card__stars--2 :nth-child(-n+2),
+.product-card__stars--1 :first-child {
+  content: url(../images/star-active.svg);
 }
 
 .product-card__review {
@@ -111,6 +115,7 @@ body {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .product-card__button:hover {
