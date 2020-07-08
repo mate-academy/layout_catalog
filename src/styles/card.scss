@@ -22,13 +22,14 @@
 .card__img {
   width: 160px;
   height: 134px;
-  margin: 0 5px 45px;
+  margin: 0 auto 45px;
 }
 
 .card__name {
   font-size: 12px;
   font-weight: 500;
   line-height: 15px;
+  margin-top: 0;
   margin-bottom: 5px;
 }
 
@@ -51,12 +52,15 @@
   width: $star-size;
   height: $star-size;
   margin-right: 4px;
-  background: url("../images/star-active.svg") no-repeat center;
-  border-radius: 0.5px;
+  background: url("../images/star.svg") no-repeat center;
 }
 
-.card__stars :last-child {
-  background: url("../images/star.svg") no-repeat center;
+$stars: 1, 2, 3, 4, 5;
+
+@each $star in $stars {
+  .stars--#{$star} :nth-child(-n + #{$star}) {
+    background: url("../images/star-active.svg") no-repeat center;
+  }
 }
 
 .card__cost {
@@ -85,11 +89,11 @@
   font-size: 14px;
   text-align: center;
   line-height: 40px;
+  border: 1px solid $style-color;
 }
 
 .card__btn:hover {
   background-color: #fff;
-  border: 1px solid $style-color;
   color: $style-color;
 }
 
