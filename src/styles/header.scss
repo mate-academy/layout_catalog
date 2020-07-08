@@ -1,0 +1,55 @@
+@import "variables";
+
+.header {
+  height: 60px;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: flex-end;
+
+    .nav-link {
+      display: flex;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: inherit;
+      font-weight: 500;
+      align-items: center;
+      white-space: nowrap;
+      text-transform: uppercase;
+      color: #000;
+
+      &:hover {
+        color: $link-color;
+      }
+
+      &:first-child {
+        margin: 0;
+      }
+
+      &.first-link {
+        color: $link-color;
+        position: relative;
+
+        &::before {
+          content: "";
+          height: 4px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          background-color: $link-color;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
