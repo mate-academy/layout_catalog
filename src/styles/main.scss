@@ -1,6 +1,14 @@
 @import "header";
 @import "card";
 
+$active-stars: (
+  "one-star" : 1,
+  "two-stars" : 2,
+  "three-stars" : 3,
+  "four-stars" : 4,
+  "five-stars" : 5
+);
+
 * {
   box-sizing: border-box;
 }
@@ -19,4 +27,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 50px auto 0;
+}
+
+@each $star, $i in $active-stars {
+  .card--#{$star} > .card__star:nth-child(-n + #{$i}) {
+    background: url(../images/star-active.svg) no-repeat;
+  }
 }
