@@ -10,6 +10,10 @@ $moyo-color: #00acdc;
   font-weight: 500;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
@@ -44,25 +48,36 @@ a {
 }
 
 .nav {
-  display: flex;
-  justify-content: flex-end;
   height: 60px;
 
-  &__link {
-    padding-top: 23px;
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+  &__item {
     margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 23px 0;
     font-style: normal;
     font-weight: 500;
     line-height: 14px;
     text-transform: uppercase;
     color: #000;
-  
+
     &:hover {
       color: $moyo-color;
-    }
-
-    &:last-child {
-      margin-right: 0;
     }
   }
 }
@@ -86,7 +101,6 @@ a {
 .product {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   max-width: 200px;
   height: 403px;
   padding: 30px 14px 14px;
@@ -147,9 +161,11 @@ a {
   }
 
   &__button {
+    display: inline-block;
     width: 170px;
     height: 40px;
     color: #fff;
+    text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
@@ -157,13 +173,11 @@ a {
     background-color: $moyo-color;
     text-align: center;
     border-radius: 5px;
+    border: 1px solid $moyo-color;
 
     &:hover {
-      box-sizing: border-box;
       color: $moyo-color;
       background-color: #fff;
-      border: 1px solid $moyo-color;
-      border-radius: 5px;
     }
   }
 }
