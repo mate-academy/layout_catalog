@@ -1,3 +1,182 @@
+$moyo-color: #00acdc;
+
+@mixin small-text {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+@mixin normal_text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  height: 60px;
+
+  &__link {
+    padding-top: 23px;
+    margin-right: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #000;
+  
+    &:hover {
+      color: $moyo-color;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.is-active {
+  color: $moyo-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 56px;
+    background: $moyo-color;
+    border-radius: 8px;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 200px;
+  height: 403px;
+  padding: 30px 14px 14px;
+  border: 1px solid #f3f3f3;
+  margin: 0 24px 50px;
+  border-radius: 5px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 5px 45px;
+  }
+
+  &__description {
+    @include normal_text;
+    line-height: 15px;
+    margin: 0 0 5px;
+  }
+
+  &__code {
+    @include small-text;
+    margin: 0 0 15px;
+  }
+
+  &__rating {
+    height: 15px;
+    margin: 0 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+  }
+
+  &__feedbacks {
+    @include small-text;
+  }
+
+  &__value {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 0 20px;
+  }
+
+  &__caption {
+    @include small-text;
+    margin: 0;
+  }
+
+  &__price {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__button {
+    width: 170px;
+    height: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 40px;
+    background-color: $moyo-color;
+    text-align: center;
+    border-radius: 5px;
+
+    &:hover {
+      box-sizing: border-box;
+      color: $moyo-color;
+      background-color: #fff;
+      border: 1px solid $moyo-color;
+      border-radius: 5px;
+    }
+  }
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+  background-image: url(../images/star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .star:nth-child(-n+#{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
 }
