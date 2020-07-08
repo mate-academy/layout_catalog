@@ -62,7 +62,7 @@ body {
 
   &__buy-button {
     display: block;
-    $buy-button-height: 40px;
+    $buy-button-height: 40px;//here
     height: $buy-button-height;
     width: 170px;
     background-color: $moyo-blue;
@@ -73,7 +73,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    @include font-size($fz-large, $buy-button-height);
+    @include font-size($fz-large, ($buy-button-height - 2) );//here
     &:hover {
       background-color: #fff;
       color: $moyo-blue;
@@ -86,6 +86,9 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  &--align-baseline {
+    align-items: baseline;
+  }
 }
 
 .product-stars {
