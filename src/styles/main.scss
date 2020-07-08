@@ -1,4 +1,6 @@
 $style-color: #00acdc;
+$card-size: 200px;
+$card-margin-lr: 24px;
 $star-size: 15px;
 $logo-size: 40px;
 
@@ -8,26 +10,16 @@ body {
 }
 
 .catalog {
-  padding: 0 128px;
   margin: 50px 0 78px;
+  display: flex;
+  justify-content: center;
 }
 
 .catalog__products {
   display: flex;
-  justify-content: space-between;
-}
-
-.catalog__products_first-row {
-  margin-bottom: 51px;
+  flex-wrap: wrap;
+  max-width: #{$card-size * 4 + $card-margin-lr * 2 * 4};
 }
 
 @import "header";
 @import "card";
-
-@media (max-width: 1024px) {
-  .catalog {
-    $padding-size: 40px;
-    padding-left: $padding-size;
-    padding-right: $padding-size;
-  }
-}
