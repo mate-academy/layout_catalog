@@ -1,0 +1,135 @@
+@import "variables";
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 855px;
+  width: 944px;
+  margin: 50px auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 403px;
+  width: 200px;
+  padding: 15px 14px;
+  background: $colorWhite;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: $textFont;
+
+  &__photo {
+    height: 134px;
+    width: 160px;
+    margin: 15px auto 0;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    margin: 45px 0 6px;
+  }
+
+  &__rate {
+    margin-top: 14px;
+  }
+
+  &__price {
+    margin-top: 20px;
+  }
+
+  &__price-amount {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__buy-button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 170px;
+    background: $colorVividBlue;
+    border: 1px solid $colorVividBlue;
+    border-radius: 5px;
+
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorWhite;
+    padding: auto;
+    margin-top: 20px;
+  }
+}
+
+.product__buy-button:hover {
+  color: $colorVividBlue;
+  background: $colorWhite;
+}
+
+.product__id {
+  font-size: 11px;
+  line-height: 13px;
+  margin: 0;
+}
+
+.product__feedback {
+  @extend .product__id;
+}
+
+.product__price-title {
+  @extend .product__id;
+}
+
+.stars {
+  display: flex;
+
+  &__item {
+    background: url(/images/star.svg) no-repeat;
+    background-position: center;
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+  }
+}
+
+@mixin activeStars {
+  background: url(/images/star-active.svg) no-repeat;
+  background-position: center;
+}
+
+.stars--1 :first-child {
+  @include activeStars;
+}
+
+.stars--2 :nth-child(-n+2) {
+  @include activeStars;
+}
+
+.stars--3 :nth-child(-n+3) {
+  @include activeStars;
+}
+
+.stars--4 :nth-child(-n+4) {
+  @include activeStars;
+}
+
+.stars--5 :nth-child(-n+5) {
+  @include activeStars;
+}
