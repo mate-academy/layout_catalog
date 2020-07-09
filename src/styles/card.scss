@@ -1,0 +1,104 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 30px 14px 15px;
+  max-height: 403px;
+
+  &card:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 5px;
+  }
+
+  &__name {
+    margin-top: 45px;
+    margin-bottom: 0;
+    line-height: 15px;
+    @include normalText;
+  }
+
+  &__code {
+    margin-top: 5px;
+    @include smallText;
+  }
+
+  &__rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+  }
+
+  &__reviews,
+  &__value {
+    @include smallText;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 20px;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__button {
+    border: 1px solid $keyColorBlue;
+    border-radius: 5px;
+    height: 40px;
+    width: 170px;
+  }
+
+  &__buy {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $keyColorBlue;
+    border-radius: 5px;
+    width: 170px;
+    height: 40px;
+    background-color: $keyColorBlue;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__buy:hover {
+    background-color: #fff;
+    color: $keyColorBlue;
+  }
+}
+
+.stars__item {
+  background: url(../images/star.svg) no-repeat center;
+  height: 15px;
+  width: 15px;
+  margin-right: 4px;
+}
+
+@for $i from 1 through 5 {
+  .card__stars--#{$i} .stars__item:nth-child(-n + #{$i}) {
+    background: url(../images/star-active.svg) no-repeat center;
+  }
+}

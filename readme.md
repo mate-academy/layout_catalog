@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-    - [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+    - [DEMO LINK](https://tykhan.github.io/layout_catalog/)
+    - [TEST REPORT LINK](https://tykhan.github.io/layout_catalog/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Write styles in `src/styles/main.scss` instead of `src/style.css`.
 ___
@@ -11,7 +11,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 
 ## Common mistakes
 - **IMPORTANT** Save and push your changes to github manually after `deploy`
-- Add **ALL** the `data-qa` attributes and `class="is-active"` required in the task
+- Add **ALL** the `data-qa` attributes and `class="navigation__link--is-active"` required in the task
 - Do not use tabs. Use 2 spaces for indentation.
 - Don't use repeated styles.
 - Check font styles. Use [google fonts](https://fonts.google.com/)
