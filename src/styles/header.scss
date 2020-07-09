@@ -1,6 +1,8 @@
 @import "variables";
 
 .header {
+  $header: &;
+
   height: 60px;
   padding: 0 50px;
   background-color: #fff;
@@ -13,23 +15,23 @@
     align-items: center;
   }
 
-  .nav-list {
+  &__nav-list {
     display: flex;
     justify-content: flex-end;
 
-    .nav-link {
+    #{$header}__nav-link {
       display: flex;
-      text-decoration: none;
+      align-items: center;
       margin-left: 20px;
       font-size: inherit;
       font-weight: 500;
-      align-items: center;
+      color: #000;
       white-space: nowrap;
       text-transform: uppercase;
-      color: #000;
+      text-decoration: none;
 
       &:hover {
-        color: $link-color;
+        color: $main-color;
       }
 
       &:first-child {
@@ -37,7 +39,7 @@
       }
 
       &.first-link {
-        color: $link-color;
+        color: $main-color;
         position: relative;
 
         &::before {
@@ -46,7 +48,7 @@
           width: 100%;
           position: absolute;
           bottom: 0;
-          background-color: $link-color;
+          background-color: $main-color;
           border-radius: 8px;
         }
       }
