@@ -1,10 +1,10 @@
-:root {
-  --card-bg-color: #fff;
-  --card-brdr-color: #f3f3f3;
-  --button-main-color: #00acdc;
-  --button-text-color: #fff;
-  --button-hover-bg-color: #fff;
-}
+$card-width: 200px;
+$card-margin-right: 48px;
+$card-bg-color: #fff;
+$card-brdr-color: #f3f3f3;
+$button-main-color: #00acdc;
+$button-text-color: #fff;
+$button-hover-bg-color: #fff;
 
 body {
   margin: 0;
@@ -36,7 +36,7 @@ a {
 }
 
 .card__layout {
-  width: 944px;
+  width: $card-width * 4 + $card-margin-right * 3;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -51,24 +51,24 @@ a {
   margin-left: auto;
 }
 
-.nav_list {
+.nav__list {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav_item {
+.nav__item {
   text-transform: uppercase;
   font-weight: 500;
   position: relative;
 }
 
-.nav_item:not(:last-child) {
+.nav__item:not(:last-child) {
   margin-right: 20px;
 }
 
-.nav_link {
+.nav__link {
   text-decoration: none;
   color: #000;
   font-size: 12px;
@@ -78,7 +78,7 @@ a {
 }
 
 .is-active,
-.nav_link:hover {
+.nav__link:hover {
   color: #00acdc;
 }
 
@@ -100,9 +100,9 @@ a {
   height: 403px;
   padding: 14px;
   margin-bottom: 50px;
-  border: 1px solid var(--card-brdr-color);
+  border: 1px solid $card-brdr-color;
   border-radius: 5px;
-  background-color: var(--card-bg-color);
+  background-color: $card-bg-color;
   box-sizing: border-box;
 }
 
@@ -146,7 +146,11 @@ a {
   height: 12px;
 }
 
-.stars--4 :nth-child(-n+4) {
+.stars--1 :nth-child(-n+1),
+.stars--2 :nth-child(-n+2),
+.stars--3 :nth-child(-n+3),
+.stars--4 :nth-child(-n+4),
+.stars--5 :nth-child(-n+5) {
   content: url(../images/star-active.svg);
 }
 
@@ -177,13 +181,13 @@ a {
   line-height: 16px;
   font-weight: 900;
   text-transform: uppercase;
-  border: 1px solid var(--button-main-color);
+  border: 1px solid $button-main-color;
   border-radius: 5px;
-  color: var(--button-text-color);
-  background-color: var(--button-main-color);
+  color: $button-text-color;
+  background-color: $button-main-color;
 }
 
 .card__button-link:hover {
-  background-color: var(--button-hover-bg-color);
-  color: var(--button-main-color);
+  background-color: $button-hover-bg-color;
+  color: $button-main-color;
 }
