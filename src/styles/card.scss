@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $cardWidth;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &--catalog {
+    margin-bottom: $topSpaceBetweenCards;
+  }
+
+  &__img {
+    padding: 16px 5px 0;
+    height: 150px;
+    width: 170px;
+  }
+
+  &__description {
+    margin-top: 45px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  &__text_code {
+    margin-top: 5px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: baseline;
+  }
+
+  &__how {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__btn {
+    margin-top: 20px;
+    height: 40px;
+    background: $mainColor;
+    border: 1px solid $mainColor;
+    border-radius: 5px;
+    text-align: center;
+
+    &-text {
+      text-decoration: none;
+      padding: 11px 57px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 40px;
+      text-transform: uppercase;
+      color: #fff;
+
+      &:hover {
+        color: $mainColor;
+      }
+    }
+
+    &:hover {
+      background: #fff;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} > .card__star:nth-child(-n+#{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
