@@ -1,3 +1,190 @@
+$catalogWidth : 944px;
+$textColor: #000;
+$btnColor: #00acdc;
+$btnColorHovered: #fff;
+$fontSite: "Roboto", sans-serif;
+
+@mixin flexSB {
+  display: flex;
+  justify-content: space-between;
+}
+
+@for $i from 1 through 4 {
+  .stars--#{$i} &:nth-child(-n+#{$i}) {
+    background-image: url("/images/star-active.svg");
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: $fontSite;
+  color: $textColor;
   margin: 0;
+}
+
+.header {
+  @include flexSB;
+  align-items: center;
+  padding: 0 50px;
+  height: 60px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+
+  &_list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &_link {
+    display: flex;
+    text-decoration: none;
+    color: $textColor;
+    margin-left: 20px;
+    line-height: 60px;
+    cursor: pointer;
+  }
+
+  &_link:hover {
+    color: $btnColor;
+  }
+
+}
+
+.is-active {
+  color: $btnColor;
+  margin-left: 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: $btnColor;
+    border-radius: 8px;
+    bottom: 0;
+  }
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.main {
+  @include flexSB;
+  flex-wrap: wrap;
+
+  padding: 0 calc((100vw - #{$catalogWidth}) / 2);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  width: 200px;
+  padding: 30px 14px 15px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__photo {
+    width: 160px;
+    height: 134px;
+    margin: auto;
+  }
+
+  &_text--name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    margin: 45px 0 5px;
+  }
+
+  &_text--code {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &__item {
+      width: 15px;
+      height: 15px;
+      margin-right: 4px;
+      background-image: url("/images/star.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &--text {
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+        margin: 0;
+        margin-left: 17px;
+      }
+    }
+  }
+
+  &__price {
+    @include flexSB;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &--name {
+      font-size: 11px;
+      line-height: 13px;
+      margin: 0;
+      margin-bottom: 1px;
+    }
+
+    &--number {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: $btnColor;
+    border-radius: 5px;
+    color: $btnColorHovered;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid $btnColor;
+
+    &:hover {
+      background: $btnColorHovered;
+      color: $btnColor;
+    }
+  }
 }
