@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  // justify-content: center;
   flex-direction: column;
   width: $cardWidth;
   height: $cardHeight;
@@ -11,10 +12,14 @@
     margin-right: $cardsGap;
   }
 
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+
   &__img {
     width: 160px;
     height: 134px;
-    margin: 0 5px;
   }
 
   &__name {
@@ -36,8 +41,7 @@
     margin-top: 15px;
   }
 
-  &__reviews,
-  &__value {
+  &__reviews {
     @include smallText;
   }
 
@@ -48,17 +52,13 @@
     margin-top: 20px;
   }
 
-  &__price {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
+  &__value {
+    @include smallText;
   }
 
-  &__button {
-    border: 1px solid $keyColorBlue;
-    border-radius: 5px;
-    height: 40px;
-    width: 170px;
+  &__price {
+    @include boldText;
+    line-height: 19px;
   }
 
   &__buy {
@@ -77,10 +77,10 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
-  }
 
-  &__buy:hover {
-    background-color: #fff;
-    color: $keyColorBlue;
+    &:hover {
+      background-color: #fff;
+      color: $keyColorBlue;
+    }
   }
 }
