@@ -3,10 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-  height: 60px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-size: 12px;
   font-weight: 500;
+
+  &__logo {
+    width: $logoSize;
+    height: $logoSize;
+  }
 }
 
 .nav__list {
@@ -21,35 +25,31 @@
   text-decoration: none;
   color: #000;
   margin-left: 20px;
-  line-height: 60px;
+  height: $headerHeight;
+  line-height: $headerHeight;
   cursor: pointer;
-}
 
-.nav__link:hover {
-  color: $style-color;
+  &:hover {
+    color: $styleColor;
+  }
+
+  &--is-active {
+    color: $styleColor;
+    margin-left: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: $styleColor;
+      border-radius: 8px;
+      bottom: 0;
+    }
+  }
 }
 
 [data-qa="nav-hover"] {
   @extend .nav__link;
-}
-
-.header__logo {
-  width: $logo-size;
-  height: $logo-size;
-}
-
-.is-active {
-  color: $style-color;
-  margin-left: 0;
-  position: relative;
-}
-
-.is-active::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: $style-color;
-  border-radius: 8px;
-  bottom: 0;
 }

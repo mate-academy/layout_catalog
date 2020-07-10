@@ -1,102 +1,94 @@
-* {
-  box-sizing: border-box;
-}
-
 .card {
   display: flex;
   flex-direction: column;
-  width: $card-size;
+  width: $cardSize;
   background: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 30px 14px 14px;
-  margin: 0 $card-margin-lr 51px;
-  font-size: 11px;
-  line-height: 13px;
+  margin: 0 $cardMarginX 51px;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 45px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    width: $starSize;
+    height: $starSize;
+    margin-right: 4px;
+    background: url("../images/star.svg") no-repeat center;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__value {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__btn {
+    display: block;
+    width: 170px;
+    height: 40px;
+    background-color: $styleColor;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid $styleColor;
+
+    &:hover {
+      background-color: #fff;
+      color: $styleColor;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
 }
 
-.card__img {
-  width: 160px;
-  height: 134px;
-  margin: 0 auto 45px;
-}
-
-.card__name {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 15px;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-.card__code {
-  margin-bottom: 15px;
-}
-
-.card__rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.card__stars {
-  display: flex;
-}
-
-.card__star {
-  width: $star-size;
-  height: $star-size;
-  margin-right: 4px;
-  background: url("../images/star.svg") no-repeat center;
-}
-
-$stars: 1, 2, 3, 4, 5;
-
-@each $star in $stars {
-  .stars--#{$star} :nth-child(-n + #{$star}) {
+@for $i from 1 through 5 {
+  .stars--#{$i} :nth-child(-n + #{$i}) {
     background: url("../images/star-active.svg") no-repeat center;
   }
 }
 
-.card__cost {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 20px;
-}
-
-.card__value {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.card__btn {
-  display: block;
-  width: 170px;
-  height: 40px;
-  background-color: $style-color;
-  border-radius: 5px;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-  text-align: center;
-  line-height: 40px;
-  border: 1px solid $style-color;
-}
-
-.card__btn:hover {
-  background-color: #fff;
-  color: $style-color;
-}
-
 [data-qa="card-hover"] {
   @extend .card__btn;
-}
-
-.card:hover {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
 }
