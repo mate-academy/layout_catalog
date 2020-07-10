@@ -5,10 +5,6 @@
   padding: 0 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
-  &__container {
-    margin-bottom: 50px;
-  }
-
   &__logo {
     width: 40px;
     height: 40px;
@@ -16,7 +12,6 @@
 }
 
 .nav {
-
   &__list {
     display: flex;
     justify-content: space-between;
@@ -30,42 +25,44 @@
     list-style: none;
     text-transform: uppercase;
 
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &--first {
+    &:first-child {
       position: relative;
     }
 
-    .item__link {
-      display: flex;
-      align-items: center;
-      height: 60px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
-      &:link,
-      &:visited {
-        color: black;
-        text-decoration: none;
-      }
+  &__link {
+    display: flex;
+    align-items: center;
+    height: $navLinkHeight;
 
-      &:hover {
-        color: $blueColor;
-      }
+    &:link,
+    &:visited {
+      color: black;
+      text-decoration: none;
+    }
 
-      &--active:link,
-      &--active:visited,
-      &--active:hover {
-        color: $blueColor;
-        &::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 4px;
-          bottom: 0;
-          background: $blueColor;
-          border-radius: 8px;
-        }
+    &:hover {
+      color: $blueColor;
+    }
+
+    &--active:link,
+    &--active:visited,
+    &--active:hover {
+      color: $blueColor;
+      &::after {
+        $underlineHeight: 4px;
+
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: $underlineHeight;
+        background: $blueColor;
+        border-radius: $underlineHeight / 2;
       }
     }
   }
