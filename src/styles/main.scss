@@ -1,4 +1,7 @@
-$moyo-color: #00acdc;
+$moyoColor: #00acdc;
+$cardWidth: 200px;
+$spaceBetweenCards: 48px;
+$spaceAroundCards: 40px;
 
 @mixin small-text {
   font-size: 11px;
@@ -14,29 +17,23 @@ $moyo-color: #00acdc;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+html {
   font-family: Roboto, sans-serif;
   font-size: 12px;
+}
+
+body {
+  margin: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-.cards {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
   padding: 0 50px;
   margin-bottom: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -48,8 +45,6 @@ a {
 }
 
 .nav {
-  height: 60px;
-
   &__list {
     margin: 0;
     padding: 0;
@@ -68,45 +63,54 @@ a {
   }
 
   &__link {
-    display: inline-block;
-    padding: 23px 0;
-    font-style: normal;
+    display: flex;
+    align-items: center;
+    height: 60px;
     font-weight: 500;
     line-height: 14px;
     text-transform: uppercase;
     color: #000;
 
+    &--active {
+      color: $moyoColor;
+      position: relative;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        bottom: 0;
+        background: $moyoColor;
+        border-radius: 8px;
+      }
+    }
+
     &:hover {
-      color: $moyo-color;
+      color: $moyoColor;
     }
   }
 }
 
-.is-active {
-  color: $moyo-color;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    left: 0;
-    top: 56px;
-    background: $moyo-color;
-    border-radius: 8px;
-  }
+.cards {
+  max-width: $cardWidth * 4 + $spaceBetweenCards * 3 + $spaceAroundCards * 2;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
+  max-width: $moyoColor;
   height: 403px;
   padding: 30px 14px 14px;
   border: 1px solid #f3f3f3;
   margin: 0 24px 50px;
   border-radius: 5px;
+  width: $cardWidth;
 
   &__image {
     width: 160px;
@@ -170,13 +174,13 @@ a {
     font-size: 14px;
     font-weight: bold;
     line-height: 40px;
-    background-color: $moyo-color;
+    background-color: $moyoColor;
     text-align: center;
     border-radius: 5px;
-    border: 1px solid $moyo-color;
+    border: 1px solid $moyoColor;
 
     &:hover {
-      color: $moyo-color;
+      color: $moyoColor;
       background-color: #fff;
     }
   }
