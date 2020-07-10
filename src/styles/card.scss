@@ -1,42 +1,53 @@
-.product {
+.card {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
-  height: 403px;
-  margin: 0 24px 50px;
-  padding: 30px 14px 14px;
+  max-width: $card-width;
+  height: $card-height;
+  padding: 0 14px;
   box-sizing: border-box;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $border-color;
   border-radius: 5px;
 
   &__image {
     width: 160px;
     height: 134px;
-    margin: 0 5px 45px;
+    margin: 30px 0;
+    outline: 3px solid transparent;
+    //transition: transform 1s, padding 1s, margin-top 1s;
+
+    &--container {
+      height: 209px;
+      width: 160px;
+      align-self: center;
+    }
+
+    //&:hover {
+    //  outline-color: $border-color;
+    //  transform: scale(1.2);
+    //  padding: 15px 0;
+    //  margin-top: 15px;
+    //}
   }
 
   &__description {
     @include normal_text;
     line-height: 15px;
-    margin: 0 0 5px;
+    margin-bottom: 5px;
   }
 
   &__code {
     @include small-text;
-    margin: 0 0 15px;
+    margin-bottom: 15px;
+    align-self: flex-start;
   }
 
   &__rating {
     display: flex;
+    align-self: stretch;
     justify-content: space-between;
     align-items: center;
     height: 15px;
-    margin: 0 0 20px;
-  }
-
-  &__stars {
-    display: flex;
-    align-items: center;
+    margin-bottom: 20px;
   }
 
   &__feedbacks {
@@ -45,24 +56,22 @@
 
   &__value {
     display: flex;
+    align-self: stretch;
     justify-content: space-between;
     align-items: baseline;
-    margin: 0 0 20px;
+    margin-bottom: 20px;
   }
 
   &__caption {
     @include small-text;
-    margin: 0;
   }
 
   &__price {
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 19px;
+    @include strong-text;
   }
 
   &__button {
-    width: 170px;
+    width: 100%;
     height: 40px;
     line-height: 40px;
     text-align: center;
@@ -71,29 +80,14 @@
     border: 1px solid $secondary-color;
     box-sizing: border-box;
     color: #fff;
-    text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
+    //transition: 1s;
   }
 
   &__button:hover {
     background-color: #fff;
     color: $secondary-color;
-  }
-}
-
-.star {
-  width: 15px;
-  height: 15px;
-  margin-right: 4px;
-  background-image: url(../images/star.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@for $i from 1 through 5 {
-  .stars--#{$i} .star:nth-child(-n+#{$i}) {
-    background-image: url(../images/star-active.svg);
   }
 }
