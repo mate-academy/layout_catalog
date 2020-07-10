@@ -1,16 +1,25 @@
 .card {
   display: flex;
   flex-direction: column;
-  @include width-height($card-width, 402px);
+  align-items: center;
+  @include width-height(200px, 402px);
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   padding: 0 14px;
   margin: 0 24px 50px;
 
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    @include width-height(160px, 209px);
+  }
+
   &__img {
-    margin: 30px 5px 43px;
+    margin: 30px 0;
     @include width-height(160px, 134px);
+    transition: transform 1s;
+    outline: 3px solid transparent;
   }
 
   &__title {
@@ -20,6 +29,7 @@
   }
 
   &__product-code {
+    align-self: flex-start;
     @include font-line(11px, 13px);
     margin-bottom: 14px;
   }
@@ -29,6 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    align-self: stretch;
   }
 
   &__price-amount {
@@ -56,12 +67,12 @@
 }
 
 .rating {
-  margin: 0 0 19px;
+  margin-bottom: 19px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 15px;
-
+  align-self: stretch;
   &__stars {
     display: flex;
   }
