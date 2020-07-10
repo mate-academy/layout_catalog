@@ -1,25 +1,23 @@
 @import "variables";
-
-h3 {
-  margin: 0;
-}
+@import "header";
+@import "reset";
 
 .main {
   display: flex;
   justify-content: center;
   margin-top: 50px;
-}
 
-.main__section {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 944px;
-  min-width: 200px;
-}
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: ($product-section-width * 4) + ($distance-between-products * 3);
+    min-width: $product-section-width;
+  }
 
-.main__item {
-  padding-bottom: 50px;
+  &__item {
+    padding-bottom: 50px;
+  }
 }
 
 .product {
@@ -27,118 +25,91 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 200px;
+  width: $product-section-width;
   height: 403px;
-  background: $background-color;
   border: 1px solid #f3f3f3;
   box-sizing: border-box;
   border-radius: 5px;
-  padding: 30px 15px 15px;
-}
+  padding: 0 15px 15px;
 
-.product__img {
-  width: 160px;
-  height: 134px;
-  padding-bottom: 44px;
-}
-
-.product__text {
-  width: 170px;
-}
-
-.product__title {
-  margin-bottom: 5px;
-  font-weight: 500;
-  font-size: $normal-font-size;
-  line-height: 15px;
-  color: $main-text-color;
-}
-  
-.product__code {
-  font-weight: normal;
-  margin-bottom: 15px;
-  font-size: $small-font-size;
-  line-height: 13px;
-}
-
-.product__rating {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.product__stars {
-  display: flex;
-  justify-content: center;
-}
-
-.product__stars > div {
-  background-repeat: no-repeat;
-  margin-right: 4px;
-  $size: 15px;
-  height: $size;
-  width: $size;
-  background-image: url(/images/star.svg);
-}
-
-@for $i from 1 through 5 {
-  .stars--#{$i} :nth-child(-n + #{$i}) {
-    background-image: url(/images/star-active.svg);
+  &__img {
+    width: 160px;
+    height: 134px;
+    padding-top: 30px;
   }
-}
 
-.product__feedback {
-  font-size: $small-font-size;
-  line-height: 13px;
-  text-align: right;
-  color: $main-text-color;
-}
+  &__title {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: $normal-font-size;
+    line-height: 15px;
+  }
 
-.product__pricetag {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 20px;
-
-  .product__price-title {
-    font-size: $small-font-size;
-    line-height: 13px;
-    color: $main-text-color;
+  &__code {
+    margin-bottom: 15px;
   }
   
-  .product__price {
+  &__rating {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__stars {
+    display: flex;
+  }
+  
+  &__stars > div {
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    $size: 15px;
+    height: $size;
+    width: $size;
+    background-image: url(/images/star.svg);
+  }
+  
+  @for $stars from 1 through 5 {
+    @for $actualStars from $stars through 5 {
+      .stars--#{$actualStars} :nth-child(#{$stars}) {
+        background-image: url(/images/star-active.svg);
+      }
+    }
+  }
+  
+  &__pricetag {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+  
+  &__value {
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: $main-text-color;
   }
-}
-
-.product__buy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: $extra-color;
-  width: 170px;
-  height: 40px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: $background-color;
-  text-decoration: none;
-  border: 1px solid $extra-color;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-
-.product__buy:hover {
-  background: $background-color;
-  color: $extra-color;
-}
-
-@media screen and (max-width: 400px) {
-  .main__section {
+  
+  &__buy-button {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: $extra-color;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    border: 1px solid $extra-color;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: Roboto, sans-serif;
+    cursor: pointer;
+  }
+  
+  &__buy-button:hover {
+    color: $extra-color;
+    background-color: #fff;
   }
 }

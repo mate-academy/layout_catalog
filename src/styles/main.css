@@ -1,5 +1,78 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+}
+
+.header__logolink {
+  height: 40px;
+  width: 40px;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__wrapper {
+  list-style: none;
+}
+
+.nav__item {
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 20px;
+  line-height: 14px;
+  text-transform: uppercase;
+  height: 60px;
+  color: black;
+}
+
+.nav__item:hover {
+  color: #00acdc;
+}
+
+.is-active {
+  color: #00acdc;
+  margin-left: 0;
+}
+
+.is-active::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 4px;
+  bottom: 0;
+  background-color: #00acdc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  background-color: #fff;
+  line-height: 13px;
+}
+
 h3 {
   margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button:focus {
+  outline: none;
 }
 
 .main {
@@ -12,7 +85,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 944px;
+  width: 944px;
   min-width: 200px;
 }
 
@@ -27,21 +100,16 @@ h3 {
   align-items: center;
   width: 200px;
   height: 403px;
-  background: #fff;
   border: 1px solid #f3f3f3;
   box-sizing: border-box;
   border-radius: 5px;
-  padding: 30px 15px 15px;
+  padding: 0 15px 15px;
 }
 
 .product__img {
   width: 160px;
   height: 134px;
-  padding-bottom: 44px;
-}
-
-.product__text {
-  width: 170px;
+  padding-top: 30px;
 }
 
 .product__title {
@@ -49,14 +117,10 @@ h3 {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  color: black;
 }
 
 .product__code {
-  font-weight: normal;
   margin-bottom: 15px;
-  font-size: 11px;
-  line-height: 13px;
 }
 
 .product__rating {
@@ -67,7 +131,6 @@ h3 {
 
 .product__stars {
   display: flex;
-  justify-content: center;
 }
 
 .product__stars > div {
@@ -78,57 +141,84 @@ h3 {
   background-image: url(/images/star.svg);
 }
 
-.stars--1 :nth-child(-n+1) {
+.stars--1 :nth-child(1) {
   background-image: url(/images/star-active.svg);
 }
 
-.stars--2 :nth-child(-n+2) {
+.stars--2 :nth-child(1) {
   background-image: url(/images/star-active.svg);
 }
 
-.stars--3 :nth-child(-n+3) {
+.stars--3 :nth-child(1) {
   background-image: url(/images/star-active.svg);
 }
 
-.stars--4 :nth-child(-n+4) {
+.stars--4 :nth-child(1) {
   background-image: url(/images/star-active.svg);
 }
 
-.stars--5 :nth-child(-n+5) {
+.stars--5 :nth-child(1) {
   background-image: url(/images/star-active.svg);
 }
 
-.product__feedback {
-  font-size: 11px;
-  line-height: 13px;
-  text-align: right;
-  color: black;
+.stars--2 :nth-child(2) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--3 :nth-child(2) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--4 :nth-child(2) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--5 :nth-child(2) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--3 :nth-child(3) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--4 :nth-child(3) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--5 :nth-child(3) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--4 :nth-child(4) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--5 :nth-child(4) {
+  background-image: url(/images/star-active.svg);
+}
+
+.stars--5 :nth-child(5) {
+  background-image: url(/images/star-active.svg);
 }
 
 .product__pricetag {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
   margin-bottom: 20px;
 }
 
-.product__pricetag .product__price-title {
-  font-size: 11px;
-  line-height: 13px;
-  color: black;
-}
-
-.product__pricetag .product__price {
+.product__value {
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  color: black;
 }
 
-.product__buy {
+.product__buy-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
   background: #00acdc;
   width: 170px;
   height: 40px;
@@ -136,22 +226,16 @@ h3 {
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
   border: 1px solid #00acdc;
   box-sizing: border-box;
   border-radius: 5px;
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
 }
 
-.product__buy:hover {
-  background: #fff;
+.product__buy-button:hover {
   color: #00acdc;
-}
-
-@media screen and (max-width: 400px) {
-  .main__section {
-    justify-content: center;
-  }
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */
