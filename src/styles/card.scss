@@ -4,108 +4,100 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   background: #fff;
-}
 
-.card__image {
-  height: 134px;
-  width: 160px;
-  margin: 15px 0 0 5px;
-}
-
-.card__heading {
-  margin: 41px 0 0;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-}
-
-%card__link, .card__link {
-  display: block;
-  cursor: pointer;
-  text-decoration: none;
-  color: #000;
-
-  &:hover {
-    text-decoration: underline;
+  .card__image {
+    height: 134px;
+    width: 160px;
+    margin: 15px 0 0 5px;
   }
-}
 
-.card__product-code {
-  font-size: 11px;
-  margin-top: 5px;
-}
+  .card__heading {
+    margin: 41px 0 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
 
-.card__rating {
-  height: 15px;
-  margin: 17px 0 0 1px;
-  display: flex;
-  justify-content: space-between;
+  %card__link, .card__link {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
 
-  .card__stars {
-    display: flex;
-
-    .card__star {
-      height: 15px;
-      width: 15px;
-      margin-right: 4px;
-      background: url(../images/star.svg) no-repeat;
+    &:hover {
+      text-decoration: underline;
     }
   }
-  
-  .card__review {
-    @extend %card__link;
-    font-size: 11px;
-    height: 12px;
-    margin: -1px 0 0;
-  }
-}
 
-.card__price-block {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 18px;
-
-  .card__price-incription {
+  .card__product-code {
     font-size: 11px;
+    margin-top: 5px;
   }
-  
-  .card__price {
+
+  .card__rating {
+    height: 15px;
+    margin: 17px 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+
+    .card__stars {
+      display: flex;
+
+      .card__star {
+        height: 15px;
+        width: 15px;
+        margin-right: 4px;
+        background: url(../images/star.svg) no-repeat;
+      }
+    }
+    
+    .card__review {
+      @extend %card__link;
+      font-size: 11px;
+      height: 12px;
+      margin: -1px 0 0;
+    }
+  }
+
+  .card__price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 18px;
+
+    .card__price-incription {
+      font-size: 11px;
+    }
+    
+    .card__price {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .card__buy-button {
+    height: 40px;
+    width: 170px;
+    background-color: #00acdc;
+    border-radius: 5px;
+    border: 1px solid #00acdc;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+      color: #00acdc;
+      background: #fff;
+    }
   }
-}
 
-.card__buy-button {
-  height: 40px;
-  width: 170px;
-  background-color: #00acdc;
-  border-radius: 5px;
-  border: 1px solid #00acdc;
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: all 0.1s;
-
-  &:hover {
-    color: #00acdc;
-    background: #fff;
-  }
-}
-
-$active-stars: (
-  "one-star" : 1,
-  "two-stars" : 2,
-  "three-stars" : 3,
-  "four-stars" : 4,
-  "five-stars" : 5
-);
-
-@each $star, $i in $active-stars {
-  .card--#{$star} > .card__star:nth-child(-n + #{$i}) {
-    background: url(../images/star-active.svg) no-repeat;
+  @for $i from 1 through 5 {
+    .stars_amount-#{$i} .card__star:nth-child(-n + #{$i}) {
+      background: url(../images/star-active.svg) no-repeat;
+    }
   }
 }
