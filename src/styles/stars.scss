@@ -1,0 +1,18 @@
+.stars {
+  $blockName: &;
+  height: 15px;
+
+  &__star {
+    display: inline-block;
+    width: 13.3px;
+    height: 12px;
+    margin: 0 2px 0 1px;
+    background: url(../images/star.svg) no-repeat center;
+
+    @for $i from 1 through 5 {
+      #{$blockName}--#{$i} &:nth-child(-n+#{$i}) {
+        background: url(../images/star-active.svg) no-repeat center;
+      }
+    }
+  }
+}
