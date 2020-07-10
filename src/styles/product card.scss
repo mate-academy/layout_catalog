@@ -1,12 +1,25 @@
+$card-width:200px;
+$card-height:403px;
+$cards-gap-y:50px;
+$cards-gap-x:48px;
+
+.card-field {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: ($card-width*4)+($cards-gap-x*3) ;
+  margin: 50px auto;
+}
+
 .card {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding: 30px 14px 15px;
-  max-width: 200px;
+  max-width: $card-width;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  margin: 0 24px 50px;
   &__image {
     width: 160px;
     height: 134px;
@@ -20,10 +33,14 @@
     margin: 0 0 5px;
   }
 
-  .card__code {
+  &__code {
     font-size: 11px;
     line-height: 13px;
     margin: 0 0 15px;
+  }
+
+  &:nth-child(n+5) {
+    margin-top: 50px;
   }
 }
 
