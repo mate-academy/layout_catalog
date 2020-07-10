@@ -1,14 +1,6 @@
 @import "header";
 @import "card";
 
-$active-stars: (
-  "one-star" : 1,
-  "two-stars" : 2,
-  "three-stars" : 3,
-  "four-stars" : 4,
-  "five-stars" : 5
-);
-
 * {
   box-sizing: border-box;
 }
@@ -22,15 +14,20 @@ body {
   padding-left: 10px;
 }
 
-.catalog-wrapper {
-  width: 954px;
+.catalog-container {
+  max-width: 946px;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin: 50px auto 0;
 }
 
-@each $star, $i in $active-stars {
-  .card--#{$star} > .card__star:nth-child(-n + #{$i}) {
-    background: url(../images/star-active.svg) no-repeat;
+.catalog-container .card {
+  &:nth-child(n+5) {
+    margin-top: 50px;
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
   }
 }
