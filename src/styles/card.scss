@@ -24,30 +24,6 @@
     margin-bottom: 14px;
   }
 
-  &__stars {
-    display: flex;
-  }
-
-  .stars__item {
-    background: url(/images/star.svg) no-repeat center;
-    @include width-height(15px, 15px);
-    margin-right: 4px;
-  }
-
-  @for $i from 1 through 5 {
-    &__stars--#{$i} .stars__item:nth-child(-n+#{$i}) {
-      background-image: url(/images/star-active.svg);
-    }
-  }
-
-  &__rating {
-    margin: 0 0 19px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15px;
-  }
-
   &__price {
     margin-bottom: 20px;
     display: flex;
@@ -76,5 +52,29 @@
   &__buy-link:hover {
     background-color: #fff;
     color: $color-moyo;
+  }
+}
+
+.rating {
+  margin: 0 0 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    background: url(/images/star.svg) no-repeat center;
+    @include width-height(15px, 15px);
+    margin-right: 4px;
+  }
+
+  @for $i from 1 through 5 {
+    &__stars--#{$i} &__star:nth-child(-n+#{$i}) {
+      background-image: url(/images/star-active.svg);
+    }
   }
 }
