@@ -1,34 +1,98 @@
-
-$text-font: "Roboto", sans-serif;
-$blue-color: hsl(193, 100%, 43%);
-$white-color: white;
-$border: 1px solid;
-$border-radius: 5px;
-@mixin small-text {
-  font-size: 11px;
-  line-height: 13px;
-}
-@mixin centered {
+.main {
   display: flex;
-  align-items: center;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 944px;
+  }
+  &__element {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 30px 14px 15px;
+    border: 1px solid hsl(0, 0%, 95%);
+    border-radius: 5px;
+    margin-bottom: 50px;
+
+    &--image {
+      align-self: center;
+      width: 160px;
+      height: 134px;
+      margin-bottom: 45px;
+    }
+
+    &--title {
+      @include title-text;
+      margin: 0;
+      line-height: 15px;
+      margin-bottom: 6px;
+    }
+
+    &--code {
+      @include small-text;
+      margin-bottom: 15px;
+    }
+
+    &--raiting {
+      @include centered;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    &--responds {
+      @include small-text;
+    }
+
+    &--price {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    &--price-title {
+      @include small-text;
+      margin: 0;
+    }
+
+    &--price-value {
+      @include bold-text;
+      line-height: 19px;
+      margin-bottom: 20px;
+    }
+
+    &--button {
+      @include centered;
+      @include button-text;
+      justify-content: center;
+      background: $theme-color;
+      border: 1px solid $theme-color;
+      border-radius: 5px;
+      height: 40px;
+    }
+
+    &--button:hover {
+      background-color: white;
+      color: $theme-color;
+    }
+  }
 }
 
-@import "header";
-@import "card";
+.stars {
+  @include centered;
 
-body {
-  margin: 0;
-  font-family: $text-font;
-}
+  &__item {
+    background: url(../images/star.svg) no-repeat center;
+    height: $star-size;
+    width: $star-size;
+    margin-right: 4px;
+  }
 
-* {
-  box-sizing: border-box;
-}
-
-.main__cards {
-  display: flex;
-  flex-wrap: wrap;
-  width: 944px;
-  margin: 50px auto 28px;
-  justify-content: space-between;
+  @for $i from 1 through 5 {
+    &--#{$i} &__item:nth-child(-n+#{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
