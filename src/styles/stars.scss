@@ -1,0 +1,18 @@
+.stars {
+  $blockName: &;
+
+  display: flex;
+
+  &__item {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background: url("../images/star.svg") no-repeat center;
+
+    @for $parentNo from 1 through 5 {
+      #{$blockName}--#{$parentNo} &:nth-child(-n+#{$parentNo}) {
+        background: url("../images/star-active.svg") no-repeat center;
+      }
+    }
+  }
+}
