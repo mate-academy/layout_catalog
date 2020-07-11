@@ -1,10 +1,9 @@
 .card {
   display: flex;
-  // justify-content: center;
   flex-direction: column;
   width: $cardWidth;
   height: $cardHeight;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $borderColor;
   border-radius: 5px;
   padding: 30px 14px 15px;
 
@@ -20,6 +19,12 @@
   &__img {
     width: 160px;
     height: 134px;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: translateY(-14px) scale(1.2, 1.2);
+      outline: 3px solid $borderColor;
+    }
   }
 
   &__name {
@@ -77,6 +82,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
+    transition: color 0.5s, background-color 0.5s;
 
     &:hover {
       background-color: #fff;
