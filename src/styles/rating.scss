@@ -1,0 +1,23 @@
+.stars {
+  $starBlok: &;
+  display: flex;
+  align-items: center;
+
+  &__item {
+    margin-right: 4px;
+    width: 15px;
+    height: 15px;
+
+    background: url(../images/star.svg) center no-repeat;
+  }
+
+  %activeStarsBackground {
+    background: url(../images/star-active.svg) center no-repeat;
+  }
+
+  @for $i from 1 through 4 {
+    #{$starBlok}__item:nth-child(-n + #{$i}) {
+      @extend %activeStarsBackground;
+    }
+  }
+}
