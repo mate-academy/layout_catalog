@@ -1,0 +1,79 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 403px;
+  width: 200px;
+  padding: 15px 14px;
+  background: $colorWhite;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &__photo {
+    height: 134px;
+    width: 160px;
+    margin: 15px auto 0;
+  }
+
+  &__title {
+    font-size: $fontSizeDefault;
+    font-weight: 500;
+    line-height: $fontSizeDefault * 1.25;
+    margin: 45px 0 6px;
+  }
+
+  &__rating {
+    @include elementContainer;
+    margin-top: 14px;
+  }
+
+  &__price {
+    @include elementContainer;
+    margin-top: 20px;
+  }
+
+  &__price-amount {
+    font-weight: bold;
+    font-size: $fontSizeLarge;
+    margin: 0;
+  }
+
+  &__buy-button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    height: $buyButtonHeight;
+    width: $productCardWidth - 15px * 2;
+    background: $colorVividBlue;
+    border: 1px solid $colorVividBlue;
+    border-radius: 5px;
+
+    font-size: $fontSizeMedium;
+    font-weight: bold;
+    line-height: $buyButtonHeight;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 20px;
+    color: $colorWhite;
+
+    &:hover {
+      color: $colorVividBlue;
+      background: $colorWhite;
+    }
+  }
+
+  &__id {
+    font-size: $fontSizeSmall;
+    line-height: $fontSizeSmall * 1.2;
+    margin: 0;
+  }
+
+  &__reviews-number {
+    @extend .product__id;
+  }
+
+  &__price-title {
+    @extend .product__id;
+  }
+}
