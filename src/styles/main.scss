@@ -1,12 +1,7 @@
-$styleColor: #00acdc;
-$cardSize: 200px;
-$cardMarginX: 24px;
-$starSize: 15px;
-$logoSize: 40px;
-$headerHeight: 60px;
+@import "_reset";
+@import "_variables";
 
-body {
-  margin: 0;
+html {
   font-family: "Roboto", sans-serif;
   font-size: 11px;
   line-height: 13px;
@@ -17,16 +12,17 @@ body {
 }
 
 .catalog {
-  margin: 50px 0 78px;
-  display: flex;
+  display: grid;
   justify-content: center;
+  grid-template-columns: repeat(4, $cardSize);
+  gap: $cardRowGap $cardColumnGap;
+  margin: 50px 0 78px;
 
-  &__products {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: #{$cardSize * 4 + $cardMarginX * 2 * 4};
+  @media (max-width: $cardSize * 4 + $cardColumnGap * 3) {
+    grid-template-columns: repeat(auto-fit, $cardSize);
   }
 }
 
 @import "header";
+@import "nav";
 @import "card";
