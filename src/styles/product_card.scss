@@ -1,9 +1,5 @@
 @import "variables";
 
-* {
-  box-sizing: border-box;
-}
-
 .product-card {
   width: 200px;
   background-color: #fafafa;
@@ -25,49 +21,42 @@
   }
 
   &__name {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    color: #000;
-    margin: 45px 0 0;
+    @include medium-text;
 
+    color: #000;
+    margin: 45px 0 4px;
   }
 
   &__number {
-    font-size: 11px;
-    line-height: 11px;
-    margin: 6px 0 0;
-
+    @include small-text(11px);
   }
 
   &__rating {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-top: 15px;
   }
 
   &__stars {
     display: flex;
+  }
 
-    .stars {
-      background: url(/images/star.svg) no-repeat center;
-      height: 15px;
-      width: 15px;
-      margin-right: 4px;
+  &__star {
+    background: url(/images/star.svg) no-repeat center;
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+  }
+
+  @for $i from 1 through 5 {
+    .stars--#{$i} &__star:nth-child(-n + #{$i}) {
+      background: url(/images/star-active.svg) no-repeat center;
     }
-
-    @for $i from 1 through 5 {
-      &.stars--#{$i} .stars:nth-child(-n + #{$i}) {
-        background: url(/images/star-active.svg) no-repeat center;
-      }
-    }
-
   }
 
   &__comment {
-    font-size: 11px;
+    @include small-text(15px);
     margin: 0;
-    line-height: 15px;
   }
 
   &__price {
@@ -75,23 +64,24 @@
     justify-content: space-between;
     align-items: baseline;
     margin-top: 20px;
-
-    .price-tag {
-      font-size: 11px;
-    }
-
-    .price-size {
-      font-weight: bold;
-      font-size: 16px;
-      justify-content: flex-end;
-    }
   }
-  .button {
+
+  &__price-tag {
+    @include small-text(0);
+  }
+
+  &__price-size {
+    @include large-text(16px);
+
+    justify-content: flex-end;
+  }
+
+  &__button {
+    @include large-text(14px);
+
     width: 100%;
     height: 40px;
     margin: 20px 0 15px;
-    font-weight: bold;
-    font-size: 14px;
     font-family: $f-family;
     background: $main-color;
     border-radius: 5px;

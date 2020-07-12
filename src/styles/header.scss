@@ -3,7 +3,7 @@
 .header {
   $header: &;
 
-  height: 60px;
+  height: $header-height;
   padding: 0 50px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -18,39 +18,38 @@
   &__nav-list {
     display: flex;
     justify-content: flex-end;
+  }
+  &__nav-link {
+    @include medium-text;
 
-    #{$header}__nav-link {
-      display: flex;
-      align-items: center;
-      margin-left: 20px;
-      font-size: inherit;
-      font-weight: 500;
-      color: #000;
-      white-space: nowrap;
-      text-transform: uppercase;
-      text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    color: #000;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
 
-      &:hover {
-        color: $main-color;
-      }
+    &:hover {
+      color: $main-color;
+    }
 
-      &:first-child {
-        margin: 0;
-      }
+    &:first-child {
+      margin: 0;
+    }
 
-      &.first-link {
-        color: $main-color;
-        position: relative;
+    &--is-active {
+      color: $main-color;
+      position: relative;
 
-        &::before {
-          content: "";
-          height: 4px;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-          background-color: $main-color;
-          border-radius: 8px;
-        }
+      &::before {
+        content: "";
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: $main-color;
+        border-radius: 2px;
       }
     }
   }
