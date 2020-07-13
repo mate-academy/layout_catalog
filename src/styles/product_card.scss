@@ -1,0 +1,92 @@
+.card {
+  $cardPrefix: &;
+  width: 200px;
+  padding: 30px 0 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 11px;
+  border: 1px solid #f3f3f3;
+
+  &--indents {
+    margin-top: 50px;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 0 45px;
+  }
+
+  &__info {
+    width: 170px;
+    flex-wrap: wrap;
+  }
+
+  &__info-name {
+    margin-bottom: 6px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__info-code {
+    margin-bottom: 16px;
+    font-size: 11px;
+  }
+
+  &__info-rating {
+    margin-bottom: 19px;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  &__stars-container {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+
+    @for $numOfStars from 0 through 5 {
+      #{$cardPrefix}__stars--#{$numOfStars} &:nth-child(-n+#{$numOfStars}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+
+  &__reviews {
+    line-height: 13px;
+  }
+
+  &__info-price {
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-grow: 1;
+  }
+
+  &__value {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__button-buy {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $main-theme-color;
+    border-radius: 5px;
+    background-color: $main-theme-color;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #fff;
+      color: $main-theme-color;
+    }
+  }
+}
