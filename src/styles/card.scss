@@ -1,0 +1,83 @@
+%displayRatingAndPrice {
+  display: inherit;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card {
+  $blockName: &;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $card-width;
+  height: $card-height;
+  padding: 14px;
+  border: 1px solid $card-brdr-color;
+  border-radius: 5px;
+  background-color: $card-bg-color;
+  box-sizing: border-box;
+
+  &__photo {
+    margin: 16px 0 42px;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__description {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+  }
+
+  &__code {
+    width: 100%;
+    text-align: left;
+    margin: 5px 0 17px;
+  }
+
+  &__rating {
+    @extend %displayRatingAndPrice;
+    #{$blockName}__reviews {
+      line-height: 11px;
+    }
+  }
+
+  &__price {
+    @extend %displayRatingAndPrice;
+    margin: 17px 0 21px;
+    align-items: flex-end;
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    &-link {
+      display: block;
+      text-align: center;
+      padding: 11px 0;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 1px solid $button-main-color;
+      border-radius: 5px;
+      color: $button-text-color;
+      background-color: $button-main-color;
+
+      &:hover {
+        background-color: $button-hover-bg-color;
+        color: $button-main-color;
+      }
+    }
+  }
+}
