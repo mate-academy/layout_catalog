@@ -5,7 +5,6 @@
   width: 200px;
   padding: 30px 14px 15px;
   margin-bottom: 50px;
-  box-sizing: border-box;
   background: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
@@ -39,25 +38,7 @@
   }
 
   &__stars {
-    display: flex;
-    align-items: center;
-  }
-
-  &__star {
-    width: 15px;
     height: 15px;
-    margin-right: 4px;
-    background-image: url(../images/star.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  &__stars--5 .card__star,
-  &__stars--1 .card__star:first-child,
-  &__stars--2 .card__star:nth-child(-n+2),
-  &__stars--3 .card__star:nth-child(-n+3),
-  &__stars--4 .card__star:nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
   }
 
   &__price-block {
@@ -74,7 +55,7 @@
     line-height: 19px;
   }
 
-  &__btn {
+  &__btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,22 +68,41 @@
     &:hover {
       background: #fff;
       border: 1px solid #00acdc;
-      box-sizing: border-box;
     }
   }
 
   &__link {
     text-decoration: none;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
   }
 
-  &__btn:hover .card__link {
+  &__btn-wrapper:hover .card__link {
     color: #00acdc;
   }
+}
 
+.stars {
+  $starsBlock: &;
+  display: flex;
+
+  &__star {
+    width: 15px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @for $i from 1 through 5 {
+      #{$starsBlock}--#{$i} &:nth-child(-n + #{$i}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
 }
