@@ -3,15 +3,14 @@ $cardWidth: 200px;
 $spaceBetweenCards: 48px;
 $spaceAroundCards: 40px;
 
-@mixin small-text {
+@mixin smallText {
   font-size: 11px;
   line-height: 13px;
 }
 
-@mixin normal_text {
-  font-size: 12px;
-  font-weight: 500;
-}
+@import "product.scss";
+@import "stars.scss";
+@import "nav.scss";
 
 * {
   box-sizing: border-box;
@@ -44,159 +43,10 @@ a {
   height: 40px;
 }
 
-.nav {
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    
-  }
-
-  &__item {
-    margin-right: 20px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    font-weight: 500;
-    line-height: 14px;
-    text-transform: uppercase;
-    color: #000;
-
-    &--active {
-      color: $moyoColor;
-      position: relative;
-      
-      &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 4px;
-        left: 0;
-        bottom: 0;
-        background: $moyoColor;
-        border-radius: 8px;
-      }
-    }
-
-    &:hover {
-      color: $moyoColor;
-    }
-  }
-}
-
 .cards {
   max-width: $cardWidth * 4 + $spaceBetweenCards * 3 + $spaceAroundCards * 2;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.product {
-  display: flex;
-  flex-direction: column;
-  max-width: $moyoColor;
-  height: 403px;
-  padding: 30px 14px 14px;
-  border: 1px solid #f3f3f3;
-  margin: 0 24px 50px;
-  border-radius: 5px;
-  width: $cardWidth;
-
-  &__image {
-    width: 160px;
-    height: 134px;
-    margin: 0 5px 45px;
-  }
-
-  &__description {
-    @include normal_text;
-    line-height: 15px;
-    margin: 0 0 5px;
-  }
-
-  &__code {
-    @include small-text;
-    margin: 0 0 15px;
-  }
-
-  &__rating {
-    height: 15px;
-    margin: 0 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__stars {
-    display: flex;
-    align-items: center;
-  }
-
-  &__feedbacks {
-    @include small-text;
-  }
-
-  &__value {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 0 0 20px;
-  }
-
-  &__caption {
-    @include small-text;
-    margin: 0;
-  }
-
-  &__price {
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 19px;
-  }
-
-  &__button {
-    display: inline-block;
-    width: 170px;
-    height: 40px;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 40px;
-    background-color: $moyoColor;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid $moyoColor;
-
-    &:hover {
-      color: $moyoColor;
-      background-color: #fff;
-    }
-  }
-}
-
-.star {
-  width: 15px;
-  height: 15px;
-  margin-right: 4px;
-  background-image: url(../images/star.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@for $i from 1 through 5 {
-  .stars--#{$i} .star:nth-child(-n+#{$i}) {
-    background-image: url(../images/star-active.svg);
-  }
 }
