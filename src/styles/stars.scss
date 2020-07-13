@@ -1,0 +1,20 @@
+.stars {
+  display: flex;
+
+  &__item {
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    $size: 15px;
+    height: $size;
+    width: $size;
+    background-image: url(/images/star.svg);
+  }
+
+  @for $stars from 1 through 5 {
+    @for $actualStars from $stars through 5 {
+      &--#{$actualStars} :nth-child(#{$stars}) {
+        background-image: url(/images/star-active.svg);
+      }
+    }
+  }
+}

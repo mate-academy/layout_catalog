@@ -1,11 +1,10 @@
-
 .nav {
 
   &__list {
     display: flex;
   }
   
-  &__item {
+  &__link {
     font-weight: 500;
     font-size: 12px;
     display: flex;
@@ -15,11 +14,11 @@
     margin-left: 20px;
     line-height: 14px;
     text-transform: uppercase;
-    height: 60px;
+    height: $header-height;
     color: $main-text-color;
   }
   
-  &__item:hover {
+  &__link:hover {
     color: $extra-color;
   }
   
@@ -31,12 +30,13 @@
 }
 
 .is-active::after {
+  $underscore-height: 4px;
   position: absolute;
   content: "";
   display: block;
-  height: 4px;
+  height: $underscore-height;
   bottom: 0;
   background-color: $extra-color;
-  border-radius: 2px;
+  border-radius: $underscore-height / 2;
   width: 100%;
 }
