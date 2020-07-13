@@ -3,7 +3,10 @@ $card-height:403px;
 $cards-gap-y:50px;
 $cards-gap-x:48px;
 
-.card-field {
+@import "buy button";
+@import "stars block";
+
+.main {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -12,7 +15,7 @@ $cards-gap-x:48px;
   margin: 50px auto;
 }
 
-.card {
+.main-card {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -44,75 +47,34 @@ $cards-gap-x:48px;
   }
 }
 
-.card__rating {
+.main-card__rating {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 15px;
   margin: 0 0 20px;
 
-  .card__stars {
-    display: flex;
-    align-items: center;
-    .star {
-      width: 15px;
-      height: 15px;
-      margin-right: 4px;
-      background-image: url(../images/star.svg);
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  }
-
-  @for $i from 1 to 5 {
-    .stars--#{$i} .star:nth-child(-n+#{$i}) {
-      background-image: url(../images/star-active.svg);
-    }
-  }
-
-  .card__review {
+  .main-card__review {
     font-size: 11px;
     line-height: 13px;
   }
 }
 
-.card__value {
+.card-value {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 
-  .card__caption {
+  .card-value__caption {
     font-size: 11px;
     line-height: 13px;
     margin: 0;
   }
 
-  .card__price {
+  .card-value__price {
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     margin: 0 0 20px;
   }
-}
-
-.card__button {
-  box-sizing: border-box;
-  width: 170px;
-  height: 40px;
-  line-height: 38px;
-  text-align: center;
-  background-color: $moyo-blue;
-  border-radius: 5px;
-  border: 1px solid $moyo-blue;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-
-}
-
-.card__button:hover {
-  background-color: white;
-  color: $moyo-blue;
 }
