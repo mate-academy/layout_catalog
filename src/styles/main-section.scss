@@ -1,10 +1,18 @@
 .main {
   margin-top: 50px;
-  @include centered;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 .catalog {
-  width: #{$card-width * 4 + $card-horizontal-margin * 2 * 4};
-  display: flex;
-  flex-wrap: wrap;
+  width: #{$card-width * 4 + $grid-gap * 4};
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  grid-gap: 50px $grid-gap;
+  justify-content: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fit, $card-width);
+  }
 }
