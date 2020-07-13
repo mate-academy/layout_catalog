@@ -13,8 +13,17 @@
   }
   
   &__img {
-    width: 160px;
-    height: 134px;
+    width: $card-img-width;
+    height: $card-img-height;
+    transition: transform $animations-time;
+
+    &:hover {
+      box-sizing: content-box;
+      transform: scale($card-img-scaling);
+      padding: ($card-img-height*($card-img-scaling - 1) / 2) 0;
+      margin: (-$card-img-height*($card-img-scaling - 1) / 2) 0;
+      outline: 3px solid $card-brdr-color;
+    }
   }
   
   &__description {
