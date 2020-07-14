@@ -1,8 +1,3 @@
-$heightProduct: 402px;
-$widthProduct: 200px;
-$borderRadius: 5px;
-$padding: 14px;
-
 .product {
   border: 1px solid #f3f3f3;
   border-radius: $borderRadius;
@@ -11,6 +6,7 @@ $padding: 14px;
 
   &__photo {
     width: 160px;
+    height: 134px;
     margin: 0 auto;
     margin-top: 13px;
     padding-top: 14px;
@@ -24,21 +20,14 @@ $padding: 14px;
     }
   }
 
-  &__img {
-    height: 134px;
-  }
-
   &__card {
     padding-left: $padding;
     padding-right: $padding;
-    margin-top: 38px;
+    margin-top: 42px;
   }
 
   &__title {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    color: #000;
+    @include sizeFont-2;
   }
 
   &__code {
@@ -47,8 +36,7 @@ $padding: 14px;
   }
 
   &__rating {
-    display: flex;
-    justify-content: space-between;
+    @include spaceBetween;
     margin-top: 17px;
   }
 
@@ -59,12 +47,10 @@ $padding: 14px;
   &__rating-star {
     background-image: url("../images/star-active.svg");
     background-repeat: no-repeat;
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
+    @include sizeStar;
   }
 
-  &__rating-unstar {
+  &__rating--not-active {
     background-image: url("../images/star.svg");
   }
 
@@ -73,8 +59,7 @@ $padding: 14px;
   }
 
   &__price {
-    display: flex;
-    justify-content: space-between;
+    @include spaceBetween;
     align-items: center;
     @include sizeFont;
     margin-top: 18px;
@@ -93,7 +78,7 @@ $padding: 14px;
   &__btn {
     display: block;
     text-transform: uppercase;
-    background: #00acdc;
+    background: $colorBasic;
     margin-top: 20px;
     border-radius: $borderRadius;
     padding: 11px 0;
@@ -103,12 +88,12 @@ $padding: 14px;
     font-weight: bold;
     font-size: 14px;
     line-height: 15px;
-    border: 1px solid #00acdc;
-    
+    border: 1px solid $colorBasic;
+    transition: 1s;
+
     &:hover {
-      transition: 1s;
       background: #fff;
-      color: #00adcd;
+      color: $colorBasic;
     }
   }
 }
