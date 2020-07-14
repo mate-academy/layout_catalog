@@ -17,17 +17,17 @@
   &__img {
     margin-left: 5px;
     margin-right: 5px;
-    width: 160px;
-    height: 134px;
-    transition: all 1s;
+    width: $imgWidth;
+    height: $imgHeight;
+    transition: all $animDuration;
   }
 
   &__img:hover {
     box-sizing: content-box;
-    transform: scale(1.2);
+    transform: scale($imgScale);
     outline: 3px solid #f3f3f3;
-    padding: 10px 0;
-    margin-top: -10px;
+    padding: ($imgHeight * ($imgScale - 1) / 2) 0;
+    margin: -($imgHeight * ($imgScale - 1) / 2) 0;
   }
 
   &__title {
@@ -39,7 +39,7 @@
   }
 
   &__code {
-    display: flex;
+    display: inline-flex;
     margin-bottom: 0;
     margin-top: 0;
     justify-content: flex-start;
@@ -87,7 +87,7 @@
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
-    transition: all 1s;
+    transition: all $animDuration;
   }
 
   &__button:hover {
