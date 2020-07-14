@@ -2,13 +2,12 @@ $linkColor: #00acdc;
 $font: "Roboto", arial, sans-serif;
 
 .list {
-
   margin-left: -20px;
   
   &__item {
     margin-left: 20px;
   
-    &__link {
+    &-link {
       display: inline-block;
       height: 60px;
       line-height: 60px;
@@ -21,29 +20,29 @@ $font: "Roboto", arial, sans-serif;
       text-decoration: none;
       position: relative;
       transition: 0.5s;
+        
+      &:hover {
+        color: $linkColor;
+      }
     }
 
-    &__link:hover {
+    &--is-active {
       color: $linkColor;
+    }
+
+    &--is-active::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 100%;
+      border-radius: 2px;
+      background-color: $linkColor;
     }
   }
 
   &__item :first-child {
     margin-left: 0;
-  }
-
-  & :first-child > a {
-    color: $linkColor;
-  }
-
-  & :first-child > a::after {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    border-radius: 2px;
-    background-color: $linkColor;
   }
 }
