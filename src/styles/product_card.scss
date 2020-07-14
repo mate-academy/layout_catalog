@@ -1,16 +1,25 @@
 .card {
   $cardPrefix: &;
   width: 200px;
-  padding: 30px 0 15px;
+  padding: 14px 0 15px;
   flex-wrap: wrap;
   justify-content: center;
   font-size: 11px;
   border: 1px solid #f3f3f3;
 
   &__image {
+    box-sizing: content-box;
     width: 160px;
     height: 134px;
+    padding-top: 11px;
     margin: 0 0 45px;
+    border: 3px solid rgba(0, 0, 0, 0);
+    transition: transform $transitionTime;
+
+    &:hover {
+      transform: scale(1.2);
+      border-color: #f3f3f3;
+    }
   }
 
   &__info {
@@ -79,6 +88,7 @@
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
+    transition: color $transitionTime, background-color $transitionTime;
 
     &:hover {
       background-color: #fff;
