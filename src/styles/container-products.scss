@@ -1,15 +1,10 @@
-.content {
-  display: grid;
-  justify-content: center;
-}
-
 .container-products {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(4, $sizeCard);
-  grid-column-gap: $cardMarginX;
-  grid-row-gap: $cardMarginY;
+  grid-gap: $cardMarginY $cardMarginX;
 
-  @media (max-width: 950px) {
-    grid-template-columns: repeat(3, $sizeCard);
+  @media (max-width: $sizeCard * 4 + $cardMarginX * 3) {
+    grid-template-columns: repeat(auto-fit, $sizeCard);
   }
 }
