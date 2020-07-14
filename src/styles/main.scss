@@ -11,16 +11,16 @@ html {
   box-sizing: border-box;
 }
 
+.container__catalog {
+  margin: 50px auto 78px;
+}
+
 .catalog {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(4, $cardSize);
+  grid-template-columns: repeat(auto-fit, $cardSize);
+  max-width: $cardSize * 4 + $cardColumnGap * 3;
   gap: $cardRowGap $cardColumnGap;
-  margin: 50px 0 78px;
-
-  @media (max-width: $cardSize * 4 + $cardColumnGap * 3) {
-    grid-template-columns: repeat(auto-fit, $cardSize);
-  }
 }
 
 @import "header";
