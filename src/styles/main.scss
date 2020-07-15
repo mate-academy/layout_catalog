@@ -1,3 +1,138 @@
-body {
-  margin: 0;
+$catalogWidth : 944px;
+$textColor: #000;
+$btnColor: #00acdc;
+$btnColorHovered: #fff;
+$fontSite: "Roboto", sans-serif;
+$fontSizeSite: 12px;
+$smallFontSizeCard: 11px;
+
+%flexSB {
+  display: flex;
+  justify-content: space-between;
+}
+
+@import "reset";
+@import "header";
+@import "transitions";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $fontSite;
+  font-size: $fontSizeSite;
+  color: $textColor;
+}
+
+.main {
+  @extend %flexSB;
+  flex-wrap: wrap;
+
+  padding: 0 calc((100vw - #{$catalogWidth}) / 2);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  margin-bottom: 50px;
+  width: 200px;
+  padding: 15px 14px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__photo {
+    padding-top: 15px;
+    object-fit: contain;
+    width: 100%;
+    height: 149px;
+  }
+
+  &__text--name {
+    font-size: $fontSizeSite;
+    font-weight: 500;
+    line-height: 15px;
+
+    margin: 45px 0 5px;
+  }
+
+  &__text--code {
+    font-size: $smallFontSizeCard;
+    line-height: 13px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__stars--reviews {
+    font-size: $smallFontSizeCard;
+    line-height: 13px;
+    margin: 0;
+    margin-left: 17px;
+  }
+
+  &__stars--item {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: url("/images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @for $i from 1 through 4 {
+      .card__stars--#{$i} &:nth-child(-n+#{$i}) {
+        background-image: url("/images/star-active.svg");
+      }
+    }
+  }
+
+  &__price {
+    @extend %flexSB;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &--name {
+      font-size: $smallFontSizeCard;
+      line-height: 13px;
+      margin: 0;
+      margin-bottom: 1px;
+    }
+
+    &--value {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    background-color: $btnColor;
+    border-radius: 5px;
+    color: $btnColorHovered;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid $btnColor;
+
+    &:hover {
+      background: $btnColorHovered;
+      color: $btnColor;
+    }
+  }
 }
