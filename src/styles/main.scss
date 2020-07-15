@@ -5,11 +5,25 @@
 @import "navigation";
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  height: $card-height * 2 + $card-margin + 1px;
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  row-gap: $card-margin + 3px;
+  column-gap: $card-margin;
+  justify-content: center;
+  align-content: center;
   width: $card-width * 4 + $card-margin * 3;
   margin: 50px auto;
+
+  @media (max-width: 990px) {
+    grid-template-columns: repeat(3, $card-width);
+    height: auto;
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(1, $card-width);
+  }
 }
