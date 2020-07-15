@@ -1,21 +1,22 @@
 $cardWidth: 200px;
 $spaceBetweenCards: 48px;
 $spaceAroundRow: 40px;
+$spaceBetweenRows: 50px;
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: $cardWidth * 4 + 3 * $spaceBetweenCards + 2 * $spaceAroundRow;
-  padding: 0 $spaceAroundRow;
+
+  display: grid;
+  justify-content: center;
+  grid-gap: $spaceBetweenRows $spaceBetweenCards;
+  grid-template-columns: repeat(auto-fit, $cardWidth);
+  max-width: $cardWidth * 4 + 3 * $spaceBetweenCards + 2 * $spaceAroundRow;
   margin: auto;
-  
+
   &__item {
     flex-direction: column;
     display: flex;
     align-items: center;
     align-content: center;
     max-width: $cardWidth;
-    margin-bottom: 50px;
   }
 }
