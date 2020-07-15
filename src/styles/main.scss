@@ -4,8 +4,9 @@
 
 $main_font: "Roboto", sans-serif;
 $main_color1: #00acdc;
-$product-card-width: 200px;
-$margin-between-products-horizontal: 48px;
+$cardWidth: 200px;
+$marginBetweenCardsX: 48px;
+$marginBetweenCardsY: 50px;
 
 body {
   margin: 0;
@@ -13,19 +14,13 @@ body {
 }
 
 .catalog-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   justify-content: center;
-  margin: 50px auto 0;
-  max-width: $product-card-width * 4 + $margin-between-products-horizontal * 5;
-}
+  margin-top: $marginBetweenCardsY;
+  grid-template-columns: repeat(4, $cardWidth);
+  grid-gap: $marginBetweenCardsY $marginBetweenCardsX;
 
-.product-card {
-  margin: 0 $margin-between-products-horizontal/2 50px;
-}
-
-@media (max-width: 1025px) {
-  main {
-    padding: 0 16px;
+  @media (max-width: $cardWidth * 4 + $marginBetweenCardsX * 3) {
+    grid-template-columns: repeat(auto-fit, $cardWidth);
   }
 }
