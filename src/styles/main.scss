@@ -18,10 +18,24 @@ body {
 }
 
 .products__container {
+  $productsContainerMaxWidth: 4 * $productWidth + 3 * $productMarginX;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, $productWidth);
+  grid-template-columns: repeat(4, $productWidth);
   grid-gap: $productMarginY $productMarginX;
-  justify-content: space-between;
-  max-width: 4 * $productWidth + 3 * $productMarginX;
+  justify-content: center;
+  max-width: $productsContainerMaxWidth;
   margin: 50px auto;
+
+  @media (max-width: 999px) {
+    grid-template-columns: repeat(3, $productWidth);
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, $productWidth);
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, $productWidth);
+  }
 }
