@@ -1,0 +1,29 @@
+$starOrientation: center;
+
+.stars {
+
+  & :last-child {
+    margin-right: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex: 0 0 15px;
+    height: 15px;
+    margin-right: 4px;
+    background: url(/images/star.svg) no-repeat $starOrientation;
+    background-size: auto;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n+#{$i}) {
+      background: url(/images/star-active.svg) no-repeat $starOrientation;
+      background-size: auto;
+    }
+
+    &--#{$i} {
+      display: flex;
+      width: 15px;
+    }
+  }
+}
