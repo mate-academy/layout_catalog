@@ -1,0 +1,18 @@
+.stars {
+  $blockName: &;
+
+  height: $starBlockHeight;
+  width: $starBlockWidth;
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    content: url(../images/star.svg);
+
+    @for $i from 1 through 5 {
+      #{$blockName}--#{$i} &:nth-child(-n+#{$i}) {
+        content: url(../images/star-active.svg);
+      }
+    }
+  }
+}
