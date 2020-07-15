@@ -1,5 +1,5 @@
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
 }
 
 @import "reset";
@@ -10,18 +10,25 @@ html {
 @import "stars";
 
 .catalog {
-  display: flex;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, $productWidth);
+  grid-gap: 50px $cardGap;
+  margin: 50px auto 0;
+  max-width: $maxCatalogWidth;
+  
+  /*display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 40px;
   margin: auto;
   margin-bottom: 78px;
-  width: 4 * $productWidth + 3 * $productMarginX;
+  width: 4 * $productWidth + 3 * $productMarginX;*/
 }
 
 .logo {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  margin-left: 50px;
 }
