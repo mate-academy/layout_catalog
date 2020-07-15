@@ -5,7 +5,7 @@
   height: $cardHeight;
   border: 1px solid $borderColor;
   border-radius: 5px;
-  padding: 30px 14px 15px;
+  padding: (30px - $borderWidth) 14px 15px;
 
   &card:not(:nth-child(4n)) {
     margin-right: $cardsGap;
@@ -14,12 +14,12 @@
   &__image {
     display: flex;
     justify-content: center;
-    border: 3px solid transparent;
+    border: $borderWidth solid transparent;
     transition: transform 1s;
 
     
     &:hover {
-      transform: translateY(1px) scale(1.2);
+      transform: translateY(4px) scale(1.2);
       box-sizing: content-box;
       padding: 15px 0;
       margin: -15px 0;
@@ -33,7 +33,7 @@
   }
 
   &__name {
-    margin-top: 45px;
+    margin-top: 45px - $borderWidth;
     margin-bottom: 0;
     line-height: 15px;
     @include normalText;
@@ -48,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    align-items: center;
   }
 
   &__reviews {
