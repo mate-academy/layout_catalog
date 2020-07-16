@@ -1,0 +1,91 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include width-height($widthCard, 402px);
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding: 0 14px;
+  margin: 0 24px 50px;
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    @include width-height(160px, 209px);
+  }
+
+  &__img {
+    margin: 30px 0;
+    @include width-height(160px, 134px);
+    transition: transform 1s;
+    outline: 3px solid transparent;
+  }
+
+  &__title {
+    @include font-line(12px, 15px);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  &__product-code {
+    align-self: flex-start;
+    @include font-line(11px, 13px);
+    margin-bottom: 14px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    align-self: stretch;
+  }
+
+  &__price-amount {
+    @include font-line(16px, 19px);
+    font-weight: bold;
+  }
+
+  &__buy-link {
+    @include width-height(170px, 40px);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    @include font-line(14px, 39px);
+    font-weight: bold;
+    color: #fff;
+    background-color: $color-moyo;
+    border-radius: 5px;
+    border: 1px solid $color-moyo;
+  }
+
+  &__buy-link:hover {
+    background-color: #fff;
+    color: $color-moyo;
+  }
+}
+
+.rating {
+  margin-bottom: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+  align-self: stretch;
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    background: url(/images/star.svg) no-repeat center;
+    @include width-height(15px, 15px);
+    margin-right: 4px;
+  }
+
+  @for $i from 1 through 5 {
+    &__stars--#{$i} &__star:nth-child(-n+#{$i}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+}
