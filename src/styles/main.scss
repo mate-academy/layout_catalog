@@ -29,17 +29,16 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-.main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .container-for-cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-width);
+  grid-column-gap: $card_margin;
   justify-content: center;
   margin: 0 auto;
-  max-width: 4*$card_width + 4*$card_margin;
+}
+
+@media (min-width: 1000px) {
+  .container-for-cards {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
