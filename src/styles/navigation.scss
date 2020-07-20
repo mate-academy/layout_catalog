@@ -1,0 +1,53 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    @include textCard(12px, 1.2em);
+
+    text-transform: uppercase;
+    color: #000;
+
+    &:hover {
+      color: $colorNavActive;
+    }
+  }
+
+  &__link--is-active {
+    color: $colorNavActive;
+
+    &::after {
+      $width: 100%;
+      $height: 4px;
+
+      content: "";
+      position: absolute;
+      bottom: 0;
+
+      width: $width;
+      height: $height;
+
+      background: $colorNavActive;
+      border-radius: $height / 2;
+    }
+  }
+}
