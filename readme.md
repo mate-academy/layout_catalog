@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-    - [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+    - [DEMO LINK](https://oivannikov.github.io/layout_catalog/)
+    - [TEST REPORT LINK](https://oivannikov.github.io/layout_catalog/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
     - Write styles in `src/styles/main.scss` instead of `src/style.css`.
 ___
@@ -29,7 +29,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - card's width is `200px` without borders
 - add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки и компьютеры`)
 - add attribute `data-qa="card"` to the first card
-- add attribute `data-qa="card-hover"` to the link `Купить` inside first card
+- add attribute `` to the link `Купить` inside first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 ![screenshot](./references/catalog-example.png)
