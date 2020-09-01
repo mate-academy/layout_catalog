@@ -1,3 +1,216 @@
-body {
+$font-size-m: 12px;
+$font-size-s: 11px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: $font-size-m;
+}
+
+h3 {
   margin: 0;
+}
+
+body {
+
+  margin: 0;
+
+  .header {
+    font-weight: 500;
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    .header__logo {
+
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+
+    }
+
+    .nav {
+
+      .nav__list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        align-items: center;
+
+        .nav__item {
+          text-transform: uppercase;
+          height: 100%;
+          margin-left: 20px;
+
+          .nav__link {
+            display: block;
+            height: 100%;
+            padding-top: 10px;
+            line-height: 40px;
+            text-decoration: none;
+            color: black;
+            transition: color 0.5s;
+
+          }
+
+          .is-active {
+            position: relative;
+            color: #00acdc;
+
+          }
+          
+          .is-active::after {
+            content: "";
+            background-color: #00acdc;
+            height: 4px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 8px;
+
+          }
+          
+          .nav__link:hover {
+            color: #00acdc;
+
+          }
+          
+        }
+
+        .nav__item:first-child {
+          margin: 0;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .main {
+
+    margin-top: 50px;
+
+    .catalog {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+      .catalog__item {
+        margin: 0 24px 50px;
+
+        .card {
+          width: 200px;
+          border: 1px solid #f3f3f3;
+          border-radius: 5px;
+          padding: 30px 14px 15px;
+          display: flex;
+          flex-direction: column;
+          font-size: $font-size-s;
+
+          .card__image {
+            margin: 0 auto 45px;
+            width: 160px;
+            height: 134px;
+          }
+
+          .card__heading {
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+          }
+
+          .card__productId {
+            display: block;
+            margin-bottom: 15px;
+          }
+
+          .card__rating {
+            display: flex;
+            justify-content: space-between;
+
+            .card__stars {
+              margin-bottom: 20px;
+            }
+
+            .stars {
+              display: flex;
+
+              .stars__star {
+                background: url(../images/star.svg) no-repeat center center;
+                height: 15px;
+                width: 15px;
+                margin-right: 4px;
+              }
+
+            }
+
+            .stars--1 > .stars__star:nth-child(-n+1),
+            .stars--2 > .stars__star:nth-child(-n+2),
+            .stars--3 > .stars__star:nth-child(-n+3),
+            .stars--4 > .stars__star:nth-child(-n+4),
+            .stars--5 > .stars__star:nth-child(-n+5) {
+
+              background-image: url(../images/star-active.svg);
+            }
+
+            
+            .card__feedBacks {
+              margin-top: 1px;
+            }
+
+          }
+
+          .card__priceBox {
+            display: flex;
+            margin-bottom: 20px;
+
+            .card__priceWord {
+              margin-top: 5px;
+            }
+            
+            .card__price {
+              margin-left: auto;
+              font-size: 16px;
+              font-weight: bold;
+            }
+          }
+
+          .card__addToCart {
+            background-color: #00acdc;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            display: block;
+            text-align: center;
+            line-height: 38px;
+            border: 1px solid transparent;
+          }
+          
+          .card__addToCart:hover {
+            color: #00acdc;
+            background-color: #fff;
+            border: 1px solid #00acdc;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
 }
