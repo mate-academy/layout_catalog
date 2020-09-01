@@ -1,0 +1,114 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  width: 4 * 200px + $gap * 3;
+  margin: 0;
+  padding-bottom: 78px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 200px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 14px;
+  padding-top: 30px;
+  margin: 0;
+  margin-bottom: 51px;
+
+  &:nth-child(n + 5) {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    transition: box-shadow 0.1s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 5px ;
+    margin-bottom: 42px;
+  }
+
+  &__description {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__review,
+  &__pricing {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__real-price {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+  }
+
+  &__btn {
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #00acdc;
+    border-radius: 5px;
+    border: 1px solid #00acdc;
+    color: #fff;
+
+    &:hover {
+      transition: background 0.1s color 0.1s;
+      background: #fff;
+      color: #00acdc;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    color: inherit;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 15px;
+    width: 15px;
+    background: url(/images/star.svg) center no-repeat;
+    margin-right: 4px;
+  }
+}
+
+@for $i from 1 to 6 {
+  .stars {
+    &--#{$i} > &__star:nth-child(-n + #{$i}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+}
