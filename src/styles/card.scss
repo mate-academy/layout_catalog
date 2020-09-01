@@ -1,0 +1,112 @@
+
+.main__container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  justify-content: center;
+  row-gap: 50px;
+  column-gap: 48px;
+
+  padding: 0 40px;
+  margin: 0 auto;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding: 30px 14px 15px;
+
+    &__image {
+      width: 160px;
+      height: 134px;
+      margin: 0 auto 45px;
+    }
+
+    &__description {
+      @include font-style-normal;
+
+      line-height: 15px;
+      margin-bottom: 5px;
+    }
+
+    &__code {
+      @include font-style-small;
+
+      margin-bottom: 15px;
+    }
+
+    &__rate,
+    &__price {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__rate {
+      align-items: center;
+    }
+
+    &__review {
+      @include font-style-small;
+    }
+
+    &__price {
+      margin-top: 20px;
+      align-items: baseline;
+    }
+
+    &__price--str {
+      @include font-style-small;
+    }
+
+    &__price--num {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    &__link {
+      background: $color-active;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+
+      width: 100%;
+      height: 40px;
+      padding: 12px 0 11px;
+      margin-top: 20px;
+
+      transition: 0.5s;
+    }
+
+    &__link:hover {
+      color: $color-active;
+      background: #fff;
+      border: 1px solid $color-active;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    background: url(/images/star.svg) no-repeat center;
+    height: $star-size;
+    width: $star-size;
+    margin-right: 4px;
+  }
+}
+
+.stars--1 :first-child,
+.stars--2 :nth-child(-n+2),
+.stars--3 :nth-child(-n+3),
+.stars--4 :nth-child(-n+4),
+.stars--5 :nth-child(-n+5) {
+  background-image: url(/images/star-active.svg);
+}
