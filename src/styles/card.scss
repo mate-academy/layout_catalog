@@ -1,0 +1,109 @@
+.card {
+  width: 200px;
+  padding: 15px 14px;
+
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__photo {
+    height: 134px;
+    width: 160px;
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 45px;
+  }
+
+  &__code {
+    margin-top: 5px;
+    font-size: 11px;
+    line-height: 13px;
+
+    &::before {
+      content: "Код товара: ";
+    }
+  }
+
+  &__rating {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__votes::before {
+    content: "Отзывов: ";
+  }
+
+  &__price {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_value {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+
+      &::after {
+        content: "грн";
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.stars {
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background: $star-img no-repeat center;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n + #{$i}) {
+      background-image: $star-activ-img;
+    }
+  }
+}
+
+.btn {
+  height: 40px;
+
+  background-color: $primary-color;
+  border-radius: 5px;
+  border: 1px solid $primary-color;
+
+  font-family: inherit;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+
+  cursor: pointer;
+  transition: background-color 400ms;
+
+  &:hover {
+    background-color: #fff;
+    color: $primary-color;
+  }
+}
