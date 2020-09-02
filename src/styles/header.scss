@@ -1,5 +1,21 @@
+$nav-height: 60px;
+
+li {
+  list-style: none;
+}
+
+html,
+header,
+ul,
+li,
+p,
+a {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
-  height: 60px;
+  height: $nav-height;
   padding: 10px 50px;
   margin-bottom: 50px;
   background: white;
@@ -7,20 +23,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  li {
-    list-style: none;
-  }
-
-  html,
-  header,
-  ul,
-  li,
-  p,
-  a {
-    margin: 0;
-    padding: 0;
-  }
 
   .logo {
     width: 40px;
@@ -32,30 +34,34 @@
     font-size: 12px;
     font-weight: 500;
     color: black;
-  }
 
-  .nav_list {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    height: 60px;
-  }
+    &__list {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      height: $nav-height;
+    }
+  
+    &__item {
+      position: relative;
+      margin-left: 20px;
+      height: $nav-height;
+    }
+  
+    &__link {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      padding: 23px 0;
+    }
+  
+    &__link:hover {
+      color: #00acdc;
+    }
 
-  .nav_item {
-    position: relative;
-    margin-left: 20px;
-    height: 60px;
-  }
-
-  .nav_link {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    padding: 23px 0;
-  }
-
-  .nav_link:hover {
-    color: #00acdc;
+    &__item:first-of-type {
+      margin-left: 0;
+    }
   }
 
   .is-active {
@@ -71,9 +77,5 @@
     border-radius: 8px;
     background-color: #00acdc;
     bottom: 0;
-  }
-
-  .nav_item:first-of-type {
-    margin-left: 0;
   }
 }
