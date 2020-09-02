@@ -1,0 +1,60 @@
+@import "general";
+
+$header-height: 60px;
+$logo-size: 40px;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+}
+
+.nav__list {
+  @include reset-list;
+  display: flex;
+}
+
+.nav__item {
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.header__logo {
+  width: $logo-size;
+  height: $logo-size;
+}
+
+.nav__link {
+  @include nav-font;
+  @include transform-link;
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 23px 0;
+
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.is-active {
+  color: $main-color;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 4px;
+    background-color: $main-color;
+    border-radius: 8px;
+    bottom: 0;
+    width: 100%;
+  }
+}
