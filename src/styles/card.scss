@@ -1,0 +1,84 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+
+  &__card {
+    margin: 0 24px 50px;
+  }
+}
+
+.card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px 15px;
+
+  @include fontNormal;
+
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    height: 134px;
+    width: 160px;
+    margin: 0 5px 45px;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+
+    @include fontTitle;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__rates {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    @extend .card__rates;
+  }
+
+  .card__price-value {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 40px;
+
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+
+    border-radius: 5px;
+    background: $main-color;
+    border: solid 1px $main-color;
+
+    &:hover {
+      color: $main-color;
+      background: transparent;
+    }
+  }
+}
