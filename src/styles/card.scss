@@ -1,0 +1,83 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  width: $card-width;
+  padding: 30px 14px 14px;
+
+  background: $primary-color;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 45px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    margin-bottom: 5px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__reviews {
+    @include flex-container(
+      $justify-content: space-between,
+      $align-items: flex-end);
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    @include flex-container(
+      $justify-content: space-between,
+      $align-items: flex-end);
+    margin-bottom: 20px;
+
+    .price__text {
+      align-self: flex-end;
+    }
+
+    .price__item {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: $btn-height;
+    text-align: center;
+    text-transform: uppercase;
+    color: $primary-color;
+
+    display: block;
+    width: 100%;
+    height: $btn-height;
+
+    border: 1px solid transparent;
+    background: $main-color;
+    border-radius: 5px;
+
+    @include time-action (background);
+
+    &:hover {
+      color: $main-color;
+
+      border: 1px solid;
+      background: $primary-color;
+    }
+  }
+
+  &__stars {
+    @include flex-container;
+  }
+}
