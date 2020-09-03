@@ -13,10 +13,10 @@
   font-weight: 500;
 
   box-shadow: 0 2px 4px rgba(0,0,0, 0.05);
+}
 
-  a {
-    height: 40px;
-  }
+.logo {
+  height: 40px;
 }
 
 .nav {
@@ -36,20 +36,9 @@
 
     &:first-child {
       margin-left: 0;
-      :after {
-        content: "";
-        position: absolute;
-        top: 56px;
-
-        display: block;
-        width: 100%;
-        height: 4px;
-
-        background-color: $colorOfLinks;
-        border-radius: 8px;
-      }
     }
   }
+
   &__link {
     position: relative;
 
@@ -61,11 +50,24 @@
     color: black;
 
     &:hover {
-      color: $colorOfLinks;
+      color: $linkColor;
     }
   }
 
   .is-active {
-    color: $colorOfLinks;
+    color: $linkColor;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 56px;
+
+      display: block;
+      width: 100%;
+      height: 4px;
+
+      background-color: $linkColor;
+      border-radius: 8px;
+    }
   }
 }
