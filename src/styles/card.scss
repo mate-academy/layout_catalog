@@ -1,16 +1,25 @@
 .card {
   width: 200px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $card-borders-color;
   border-radius: 5px;
-  padding: 30px 14px 15px;
+  padding: 15px 14px;
   display: flex;
   flex-direction: column;
   font-size: $font-size-s;
 
   &__image {
-    margin: 0 auto 45px;
+    box-sizing: content-box;
+    margin: 0 auto 30px;
+    padding: 15px 0;
     width: 160px;
     height: 134px;
+    border: solid 3px transparent;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.2, 1.2);
+      border: solid 3px $card-borders-color;
+    }
   }
 
   &__heading {
