@@ -1,3 +1,5 @@
+$mainColor: #00acdc;
+
 .cards {
   display: flex;
   max-width: 1200px;
@@ -82,20 +84,18 @@
         margin-right: 4px;
       }
     }
-    
-    .stars--1 .stars__star:nth-child(-n+1),
-    .stars--2 .stars__star:nth-child(-n+2),
-    .stars--3 .stars__star:nth-child(-n+3),
-    .stars--4 .stars__star:nth-child(-n+4),
-    .stars--5 .stars__star:nth-child(-n+5) {
-      background-image: url("../images/star-active.svg");
+
+    @for $i from 1 through 5 {
+      .stars--#{$i} .stars__star:nth-child(-n+#{$i}) {
+        background: url("../images/star-active.svg") no-repeat center;
+      }
     }
     
     &__button {
       width: 170px;
       height: 40px;
     
-      background: #00acdc;
+      background: $mainColor;
       border-radius: 5px;
       border: 1px solid transparent;
     
@@ -109,8 +109,8 @@
     
     &__button:hover {
       background: white;
-      color: #00acdc;
-      border-color: #00acdc;
+      color: $mainColor;
+      border-color: $mainColor;
     }
   }
 
