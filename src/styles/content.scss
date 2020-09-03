@@ -1,0 +1,108 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card {
+  background-color: $secondColorButton;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 14px;
+  width: 200px;
+  min-height: 403px;
+
+  &__inside {
+    margin: 0 24px 50px;
+  }
+
+  &__picture {
+    margin: 0 5px;
+    margin-top: 16px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin-top: 42px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+  }
+
+  &__code {
+    margin-top: 5px;
+  }
+
+  &__feedback {
+    display: flex;
+  }
+
+  &__counter,
+  &__pricetag {
+    line-height: 15px;
+  }
+
+  &__price {
+    margin-top: 20px;
+  }
+
+  &__total {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__button {
+    display: block;
+    margin-top: 20px;
+    width: 170px;
+    height: 40px;
+    border: 1px solid $mainColorButton;
+    background-color: $mainColorButton;
+    border-radius: 5px;
+    color: $secondColorButton;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__button:hover {
+    background-color: $secondColorButton;
+    color: $mainColorButton;
+  }
+}
+
+.stars {
+  display: flex;
+  margin-top: 15px;
+
+  &__star {
+    width: $starsSize;
+    height: $starsSize;
+    background-image: url("../images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+  @for $i from 1 through 5 {
+    &--#{$i} &__star:nth-child(-n + #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+}
