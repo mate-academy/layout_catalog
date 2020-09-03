@@ -3,12 +3,28 @@
 @import "header";
 @import "card";
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 200px);
-  column-gap: 48px;
-  row-gap: 50px;
-  justify-content: center;
+.page {
+  &__cards-grid {
+    margin: $vertical-gap auto;
+    max-width: ($card-width * 4) + ($horizontal-gap * 3) + ($big-padding * 2);
+    padding: 0 128px;
+  }
+}
 
-  margin: 50px 0;
+.cards-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__card {
+    flex-basis: $card-width;
+    margin-bottom: $vertical-gap;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .page__cards-grid {
+    max-width: ($card-width * 4) + ($horizontal-gap * 3) + ($small-padding * 2);
+    padding: 0 $small-padding;
+  }
 }
