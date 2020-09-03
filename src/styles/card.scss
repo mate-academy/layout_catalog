@@ -1,0 +1,77 @@
+@import "general";
+
+.card {
+  @include flex-centered;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: $card-width;
+  padding: 30px 14px 15px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  & * {
+    margin: 0;
+  }
+}
+
+.card-position {
+  margin: 0 24px 50px;
+}
+
+.card__img {
+  width: $img-width;
+  height: $img-height;
+  margin-bottom: 45px;
+}
+
+.card__description {
+  @include card-description-font;
+  margin-bottom: 5px;
+}
+
+.card__code {
+  margin-bottom: 15px;
+}
+
+.card__rating {
+  @import "stars";
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.card__price {
+  @extend .card__rating;
+}
+
+.card__cost {
+  @include card-price-font;
+}
+
+.card__link-block {
+  @include flex-centered;
+  width: 170px;
+  height: 40px;
+  background-color: $main-color;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.card__link {
+  @include card-link-font;
+  @include transform-link;
+  color: white;
+  padding: 12px 58px;
+
+  &:hover {
+    color: $main-color;
+  }
+}
