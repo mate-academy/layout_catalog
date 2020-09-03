@@ -1,6 +1,7 @@
 $accent-color: #00acdc;
-$fs: 12px;
 $card-width: 200px;
+$card-gap: 48px;
+$fs: 12px;
 
 @mixin smallFont {
   font-size: 11px;
@@ -9,15 +10,18 @@ $card-width: 200px;
 
 html {
   font-family: Roboto, sans-serif;
-  font-weight: normal;
-  font-size: $fs;
+  font-size: 12px;
 }
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 50px;
+  &__container {
+    display: flex;
+    width: ($card-width + $card-gap) * 4;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    margin: 50px auto;
+  }
  
   &__card {
     margin: 0 24px 50px;
