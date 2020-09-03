@@ -1,0 +1,67 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  width: 200px;
+  height: 403px;
+  border: $card-border;
+  border-radius: 5px;
+
+  padding: 14px;
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+  
+    margin: 16px auto 45px;
+  }
+
+  &__name {
+    line-height: 15px;
+    @include fontSmall(12px);
+  
+    margin-bottom: 5px;
+  }
+
+  &__code {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  &__feedback {
+    @include flex(space-between);
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__cost {
+    @include flex(space-between);
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    @include fontNormal;
+    line-height: 19px;
+  }
+
+  &__link {
+    display: block;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid $main-color;
+    background: $main-color;
+    border-radius: 5px;
+  
+    @include fontBig;
+    line-height: 38px;
+    @include linkBase($card-link-color);
+
+    &:hover {
+      color: $main-color;
+      background: $card-background-hover;
+    }
+  }
+}
