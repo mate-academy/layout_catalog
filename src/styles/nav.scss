@@ -4,7 +4,6 @@
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
-  color: black;
 
   &__list {
     display: flex;
@@ -17,6 +16,10 @@
     position: relative;
     margin-left: 20px;
     height: $nav-height;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
   
   &__link {
@@ -28,24 +31,20 @@
     &:hover {
       color: $mainColor;
     }
+
+    &--is-active {
+      color: $mainColor;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $mainColor;
+        bottom: 0;
+      }
+    }
   }
-
-  &__item:first-of-type {
-    margin-left: 0;
-  }
-}
-
-.is-active {
-  color: $mainColor;
-}
-
-.is-active::after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  border-radius: 8px;
-  background-color: $mainColor;
-  bottom: 0;
 }
