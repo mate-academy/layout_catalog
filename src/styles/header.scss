@@ -1,5 +1,5 @@
 .header {
-  font-family: $font-moyo;
+  font-family: $font-family-primary;
   height: 60px;
   padding: 10px 50px;
   display: flex;
@@ -16,45 +16,46 @@
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
-  color: $black-moyo-text;
+  color: $text-color;
 
-  .nav__list {
+  &__list {
     display: flex;
   }
 
-  .nav__item {
+  &__item {
     list-style: none;
     position: relative;
     margin-right: 20px;
   }
   
-  .nav__link {
+  &__link {
     display: inline-block;
     text-decoration: none;
-    color: $black-moyo-text;
+    color: $text-color;
     padding: 23px 0;
 
-    .is-active {
-      color: $blue-moyo-color;
+    &--is-active {
+      @extend .nav__link;
+      color: $blue-color;
     }
   
-    .is-active::after {
+    &--is-active::after {
       content: "";
       display: block;
       position: absolute;
       height: 4px;
       width: 100%;
       border-radius: 8px;
-      background-color: $blue-moyo-color;
+      background-color: $blue-color;
       bottom: 0;
     }
   }
 
-  .nav__link:hover {
-    color: $blue-moyo-color;
+  &__link:hover {
+    color: $blue-color;
   }
   
-  .nav__item:last-child {
+  &__item:last-child {
     margin-right: 0;
   }
 }
