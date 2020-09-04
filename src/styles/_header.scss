@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap");
+
+$blue-color: #00acdc;
+$white-color: #fff;
+
+@mixin highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  display: block;
+  height: 4px;
+  width: 100%;
+  
+  background-color: $blue-color;
+  border-radius: 8px;
+  
+  content: "";
+}
+
+@mixin highlight--s {
+  width: 4px;
+  height: 100%;
+  left: -15px;
+}
+
+:root {
+  --star: url(../images/star.svg);
+  --star-active: url(../images/star-active.svg);
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  height: 60px;
+  margin-bottom: 50px;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
+
+.logo {
+  display: flex;
+}
+
+.nav {
+  &__container {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  &__item {
+    position: relative;
+    padding: 23px 0;
+
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    line-height: 60px;
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &:focus {
+      color: $blue-color;
+    }
+    
+    &:focus::after {
+      @include highlight;
+    }
+  }
+
+  &__item + .nav__item {
+    margin-left: 20px;
+  }
+}
+
+.is-active {
+  color: $blue-color;
+
+  &::after {
+    @include highlight;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+  }
+  
+  .header {
+    height: 180px;
+  }
+  
+  .nav {
+    &__container {
+      position: absolute;
+      top: 10px;
+      left: 120px;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    &__item {
+      margin: 0;
+      padding: 0;
+      line-height: 16px;
+    }
+
+    &__item + .nav__item {
+      margin-left: 0;
+    }
+  
+    &__item:focus::after {
+      @include highlight--s;
+    }
+  }
+
+  .is-active::after {
+    @include highlight--s;
+  }
+}
