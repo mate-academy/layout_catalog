@@ -2,13 +2,14 @@
 ::after,
 :hover {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+}
+
+body {
+  margin: 0;
 }
 
 .header {
@@ -33,12 +34,14 @@ html {
 }
 
 .nav__list {
+  margin: 0;
+  padding: 0;
   display: flex;
+  list-style: none;
 }
 
 .nav__item {
   margin-left: 20px;
-  list-style: none;
 }
 
 .nav__item:first-child {
@@ -129,27 +132,28 @@ html {
   margin-bottom: 20px;
 }
 
-.product__rating {
+.product__stars {
   display: flex;
 }
 
-.star {
+.stars__item {
   background-image: url(../images/star.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   height: 15px;
   width: 15px;
-}
-
-.product__star {
   margin-right: 4px;
 }
 
-.product__star:last-child {
+.stars__item:last-child {
   margin-right: 0;
 }
 
-.stars--4 > .star:nth-child(-n+4) {
+.stars--1 > .stars__item:nth-child(-n+1),
+.stars--2 > .stars__item:nth-child(-n+2),
+.stars--3 > .stars__item:nth-child(-n+3),
+.stars--4 > .stars__item:nth-child(-n+4),
+.stars--5 > .stars__item:nth-child(-n+5) {
   background-image: url(../images/star-active.svg);
 }
 
