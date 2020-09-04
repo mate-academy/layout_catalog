@@ -7,16 +7,14 @@ $star-size: 15px;
     width: $star-size;
     height: $star-size;
 
-    margin: 0 4px 0 0;
+    margin-right: 4px;
 
     background: url(../images/star.svg) no-repeat center;
   }
 
-  &--1 &__item:nth-child(1),
-  &--2 &__item:nth-child(-n+2),
-  &--3 &__item:nth-child(-n+3),
-  &--4 &__item:nth-child(-n+4),
-  &--5 &__item:nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
+  @for $i from 1 through 5 {
+    &--#{$i} &__item:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
