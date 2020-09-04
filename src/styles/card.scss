@@ -1,0 +1,71 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0 24px 50px;
+  padding: 15px 14px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    margin: 15px 5px 0;
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 45px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__code {
+    margin: 5px 0;
+  }
+
+  &__reviews {
+    @include price-reviews-display;
+
+  }
+
+  &__price {
+    @include price-reviews-display;
+    line-height: 22px;
+  }
+
+  &__value {
+    margin-top: 9px;
+    margin-bottom: 18px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__button {
+    width: $cards-paragraphs-width;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid $main-color;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 40px;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $background-color;
+    background: $main-color;
+  }
+
+  &__button:hover {
+    color: $main-color;
+    background: $background-color;
+  }
+}
