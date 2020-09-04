@@ -12,25 +12,40 @@
     align-items: center;
     height: $nav-height;
   }
-
+  
   &__item {
     position: relative;
     margin-left: 20px;
     height: $nav-height;
   }
-
-  &__item:first-of-type {
-    margin-left: 0;
-  }
-
+  
   &__link {
     display: inline-block;
     text-decoration: none;
     color: black;
-    padding: 23px 0;
+    padding: 24px 0;
 
     &:hover {
       color: $mainColor;
     }
   }
+
+  &__item:first-of-type {
+    margin-left: 0;
+  }
+}
+
+.is-active {
+  color: $mainColor;
+}
+
+.is-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: $mainColor;
+  bottom: 0;
 }
