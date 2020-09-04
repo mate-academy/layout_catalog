@@ -1,0 +1,114 @@
+.catalog {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: 50px 0;
+    padding: 0 40px;
+  }
+
+  &__card {
+    width: 200px;
+    height: 403px;
+
+    padding: 30px 14px 14px;
+    margin: 0 24px;
+    
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    display: block;
+    margin: 0 auto 45px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: $font-weight-label;
+    line-height: 15px;
+    margin: 0 0 5px;
+  }
+
+  &__code {
+    margin: 0 0 15px;
+  }
+
+  &__label_cost {
+    margin: 0;
+  }
+
+  &__cost {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 20px;
+  }
+
+  &__feedback {
+    margin: 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 0 20px;
+  }
+  
+  &__buy {
+    display: block;
+    margin: auto;
+    height: 40px;
+    width: 170px;
+    padding: 12px 0;
+  
+    background-color: #00acdc;
+  
+    font-size: 14px;
+    line-height: 14px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+  
+    border-radius: 5px;
+    border: 1px solid #00acdc;
+    outline: none;
+    text-align: center;
+  }
+  
+  &__buy:hover {
+    background-color: #fff;
+    color: #00acdc;
+  }
+
+  &__stars {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  background: url(/images/star.svg) no-repeat center;
+  margin: 0 4px 0 0;
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .star:nth-child(-n+#{$i}) {
+    background-image: url(/images/star-active.svg);
+  }
+}
