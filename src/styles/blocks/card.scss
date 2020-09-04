@@ -1,0 +1,108 @@
+@import "../mixins";
+
+.card {
+  padding: 30px 14px 15px;
+  width: $width-of-card;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.1s;
+  }
+
+  &__distance {
+    margin-bottom: 50px;
+  }
+
+  &__img {
+    margin: 0 auto 45px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    @include font-big(12px, 15px, 500);
+  }
+
+  &__code {
+    margin-bottom: 15px;
+    @include font-normal;
+  }
+
+  &__about {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__reviews {
+    @include font-normal;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__stars__item {
+    margin-right: 4px;
+    @include size-of-star(15px);
+    background: url(../images/star.svg) no-repeat center 50%;
+  }
+
+  &__stars:last-child {
+    margin-right: 0;
+  }
+
+  &__stars--1 &__stars__item:nth-child(-n+1),
+  &__stars--2 &__stars__item:nth-child(-n+2),
+  &__stars--3 &__stars__item:nth-child(-n+3),
+  &__stars--4 &__stars__item:nth-child(-n+4),
+  &__stars--5 &__stars__item:nth-child(-n+5) {
+    background-image: url(../images/star-active.svg);
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    @include font-normal;
+  }
+
+  &__info-price {
+    @include font-big(16px, 19px, bold);
+  }
+
+  &__btn-buy {
+    display: block;
+    width: 170px;
+    height: 40px;
+  
+    background-color: $color-of-item;
+  
+    color: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+  
+    border-radius: 5px;
+    
+    border: 1px solid $color-of-item;
+
+    &:hover {
+      background: $color-of-background;
+      color: $color-of-item;
+    }
+  }
+
+  
+}
