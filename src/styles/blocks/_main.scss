@@ -1,0 +1,27 @@
+@import "./../mixins";
+@import "./../variables";
+
+.main {
+  @include flex(center);
+
+  &__cards {
+    @include flex(center);
+    flex-wrap: wrap;
+    width: ($card-width + $card-hor-gap) * 4;
+    line-height: 13px;
+    @include fontRegular;
+  }
+
+  &__card {
+    margin-bottom: 50px;
+    margin-left: $card-hor-gap;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    
+    &:nth-child(5) {
+      margin-left: 0;
+    }
+  }
+}
