@@ -1,9 +1,20 @@
 .goods {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   justify-content: center;
-  max-width: 1200px;
+  max-width: 200px;
   margin: 0 auto;
+  @media (max-width:980px ) {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  @media (max-width:750px ) {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  @media (max-width:450px ) {
+    grid-template-columns: repeat(1,1fr);
+  }
 
   .card {
     display: flex;
@@ -18,7 +29,12 @@
     &__img {
       width: 160px;
       height: 134px;
-      margin: 30px auto 45px;
+      margin: 30px 5px 45px;
+      transition: 1s;
+      &:hover {
+        outline: 3px solid $borderColor;
+        transform: scale(1.2);
+      }
     }
 
     &__title {
@@ -30,7 +46,6 @@
 
     &__subtitle {
       margin: 0 0 15px;
-
     }
 
     &__rating {
@@ -73,12 +88,14 @@
     }
 
     &__btn {
+      width: 170px;
       height: 40px;
-      line-height: 40px;
+      line-height: 41px;
       text-align: center;
       background-color: $headerTextNavColor;
       border-radius: 5px;
       border: 1px solid $headerTextNavColor;
+      box-sizing: border-box;
       color: $headerNavBackground;
       text-decoration: none;
       text-transform: uppercase;
