@@ -1,32 +1,28 @@
+@import "mixins.scss";
 @import "header.scss";
 @import "nav.scss";
 @import "variables.scss";
 @import "card.scss";
+@import "stars.scss";
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: Roboto, sans-serif;
-  font-size: 12px;
+  font-family: $major-font;
+  font-size: $font-size + 1px;
 }
 
 .main {
   display: flex;
   flex-wrap: wrap;
   padding-left: 40px;
-  max-width: 1200px;
+  max-width: $width * 12;
 
-}
-
-@media screen and (min-width: 1200px) {
-  .main {
-    padding-left: 128px;
-  }
-
-  .card--position:nth-child(4),
-  .card--position:nth-child(8) {
-    margin-right: 48px;
+  @media screen and (min-width: $width * 12) {
+    & {
+      padding-left: 128px;
+    }
   }
 }
