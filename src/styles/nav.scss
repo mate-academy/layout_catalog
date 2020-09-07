@@ -1,43 +1,44 @@
 .nav {
+  @include flex-height;
+
   &__list {
     display: flex;
+    text-transform: uppercase;
+    list-style-type: none;
+    margin-top: 4px;
   }
 
   &__item {
     margin-right: 20px;
-  }
 
-  &__item:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__link {
-    display: block;
-    text-transform: uppercase;
+    @include fs12;
     color: #000;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: $headerHeight;
-    transition: color 0.2s;
+    text-decoration: none;
+    padding: 23px 0;
+    transition: color 1s;
 
     &:hover {
-      color: $accentColor;
+      color: $main-color;
     }
+  }
+}
 
-    &--is-active {
-      color: $accentColor;
-      position: relative;
+.is-active {
+  color: $main-color;
 
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        height: 4px;
-        width: 100%;
-        border-radius: 8px;
-        background-color: $accentColor;
-      }
-    }
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 18.5px;
+    height: 4px;
+    background: $main-color;
+    border-radius: 8px;
   }
 }
