@@ -11,6 +11,26 @@
     color: black;
     @include font-size-12-500;
     text-transform: uppercase;
+
+    &--is-active {
+      color: $moyo-color;
+    }
+
+    &--is-active::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 4px;
+      width: 100%;
+      bottom: 0;
+
+      background-color: $moyo-color;
+      border-radius: 8px;
+    }
+  }
+
+  &__link:hover {
+    color: $moyo-color;
   }
 
   &__item {
@@ -20,21 +40,4 @@
   &__item:first-child {
     margin-left: 0;
   }
-}
-
-.is-active,
-.links__link:hover {
-  color: $moyo-color;
-}
-
-.is-active::after {
-  content: "";
-  position: absolute;
-  display: block;
-  height: 4px;
-  width: 100%;
-  bottom: 0;
-
-  background-color: $moyo-color;
-  border-radius: 8px;
 }
