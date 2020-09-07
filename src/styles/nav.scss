@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+    
+  &__item {
+    list-style: none;
+    margin-right: 20px;
+  }
+    
+  &__item:last-of-type {
+    margin-right: 0;
+  }
+          
+  &__link {
+    padding: 23px 0;
+    display: block;
+    
+    &:hover {
+      color: $accent-color;
+    }
+
+    &--is-active {
+      position: relative;
+      color: $accent-color;
+        
+      &::after {
+        display: block;
+        height: 4px;
+        width: 100%;
+        content: "";
+        background-color: $accent-color;
+        border-radius: 8px;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}
