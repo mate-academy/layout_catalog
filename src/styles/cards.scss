@@ -1,7 +1,21 @@
-.grid {
-  display: flex;
-  flex-wrap: wrap;
+.web {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   justify-content: space-around;
+  max-width: 200px;
+  margin: 0 auto;
+
+  @media (max-width:450px ) {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  @media (max-width:750px ) {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  @media (max-width:980px ) {
+    grid-template-columns: repeat(3,1fr);
+  }
 
   .card {
     display: flex;
@@ -16,7 +30,12 @@
   .card__img {
     height: 134px;
     width: 160px;
-    margin: 0 auto 45px;
+    margin: 0 5px 45px;
+    transition: 1s;
+    &:hover {
+      outline: 3px solid #f3f3f3;
+      transform: scale(1.2);
+    }
   }
 
   .card__description {
