@@ -1,0 +1,84 @@
+.card {
+  width: $card-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 15px 15px;
+
+  @include fontNormal;
+
+  border: 1px solid $border-color;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    height: 155px;
+    width: 170px;
+    margin-bottom: 42px;
+    padding: 15px 2px 0;
+
+    border: 3px solid transparent;
+    transition: transform 1s;
+
+    &:hover {
+      border: $border-color;
+      border-radius: 5px;
+      transform: scale(1.2);
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+
+    @include fontTitle;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__rates {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    @extend .card__rates;
+  }
+
+  .card__price-value {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 40px;
+
+    color: $button-text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+
+    border-radius: 5px;
+    background: $main-color;
+    border: solid 1px $main-color;
+
+    transition: color 0.3s, background-color 0.3s;
+
+    &:hover {
+      color: $main-color;
+      background-color: transparent;
+    }
+  }
+}
