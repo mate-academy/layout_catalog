@@ -1,0 +1,14 @@
+.stars {
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background: $star-img no-repeat center;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} &__star:nth-child(-n + #{$i}) {
+      background-image: $star-activ-img;
+    }
+  }
+}
