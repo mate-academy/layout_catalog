@@ -1,0 +1,92 @@
+@import "src/styles/mixins.scss";
+@import "src/styles/variables.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  padding: 15px 14px;
+  width: $cardWidth;
+
+  transition: box-shadow 1s;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+  
+  &_button {
+    background: $main-color;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+
+    width: 100%;
+    height: 40px;
+
+    padding: 12px 0 11px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &_button:hover {
+    color: $main-color;
+    background-color: #fff;
+    border: 1px solid $main-color;
+
+    transition: color 1s;
+  }
+  
+  &__img {
+    width: 170px;
+    height: 164px;
+    margin: 0 auto 30px;
+    padding: 12px 2px;
+    
+    border: 3px solid white;
+    transition: transform 1s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      border-color: #f3f3f3;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
+
+    transition: border-color 1s, background-color 1s, color 1s;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+  }
+
+  &__rating {
+    @include spaceBetween;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    @include spaceBetween;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
