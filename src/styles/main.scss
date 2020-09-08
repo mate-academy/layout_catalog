@@ -1,3 +1,35 @@
-body {
-  margin: 0;
+@import "variables";
+@import "mixins";
+@import "reset.scss";
+@import "page.scss";
+@import "header.scss";
+@import "nav";
+@import "card.scss";
+@import "stars.scss";
+
+html {
+  font-family: Roboto, sans-serif;
+  line-height: 13px;
+  font-size: 11px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main {
+  &__container {
+    @include flex-container(
+      $wrap: wrap,
+      $justify-content: space-between,
+      $align-content: space-between
+    );
+    width: 944px;
+    margin: 50px auto;
+  }
+
+  &__card {
+    margin-bottom: 51px;
+  }
 }
