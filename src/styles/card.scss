@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+
+  margin-left: $card-margin;
+  padding: $card-padding;
+
+  background-color: $secondary-color;
+  border: $card-border-weight solid $card-border-color;
+  border-radius: $border-radius;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__image {
+    @include card-image-size;
+
+    margin: 0 5px;
+  }
+
+  &__title {
+    font-size: $font-main;
+    font-weight: 500;
+    line-height: 15px;
+
+    margin: 45px 0 5px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__mark {
+    @include flex-end-positioning;
+  }
+
+  &__price-info {
+    @include flex-end-positioning;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: $card-price-font-size;
+    line-height: 19px;
+  }
+
+  &__button {
+    border: $card-button-weight solid $main-color;
+    background-color: $main-color;
+    border-radius: $border-radius;
+
+    width: 100%;
+    height: 40px;
+
+    font-size: $card-button-font-size;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 38px;
+
+    color: $secondary-color;
+  }
+
+  &__button:hover {
+    background-color: $secondary-color;
+    color: $main-color;
+
+    cursor: pointer;
+  }
+}
