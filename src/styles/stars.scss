@@ -7,14 +7,9 @@
     height: 15px;
     margin-right: 4px;
   }
-
-  &--1 :nth-child(-n+1),
-  &--2 :nth-child(-n+2),
-  &--3 :nth-child(-n+3),
-  &--4 :nth-child(-n+4),
-  &--5 :nth-child(n) {
-    background: no-repeat 50% url("./../images/star-active.svg");
-    width: 15px;
-    height: 15px;
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n + #{$i}) {
+      background-image: url("./../images/star-active.svg");
+    }
   }
 }
