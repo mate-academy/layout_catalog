@@ -1,29 +1,26 @@
 .stars {
   display: flex;
+
   &__item {
     width: 15px;
     height: 15px;
     margin-right: 4px;
-
     background-image: url("../images/star.svg");
     background-repeat: no-repeat;
     background-position: 50%;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      margin-left: 14px;
+    }
   }
-}
 
-.stars__item:last-of-type {
-  margin-right: 0;
-}
-
-.stars__item:first-child {
-  margin-left: 14px;
-}
-
-.stars--1 .stars__item:nth-child(1),
-.stars--2 .stars__item:nth-child(-n+2),
-.stars--3 .stars__item:nth-child(-n+3),
-.stars--4 .stars__item:nth-child(-n+4),
-.stars--5 .stars__item:nth-child(-n+4),
-.rating__stars .stars__item:nth-child(-n+4) {
-  background-image: url("../images/star-active.svg");
+  @for $i from 1 through 5 {
+    &--#{$i} &__item:nth-child(-n+#{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
 }
