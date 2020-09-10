@@ -8,33 +8,46 @@
   background-color: $headerNavBackground;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 50px;
-  .logo-link {
-    width: 40px;
-    height: 40px;
-  }
-  .nav__list {
+}
+
+.logo-link {
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  &__list {
     display: flex;
-    color: $headerTextNavColor;
-    .nav__item {
-      margin-left: 20px;
-      &:first-child {
-        margin-left: 0;
-      }
-      .nav__link {
-        position: relative;
-        display: inline-block;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 14px;
-        padding: 23px 0;
-        text-transform: uppercase;
-        color: #000;
-        transition: 1s;
-        &:hover {
-          color: $headerTextNavColor;
-        }
-      }
-      .is-active::after {
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__item {
+    list-style: none;
+    margin-right: 20px;
+  }
+
+  &__item:last-of-type {
+    margin-right: 0;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 23px 0;
+    text-transform: uppercase;
+    color: #000;
+    &:hover {
+      color: $button-Background-Color;
+    }
+
+    &--is-active {
+      color: $button-Background-Color;
+
+      &::after {
         content: "";
         display: block;
         position: absolute;
@@ -43,9 +56,6 @@
         height: 4px;
         background-color: $headerTextNavColor;
         border-radius: 8px;
-      }
-      .is-active {
-        color: $headerTextNavColor;
       }
     }
   }
