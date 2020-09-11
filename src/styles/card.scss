@@ -1,0 +1,108 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+
+  &__img {
+    box-sizing: content-box;
+
+    height: 134px;
+    width: 160px;
+
+    padding: 13px 2px 17px;
+
+    transition: transform 1s;
+
+    border: 3px solid transparent;
+
+    &:hover {
+      transform: scale(1.2);
+      border-color: #f3f3f3;
+      border-radius: 5px;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    margin: 25px 0 5px;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .stars {
+    display: flex;
+  }
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @for $i from 1 through 5 {
+    .stars--#{$i} :nth-child(-n + #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-weight: bold;
+    line-height: 19px;
+    font-size: 16px;
+  }
+
+  &__buy {
+    display: block;
+
+    border: 1px solid $product-row-color;
+    background-color: $product-row-color;
+    border-radius: 5px;
+
+    width: 170px;
+    height: 40px;
+
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 40px;
+
+    transition: background-color 1s, color 1s;
+  }
+
+  &__buy:hover {
+    background-color: #fff;
+    color: $product-row-color;
+    cursor: pointer;
+  }
+}

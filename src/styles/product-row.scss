@@ -1,0 +1,15 @@
+.product-row {
+  display: flex;
+  justify-content: center;
+
+  @include product-row-fonts;
+
+  &__container {
+    width: $number-of-columns * $card-width +
+      $columns-gap * ($number-of-columns - 1);
+    //lint ругається якщо більше 80 символів
+    display: grid;
+    grid-template-columns: repeat(auto-fill, $card-width);
+    gap: $rows-gap $columns-gap;
+  }
+}
