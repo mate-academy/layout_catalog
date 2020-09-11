@@ -5,7 +5,9 @@
   @include product-row-fonts;
 
   &__container {
-    width: 4 * $card-width + $columns-gap * 3;
+    width: $number-of-columns * $card-width +
+      $columns-gap * ($number-of-columns - 1);
+    //lint ругається якщо більше 80 символів
     display: grid;
     grid-template-columns: repeat(auto-fill, $card-width);
     gap: $rows-gap $columns-gap;
