@@ -1,3 +1,42 @@
+$padding-big: 128px;
+$padding-medium: 40px;
+$horizontal-spacing: 50px;
+
+@mixin horizontal-paddings ($size) {
+  padding-left: $size;
+  padding-right: $size;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  margin-bottom: $horizontal-spacing;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-column-gap: 48px;
+  @include horizontal-paddings($padding-medium);
+}
+
+.card {
+  margin-bottom: calc( #{$horizontal-spacing} - 1px);
+}
+
+@media screen and (min-width: 1200px) {
+  .catalog {
+    @include horizontal-paddings($padding-big);
+  }
 }
