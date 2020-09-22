@@ -1,3 +1,26 @@
+@import "header";
+@import "card";
+@import "review";
+
+$main_font: "Roboto", sans-serif;
+$main_color1: #00acdc;
+$cardWidth: 200px;
+$marginBetweenCardsX: 48px;
+$marginBetweenCardsY: 50px;
+
 body {
   margin: 0;
+  font-family: $main_font;
+}
+
+.catalog-container {
+  display: grid;
+  justify-content: center;
+  margin-top: $marginBetweenCardsY;
+  grid-template-columns: repeat(4, $cardWidth);
+  grid-gap: $marginBetweenCardsY $marginBetweenCardsX;
+
+  @media (max-width: $cardWidth * 4 + $marginBetweenCardsX * 3) {
+    grid-template-columns: repeat(auto-fit, $cardWidth);
+  }
 }
