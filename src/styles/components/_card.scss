@@ -1,92 +1,88 @@
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 403px;
   width: 200px;
+  padding: 30px 14px 15px;
+  border-radius: 5px;
   background: $cardMainColor;
   border: 1px solid $cardBorderColor;
-  box-sizing: border-box;
-  border-radius: 5px;
 }
 
-.product_img {
-  background-repeat: no-repeat;
-  background-position: center;
+.card__img {
+  align-self: center;
   width: 160px;
   height: 134px;
-  margin: 30px 20px 0;
+  background-image: url(./../images/imac.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
 }
 
-.product_description {
-  width: 170px;
+.card__description {
+  padding-top: 45px;
+  margin: 0;
   height: 31px;
-  margin: 45px 15px 4px;
   @include productDescriptionFont();
 }
 
-.product_code {
-  width: 170px;
+.card__code {
+  padding-top: 35px;
   @include productCodeAndReviewFont();
 }
 
-.star {
-  display: flex;
-  padding-left: 15px;
-}
-
-.star_section {
+.card__rating {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 200px;
-  margin: 15px 0 20px;
+  padding-top: 15px;
 }
 
-.star_block {
+.stars {
+  display: flex;
+}
+
+.stars__block {
   width: 15px;
   height: 15px;
   margin-right: 4px;
   background: $starImgLocation no-repeat center;
 }
 
-.rating {
-  .star_block {
-    &:nth-child(-n+4) {
-      background: $starActiveImgLocation no-repeat center;
+@for $i from 1 through 5 {
+  .stars--#{$i} {
+    .stars__block {
+      &:nth-child(-n + #{$i}) {
+        background: url(./../images/star-active.svg) no-repeat center;
+      }
     }
   }
 }
 
-.reviews {
-  padding-right: 15px;
+.card__reviews {
   @include productCodeAndReviewFont();
 }
 
-.price_section {
+.card__price {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  width: 170px;
+  padding: 20px 0;
 }
 
-.price_text {
+.price__text {
   @include productPriceFont();
 }
 
-.price_value {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
+.price__value {
+  @include productValueFont();
 }
 
-.button {
+.card__button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
   height: 40px;
-  margin: 20px 15px 0;
   background: $linkColor;
   color: $cardMainColor;
   border: 1px solid $linkColor;
@@ -94,7 +90,6 @@
   @include buttonFont();
   &:hover {
     background-color: $cardMainColor;
-    border: 1px solid $linkColor;
     color: $linkColor;
   }
 }
