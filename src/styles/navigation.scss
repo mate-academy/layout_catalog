@@ -1,0 +1,47 @@
+.nav {
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: $header-height;
+  }
+
+  &__item {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: #000;
+    padding: 23px 0;
+
+    &:hover {
+      color: $nav-color;
+      transition: 0.5s;
+    }
+  }
+
+  .is-active {
+    color: $nav-color;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 4px;
+      background: $nav-color;
+      border-radius: 2px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
