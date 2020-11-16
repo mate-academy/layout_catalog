@@ -3,91 +3,83 @@
   flex-direction: column;
   height: 403px;
   width: 200px;
-  padding: 30px 14px 15px;
+  padding: 0 14px;
   border-radius: 5px;
   background: $cardMainColor;
   border: 1px solid $cardBorderColor;
-}
-
-.card__img {
-  align-self: center;
-  width: 160px;
-  height: 134px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.card__description {
-  padding-top: 45px;
-  margin: 0;
-  height: 31px;
-  @include productDescriptionFont();
-}
-
-.card__code {
-  padding-top: 35px;
-  @include productCodeAndReviewFont();
-}
-
-.card__rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 15px;
-}
-
-.stars {
-  display: flex;
-}
-
-.stars__block {
-  width: 15px;
-  height: 15px;
-  margin-right: 4px;
-  background: $starImgLocation no-repeat center;
-}
-
-@for $i from 1 through 5 {
-  .stars--#{$i} {
-    .stars__block {
-      &:nth-child(-n + #{$i}) {
-        background: url(./../images/star-active.svg) no-repeat center;
-      }
+  &__photo {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 194px;
+    margin-left: -15px;
+  }
+  &__img {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__description {
+    padding-top: 15px;
+    height: 31px;
+    @include productDescriptionFont();
+  }
+  &__code {
+    padding-top: 19px;
+    @include productCodeAndReviewFont();
+  }
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+  }
+  &__reviews {
+    @include productCodeAndReviewFont();
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+  }
+  &__button {
+    height: 40px;
+    background: $linkColor;
+    color: $cardMainColor;
+    border: 1px solid $linkColor;
+    border-radius: 5px;
+    @include buttonFont();
+    &:hover {
+      background-color: $cardMainColor;
+      color: $linkColor;
     }
   }
-}
+  .price__text {
+    @include productPriceFont();
+  }
 
-.card__reviews {
-  @include productCodeAndReviewFont();
-}
-
-.card__price {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 20px 0;
-}
-
-.price__text {
-  @include productPriceFont();
-}
-
-.price__value {
-  @include productValueFont();
-}
-
-.card__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  background: $linkColor;
-  color: $cardMainColor;
-  border: 1px solid $linkColor;
-  border-radius: 5px;
-  @include buttonFont();
-  &:hover {
-    background-color: $cardMainColor;
-    color: $linkColor;
+  .price__value {
+    @include productValueFont();
+  }
+  .stars {
+    display: flex;
+  }
+  .stars__block {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background: $starImgLocation no-repeat center;
+  }
+  @for $i from 1 through 5 {
+    .stars--#{$i} {
+      .stars__block {
+        &:nth-child(-n + #{$i}) {
+          background: $starActiveImgLocation no-repeat center;
+        }
+      }
+    }
   }
 }
