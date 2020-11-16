@@ -1,0 +1,40 @@
+.nav {
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+    margin: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    padding: 23px 0;
+    transition: color 0.3s;
+    font-size: 12px;
+    line-height: 14.06px;
+    font-weight: 500;
+
+    &--active {
+      color: $emphasis-color;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        width: 38px;
+        height: 4px;
+        background-color: $emphasis-color;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__link:hover {
+    color: $emphasis-color;
+  }
+}
