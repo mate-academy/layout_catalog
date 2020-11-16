@@ -1,0 +1,61 @@
+@mixin active-after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: $blue;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.nav {
+  font-size: 12px;
+  font-weight: 500;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 50px;
+  margin-bottom: 50px;
+}
+
+.menu__list {
+  height: 100%;
+  display: flex;
+  list-style-type: none;
+  text-transform: uppercase;
+  padding: 0;
+
+  .list__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  .item__link {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    line-height: 60px;
+    display: inline-block;
+
+    &:hover {
+      color: $blue;
+      cursor: pointer;
+    }
+    &:active {
+      color: $blue;
+      &::after {
+        @include active-after;
+      }
+    }
+  }
+  .is-active {
+    color: $blue;
+    &::after {
+      @include active-after;
+    }
+  }
+}
