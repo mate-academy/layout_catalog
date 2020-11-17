@@ -1,0 +1,42 @@
+.menu {
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  &__item {
+    height: $header-height;
+  }
+  
+  &__link {
+    @include menu-link-style;
+  }
+  
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link:hover {
+    color: $main-page-color;
+  }
+  
+  &__item:first-child {
+    position: relative;
+  }
+  
+  &__item:first-child::after {
+    content: "";
+    background-color: $main-page-color;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+  }
+}
+
+.is-active {
+  color: $main-page-color;
+}
