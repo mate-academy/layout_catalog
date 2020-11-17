@@ -7,6 +7,7 @@
   border-radius: 5px;
   background: $cardMainColor;
   border: 1px solid $cardBorderColor;
+
   &__photo {
     display: flex;
     justify-content: center;
@@ -14,6 +15,7 @@
     height: 194px;
     margin-left: -15px;
   }
+
   &__img {
     align-self: center;
     width: 160px;
@@ -21,30 +23,47 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
   &__description {
     padding-top: 15px;
     height: 31px;
     @include productDescriptionFont();
   }
+
   &__code {
     padding-top: 19px;
     @include productCodeAndReviewFont();
   }
+
   &__rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 15px;
+
+    &-reviews {
+      @include productCodeAndReviewFont();
+    }
+
+    &-link {
+      color: $navFontColorMain;
+      text-decoration: none;
+    }
   }
-  &__reviews {
-    @include productCodeAndReviewFont();
-  }
+
   &__price {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     padding: 20px 0;
+    &-text {
+      @include productPriceFont();
+    }
+    &-value {
+      @include productValueFont();
+    }
   }
+
   &__button {
     height: 40px;
     background: $linkColor;
@@ -57,28 +76,23 @@
       color: $linkColor;
     }
   }
-  .price__text {
-    @include productPriceFont();
-  }
+}
 
-  .price__value {
-    @include productValueFont();
-  }
-  .stars {
-    display: flex;
-  }
-  .stars__block {
+.stars {
+  display: flex;
+  &__block {
     width: 15px;
     height: 15px;
     margin-right: 4px;
     background: $starImgLocation no-repeat center;
   }
-  @for $i from 1 through 5 {
-    .stars--#{$i} {
-      .stars__block {
-        &:nth-child(-n + #{$i}) {
-          background: $starActiveImgLocation no-repeat center;
-        }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} {
+    .stars__block {
+      &:nth-child(-n + #{$i}) {
+        background: $starActiveImgLocation no-repeat center;
       }
     }
   }
