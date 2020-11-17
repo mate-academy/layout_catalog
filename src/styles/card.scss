@@ -1,0 +1,85 @@
+@import "variables";
+
+.button {
+  @include flex-center();
+  @include border($blue);
+  @include large-fonts(14px, 16px);
+  background-color: $blue;
+  color: $white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.card {
+  @include border($gray);
+  width: 200px;
+  padding: 30px 14px 15px;
+  border-radius: 5px;
+  transition: box-shadow 0.2s;
+  margin: 0 24px 50px;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+
+    .button {
+      color: $blue;
+      background-color: $white;
+      @include border($blue);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    margin: 0 auto 45px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__title {
+    @include medium-fonts();
+    color: $black;
+    margin-bottom: 5px;
+  }
+
+  &__article {
+    @include small-fonts();
+    margin-bottom: 15px;
+  }
+
+  &__assesment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    vertical-align: bottom;
+  }
+
+  &__reviews {
+    @include small-fonts();
+    color: $black;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__price-text {
+    display: flex;
+    align-self: center;
+    @include small-fonts();
+  }
+
+  &__price-cost {
+    @include large-fonts(16px, 19px);
+  }
+}
