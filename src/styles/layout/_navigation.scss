@@ -6,6 +6,7 @@
 
   &__item {
     margin-left: 20px;
+
     &:first-child {
       margin-left: 0;
     }
@@ -13,16 +14,20 @@
 
   &__link {
     display: flex;
-    align-content: center;
+    align-items: center;
+    position: relative;
+    height: $headerBlockHeight;
     color: $navFontColorMain;
     @include navbarFont();
+
     &:hover {
       color: $linkColor;
     }
   }
+
   .is-active {
-    position: relative;
     color: $linkColor;
+    
     &::after {
       content: "";
       position: absolute;
@@ -33,10 +38,4 @@
       border-radius: 8px;
     }
   }
-}
-
-.brand {
-  align-self: center;
-  width: 40px;
-  height: 40px;
 }
