@@ -1,0 +1,40 @@
+@import "fonts";
+
+.nav {
+  display: flex;
+
+  &__element {
+    display: flex;
+    position: relative;
+    flex: 0 0 auto;
+    height: $header-size;
+  }
+  
+  &__element:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__link {
+    text-transform: uppercase;
+    line-height: $header-size;
+    color: black;
+    @include fontTitleLinks;
+  }
+  
+  &__link:hover ,
+  .is-active {
+    color: $color-btn-acktive;
+  }
+  
+  .is-active::after {
+    content: "";
+    display: block;
+    background-color: $color-btn-acktive;
+    border-radius: 8px;
+    height: 4px;
+    width: $width-full;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
