@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #f3f3f3;
-  // box-shadow: 0 2px rgba(0, 0, 0, 0.07);
 
   background-color: #fff;
 }
@@ -17,12 +16,8 @@
 .card__info {
   margin-top: 45px;
 
-  > h2 {
-    width: 100%;
-
-    line-height: 15px;
-    @include navigation-text;
-  }
+  line-height: 15px;
+  @include navigation-text;
 }
 
 .card__code {
@@ -35,19 +30,29 @@
   @include prompt-text;
 }
 
-.card__row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card__row--top20 {
+.card__price {
+  @include card-row;
   margin-top: 20px;
 }
 
-.card__row--top15 {
+.card__price-text {
+  align-self: flex-end;
+
+  @include prompt-text;
+}
+
+.card__price-value {
+  @include special-enlarged-text;
+}
+
+.card__testimonials {
+  @include card-row;
   margin-top: 15px;
+  @import "stars";
+}
+
+.card__testim-text {
+  @include prompt-text;
 }
 
 .card__button {
@@ -55,25 +60,19 @@
   height: 40px;
   display: flex;
   justify-content: center;
-  // align-items: center;
+  align-items: center;
   border: 1px solid $main-page-color;
   border-radius: 5px;
   margin-top: 20px;
 
   background-color: $main-page-color;
 
-  button {
-    color: #fff;
+  @include optional-button-text(14px,700);
+  //(font-size,font-weight)
 
-    @include optional-button-text(14px,700);
-    //(font-size,font-weight)
-  }
-}
-
-.card__button:hover {
-  background-color: #fff;
-
-  button {
+  &:hover {
     color: $main-page-color;
+    background-color: #fff;
   }
+
 }
