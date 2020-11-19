@@ -11,11 +11,9 @@
     background: url(../images/star.svg) no-repeat center;
   }
 
-  &--1 .stars__item:nth-child(1),
-  &--2 .stars__item:nth-child(-n+2),
-  &--3 .stars__item:nth-child(-n+3),
-  &--4 .stars__item:nth-child(-n+4),
-  &--5 .stars__item:nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
+  @for $i from 1 through 5 {
+    &--#{$i} .stars__item:nth-child(-n+#{$i}) {
+      background: url("../images/star-active.svg") no-repeat center;
+    }
   }
 }
