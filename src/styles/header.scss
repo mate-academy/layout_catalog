@@ -1,7 +1,5 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include centered;
   padding: 0 50px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -12,48 +10,51 @@
   display: flex;
   align-items: center;
   height: 60px;
-}
 
-.nav__list {
-  display: flex;
-  flex-wrap: nowrap;
-  list-style: none;
-  padding-inline-start: 0;
-}
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding-inline-start: 0;
+  }
 
-.nav__link {
-  font-size: $normal-font-size;
-  font-weight: 500;
-  position: relative;
-  margin: 0 10px;
-  padding: 23px 0;
-  text-decoration: none;
-  color: black;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
+  &__link {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
 
-.nav__link--first,
-.nav__link:hover {
-  color: $blue;
-}
+    color: #000;
+    font-size: $normal-font-size;
+    font-weight: 500;
+    line-height: 60px;
 
-.nav__link--first {
-  margin-left: 0;
-}
 
-.nav__link--last {
-  margin-right: 0;
-}
+    text-decoration: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
 
-.nav__link--first::after {
-  content: "";
-  display: block;
-  text-align: center;
-  height: 4px;
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-  background-color: $blue;
-  border-radius: 8px;
+  &__link--first,
+  &__link:hover {
+    color: $blue;
+  }
+
+  &__link--first {
+    margin-left: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      text-align: center;
+      height: 4px;
+      width: 100%;
+      bottom: 0;
+      position: absolute;
+      background-color: $blue;
+      border-radius: 8px;
+    }
+  }
+  &__link--last {
+    margin-right: 0;
+  }
 }
