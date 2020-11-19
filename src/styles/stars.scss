@@ -2,16 +2,15 @@
   display: flex;
 
   &__item {
+    margin-right: 4px;
     width: 15px;
     height: 15px;
-    margin-right: 4px;
-    border-radius: 0.5px;
-    background: url(../images/star.svg) no-repeat center;
+    background: url(../images/star.svg) center no-repeat;
+  }
 
-    @for $i from 1 through 5 {
-      &--#{$i} :nth-child(-n+#{$i}) {
-        background: url(../images/star-active.svg) center no-repeat;
-      }
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n+#{$i}) {
+      background-image: url(../images/star-active.svg);
     }
   }
 }
