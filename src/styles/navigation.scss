@@ -1,0 +1,48 @@
+.nav {
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__item {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    position: relative;
+    color: #000;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $nav-color;
+    }
+  }
+
+  .is-active {
+    color: $nav-color;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 4px;
+      background: $nav-color;
+      border-radius: 2px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
