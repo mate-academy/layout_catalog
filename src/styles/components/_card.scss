@@ -1,0 +1,80 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 403px;
+  width: $cardWidth;
+  padding: 0 14px;
+  border-radius: 5px;
+  background: $cardMainColor;
+  border: 1px solid $cardBorderColor;
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 194px;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__description {
+    padding-top: 15px;
+    height: 31px;
+    @include productDescriptionFont();
+  }
+
+  &__code {
+    padding-top: 19px;
+    @include productCodeAndReviewFont();
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+  }
+  &__rating-reviews {
+    @include productCodeAndReviewFont();
+  }
+
+  &__rating-link {
+    color: $navFontColorMain;
+    text-decoration: none;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+  }
+
+  &__price-text {
+    @include productPriceFont();
+  }
+
+  &__price-value {
+    @include productValueFont();
+  }
+
+  &__button {
+    text-align: center;
+    line-height: 40px;
+    background: $linkColor;
+    color: $cardMainColor;
+    border: 1px solid $linkColor;
+    border-radius: 5px;
+    @include buttonFont();
+
+    &:hover {
+      background-color: $cardMainColor;
+      color: $linkColor;
+    }
+  }
+}

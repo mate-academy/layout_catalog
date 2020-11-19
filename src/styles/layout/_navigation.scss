@@ -1,0 +1,41 @@
+.navbar {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: $headerBlockHeight;
+    color: $navFontColorMain;
+    @include navbarFont();
+
+    &:hover {
+      color: $linkColor;
+    }
+  }
+
+  .is-active {
+    color: $linkColor;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: $linkColor;
+      border-radius: 8px;
+    }
+  }
+}
