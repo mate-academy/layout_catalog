@@ -1,0 +1,36 @@
+@import "variables";
+@import "mixines";
+
+.stars-block {
+  display: flex;
+  margin-top: 1px * $proportion-card;
+  > * {
+    height: $star-size * $proportion-card;
+    width: $star-size * $proportion-card;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 3px * $proportion-card;
+  }
+  > :first-child {
+    margin-left: 1px * $proportion-card;
+  }
+}
+
+.stars--0 > * {
+  background-image: $star;
+}
+
+.stars--1 :nth-child(n),
+.stars--2 :nth-child(n),
+.stars--3 :nth-child(n),
+.stars--4 :nth-child(n),
+.stars--5 :nth-child(n) {
+  background-image: $star-active;
+}
+
+.stars--1 :nth-child(n + 2),
+.stars--2 :nth-child(n + 3),
+.stars--3 :nth-child(n + 4),
+.stars--4 :nth-child(5) {
+  background-image: $star;
+}
