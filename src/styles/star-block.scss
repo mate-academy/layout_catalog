@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixines";
 
-.stars-block {
+.stars {
   display: flex;
   margin-top: 1px * $proportion-card;
   > * {
@@ -20,17 +20,12 @@
   background-image: $star;
 }
 
-.stars--1 :nth-child(n),
-.stars--2 :nth-child(n),
-.stars--3 :nth-child(n),
-.stars--4 :nth-child(n),
-.stars--5 :nth-child(n) {
+.stars__star {
   background-image: $star-active;
 }
 
-.stars--1 :nth-child(n + 2),
-.stars--2 :nth-child(n + 3),
-.stars--3 :nth-child(n + 4),
-.stars--4 :nth-child(5) {
-  background-image: $star;
+@for $i from 1 through 4 {
+  .stars--#{$i} > :nth-child(n + #{$i + 1}) {
+    background-image: $star;
+  }
 }
