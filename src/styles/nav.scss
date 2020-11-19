@@ -1,0 +1,46 @@
+@import "variables";
+@import "mixines";
+
+.navigation__list {
+  padding-left: 0;
+  * {
+    @include flex-center;
+    height: $header-height;
+    list-style: none;
+    margin-left: 20px * $proportion-header;
+  }
+  :nth-child(1) {
+    margin-left: 0;
+  }
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 12px * $proportion-header;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+}
+
+.is-active,
+.navigation__link:hover {
+  color: $blue;
+}
+
+.is-active {
+  display: flex;
+  flex-direction: column;
+  line-height: $header-height;
+  position: relative;
+  &::after {
+    content: "";
+    background-color: $blue;
+    position: absolute;
+    top: 56px * $proportion-header;
+    height: 4px * $proportion-header;
+    width: 100%;
+    border-radius: 8px;
+  }
+}
