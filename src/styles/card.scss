@@ -1,0 +1,88 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  @include flexColumn;
+  justify-content: $centerPosition;
+  align-items: $centerPosition;
+  width: 200px;
+  background: $mainLightColor;
+  border: 1px solid #f3f3f3;
+  margin: 0 24px 50px;
+  padding: 30px 14px 15px;
+  box-sizing: border-box;
+  font-family: $serviceFonts;
+  @include defaultSizeWeight;
+  color: $mainDefaultColor;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    align-self: $centerPosition;
+  }
+
+  &__description {
+    @include flexColumn;
+    padding-top: 15px;
+  }
+
+  &__title {
+    @include defaultSizeWeight;
+    line-height: 15px;
+    padding-top: 30px;
+    margin: 0;
+  }
+
+  &__code {
+    @include smallSizeWeight;
+    padding-top: 5px;
+  }
+
+  &__rating {
+    @include flexBetween;
+    align-items: center;
+    padding: 13px 0 19px;
+  }
+
+  &__feedback {
+    @include smallSizeWeight;
+  }
+
+  &__price {
+    @include flexBetween;
+    font-size: $smallFontSize;
+    align-items: baseline;
+    padding-bottom: 20px;
+    font-weight: $largeFontWeight;
+
+    &-text {
+      @extend .card__feedback;
+    }
+
+    &-value {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    background-color: #00acdc;
+    border-radius: 5px;
+    border: 1px solid #00acdc;
+    text-align: $centerPosition;
+    text-transform: uppercase;
+    width: 170px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: $largeFontWeight;
+    font-family: $serviceFonts;
+    line-height: 40px;
+    text-decoration: none;
+    color: $mainLightColor;
+
+    &:hover {
+      background-color: $mainLightColor;
+      color: $mainBlueColor;
+    }
+  }
+}
