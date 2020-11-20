@@ -2,12 +2,20 @@ $product-card-width: 200px;
 $product-card-height: 403px;
 $space-between-cards: 48px;
 $quantity-card-one-line: 4;
+$quantity-card-one-line-3: 3;
 $quantity-gap-between-cards: 3;
 $borderWidth: 1px;
 
 $widthCardOneLine:
   $quantity-card-one-line * $product-card-width
   + $quantity-gap-between-cards * $space-between-cards;
+
+@function catalogWidth($quantity-card-one-line-3) {
+  @return $quantity-card-one-line-3
+    * $product-card-width 
+    + ($quantity-card-one-line-3 - 1)
+    * $space-between-cards;
+}
 
 $label-moyo-width: 40px;
 $label-moyo-heigth: 40px;
