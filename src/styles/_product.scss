@@ -1,17 +1,15 @@
 
-.cards {
+.catalog__card {
   display: flex;
   width: $product-card-width;
   height: $product-card-height;
   margin-bottom: 50px;
 
-  &__block {
-    display: flex;
-    flex-direction: column;
+  &-block {
     padding: 0 14px;
     background: #fff;
     border-radius: 5px;
-    border: 1px solid #f3f3f3;
+    border: $borderWidth solid #f3f3f3;
   }
 }
 
@@ -40,7 +38,7 @@
 
   &__code,
   &__reviews,
-  &__price {
+  &__price-name {
     font-size: $font-size-11;
   }
 
@@ -53,12 +51,12 @@
     display: flex;
   }
 
-  &__estimation {
+  &__price {
     @include space-baseline-between;
     padding-top: 20px;
   }
 
-  &__cost {
+  &__price--value {
     font-weight: $font-weight-700;
     font-size: $font-size-16;
     line-height: $font-size-16 * 1.25 - 1px;
@@ -80,8 +78,8 @@
   }
 
   &__button:hover {
-    width: $card-button - 2px;
-    height: $card-button / 4.25 - 2px;
+    width: $card-button - 2 * $borderWidth;
+    height: $card-button / 4.25 - 2 * $borderWidth;
     background: #fff;
     border: 1px solid #00acdc;
     color: #00acdc;
