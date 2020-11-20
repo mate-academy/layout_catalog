@@ -1,0 +1,102 @@
+@import "blockStyles/variables";
+@import "blockStyles/mixins";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 403px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 14px;
+
+  &__img {
+    margin: 16px auto 45px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__code {
+    @include smallText;
+    margin-bottom: 15px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__feedbacks {
+    @include smallText;
+    align-self: center;
+  }
+
+  &__price-block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    align-self: flex-end;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__buy {
+    align-self: center;
+    background-color: $mainColor;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    height: $btnHeight;
+    width: 170px;
+    text-align: center;
+    line-height: $btnHeight;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__buy:hover {
+    background-color: white;
+    border-color: $mainColor;
+    color: $mainColor;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__item {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15px;
+    height: 15px;
+    margin: 0 4px 0 0;
+    border-radius: 0.5px;
+  }
+}
+
+.stars--1 :first-child,
+.stars--2 :nth-child(-n+2),
+.stars--3 :nth-child(-n+3),
+.stars--4 :nth-child(-n+4),
+.stars--5 :nth-child(-n+5) {
+  background-image: url(../images/star-active.svg);
+}
