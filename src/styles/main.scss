@@ -1,7 +1,7 @@
 @import "header";
 @import "reset";
 @import "product";
-@import "__variables";
+@import "variables";
 
 html {
   font-family: "Roboto", sans-serif;
@@ -11,7 +11,8 @@ html {
 .catalog {
   display: flex;
   flex-wrap: wrap;
-  width: 1024px;
+  width: $productWidth * $productsInARow
+    + $productGap * ($productsInARow - 1) + 2 * $catalogPaddingX;
   justify-content: center;
   margin: 50px auto 0;
 }
