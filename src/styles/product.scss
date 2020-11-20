@@ -1,0 +1,109 @@
+$small-font: 11px;
+
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 14px;
+  width: $product-width;
+  border: $border-color 1px solid;
+  border-radius: 5px;
+
+  &__picture {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+    margin: 15px 0 45px;
+
+    transition: transform 1s, width 1s, height 1s;
+
+    &:hover {
+      transform: scale(1.2);
+      outline: 3px solid $border-color;
+    }
+  }
+
+  &__heading {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__id {
+    font-weight: 400;
+    font-size: $small-font;
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    @extend .product__rating;
+  }
+
+  &__price-word {
+    padding-bottom: 1px;
+    text-transform: capitalize;
+    align-self: flex-end;
+    font-weight: 400;
+    font-size: $small-font;
+    line-height: 13px;
+  }
+
+  &__price-result {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__review-link {
+    display: block;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: $small-font;
+    text-decoration: none;
+    color: black;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background: url("../images/star.svg") center no-repeat;
+  }
+
+  &__button {
+    line-height: 100%;
+    width: 170px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $active-color;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.2s linear;
+    &:hover {
+      background-color: white;
+      color: $active-color;
+      border-color: $active-color;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} :nth-child(-n + #{$i}) {
+    background-image: url("../images/star-active.svg");
+  }
+}
