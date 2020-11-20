@@ -99,7 +99,7 @@
 >  height: 15px;
 >  display: flex;
 >
->  .card__stars {
+>  .stars {
 >    display: flex;
 >
 >    .card__star {
