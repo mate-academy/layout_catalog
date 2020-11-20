@@ -1,3 +1,28 @@
-body {
-  margin: 0;
+@import "vars";
+@import "header";
+@import "cards";
+@import "resets";
+@import "navigation";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  row-gap: $card-margin + 3px;
+  column-gap: $card-margin;
+  justify-content: center;
+  align-content: center;
+  margin: 50px auto;
+
+  @media (max-width: 990px) {
+    grid-template-columns: repeat(3, $card-width);
+    height: auto;
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(1, $card-width);
+  }
 }
