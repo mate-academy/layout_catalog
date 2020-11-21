@@ -8,21 +8,33 @@
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  height: 403px;
   width: 200px;
   padding: 30px 14px 15px;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
 
   &__photo {
-    height: 134px;
-    width: 160px;
+    padding-top: calc(((#{$img-height} * #{$img-scale}) - #{$img-height}) / 2);
+    height: $img-height;
+    width: $img-width;
+    border: 3px solid transparent;
     align-self: center;
+    box-sizing: content-box;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale($img-scale);
+      border-color: #f3f3f3;
+    }
   }
 
   &__description {
     @include font-normal;
     margin-top: 45px;
     line-height: 15px;
+    flex-shrink: 0;
   }
 
   &__code {
@@ -74,6 +86,7 @@
     color: $color-main;
     line-height: 40px;
     height: 40px;
+    transition: all 1s;
   }
 
   &__link:hover {
