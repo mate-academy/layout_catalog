@@ -1,3 +1,28 @@
-body {
-  margin: 0;
+@import "_reset";
+@import "_variables";
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  line-height: 13px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.container__catalog {
+  margin: 50px auto 78px;
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, $cardSize);
+  max-width: $cardSize * 4 + $cardColumnGap * 3;
+  gap: $cardRowGap $cardColumnGap;
+}
+
+@import "header";
+@import "nav";
+@import "card";
