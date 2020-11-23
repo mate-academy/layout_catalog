@@ -1,107 +1,80 @@
 .card {
-  width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 15px 14px;
-  background: #fff;
   border-radius: 5px;
-  font-size: 11px;
-  &__img {
-    width: 160px;
+  border: 1px solid #f3f3f3;
+
+  &__photo {
     height: 134px;
+    width: 160px;
     padding: 12px 0;
-    box-sizing: content-box;
     display: block;
     border: 3px solid transparent;
-    margin: 0 5px 30px;
+    box-sizing: content-box;
     transition: transform 1s;
+
     &:hover {
-      transform: scale(1.22);
+      transform: scale(1.2);
       border: 3px solid #f3f3f3;
     }
   }
 
   &__title {
-    font-weight: 500;
+    align-self: flex-start;
     font-size: 12px;
+    margin: 30px 0 5px;
+    font-weight: 500;
     line-height: 15px;
-    margin-bottom: 5px;
-    margin-block-start: 0;
   }
 
   &__code {
+    align-self: flex-start;
     margin-bottom: 15px;
-    margin-block-start: 0;
+  }
+
+  &__amount {
+    font-weight: 700;
+    font-size: 16px;
   }
 
   &__rating {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 14px;
-  }
-
-  &__rate {
-    display: flex;
-  }
-
-  &__cost {
-    display: flex;
-    align-items: baseline;
+    width: 100%;
     margin-bottom: 20px;
   }
 
-  &__price-name {
-    margin-block-end: 0;
-    line-height: 13px;
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  &__price-amount,
-  &__feedback {
-    white-space: nowrap;
-  }
-
-  &__price-amount {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    margin-left: 63px;
-    margin-block-start: 0;
-    margin-block-end: 0;
-  }
-
-  &__button,
-  &__feedback {
-    text-decoration: none;
-  }
-
-  &__feedback {
-    margin-left: 18px;
-    line-height: 13px;
-    color: #000;
-  }
-
-  &__button {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #fff;
-    background-color: #00acdc;
-    border-radius: 5px;
-    border: 1px solid #00acdc;
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 15px;
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $nav-color;
     width: 100%;
     height: 40px;
-    padding-top: 10px;
+    background-color: $nav-color;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 1s, color 1s;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: $nav-color;
+    }
   }
-
-  &__button:hover {
-    color: #00acdc;
-    background-color: #fff;
-  }
-
-}
-
-.card--wrap {
-  padding: 0 14px;
-  border: 1px solid #f3f3f3;
 }

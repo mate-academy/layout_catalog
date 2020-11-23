@@ -1,20 +1,24 @@
-@import "default";
-@import "card";
-@import "header";
-@import "stars";
-@import "nav";
+@import "variables.scss";
+@import "reset.scss";
+@import "header.scss";
+@import "nav.scss";
+@import "card.scss";
+@import "stars.scss";
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+}
 
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 4 * $width + (48px * 4);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-size);
+  justify-content: center;
+  column-gap: 48px;
+  row-gap: 50px;
+  max-width: 4 * $card-size + (48px * 3);
 
-  &__wrap {
+  &--wrap {
     margin: 50px auto;
-  }
-
-  &__card {
-    margin: 0 24px 50px;
   }
 }
