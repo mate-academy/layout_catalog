@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixines";
+
+.stars {
+  display: flex;
+  &__star {
+    height: $star-size * $proportion-card;
+    width: $star-size * $proportion-card;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 3px * $proportion-card;
+    background-image: $star-active;
+  }
+  > :first-child {
+    margin-left: 1px * $proportion-card;
+  }
+}
+
+.stars--0 > * {
+  background-image: $star;
+}
+
+@for $i from 1 through 4 {
+  .stars--#{$i} > :nth-child(n + #{$i + 1}) {
+    background-image: $star;
+  }
+}
