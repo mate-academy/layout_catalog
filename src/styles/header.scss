@@ -1,21 +1,28 @@
 @import "variables";
 @import "fonts";
 
-header {
+.header {
   @include title-font;
-  display: flex;
   position: relative;
-  padding: 0 50px;
+  height: 60px;
+  display: grid;
+  grid-template-areas: "logo nav";
+  grid-template-columns: 1fr;
   background-color: white;
-  text-transform: uppercase;
-  align-items: center;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  .header__content {
+
+  &__content {
     margin: 0 auto;
     max-width: 1200px;
   }
-  .logo-img {
-    width: $logo_size;
-    height: $logo_size;
-  }
+}
+
+.logo-img {
+  grid-area: logo;
+  position: absolute;
+  top: calc(50% - 20px);
+  margin-left: 50px;
+  width: 40px;
+  height: 40px;
 }
