@@ -1,0 +1,97 @@
+@import"mixines";
+@import"variables";
+
+.catalog__card {
+  margin: 0 24px 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 403px;
+  width: 200px;
+  padding: 30px 14px 15px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+
+  &__photo {
+    padding-top: calc(((#{$img-height} * #{$img-scale}) - #{$img-height}) / 2);
+    height: $img-height;
+    width: $img-width;
+    border: 3px solid transparent;
+    align-self: center;
+    box-sizing: content-box;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale($img-scale);
+      border-color: #f3f3f3;
+    }
+  }
+
+  &__description {
+    @include font-normal;
+    margin-top: 45px;
+    line-height: 15px;
+    flex-shrink: 0;
+  }
+
+  &__code {
+    margin-top: 5px;
+  }
+
+  &__stars {
+    @include flex-between;
+    margin-top: 15px;
+  }
+
+  .rang {
+    display: flex;
+  }
+
+  .rang__star {
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+    background: url(../images/star.svg) no-repeat center;
+  }
+
+  @for $i from 1 to 5 {
+    .rang--#{$i} {
+      .rang__star:nth-child(-n + #{$i}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+
+  &__price {
+    @include flex-between;
+    align-items: baseline;
+    margin-top: 20px;
+  }
+
+  &__amount {
+    @include font-large;
+    line-height: 19px;
+  }
+
+  &__link {
+    @include font-medium;
+    @include link-text;
+    margin-top: 20px;
+    background: $color-secondary;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: $color-main;
+    line-height: 40px;
+    height: 40px;
+    transition: all 1s;
+  }
+
+  &__link:hover {
+    background-color: $color-main;
+    color: $color-secondary;
+    border-color: $color-secondary;
+  }
+}
