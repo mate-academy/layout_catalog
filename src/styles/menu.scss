@@ -1,0 +1,60 @@
+@import"mixines";
+@import"variables";
+
+.menu {
+  @include flex-between;
+  background: $color-main;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 60px;
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+  &__nav {
+    margin-right: 50px;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style-type: none;
+    margin-right: 20px;
+    position: relative;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    @include font-normal;
+    @include link-text;
+    line-height: 60px;
+    display: inline-block;
+
+    &:hover,
+    &--active {
+      color: $color-secondary;
+    }
+
+    &--active::after {
+      content: "";
+      display: block;
+      border: 2px solid $color-secondary;
+      border-radius: 8px;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      box-sizing: border-box;
+    }
+  }
+}
