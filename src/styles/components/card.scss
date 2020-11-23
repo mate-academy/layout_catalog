@@ -1,23 +1,26 @@
-.card {
+.cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  &__block {
-    width: 200px;
+  &__card {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 200px;
     padding: 30px 14px 15px;
+    margin-bottom: 50px;
+
     border: 1px solid #f3f3f3;
     border-radius: 5px;
-    margin-bottom: 50px;
   }
 
-  &__block-img {
+  &__img-container {
+    display: flex;
+
     height: 134px;
     max-width: 160px;
-    display: flex;
     margin-bottom: 45px;
   }
 
@@ -26,60 +29,79 @@
     height: auto;
   }
 
-  &__block-info {
+  &__info {
     margin-bottom: 15px;
   }
 
-  &__info-heading {
+  &__heading {
+    margin-bottom: 5px;
+
     font-weight: $primary-fw;
     font-size: $secondary-fs;
     line-height: 15px;
-    margin-bottom: 5px;
   }
 
-  &__info-code {
+  &__code {
     line-height: $primary-lh;
   }
 
-  &__block-rating {
-    width: $max-width;
+  &__rating {
     @include dflex-between-center;
+
+    width: $max-width;
     margin-bottom: 20px;
   }
 
-  &__rating-stars {
+  .stars {
     display: flex;
+
+    &__item {
+      width: 15px;
+      height: 15px;
+      margin-right: 4px;
+
+      background: url(../images/star.svg) no-repeat center;
+    }
   }
 
-  &__rating-feedback {
+  @for $i from 1 through 5 {
+    .stars--#{$i} .stars__item:nth-child(-n + #{$i}) {
+      background: url(../images/star-active.svg) no-repeat center;
+    }
+  }
+
+  &__feedback-count {
     line-height: $primary-lh;
   }
 
-  &__block-price {
-    width: $max-width;
+  &__price {
     @include dflex-between-center;
+
+    width: $max-width;
     margin-bottom: 20px;
   }
 
-  &__price-name {
-    line-height: $primary-lh;
+  &__name {
     margin-top: 3px;
+
+    line-height: $primary-lh;
   }
 
-  &__price-number {
+  &__value {
     font-weight: $secondary-fw;
     font-size: 16px;
     line-height: 19px;
   }
 
-  &__block-btn {
+  &__btn-container {
     width: $max-width;
   }
 
   &__btn {
-    font-family: inherit;
     width: $max-width;
     height: 40px;
+
+    font-family: inherit;
     font-weight: $secondary-fw;
     font-size: 14px;
     line-height: 16px;
