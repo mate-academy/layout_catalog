@@ -1,54 +1,54 @@
 @import "variables";
 
 .nav {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-area: nav;
+  grid-template-rows: repeat(8, min-content);
+  justify-content: flex-end;
   margin-left: auto;
-  &__list {
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 auto;
-    list-style-type: none;
-    padding: 0;
-  }
+  align-items: center;
 
-  &__item {
-    margin: 0 10px;
-    text-transform: uppercase;
-  }
+  line-height: $header_size;
 
-  &__item:first-child {
-    margin: 0;
-  }
+  background-color: blueviolet;
+}
 
-  &__item:last-child {
-    margin: 0;
-  }
+.nav__item {
+  display: inline;
+  grid-template-columns: repeat(8, auto);
+  text-transform: uppercase;
+}
 
-  &__link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    height: 60px;
-    align-items: center;
-    &:hover {
-      color: $nav_link_color;
-    }
-  }
+.nav__link {
+  padding: 20px 10px;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
 
-  .is-active {
-    color: $nav_link_color;
-    &::after {
-      content: "";
+.nav__item:last-child {
+  margin-right: 40px;
+}
 
-      position: absolute;
-      bottom: 0;
+.nav__link:hover {
+  color: rgba(0, 172, 220, 1);
+}
 
-      height: 4px;
-      width: 37px;
+.is-active {
+  position: relative;
+  padding: 20px 0;
+  color: rgba(0, 172, 220, 1);
+}
 
-      border-radius: 8px;
-      background-color: $nav_link_color;
-    }
-  }
+.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 37px;
+  height: 4px;
+
+  background-color: rgba(0, 172, 220, 1);
+  border-radius: 8px;
 }

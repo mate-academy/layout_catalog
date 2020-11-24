@@ -1,21 +1,31 @@
 @import "variables";
 @import "fonts";
 
-header {
+.header {
   @include title-font;
-  display: flex;
+
   position: relative;
-  padding: 0 50px;
+  display: grid;
+  grid-template-columns: 90px min-content;
+  grid-auto-flow: column;
+  //overflow-x: auto;
+  //align-content: center;
+  //grid-template-areas: "logo nav";
+
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  height: $header_size;
+
   background-color: white;
-  text-transform: uppercase;
-  align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  .header__content {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  .logo-img {
-    width: $logo_size;
-    height: $logo_size;
-  }
+}
+
+.logo-img {
+  //grid-area: logo;
+  position: absolute;
+  top: calc(50% - 20px);
+
+  height: 40px;
+  width: 40px;
+  margin-left: 50px;
 }
