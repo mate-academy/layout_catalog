@@ -1,0 +1,43 @@
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: $navLinkHeight;
+
+    @include mediumText;
+    text-transform: uppercase;
+    color: #000;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &--is-active {
+      color: $blue;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+        border-bottom: 4px solid $blue;
+        border-radius: 2px;
+
+        content: "";
+      }
+    }
+  }
+}
