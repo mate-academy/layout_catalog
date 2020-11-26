@@ -1,1 +1,54 @@
 @import "variables";
+
+.nav {
+  height: 100%;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    column-gap: 20px;
+    height: 100%;
+    padding-left: 0;
+  }
+  &__item {
+    white-space: nowrap;
+ 
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $black-color;
+ 
+    transition: color 0.2s;
+ 
+    &:hover {
+      color: $general;
+    }
+  }
+  &__link--current {
+    position: relative;
+ 
+    color: $general;
+ 
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+ 
+      height: 4px;
+      
+      border-radius: 8px;
+      background-color: $general;
+    }
+  }
+}
