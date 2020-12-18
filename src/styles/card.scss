@@ -1,0 +1,97 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $cardWidth;
+  height: $cardHeight;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  padding: (30px - $borderWidth) 14px 15px;
+
+  &card:not(:nth-child(4n)) {
+    margin-right: $cardsGap;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    border: $borderWidth solid transparent;
+    transition: transform 1s;
+
+    
+    &:hover {
+      transform: translateY(4px) scale(1.2);
+      box-sizing: content-box;
+      padding: 15px 0;
+      margin: -15px 0;
+      border-color: $borderColor;
+    }
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    margin-top: 45px - $borderWidth;
+    margin-bottom: 0;
+    line-height: 15px;
+    @include normalText;
+  }
+
+  &__code {
+    margin-top: 5px;
+    @include smallText;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: center;
+  }
+
+  &__reviews {
+    @include smallText;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 20px;
+  }
+
+  &__value {
+    @include smallText;
+  }
+
+  &__price {
+    @include boldText;
+    line-height: 19px;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid $keyColorBlue;
+    border-radius: 5px;
+    width: 170px;
+    height: 40px;
+    background-color: $keyColorBlue;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    transition: color 0.5s, background-color 0.5s;
+
+    &:hover {
+      background-color: #fff;
+      color: $keyColorBlue;
+    }
+  }
+}
