@@ -1,12 +1,11 @@
 .card {
   display: flex;
-  // justify-content: center;
   flex-direction: column;
   width: $cardWidth;
   height: $cardHeight;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $borderColor;
   border-radius: 5px;
-  padding: 30px 14px 15px;
+  padding: (30px - $borderWidth) 14px 15px;
 
   &card:not(:nth-child(4n)) {
     margin-right: $cardsGap;
@@ -15,6 +14,17 @@
   &__image {
     display: flex;
     justify-content: center;
+    border: $borderWidth solid transparent;
+    transition: transform 1s;
+
+    
+    &:hover {
+      transform: translateY(4px) scale(1.2);
+      box-sizing: content-box;
+      padding: 15px 0;
+      margin: -15px 0;
+      border-color: $borderColor;
+    }
   }
 
   &__img {
@@ -23,7 +33,7 @@
   }
 
   &__name {
-    margin-top: 45px;
+    margin-top: 45px - $borderWidth;
     margin-bottom: 0;
     line-height: 15px;
     @include normalText;
@@ -36,9 +46,9 @@
 
   &__rating {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     margin-top: 15px;
+    align-items: center;
   }
 
   &__reviews {
@@ -63,9 +73,9 @@
 
   &__buy {
     display: flex;
-    margin-top: 20px;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
     border: 1px solid $keyColorBlue;
     border-radius: 5px;
     width: 170px;
@@ -77,6 +87,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
+    transition: color 0.5s, background-color 0.5s;
 
     &:hover {
       background-color: #fff;
