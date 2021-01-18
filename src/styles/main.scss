@@ -1,3 +1,255 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
   margin: 0;
+}
+
+$font-family: "Roboto", sans-serif;
+$text-color: #000;
+$hover-link-color: #00acdc;
+$link-font-size: 12px;
+$nav-height: 60px;
+$font-weight-middle: 500;
+
+@mixin small-text-card {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+}
+
+.logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.link__item {
+  display: flex;
+
+  margin-left: 20px;
+  padding: 0;
+
+  list-style: none;
+
+  &:first-of-type {
+    margin: 0;
+  }
+}
+
+.link {
+  display: flex;
+
+  margin: 0;
+  height: $nav-height;
+  line-height: $nav-height;
+  color: $text-color;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: $font-family;
+  font-size: $link-font-size;
+  font-weight: $font-weight-middle;
+
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+}
+
+.nav {
+  height: $nav-height;
+  margin: 0;
+}
+
+.nav__ul {
+  display: flex;
+  padding: 0;
+
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+
+  margin-bottom: 50px;
+  padding: 0 50px;
+
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+}
+
+.is-active {
+  position: relative;
+
+  margin: 0;
+
+  color: $hover-link-color;
+
+  &::after {
+    position: absolute;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+
+    content: "";
+    background: $hover-link-color;
+    bottom: 0;
+  }
+}
+
+/*main---------------------------------------*/
+
+.catalog {
+  display: flex;
+  box-sizing: border-box;
+  
+  max-width: 1024px;
+  
+  margin: 0 auto;
+  padding: 0 40px;
+  
+  justify-content: space-between;
+  
+  font-family: $font-family;
+  font-size: normal;
+  color: $text-color;
+
+  flex-wrap: wrap;
+}
+
+.block {
+  width: 200px;
+  
+  margin-bottom: 50px;
+}
+
+.card {
+  box-sizing: border-box;
+
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+}
+
+.card__item {
+  padding: 0 14px 15px;
+}
+
+.card__photo {
+  width: 160px;
+  height: 134px;
+  padding: 30px 19px 45px;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+}
+
+.card__text {
+  line-height: 1.25em;
+  margin-bottom: 6px;
+
+  font-style: normal;
+  font-weight: $font-weight-middle;
+  font-size: 12px;
+}
+
+.card__code {
+  @include small-text-card();
+
+  display: flex;
+
+  margin-bottom: 15px;
+  line-height: 1.18em;
+}
+
+.card__nfeed {
+  display: flex;
+
+  line-height: 1.18em;
+
+  align-items: center;
+}
+
+.card__feedback {
+  @include small-text-card();
+
+  display: flex;
+
+  height: 15px;
+  margin-bottom: 20px;
+
+  justify-content: space-between;
+}
+
+.card__stars {
+  display: flex;
+
+  .star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+
+    background: url(..\images\star.svg) no-repeat 50%;
+  }
+
+  .star:nth-of-type(-n+4) {
+    background: url(..\images\star-active.svg) no-repeat 50%;
+  }
+}
+
+.price__actuall {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.price {
+  display: flex;
+
+  margin-bottom: 20px;
+
+  justify-content: space-between;
+  align-content: flex-end;
+  align-items: baseline;
+}
+
+.price__name {
+  @include small-text-card();
+
+  line-height: 1.18em;
+}
+
+.buy__link {
+  display: block;
+  text-align: center;
+
+  line-height: 16px;
+  padding: 11px 16px;
+
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: #fff;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: $hover-link-color;
+  border: 1px solid $hover-link-color;
+  border-radius: 5px;
+
+  &:hover {
+    color: $hover-link-color;
+    background: #fff;
+  }
 }
