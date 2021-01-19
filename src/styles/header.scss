@@ -1,0 +1,98 @@
+$padding-header: 0 50px;
+$logo-size: 40px;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: $padding-header;
+  margin-bottom: 50px;
+  
+  font-size: 12px;
+  font-weight: $font-medium;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+  align-self: center;
+  height: $logo-size;
+  width: $logo-size;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__list {
+    margin-left: 20px;
+
+    list-style: none;
+    
+    &:hover {
+      color: #00acdc;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+
+  margin-left: -20px;
+
+  color: #00acdc;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: #00acdc;
+    border-radius: 8px;
+  }
+}
+
+@mixin flexBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.block {
+  @include flexBlock;
+  padding: 0 40px;
+  margin: 0 auto;
+  max-width: 1024px;
+  box-sizing: border-box;
+
+  &__item {
+    box-sizing: border-box;
+    max-width: 200px;
+    margin-bottom: 50px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+  }
+}
