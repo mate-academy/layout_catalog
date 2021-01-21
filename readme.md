@@ -1,4 +1,3 @@
-# Frontend practice with catalog page
 1. Replace `<your_account>` with your Github username in the links
     - [DEMO LINK](https://anastasiiaaliinyk.github.io/layout_catalog/)
     - [TEST REPORT LINK](https://anastasiiaaliinyk.github.io/layout_catalog/report/html_report/)
