@@ -1,5 +1,9 @@
 @import "variables";
 
+%stars-active {
+  background: url("../images/star-active.svg") no-repeat center;
+}
+
 .stars {
   display: flex;
 }
@@ -10,11 +14,13 @@
   margin-right: 4px;
   background: url("../images/star.svg") no-repeat center;
 
-  &--active {
-    background: url("../images/star-active.svg") no-repeat center;
-  }
-
   &:last-child {
     margin-right: 0;
+  }
+}
+
+@for $element from 1 through 5 {
+  .stars--#{$element} .stars__star:nth-child(-n + #{$element}) {
+    @extend %stars-active;
   }
 }
