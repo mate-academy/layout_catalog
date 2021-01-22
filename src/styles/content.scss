@@ -1,0 +1,104 @@
+
+.row {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    @include flex-space-between;
+    width: 988px;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  padding: $padding-card;
+  line-height: 15px;
+  box-sizing: border-box;
+  flex: 200px 0 0;
+  height: 403px;
+  border: $border-card;
+  border-radius: 5px;
+  margin-bottom: 50px;
+
+  &__photo {
+    height: 134px;
+    width: 160px;
+    padding: $padding-photo;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  &__kod {
+    margin: 0;
+    font-size: 11px;
+    margin-bottom: 15px;
+  }
+  &__rait {
+    @include flex-space-between;
+    align-items: center;
+    margin-bottom: 21px;
+  }
+  &__price {
+    @include flex-space-between;
+    align-items: baseline;
+
+    margin-bottom: 20px;
+  }
+  &__button {
+    box-sizing: border-box;
+    display: inline-block;
+
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    background-color: $active-color;
+    border-radius: 5px;
+    border: 1px solid $active-color;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+  }
+  &__button:hover {
+    background-color: white;
+    color: $active-color;
+  }
+}
+
+.rait {
+  &__stars {
+    display: flex;
+  }
+  &__comment {
+    @include middle-font;
+    margin: 0;
+  }
+}
+
+.stars__star {
+  height: $star-size;
+  width: $star-size;
+  background: url("../images/star.svg") no-repeat center;
+  margin-right: 4px;
+  &:nth-child(-n+4) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+
+.price {
+  &__word {
+    margin: 0;
+    @include middle-font;
+  }
+  &__sum {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 700;
+  }
+}

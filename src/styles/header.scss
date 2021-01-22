@@ -1,0 +1,56 @@
+.header {
+  @include flex-space-between;
+  padding: 0 50px;
+  box-shadow: $header-shadow;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.logo {
+  width: $logo-size;
+  height: $logo-size;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  &__item:first-child {
+    margin-left: 0;
+  }
+  &__link {
+    padding: 23px 0;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  &__link:hover {
+    color: $active-color;
+  }
+}
+
+.is-active {
+  color: $active-color;
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $active-color;
+    border-radius: 8px;
+    height: 4px;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
