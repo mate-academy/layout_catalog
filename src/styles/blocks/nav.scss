@@ -1,0 +1,148 @@
+.nav {
+  display: flex;
+  height: 60px;
+  padding: 10px 0;
+
+  &__toggler {
+    display: none;
+  }
+
+  &__toggler-label {
+    display: none;
+    color: $accent-color;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 0;
+
+    list-style: none;
+    transition: height 2s;
+  }
+
+  &__item {
+    display: flex;
+    margin-left: $small-gap ;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 23px 0;
+    @include nav-text;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &--is-active {
+      color: $accent-color;
+
+      &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+
+        display: block;
+        width: 100%;
+        height: 4px;
+
+        background: $accent-color;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 945px) {
+    flex-direction: column;
+    align-items: center;
+
+    &__toggler-label {
+      display: block;
+      cursor: pointer;
+      transition: transform 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.4);
+      }
+
+      &::before {
+        content: "=";
+        font-size: 2em;
+      }
+    }
+
+    &__toggler:checked ~ &__toggler-label::before {
+      content: "\00d7";
+    }
+
+    &__list {
+      height: 0;
+      overflow: hidden;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: height 0.5s ease-in-out;
+    }
+
+    &__toggler:checked ~ &__list {
+      width: 350px;
+      height: 200px;
+      flex-flow: column wrap;
+    }
+
+    &__link {
+      max-width: 200px;
+      padding: 15px 0;
+      align-self: center;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &--is-active {
+        color: #000;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &__item {
+      width: 196px;
+      height: 50px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+
+    &__toggler:checked ~ &__list {
+      width: fit-content;
+      height: fit-content;
+      flex-wrap: nowrap;
+    }
+
+    &__link {
+      padding: 10px 20px;
+    }
+
+    &__item {
+      margin: 0;
+      width: 110px;
+      height: 50px;
+      text-align: center;
+    }
+  }
+}
