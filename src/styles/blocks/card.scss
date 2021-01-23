@@ -1,0 +1,122 @@
+@import "variables";
+@import "mixins";
+
+.card {
+  width: 200px;
+  height: 403px;
+
+  background-color: $main-background-color;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+}
+
+.card__img {
+  width: 160px;
+  height: 134px;
+  margin: 30px 19px 0;
+}
+
+.card__product {
+  margin: 41px 14px 5px;
+
+  font-size: $font-size-regular;
+  font-weight: $font-medium;
+  line-height: 15px;
+}
+
+.card__code {
+  margin: 5px 14px 0;
+
+  font-size: $font-size-small;
+  font-weight: $font-regular;
+  line-height: 13px;
+}
+
+.card__rating {
+  width: auto;
+  margin: 5px 14px 7px;
+
+  align-items: baseline;
+}
+
+.card__rating,
+.card__price {
+  @include flex-space-between;
+  align-items: center;
+}
+
+.card__stars {
+  display: flex;
+}
+
+.card__star {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+
+  border-radius: 0.5px;
+  background: url("/images/star.svg") no-repeat center;
+}
+
+.card__stars .card__stars--4:nth-of-type(-n+1),
+.card__stars .card__stars--4:nth-of-type(-n+2),
+.card__stars .card__stars--4:nth-of-type(-n+3),
+.card__stars .card__stars--4:nth-of-type(-n+4),
+.card__stars .card__stars--4:nth-of-type(-n+5) {
+  background: url("/images/star-active.svg") no-repeat center;
+}
+
+.card__price {
+  margin: 10px 14px 20px;
+  align-items: baseline;
+}
+
+.card__feedback,
+.card__price {
+  font-size: $font-size-small;
+  line-height: 13px;
+}
+
+.card__price-text {
+  margin: 0;
+
+  font-size: $font-size-small;
+  font-weight: $font-regular;
+  line-height: 13px;
+}
+
+.card__price-value {
+  margin: 0;
+
+  font-size: $font-size-large;
+  font-weight: $font-bold;
+  line-height: 19px;
+}
+
+.card__button {
+  display: block;
+  height: 40px;
+  width: 170px;
+  margin: 0 14px;
+  padding: 12px 57px 11px 58px;
+
+  background-color: $hover-active-color;
+  color: $main-background-color;
+
+  font-size: $font-size-medium;
+  font-weight: $font-bold;
+  line-height: 16px;
+  text-align: center;
+  @include text-style;
+  justify-content: center;
+
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $main-background-color;
+    border: 1px solid $hover-active-color;
+  
+    color: $hover-active-color;
+  }
+}
