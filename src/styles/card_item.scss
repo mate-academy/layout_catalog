@@ -34,30 +34,12 @@
     line-height: 13px;
   }
 
-  &__stars {
-    display: flex;
-  }
-
-  .stars__star {
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
-    background: url(../images/star.svg) no-repeat center;
-  }
-
-  .stars--1 .stars__star:nth-of-type(-n+1),
-  .stars--2 .stars__star:nth-of-type(-n+2),
-  .stars--3 .stars__star:nth-of-type(-n+3),
-  .stars--4 .stars__star:nth-of-type(-n+4),
-  .stars--5 .stars__star:nth-of-type(-n+5) {
-    background: url(../images/star-active.svg) no-repeat center;
-  }
+  @import "stars";
 
   &__reaction {
-    display: flex;
+    @include position;
     width: 100%;
     margin-top: 15px;
-    justify-content: space-between;
     align-items: center;
   }
 
@@ -106,7 +88,7 @@
     background: $color-background;
     border: 1px solid $color-link;
     
-    .card__link {
+    &__link {
       color: $color-link;
       line-height: 40px;
     }
