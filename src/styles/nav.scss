@@ -1,0 +1,60 @@
+@import "./mixin.scss";
+@import "./variables.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+  }
+
+  &__link {
+    font-weight: $font-medium;
+    font-size: $font-size-nav;
+    line-height: 14px;
+
+    height: 60px;
+
+    @include display-justify-content;
+
+    align-items: center;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  &__link:hover {
+    color: $custom-color;
+  }
+
+  &__item {
+    margin-left: 20px;
+    list-style: none;
+  }
+
+}
+
+.is-active {
+  margin-left: -20px;
+  position: relative;
+  color: $custom-color;
+}
+
+.is-active::after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  content: "";
+  position: absolute;
+
+  background: $custom-color;
+  border-radius: 8px;
+}
