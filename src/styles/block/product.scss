@@ -1,17 +1,108 @@
+@import "./variables.scss";
 @import "./mixin.scss";
 
-.product {
-  display: flex;
-  justify-content: center;
+.catalog__product {
+  margin-bottom: 50px;
+}
 
-  &__item {
-    width: 1024px;
+.product {
+  width: 200px;
+  padding: 30px 14px 15px;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    margin: 45px 0 0;
+
+    font-weight: $fw-semibold;
+    font-size: $fs-md;
+    line-height: 1.25em;
+  }
+
+  &__code {
+    margin: 6px 0 0;
+    align-self: flex-start;
+    font-size: $fs-sm;
+    font-weight: $fw-regular;
+    line-height: 1.18em;
+  }
+
+  &__rating {
+    width: 100%;
+    margin-top: 15px;
+
+    @include display-justify-content;
+  }
+
+  &__stars .stars__rating:nth-child(-n+4) {
+    background: url("../images/star-active.svg") no-repeat 50%;
+  }
+
+  &__rating--feedback {
+    font-weight: $fw-regular;
+    font-size: $fs-sm;
+    margin: 0;
+    align-self: center;
+  }
+
+  &__price {
+    width: 100%;
+    padding: 0;
+    margin: 20px 0;
 
     @include display-justify-content;
 
-    flex-wrap: wrap;
-    padding: 0 40px;
-    margin: 0 auto;
+    align-items: baseline;
+  }
+
+  &__price--title {
+    margin: 0;
+    font-size: $fs-sm;
+    font-weight: $fw-regular;
+    line-height: 1.18em;
+  }
+
+  &__cost {
+    font-weight: $fw-bold;
+    font-size: $fs-xl;
+    margin: 0;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 11px 58px;
+    display: flex;
+    line-height: 16px;
+
+    justify-content: center;
+
+    font-size: $fs-l;
+    font-weight: $fw-bold;
+    color: $standard-color;
+    text-align: center;
+
+    border: 1px solid $light-blue-color;
+    border-radius: 5px;
+    background-color: $light-blue-color;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__button:hover {
+    color: $light-blue-color;
+
+    background-color: $standard-color;
   }
 
 }

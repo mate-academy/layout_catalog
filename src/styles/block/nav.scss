@@ -13,8 +13,8 @@
   }
 
   &__link {
-    font-weight: $font-medium;
-    font-size: $font-size-nav;
+    font-weight: $fw-semibold;
+    font-size: $fs-md;
     line-height: 14px;
 
     height: 60px;
@@ -25,11 +25,11 @@
 
     text-transform: uppercase;
     text-decoration: none;
-    color: rgba(0, 0, 0, 1);
+    color: $nav-text-color;
   }
 
   &__link:hover {
-    color: $custom-color;
+    color: $light-blue-color;
   }
 
   &__item {
@@ -37,24 +37,24 @@
     list-style: none;
   }
 
-}
+  &__link--active {
+    margin-left: -20px;
+    position: relative;
+    color: $light-blue-color;
+  }
 
-.is-active {
-  margin-left: -20px;
-  position: relative;
-  color: $custom-color;
-}
+  &__link--active::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
-.is-active::after {
-  bottom: 0;
-  left: 0;
-  right: 0;
+    height: 4px;
 
-  height: 4px;
+    content: "";
 
-  content: "";
-  position: absolute;
+    background: $light-blue-color;
+    border-radius: 8px;
+  }
 
-  background: $custom-color;
-  border-radius: 8px;
 }
