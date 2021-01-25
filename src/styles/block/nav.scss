@@ -1,0 +1,65 @@
+.nav {
+  @include centered;
+
+  font-size: $navFontSize;
+  font-weight: $navFontWeight;
+  background-color: $navColorBg;
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+    padding: 0;
+  }
+
+  &__item {
+    margin-left: $navItemMarginLeft;
+    list-style: none;
+  }
+
+  &__link {
+    @include spaceBetween;
+    align-items: center;
+    height: $navLinkHeight;
+  
+    text-decoration: none;
+    color: $navLinkColor;
+  }
+
+  &__item :hover {
+    color: $navItemColor;
+  }
+}
+
+.is-active {
+  position: relative;
+  margin-left: $navLinkActiveMarginLeft;
+
+  color: $navItemColor;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    height: 4px;
+   
+    background-color: $navItemColor;
+    border-radius: $navLinkActiveBorderRadius;
+    
+    content: "";
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-left: $navLinkActiveMarginLeft;
+  }
+
+}
+
+.logo {
+  display: flex;
+  width: $logoSize;
+  height: $logoSize;
+
+  align-self: center;
+}
