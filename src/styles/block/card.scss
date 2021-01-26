@@ -1,6 +1,3 @@
-@import "./src/styles/mixins";
-@import "./src/styles/variables";
-
 .main {
   @include display-justify-content;
 }
@@ -21,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid $border-color;
+  border: 1px solid $c-border;
   border-radius: 5px;
   &__photo {
     margin: 0 auto 42px;
@@ -31,8 +28,7 @@
     height: 134px;
   }
   &__content {
-    margin-left: 14px;
-    margin-right: 14px;
+    margin: 0 14px;
   }
   &__title {
     margin-bottom: 5px;
@@ -96,28 +92,30 @@
     @include display-justify-content;
   }
   &__button {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+
     width: 170px;
     height: 40px;
     margin: 0 0 15px;
-    box-sizing: border-box;
+    align-items: center;
+
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
-    color: $white-c;
-    cursor: pointer;
-    border: none;
-    background: $c-blue;
-    border-radius: 5px;
     font-style: normal;
     text-align: center;
     text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Roboto, sans-serif;
     text-decoration: none;
+
+    color: $c-white;
+    background: $c-blue;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
     &:hover {
-      background: $white-c;
+      background: $c-white;
       border: 1px solid $c-blue;
       box-sizing: border-box;
       border-radius: 5px;
