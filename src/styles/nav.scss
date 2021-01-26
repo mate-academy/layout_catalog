@@ -8,41 +8,43 @@
   &__list {
     display: flex;
     justify-content: flex-end;
-  }
-
-  &__list_item {
-    display: inline-block;
+    
+    &_item {
+      display: inline-block;
+    
+      line-height: 60px;
+      margin-left: 20px;
   
-    line-height: 60px;
-    margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
 
-    &:first-child {
-      margin-left: 0;
+    &_link {
+      position: relative;
+      display: inline-block;
+      
+      text-decoration: none;
+      color: inherit;
+    
+      &--active {
+        color: $main-color;
+        &::after {
+          @include underline;
+        }
+      }
+      
+      &:hover {
+        color: $main-color;
+        // transition: color 1s ease;
+      }
+    
+      &:focus::after {
+        @include underline;
+      }
+      
     }
   }
-}
 
-.nav__list_link {
-  position: relative;
-  display: inline-block;
-  
-  text-decoration: none;
-  color: inherit;
-
-  &--active {
-    color: $main-color;
-    &::after {
-      @include underline;
-    }
-  }
-  
-  &:hover {
-    color: $main-color;
-    // transition: color 1s ease;
-  }
-
-  &:focus::after {
-    @include underline;
-  }
   
 }
