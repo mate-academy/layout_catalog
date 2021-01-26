@@ -1,0 +1,45 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  
+  background-color: #fff;
+  
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    
+    &_item {
+      display: inline-block;
+    
+      line-height: 60px;
+      margin-left: 20px;
+  
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: inline-block;
+      
+      text-decoration: none;
+      color: inherit;
+    
+      &--active {
+        color: $main-color;
+        &::after {
+          @include underline;
+        }
+      }
+      
+      &:hover {
+        color: $main-color;
+      }
+    
+      &:focus::after {
+        @include underline;
+      }
+    }
+  }
+}
