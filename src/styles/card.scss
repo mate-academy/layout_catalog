@@ -1,5 +1,3 @@
-@import "_variable";
-
 .card {
   width: 200px;
   padding: 14px;
@@ -7,16 +5,18 @@
   border: 1px solid #f3f3f3;
 
   &__link {
+    @include card-image;
     display: inline-block;
-    width: 160px;
-    height: 134px;
     margin: 16px 5px 45px;
     text-decoration: none;
   }
 
+  &__image {
+    @include card-image;
+  }
+
   &__title {
     width: 170px;
-    margin: 0;
     font: 500 12px/15px $main-font;
     text-align: left;
   }
@@ -31,19 +31,10 @@
     margin-top: 15px;
   }
 
-  &__reviews {
-    margin: 0;
-  }
-
   &__price {
     @include flex;
     align-items: flex-end;
     margin: 20px 0;
-  }
-
-  &__denomination,
-  &__amount {
-    margin: 0;
   }
 
   &__amount {
@@ -72,10 +63,12 @@
   width: 170px;
   height: 40px;
   padding: 0;
+
   line-height: 40px;
+
+  background-color: $main-color;
   border: none;
   border-radius: 5px;
-  background-color: $main-color;
 
   &:hover {
     background-color: $back-color;
@@ -84,13 +77,15 @@
 
   &__buy {
     display: inline-block;
-    margin: 0;
     width: 100%;
+    margin: 0;
     padding: 11px 0;
+
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
     color: $back-color;
+
     text-transform: uppercase;
     text-decoration: none;
 
