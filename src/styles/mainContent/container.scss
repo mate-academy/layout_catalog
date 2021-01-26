@@ -1,0 +1,19 @@
+@import "../variable";
+
+@function catalogWidth($columnsCount) {
+  @return $columnsCount * $cardWidth + ($columnsCount - 1) *
+    $cardGap + (2 * $catalogPaddingX);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  width: catalogWidth(4);
+  padding: 0 40px;
+
+  @media (max-width: catalogWidth(4) - 1px) {
+    width: catalogWidth(3);
+  }
+}
