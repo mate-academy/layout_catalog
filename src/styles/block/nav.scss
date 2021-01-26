@@ -1,0 +1,57 @@
+@import "./extend.scss";
+@import "./variables.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    font-weight: $fw-semibold;
+    font-size: $fs-md;
+    line-height: 14px;
+
+    height: 60px;
+
+    @extend %display-justify-content;
+
+    align-items: center;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $nav-text-color;
+  }
+
+  &__link:hover {
+    color: $light-blue-color;
+  }
+
+  &__item {
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  &__link--active {
+    margin-left: -20px;
+    position: relative;
+    color: $light-blue-color;
+  }
+
+  &__link--active::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    content: "";
+
+    background: $light-blue-color;
+    border-radius: 8px;
+  }
+
+}
