@@ -1,0 +1,146 @@
+@import "reset";
+@import "header";
+@import "mixins";
+@import "variables";
+@import "animations";
+
+.card {
+  max-width: 200px;
+  max-height: 403px;
+  border: $card-border;
+  border-radius: 5px;
+  margin-bottom: 50px;
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    padding: 27px 0;
+    
+    transition-duration: 1s;
+    box-sizing: content-box;
+    border: 3px solid transparent;
+  }
+  
+  &__photo:hover {
+    padding: 27px;
+    border: 3px solid #f3f3f3;
+    transition-duration: 1s;
+  }
+
+  &__image {
+    box-sizing: content-box;
+    width: 160px;
+    height: 134px;
+    
+    @extend %scale;
+    transition-duration: 1s;
+  }
+  
+  &__image:hover {
+    transform: scale(1.2);
+  }
+
+  &__container {
+    margin: 15px 15px 0;
+  }
+
+  &__title {
+    position: relative;
+    right: 1px;
+    
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  &__code {
+    position: relative;
+    margin: 5px;
+    right: 6px;
+  }
+
+  &__raiting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px -1px 19px;
+    width: 170px;
+  }
+
+  &__stars {
+    display: flex;
+    padding-right: 11px;
+  }
+  
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background: url(../images/star-active.svg) no-repeat 50%;
+  }
+
+  &__star:last-child {
+    background: url(../images/star.svg) no-repeat 50%;
+  }
+
+  &__comments {
+    font-size: 11px;
+    text-align: right;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 170px;
+    margin: 9px -1px 16px;
+    line-height: 25px;
+  }
+
+  &__price-cost {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    align-self: flex-start;
+  }
+  
+  &__button {
+    text-transform: uppercase;
+    display: block;
+    padding-left: 56.5px;
+    text-align: justify;
+   
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 37px;
+    text-decoration: none;
+    color: $button-text-color;
+    @extend %button-changes;
+  }
+  
+  &__to-order {
+    position: relative;
+    top: -1px;
+    left: -1px;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 170px;
+
+    border: 1px solid $nav-text-color;
+    background: $nav-text-color;
+    border-radius: 5px;
+    @extend %button-changes;
+  }
+
+  &__to-order:hover,
+  &__button:hover {
+    background: $background-color;
+    color: $nav-text-color;
+    border-radius: 5px;
+    @extend %button-changes;
+  }
+
+  &__to-order:hover {
+    border: 1px solid $nav-text-color;
+  }
+}
