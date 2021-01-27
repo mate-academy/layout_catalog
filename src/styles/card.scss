@@ -1,0 +1,96 @@
+.card {
+  height: 403px;
+  width: 200px;
+
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+
+  &--position {
+    margin: 0 48px 50px 0;
+  }
+
+  &__last {
+    margin-right: 30px;
+  }
+
+  &__img {
+    height: 134px;
+    width: 160px;
+    margin: 30px 19px 41px;
+  }
+
+  &__title {
+    margin: 0 14px 5px;
+    line-height: 15px;
+  
+    font-weight: $fw-semibold;
+    font-size: 12px;
+  }
+
+  &__code {
+    margin: 0 14px 15px;
+  }
+
+  &__item,
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    justify-content: space-between;
+    margin: 0 14px 20px;
+  }
+
+  &__amount {
+    font-size: 16px;
+    font-weight: $fw-bold;
+  }
+
+  &__reviews,
+  &__price,
+  &__code {
+    font-weight: $fw-regular;
+    font-size: 11px;
+  }
+
+  &__link {
+    margin: 0 0 15px 15px;
+    justify-content: center;
+    bottom: 15px;
+    left: 15px;
+    height: 40px;
+    width: 170px;
+  
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    font-weight: $fw-bold;
+  
+    background-color: $main-color;
+    border-radius: 5px;
+    border: 1px solid $main-color;
+
+    &:hover {
+      color: $main-color;
+      background-color: white;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    height: 15px;
+  }
+
+  &__star {
+    margin-right: 4px;
+    width: 15px;
+    background: url(/images/star.svg) center no-repeat;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .card__star:nth-child(-n+#{$i}) {
+    background: url(/images/star-active.svg) center no-repeat;
+  }
+}
