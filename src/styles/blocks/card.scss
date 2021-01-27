@@ -1,0 +1,90 @@
+.card {
+  width: $card-width;
+  height: $card-height;
+  padding: $card-padding;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  border: $card-border $border-line-style;
+  border-radius: $radius;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    padding: 12px 1px;
+    display: block;
+    box-sizing: content-box;
+
+    border: 3px solid $basic-color;
+
+    transition: transform 1s ease, border 0s ;
+
+    &:hover {
+      transform: scale(1.2);
+      border: 3px $border-line-style;
+    }
+  }
+
+  &__name {
+    margin: 30px 0 5px;
+    @include main-text;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+
+    align-self: flex-start;
+    @include small-text;
+  }
+
+  &__rating {
+    width: 100%;
+    margin-bottom: $small-gap;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+    @include small-text;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: $small-gap;
+  }
+
+  &__price-tag {
+    @include small-text;
+  }
+
+  &__price-value {
+    @include large-text;
+  }
+
+  &__link {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include button-text;
+
+    border: $card-border solid $accent-color;
+    border-radius: $radius;
+    cursor: pointer;
+
+    background-color: $accent-color;
+    color: $basic-color;
+
+    transition: all 1s ease;
+  }
+
+  &__link:hover {
+    background-color: $basic-color;
+    color: $accent-color;
+  }
+}
