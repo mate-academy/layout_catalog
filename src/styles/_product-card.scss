@@ -2,10 +2,7 @@
 @import "header";
 @import "mixins";
 @import "variables";
-
-html {
-  @extend %html-text-styles;
-}
+@import "animations";
 
 .card {
   max-width: 200px;
@@ -17,16 +14,24 @@ html {
   &__photo {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   &__image {
     width: 160px;
     height: 134px;
+    @extend %scale;
+    transition-duration: 1s;
   }
   
+  &__image:hover {
+    transform: scale(1.25);
+    border: 3px solid #f3f3f3;
+  }
+
   &__container {
-    margin: 45px 15px 0;
+    margin: 15px 15px 0;
   }
 
   &__title {
@@ -100,29 +105,32 @@ html {
     line-height: 37px;
     text-decoration: none;
     color: $button-text-color;
+    @extend %button-changes;
   }
-}
+  
+  &__to-order {
+    position: relative;
+    top: -1px;
+    left: -1px;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 170px;
 
-.to-order {
-  position: relative;
-  top: -1px;
-  left: -1px;
-  margin-bottom: 15px;
-  height: 40px;
-  width: 170px;
+    border: 1px solid $nav-text-color;
+    background: $nav-text-color;
+    border-radius: 5px;
+    @extend %button-changes;
+  }
 
-  border: 1px solid $nav-text-color;
-  background: $nav-text-color;
-  border-radius: 5px;
-}
+  &__to-order:hover,
+  &__button:hover {
+    background: $background-color;
+    color: $nav-text-color;
+    border-radius: 5px;
+    @extend %button-changes;
+  }
 
-.to-order:hover,
-.card__button:hover {
-  background: $background-color;
-  color: $nav-text-color;
-  border-radius: 5px;
-}
-
-.to-order:hover {
-  border: 1px solid $nav-text-color;
+  &__to-order:hover {
+    border: 1px solid $nav-text-color;
+  }
 }
