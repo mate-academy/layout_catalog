@@ -1,11 +1,10 @@
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  width: 1024px;
-  margin: 0 auto;
-  padding: 0 40px 75px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 48px;
+  max-width: 1024px;
+  margin: 50px auto 0;
+  padding: 0 40px;
 }
   
 .card {
@@ -14,7 +13,6 @@
   align-items: center;
   
   width: 200px;
-  margin-top: 50px;
   padding: 15px;
     
   border: 1px solid #f3f3f3;
@@ -147,8 +145,14 @@
   }
 }
 
-// @media screen and (max-width: 1100px) {
-//   .main {
-//     padding: 50px 40px 75px;
-//   }
-// }
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
