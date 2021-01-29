@@ -1,0 +1,40 @@
+.menu {
+  display: flex;
+
+  &__item--container {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    @include normal_text;
+    display: flex;
+    height: $menu-height;
+    align-items: center;
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__item:hover {
+    color: $secondary-color;
+  }
+
+  .is-active {
+    color: $secondary-color;
+  }
+
+  .is-active::after {
+    content: "";
+    background-color: $secondary-color;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    bottom: 0;
+  }
+}
