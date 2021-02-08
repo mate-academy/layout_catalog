@@ -1,21 +1,24 @@
 .product {
-  padding: 15px 14px;
-  max-width: 200px;
-  border: 1px solid #f3f3f3;
   border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding: 0 14px;
+  font-size: 11px;
+  display: grid;
 
   &__photo {
-    margin: 0 auto 30px;
-    padding: 12px 0;
-    width: 166px;
-    height: 164px;
-    border: 3px solid #fff;
-    border-radius: 5px;
-    transition: transform 1s;
+    display: grid;
+    width: 160px;
+    height: 134px;
+    margin: 14px auto 30px;
+    box-sizing: content-box;
+    border: 3px solid transparent;
+    padding: 13px 0 0;
+    transition: transform 0.5s, border-color 0.5s;
 
     &:hover {
       transform: scale(1.2);
       border-color: #f3f3f3;
+      border-radius: 5px;
     }
   }
 
@@ -26,38 +29,44 @@
   }
 
   &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
     margin-bottom: 5px;
-    min-height: 30px;
-    @include font(12px, 15px, 500);
   }
 
   &__code {
-    display: block;
     margin-bottom: 15px;
-    @include font($fontMin, 13px);
+    line-height: 13px;
   }
 
   &__feedback {
-    @include flex(space-between, center);
+    @include space-between;
+    grid-template-columns: fit-content(50%) fit-content(50%);
     margin-bottom: 20px;
   }
 
   &__comments {
-    @include font($fontMin, 13px);
-    text-align: right;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
   }
 
   &__price {
-    @include flex(space-between, baseline);
-    margin-bottom: 20px;
+    @include space-between;
+    grid-template-columns: fit-content(50%) fit-content(50%);
   }
 
   &__price-legend {
-    margin-right: 10px;
-    @include font($fontMin, 13px);
+    line-height: 13px;
+    margin-bottom: 21px;
   }
 
-  &__price-sum {
-    @include font(16px, 19px, 700);
+  &__price-num {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 20px;
   }
 }
