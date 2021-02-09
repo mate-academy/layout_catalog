@@ -10,6 +10,19 @@ body {
   padding: 0;
 }
 
+.visually-hidden:not(:focus):not(:active):not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .page-header {
   padding: 0 50px;
   margin-bottom: 50px;
@@ -51,7 +64,6 @@ body {
 
 .nav__link {
   text-decoration: none;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
@@ -104,14 +116,12 @@ body {
 }
 
 .product-card__info {
-  font-weight: normal;
   font-size: 11px;
   line-height: 13px;
   margin-bottom: 15px;
 }
 
 .rating__reviews {
-  font-weight: normal;
   font-size: 11px;
   line-height: 13px;
 }
@@ -160,7 +170,8 @@ body {
   background-repeat: no-repeat;
   margin-right: 4px;
   background-position: center;
-  &:last-of-type {
+
+  &--inactive {
     background-image: url("../images/star.svg");
     margin-right: 0;
   }
