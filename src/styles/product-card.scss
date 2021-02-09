@@ -1,54 +1,64 @@
 .container {
   @include flex-center;
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 1024px;
-  padding: 0 25px;
-  margin: 50px auto;
+  padding: 0 5px 50px;
+  width: 100%;
+  max-width: 1024px;
+  margin: 50px auto 0;
 }
 
 .card {
-  width: 200px;
-  height: 403px;
-  padding: 30px 14px 15px;
-  border: 1px solid #f3f3f3;
+  margin: 0 24px 50px;
+  padding: 15px 14px;
+  max-width: 200px;
+  border: 1px solid $border-color;
   border-radius: 5px;
-  background-color: #fff;
-  margin: 0 15px 50px;
+}
+
+.card__img-wrap {
+  margin: 0 auto 30px;
+  padding: 12px 0;
+  width: 166px;
+  height: 164px;
+  border: 3px solid transparent;
+  border-radius: 3px;
+
+  &:hover {
+    border: 3px solid $border-color;
+    transform: scale(1.2);
+    transition: $transition;
+  }
 }
 
 .card__img {
-  display: block;
-  max-width: 94%;
-  margin: 0 auto 45px;
-  height: 134px;
-}
-
-.item-model {
-  display: block;
-  margin-bottom: 4px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card__item-name {
+  margin-bottom: 5px;
+  height: 30px;
   font-size: 12px;
+  line-height: 15px;
   font-weight: 500;
-  line-height: 15.47px;
 }
 
 .card__item-code {
   display: block;
+  margin-bottom: 15px;
   font-size: 11px;
-  font-weight: 400;
-  margin-bottom: 14px;
+  line-height: 13px;
 }
 
 .card__feedback {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-center;
   margin-bottom: 20px;
 }
 
-.card__price {
+.price {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -66,8 +76,8 @@
   margin-right: 4px;
 }
 
-.feedback,
-.price {
+.card__feedback-count,
+.price__text {
   font-size: 11px;
 }
 
@@ -75,7 +85,7 @@
   background: url(../images/star.svg) no-repeat center;
 }
 
-.price-value {
+.price__value {
   font-size: 16px;
   font-weight: 700;
 }
@@ -83,7 +93,7 @@
 .card__btn-buy {
   display: inline-block;
   background-color: $btn-background;
-  color: #fff;
+  color: $white;
   padding: 10px 0;
   border: 1px solid $btn-background;
   border-radius: 5px;
@@ -95,9 +105,10 @@
   width: 170px;
   height: 40px;
   margin: 0 auto;
-}
 
-.card__btn-buy:hover {
-  background-color: #fff;
-  color: $btn-background;
+  &:hover {
+    background-color: $white;
+    color: $btn-background;
+    transition: $transition;
+  }
 }
