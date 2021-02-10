@@ -2,7 +2,7 @@
   width: 100%;
   @include centered;
 
-  .main__container {
+  &__container {
     @include flex-between;
     flex-wrap: wrap;
     width: 944px;
@@ -16,7 +16,7 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
 
-      .card__wrap-image {
+      &__wrap-image {
         @include centered;
         padding-bottom: 45px;
 
@@ -26,7 +26,7 @@
         }
       }
 
-      .card__title {
+      &__title {
         @include reset-options;
         padding-bottom: 6px;
         font-size: 12px;
@@ -34,28 +34,30 @@
         line-height: 15.47px;
       }
 
-      .card__article {
+      &__article {
         @include reset-options;
         padding-bottom: 15px;
         line-height: 12.89px;
       }
 
-      .card__rating {
+      &__rating {
         @include flex-between;
         padding-bottom: 20px;
 
         .card__stars {
           display: flex;
 
+          
+
           .card__star {
             width: 15px;
             height: 15px;
             margin-right: 4px;
             background: url(/images/star.svg) no-repeat center;
-          }
 
-          .card__star--active {
-            background: url(/images/star-active.svg) no-repeat center;
+            &--active {
+              background: url(/images/star-active.svg) no-repeat center;
+            }
           }
         }
       }
@@ -65,15 +67,15 @@
         align-items: flex-end;
         padding-bottom: 20px;
 
-        .card__price-value {
+        &-value {
           font-size: 16px;
           font-weight: $bold-font;
         }
       }
 
-      .card__link {
+      &__link {
         @include centered;
-        width: 100%;
+        width: $full-size;
         height: 40px;
         font-size: 14px;
         font-weight: $bold-font;
@@ -83,11 +85,11 @@
         background-color: $color-blue;
         border: 1px solid $color-blue;
         border-radius: 5px;
-      }
 
-      .card__link:hover {
-        color: $color-blue;
-        background-color: #fff;
+        &:hover {
+          color: $color-blue;
+          background-color: #fff;
+        }
       }
     }
   }
