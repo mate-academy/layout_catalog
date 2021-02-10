@@ -1,0 +1,93 @@
+.product {
+  @include crossAxisCentered;
+  flex-direction: column;
+  padding: 30px 0 15px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+  }
+
+  &-item {
+    @include crossAxisCentered;
+    width: $cardWidth - 30px;
+  }
+
+  &__description {
+    display: block;
+  }
+
+  &__name {
+    margin-top: 45px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__code {
+    display: inline-block;
+    margin-bottom: 15px;
+    @include smallText;
+  }
+
+  &__rating {
+    justify-content: space-between;
+  }
+
+  &-stars {
+    display: flex;
+
+    &__star {
+      height: 15px;
+      width: 15px;
+      margin-right: 4px;
+      background-image: url(../images/star.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:nth-child(-n+4) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+
+  &__reviews {
+    @include smallText;
+  }
+
+  &__price {
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 20px 0;
+
+    &-value {
+      font-weight: 700;
+      line-height: 19px;
+    }
+
+    &-name {
+      @include smallText;
+    }
+  }
+
+  &__buy {
+    @include mainAxisCentered;
+    height: 40px;
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $secondaryColor;
+    border-radius: 5px;
+    color: $primaryColor;
+
+    &:hover {
+      background: $primaryColor;
+      border: 1px solid ;
+      color: $secondaryColor;
+    }
+  }
+}
