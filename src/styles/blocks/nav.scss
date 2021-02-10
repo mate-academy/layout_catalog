@@ -7,6 +7,10 @@
   &__item {
     display: inline-block;
     margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
   
   &__links {
@@ -25,24 +29,20 @@
   
   .is-active {
     color: $blue;
+
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $blue;
+    }
   }
   
   .nav__links.is-active::after {
     display: block;
-  }
-  
-  .is-active::after {
-    content: "";
-    display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    border-radius: 8px;
-    background-color: $blue;
-  }
-  
-  &__item:last-child {
-    margin-right: 0;
   }
 }
