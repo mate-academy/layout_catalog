@@ -1,25 +1,15 @@
-.product-style {
-  font-family: "Roboto", sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-}
-
-body,
-main,
-h2,
-p,
-img {
-  margin: 0;
-}
-
 .product {
-  display: flex;
-  justify-content: center;
+  @include centeredFlex;
   flex-wrap: wrap;
   margin: 50px auto;
   max-width: 1024px;
   // background-color: lightgray;
 
+  &-style {
+    font-size: 11px;
+    font-weight: 400;
+  }
+  
   &__card {
     display: block;
     box-sizing: border-box;
@@ -64,8 +54,7 @@ img {
   /* review block */
   
   &__rating {
-    display: flex;
-    justify-content: space-between;
+    @include spaceBetweenFlex;
     align-items: center;
     margin-bottom: 20px;
   }
@@ -104,8 +93,7 @@ img {
   /* price block */
   
   &__price {
-    display: flex;
-    justify-content: space-between;
+    @include spaceBetweenFlex;
     align-items: baseline;
     margin-bottom: 20px;
   }
@@ -116,8 +104,7 @@ img {
   }
   
   &__buy {
-    display: flex;
-    justify-content: center;
+    @include centeredFlex;
     align-items: center;
     height: 38px;
   
@@ -127,14 +114,14 @@ img {
     font-weight: 700;
   
     color: white;
-    background-color: #00acdc;
-    border: 1px solid #00acdc;
+    background-color: $mainBlueColor;
+    border: 1px solid $mainBlueColor;
     border-radius: 5px;
   }
   
   &__buy:hover {
     background-color: #fff;
-    color: #00acdc;
+    color: $mainBlueColor;
   }
 
 }
