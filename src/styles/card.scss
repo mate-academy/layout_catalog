@@ -1,54 +1,74 @@
 .card {
-  width: 200px;
-  border: 1px solid #f3f3f3;
+  max-width: 200px;
+  border: 1px solid $border-color;
   border-radius: 5px;
-  padding: 30px 14px 15px;
+  padding: 13px 14px;
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+    margin: 0 auto;
+    border: 3px solid transparent;
+    transition: $small-transition;
+
+    &:hover {
+      transform: scale(1.2);
+      border: 3px solid $border-color;
+    }
+  }
+
+  &__photo-item {
+    width: 160px;
+    height: 134px;
+    transition: $small-transition;
+  }
 
   &__container {
-    @include flex;
+    // @include flex;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
     flex-wrap: wrap;
-    margin: 50px auto;
+    margin: 0 auto 50px;
     max-width: 1024px;
   }
 
   &__position {
-    margin-top: 50px;
-    margin-left: 48px;
+    // margin-top: 50px;
+    // margin-left: 48px;
+    margin-right: 48px;
+    margin-bottom: 50px;
 
-    &:nth-child(-n + 4) {
-      margin-top: 0;
-    }
     &:nth-child(4) {
-      margin-right: 40px;
-    }
-    &:nth-child(8) {
-      margin-right: 40px;
+      margin-right: 0;
+      margin-top: 50px;
     }
     &:nth-child(1) {
-      margin-left: 40px;
+      margin-top: 50px;
     }
-    &:nth-child(5) {
-      margin-left: 40px;
+    &:nth-child(2) {
+      margin-top: 50px;
     }
-  }
-
-  &__photo {
-    display: block;
-    margin: 0 auto;
-    width: 160px;
-    height: 134px;
+    &:nth-child(3) {
+      margin-top: 50px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__title {
     font-size: 12px;
-    margin: 45px 0 5px;
+    padding-top: 29px;
+    padding-bottom: 5px;
     line-height: 15px;
     font-weight: 500;
   }
 
   &__code {
     display: block;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     font-size: 11px;
     line-height: 13px;
     font-weight: 400;
@@ -57,21 +77,23 @@
   &__rating {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    align-items: center;
+    padding-bottom: 20px;
   }
 
   &__row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    align-items: baseline;
   }
 
   &__feedback {
-    line-height: 13px;
+    line-height: 11px;
     font-size: 11px;
   }
 
-  &_price {
+  &__price {
     font-size: 11px;
     line-height: 13px;
   }
