@@ -1,0 +1,80 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 15px 14px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+
+  &__img {
+    width: $card-img-width;
+    height: $card-img-height;
+    margin: 15px 5px;
+  }
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__service-font {
+    @include card-service-font;
+  }
+
+  &__review {
+    @include card-flex-props;
+    margin-top: 15px;
+  }
+
+  &__rating {
+    display: flex;
+  }
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &__star--active {
+    background-image: url("../images/star-active.svg");
+  }
+
+  &__price {
+    @include card-flex-props;
+    margin: 20px 0;
+  }
+
+  &__cost {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__buy-button {
+    height: 40px;
+    padding-top: 12px;
+    background: $link-action-color;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  
+    &:hover {
+      background-color: #fff;
+      color: $link-action-color;
+      border: 1px solid $link-action-color;
+    }
+  }
+}
