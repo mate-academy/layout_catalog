@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   margin: 50px auto;
   max-width: 1024px;
-  // background-color: lightgray;
 
   &-style {
     font-size: 11px;
@@ -45,13 +44,13 @@
   
   &__code {
     margin-bottom: 15px;
+
+    &::before {
+      content: "Код товара: ";
+    }
   }
-  
-  &__code::before {
-    content: "Код товара: ";
-  }
-  
-  /* review block */
+    
+  /* rating & review block */
   
   &__rating {
     @include spaceBetweenFlex;
@@ -61,12 +60,12 @@
   
   &__reviews {
     margin: 0;
+
+    &::before {
+      content: "Отзывов: ";
+    }
   }
   
-  &__reviews::before {
-    content: "Отзывов: ";
-  }
-     
   /* price block */
   
   &__price {
@@ -94,11 +93,12 @@
     background-color: $mainBlueColor;
     border: 1px solid $mainBlueColor;
     border-radius: 5px;
-  }
-  
-  &__buy:hover {
-    background-color: #fff;
-    color: $mainBlueColor;
+
+    &:hover {
+      background-color: #fff;
+      color: $mainBlueColor;
+    }
+
   }
 
 }
