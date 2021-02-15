@@ -1,3 +1,26 @@
-body {
-  margin: 0;
+@import "_reset";
+@import "variables";
+@import "mixins";
+@import "blocks/header";
+@import "blocks/nav";
+@import "blocks/product";
+@import "blocks/description";
+@import "blocks/rating";
+@import "blocks/price";
+@import "blocks/stars";
+
+.main {
+  @include flexCentered;
+  padding-top: 50px;
+
+  &__content {
+    @include mainAxisCentered;
+    flex-wrap: wrap;
+    max-width: ($cardWidth + $cardHorizontalMargin) * $cardsPerRow;
+  }
+
+  &__item {
+    flex: 0 0 $cardWidth;
+    margin: 0 $cardHorizontalMargin / 2 50px;
+  }
 }
