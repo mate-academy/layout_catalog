@@ -3,7 +3,6 @@
 @import "mixins";
 @import "blocks/header";
 @import "blocks/nav";
-@import "blocks/content";
 @import "blocks/product";
 @import "blocks/description";
 @import "blocks/rating";
@@ -14,6 +13,14 @@
   @include flexCentered;
 
   &__content {
+    @include mainAxisCentered;
     margin-top: 50px;
+    flex-wrap: wrap;
+    max-width: ($cardWidth + $cardHorizontalMargin) * $cardsPerRow;
+  }
+
+  &__item {
+    flex: 0 0 $cardWidth;
+    margin: 0 $cardHorizontalMargin / 2 50px;
   }
 }
