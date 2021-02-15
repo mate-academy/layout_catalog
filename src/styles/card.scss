@@ -1,15 +1,25 @@
 .card {
-  @include space-between;
-  flex-direction: column;
+  @include space-between(column);
   width: 200px;
-  margin-bottom: 50px;
-  padding: 30px 14px 15px;
-  border: 1px solid #f3f3f3;
+  padding: 15px 14px;
+  border: 1px solid $borderColor;
+
+  &_position {
+    margin-bottom: 50px;
+  }
 
   &__image {
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 35px;
+    width: 166px;
+    height: 164px;
+    margin: 0 auto 30px;
+    padding: 12px 0;
+    border: 3px solid transparent;
+    transition: transform 1s, border 1s;
+
+    &:hover {
+      border-color: $borderColor;
+      transform: scale(1.2);
+    }
   }
 
   &__description {
@@ -20,7 +30,7 @@
   }
 
   &__title {
-    margin-bottom: 5px;
+    margin: 0 0 5px;
     font-size: 12px;
     font-weight: 500;
     line-height: 15px;
@@ -30,27 +40,15 @@
     margin-bottom: 15px;
   }
 
-  &__code,
-  &__review,
-  &__price-label {
-    font-weight: 400;
-  }
-
-  &__rating,
-  &__price {
-    @include space-between;
-    flex-direction: row;
-  }
-
   &__rating {
+    @include space-between(row);
     margin-bottom: 20px;
-    display: flex;
     align-items: center;
   }
 
   &__price {
+    @include space-between(row);
     margin-bottom: 20px;
-    display: flex;
     align-items: baseline;
   }
 
