@@ -1,22 +1,24 @@
 .card {
-  @include space-between;
-  flex-direction: column;
+  @include space-between(column);
   width: 200px;
-  margin-bottom: 50px;
   padding: 15px 14px;
   border: 1px solid $borderColor;
 
+  &_position {
+    margin-bottom: 50px;
+  }
+
   &__image {
-    // box-sizing: content-box;
     width: 166px;
     height: 164px;
     margin: 0 auto 30px;
-    padding: 15px 3px;
+    padding: 12px 0;
+    border: 3px solid transparent;
+    transition: transform 1s, border 1s;
 
     &:hover {
-      transform: scale(1.2, 1.2);
-      transition: $hoverDuration;
-      border: 3px solid $borderColor;
+      border-color: $borderColor;
+      transform: scale(1.2);
     }
   }
 
@@ -38,27 +40,15 @@
     margin-bottom: 15px;
   }
 
-  &__code,
-  &__review,
-  &__price-label {
-    font-weight: 400;
-  }
-
-  &__rating,
-  &__price {
-    @include space-between;
-    flex-direction: row;
-  }
-
   &__rating {
+    @include space-between(row);
     margin-bottom: 20px;
-    display: flex;
     align-items: center;
   }
 
   &__price {
+    @include space-between(row);
     margin-bottom: 20px;
-    display: flex;
     align-items: baseline;
   }
 
