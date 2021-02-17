@@ -1,12 +1,14 @@
 .nav {
+
   &__list {
     display: grid;
     grid-template-columns: repeat(8, auto);
     justify-content: flex-end;
-    list-style: none;
     align-items: center;
     width: 100%;
     padding: 0;
+
+    list-style: none;
   }
 
   &__item {
@@ -20,12 +22,13 @@
   &__link {
     position: relative;
     display: grid;
+    align-content: center;
     justify-content: space-between;
     min-height: 60px;
-    @include font(12px, 14px, 500);
-    align-content: center;
-    text-transform: uppercase;
+
     color: #000;
+    @include font(12px, 14px, 500);
+    text-transform: uppercase;
     text-decoration: none;
     transition-duration: 0.2s;
   }
@@ -36,16 +39,18 @@
 }
 
 .is-active {
-  color: $light-blue;
+  color: $blue;
 }
 
 .is-active:after {
-  position: absolute;
   content: "";
-  width: 100%;
-  height: 4px;
+  position: absolute;
   left: 0;
   bottom: 0;
-  background: $light-blue;
+
+  width: 100%;
+  height: 4px;
+
+  background: $blue;
   border-radius: 2px;
 }
