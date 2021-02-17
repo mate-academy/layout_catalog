@@ -1,0 +1,17 @@
+.stars {
+  display: grid;
+  grid-template-columns: repeat(5, 15px);
+  gap: 0 4px;
+
+  &__item {
+    height: 15px;
+    background: url(../images/star.svg) center no-repeat;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i}
+  .stars__item:nth-child(-n + #{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
