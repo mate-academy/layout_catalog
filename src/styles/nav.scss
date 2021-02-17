@@ -1,0 +1,48 @@
+.nav {
+  position: absolute;
+  right: 50px;
+
+  &__item,
+  &__link {
+    margin-left: 20px;
+    display: inline-block;
+    position: relative;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 60px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.7s;
+
+    &:hover {
+      color: $blue-color;
+    }
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    .is-active {
+      color: $blue-color;
+      &:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: $blue-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
