@@ -1,0 +1,27 @@
+.stars {
+  display: flex;
+  list-style: none;
+
+  &__item {
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    background-position: center;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+%starActiveImg {
+  background-image: url("../images/star-active.svg");
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__item:nth-of-type(-n + #{$i}) {
+    @extend %starActiveImg;
+  }
+}
