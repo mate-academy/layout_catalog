@@ -1,0 +1,48 @@
+.nav {
+
+  &__list {
+    display: flex;
+  }
+  
+  &__item {
+    display: inline-block;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  
+  &__links {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    padding: 22.5px 0;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+  
+  .is-active {
+    color: $blue;
+
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $blue;
+    }
+  }
+  
+  &__links.is-active::after {
+    display: block;
+  }
+}
