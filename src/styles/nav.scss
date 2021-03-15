@@ -1,0 +1,53 @@
+@import "variables";
+
+.nav {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: $font-size-basic;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $color-black;
+  line-height: $header-height;
+  transition: color .3s;
+}
+
+.nav__link:hover {
+  color: $color-blue;
+}
+
+.is-active {
+  color: $color-blue;
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  background-color: $color-blue;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
