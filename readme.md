@@ -11,14 +11,6 @@ ___
 ## The task
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
 
-## Common mistakes
-- **IMPORTANT** Save and push your changes to github manually after `deploy`
-- Add **ALL** the `data-qa` attributes and `class="is-active"` required in the task
-- Do not use tabs. Use 2 spaces for indentation.
-- Don't use repeated styles.
-- Check font styles. Use [google fonts](https://fonts.google.com/)
-- Pay attention to `:hover` state
-
 ## Requirements:
 - use SCSS in this task
 - pay attention the mock is responsive. Develop the layout to fit on `1024px` and `1200px` the same as on the mock.
@@ -34,4 +26,15 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add attribute `data-qa="card-hover"` to the link `Купить` inside first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
+
+
+## Common mistakes
+- **IMPORTANT** Save and push your changes to github manually after `deploy`
+- Add **ALL** the `data-qa` attributes and `class="is-active"` required in the task
+- Do not use tabs. Use 2 spaces for indentation.
+- Don't use repeated styles.
+- Check font styles. Use [google fonts](https://fonts.google.com/)
+- Pay attention to `:hover` state
+
+---
 ![screenshot](./references/catalog-example.png)
