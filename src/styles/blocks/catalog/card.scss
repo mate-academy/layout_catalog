@@ -1,7 +1,10 @@
+.catalog__card {
+  margin: 0 24px 50px;
+}
+
 .card {
   width: 200px;
-  margin-bottom: 50px;
-  padding: 14px 14px 15px;
+  padding: 14px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
@@ -9,11 +12,11 @@
     display: block;
     width: 160px;
     height: 134px;
-    margin: 16px 5px 45px;
+    margin: 15px 5px 45px;
   }
   
   &__name {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     @include titleText(15px);
   }
   
@@ -21,29 +24,34 @@
     margin-bottom: 15px;
   }
   
+  &__rate {
+    margin-bottom: 20px;
+  }
+
   .rate {
     @extend %flex-between;
     align-items: center;
-    margin-bottom: 20px;
 
     &__stars {
       @extend %flex-between;
       align-items: center;
       height: 15px;
-      margin-left: -1 * $stars-margin;
 
-      & img {
+      & img:not(:last-child) {
         width: 15px;
         height: 12px;
-        margin-left: $stars-margin;
+        margin-right: 4px;
       }
     }
   }
-    
+  
+  &__price {
+    margin-bottom: 20px;
+  }
+
   .price {
     @extend %flex-between;
     align-items: baseline;
-    margin-bottom: 20px;
 
     &__value {
       @include priceText(19px);
