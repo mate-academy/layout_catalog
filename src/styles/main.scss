@@ -1,3 +1,248 @@
+$headerLinkBorderColor: #00acdc;
+$cardWidth: 200px;
+$distanceBetweenCards: 48px;
+
+@function mainContainerSize($width, $distanceBetween) {
+  @return ($width * 4) + ($distanceBetween * 3);
+}
+
+// #region normalize
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
+// #endregion
+
+// #region header
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+
+  &__logoLink {
+    height: 40px;
+  }
+}
+// #endregion
+
+// #region list
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+
+  &__items {
+    margin: 0 10px;
+  }
+
+  &__items:nth-child(1) {
+    margin-left: 0;
+  }
+
+  &__items:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    position: relative;
+    padding: 22.5px 0;
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    height: 15px;
+  }
+
+  &__link:hover {
+    color: $headerLinkBorderColor;
+  }
+}
+// #endregion
+
+// #region headerLinkActive
+.is-active {
+  color: $headerLinkBorderColor;
+}
+
+.is-active::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  right: 0;
+  bottom: -15px;
+  left: 0;
+  background-color: $headerLinkBorderColor;
+  border-radius: 8px;
+}
+// #endregion
+
+// #region main
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: mainContainerSize($cardWidth, $distanceBetweenCards);
+  }
+}
+// #endregion
+
+// #region card
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $cardWidth;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  margin-right: $distanceBetweenCards;
+  margin-bottom: 50px;
+
+  &__flex {
+    padding-top: 29px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &:nth-child(4n) {
+    margin: 0;
+  }
+}
+// #endregion
+
+// #region image cards
+.images__imac {
+  width: 160px;
+  height: 134px;
+  margin-bottom: 41px;
+}
+// #endregion
+
+// #region name of card
+.nameCard {
+  margin-bottom: 6px;
+
+  &__content {
+    line-height: 15px;
+    font-size: 12px;
+    width: 170px;
+    font-weight: 500;
+  }
+}
+// #endregion
+
+// #region code of card
+.codeOfGoods {
+  align-self: flex-start;
+  margin-left: 14px;
+  margin-bottom: 15px;
+
+  &__imacRetina {
+    font-size: 11px;
+    font-weight: 400;
+  }
+}
+// #endregion
+
+// #region card rating
+.card__rating {
+  margin-bottom: 20px;
+}
+
+.ratingCards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+
+  &__FiveStars {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__stars {
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/star-active.svg);
+  }
+
+  &__stars:nth-child(n + 5) {
+    background-image: url(../images/star.svg);
+  }
+  
+  &__review {
+    font-size: 11px;
+    font-weight: 400;
+  }
+}
+// #endregion
+
+// #region price of card
+.card__price {
+  margin-bottom: 20px;
+}
+
+.priceCard {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 14px;
+
+  &__name {
+    font-size: 11px;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+// #endregion
+
+// #region link of card
+.linkCard {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: $headerLinkBorderColor;
+  font-size: 14px;
+  border-radius: 5px;
+  margin: 0 14px 14px;
+
+  &__buy {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #fff;
+    border: 1px solid $headerLinkBorderColor;
+    color: $headerLinkBorderColor;
+  }
+
+  &__buy:hover {
+    color: $headerLinkBorderColor;
+  }
+}
+// #endregion
