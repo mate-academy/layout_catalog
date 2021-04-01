@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: $header-height;
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.nav__link:not(:last-child) {
+  margin-right: 20px;
+}
+
+.is-active,
+.nav__link:hover {
+  color: $blue-color;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: $blue-color;
+  border-radius: 8px;
+}
