@@ -2,22 +2,23 @@
   display: flex;
 
   &__link {
+    @extend %flex-center;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     height: $header-height;
+
+    @include font-size (12, 14, 500);
     color: #000;
-    font-size: 12px;
-    font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
-  }
-}
 
-.nav__link:not(:last-child) {
-  margin-right: 20px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    
+    &:hover {
+      color: $blue-color;
+    }
+  }
 }
 
 .is-active,

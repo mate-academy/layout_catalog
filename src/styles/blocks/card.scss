@@ -1,8 +1,7 @@
 .card {
-  display: flex;
+  @extend %flex-center;
   flex-direction: column;
-  align-items: center;
-  width: $card-with;
+  width: $card-width;
   border-radius: 5px;
   background-color: #fff;
   border: 1px solid #f3f3f3;
@@ -19,32 +18,26 @@
   &__title {
     padding-top: 30px;
     padding-bottom: 6px;
-  
-    color: #000;
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: 500;
+
+    @include font-size (12, 15, 500);
   }
   
   &__id {
     width: 100%;
     padding-bottom: 15px;
   
-    font-size: 11px;
-    line-height: 13px;
+    @include font-size (11, 13, normal);
   }
   
   &__rating {
-    display: flex;
+    @extend %flex-center;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     padding-bottom: 20px;
   }
 
   &__reviews {
-    font-size: 11px;
-    line-height: 13px;
+    @include font-size (11, 13, normal);
   }
   
   &__price {
@@ -56,29 +49,22 @@
   }
   
   &__price-title {
-    font-size: 11px;
-    line-height: 13px;
+    @include font-size (11, 13, normal);
   }
   
   &__price-value {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
+    @include font-size (16, 19, bold);
   }
   
   &__bottom-buy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    @extend %flex-center;
     width: 100%;
     height: 40px;
     border-radius: 5px;
     background-color: $blue-color;
   
+    @include font-size (14, 16, bold);
     color: #fff;
-    font-size: 14px;
-    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
   }
