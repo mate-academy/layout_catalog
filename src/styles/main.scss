@@ -1,3 +1,189 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+}
+
+$blue-color: #00acdc;
+
+@mixin square ($size) {
+  height: $size;
+  width: $size;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__moyo-logo {
+    @include square(40px);
+  }
+
+  &__container {
+    margin: 0 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.navigation {
+  height: 100%;
+  display: flex;
+
+  &__link {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 20px;
+    display: inline-block;
+    height: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 60px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &:visited {
+      color: $blue-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $blue-color;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $blue-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  margin: 0 24px;
+  margin-bottom: 50px;
+  width: 200px;
+  padding: 14px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__imac-icon {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 15px 5px 45px;
+  }
+
+  &__description {
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+
+  &__product-code {
+    font-size: 11px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 13px;
+  }
+
+  &__review-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__price-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__buy-link {
+    display: block;
+    height: 40px;
+    width: 170px;
+    border: 1px solid $blue-color;
+    border-radius: 5px;
+    color: #fff;
+    background-color: $blue-color;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    line-height: 38px;
+
+    &:hover {
+      color: $blue-color;
+      background-color: #fff;
+    }
+  }
+}
+
+.stars-wrapper {
+  display: flex;
+}
+
+.star {
+  display: inline-block;
+  @include square(15px);
+  margin-right: 4px;
+  background-image: url("../images/star-active.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:nth-child(5) {
+    background-image: url("../images/star.svg");
+    margin-right: 0;
+  }
+}
+
+.reviews {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.word {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+}
+
+.number {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
 }
