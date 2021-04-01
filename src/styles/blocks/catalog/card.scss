@@ -1,9 +1,9 @@
 .catalog__card {
-  margin: 0 24px 50px;
+  margin: 0 $cards-side-margin 50px;
 }
 
 .card {
-  width: 200px;
+  width: $card-width;
   padding: 14px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
@@ -25,22 +25,25 @@
   }
   
   &__rate {
-    margin-bottom: 20px;
-  }
-
-  .rate {
     @extend %flex-between;
     align-items: center;
+    margin-bottom: 20px;
 
-    &__stars {
+    .stars {
       @extend %flex-between;
-      align-items: center;
-      height: 15px;
 
-      & img {
+      &__star {
         width: 15px;
-        height: 12px;
+        height: 15px;
         margin-right: 4px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../images/star-active.svg);
+
+        &:last-child {
+          margin-right: 0;
+          background-image: url(../images/star.svg);
+        }
       }
     }
   }
@@ -59,8 +62,7 @@
   }
   
   &__button {
-    display: flex;
-    justify-content: center;
+    @extend %flex-center;
     align-items: center;
     height: 40px;
     @include buttonText(16px);
