@@ -73,18 +73,19 @@ body {
 // #region headerLinkActive
 .is-active {
   color: $headerLinkBorderColor;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    right: 0;
+    bottom: -15px;
+    left: 0;
+    background-color: $headerLinkBorderColor;
+    border-radius: 8px;
+  }
 }
 
-.is-active::after {
-  position: absolute;
-  content: "";
-  height: 4px;
-  right: 0;
-  bottom: -15px;
-  left: 0;
-  background-color: $headerLinkBorderColor;
-  border-radius: 8px;
-}
 // #endregion
 
 // #region main
@@ -123,6 +124,14 @@ body {
   &:nth-child(4n) {
     margin: 0;
   }
+
+  &__rating {
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+  }
 }
 // #endregion
 
@@ -159,10 +168,6 @@ body {
 // #endregion
 
 // #region card rating
-.card__rating {
-  margin-bottom: 20px;
-}
-
 .ratingCards {
   display: flex;
   align-items: center;
@@ -194,10 +199,6 @@ body {
 // #endregion
 
 // #region price of card
-.card__price {
-  margin-bottom: 20px;
-}
-
 .priceCard {
   display: flex;
   align-items: baseline;
