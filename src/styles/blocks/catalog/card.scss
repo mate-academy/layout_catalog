@@ -1,0 +1,80 @@
+.catalog__card {
+  margin: 0 $cards-side-margin 50px;
+}
+
+.card {
+  width: $card-width;
+  padding: 14px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__picture {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 15px 5px 45px;
+  }
+  
+  &__name {
+    margin-bottom: 6px;
+    @include titleText(15px);
+  }
+  
+  &__code {
+    margin-bottom: 15px;
+  }
+  
+  &__rate {
+    @extend %flex-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .stars {
+      @extend %flex-between;
+
+      &__star {
+        width: 15px;
+        height: 15px;
+        margin-right: 4px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../images/star-active.svg);
+
+        &:last-child {
+          margin-right: 0;
+          background-image: url(../images/star.svg);
+        }
+      }
+    }
+  }
+  
+  &__price {
+    margin-bottom: 20px;
+  }
+
+  .price {
+    @extend %flex-between;
+    align-items: baseline;
+
+    &__value {
+      @include priceText(19px);
+    }
+  }
+  
+  &__button {
+    @extend %flex-center;
+    align-items: center;
+    height: 40px;
+    @include buttonText(16px);
+    text-decoration: none;
+    color: #fff;
+    background-color: $page-color;
+    border: 1px solid $page-color;
+    border-radius: 5px;
+
+    &:hover {
+      color: $page-color;
+      background-color: #fff;
+    }
+  }
+}
