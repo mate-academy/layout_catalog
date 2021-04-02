@@ -1,0 +1,21 @@
+.rating-stars {
+  display: flex;
+  flex-direction: row;
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+  
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-size: none;
+    background-position: center;
+  }
+
+  @for $gold-stars from 0 through $stars-count {
+    &--active_#{$gold-stars} :nth-child(-n+#{$gold-stars}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
