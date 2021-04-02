@@ -1,19 +1,17 @@
 .main {
-  display: flex;
-  justify-content: center;
+  @extend %flex-center;
   margin-top: 50px;
 }
 
 .catalog-wrapper {
-  display: flex;
-  justify-content: space-between;
+  @extend %flex-between;
   flex-wrap: wrap;
   max-width: 1024px;
   padding: 0 40px 50px;
 }
 
 .product-card {
-  width: 200px;
+  width: $card-width;
   padding: 14px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
@@ -38,8 +36,7 @@
 
   &__rating {
     margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
+    @extend %flex-between;
     align-items: center;
     &-stars {
       display: flex;
@@ -52,8 +49,7 @@
     }
   }
   &__price {
-    display: flex;
-    justify-content: space-between;
+    @extend %flex-between;
     align-items: flex-end;
     margin: 20px 0;
     &-text {
@@ -65,9 +61,8 @@
     }
   }
   &__link {
-    display: flex;
+    @extend %flex-center;
     height: 40px;
-    justify-content: center;
     align-items: center;
     border: 1px solid #00acdc;
     border-radius: 5px;
