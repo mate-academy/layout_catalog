@@ -1,15 +1,3 @@
-main {
-  @extend %flex-center;
-}
-
-.catalog-wrapper {
-  @extend %flex-space-between;
-  flex-wrap: wrap;
-  max-width: 1024px;
-  padding: 50px 40px;
-  gap: 48px;
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -18,7 +6,6 @@ main {
   background: $main-color;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  margin-bottom: 2px;
 
   &__img {
     @extend %flex-center;
@@ -42,32 +29,11 @@ main {
     @extend %align-items-center;
     margin-bottom: 20px;
 
-    &-stars {
-      @extend %flex-center;
-    }
-
     &-count {
       @include card-productCode($font-weight-400);
     }
   }
-
-  .stars-count-1 :nth-child(-n + 1),
-  .stars-count-2 :nth-child(-n + 2),
-  .stars-count-3 :nth-child(-n + 3),
-  .stars-count-4 :nth-child(-n + 4),
-  .stars-count-5 :nth-child(-n + 5) {
-    background-image: url("../images/star-active.svg");
-  }
-
-  .star {
-    @include square($size-star);
-    background-image: url("../images/star.svg");
-    background-repeat: no-repeat;
-
-    margin-right: 4px;
-    background-position: 50%;
-  }
-
+  
   &__card-price {
     @extend %flex-space-between;
     align-items: baseline;
