@@ -24,6 +24,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки и компьютеры`)
 - add attribute `data-qa="card"` to the first card
 - add attribute `data-qa="card-hover"` to the link `Купить` inside first card
+- use class `is-active` for `apple` link
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 
