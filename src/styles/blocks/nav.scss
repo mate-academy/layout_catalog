@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    @include font(12, 500);
+    line-height: 60px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $page-color;
+    }
+
+    &--is-active {
+      margin-left: 0;
+      color: $page-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $page-color;
+      }
+    }
+  }
+}
