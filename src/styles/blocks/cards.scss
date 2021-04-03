@@ -1,0 +1,124 @@
+$card-width: 200px;
+$cards-in-line: 4;
+$distance: 48px;
+$box-width: $card-width * $cards-in-line + $distance * ($cards-in-line - 1);
+
+* {
+  box-sizing: border-box;
+}
+
+.cards-box {
+  width: $box-width;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main,
+h2,
+p {
+  margin: 0;
+  font-size: 11px;
+}
+
+.card {
+  margin-top: 50px;
+  width: $card-width;
+  display: block;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    margin: 29px 19px 42px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__name {
+    padding: 0 14px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__code {
+    padding: 0 14px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    line-height: 13px;
+  }
+
+  &__rating {
+    justify-content: space-between;
+    display: flex;
+    padding: 0 14px;
+    margin-bottom: 20px;
+
+    .rating__stars {
+      display: flex;
+    }
+    
+    .stars__star {
+      height: 15px;
+      width: 15px;
+      margin-right: 4px;
+      background-image: url(/images/star-active.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    .stars > :nth-child(n + 5) {
+      background-image: url(/images/star.svg);
+    }
+    
+    .rating__reviews {
+      font-weight: 400;
+      line-height: 15px;
+    }
+  }
+
+  &__price-list {
+    padding: 0 14px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    display: flex;
+
+    .price-list__price {
+      font-weight: 400;
+      display: flex;
+      line-height: 24px;
+    }
+    
+    .price-list__how-much {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 170px;
+    height: 40px;
+    margin: 0 14px;
+    margin-bottom: 14px;
+  
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+  
+    background: #00acdc;
+    border-radius: 5px;
+
+    &:hover {
+      color: #00acdc;
+      background: #fff;
+      border: 1px solid #00acdc;
+    }
+  }
+}
