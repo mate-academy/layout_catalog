@@ -1,0 +1,52 @@
+.navigation {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 500;
+  
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__item {
+    list-style-type: none;
+    display: flex;
+    height: $headerHeight;
+    align-items: center;
+    position: relative;
+    margin: auto 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__links {
+    text-decoration: none;
+    color: black;
+    
+    &:hover {
+      color: $brandColor;
+    }
+  }
+
+  .is-active {
+    color: $brandColor;
+  }
+  
+  .is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $brandColor;
+  }
+}
