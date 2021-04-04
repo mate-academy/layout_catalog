@@ -1,0 +1,39 @@
+.nav {
+
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    @extend %text-family;
+    @include font-size(12px, 500);
+    text-decoration: none;
+    color: #000;
+    align-items: center;
+    position: relative;
+    height: #{$header-height};
+  }
+
+}
+
+.nav__link:hover,
+.is-active {
+  color: #00acdc;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #{$page-style-color};
+  border-radius: 8px;
+}
