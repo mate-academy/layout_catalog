@@ -6,12 +6,19 @@
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
-    width: 15px;
-    height: 15px;
+    @include starSize();
     margin-right: 4px;
 
-    &:nth-last-child(n + 2) {
-      background-image: url(../images/star-active.svg);
+    // &:nth-last-child(n + 2) {
+    //   background-image: url(../images/star-active.svg);
+    // }
+  }
+
+  @for $index from 0 through $stars-count {
+    &--count-#{$index} {
+      & :nth-child(-n+#{$index}) {
+        background-image: url(../images/star-active.svg);
+      }
     }
   }
 }
