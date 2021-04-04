@@ -1,48 +1,48 @@
 .nav {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  align-items: center;
   &__list {
-    display: flex;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
     list-style: none;
   }
 
   &__item {
-    margin-left: 20px;
-  }
+    position: relative;
 
-  &__item:first-child {
-    margin-left: 0;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 
   &__link {
-    padding: 23px 0;
-    position: relative;
-    display: inline-block;
-    color: #000;
-    text-decoration: none;
-    text-transform: uppercase;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
     font-weight: 500;
-  }
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    position: relative;
 
-  &__link:hover {
-    color: #00acdc;
+    &:hover {
+      color: $main__color;
+    }
   }
 }
 
 .is-active {
-  color: #00acdc;
+  color: $main__color;
+
   &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    display: block;
     height: 4px;
-    width: 100%;
-    background-color: #00acdc;
+    display: block;
+    position: absolute;
+    content: "";
+    right: 0;
+    left: 0;
+    bottom: 0;
     border-radius: 8px;
+    background-color: $main__color;
   }
 }
