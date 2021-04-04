@@ -1,0 +1,23 @@
+.stars {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  &__star {
+    @include starContainerSize($star-container-size);
+
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-right: 4px;
+  }
+}
+
+@for $index from 0 through $stars-count {
+  &--count-#{$index} {
+    & :nth-child(-n+#{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
