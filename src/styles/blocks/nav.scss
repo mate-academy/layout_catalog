@@ -11,6 +11,7 @@
   &__item {
     flex-basis: auto;
     flex-shrink: 0;
+    margin: 0 10px;
   }
 
   &__link {
@@ -18,13 +19,26 @@
     display: flex;
     align-items: center;
     height: $header-height;
-    margin: 0 10px;
 
     text-decoration: none;
     color: #000;
 
     &:hover {
       color: $color-blue;
+    }
+
+    &--active {
+      color: $color-blue;
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        @include size(100%, 4px);
+
+        background-color: $color-blue;
+        border-radius: 2em;
+      }
     }
   }
 }
