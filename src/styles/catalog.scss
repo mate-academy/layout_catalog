@@ -1,0 +1,105 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: catalogWidth($cardWidth, $gap);
+}
+
+.card {
+  margin-top: 49.5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: $cardWidth;
+  padding: 29px 14px 15px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: auto;
+    margin-bottom: 33px;
+  }
+
+  &__name {
+    margin-bottom: 6px;
+    @include titleText;
+  }
+  
+  &__code {
+    margin-bottom: 15px;
+    font-size: 11px;
+    line-height: 13px;
+  }
+  
+  &__rating {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .stars {
+      display: flex;
+      align-items: center;
+
+      &__item {
+        margin-right: 4px;
+        height: 15px;
+        width: 15px;
+        background-image: url("../images/star.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:nth-child(-n+4) {
+          background-image: url("../images/star-active.svg");
+        }
+      }
+    }
+  }
+
+  &__respond {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: $colorMain;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      background: #ffff;
+      border: 1px solid $colorMain;
+      color: $colorMain;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+}
+
+.price {
+  &__text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  
+  &__sum {
+    @include price;
+  }
+}
