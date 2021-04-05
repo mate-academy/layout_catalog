@@ -1,13 +1,11 @@
 .card {
   max-width: $card-width;
   padding: 14px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  perspective: 100px;
 
   &__image {
     width: 160px;
@@ -15,17 +13,42 @@
     margin-top: 15px;
     margin-bottom: 45px;
     align-self: center;
-    transition: transform 400ms;
   }
 
-  &__image:hover {
-    box-sizing: border-box;
-    transform: translate3D(0, 10px, 20px);
-    border: 3px solid #f3f3f3;
+  &__product {
+
+    &-name {
+      font-weight: 500;
+      line-height: 15px;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+    
+    &-code {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+    }
   }
   
-  &__button-To-Buy {
-    box-sizing: border-box;
+  &__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,12 +60,10 @@
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    transition-duration: 0.8s;
   
     &:hover {
       color: $main-button-color;
       background-color: #fff;
-      transition-duration: 0.6s;
     }
   }
 }
