@@ -1,0 +1,44 @@
+.nav {
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin: 0 20px 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    height: 60px;
+    align-items: center;
+    text-align: center;
+
+    &--active,
+    &:hover {
+      color: $bluish-color;
+    }
+
+    &--active::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $bluish-color;
+      border-radius: 2px;
+    }
+  }
+}
