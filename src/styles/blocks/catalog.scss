@@ -1,0 +1,118 @@
+.page__cards {
+  margin-top: 50px;
+}
+
+.cards {
+  @include flex();
+  flex-wrap: wrap;
+
+  &__container {
+    width: cardWidth($cardsWidth, $cardsCardMargin);
+    @include flex();
+    flex-wrap: wrap;
+    
+  }
+
+  &__card {
+    margin-left: $cardsCardMargin;
+    margin-right: $cardsCardMargin;
+    margin-bottom: 50px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $cardsWidth;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+ 
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 15px 5px 45px;
+  }
+
+  &__name-product {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 6px;
+  }
+
+  &__code-producte {
+    font-size: 11px;
+    line-height: 13px;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+  }
+
+  &__star {
+    @include starSquare($starSize);
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &_active {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__count {
+    align-self: center;
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  &__cost {
+    @include flex-between();
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  &__price-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  
+  &__link {
+    @include flex();
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: $link-color;
+    border: 1px solid $link-color;
+    border-radius: 5px;
+    padding-top: $cardLinkPadding;
+    padding-bottom: $cardLinkPadding;
+  }
+
+  &__link:hover {
+    background-color: #fff;
+    color: $link-color;
+  }
+}
