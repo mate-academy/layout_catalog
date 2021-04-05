@@ -1,0 +1,60 @@
+@import "../utils/variables";
+
+.logo {
+  width: 40px;
+  height: 40px;
+  align-self: center;
+}
+
+.nav {
+  height: 60px;
+  display: flex;
+
+  &__link,
+  &__item,
+  &__list {
+    display: flex;
+    align-items: center;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    padding: 0;
+  }
+
+  &__item:hover .nav__link {
+    color: $color-active;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link--active::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    background-color: $color-active;
+    border-radius: 8px;
+    width: 100%;
+    bottom: 0;
+  }
+
+  &__link--active {
+    color: $color-active;
+  }
+}
