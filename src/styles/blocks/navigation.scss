@@ -1,0 +1,43 @@
+.nav {
+  height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    position: relative;
+    text-transform: uppercase;
+    padding: 24px 0;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    transition-duration: 0.4s;
+
+    &--active {
+      color: $main-button-color;
+    }
+
+    &:hover {
+      color: $main-button-color;
+      transition-duration: 0.3s;
+    }
+
+    &--active::after {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: 4px;
+      border-radius: 8px;
+      background-color: hsl(193, 100%, 43%);
+    }
+  }
+}
