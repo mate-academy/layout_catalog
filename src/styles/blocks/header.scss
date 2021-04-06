@@ -1,9 +1,11 @@
-/* #region Header */
+$header-height: 60px;
+
 .header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  padding-left: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 }
@@ -11,48 +13,52 @@
 .logo {
   width: 40px;
   height: 40px;
-  margin-left: 50px;
 }
 
 .nav {
-  margin-right: 50px;
-}
+  padding-right: 50px;
 
-.menu {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-wrap: wrap;
-  list-style: none;
-}
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    margin-right: 0;
+    list-style: none;
+  }
 
-.menu_li + .menu_li {
-  margin-left: 20px;
-}
+  &__li {
+    margin-right: 20px;
+  }
+  
+  &__menu :last-child {
+    margin-right: 0;
+  }
 
-.item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 60px;
-  font-weight: 500;
-  font-size: 12px;
-  color: black;
-  text-transform: uppercase;
-  text-decoration: none;
-}
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    font-weight: 500;
+    font-size: 12px;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 
-.item:hover {
-  color: #{$blue-color};
+  &__item:hover {
+    color: #{$blue-color};
+  }
 }
 
 .is-active {
   position: relative;
   display: flex;
   align-items: center;
-  height: 60px;
+  height: $header-height;
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
@@ -67,6 +73,5 @@
   height: 4px;
   bottom: 0;
   background: #{$blue-color};
-  border-radius: 8px;
+  border-radius: 2px;
 }
-/* #endregion*/
