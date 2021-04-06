@@ -37,7 +37,7 @@
 - create a separate file per each BEM block that have the same name as the block
 - if you want to reset default styles, do it in `_reset.scss` file
 - if you need margins only for bottom side, use `margin-bottom: 20px` not `margin: 0 0 20px`
-- write your code so that the small design changes (like header height or card width) require you to change only 1 value
+- write your card__code-text so that the small design changes (like header height or card width) require you to change only 1 value
 - if you want to round corners of an element, the radius shouldn't be greater than a half of a width or a height
 - delete styles that you don't use
 - if you make a mixin for some kind of font style, consider adding mixins for other font style too
@@ -92,7 +92,7 @@
 - any values that depend on others (width of some smaller element, number of the cards, etc.) should be calculated with formula
 - do not combine selectors with `,` operator, it's hard to find them later (reset style files are not included here)
 - if you need to adjust positioning with `1px` or fractional numbers like `0.5`, you do something wrong, change the alignment technique you use
-- BEM doesn't allow nesting selectors, it increases selectors specificity and code nesting
+- BEM doesn't allow nesting selectors, it increases selectors specificity and card__code-text nesting
 >**WRONG WAY**
 >```scss
 >.card__rating {
@@ -108,9 +108,9 @@
 >  }
 >}
 >```
-- reuse your code, if you've already written code for stars in the previous homework, use it as an independent block
+- reuse your card__code-text, if you've already written card__code-text for stars in the previous homework, use it as an independent block
 - there is no need to add `--first` modifier to the first element, use pseudo-classes
-- empty lines between sibling blocks of code improve readability, but not between a parent and a child
+- empty lines between sibling blocks of card__code-text improve readability, but not between a parent and a child
 >**WRONG WAY**
 >```html
 ><main class="main container">
@@ -143,4 +143,4 @@
 >}
 >```
 
-- are you sure you've polished your code? :)
+- are you sure you've polished your card__code-text? :)
