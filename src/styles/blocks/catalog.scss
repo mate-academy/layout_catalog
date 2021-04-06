@@ -1,16 +1,11 @@
-.page__cards {
-  margin-top: 50px;
-}
-
 .cards {
-  @include flex();
+  @include flex;
   flex-wrap: wrap;
 
   &__container {
     width: cardWidth($cardsWidth, $cardsCardMargin);
-    @include flex();
+    @include flex;
     flex-wrap: wrap;
-    
   }
 
   &__card {
@@ -45,18 +40,23 @@
   &__code-producte {
     font-size: 11px;
     line-height: 13px;
-    margin-bottom: 16px;
+    margin-bottom: 15px;
   }
 
   &__rating {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    @include flex-between;
+    margin-bottom: 21px;
   }
 
   &__stars {
     display: flex;
     align-items: center;
+
+    @for $countStars from 1 through 4 {
+      &_active_#{$countStars} :nth-child(-n + #{$countStars}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
   }
 
   &__star {
@@ -65,21 +65,16 @@
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
-
-    &_active {
-      background-image: url(../images/star-active.svg);
-    }
   }
 
   &__count {
-    align-self: center;
     font-size: 11px;
     line-height: 13px;
   }
 
   &__cost {
-    @include flex-between();
-    align-items: baseline;
+    @include flex-between;
+    align-items: center;
     margin-bottom: 20px;
   }
 
