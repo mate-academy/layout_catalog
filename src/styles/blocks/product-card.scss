@@ -1,33 +1,83 @@
 .product-card {
   @extend %flexAbsoluteCenter;
-  flex: inline-flex;
   flex-direction: column;
-  box-sizing: border-box;
   width: $productCardWidth;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  font-family: Roboto, sans-serif;
-  
+
   &__image {
     width: 160px;
     height: 134px;
     margin-top: 29px;
     margin-bottom: 45px;
   }
-  
+
   &__name-code {
     margin-bottom: 15px;
-    font-family: inherit;
+    width: $cardContentWidth;
+  }
+
+  &__name {
+    margin-bottom: 6px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+  }
+
+  &__code {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 400;
   }
 
   &__rating {
+    @extend %flexSpaseBetweenCenter;
     width: $cardContentWidth;
     margin-bottom: 21px;
-    font-family: inherit;
+  }
+
+  &__stars {
+    display: inline-flex;
+
+    @for $index from 1 through 5 {
+      &--#{$index} > .product-card__star:nth-child(-n+#{$index}) {
+        background-image: url("../images/star-active.svg");
+      }
+    }
+  }
+
+  &__star {
+    @include squareForm(15px);
+    background-image: url("../images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  &__customers-coments {
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 400;
   }
 
   &__price-label {
+    @extend %flexSpaseBetweenCenter;
+    width: $cardContentWidth;
     margin-bottom: 19px;
+  }
+
+  &__label {
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 400;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
   }
 
   &__buy-button {
