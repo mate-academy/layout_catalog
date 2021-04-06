@@ -1,12 +1,16 @@
 .stars {
   display: flex;
+
   &__star {
     width: 15px;
     height: 15px;
     margin-right: 4px;
     background: center no-repeat url(./../images/star-active.svg);
   }
-  &__star:last-child {
-    background: center no-repeat url(./../images/star.svg);
+
+  @for $i from 1 through 5 {
+    &--#{$i} &__star:nth-child(#{$i}) ~ &__star {
+      background: center no-repeat url(./../images/star.svg);
+    }
   }
 }
