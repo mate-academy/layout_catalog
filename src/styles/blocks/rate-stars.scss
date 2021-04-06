@@ -1,0 +1,22 @@
+.rate-stars {
+  display: flex;
+
+  &__star {
+    background-image: url(../../src/images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-of-type(-n + #{$index}) {
+      background-image: url(../../src/images/star-active.svg);
+    }
+  }
+}
