@@ -1,0 +1,22 @@
+.stars {
+  display: flex;
+  flex-direction: row;
+  float: left;
+
+  &__star {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    background-image: #{$clear-star};
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      & :nth-child(-n+#{$i}) {
+        background-image: #{$golden-star};
+      }
+    }
+  }
+}
