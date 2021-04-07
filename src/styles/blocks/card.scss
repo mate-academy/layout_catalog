@@ -16,10 +16,11 @@
     height: 134px;
     margin: 9px auto 45px;
     transition: transform 400ms;
+    box-sizing: inherit;
+    border: 3px solid #f3f3f3;
 
     &:hover {
       transform: translate3d(0,10px,32px);
-      border: 3px solid #f3f3f3;
     }
   }
 
@@ -42,6 +43,20 @@
     margin-bottom: 20px;
   }
 
+  &__stars {
+    display: flex;
+  }
+
+  .stars_star {
+    height: 15px;
+    width: 15px;
+    background: url("../images/star.svg") center no-repeat;
+  
+    &:not(:last-child) {
+      margin-right: 4px;
+      background: url("../images/star-active.svg") center no-repeat;
+    }
+  }
   &__price {
     display: flex;
     justify-content: space-between;
@@ -64,9 +79,11 @@
     color: #fff;
     background-color: $base--color--page;
     border-radius: 5px;
+    transition: 0.5s;
   }
 
   &__button:hover {
+    transition: 0.5s;
     color: $base--color--page;
     background-color: #fff;
   }
