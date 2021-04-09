@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 .card {
-  padding: 30px 14px 14px;
+  padding: 29px 14px 15px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   max-width: 200px;
@@ -10,6 +10,10 @@
 
   &__product-img {
     width: 160px;
+    height: 134px;
+    background: url("./../images/imac.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     margin-bottom: 45px;
     align-self: center;
   }
@@ -29,10 +33,13 @@
   }
 
   &__price-wrap {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2 , max-content);
+    grid-template-rows: 19px;
     justify-content: space-between;
     margin-bottom: 20px;
-    align-items: center;
+    align-content: center;
+    
   }
 
   &__btn {
@@ -58,8 +65,10 @@
 }
 
 .stars {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content max-content;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 
   &__star-wrap {
@@ -71,6 +80,7 @@
   &__star {
     background: url("../images/star-active.svg");
     background-repeat: no-repeat;
+    background-position: center;
     width: 15px;
     height: 15px;
     cursor: pointer;
@@ -79,12 +89,14 @@
   &__star:nth-child(n + 5) {
     background: url("../images/star.svg");
     background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__feedback {
     font-weight: normal;
     font-size: 11px;
     line-height: 13px;
+    align-self: center;
   }
 }
 
@@ -93,6 +105,8 @@
     font-weight: normal;
     font-size: 11px;
     line-height: 13px;
+    align-self: end;
+    margin-bottom: 1px;
   }
 
   &__value {
