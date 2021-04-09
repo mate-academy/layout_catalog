@@ -1,0 +1,38 @@
+.nav {
+  display: flex;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: $nav-height;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: $main-blue-color;
+    }
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $main-blue-color;
+
+  &::after {
+    display: flex;
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background: $main-blue-color;
+    bottom: 0;
+  }
+}
