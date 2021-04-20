@@ -1,0 +1,64 @@
+@use "../utils/variables" as *;
+@use "../utils/mexins";
+@use "../utils/extends";
+
+.header {
+  @include mexins.header-decoration;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 60px;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-bar {
+    height: 100%;
+  }
+
+  &__menu {
+    @include mexins.header-decoration;
+    @extend %list-style-reset;
+    display: flex;
+    height: 100%;
+  }
+
+  &__menu :first-child {
+    margin-left: 0;
+  }
+
+  &__item {
+    margin-left: 20px;
+  }
+
+  &__link {
+    @include mexins.header-decoration;
+    @include mexins.header-decoration;
+    display: flex;
+    position: relative;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__link:hover {
+    @include mexins.header-decor-hover;
+  }
+
+  .is-active {
+    color: #00acdc;
+  }
+
+  .is-active::after {
+    display: flex;
+    position: absolute;
+    content: "";
+    border-radius: 4px;
+    height: 4px;
+    background-color: #00acdc;
+    width: 100%;
+    bottom: 0;
+  }
+}
