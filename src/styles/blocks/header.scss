@@ -1,0 +1,58 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+@use "../utils/extends";
+
+.header {
+  @include mixins.header;
+
+  &__contant {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__logo {
+    @include mixins.logo-size;
+    align-self: center;
+  }
+
+  .nav {
+    display: flex;
+
+    &__list {
+      @extend %list-style--reset;
+      display: flex;
+    }
+
+    .list {
+      &__item {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      &__item:first-child {
+        margin-left: 0;
+      }
+
+      &__link {
+        @include mixins.nav-font-style;
+
+        &:hover {
+          color: variables.$link-color;
+        }
+      }
+
+      .is-active {
+        color: variables.$link-color;
+      }
+
+      .is-active::after {
+        @include mixins.underline;
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
