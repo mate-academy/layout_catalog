@@ -9,6 +9,7 @@ $color-white: #fff;
   font-weight: 500;
   text-decoration: none;
   color: black;
+  text-transform: uppercase;
 }
 
 @mixin star {
@@ -16,6 +17,11 @@ $color-white: #fff;
   background-repeat: no-repeat;
   height: 15px;
   width: 15px;
+}
+
+h1,
+p {
+  margin: 0;
 }
 
 body {
@@ -77,6 +83,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 944px;
+  min-width: 944px;
+
+  @for $star from 1 through 5 {
+    &--#{$star} {
+      .cards__card_review_star:nth-child(n + #{$star + 1}) {
+        background-image: url("../images/star.svg");
+      }
+    }
+  }
 
   &__card {
     box-sizing: border-box;
@@ -124,9 +141,7 @@ body {
         background-image: url("../images/star-active.svg");
         margin-right: 4px;
 
-        &_not-active {
-          @include star;
-          background-image: url("../images/star.svg");
+        &:nth-child(5) {
           margin-right: 21px;
         }
       }
