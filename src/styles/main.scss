@@ -1,3 +1,201 @@
+$color-blue: #00acdc;
+$color-white: #fff;
+
+@mixin nav-link {
+  display: inline-block;
+  margin-right: 20px;
+  height: 60px;
+  line-height: 60px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+@mixin star {
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 15px;
+  width: 15px;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 60px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  &__nav {
+    display: flex;
+
+    &-link {
+      @include nav-link;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        color: $color-blue;
+        position: relative;
+      }
+    }
+  }
+}
+
+.is-active {
+  @include nav-link;
+  color: $color-blue;
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $color-blue;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 944px;
+  min-width: 944px;
+
+  @for $star from 1 through 5 {
+    &--#{$star} {
+      .cards__card_review_star:nth-child(n + #{$star + 1}) {
+        background-image: url("../images/star.svg");
+      }
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin-right: 48px;
+    font-family: "Roboto", sans-serif;
+    font-size: 11px;
+    color: #000;
+    width: 200px;
+    background-color: $color-white;
+    border: solid 1px #f3f3f3;
+    border-radius: 5px;
+    padding: 14px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &_image {
+      width: 160px;
+      height: 134px;
+      margin: 15px 5px 42px;
+    }
+
+    &_product-name {
+      display: flex;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15px;
+      margin-bottom: 6px;
+    }
+
+    &_code {
+      line-height: 13px;
+      margin-bottom: 15px;
+    }
+
+    &_review {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &_star {
+        @include star;
+        background-image: url("../images/star-active.svg");
+        margin-right: 4px;
+
+        &:nth-child(5) {
+          margin-right: 21px;
+        }
+      }
+
+      &_amount {
+        height: 13px;
+      }
+    }
+
+    &_price {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 20px;
+
+      &_number {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+
+    &_buy-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-blue;
+      color: $color-white;
+      height: 38px;
+      width: 168px;
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 5px;
+      border: solid 1px $color-blue;
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-blue;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    padding-left: 128px;
+    padding-right: 128px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
