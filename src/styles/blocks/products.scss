@@ -41,21 +41,22 @@
   width: 91px;
   display: flex;
   justify-content: space-between;
-
-  &__star-active {
-    width: 15px;
-    height: 15px;
-    background-image: url(../images/star-active.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  &__star-not-active {
+  
+  & > :nth-child(n) {
     width: 15px;
     height: 15px;
     background-image: url(../images/star.svg);
     background-position: center;
     background-repeat: no-repeat;
+  
+  }
+}
+
+@for $count-A from 1 through 5 {
+  @for $count-B from 1 through $count-A {
+    .item-stars--#{$count-A} .item-stars__#{$count-B} {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
 
@@ -93,6 +94,7 @@
   border-radius: 5px;
   font-weight: 700;
   font-size: 14px;
+  text-transform: uppercase;
 
   &:hover {
     background-color: #fff;
