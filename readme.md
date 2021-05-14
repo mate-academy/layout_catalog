@@ -14,13 +14,13 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 ## Requirements:
 - use SCSS in this task
 - pay attention the mock is responsive. Develop the layout to fit on `1024px` and `1200px` the same as on the mock.
-- reset browser's default margins
+- reset browser"s default margins
 - use images from [src/images](src/images)
 - use semantic tags. `<header>`, `<nav>`, `main`
 - pay attention to the shadow below the header
 - reuse the card from [Product cards](https://github.com/mate-academy/layout_product-cards#product-cards)
 - reuse the header from [Moyo header](https://github.com/mate-academy/layout_moyo-header#moyo-header)
-- card's width is `200px` inluding borders
+- card"s width is `200px` inluding borders
 - add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки и компьютеры`)
 - add attribute `data-qa="card"` to the first card
 - add attribute `data-qa="card-hover"` to the link `Купить` inside first card
@@ -33,7 +33,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - **IMPORTANT** Save and push your changes to github manually after `deploy`
 - Add **ALL** the `data-qa` attributes and `class="is-active"` required in the task
 - Do not use tabs. Use 2 spaces for indentation.
-- Don't use repeated styles.
+- Don"t use repeated styles.
 - Check font styles. Use [google fonts](https://fonts.google.com/)
 - Pay attention to `:hover` state
 
