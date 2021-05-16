@@ -1,3 +1,245 @@
-body {
+$image-height: 134px;
+$max-width: 200px;
+$font-family: "Roboto", sans-serif;
+$active-color: #00acdc;
+$font-color: #000;
+$button-color: #fff;
+$card-border: #f3f3f3;
+
+@mixin moyo($size) {
+  height: $size;
+  width: $size;
+}
+
+* {
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.moyo-link {
+  @include moyo(40px);
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.menu {
+  height: 100%;
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+  }
+
+  &__list {
+    height: inherit;
+  }
+
+  &__list:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: $font-color;
+    text-decoration: none;
+  }
+
+  .is-active,
+  &__link:hover {
+    color: $active-color;
+  }
+
+  .is-active::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $active-color;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    border-radius: 8px;
+  }
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 40px 28px;
+
+  @media (min-width: 1200px) {
+    padding: 50px 128px 28px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width;
+  padding: 29px 14px 14px;
+  border: 1px solid $card-border;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  margin-right: 38px;
+  flex-grow: 1;
+
+  @media (min-width: 1200px) {
+    margin-right: 48px;
+  }
+}
+
+.catalog .card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.card-photo {
+  margin: 0 auto;
+  height: $image-height;
+
+  &__image {
+    width: 160px;
+    height: $image-height;
+  }
+}
+
+.product {
+  padding-top: 45px;
+  max-width: 170px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    text-align: left;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: $font-color;
+    margin-bottom: 6px;
+  }
+
+  &__number {
+    text-align: left;
+    font-family: $font-family;
+    font-size: 11px;
+    line-height: 13px;
+    color: $font-color;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    font-family: $font-family;
+    font-size: 11px;
+    line-height: 13px;
+    color: $font-color;
+  }
+
+  &__sum {
+    font-family: $font-family;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: $font-color;
+  }
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+
+  &__number {
+    display: flex;
+    align-items: center;
+    font-family: $font-family;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+    color: $font-color;
+    height: 13px;
+    white-space: nowrap;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__images {
+    background-image: url("../images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+  }
+
+  .stars &__images:nth-child(-n + 4) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0;
+
+  &__link {
+    padding: 11px 56px 11px 57px;
+    background-color: $active-color;
+    border-radius: 5px;
+    font-family: $font-family;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $button-color;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  &__link:hover {
+    background-color: $button-color;
+    border: 1px solid $active-color;
+    color: $active-color;
+  }
 }
