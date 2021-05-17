@@ -1,0 +1,74 @@
+@use "../utils/colors" as *;
+
+$header-height: 60px;
+/* #region header */
+.header-container {
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  height: $header-height;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 1024px;
+  max-width: 1200px;
+  padding: 0 50px;
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav-container__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  &-li {
+    display: flex;
+    height: $header-height;
+    margin-left: 20px;
+  }
+
+  &-li:first-child {
+    margin-left: 0;
+  }
+
+  &-a {
+    display: flex;
+    height: $header-height;
+    position: relative;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+  }
+  
+  &-a:hover {
+    color: $color-blue;
+  }
+}
+
+.is-active {
+  color: $color-blue;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background-color: $color-blue;
+  border-radius: 8px;
+}
+
+/* #endregion */
