@@ -1,0 +1,60 @@
+.header {
+  @extend %placeholderFlex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  @include headerLogo($logoSize);
+}
+
+.nav {
+  &__list {
+    @extend %placeholderFlex;
+  }
+
+  &__item {
+    display: block;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    font-size: $headerFonts;
+    text-transform: uppercase;
+    line-height: 60px;
+    font-weight: 500;
+    color: #000;
+
+    &:hover {
+      color: $colorBlue;
+    }
+
+    &--active {
+      position: relative;
+      color: $colorBlue;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: $colorBlue;
+        border-radius: 8px;
+      }
+    }
+  }
+}
