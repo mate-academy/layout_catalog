@@ -1,3 +1,75 @@
-body {
-  margin: 0;
+$header-height: 60px;
+$logo-height: 40px;
+$space-between-nav-link: 20px;
+$active-link-color: #00acdc;
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: Roboto, Helvetica, sans-serif;
+
+  &__content {
+    display: block;
+    margin: 0;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+}
+
+.logo {
+  align-self: center;
+  height: $logo-height;
+}
+
+.navigation {
+  &__list {
+    display: flex;
+    margin: 0 0 0 -20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: $space-between-nav-link;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    line-height: $header-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(0,0,0,1);
+  }
+
+  &__link:hover {
+    color: rgba(0, 172, 220, 1);
+  }
+}
+
+.is-active {
+  color: $active-link-color;
+}
+
+.is-active::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $active-link-color;
+  opacity: 1;
+  content: "";
 }
