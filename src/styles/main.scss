@@ -2,7 +2,7 @@ $color-main: #00acdc;
 $color-black: #000;
 $color-white: #fff;
 
-html {
+* {
   box-sizing: border-box;
 }
 
@@ -21,7 +21,10 @@ body {
   background: $color-white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
-  &-logo {
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
     width: 40px;
   }
@@ -71,10 +74,19 @@ body {
 }
 
 .section-catalog {
+  display: flex;
+  justify-content: center;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
   color: $color-black;
+
+  &__product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1024px;
+    padding: 50px 40px;
+  }
 
   &__product-card {
     display: flex;
@@ -82,8 +94,13 @@ body {
     justify-content: start;
     width: 200px;
     padding: 14px;
+    margin-bottom: 50px;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
 
     &:hover {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
