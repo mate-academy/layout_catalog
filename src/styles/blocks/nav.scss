@@ -1,0 +1,53 @@
+.nav {
+  margin-right: 50px;
+
+  &__link {
+    display: inline-block;
+    line-height: 60px;
+    @extend %middle-text;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.is-active {
+  color: $main-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $main-color;
+  }
+}
