@@ -1,60 +1,17 @@
 
-@import "../utilits/variable_header.scss";
+@import "../utilits/variable.scss";
+@import "../utilits/mixin.scss";
+@import "../block/nav.scss";
 
 .header {
   min-width: 1024px;
   justify-content: space-between;
   padding: 0 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px $color-bl;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 40px ;
-  width: 40px;
-}
-
-.navigation {
-  display: flex;
-}
-
-.navigation__list {
-  list-style: none;
-  display: flex;
-}
-
-.navigation__paragraph {
-  margin-right: 20px;
-}
-
-.navigation__link {
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  line-height: 60px;
-  font-size: 12px;
-  font-weight: 500;
-  color: black;
-  text-transform: uppercase;
-}
-
-.navigation__link:hover {
-  color: $color-all;
-}
-
-.is-active {
-  color: $color-all;
-}
-
-.is-active::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  background-color: $color-all;
-  border-radius: 8px;
-  display: block;
+  @include size-logo($size);
 }
