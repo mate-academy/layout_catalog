@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://ErnestMk1.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://ErnestMk1.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -37,5 +37,5 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - Check font styles. Use [google fonts](https://fonts.google.com/)
 - Pay attention to `:hover` state
 
----
+---;
 ![screenshot](./references/catalog-example.png)
