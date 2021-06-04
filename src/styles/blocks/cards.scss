@@ -1,0 +1,121 @@
+@import "./variables";
+@import "./extends";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $base-card-width;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+
+  &__picture {
+    width: 160px;
+    height: 134px;
+    margin: 32px 20px 40px 19px;
+  }
+
+  &__description {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 15px 4px 16px;
+    color: $dark-color-for-text;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    padding: 0 0 15px 16px;
+    color: $lighter-color-for-text;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 0 24px 16px;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__stars--active-1 &__star:nth-child(-n + 1),
+  &__stars--active-2 &__star:nth-child(-n + 2),
+  &__stars--active-3 &__star:nth-child(-n + 3),
+  &__stars--active-4 &__star:nth-child(-n + 4),
+  &__stars--active-5 &__star:nth-child(-n + 5) {
+    @extend %stars-active;
+  }
+
+  &__count-reviews {
+    font-weight: 400;
+    font-size: 10px;
+    padding-right: 16px;
+    color: $dark-color-for-text;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 15px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: $lighter-color-for-text;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-style: 16px;
+    line-height: 18px;
+    color: $dark-color-for-text;
+  }
+
+  &__button-buy {
+    padding: 0 16px 16px;
+  }
+
+  &__button-border {
+    background: $special-blue;
+    border: 1px solid $special-blue;
+    border-radius: 5px;
+  }
+
+  &__button-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 38px;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $button-buy-text-color;
+  }
+
+  .card__button-border--active:hover,
+  .card__button-text--active:hover {
+    background: none;
+    color: $special-blue;
+  }
+}

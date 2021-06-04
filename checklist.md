@@ -89,7 +89,7 @@
 >normalText(14px)
 >```
 - use variables for the main values (don't overuse variables) so that you'll be able to reuse them and give them descriptive names
-- any values that depend on others (width of some smaller element, number of the cards, etc.) should be calculated with formula
+- any values that depend on others (width of some smaller element, number of the card, etc.) should be calculated with formula
 - do not combine selectors with `,` operator, it's hard to find them later (reset style files are not included here)
 - if you need to adjust positioning with `1px` or fractional numbers like `0.5`, you do something wrong, change the alignment technique you use
 - BEM doesn't allow nesting selectors, it increases selectors specificity and code nesting
