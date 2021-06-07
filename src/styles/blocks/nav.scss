@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: flex;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding: 20px 0;
+    font-size: 12px;
+    line-height: 20px;
+    color: $color-black;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+}
+
+.is-active {
+  color: $color-main;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    height: 4px;
+    width: 100%;
+    content: "";
+    background: $color-main;
+    border-radius: 8px;
+  }
+}
