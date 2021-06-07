@@ -1,0 +1,49 @@
+@import "./variables.scss";
+
+.navigation {
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    height: 60px;
+  }
+
+  &__element {
+    margin-right: 20px;
+  }
+
+  &__text {
+    text-decoration: none;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 60px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .is-active {
+    color: $active-link-color;
+    position: relative;
+  }
+
+  .is-active::after {
+    display: block;
+    height: 4px;
+    width: 100%;
+    content: "";
+    position: absolute;
+    background-color: $active-link-color;
+    top: 56px;
+    border-radius: 8px;
+  }
+
+  &__text:hover {
+    transition: color 0.4s;
+    color: $button-color;
+  }
+}
