@@ -1,5 +1,5 @@
 .card {
-  border: 1px solid #f3f3f3;
+  border: 1px solid $border-color;
   border-radius: $default-border-radius;
   width: 200px;
 
@@ -11,8 +11,15 @@
   }
 
   &__product-image {
+    border: 3px solid transparent;
     height: 134px;
     width: 160px;
+    transition: transform 400ms ease-in-out;
+  }
+
+  &__product-image:hover {
+    border: 3px solid $border-color;
+    transform: scale(1.2);
   }
 
   &__title {
@@ -84,6 +91,7 @@
     line-height: 16px;
     text-decoration: none;
     text-transform: uppercase;
+    transition: background-color 0.2s linear;
   }
 
   &__button:hover {
