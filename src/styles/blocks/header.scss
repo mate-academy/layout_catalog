@@ -1,0 +1,39 @@
+.header {
+  height: 60px;
+  padding: 0 50px;
+  @extend %display-flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    @extend %display-flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  &__item {
+    padding-top: 22.5px;
+    padding-bottom: 18.5px;
+    line-height: 15px;
+    margin: 0 10px;
+    text-transform: uppercase;
+  }
+
+  @include nav-item-margins;
+  @include nav-link-rules;
+
+}
+
+.nav::after {
+  content: "";
+  width: 37px;
+  height: 4px;
+  display: block;
+  background-color: $color;
+  border-radius: 8px;
+}
