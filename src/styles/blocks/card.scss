@@ -1,37 +1,36 @@
-
 /* #region card */
 
 .card {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
   width: 200px;
-  border: 1px solid #f3f3f3;
+  padding-top: 10px;
+  min-height: 404px;
+  border: 1px solid $border-color;
   border-radius: 5px;
   color: $text-secondary-color;
-  padding-left: 16px;
-  padding-right: 16px;
 
-  &__photo {
-    display: inherit;
-    padding-bottom: 32px;
+  &__img {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    max-width: 166px;
+    margin: 0 auto;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 3px;
     @include img-is-non-active();
     &:hover {
       @include img-is-active();
     }
   }
-
-  &__photo-img {
-    padding-top: 32px;
-    width: 160px;
-
+  &__content {
+    max-width: 166px;
+    margin: 0 auto;
+    padding-top: 40px;
   }
 
   &__description {
-    width: 166px;
-    height: 40px;
-    padding-bottom: 4px;
+    max-width: 166px;
 
     &-text {
       font-family: inherit;
@@ -104,7 +103,7 @@
     border: 1px solid $main-color;
     border-radius: 5px;
     margin-bottom: 15px;
-    @include link-is-non-active();
+    transition: background-color 400ms ease, color 400ms ease;
 
     &-link {
       text-align: center;
@@ -116,17 +115,13 @@
       color: #fff;
       text-decoration: none;
       cursor: pointer;
-      @include link-is-non-active();
-      &:hover {
-        @include link-is-active();
-      }
+      transition: background-color 400ms ease, color 400ms ease;
     }
 
     &:hover {
       background-color: #fff;
       color: $main-color;
       cursor: pointer;
-      @include link-is-active();
 
       .card__button-link {
         color: $main-color;
@@ -134,5 +129,4 @@
     }
   }
 }
-
 /* #endregion */
