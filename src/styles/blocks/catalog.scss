@@ -1,0 +1,102 @@
+.catalog {
+  @extend %displayFlex;
+  @extend %JC_AI_center;
+  width: 4 * $card-width + 4 * $gap-size;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $gap-size;
+}
+
+.card {
+  @extend %displayFlex;
+  @extend %BS_border-box;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: $card-width;
+
+  &__img {
+    margin: 32px 20px 40px;
+    width: 160px;
+  }
+
+  &__text {
+    margin: 0 16px;
+  }
+
+  &__code {
+    @include font(normal, 10px, 14px);
+    margin-top: 2px;
+    margin-left: 16px;
+  }
+
+  &__rating {
+    @extend %displayFlex;
+    @extend %JC_space-between;
+    margin-top: 16px;
+    padding: 0 16px;
+  }
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__star:last-child {
+    background-image: url(../images/star.svg);
+  }
+
+  &__stars--4 {
+    @extend %displayFlex;
+  }
+
+  &__reviews {
+    @include font(normal, 10px, 14px);
+  }
+
+  &__price {
+    @extend %displayFlex;
+    @extend %JC_space-between;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+
+  &__price-word {
+    @include font(normal, 12px, 18px);
+  }
+
+  &__price-number {
+    @include font(bold, 16px, 18px);
+  }
+
+  &__buy {
+    @extend %displayFlex;
+    @extend %JC_AI_center;
+    text-decoration: none;
+  }
+
+  &__button {
+    @extend %displayFlex;
+    @extend %JC_AI_center;
+    @extend %BS_border-box;
+    @include font(bold, 14px, 16px);
+    text-transform: uppercase;
+    margin: 16px;
+    width: 168px;
+    height: 40px;
+    color: #fff;
+    background-color: $color-blue;
+    border-radius: 5px;
+  }
+    
+  &__button:hover {
+    color: $color-blue;
+    background-color: #fff;
+    border: 1px solid $color-blue;
+  }
+}
