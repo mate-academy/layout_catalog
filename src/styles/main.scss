@@ -7,6 +7,22 @@ body {
   font-weight: 500;
 }
 
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
 .header__container {
   box-sizing: border-box;
   display: flex;
@@ -18,7 +34,6 @@ body {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 0 50px;
-  margin-bottom: 50px;
 }
 
 .nav {
@@ -35,11 +50,15 @@ body {
   &__box:last-child {
     margin-right: 0;
   }
-}
 
-[data-qa="nav-hover"]:hover {
-  cursor: pointer;
-  color: #00acdc;
+  &__box:first-child {
+    margin-left: 0;
+  }
+
+  &__box:hover {
+    cursor: pointer;
+    color: #00acdc;
+  }
 }
 
 .is-active {
@@ -103,6 +122,14 @@ body {
 
   &__marks {
     display: flex;
+
+    @for $star from 1 through 4 {
+      &--stars--#{$star} {
+        .card__star:nth-child(-n + #{$star}) {
+          background-image: url(../images/star-active.svg);
+        }
+      }
+    }
   }
 
   &__star {
@@ -117,10 +144,6 @@ body {
 
   &__star:first-child {
     margin-left: 0;
-  }
-
-  &__star:nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
   }
 
   &__testimonials {
@@ -168,7 +191,7 @@ body {
   
 }
 
-[data-qa="card-hover"]:hover {
+.card__link:hover {
   box-sizing: border-box;
   background-color: #fff;
   border: 1px solid #00acdc;
@@ -186,5 +209,5 @@ body {
   align-items: center;
   flex-wrap: wrap;
   width: 944px;
-  margin: 0 auto;
+  margin: auto;
 }
