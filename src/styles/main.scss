@@ -3,10 +3,12 @@ $distance-between-card: 48px;
 $count-card-row: 4;
 $screen-width:
   ($count-card-row * $width-card) +
-  (($count-card-row - 1) * $distance-between-card
-);
+  (($count-card-row - 1) * $distance-between-card)
+;
 $padding-1024: (1024 - $screen-width) / 2;
 $padding-1200: (1200 - $screen-width) / 2;
+$start-activ-count: 4;
+$start-not-activ-count: 1;
 
 .body {
   margin: 0;
@@ -50,6 +52,7 @@ p {
 
   &__link {
     font-family: Roboto, sans-serif;
+    text-transform: uppercase;
     line-height: 60px;
     margin-right: 20px;
     font-size: 12px;
@@ -76,10 +79,10 @@ p {
   &__link:hover {
     color: #00acdc;
   }
-}
 
-.nav :last-child {
-  margin-right: 0;
+  & :last-child {
+    margin-right: 0;
+  }
 }
 
 .is-active::after {
@@ -115,14 +118,14 @@ p {
     max-width: $screen-width + 2 * $padding-1200;
     padding: 50px #{$padding-1200} 0;
   }
-}
 
-.main :nth-child(4n + 4) {
-  margin-right: 0;
-}
+  & :nth-child(4n + 4) {
+    margin-right: 0;
+  }
 
-.main :nth-last-child(-n + 4) {
-  margin-bottom: 0;
+  & :nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
 }
 
 .product-card {
@@ -189,20 +192,27 @@ p {
 
 .stars {
   display: flex;
-}
 
-.stars > * {
-  height: 16px;
-  width: 16px;
-  margin-right: 4px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url(../images/star-active.svg);
-}
+  & > * {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-.stars :last-child {
-  margin-left: 4px;
-  background-image: url(../images/star.svg);
+  @for $index from 1 through $start-activ-count {
+    &--#{$start-activ-count} :nth-child(#{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  @for $index from 0 to $start-not-activ-count {
+    & :nth-last-child(#{$start-not-activ-count}) {
+      margin-left: 4px;
+      background-image: url(../images/star.svg);
+    }
+  }
 }
 
 .reviews {
@@ -247,11 +257,11 @@ p {
   color: #fff;
   font-weight: 700;
   box-sizing: border-box;
-}
 
-.button:hover {
-  color: #00acdc;
-  background-color: #fff;
-  border: 1px solid #00acdc;
-  box-sizing: border-box;
+  &:hover {
+    color: #00acdc;
+    background-color: #fff;
+    border: 1px solid #00acdc;
+    box-sizing: border-box;
+  }
 }
