@@ -1,0 +1,107 @@
+.card {
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  max-width: 200px;
+
+  &__img {
+    margin: 14px auto 45px;
+    height: auto;
+    max-width: 160px;
+    display: block;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 6px;
+  }
+
+  &__code {
+    font-size: 11px;
+    line-height: 13px;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url(../images/star.svg);
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin-right: 4px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} {
+    .stars__star {
+      &:nth-child(-n + #{$i}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-bottom: 20px;
+  &__stars {
+    display: flex;
+  }
+  &__info {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  line-height: 19px;
+  &__title {
+    font-size: 11px;
+  }
+
+  &__value {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.btn {
+  background: $style-color;
+  border: 1px solid $style-color;
+  border-radius: 5px;
+  display: block;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 9px 15px;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in, color  0.3s ease-in;
+  font-weight: 500;
+  text-align: center;
+  &:hover {
+    background: transparent;
+    color: $style-color;
+  }
+}
