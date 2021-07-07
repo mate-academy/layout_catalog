@@ -1,3 +1,224 @@
-body {
+$color-hover: #00acdc;
+$color-invisible: #00acdc00;
+
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+p {
   margin: 0;
+  padding: 0;
+}
+
+.store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 18px;
+  color: #060b35;
+  width: 100%;
+  height: 60px;
+  padding: 0 50px;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: stretch;
+
+  &__items {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    margin-left: 20px;
+    align-self: stretch;
+    border-bottom: solid $color-invisible 4px;
+  }
+
+  &__items:hover {
+    border-bottom: solid $color-hover 4px;
+    color: $color-hover;
+  }
+
+  &__items:first-child {
+    margin: 0;
+  }
+}
+
+.is-active {
+  border-bottom: solid $color-hover 4px;
+  color: $color-hover;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  text-transform: none;
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 404px;
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 32px 16px 0;
+  margin: 0 24px 54px;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    padding: 0;
+    margin-bottom: 39px;
+  }
+
+  &__name {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #18191f;
+    margin-bottom: 3px;
+  }
+
+  &__code {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    color: #616070;
+    margin-bottom: 15px;
+    align-self: flex-start;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__review {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    @media (min-width: 1024px) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__prise {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 15px;
+  }
+
+  &__buttom-buy {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #00acdc;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    margin: 0 16px;
+    margin-bottom: 12.3px;
+  }
+
+  &__buttom-buy:hover {
+    background-color: #fff;
+    color: #00acdc;
+    border: 1px solid #00acdc;
+  }
+}
+
+.stars {
+  display: flex;
+  align-content: center;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  &__star:first-child {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .stars--1 &__star:first-child,
+  .stars--2 &__star:nth-child(-n+2),
+  .stars--3 &__star:nth-child(-n+3),
+  .stars--4 &__star:nth-child(-n+4),
+  .stars--5 &__star:nth-child(-n+5) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.reviews {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.prise-label {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: #616070;
+  align-items: flex-end;
+  margin-top: 1px;
+}
+
+.prise-value {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
 }
