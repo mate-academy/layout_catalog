@@ -1,11 +1,8 @@
-// @import "./blocks/body.scss";
-// @import "./blocks/menu.scss";
-// @import "./blocks/catalog.scss";
-// @import "./blocks/cards.scss";
-
 $color-hover: #00acdc;
 $color-invisible: #00acdc00;
 
+html,
+body,
 h1,
 h2,
 h3,
@@ -15,21 +12,19 @@ p {
   padding: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  width: 1024px;
-  margin-left: 16px;
-}
-
-@media (min-width: 1200px) {
-  body {
-    width: 1200px;
-    margin-left: 0;
-  }
+.store {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1024px;
+  box-sizing: border-box;
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -37,17 +32,14 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   line-height: 18px;
-  box-sizing: border-box;
+  color: #060b35;
+
   width: 100%;
   height: 60px;
   padding: 0 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .nav {
-  box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -74,28 +66,21 @@ body {
   }
 }
 
-.is_active {
+.is-active {
   border-bottom: solid $color-hover 4px;
   color: $color-hover;
 }
 
 .catalog {
-  text-transform: none;
-  width: 1024px;
+
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   box-sizing: border-box;
-  margin-top: 50px;
-
-  @media (min-width: 1024px) {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-
-  @media (min-width: 1200px) {
-    margin-left: 104px;
-    margin-right: 84px;
-  }
+  text-transform: none;
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 16px;
 }
 
 .card {
@@ -105,7 +90,6 @@ body {
   justify-content: space-between;
   width: 200px;
   height: 404px;
-  background: #fff;
   border: 1px solid #f3f3f3;
   box-sizing: border-box;
   border-radius: 5px;
