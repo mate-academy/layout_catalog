@@ -24,9 +24,32 @@ p {
   margin: 0;
 }
 
-.header {
+%after-line {
+  content: "";
+    
+  position: absolute;
+  bottom: $active-line-bottom-position;
+
+  width: 100%;
+  height: $active-line-height;
+
+  background-color: $blue-color;
+  border-radius: $active-line-radius;
+}
+
+%flex {
   display: flex;
   justify-content: space-between;
+}
+
+%large-text {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.header {
+  @extend %flex;
+
   align-items: center;
   height: $header-height;
   margin: 0;
@@ -68,18 +91,10 @@ p {
     color: #000;
 
     &:active::after {
-      content: "";
-    
-      position: absolute;
-      bottom: $active-line-bottom-position;
-      transform: translateX(-100%);
-    
+      @extend %after-line;
+
       display: inline-block;
-      width: 100%;
-      height: $active-line-height;
-    
-      background-color: $blue-color;
-      border-radius: $active-line-radius;
+      transform: translateX(-100%);
     }
 
     &:hover {
@@ -92,18 +107,20 @@ p {
   color: $blue-color;
 
   &::after {
-    content: "";
-  
-    position: absolute;
-    bottom: $active-line-bottom-position;
-  
+    @extend %after-line;
+
     display: block;
-    width: 100%;
-    height: $active-line-height;
-  
-    background: $blue-color;
-    border-radius: $active-line-radius;
   }
+}
+
+.cards {
+  @extend %flex;
+
+  flex-wrap: wrap;
+  margin: $card-margin-coef * 12.5 auto;
+  max-width: $card-width * 4.75;
+  align-content: space-between;
+  height: 860px;
 }
 
 .card {
@@ -131,9 +148,9 @@ p {
   }
 
   &__reviews {
-    display: flex;
+    @extend %flex;
+
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-start;
     width: 100%;
   
@@ -146,9 +163,9 @@ p {
   }
 
   &__price {
-    display: flex;
+    @extend %flex;
+
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
   
     margin-top: $card-margin-coef * 6;
@@ -156,8 +173,8 @@ p {
   }
   
   &__price-text {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+    @extend %large-text;
+
     font-weight: 400;
     color: $secondary-color;
   }
@@ -214,8 +231,8 @@ p {
 }
 
 .title {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
+  @extend %large-text;
+  
   font-weight: 500;
   color: $main-color;
 }
@@ -226,14 +243,4 @@ p {
   line-height: 1.4rem;
   font-weight: 400;
   color: $secondary-color;
-}
-
-// main and cards 2-8 need changes
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px 128px;
-  justify-content: space-between;
-  gap: 50px;
 }
