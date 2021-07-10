@@ -13,17 +13,6 @@ $rem: $card-width / 20;
 $card-margin-coef: $card-width / 50;
 $card-radius: $card-width / 40;
 
-html {
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: $rem;
-}
-
-body,
-h2,
-p {
-  margin: 0;
-}
-
 %after-line {
   content: "";
     
@@ -45,6 +34,17 @@ p {
 %large-text {
   font-size: 1.2rem;
   line-height: 1.8rem;
+}
+
+html {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: $rem;
+}
+
+body,
+h2,
+p {
+  margin: 0;
 }
 
 .header {
@@ -117,10 +117,12 @@ p {
   @extend %flex;
 
   flex-wrap: wrap;
-  margin: $card-margin-coef * 12.5 auto;
+  margin: 0 auto;
   max-width: $card-width * 4.75;
-  align-content: space-between;
-  height: 860px;
+
+  &__card {
+    margin-top: 50px;
+  }
 }
 
 .card {
