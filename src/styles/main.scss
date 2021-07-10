@@ -1,3 +1,239 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+$blue-color: #00acdc;
+$main-color: #060b35;
+$secondary-color: #616070;
+$active-line-height: 4px;
+$active-line-radius: 8px;
+$active-line-bottom-position: 0;
+$card-width: 200px;
+$header-height: $card-width * 0.3;
+$photo-width: $card-width * 0.8;
+$rem: $card-width / 20;
+$card-margin-coef: $card-width / 50;
+$card-radius: $card-width / 40;
+
+html {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: $rem;
+}
+
+body,
+h2,
+p {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  margin: 0;
+  padding: 0 50px;
+
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-item {
+    position: relative;
+  
+    list-style: none;
+  }
+
+  &__nav-item:not(:last-child) {
+    margin-right: 20px;
+  
+    list-style: none;
+  }
+  
+
+  &__nav-link {
+    position: relative;
+  
+    display: inline-block;
+  
+    line-height: $header-height;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+
+    &:active::after {
+      content: "";
+    
+      position: absolute;
+      bottom: $active-line-bottom-position;
+      transform: translateX(-100%);
+    
+      display: inline-block;
+      width: 100%;
+      height: $active-line-height;
+    
+      background-color: $blue-color;
+      border-radius: $active-line-radius;
+    }
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-color;
+
+  &::after {
+    content: "";
+  
+    position: absolute;
+    bottom: $active-line-bottom-position;
+  
+    display: block;
+    width: 100%;
+    height: $active-line-height;
+  
+    background: $blue-color;
+    border-radius: $active-line-radius;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $card-width;
+  padding: $card-width * 0.16 $card-width * 0.08 $card-width * 0.08;
+  box-sizing: border-box;
+
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: $card-radius;
+
+  &__photo {
+    width: $photo-width;
+  }
+
+  &__title {
+    margin-top: $card-margin-coef * 10;
+  }
+  
+  &__id {
+    margin-top: $card-margin-coef;
+  }
+
+  &__reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  
+    margin-top: $card-margin-coef * 4;
+  }
+
+  &__reviews-count {
+    font-size: 1rem;
+    color: $main-color;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  
+    margin-top: $card-margin-coef * 6;
+    margin-bottom: $card-margin-coef * 4;
+  }
+  
+  &__price-text {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    color: $secondary-color;
+  }
+
+  &__price-digits {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $main-color;
+  }
+}
+
+.stars {
+  display: flex;
+  align-self: flex-end;
+  height: 15px;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    width: 16px;
+    margin: 0 2px;
+  }
+
+  &--5 > .stars__star,
+  &--4 > .stars__star:nth-child(-n+4),
+  &--3 > .stars__star:nth-child(-n+3),
+  &--2 > .stars__star:nth-child(-n+2),
+  &--1 > .stars__star:first-child {
+    background-image: url(../images/star-active.svg);
+  }
+  
+}
+
+.buy-button {
+  box-sizing: border-box;
+  padding: 1.1rem 5.5rem;
+
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+
+  background-color: $blue-color;
+  border: 1px solid $blue-color;
+  border-radius: $card-radius;
+
+  &:hover {
+    color: $blue-color;
+    background-color: #fff;
+  }
+}
+
+.title {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  color: $main-color;
+}
+
+.id {
+  align-self: flex-start;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: $secondary-color;
+}
+
+// main and cards 2-8 need changes
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 128px;
+  justify-content: space-between;
+  gap: 50px;
 }
