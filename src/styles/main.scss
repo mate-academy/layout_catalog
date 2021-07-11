@@ -18,7 +18,7 @@ body {
   height: 60px;
   padding: 0 50px;
 
-  background-color: #fff;
+  background-color: var(--color-light);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -50,11 +50,11 @@ body {
   }
 
   &__link:hover {
-    color: #00acdc;
+    color: var(--color-blue);
   }
 
   &__link.is-active {
-    color: #00acdc;
+    color: var(--color-blue);
   }
 
   &__link.is-active:after {
@@ -64,7 +64,7 @@ body {
     height: 4px;
     bottom: 0;
     left: 0;
-    background-color: #00acdc;
+    background-color: var(--color-blue);
     border-radius: 5px;
   }
 }
@@ -85,7 +85,6 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   width: 200px;
   border: 1px solid #f3f3f3;
@@ -96,27 +95,31 @@ body {
   box-sizing: border-box;
 
   &__image {
-    align-self: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  &__image-imac {
     width: 160px;
     height: 134px;
   }
 
   &__description {
-    width: 168px;
-    height: 36px;
-    margin-top: 40px;
     margin-bottom: 4px;
+    line-height: 18px;
+    font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 18px;
     color: var(--color-dark);
   }
 
   &__item-code {
-    width: 92px;
+    margin-bottom: 15px;
+    line-height: 14px;
+    font-style: normal;
     font-weight: normal;
     font-size: 10px;
-    line-height: 14px;
     color: #616070;
   }
 
@@ -124,12 +127,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 24px;
   }
 
   &__stars,
   .stars {
     display: flex;
-    margin-top: 15px;
 
     &__star {
       width: 16px;
@@ -148,31 +151,33 @@ body {
   }
 
   &__feedback {
-    margin-top: 15px;
-    font-size: 10px;
-    font-weight: 400;
     line-height: 14px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
     color: var(--color-dark);
   }
 
   &__price {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    margin-top: 24px;
-    // align-items: flex-end;
+    align-items: flex-end;
+    margin-bottom: 17px;
+    height: 18px;
   }
 
   &__price-name {
+    line-height: 16px;
     font-size: 12px;
-    line-height: 19px;
     font-weight: normal;
     font-style: normal;
+    color: #616070;
   }
 
   &__price-cost {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
+    font-style: normal;
+    font-weight: bold;
     color: var(--color-dark);
   }
 
@@ -180,22 +185,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 168px;
-    height: 40px;
-    background-color: var(--color-blue);
-    color: var(--color-light);
 
+    width: 166px;
+    height: 40px;
+    line-height: 16px;
+
+    background-color: var(--color-blue);
     border-radius: 5px;
-    margin-top: 16px;
-  
+
+    font-style: normal;
+    font-weight: bold;
     font-size: 14px;
-    font-weight: 700;
+    text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+
+    color: var(--color-light);
+
+    box-sizing: border-box;
   }
 
   &__buy:hover {
-    color: var(--color-blue);
     background-color: var(--color-light);
+    color: var(--color-blue);
   }
 }
