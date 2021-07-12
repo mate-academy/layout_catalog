@@ -52,7 +52,6 @@ p {
 
   align-items: center;
   height: $header-height;
-  margin: 0;
   padding: 0 50px;
 
   background-color: #fff;
@@ -99,6 +98,7 @@ p {
 
     &:hover {
       color: $blue-color;
+      transition-duration: 0.25s;
     }
   }
 }
@@ -113,11 +113,21 @@ p {
   }
 }
 
-.cards {
-  @extend %flex;
+.main {
 
-  flex-wrap: wrap;
-  margin: 0 auto;
+  &__wrapper {
+    margin-bottom: 50px;
+  }
+
+  &__cards {
+    @extend %flex;
+
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+.cards {
   max-width: $card-width * 4.75;
 
   &__card {
@@ -143,10 +153,22 @@ p {
 
   &__title {
     margin-top: $card-margin-coef * 10;
+
+    @extend %large-text;
+  
+    font-weight: 500;
+    color: $main-color;
   }
   
   &__id {
     margin-top: $card-margin-coef;
+
+    align-self: flex-start;
+
+    font-size: 1rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+    color: $secondary-color;
   }
 
   &__reviews {
@@ -205,6 +227,7 @@ p {
     &:hover {
       color: $blue-color;
       background-color: #fff;
+      transition-duration: 0.25s;
     }
   }
 }
@@ -230,20 +253,4 @@ p {
     background-image: url(../images/star-active.svg);
   }
   
-}
-
-.title {
-  @extend %large-text;
-  
-  font-weight: 500;
-  color: $main-color;
-}
-
-.id {
-  align-self: flex-start;
-
-  font-size: 1rem;
-  line-height: 1.4rem;
-  font-weight: 400;
-  color: $secondary-color;
 }
