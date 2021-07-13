@@ -6,12 +6,6 @@ $font-size-s: 12px;
 $font-size-m: 14px;
 $font-size-l: 16px;
 
-%flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 %flex-align-center {
   display: flex;
   align-items: center;
@@ -49,7 +43,8 @@ html {
 
   &__item {
     list-style-type: none;
-    @extend %flex-center;
+    @extend %flex-align-center;
+    justify-content: center;
     margin-left: 20px;
   }
 
@@ -87,16 +82,26 @@ html {
   border-radius: 8px;
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    max-width: 944px;
+  }
+}
+
 .catalog {
   @extend %flex-align-center;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 944px;
-  margin: 0 auto;
+
+  &__wrapper {
+    margin-top: 50px;
+  }
 }
 
 .card {
-  margin-top: 50px;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -158,7 +163,8 @@ html {
   }
 
   &__button {
-    @extend %flex-center;
+    @extend %flex-align-center;
+    justify-content: center;
     margin-top: 16px;
     max-width: 200px;
     height: 40px;
