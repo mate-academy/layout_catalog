@@ -1,0 +1,132 @@
+$first-color: #060b35;
+$second-color: #616070;
+$third-color: #00acdc;
+$first-font-weight: 400;
+$second-font-weight: 500;
+$third-font-weight: 700;
+
+@mixin image-size($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin f-size-weight-l-height ($f-size,$f-weight,$l-height) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  line-height: $l-height;
+}
+
+@mixin f-size-weight ($f-size, $f-weight) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+}
+
+%flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: 200px;
+  font-family: "Roboto", Helvetica, sans-serif;
+  &__product {
+    @extend %flex-center;
+    flex-direction: column;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    margin-bottom: 4px;
+    @include f-size-weight-l-height(12px,$second-font-weight,18px);
+    color: $first-color;
+  }
+
+  &__code {
+    @include f-size-weight-l-height(10px,$first-font-weight,13px);
+    color: $second-color;
+    margin-bottom: 16px;
+  }
+
+  &__rate {
+    @extend %flex-center-between;
+  }
+
+  &__feedback {
+    @include f-size-weight-l-height(10px,$first-font-weight,14px);
+    color: $first-color;
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-grow: 1;
+    line-height: 18px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__name-price {
+    @include f-size-weight(12px,$first-font-weight);
+    color: $second-color;
+  }
+
+  &__current-price {
+    font-weight: $third-font-weight;
+    font-size: 16px;
+    color: $first-color;
+  }
+
+  &__button {
+    @extend %flex-center;
+    justify-content: center;
+    height: 40px;
+    border: 1px solid $third-color;
+    border-radius: 5px;
+    background-color: $third-color;
+    @include f-size-weight-l-height(14px,$third-font-weight,16px);
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__button:hover {
+    background-color: #fff;
+    color: $third-color;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__type {
+    @include image-size(16px);
+    margin-right: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--4 > :nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
+
+  &--4 > :nth-child(n + 5) {
+    background-image: url(../images/star.svg);
+  }
+}
