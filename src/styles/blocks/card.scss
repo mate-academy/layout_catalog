@@ -53,13 +53,11 @@
     height: 16px;
   }
 
-  &__stars--1 &__stars-star:nth-child(1),
-  &__stars--2 &__stars-star:nth-child(-n+2),
-  &__stars--3 &__stars-star:nth-child(-n+3),
-  &__stars--4 &__stars-star:nth-child(-n+4),
-  &__stars--5 &__stars-star:nth-child(n) {
-    background-image: url(/images/star-active.svg);
-    background-repeat: no-repeat;
+  @for $index from 1 through 5 {
+    &__stars--#{$index} &__stars-star:nth-child(-n + #{$index}) {
+      background-image: url(/images/star-active.svg);
+      background-repeat: no-repeat;
+    }
   }
 
   &__reviews {
