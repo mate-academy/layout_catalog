@@ -74,7 +74,7 @@
 >
 >@mixin normalTex() {
 >  font-size: 12px;
->  font-weight: 500;
+>  font-weight: $font-weight-medium;
 >}
 >```
 >it's better to add parameters to the mixin than include the existing one with different styles
@@ -83,7 +83,7 @@
 >@mixin normalTex($lineHeight: 15px) {
 >  font-size: 12px;
 >  lineHeight: $lineHeight;
->  font-weight: 400;
+>  font-weight: $font-weight-normal;
 >}
 >
 >normalText(14px)
