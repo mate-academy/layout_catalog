@@ -26,19 +26,24 @@
     &--active {
       color: $btn-color;
       position: relative;
-
-      &::after {
-        @extend %hover-effect;
-      }
     }
 
+    &::after {
+      @extend %hover-effect;
+    }
+
+    &--active::after {
+      display: block;
+    }
+    
     &:hover {
       color: $btn-color;
       position: relative;
+      transition: 0.2s;
+    }
     
-      &::after {
-        @extend %hover-effect;
-      }
+    &:hover::after {
+      display: block;
     }
   }
 }
