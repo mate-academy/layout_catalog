@@ -1,0 +1,19 @@
+.stars {
+  @include flex;
+
+  &__star {
+    @include star($star-size);
+    margin-right: 4px;
+    background: url(../images/star.svg) center no-repeat;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @for $active-star from 1 through $active-stars-amount {
+    &--#{$active-star} :nth-child(-n + #{$active-star}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
