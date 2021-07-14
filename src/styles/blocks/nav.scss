@@ -1,0 +1,49 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    padding: 23px 0;
+    font-weight: $font-medium;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    &--active {
+      color: $btn-color;
+      position: relative;
+    }
+
+    &::after {
+      @extend %hover-effect;
+    }
+
+    &--active::after {
+      display: block;
+    }
+    
+    &:hover {
+      color: $btn-color;
+      position: relative;
+      transition: 0.2s;
+    }
+    
+    &:hover::after {
+      display: block;
+    }
+  }
+}

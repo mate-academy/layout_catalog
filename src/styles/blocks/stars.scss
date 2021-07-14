@@ -1,0 +1,12 @@
+.stars {
+  &__star {
+    content: url(../images/star-active.svg);
+    margin-right: 7px;
+  }
+
+  @for $childIndex from 1 through 5 {
+    &--#{$childIndex} &__star:nth-child(n + #{$childIndex + 1}) {
+      @extend %star;
+    }
+  }
+}
