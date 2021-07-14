@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+    
+  &__link--is-active {
+    @extend %styles-for-header-links;
+    position: relative;
+    color: $blue-color;
+    
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      background-color: $blue-color;
+      border-radius: 8px;
+      height: 4px;
+    }
+  }
+
+  &__link {
+    @extend %styles-for-header-links;
+  
+    color: #000;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
