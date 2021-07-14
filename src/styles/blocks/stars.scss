@@ -1,0 +1,20 @@
+.stars {
+  display: flex;
+  justify-content: space-between;
+
+  &__star {
+    width: $star-width;
+    height: $star-height;
+    margin-right: 4px;
+  
+    background-image: url("../images/star.svg");
+    background-size: $star-width $star-height;
+    background-repeat: no-repeat;
+  }
+
+  @for $childIndex from 1 through 5 {
+    &--#{$childIndex} :nth-child(-n + #{$childIndex}) {
+      @extend %active-star;
+    }
+  }
+}
