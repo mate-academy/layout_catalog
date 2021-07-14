@@ -1,0 +1,15 @@
+.stars {
+  &__star {
+    display: flex;
+    width: 16px;
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+  }
+
+  @for $active-star from 1 through 5 {
+    &--#{$active-star} :nth-child(-n + #{$active-star}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+  
+}
