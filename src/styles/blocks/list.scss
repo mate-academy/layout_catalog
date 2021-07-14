@@ -1,0 +1,40 @@
+.list {
+  display: flex;
+  list-style: none;
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+
+  &__item:nth-child(n + 2) {
+    padding-left: 20px;
+  }
+
+  &__link:hover {
+    color: $page-blue-color;
+  }
+
+  &__item:first-child::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 37px;
+  border-radius: 8px;
+  top: 18.5px;
+  background-color: $page-blue-color;
+  }
+
+  &__link--active {
+    color: $page-blue-color;
+  }
+}
