@@ -1,6 +1,5 @@
 .product-rating {
-  display: flex;
-  justify-content: space-between;
+  @include flex-space-beetwen;
 
   &__stars {
     display: flex;
@@ -8,10 +7,10 @@
 
   &__opinion {
     margin: 0;
-  
     font-size: $secondary-font-size;
     font-weight: $secondary-font-weight;
     line-height: 14px;
+    align-self: center;
   }
 }
 
@@ -26,9 +25,10 @@
   }
 }
 
+.stars--5 > .stars__star,
 .stars--4 > :nth-child(-n+4),
-.stars--4 > :nth-child(-n+3),
-.stars--4 > :nth-child(-n+2),
-.stars--4 > :first-child {
+.stars--3 > :nth-child(-n+3),
+.stars--2 > :nth-child(-n+2),
+.stars--1 > :first-child {
   background-image: url(../images/star-active.svg);
 }
