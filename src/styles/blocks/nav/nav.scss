@@ -1,0 +1,40 @@
+.nav {
+  @include align-items-center;
+
+  &__list {
+    display: flex;
+    font-weight: $fw-normal;
+  }
+  
+  &__link-item {
+    list-style: none;
+  }
+
+  &__link-item:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__link {
+    position: relative;
+    padding: 23px 0;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__link--is-active,
+  &__link:hover {
+    color: $color-blue;
+    transition: color 0.3ms;
+  }
+
+  &__link--is-active::after {
+    content: "";
+    @include width-height(100%, 4px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 8px;
+    background-color: $color-blue;
+  }
+}
