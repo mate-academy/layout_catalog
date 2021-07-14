@@ -1,8 +1,13 @@
+%star-active {
+  background-image: url("../images/star-active.svg");
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
   width: 200px;
   padding: 32px 16px 16px;
+  line-height: 18px;
   border-radius: 4px;
   border: 1px solid #e5e5e5;
 
@@ -14,14 +19,14 @@
 
   &__title {
     margin-bottom: 4px;
-    font-weight: 500;
+    font-weight: $font-wight-medium;
     font-size: 12px;
-    line-height: 18px;
     color: $main-accent;
   }
 
   &__code {
     font-size: 10px;
+    line-height: 14px;
     color: $secondary;
     margin-bottom: 16px;
   }
@@ -30,9 +35,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 10px;
     &__feedback {
-      font-size: 10px;
       color: $main-accent;
+      line-height: 14px;
     }
   }
 
@@ -44,18 +50,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 12px;
 
     &__title {
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 18px;
       color: $secondary;
     }
 
     &__value {
-      font-weight: bold;
+      font-weight: $font-wight-bold;
       font-size: 16px;
-      line-height: 18px;
       color: $main-accent;
     }
   }
@@ -86,13 +89,11 @@
     &:last-child {
       margin-right: 0;
     }
+  }
 
-    .stars--1 > &:nth-child(-n + 1),
-    .stars--2 > &:nth-child(-n + 2),
-    .stars--3 > &:nth-child(-n + 3),
-    .stars--4 > &:nth-child(-n + 4),
-    .stars--5 > &:nth-child(-n + 5) {
-      background-image: url("../images/star-active.svg");
+  @for $countStar from 1 through 5 {
+    &--#{$countStar} &__star:nth-child(-n + #{$countStar}) {
+      @extend %star-active;
     }
   }
 }
