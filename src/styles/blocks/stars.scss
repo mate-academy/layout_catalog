@@ -1,0 +1,25 @@
+.stars {
+  display: flex;
+  gap: 4px;
+  
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/star.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  @for $num from 1 through 5 {
+    &--count--#{$num} &__star:nth-child(-n + #{$num}) {
+      @extend %stars-yellow-background;
+    }
+  }
+}
