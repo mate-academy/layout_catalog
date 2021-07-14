@@ -1,0 +1,25 @@
+
+.stars {
+  display: flex;
+  align-items: center;
+  height: 16px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+  
+    background-image: url(../images/star.svg);
+    @extend %bcg-img-position-center;
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+      @extend %bcg-img-position-center;
+    }
+  }
+  
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+}
