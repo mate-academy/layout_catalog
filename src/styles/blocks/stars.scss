@@ -10,9 +10,11 @@
     background-image: url("../images/star.svg");
     background-size: $star-width $star-height;
     background-repeat: no-repeat;
+  }
 
-    &--active {
-      background-image: url("../images/star-active.svg");
+  @for $childIndex from 1 through 5 {
+    &--#{$childIndex} :nth-child(-n + #{$childIndex}) {
+      @extend %active-star;
     }
   }
 }
