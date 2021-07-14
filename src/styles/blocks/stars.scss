@@ -4,7 +4,9 @@
     margin-right: 7px;
   }
 
-  &--4 > .stars__star:nth-child(n + 5) {
-    content: url(../images/star.svg);
+  @for $childIndex from 1 through 5 {
+    &--#{$childIndex} &__star:nth-child(n + #{$childIndex + 1}) {
+      @extend %star;
+    }
   }
 }
