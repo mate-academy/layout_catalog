@@ -1,3 +1,255 @@
+@use "sass:math";
+
+$card-width: 200px;
+$blue-color: #00acdc;
+$main-text-color: #060b35;
+$secondary-text-color: #616070;
+$logo-size: 40px;
+$star-size: 16px;
+$text-size-small: 10px;
+$text-size-normal: 12px;
+$text-size-large: 14px;
+$text-size-xl: 16px;
+$catalog-width: 944px;
+
+@mixin logo-square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin star-square($size) {
+  width: $size;
+  height: $size;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding-right: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  @include logo-square($logo-size);
+  margin: 10px 0 10px 50px;
+}
+
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0 10px;
+    height: 100%;
+  }
+
+  &__item:first-child {
+    padding-left: 0;
+  }
+
+  &__item:last-child {
+    padding-right: 0;
+  }
+
+  &__link {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $text-size-normal;
+    font-weight: 500;
+    color: $main-text-color;
+  }
+
+  &__link:hover {
+    color: $blue-color;
+  }
+  
+  .is-active {
+    color: $blue-color;
+  }
+
+  .is-active::after {
+    display: block;
+    content: "";
+    width: 37px;
+    height: 4px;
+    position: absolute;
+    top: 56px;
+    background: $blue-color;
+    border-radius: 2px;
+  }
+}
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 50px auto 0;
+  width: $catalog-width;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+
+  &__row {
+    display: flex;
+    width: $catalog-width;
+    justify-content: space-between;
+  }
+
+  &--1 > :nth-child(-n + 1) {
+    margin-bottom: 49px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-grow: 0;
+  padding: 0 16px;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: $card-width;
+  height: max-content;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image-position {
+    padding: 32px 4px 40px;
+  }
+  
+  &__image {
+    width: 160px;
+    height: 134px;
+    background-image: url(../images/imac.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    padding: 1px 0 6px;
+    font-weight: 500;
+    font-size: $text-size-normal;
+    color: $main-text-color;
+    line-height: 17px;
+    vertical-align: middle;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: $text-size-small;
+    color: $secondary-text-color;
+  }
+}
+
+.review {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__stars {
+    border-radius: 0.5px;
+  }
+
+  &__reviews {
+    font-size: $text-size-small;
+    font-weight: 400;
+    text-align: right;
+    color: $main-text-color;
+  }
+}
+
+.stars {
+  width: 96px;
+  height: 16px;
+  display: flex;
+  flex-grow: 0;
+  justify-content: space-between;
+  border-radius: 0.5px;
+
+  &__star {
+    @include star-square($star-size);
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.5px;
+  }
+
+  &--4 > :nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.price {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__text {
+    font-size: $text-size-normal;
+    font-weight: 400;
+    color: $secondary-text-color;
+  }
+
+  &__money {
+    font-size: $text-size-xl;
+    font-weight: 700;
+    color: $main-text-color;
+  }
+}
+
+.buy-button {
+  display: flex;
+  margin: 17px 0;
+  height: 40px;
+  font-size: $text-size-large;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: $blue-color;
+  border-radius: 5px;
+
+  &:hover {
+    box-sizing: border-box;
+    border: 1px solid $blue-color;
+    background-color: #fff;
+    color: $blue-color;
+  }
 }
