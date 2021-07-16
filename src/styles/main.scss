@@ -10,14 +10,10 @@ $text-size-small: 10px;
 $text-size-normal: 12px;
 $text-size-large: 14px;
 $text-size-xl: 16px;
-$catalog-width: 944px;
+$gap-width: 48px;
+$catalog-width: ($card-width * 4) + ($gap-width * 3) ;
 
-@mixin logo-square($size) {
-  width: $size;
-  height: $size;
-}
-
-@mixin star-square($size) {
+@mixin square($size) {
   width: $size;
   height: $size;
 }
@@ -27,17 +23,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+//reset h1
 h1 {
   margin: 0;
-  padding: 0;
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
 }
 
 .header-block {
@@ -49,7 +40,7 @@ ul {
 }
 
 .logo {
-  @include logo-square($logo-size);
+  @include square($logo-size);
   margin: 10px 0 10px 50px;
 }
 
@@ -58,6 +49,8 @@ ul {
 
   &__list {
     display: flex;
+    margin: 0;
+    padding: 0;
     align-items: center;
     list-style: none;
   }
@@ -108,22 +101,13 @@ ul {
 
 .catalog {
   display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 50px auto 0;
-  width: $catalog-width;
-  flex-wrap: nowrap;
-  flex-grow: 0;
-
-  &__row {
-    display: flex;
-    width: $catalog-width;
-    justify-content: space-between;
-  }
-
-  &--1 > :nth-child(-n + 1) {
-    margin-bottom: 49px;
-  }
+  margin: 0 auto;
+  padding-top: 50px;
+  max-width: $catalog-width;
+  gap: $gap-width;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
 }
 
 .card {
@@ -139,7 +123,7 @@ ul {
   border-radius: 5px;
 
   &__image-position {
-    padding: 32px 4px 40px;
+    padding: 32px 3px 40px;
   }
   
   &__image {
@@ -157,11 +141,11 @@ ul {
   flex-direction: column;
 
   &__name {
-    padding: 1px 0 6px;
+    padding-bottom: 4px;
     font-weight: 500;
     font-size: $text-size-normal;
     color: $main-text-color;
-    line-height: 17px;
+    line-height: 18px;
     vertical-align: middle;
   }
 
@@ -173,7 +157,7 @@ ul {
 }
 
 .review {
-  margin-top: 14px;
+  padding-top: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -187,6 +171,7 @@ ul {
     font-size: $text-size-small;
     font-weight: 400;
     text-align: right;
+    line-height: 16px;
     color: $main-text-color;
   }
 }
@@ -200,7 +185,7 @@ ul {
   border-radius: 0.5px;
 
   &__star {
-    @include star-square($star-size);
+    @include square($star-size);
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -213,7 +198,7 @@ ul {
 }
 
 .price {
-  margin-top: 24px;
+  padding-top: 23px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -234,21 +219,21 @@ ul {
 
 .buy-button {
   display: flex;
-  margin: 17px 0;
+  margin: 16px 0;
   height: 40px;
+  box-sizing: border-box;
+  border: 1px solid $blue-color;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
   font-size: $text-size-large;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
   color: #fff;
   background: $blue-color;
-  border-radius: 5px;
 
   &:hover {
-    box-sizing: border-box;
-    border: 1px solid $blue-color;
     background-color: #fff;
     color: $blue-color;
   }
