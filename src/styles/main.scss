@@ -1,3 +1,240 @@
+@use "sass:math";
+
+$card-width: 200px;
+$blue-color: #00acdc;
+$main-text-color: #060b35;
+$secondary-text-color: #616070;
+$logo-size: 40px;
+$star-size: 16px;
+$text-size-small: 10px;
+$text-size-normal: 12px;
+$text-size-large: 14px;
+$text-size-xl: 16px;
+$gap-width: 48px;
+$catalog-width: ($card-width * 4) + ($gap-width * 3) ;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+//reset h1
+h1 {
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding-right: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  @include square($logo-size);
+  margin: 10px 0 10px 50px;
+}
+
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0 10px;
+    height: 100%;
+  }
+
+  &__item:first-child {
+    padding-left: 0;
+  }
+
+  &__item:last-child {
+    padding-right: 0;
+  }
+
+  &__link {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $text-size-normal;
+    font-weight: 500;
+    color: $main-text-color;
+  }
+
+  &__link:hover {
+    color: $blue-color;
+  }
+  
+  .is-active {
+    color: $blue-color;
+  }
+
+  .is-active::after {
+    display: block;
+    content: "";
+    width: 37px;
+    height: 4px;
+    position: absolute;
+    top: 56px;
+    background: $blue-color;
+    border-radius: 2px;
+  }
+}
+
+.catalog {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 50px;
+  max-width: $catalog-width;
+  gap: $gap-width;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-grow: 0;
+  padding: 0 16px;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: $card-width;
+  height: max-content;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image-position {
+    padding: 32px 3px 40px;
+  }
+  
+  &__image {
+    width: 160px;
+    height: 134px;
+    background-image: url(../images/imac.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    padding-bottom: 4px;
+    font-weight: 500;
+    font-size: $text-size-normal;
+    color: $main-text-color;
+    line-height: 18px;
+    vertical-align: middle;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: $text-size-small;
+    color: $secondary-text-color;
+  }
+}
+
+.review {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__stars {
+    border-radius: 0.5px;
+  }
+
+  &__reviews {
+    font-size: $text-size-small;
+    font-weight: 400;
+    text-align: right;
+    line-height: 16px;
+    color: $main-text-color;
+  }
+}
+
+.stars {
+  width: 96px;
+  height: 16px;
+  display: flex;
+  flex-grow: 0;
+  justify-content: space-between;
+  border-radius: 0.5px;
+
+  &__star {
+    @include square($star-size);
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.5px;
+  }
+
+  &--4 > :nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.price {
+  padding-top: 23px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__text {
+    font-size: $text-size-normal;
+    font-weight: 400;
+    color: $secondary-text-color;
+  }
+
+  &__money {
+    font-size: $text-size-xl;
+    font-weight: 700;
+    color: $main-text-color;
+  }
+}
+
+.buy-button {
+  display: flex;
+  margin: 16px 0;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid $blue-color;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: $text-size-large;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  background: $blue-color;
+
+  &:hover {
+    background-color: #fff;
+    color: $blue-color;
+  }
 }
