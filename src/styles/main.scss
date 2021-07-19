@@ -1,3 +1,135 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./general/base";
+
+// ------------ Header
+.header {
+  background-color: var(--light);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+  }
+}
+
+.header-menu {
+  display: flex;
+
+  &__item {
+    margin-left: 20px;
+    color: var(--text-dark);
+    transition: background-color ease all;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+    &.is-active {
+      color: var(--blue);
+      &:before {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: var(--blue);
+        border-radius: 8px;
+        bottom: -21px;
+      }
+    }
+    @media (any-hover: hover) {
+      &:hover{
+        color: var(--blue);
+      }
+    }
+  }
+}
+
+// ------------ Catalog
+.catalog {
+  padding: 50px 0 30px;
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__card {
+    margin-bottom: 49px;
+  }
+}
+
+// card
+.card {
+  border-radius: var(--br-5);
+  width: 200px;
+  background-color: var(--light);
+  border: 1px solid #f3f3f3;
+  &__body {
+    padding: 40px 15px 15px;
+  }
+  &__img {
+    padding: 32px 20px 0 20px;
+  }
+  &__title {
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--dark);
+  }
+  &__article {
+    color: var(--gray);
+    margin-bottom: 16px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+  }
+  &__rate {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--dark);
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  &__price {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+  &__label {
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--gray);
+    font-weight: 400;
+  }
+
+
+}
+
+// stars
+.stars {
+  display: flex;
+  justify-content: space-between;
+  width: 96px;
+  &__star {
+    background: url("../images/star.svg") 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+  }
+
+  @for $index from 1 through 5  {
+    &.stars--#{$index} .stars__star:nth-child(-n + #{$index}) {
+      background: url("../images/star-active.svg") 0 0 no-repeat;
+    }
+  }
 }
