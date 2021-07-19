@@ -1,0 +1,66 @@
+@use "../../other/variables";
+@use "../../other/extends";
+
+.navigation-bar {
+  &:first-child {
+    padding-left: 0;
+    padding-bottom: 2px;
+  }
+
+  &__list {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 2px;
+  }
+
+  &__item {
+    margin-right: 10px;
+    padding: 8px 5px 10px;
+    text-transform: uppercase;
+    list-style-type: none;
+    text-align: center;
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    &:active,
+    &:hover {
+      cursor: pointer;
+      color: #00acdc;
+    }
+
+  }
+
+  &__item-link {
+    text-decoration: none;
+    @include font-style (
+      $color-dark-navigation,
+      $font-size-12,
+      $line-height-14,
+      $font-weight-500
+    );
+
+    &:hover,
+    &.is-active {
+      position: relative;
+      cursor: pointer;
+      color: #00acdc;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: -23px;
+        background-color: #00acdc;
+        border-radius: 2px;
+      }
+    }
+  }
+}
