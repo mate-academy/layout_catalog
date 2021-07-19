@@ -1,3 +1,239 @@
-body {
+@mixin flex-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+$light-blue: #00acdc;
+$dark-blue: #060b35;
+$grey: #616070;
+$white: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+}
+
+a,
+body,
+h2,
+img {
   margin: 0;
+}
+
+.catalog {
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+  }
+  
+  &__main {
+    margin: 0 48px 49px 0;
+
+    &:nth-child(4),
+    &:nth-child(8) {
+      margin-right: 0;
+    }
+
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  max-width: 200px;
+  padding: 32px 16px 16px;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  background: $white;
+
+  &__image {
+    width: 160px;
+    margin-bottom: 40px;
+    align-self: center;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+
+    margin-bottom: 1px;
+
+    color: $dark-blue;
+    align-self: center;
+
+    line-height: 18px;
+  }
+
+  &__code {
+    font-weight: 400;
+
+    color: $grey;
+
+    align-self: flex-start;
+
+    margin-bottom: 16px;
+
+    line-height: 14px;
+  }
+
+  &__rating {
+    @include flex-align();
+
+    margin-bottom: 24px;
+  }
+
+  &__feed {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $dark-blue;
+  }
+
+  &__price {
+    @include flex-align();
+
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 12px;
+    color: $grey;
+    line-height: 18px;
+  }
+
+  &__number {
+    font-weight: 700;
+    font-size: 16px;
+    list-style: 18px;
+  }
+}
+
+.button {
+  width: 168px;
+  height: 40px;
+
+  background-color: $light-blue;
+  border-radius: 5px;
+  border: $light-blue solid 1px;
+
+  text-align: center;
+  line-height: 40px;
+  align-self: center;
+
+  text-decoration: none;
+
+  &__link {
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  &:hover {
+    background: $white;
+    outline: $light-blue;
+    
+    .button__link {
+      color: $light-blue;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+
+    width: 16px;
+    height: 16px;
+    
+    margin-right: 4px;
+  }
+}
+
+.stars--4 :nth-child(-n+4) {
+  background-image: url(../images/star-active.svg);
+}
+
+.header__nav {
+  margin-bottom: 50px;
+}
+
+.nav {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 60px;
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    :last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    margin-right: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+
+    &:hover {
+      color: $light-blue;
+    }
+  }
+
+  &__img {
+    align-self: center;
+    margin-top: 3px;
+  }
+}
+
+.is-active {
+  color: $light-blue;
+}
+
+.is-active::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 35px;
+  background-color: $light-blue;
+  border-radius: 16px;
+  
+
+  top: 56px;
 }
