@@ -1,0 +1,40 @@
+.nav {
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    @include font-style(12px, 500, 18px);
+    margin-right: 20px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+  }
+
+  &__link {
+    text-transform: uppercase;
+
+    &:hover {
+      @extend %nav-link;
+    }
+
+    &--active {
+      @extend %nav-link;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        bottom: 0;
+        border-radius: 8px;
+        background-color: #00acdc;
+      }
+    }
+  }
+}
