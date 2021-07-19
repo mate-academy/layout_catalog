@@ -1,3 +1,14 @@
+@mixin flex-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+$light-blue: #00acdc;
+$dark-blue: #060b35;
+$grey: #616070;
+$white: #fff;
+
 * {
   box-sizing: border-box;
 }
@@ -14,10 +25,32 @@ img {
   margin: 0;
 }
 
-.main {
+.catalog {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+  }
+  
+  &__main {
+    margin: 0 48px 49px 0;
+
+    &:nth-child(4),
+    &:nth-child(8) {
+      margin-right: 0;
+    }
+
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .product-card {
@@ -30,10 +63,10 @@ img {
 
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  margin: 25px 30px;
 
-  background: #fff;
-  &__imac {
+  background: $white;
+
+  &__image {
     width: 160px;
     margin-bottom: 40px;
     align-self: center;
@@ -43,9 +76,9 @@ img {
     font-size: 12px;
     font-weight: 500;
 
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 
-    color: #060b35;
+    color: $dark-blue;
     align-self: center;
 
     line-height: 18px;
@@ -54,7 +87,7 @@ img {
   &__code {
     font-weight: 400;
 
-    color: #616070;
+    color: $grey;
 
     align-self: flex-start;
 
@@ -64,9 +97,8 @@ img {
   }
 
   &__rating {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex-align();
+
     margin-bottom: 24px;
   }
 
@@ -74,13 +106,12 @@ img {
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
-    color: #060b35;
+    color: $dark-blue;
   }
 
   &__price {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex-align();
+
     align-items: center;
     margin-bottom: 16px;
   }
@@ -88,7 +119,7 @@ img {
   &__label {
     font-weight: 400;
     font-size: 12px;
-    color: #616070;
+    color: $grey;
     line-height: 18px;
   }
 
@@ -103,17 +134,18 @@ img {
   width: 168px;
   height: 40px;
 
-  background-color: #00acdc;
+  background-color: $light-blue;
   border-radius: 5px;
-  border: #00acdc solid 1px;
+  border: $light-blue solid 1px;
 
   text-align: center;
   line-height: 40px;
   align-self: center;
 
   text-decoration: none;
+
   &__link {
-    color: #fff;
+    color: $white;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 14px;
@@ -121,17 +153,18 @@ img {
   }
   
   &:hover {
-    background: #fff;
-    outline: #00acdc;
+    background: $white;
+    outline: $light-blue;
     
     .button__link {
-      color: #00acdc;
+      color: $light-blue;
     }
   }
 }
 
 .stars {
   display: flex;
+  
   &__star {
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
@@ -147,18 +180,20 @@ img {
   background-image: url(../images/star-active.svg);
 }
 
+.header__nav {
+  margin-bottom: 50px;
+}
+
 .nav {
   display: flex;
   padding: 0 50px;
   justify-content: space-between;
-  margin-bottom: 25px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  width: 100%;
   height: 60px;
+
   &__menu {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
 
     :last-child {
       margin-right: 0;
@@ -177,7 +212,7 @@ img {
     font-size: 12px;
 
     &:hover {
-      color: #00acdc;
+      color: $light-blue;
     }
   }
 
@@ -188,7 +223,7 @@ img {
 }
 
 .is-active {
-  color: #00acdc;
+  color: $light-blue;
 }
 
 .is-active::before {
@@ -196,7 +231,7 @@ img {
   position: absolute;
   height: 4px;
   width: 35px;
-  background-color: #00acdc;
+  background-color: $light-blue;
   border-radius: 16px;
   
 
