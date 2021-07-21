@@ -22,20 +22,22 @@
   }
   
   &__id {
-    @include font-wsh(normal,10px,14px);
+    @include font-wsh(400,10px,14px);
     color: $light-grey-text;
-    margin-top: 3px;
+    margin-top: 4px;
   }
 
   &__button {
     height: $button-height;
     background: $aqua-color;
+    border: 1px solid $aqua-color;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     margin-top: 16px;
+    
   }
   
   &__button-link {
@@ -49,7 +51,6 @@
   }
   
   &__button:hover {
-    border: 1px solid $aqua-color;
     background-color: inherit;
     color: $aqua-color;
   }
@@ -66,7 +67,7 @@
 
   &__stars {
     display: flex;
-    gap: 4px;
+    
   }
 
   &__count {
@@ -77,11 +78,14 @@
 
 .star {
   @include width-height (16px,16px);
+  margin-right: 4px;
   background-image: url(../images/star.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
 
-  &:nth-child(-n+4) {
+@for $index from 1 through $col-stars {
+  .reviews__stars--#{$index} .star:nth-child(-n+#{$index}) {
     background-image: url(../images/star-active.svg);
   }
 }
