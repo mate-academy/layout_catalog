@@ -6,11 +6,13 @@
 
   &__inner {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 48px;
   }
 }
+
+/*#endregion*/
 
 /* #region product-card */
 
@@ -22,20 +24,19 @@
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-  padding: 32px 16px 0px;
+  padding: 32px 20px 0px;
 
-  &__img {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   &__img img {
     width: 160px;
   }
 }
 
 .info {
+  margin-top: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+
   &__name {
-    margin-top: 40px;
     font-weight: 500;
     line-height: 1.5;
   }
@@ -100,12 +101,34 @@
     border: 1px solid rgba(0, 172, 220, 1);
     transition: all 0.4s ease-in-out;
   }
-  &:hover {
+  &__button:hover {
     background: none;
     color: rgba(0, 172, 220, 1);
   }
 }
 
-/* #endregion */
+.stars {
+  height: 16px;
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-left: 4px;
+    margin-top: 4px;
+    background: center / contain no-repeat url("../images/star.svg");
+  }
+  &__star:first-child {
+    margin-left: 0;
+  }
+}
+
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url("../images/star-active.svg");
+}
 
 /* #endregion */
