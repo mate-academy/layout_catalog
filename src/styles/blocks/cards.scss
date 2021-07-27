@@ -8,6 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   width: #{$width-cards-block};
+  justify-content: space-between;
 }
 
 .product {
@@ -56,9 +57,11 @@
 
     &-star {
       background-image: url("../images/star.svg");
-      @include size(14px);
+      background-repeat: no-repeat;
+      background-position: center;
+      @include size(16px);
       margin-right: 4px;
-
+      
       &:last-child {
         margin-right: 0;
       }
@@ -76,7 +79,7 @@
 
   &__price {
     display: flex;
-    margin-top: 24px;
+    margin-top: 22px;
     justify-content: space-between;
     width: 100%;
     align-items: flex-end;
@@ -97,8 +100,8 @@
     display: flex;
 
     &-buy {
+      box-sizing: border-box;
       display: flex;
-      border: 0 solid transparent;
       align-items: center;
       justify-content: center;
       height: 40px;
@@ -110,20 +113,18 @@
       color: white;
       background-color: $main-color;
       border-radius: 5px;
+      border: 1px solid $main-color;
+
     }
 
     &-buy:hover {
-      border: 1px solid $main-color;
       color: $main-color;
       background-color: white;
+      transition: 0.3s;
     }
   }
 }
   
 .product:nth-child(n + 5) {
   margin-top: 54px;
-}
-  
-.product:not(:nth-child(4)):not(:nth-child(8)) {
-  margin-right: #{$card-gap};
 }
