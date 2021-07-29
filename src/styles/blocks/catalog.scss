@@ -1,0 +1,140 @@
+/* #region catalog */
+
+$gap-size: 48px;
+$product-card: 200px;
+
+.page__catalog {
+  padding-top: 50px;
+}
+
+.catalog {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: $gap-size;
+    max-width: ($product-card * 4) + ($gap-size * 3);
+    margin: 0 auto;
+  }
+}
+
+/*#endregion*/
+
+/* #region product-card */
+
+.product-card {
+  width: $product-card;
+  border: 1px solid rgba(243, 243, 243, 1);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  padding: 32px 20px 0px;
+
+  &__img img {
+    width: 160px;
+  }
+}
+
+.info {
+  margin-top: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  &__name {
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  &__code {
+    font-size: 10px;
+    margin-top: 2px;
+    font-weight: 400;
+    color: rgba(97, 96, 112, 1);
+  }
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.reviews {
+  margin-top: 16px;
+
+  &__texted {
+    font-weight: 400;
+    font-size: 10px;
+  }
+}
+
+.price {
+  margin-top: 24px;
+
+  &__num {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &__name {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(97, 96, 112, 1);
+    font-weight: 400;
+  }
+}
+
+.buy {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  text-align: center;
+  width: 100%;
+
+  &__button {
+    background: rgba(0, 172, 220, 1);
+    width: 100%;
+    border: none;
+    padding: 12px 56px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 172, 220, 1);
+    transition: all 0.4s ease-in-out;
+  }
+  &__button:hover {
+    background: none;
+    color: rgba(0, 172, 220, 1);
+  }
+}
+
+.stars {
+  height: 16px;
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-left: 4px;
+    margin-top: 4px;
+    background: center / contain no-repeat url("../images/star.svg");
+  }
+  &__star:first-child {
+    margin-left: 0;
+  }
+}
+
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url("../images/star-active.svg");
+}
+
+/* #endregion */
