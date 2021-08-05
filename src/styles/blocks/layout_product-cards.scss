@@ -1,0 +1,125 @@
+p,
+h3 {
+  margin: 0;
+}
+
+.card {
+  font-family: Roboto, sans-serif;
+  color: rgba(6, 11, 53, 1);
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  width: $card-width;
+  padding: $card-base-gap;
+  border: 1px solid rgba(243, 243, 243, 1);
+  border-radius: 5px;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+
+    &-container {
+      margin: $card-base-gap auto 40px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+  
+    margin-bottom: $card-base-gap;
+  }
+
+  &__product-name {
+    @include card-text-wsh(500, 12px, 18px);
+    margin-bottom: 4px;
+  }
+
+  &__feedbacks {
+    margin-bottom: $card-base-gap + 8px;
+  }
+
+  &__feedbacks,
+  &__price {
+    @extend %flex_space-between;
+  }
+
+  &__price {
+    margin-bottom: $card-base-gap;
+  }
+
+  /* card buy-link */
+
+  &__buy-link {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 11px;
+    text-align: center;
+
+    @include card-text-wsh(700, 14px, 16px);
+
+    color: rgba(255, 255, 255, 1);
+    background: $lightblue;
+    border: 1px solid $lightblue;
+    border-radius: 5px;
+
+    &:hover {
+      color: $lightblue;
+      border: 1px solid $lightblue;
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+
+  /* card text-size modifiers */
+
+  &__product-code--size_10,
+  &__feedbacks-amount--size_10 {
+    @include card-text-wsh(400, 10px, 14px);
+  }
+
+  &__price-name--size_12 {
+    @include card-text-wsh(400, 12px, 18px);
+  }
+
+  &__price-amount--size_16,
+  &__buy-link--size_16 {
+    @include card-text-wsh(700, 16px, 18px);
+  }
+
+  /* card colors modifiers */
+
+  &__product-code--color_light,
+  &__price-name--color_light {
+    color: rgba(97, 96, 112, 1);
+  }
+}
+
+/* stars */
+
+.stars {
+  display: flex;
+
+  &__star {
+    position: relative;
+    top: $star-position;
+    left: $star-position;
+  
+    height: $star-height-width;
+    width: $star-height-width;
+    margin-right: 4px;
+  
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+  }
+  
+  &--1 :nth-child(-n + 1),
+  &--2 :nth-child(-n + 2),
+  &--3 :nth-child(-n + 3),
+  &--4 :nth-child(-n + 4),
+  &--5 :nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
+}
