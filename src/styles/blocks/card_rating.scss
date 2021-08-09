@@ -1,0 +1,38 @@
+@import "../styles/utils/mixins.scss";
+
+.rating {
+  @extend %roboto-400;
+  display: flex;
+  justify-content: space-between;
+  // replace with margins
+  // gap: 19px;
+  width: 168px;
+  height: 16px;
+
+  &__feedback {
+    width: 53px;
+    white-space: nowrap;
+  }
+
+  &__stars {
+    display: flex;
+  }
+  
+  &__star {
+    @include square($star-size);
+    margin-right: 4px;
+    background: url("/images/star-active.svg") center no-repeat;
+  }
+  
+  &_stars :last-child {
+    @include square($star-size);
+    background: url("/images/star.svg") center no-repeat;
+    margin-right: 0;
+  }
+}
+
+.card__rating {
+  margin-right: $side-margins-text;
+  margin-left: $side-margins-text;
+  margin-bottom: 24px;
+}

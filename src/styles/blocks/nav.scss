@@ -1,0 +1,67 @@
+@import "../styles/utils/_variables.scss";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page__nav {
+  height: 60px;
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  float: left;
+}
+
+.nav__logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: $side-margins-nav;
+}
+// 50px distance from the side for navigation
+
+.container {
+  @extend %roboto-500;
+  display: flex;
+  justify-content: flex-end;
+  // change to margin
+  // gap: 20px;
+  text-transform: uppercase;
+}
+
+.nav__container {
+  margin-top: 23px;
+}
+
+.category {
+  text-decoration: none;
+  color: black;
+  // instead of gap
+  margin-right: 20px;
+}
+
+.container :last-child {
+  margin-right: $side-margins-nav;
+}
+// 50px distance from the side for navigation
+
+.category--is-active {
+  color: #00acdc;
+  position: relative;
+}
+
+.category--is-active::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 2px solid #00acdc;
+  border-radius: 8px;
+  bottom: 0;
+  width: 100%;
+}
+
+.category:hover {
+  color: #00acdc;
+}
