@@ -1,0 +1,76 @@
+@import "../styles/utils/_variables.scss";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page__nav {
+  height: 60px;
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  float: left;
+}
+
+.nav__logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: $side-margins-nav;
+}
+
+@media (width: 1024px) {
+  .nav__logo {
+    margin-right: 131px;
+  }
+}
+
+@media (width: 1200px) {
+  .nav__logo {
+    margin-right: 131px;
+  }
+}
+
+.container {
+  @extend %roboto-500;
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+}
+
+.nav__container {
+  margin-top: 23px;
+}
+
+.category {
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.container :last-child {
+  margin-right: $side-margins-nav;
+}
+
+a.category--is-active {
+  color: #00acdc;
+  position: relative;
+}
+
+a.category--is-active::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 2px solid #00acdc;
+  border-radius: 8px;
+  bottom: 0;
+  width: 100%;
+}
+
+.category:hover {
+  color: #00acdc;
+}
