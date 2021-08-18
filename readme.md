@@ -9,7 +9,7 @@ ___
 ___
 
 ## The task
-Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
+Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://wwwrun .figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
 
 ## Requirements:
 - use SCSS in this task
