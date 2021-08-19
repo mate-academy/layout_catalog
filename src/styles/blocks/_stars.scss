@@ -1,0 +1,28 @@
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url("../images/star.svg") no-repeat center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  // should I do it like that?
+
+  // &--1 .&__star:nth-child(-n + 1)... {
+
+  // }
+}
+
+/* Probably a good use case of scss functions, 
+  but I have no clue how to do it so i'll leave it as it is */
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background: url("../images/star-active.svg") no-repeat center;
+}
