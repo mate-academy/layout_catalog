@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    height: 40px;
+  }
+  &__nav {
+    display: flex;
+    height: 100%;
+  }
+  &__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__container {
+    margin-right: 20px;
+    display: flex;
+  }
+  &__container:last-child {
+    margin: 0;
+  }
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    @extend %large-text__header_card-name;
+
+    &:hover {
+      color: $blue-color;
+    }
+    &::after {
+      position: absolute;
+      right: 0;
+      width: 100%;
+      bottom: 0;
+      content: "";
+      height: 4px;
+      border-radius: 8px;
+    }
+  }
+  .is-active {
+    color: $blue-color;
+  }
+  .is-active::after {
+    background: $blue-color;
+  }
+}
