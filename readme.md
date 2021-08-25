@@ -12,30 +12,20 @@ ___
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
 
 ## Requirements:
-- use SCSS in this task
-- pay attention the mock is responsive. Develop the layout to fit on `1024px` and `1200px` the same as on the mock.
-- reset browser's default margins
-- use images from [src/images](src/images)
-- use semantic tags. `<header>`, `<nav>`, `main`
-- pay attention to the shadow below the header
-- reuse the card from [Product cards](https://github.com/mate-academy/layout_product-cards#product-cards)
-- reuse the header from [Moyo header](https://github.com/mate-academy/layout_moyo-header#moyo-header)
-- card's width is `200px` inluding borders
-- add attribute `data-qa="nav-hover"` to the 4th nav link for testing (`Ноутбуки и компьютеры`)
+- use `Card` and `Header` blocks from previous tasks but rewrite them using BEM and SCSS
+- Nav links color is not black any more
+- page width is always >= 1024px
+- there should always be 4 cards in a row (not 2, 3 or 5)
+  - use `:nth-child(4n)` to select every 4th element
+  - use `:nth-last-child(-n + 4)` to select 4 last elements
+- cards should have fixed width and fixed distances between them
+- cards container should have fixed paddings (see 1024px example), bottom the same as top
+- use semantic tags. `<header>`, `<nav>`, `<main>`
+- add class `is-active` to the first link (`Apple`) in navigation
+- add attribute `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Ноутбуки и компьютеры`)
 - add attribute `data-qa="card"` to the first card
-- add attribute `data-qa="card-hover"` to the link `Купить` inside first card
-- use class `is-active` for `apple` link
+- add attribute `data-qa="card-hover"` (not just `hover`) to the link `Купить` inside first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
-
-
-## Common mistakes
-- **IMPORTANT** Save and push your changes to github manually after `deploy`
-- Add **ALL** the `data-qa` attributes and `class="is-active"` required in the task
-- Do not use tabs. Use 2 spaces for indentation.
-- Don't use repeated styles.
-- Check font styles. Use [google fonts](https://fonts.google.com/)
-- Pay attention to `:hover` state
-
 ---
 ![screenshot](./references/catalog-example.png)
