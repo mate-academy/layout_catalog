@@ -1,23 +1,58 @@
+
+@mixin display-positional ($general, $horisont, $vertical) {
+  display: $general;
+  justify-content: $horisont;
+  align-items: $vertical;
+}
+
+@mixin text-style-fw-fs-lh ($weight, $size, $height, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin area-styles-w-h-brdr-brad-bg (
+  $width,
+  $height,
+  $border,
+  $radius,
+  $bg-color
+) {
+  width: $width;
+  height: $height;
+  border: $border;
+  border-radius: $radius;
+  background: $bg-color;
+}
+
+@mixin stars ($url, $margin-l) {
+  width: 16px;
+  height: 16px;
+  background-image: $url;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: $margin-l;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body,
 h2,
-p {
+p,
+ul {
   margin: 0;
   padding: 0;
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include display-positional(flex, space-between, center);
   padding-left: 50px;
   padding-right: 50px;
-  height: 60px;
-  background: #fff;
+  @include area-styles-w-h-brdr-brad-bg(100%, 60px, none, 0, #fff);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -27,23 +62,13 @@ p {
 }
 
 .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  @include display-positional(flex, center, center);
 
   &__links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    height: 100%;
+    @include display-positional(flex, center, center);
 
     &-behavior {
-      display: inherit;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+      @include display-positional(flex, center, center);
 
       &:not(:last-child) {
         margin-right: 20px;
@@ -54,10 +79,7 @@ p {
   }
 
   &__link {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 60px;
-    color: #000;
+    @include text-style-fw-fs-lh(500, 12px, 60px, #000);
     text-decoration: none;
     position: relative;
   }
@@ -77,14 +99,16 @@ p {
   content: "";
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 4px;
-  border-radius: 8px;
-  background-color: #00acdc;
+  @include area-styles-w-h-brdr-brad-bg(100%, 4px, none, 2px, #00acdc);
 }
 
 .catalog {
   padding: 50px 40px;
+
+  &__title {
+    position: absolute;
+    visibility: hidden;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -94,41 +118,31 @@ p {
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include display-positional(flex, space-between, center);
   padding-bottom: 51px;
 }
 
 .card {
-  padding: 32px 16px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include display-positional(flex, space-between, center);
   flex-direction: column;
-  background: #fff;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  width: 200px;
-  height: 408px;
+  padding: 32px 16px 16px;
+  @include area-styles-w-h-brdr-brad-bg(
+    200px, 408px, 1px solid #f3f3f3, 5px, #fff);
 }
 
 .button {
-  width: 166px;
-  height: 40px;
-  border-radius: 5px;
-  background-color: #00acdc;
+  @include area-styles-w-h-brdr-brad-bg(166px, 40px, none, 5px, #00acdc);
+
+  &:hover {
+    background-color: #fff;
+    border: 1px solid #00acdc;
+  }
 
   &__style {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    color: #fff;
+    @include display-positional(flex, center, center);
+    @include text-style-fw-fs-lh(700, 14px, 100%, #fff);
     text-decoration: none;
-    width: 100%;
+    /*width: 100%;*/
     height: 100%;
   }
 
@@ -137,41 +151,26 @@ p {
   }
 }
 
-.button:hover {
-  background-color: #fff;
-  border: 1px solid #00acdc;
-}
-
 .product {
-  width: 100%;
+  /*width: 100%;*/
 
   &__image {
-    display: flex;
-    justify-content: center;
+    @include display-positional(flex, center, top);
     margin-bottom: 40px;
   }
 
   &__title {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    color: #060b35;
+    @include text-style-fw-fs-lh(500, 12px, 18px, #060b35);
     margin-bottom: 4px;
   }
 
   &__code {
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 14px;
-    color: #616070;
+    @include text-style-fw-fs-lh(400, 10px, 14px, #616070);
     margin-bottom: 16px;
   }
 
   &__status {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 16px;
+    @include display-positional(flex, space-between, center);
     margin-bottom: 24px;
   }
 
@@ -180,9 +179,20 @@ p {
   }
 
   &__responds {
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 14px;
+    @include text-style-fw-fs-lh (400, 10px, 14px, #000);
+  }
+
+  &__price {
+    @include display-positional(flex, space-between, baseline);
+    margin-bottom: 16px;
+  
+    &-text {
+      @include text-style-fw-fs-lh (400, 12px, 18px, #616070);
+    }
+  
+    &-value {
+      @include text-style-fw-fs-lh (700, 16px, 18px, #060b35);
+    }
   }
 
 }
@@ -193,41 +203,22 @@ p {
 }
 
 .star:not(:last-child) {
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  background-image: url(../images/star-active.svg);
-  background-position: center;
-  background-repeat: no-repeat;
+  @include stars(url(../images/star-active.svg), 4px);
 }
 
 .star:last-child {
-  width: 16px;
-  height: 16px;
-  background-image: url(../images/star.svg);
-  background-position: center;
-  background-repeat: no-repeat;
+  @include stars(url(../images/star.svg), 0);
 }
 
 .price {
-  display: flex;
-  justify-content: space-between;
+  @include display-positional(flex, space-between, baseline);
   margin-bottom: 16px;
 
   &__text {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: #616070;
-    vertical-align: text-bottom;
+    @include text-style-fw-fs-lh (400, 12px, 18px, #616070);
   }
 
   &__value {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    color: #060b35;
-    
-    vertical-align: text-bottom;
+    @include text-style-fw-fs-lh (700, 16px, 18px, #060b35);
   }
 }
