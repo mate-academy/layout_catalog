@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+  height: 60px;
+
+  &__logo {
+    align-self: center;
+    justify-content: center;
+    height: 40px;
+    padding: 10px 0;
+  }
+
+  &__nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &-item-8-link {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+    }
+
+    @for $index from 1 through 7 {
+      &-item-#{$index} {
+        &-link {
+          display: flex;
+          align-items: center;
+          margin-right: 20px;
+          height: 60px;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          color: #000;
+        }
+      }
+    }
+    
+    @for $index from 1 through 8 {
+      &-item-#{$index}-link {
+        &:hover {
+          color: #00acdc;
+        }
+      }
+    }
+  }
+  
+  .is-active {
+    position: relative;
+    color: #00acdc;
+  }
+  
+  .is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #00acdc;
+    border-radius: 8px;
+  }
+}
