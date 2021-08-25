@@ -1,0 +1,139 @@
+@import "./utils/variables";
+
+.catalog {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 25px;
+  width: 944px;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 408px;
+    width: 200px;
+    margin: 25px 24px 26px;
+  }
+
+  &__card:nth-child(4n+4) {
+    margin-right: 0;
+  }
+
+  &__card:first-child,
+  &__card:nth-child(5n) {
+    margin-left: 0;
+  }
+
+  &__img {
+    display: block;
+    height: 134px;
+    width: 160px;
+    padding: 32px 19px 40px;
+  }
+
+  &__card-tittle {
+    margin: 0 16px 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #{$text-color};
+  }
+
+  &__card-code {
+    margin: 0 16px 16px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #{$subtext-color};
+  }
+  
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: #{$product-width};
+    margin: 0 16px;
+  }
+
+  &__comments {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #{$text-color};
+    text-decoration: none;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 24px 16px 16px;
+    width: #{$product-width};
+  }
+  
+  &__price-text {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #{$subtext-color};
+  }
+  
+  &__price-cost {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #{$text-color};
+  }
+  
+  &__button {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin: 0 16px;
+    padding: 12px 56px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    background-color: #00acdc;
+    border-radius: 5px;
+  }
+  
+  &__button:hover {
+    color: #00acdc;
+    border: 1px solid #00acdc;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+
+  & :nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+  }
+}
