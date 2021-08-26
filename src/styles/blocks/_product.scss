@@ -1,0 +1,58 @@
+
+.product {
+
+  &__image {
+    @include display-positional(flex, center, top);
+    margin-bottom: 40px;
+
+    &-sizes {
+      width: 160px;
+      height: 134px;
+    }
+  }
+
+  &__title {
+    @include text-style-fw-fs-lh(500, 12px, 18px, #060b35);
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    @include text-style-fw-fs-lh(400, 10px, 14px, #616070);
+    margin-bottom: 16px;
+  }
+
+  &__status {
+    @include display-positional(flex, space-between, center);
+    margin-bottom: 24px;
+  }
+
+  &__stars {
+    display: flex;
+
+    &-style:not(:last-child) {
+      @include stars(url(../images/star-active.svg), 4px);
+    }
+    
+    &-style:last-child {
+      @include stars(url(../images/star.svg), 0);
+    }
+  }
+
+  &__responds {
+    @include text-style-fw-fs-lh (400, 10px, 14px, #000);
+  }
+
+  &__price {
+    @include display-positional(flex, space-between, baseline);
+    margin-bottom: 16px;
+  
+    &-text {
+      @include text-style-fw-fs-lh (400, 12px, 18px, #616070);
+    }
+  
+    &-value {
+      @include text-style-fw-fs-lh (700, 16px, 18px, #060b35);
+    }
+  }
+
+}
