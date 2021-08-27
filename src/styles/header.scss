@@ -1,0 +1,89 @@
+$secondaryColor: #00acdc;
+$sb: space-between;
+$ctr: center;
+
+@mixin flexRow-jc($sb) {
+  display: flex;
+  justify-content: $sb;
+}
+
+@mixin flexCol-jc($ctr) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $ctr;
+}
+
+.header {
+  @include flexRow-jc($sb);
+  margin: 0 auto;
+  max-width: 100%;
+  height: 60px;
+  padding: 0 50px;
+  border-radius: 4px;
+  offset: 0, 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: Roboto, sans-serif;
+  color: #000;
+
+  &__logo {
+    width: 40px;
+    padding: 10px 0;
+  }
+
+  &__nav {
+    width: 62.75%;
+    min-width: 753px;
+    height: 100%;
+  }
+
+  &__nav-list {
+    @include flexRow-jc($sb);
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  &__nav-item {
+    position: relative;
+    flex: 0 1 auto;
+    height: 100%;
+  }
+
+  &__nav-link {
+    @include flexCol-jc($ctr);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #060b35;
+  }
+
+  &__nav-link:hover {
+    color: $secondaryColor;
+  }
+
+  .is-active {
+    color: $secondaryColor;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      left: 0;
+      background: $secondaryColor;
+      border-radius: 2px;
+    }
+  }
+}
