@@ -1,8 +1,21 @@
 .catalog {
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  width: 944px;
-  padding: 50px 0 0;
+  width: $count * $cardWidth + 3 * $gapX + 2 * $paddingX;
+  padding: $paddingY $paddingX;
   margin: 0 auto;
+
+  &__card {
+    margin-right: $gapX;
+    margin-bottom: $gapY;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n+4) {
+      margin-bottom: 0;
+    }
+  }
 }
