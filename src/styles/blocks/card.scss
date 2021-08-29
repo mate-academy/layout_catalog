@@ -37,10 +37,18 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 24px;
+
+    @for $starsCount from 1 through 5 {
+      &--active-star--#{$starsCount} 
+      &-box :nth-child(-n + #{$starsCount}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
   }
   
   &__rating-box {
     display: flex;
+    
   }
   
   &__rating-star {
@@ -51,10 +59,6 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 0.5px;
-  }
-
-  &__rating-star--active {
-    background-image: url(../images/star-active.svg);
   }
   
   &__rating-opinions {
