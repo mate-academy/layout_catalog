@@ -7,7 +7,7 @@
   }
   &__item {
     display: flex;
-    margin: 0 10px;
+    margin-left: 20px;
     &:first-of-type {
       margin-left: 0;
     }
@@ -16,26 +16,28 @@
     }
   }
   &__link {
-    color: $main-color;
+    display: flex;
+    align-items: center;
+    height: 60px;
     text-decoration: none;
-    padding: 23px 0;
-    position: relative;
+    color: $main-color;
+    transition: color 0.3s;
     &:hover {
       color: $blue-accent;
     }
-  }
-}
-
-.is-active {
-  color: $blue-accent;
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    border-bottom: 4px solid $blue-accent;
-    border-radius: 8px;
-    width: 100%;
-    left: 0;
-    bottom: 0;
+    &--active {
+      position: relative;
+      color: $blue-accent;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $blue-accent;
+      }
+    }
   }
 }

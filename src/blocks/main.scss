@@ -1,13 +1,17 @@
 .main {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  width: $card-width * 4 + $gapX * 3 + 2 * $paddingX;
+  margin: 0 auto;
+  padding: $paddingY $paddingX;
   &__product {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: calc(#{$card-width} * 4 + #{$card-gap} * 3);
-    margin-top: 48px;
+    margin-right: $gapX;
+    margin-bottom: $gapY;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
 }
