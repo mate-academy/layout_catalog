@@ -6,17 +6,20 @@
   width: 200px;
   height: 408px;
   padding: 32px 16px 16px;
-  margin-right: 46px;
-  margin-bottom: 48px;
+
+  &--margin {
+    margin-right: 46px;
+    margin-bottom: 48px;
+    
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
   
-  &:nth-child(4n) {
-    margin-right: 0;
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
-
-  &:nth-last-child(-n + 4) {
-    margin-bottom: 0;
-  }
-
+   
   &__image {
     width: 160px;
     height: 134px;
@@ -25,7 +28,6 @@
   
   &__text {
     font-weight: 500;
-    font-style: normal;
     font-size: 12px;
     line-height: 18px;
     margin: 40px 0 4px;
@@ -50,28 +52,28 @@
       justify-content: space-between;
       width: 96px;
 
-      .star {
+      &__star {
         background-repeat: no-repeat;
         background-position: center;
         background-image: url(../images/star-active.svg);
         width: 16px;
         height: 16px;
         cursor: pointer;
-      }
 
-      .card-stars__star5 {
-        background-image: url(../images/star.svg);
+        &--5 {
+          background-image: url(../images/star.svg);
+        }
       }
     }
   }
   
-  .card__opinion {
+  &__opinion {
     font-size: 10px;
     text-decoration: none;
     color: #060b35;
   }
   
-  .card__price {
+  &__price {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,7 +99,7 @@
   }
 
   &__buttom {
-    .buttom-link {
+    &-link {
       box-sizing: border-box;
       display: flex;
       justify-content: center;
@@ -113,11 +115,11 @@
       border-radius: 5px;
       border: 1px solid #00acdc;
       background-color: rgba(0, 172, 220, 1);
-    }
-    
-    .buttom-link:hover {
-      background-color: #fff;
-      color: #00acdc;
+
+      &:hover {
+        background-color: #fff;
+        color: #00acdc;
+      }
     }
   }
 }
