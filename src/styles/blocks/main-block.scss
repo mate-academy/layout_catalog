@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+p,
+h2,
+h3 {
+  margin: 0;
+}
+
+.h1-hidden {
+  display: none;
+}
+
+.main-block {
+  &__wraper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1024px;
+    margin: 0 auto;
+    padding: 51px 37px 73px;
+  }
+}
+
+.product-card {
+  height: 406px;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background: $mainBGColor;
+  padding: 32px 16px 16px;
+  margin: 0 50px 48px 0;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 1) {
+    margin-right: 0;
+  }
+  
+  &__image-wrapper {
+    text-align: center;
+    padding-bottom: 36px;
+  }
+  
+  &__image-wrapper > &__image {
+    width: 160px;
+    height: 134px;
+    object-fit: cover;
+  }
+  
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    color: $mainAccentColour;
+    line-height: 18px;
+    padding-bottom: 4px;
+  }
+  
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    text-align: left;
+    color: $secondaryColor;
+    padding-bottom: 16px;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 16px;
+  }
+  
+  &__price-title {
+    color: $secondaryColor;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $mainAccentColour;
+  }
+  
+  &__buy {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: $blueAccentColour;
+    border-radius: 5px;
+  }
+  
+  &__buy .product-card__buy-link {
+    margin: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: $mainBGColor;
+    padding: 10px 55px;
+  }
+  
+  &__buy:hover .product-card__buy-link {
+    border: 1px solid $blueAccentColour;
+    border-radius: 5px;
+    color: $blueAccentColour;
+    background-color: $mainBGColor;
+  }
+}
+
+.response {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  
+  &__count {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+    color: $mainAccentColour;
+    margin: 0;
+  }
+}
+
+.stars {
+  display: flex;
+  
+  &__item {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    margin-right: 4px;
+  
+    &:nth-child(-n + 4) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
