@@ -1,0 +1,186 @@
+@import "/styles/utils/variables.scss";
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url();
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url();
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url();
+  font-weight: 700;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: $mainAccent;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 1024px;
+  max-width: 1200px;
+  padding-top: 50px;
+  justify-content: center;
+}
+
+.container:nth-child(4n) {
+  margin-right: 0;
+}
+
+.card {
+  width: $cardWidth;
+  height: $cardHeight;
+  background: $white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  box-sizing: border-box;
+  margin: 0 24px 46px;
+  &__image {
+    width: 160px;
+    height: 134px;
+    &_image_position {
+      position: relative;
+      width: 160px;
+      height: 134px;
+      margin-left: 3px;
+    }
+  }
+
+  &__info {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 40px;
+    &_product_name {
+      position: relative;
+      line-height: 18px;
+      width: 166px;
+      height: 36px;
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      margin-block-end: 0;
+      margin-block-start: 0;
+    }
+    &_product_code {
+      position: relative;
+      margin-top: 4px;
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      color: $secondary;
+      line-height: 14px;
+    }
+
+    &_product_rating {
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 16px;
+      .stars {
+        display: flex;
+        content: "";
+        border-radius: 0.5px;
+        margin-right: 16px;
+        margin-left: 2px;
+        margin-top: 18px;
+      }
+      .stars__star {
+        padding-right: 4px;
+        margin: 0;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: url(/images/star.svg);
+        background-repeat: no-repeat;
+      }
+      .stars--4 > :nth-child(-n+4) {
+        background-image: url(/images/star-active.svg);
+        border-radius: 0.5px;
+      }
+      .stars__star:last-child {
+        padding: 0;
+      }
+      .card__product_rating_product_review {
+        display: flex;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-top: 17px;
+      }
+    }
+    &_price_card {
+      display: flex;
+      margin-top: 24px;
+      .card__product_price {
+        display: flex;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin-right: 55px;
+        font-weight: 400;
+        font-size: 12px;
+        font-style: normal;
+        color: $secondary;
+        height: 18px;
+      }
+
+      .card__product_price_number {
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+    .card__info_product_buy {
+      width: 166px;
+      height: 40px;
+      background: $blueAccent;
+      border-radius: 5px;
+      border: 1px solid $blueAccent;
+      box-sizing: border-box;
+      margin-top: 14px;
+      .card__product_buy_text {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 11px 53px;
+        color: $white;
+      }
+      .card__info_product_link_buy {
+        text-decoration: none;
+        color: $white;
+      }
+      .card__product_buy_text:hover {
+        color: $blueAccent;
+      }
+      &:hover {
+        background: $white;
+        border-radius: 5px;
+      }
+    }
+  }
+}
