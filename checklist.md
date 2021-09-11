@@ -9,11 +9,11 @@
 >```html
 ><div class="product__rating">
 >  <div class="product__stars stars--4">
->    <div class="star"></div>
->    <div class="star"></div>
->    <div class="star"></div>
->    <div class="star"></div>
->    <div class="star"></div>
+>    <div class="starsBox__star"></div>
+>    <div class="starsBox__star"></div>
+>    <div class="starsBox__star"></div>
+>    <div class="starsBox__star"></div>
+>    <div class="starsBox__star"></div>
 >  </div>
 ></div>
 >```
