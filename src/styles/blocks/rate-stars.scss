@@ -1,0 +1,18 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.rate-stars {
+  display: flex;
+
+  &__star {
+    @include square($star-size);
+
+    background-image: url("./../images/star.svg");
+    background-repeat: no-repeat;
+
+    &:not(:last-child) {
+      margin-right: 6px;
+      background-image: url("./../images/star-active.svg");
+    }
+  }
+}
