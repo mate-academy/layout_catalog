@@ -12,7 +12,8 @@ ___
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
 
 ## Requirements:
-- use `Card` and `Header` blocks from previous tasks but rewrite them using BEM and SCSS
+- use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
+and SCSS
 - Nav links color is not black any more
 - page width is always >= 1024px
 - there should always be 4 cards in a row (not 2, 3 or 5)
@@ -29,3 +30,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 ---
 ![screenshot](./references/catalog-example.png)
+
+---
+### Tips & Hints
+Don't use flex `gap` property, it's not yet supported by tests.
