@@ -1,0 +1,67 @@
+.body {
+  position: relative;
+}
+
+.header {
+  @extend %space-between;
+  background-color: $page-background-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding-right: 50px;
+
+  &__logo-img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 10px;
+    left: 50px;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+  }
+
+  &__nav-item {
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  &__nav-item:first-child {
+    padding: 0 10px 0 0;
+  }
+
+  &__nav-item:last-child {
+    padding: 0 0 0 10px;
+  }
+
+  &__nav-link {
+    @extend %centering;
+    height: 60px;
+    @extend %links-styling;
+    @extend %header-and-item-name-text;
+    color: $font-main-color;
+  }
+
+  .is-active {
+    position: relative;
+  }
+
+  &__nav-link:hover,
+  .is-active {
+    color: $accent-main-color;
+  }
+
+  .is-active::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    background-color: $accent-main-color;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

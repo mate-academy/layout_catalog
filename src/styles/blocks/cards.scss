@@ -1,0 +1,113 @@
+.main-centering {
+  @extend %centering;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px 40px;
+  max-width: 1024px;
+
+  &__card {
+    max-width: 200px;
+    padding: 32px 16px 16px;
+    border: 1px solid;
+    border-color: $card-border-color;
+    border-radius: 5px;
+    @extend %card-margins;
+  }
+
+  &__card:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__card:nth-last-child(-n+4) {
+    margin-bottom: 0;
+  }
+
+  &__item-img {
+    @extend %centering;
+  }
+
+  &__item-img-size {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__item-name {
+    padding-top: 40px;
+    text-align: left;
+    @extend %header-and-item-name-text;
+    line-height: 18px;
+    color: $font-main-color;
+  }
+
+  &__item-code {
+    padding-top: 4px;
+    text-align: left;
+    @extend %item-code-and-review-text;
+    color: $font-secondary-color;
+  }
+
+  &__item-review {
+    @extend %space-between;
+    padding-top: 16px;
+  }
+
+  &__item-review-text {
+    @extend %centering;
+    @extend %item-code-and-review-text;
+    color: $font-main-color;
+  }
+
+  &__item-price {
+    @extend %space-between;
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+
+  &__item-price-word {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $font-secondary-color;
+  }
+
+  &__item-price-value {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: $font-main-color;
+  }
+
+  &__buy-button {
+    @extend %centering;
+    width: 166px;
+    height: 40px;
+    background: $accent-main-color;
+    border-radius: 5px;
+  }
+
+  &__buy-button-link {
+    @extend %links-styling;
+    color: $accent-secondary-color;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__buy-button:hover {
+    border: 1px solid;
+    border-color: $accent-main-color;
+    background: $accent-secondary-color;
+  }
+
+  &__buy-button-link:hover {
+    color: $accent-main-color;
+  }
+}
