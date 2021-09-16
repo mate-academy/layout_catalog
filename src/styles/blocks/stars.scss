@@ -12,10 +12,8 @@
   background-repeat: no-repeat;
 }
 
-.product-container .stars--1 .stars__star:first-child,
-.product-container .stars--2 .stars__star:nth-child(-n+2),
-.product-container .stars--3 .stars__star:nth-child(-n+3),
-.product-container .stars--4 .stars__star:nth-child(-n+4),
-.product-container .stars--5 .stars__star:nth-child(-n+5) {
-  background-image: url(../images/star-active.svg);
+@for $indexCount from 1 through 5 {
+  .stars--#{$indexCount} .stars__star:nth-child(-n + #{$indexCount}) {
+    background-image: url(../images/star-active.svg);
+  }
 }
