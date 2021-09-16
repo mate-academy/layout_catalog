@@ -115,3 +115,15 @@ BAD example:
 10. [SASS] - use variables for the main values so that you'll be able to reuse
 them and give them descriptive names. But don't overuse them, don't create
 variable for the value that's used just once.
+
+11. [LAYOUT] - don't hardcode max-width, your catalog container should work fine for any number of cards
+
+GOOD example:
+
+![Screenshot 2021-09-16 at 16 01 30](https://user-images.githubusercontent.com/32794096/133616959-0016cb9f-7083-4f93-8de6-f6a5c702e2ed.png)
+
+BAD example:
+
+![Screenshot 2021-09-16 at 16 02 44](https://user-images.githubusercontent.com/32794096/133616962-f10c4aff-ec05-4422-a470-931e51370c2f.png)
+
+
