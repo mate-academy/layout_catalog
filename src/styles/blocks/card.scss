@@ -1,8 +1,11 @@
-.card {
+%flex-center {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+}
+
+.card {
+  @extend %flex-center;
+  flex-direction: column;
   flex-grow: 1;
   max-width: 200px;
   padding: 32px 16px 16px;
@@ -12,13 +15,11 @@
   border-radius: 5px;
 
   &__item-img {
-    display: flex;
-    justify-content: center;
+    @extend %flex-center;
     align-items: center;
   }
 
   &__img {
-    width: 160px;
     height: 134px;
   }
 
@@ -42,14 +43,10 @@
 
   &__item-review {
     display: flex;
-    justify-content: space-between;
     padding-top: 16px;
   }
 
   &__item-review-text {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
@@ -58,8 +55,7 @@
   &__item-price {
     display: flex;
     justify-content: space-between;
-    padding-top: 24px;
-    padding-bottom: 16px;
+    padding: 24px 0 16px;
   }
 
   &__item-price-word {
@@ -77,8 +73,7 @@
   }
 
   &__buy-button {
-    display: flex;
-    justify-content: center;
+    @extend %flex-center;
     align-items: center;
     width: 166px;
     height: 40px;
@@ -87,13 +82,10 @@
   }
 
   &__link {
-    text-decoration: none;
+    padding: 12px 0;
     color: $color-white;
+    text-decoration: none;
     text-transform: uppercase;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    width: 100%;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
