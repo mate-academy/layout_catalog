@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  height: $header-height;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 21px 0;
+    font-size: 1.2rem;
+    line-height: 18px;
+    font-weight: 500;
+    color: $text-main-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue-accent;
+    }
+
+    &.is-active {
+      position: relative;
+      margin-left: 0;
+      color: $blue-accent;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $blue-accent;
+      }
+    }
+  }
+}
