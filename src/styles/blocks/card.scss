@@ -1,7 +1,6 @@
 .card {
-  display: flex;
+  @extend %flex-center;
   flex-direction: column;
-  justify-content: center;
   max-width: 200px;
   height: 408px;
   padding: 32px 16px 16px;
@@ -51,7 +50,6 @@
     text-align: center;
     color: $accent-color;
     font-size: $font-size-10px;
-    line-height: $line-height-14px;
   }
   
   &__price-container {
@@ -75,7 +73,10 @@
   }
 
   &__buy-button {
-    padding: 11px 0;
+    @extend %flex-center;
+    align-items: center;
+    height: 40px;
+    line-height: 16px;
     background-color: $blue-accent-color;
     border-radius: 5px;
     color: $white-color;
@@ -87,10 +88,10 @@
     cursor: pointer;
     border: 1px solid $blue-accent-color;
     transition: color 0.5s, background-color 0.5s;
-  }
 
-  &__buy-button:hover {
-    background-color: $white-color;
-    color: $blue-accent-color;
+    &:hover {
+      background-color: $white-color;
+      color: $blue-accent-color;
+    }
   }
 }
