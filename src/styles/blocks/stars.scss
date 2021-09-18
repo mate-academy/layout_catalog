@@ -1,0 +1,18 @@
+.stars {
+  display: flex;
+
+  &__item {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: $star--size;
+    width: $star--size;
+    margin-right: 4px;
+  }
+
+  @for $indexCount from 1 through 5 {
+    &--#{$indexCount} &__item:nth-child(-n + #{$indexCount}) {
+      @extend %active-star-bg;
+    }
+  }
+}
