@@ -117,7 +117,7 @@
 >
 >  <section class="catalog">
 >
->    <article data-qa="catd" class="main__catalog">
+>    <article data-qa="catd" class="catalog__card">
 >```
 - don't add extra wrappers if you can add styles to the tag itself
 - if you have many sections in a row, add margins either to the bottom or to the top so that it will be easier to identify how to position the next element
