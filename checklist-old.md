@@ -8,7 +8,7 @@
 >**WRONG WAY**
 >```html
 ><div class="product__rating">
->  <div class="product__stars stars--4">
+>  <div class="product__stars card__stars--4">
 >    <div class="star"></div>
 >    <div class="star"></div>
 >    <div class="star"></div>
@@ -17,7 +17,7 @@
 >  </div>
 ></div>
 >```
->`stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
+>`card__stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
 >`star` is another block, stars should be the elements of the `stars` block
 >
 >**RIGHT WAY**
