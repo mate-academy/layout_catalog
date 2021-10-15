@@ -49,32 +49,17 @@ h6 {
   overflow: hidden;
 }
 
-.container {
-  max-width: 1130px;
-  padding: 0px 15px;
-  margin: 0 auto;
-}
-
 .page {
-  padding-top: 100px;
   flex: 1 1 auto;
 }
 
 .header {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2 4 rgba(0, 0, 0, 0.05);
   background-color: #fff;
-  position: fixed;
-  z-index: 666;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  // .header__container
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   // .header__logo-link
   &__logo-link {
@@ -130,36 +115,26 @@ h6 {
 }
 
 .cards {
-  // .cards__container
-  &__container {
-    max-width: 974px;
-  }
-
-  // .cards__body
-  &__body {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -25px -48px;
-  }
-
-  // .cards__column
-  &__column {
-    padding: 0 25px;
-    margin-bottom: 48px;
-    flex: 0 1 25%;
-  }
-
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
   // .cards__item
   &__item {
-    
+    margin-bottom: 46px;
+    margin-right: 48px;
   }
 }
 
 .card {
+  width: 200px;
   padding: 32px 16px 16px;
   border-radius: 5px;
-  border: 1px solid #F3F3F3;
-
+  border: 1px solid #f3f3f3;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
   // .card__img
   &__img {
     margin: 0 auto 40px;
@@ -180,8 +155,8 @@ h6 {
   &__code {
     font-size: 10px;
     line-height: 14px;
-    color: #616070;
     margin-bottom: 16px;
+    color: #616070;
   }
 
   // .card__rating
@@ -222,7 +197,7 @@ h6 {
 .rating {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 
   // .rating__stars
   &__stars {
@@ -231,17 +206,18 @@ h6 {
 
   // .rating__star
   &__star {
-    background-position: center;
     width: 16px;
     height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
     &:not(:last-child) {
       margin-right: 4px;
     }
     &:nth-child(-n + 4) {
-      background: url(../images/star-active.svg) no-repeat;
+      background-image: url(../images/star-active.svg);
     }
     &:nth-child(5) {
-      background: url(../images/star.svg) no-repeat;
+      background-image: url(../images/star.svg);
     }
   }
 
@@ -249,6 +225,7 @@ h6 {
   &__review {
     font-size: 10px;
     line-height: 14px;
+    color: #060b35;
   }
 }
 
@@ -269,29 +246,6 @@ h6 {
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-  }
-}
-
-
-@media (max-width: 992px) {
-  .cards__column {
-    flex: 0 1 33.33%;
-  }
-}
-
-@media (max-width: 850px) {
-  .cards__column {
-    flex: 0 1 50%;
-  }
-}
-
-@media (max-width: 560px) {
-  .cards__body {
-    margin: 0;
-  }
-  
-  .cards__column {
-    flex: 0 1 100%;
-    padding: 0;
+    color: #060b35;
   }
 }
