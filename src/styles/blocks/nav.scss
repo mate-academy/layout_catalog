@@ -1,0 +1,48 @@
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    height: 60px;
+
+    text-transform: uppercase;
+    font-weight: $primary-fw;
+    font-size: $secondary-fs;
+    color: $main-text-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $secondary-color;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: block;
+    height: 4px;
+    width: $max-width;
+
+    background-color: $secondary-color;
+    border-radius: 8px;
+
+    content: "";
+  }
+}
