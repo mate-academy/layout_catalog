@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    align-self: center;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    color: $main-dark;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 23px 0;
+    
+
+    &:visited {
+      color: $main-dark;
+    }
+
+    &:hover {
+      color: $blue-accent;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $blue-accent;
+  
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    border-radius: 8px;
+    background: $blue-accent;
+  }
+
+  &:visited {
+    background: $blue-accent;
+  }
+}
