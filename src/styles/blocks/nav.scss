@@ -1,0 +1,45 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: flex-end;
+    
+    list-style: none;
+  
+    margin: 0;
+  }
+  
+  &__item {
+    position: relative;
+  
+    padding: 23px 0;
+  }
+  
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: #000;
+    font-size: #{$font12};
+    padding: 0;
+  }
+  
+  &__link:hover,
+  &__link.is-active {
+    color: #{$blue};
+  }
+
+  .is-active::after {
+    content: "";
+  
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+  
+    background-color: #{$blue};
+    border-radius: 4px;
+  }
+}
