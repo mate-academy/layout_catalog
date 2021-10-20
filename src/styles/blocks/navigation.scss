@@ -1,0 +1,43 @@
+@import "./utils/extends";
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    @extend %text-style;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: $text-size;
+    color: $blue-color;
+    padding: 23px 0;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $main-color;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    bottom: 0;
+    background-color: $main-color;
+  }
+}
