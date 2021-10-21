@@ -1,0 +1,54 @@
+@import "./src/styles/variables.scss";
+
+.header {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 2px 4px;
+
+  &__logo {
+    align-self: center;
+    padding-top: 3px;
+  }
+}
+
+.nav {
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    color: #060b35;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 23px 0;
+  }
+
+  &__link:hover {
+    color: $header-link-color;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $header-link-color;
+}
+
+.is-active::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: $header-link-color;
+  border-radius: 8px;
+}
