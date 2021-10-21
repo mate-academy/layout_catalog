@@ -1,0 +1,73 @@
+.card {
+
+  &:nth-last-child(-n + 4) {
+    margin-top: 46px;
+  }
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  @include card-external-style;
+
+  display: flex;
+  flex-direction: column;
+  padding: $card-internal-padding;
+  align-items: center;
+  font-size: $card-font-size;
+
+  &__img {
+    margin: 16px 0 40px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__description {
+    
+    &-name {
+      @include text-style(12px, 500, 18px, $text-color);
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__code {
+    @include text-style(10px, 400, 14px, $text-color-gray);
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    @include flex-wrap-jcsb;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    color: $text-color;
+  }
+
+  &__price {
+    @include flex-wrap-jcsb;
+
+    margin-bottom: 16px;
+
+    &-value {
+      @include text-style(16px, 700, 18px, $text-color);
+    }
+
+    &-label {
+      @include text-style(12px, 400, 18px, $text-color-gray);
+    }
+  }
+
+  &__button-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.main__card {
+  margin-right: 48px;
+}
