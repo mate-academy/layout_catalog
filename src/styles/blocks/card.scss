@@ -1,5 +1,5 @@
 .card {
-  margin-right: 50px;
+  margin-right: 48px;
 
   &:nth-last-child(-n + 4) {
     margin-top: 46px;
@@ -15,56 +15,50 @@
   flex-direction: column;
   padding: $card-internal-padding;
   align-items: center;
-  font-size: 12px;
+  font-size: $card-font-size;
 
   &__img {
-    margin-top: 16px;
+    margin: 16px 0 40px;
     height: 134px;
     width: 160px;
   }
 
   &__description {
-    margin-top: 40px;
-    font-size: $card-font-size;
-    color: $text-color;
-
+    
     &-name {
-      line-height: 18px;
+      @include text-style(12px, 500, 18px, $text-color);
+      display: block;
+      margin-bottom: 4px;
     }
   }
 
   &__code {
-    margin-top: 4px;
-    font-weight: $font-weight-400;
-    font-size: 10px;
-    line-height: 14px;
-    color: $text-color-gray;
+    @include text-style(10px, 400, 14px, $text-color-gray);
     margin-bottom: 16px;
   }
 
   &__rating {
     @include flex-wrap-jcsb;
+    margin-bottom: 24px;
   }
 
   &__reviews {
     font-size: 10px;
-    font-weight: $font-weight-400;
+    font-weight: 400;
+    color: $text-color;
   }
 
   &__price {
     @include flex-wrap-jcsb;
 
-    margin-top: 23px;
+    margin-bottom: 16px;
 
     &-value {
-      font-size: 16px;
-      font-weight: 700;
+      @include text-style(16px, 700, 18px, $text-color);
     }
 
     &-label {
-      font-size: 12px;
-      color: $text-color-gray;
-      font-weight: $font-family-def;
+      @include text-style(12px, 400, 18px, $text-color-gray);
     }
   }
 
@@ -72,6 +66,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 16px;
   }
 }
