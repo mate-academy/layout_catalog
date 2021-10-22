@@ -1,0 +1,65 @@
+@import "../utils/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: content-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &-logo {
+    height: 40px;
+  }
+
+  &-nav__item {
+    margin: 0;
+  }
+
+  &-nav__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &-nav__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-nav__link {
+    text-decoration: none;
+    display: inline-block;
+    color: $dark;
+    padding: 23px 0;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+
+  &-nav__link:hover {
+    color: $blue;
+  }
+
+  &-nav__link:focus {
+    color: $blue;
+  }
+
+  .is-active {
+    color: $blue;
+    position: relative;
+  }
+
+  .is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 37px;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $blue;
+  }
+}

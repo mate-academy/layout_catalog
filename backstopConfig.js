@@ -40,14 +40,14 @@ const config = {
     },
     {
       ...basic,
-      label: 'Nav tag',
-      selectors: ['nav'],
+      label: 'header-nav tag',
+      selectors: ['header-nav'],
     },
     {
       ...basic,
       label: 'Link with data-qa_hover',
-      selectors: ['[data-qa="nav-hover"]'],
-      hoverSelector: '[data-qa="nav-hover"]',
+      selectors: ['[data-qa="header-nav-hover"]'],
+      hoverSelector: '[data-qa="header-nav-hover"]',
       postInteractionWait: 1000,
     },
     {
