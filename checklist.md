@@ -78,7 +78,7 @@ BAD example
 /*style.css*/
 .card {
   margin: 48px 24px;
-  font-size: 16px;
+  font-size: $font-size-large;
   background-color: purple;
 }
 ```
