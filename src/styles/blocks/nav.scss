@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+
+  &__item {
+    list-style: none;
+    padding: 23px 0;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 23px 0;  /* for blue line */
+    cursor: pointer;
+    color: $main-color;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $blue-color;
+
+  &::after {
+    content: "";
+    height: 4px;
+    border-radius: $border-radius-big;
+    background-color: $blue-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
