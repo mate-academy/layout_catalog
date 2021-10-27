@@ -1,0 +1,138 @@
+.catalog {
+  padding: 50px $padding-side 72px;
+  display: flex;
+  flex-wrap: wrap;
+  width: $catalog-width;
+
+  &--position {
+    margin: 0 auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 32px 16px 16px;
+    width: $card-width;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    margin-right: $gap;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(n+5) {
+      margin-top: $gap - 2;
+    }
+  }
+
+  &__img {
+    max-width: max-content;
+    margin: 0 auto;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    width: 100%;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__num {
+    font-weight: normal;
+    color: #616070;
+    font-size: 10px;
+    padding-bottom: 16px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @for $index from 1 through 5 {
+    &__stars--#{$index} &__star:nth-child(-n+#{$index}) {
+      background-image: url(../images/star-active.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-title {
+    font-size: 12px;
+    line-height: 18px;
+    color: #616070;
+  }
+
+  &__price-sum {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #060b35;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #00acdc;
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+    width: 166px;
+    height: 40px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  &__button:hover {
+    background-color: #fff;
+    color: #00acdc;
+  }
+}
