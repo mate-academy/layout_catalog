@@ -16,7 +16,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 and SCSS
 - Nav links color is not black any more
 - page width is always >= 1024px
-- there should always be 4 cards in a row (not 2, 3 or 5)
+- there should always be 4 cards in a row (not 2, 3 or 5) (use [flex-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap) for this)
   - use `:nth-child(4n)` to select every 4th element
   - use `:nth-last-child(-n + 4)` to select 4 last elements
 - cards should have fixed width and fixed distances between them
