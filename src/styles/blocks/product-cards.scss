@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 51px 0;
+  width: 4 * $width-card + 8 * $margin-card;
+}
+
+.product-cards {
+  box-sizing: border-box;
+  width: $width-card;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 0;
+  margin: 0 $margin-card;
+  
+  &__picture {
+    width: 160px;
+    display: flex;
+    margin: auto;
+  }
+    
+  &__content {
+    margin-top: 40px;
+  }
+  
+  &__rating {
+    margin-top: 16px;
+  }
+  
+  &__code {
+    margin-top: 4px;
+  }
+  
+  &__price {
+    margin-top: 24px;
+  }
+}
+  
+.rating {
+  display: flex;
+  justify-content: space-between;
+}
+  
+.name {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+  
+.code {
+  font-size: 10px;
+  color: #616070;
+}
+  
+.stars {
+  display: flex;
+  gap: 4px;
+  
+  &__star {
+    @include square(16px);
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+  }
+}
+  
+.stars--1 .stars__star:nth-child(1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(n) {
+  background-image: url(../images/star-active.svg);
+  background-repeat: no-repeat;
+}
+  
+.response {
+  font-size: 10px;
+}
+  
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  &__cost {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  &__name {
+    color: #616070;
+    font-size: 12px;
+  }
+}
+  
+.purchase {
+  margin: 16px 0;
+  
+  &__link {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #00acdc;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid #00acdc;
+  }
+  
+  &__link:hover {
+    background: white;
+    color: #00acdc;
+  }
+}
+  
+.product-cards:nth-last-child(-n + 4) {
+  margin-top: 48px;
+}
