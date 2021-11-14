@@ -1,0 +1,74 @@
+@import "../utils/extends";
+@import "../utils/variables";
+
+* {
+  margin: 0;
+}
+
+.header {
+  @extend %base-font;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo__image {
+  display: block;
+  margin-left: 50px;
+  padding: 10px 0;
+}
+
+.nav {
+  display: flex;
+  margin: 0 50px;
+
+  &__list {
+    display: flex;
+    flex-shrink: 0;
+    padding-inline-start: 0;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:first-child),
+    &:not(:last-child) {
+      margin: 0 10px;
+    }
+    &:first-child {
+      margin: 0 10px 0 0;
+    }
+    &:last-child {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    color: #060b35;
+    text-decoration: none;
+    
+    &:hover,
+    &--is-active {
+      color: $hover-color;
+    }
+    
+    &--is-active::after {
+      position: absolute;
+      top: 56px;
+      width: 100%;
+      content: "";
+      border-bottom: 4px solid $hover-color;
+      border-radius: 4px;
+    }
+  }
+}
