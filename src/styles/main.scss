@@ -5,11 +5,12 @@
   font-family: "Roboto", sans-serif;
 }
 
-body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  min-width: 1024px;
-}
+$moyo-blue: #00acdc;
+$moyo-black: #060b35;
+$product-card-width: 200px;
+$cards-per-row: 4;
+$side-screen-margin: calc((100vw - #{$cards-per-row} * #{$product-card-width}
+- (#{$cards-per-row} + 1) * 2 * 24px) / 2);
 
 .header {
   box-sizing: border-box;
@@ -46,7 +47,7 @@ body {
   display: block;
   font-size: 12px;
   text-transform: uppercase;
-  color: #060b35;
+  color: $moyo-black;
   text-decoration: none;
   height: 60px;
   align-items: center;
@@ -55,11 +56,11 @@ body {
 }
 
 .nav__link:hover {
-  color: #00acdc;
+  color: $moyo-blue;
 }
 
 .is-active {
-  color: #00acdc;
+  color: $moyo-blue;
   position: relative;
 }
 
@@ -71,18 +72,19 @@ body {
   content: "";
   height: 4px;
   border-radius: 8px;
-  background-color: #00acdc;
+  background-color: $moyo-blue;
 }
 
 .catalog-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  min-width: 1024px;
 }
 
 .product-card-wrapper {
   box-sizing: border-box;
-  width: 200px;
+  width: $product-card-width;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -94,17 +96,15 @@ body {
   margin: 46px 24px 0;
 }
 
-.product-card-wrapper:nth-child(4n+1) {
-  //background-color: #060b35;
-  margin-left: calc((100vw - 4 * 200px - 10*24px) / 2);
+.product-card-wrapper:nth-child(#{$cards-per-row}n+1) {
+  margin-left: $side-screen-margin;
 }
 
-.product-card-wrapper:nth-child(4n+4) {
-  //background-color: darkgoldenrod;
-  margin-right: calc((100vw - 4 * 200px - 10*24px) / 2);
+.product-card-wrapper:nth-child(#{$cards-per-row}n+#{$cards-per-row}) {
+  margin-right: $side-screen-margin;
 }
 
-.product-card-wrapper:nth-child(-n+4) {
+.product-card-wrapper:nth-child(-n+#{$cards-per-row}) {
   margin-top: 50px;
 }
 
@@ -117,7 +117,7 @@ body {
 
 .product-name {
   margin-top: 40px;
-  color: #060b35;
+  color: $moyo-black;
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
@@ -161,7 +161,7 @@ body {
 .product-rating__feedback-counter {
   font-size: 10px;
   line-height: 14px;
-  color: #060b35;
+  color: $moyo-black;
 }
 
 .product-price {
@@ -186,10 +186,10 @@ body {
 
 .buy-button {
   margin-top: 16px;
-  background-color: #00acdc;
+  background-color: $moyo-blue;
   color: white;
   border-radius: 5px;
-  border: 1px solid #00acdc;
+  border: 1px solid $moyo-blue;
   width: 166px;
   height: 40px;
   border-style: none;
@@ -201,6 +201,6 @@ body {
 
 .buy-button:hover {
   background-color: white;
-  color: #00acdc;
-  border: 1px solid #00acdc;
+  color: $moyo-blue;
+  border: 1px solid $moyo-blue;
 }
