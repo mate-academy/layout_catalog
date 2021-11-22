@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    @extend %link-base;
+    @include font(
+      text-links,
+      line-height-small,
+      weight-medium,
+      main-accent
+    );
+
+    display: inline-block;
+    padding: 23px 0;
+    cursor: pointer;
+
+    &--active {
+      position: relative;
+      color: color("blue-accent");
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 8px;
+        background: color("blue-accent");
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    &:hover {
+      color: color("blue-accent");
+    }
+  }
+}
