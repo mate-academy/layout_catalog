@@ -8,7 +8,7 @@
 >**WRONG WAY**
 >```html
 ><div class="product__rating">
->  <div class="product__stars stars--4">
+>  <div class="product__card__card__stars stars card__stars stars stars--4">
 >    <div class="star"></div>
 >    <div class="star"></div>
 >    <div class="star"></div>
@@ -18,12 +18,12 @@
 ></div>
 >```
 >`stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
->`star` is another block, stars should be the elements of the `stars` block
+>`star` is another block, card__card__stars stars card__stars stars should be the elements of the `stars` block
 >
 >**RIGHT WAY**
 >```html
 ><div class="product__rating">
->  <div class="product__stars stars">
+>  <div class="product__card__card__stars stars card__stars stars stars">
 >    <div class="stars__star"></div>
 >    <div class="stars__star"></div>
 >    <div class="stars__star"></div>
@@ -99,7 +99,7 @@
 >  height: 15px;
 >  display: flex;
 >
->  .card__stars {
+>  .card__card__card__stars stars card__stars stars {
 >    display: flex;
 >
 >    .card__star {
@@ -108,7 +108,7 @@
 >  }
 >}
 >```
-- reuse your code, if you've already written code for stars in the previous homework, use it as an independent block
+- reuse your code, if you've already written code for card__card__stars stars card__stars stars in the previous homework, use it as an independent block
 - there is no need to add `--first` modifier to the first element, use pseudo-classes
 - empty lines between sibling blocks of code improve readability, but not between a parent and a child
 >**WRONG WAY**
