@@ -1,3 +1,39 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./utils/reset";
+@import "./blocks/rating__stars";
+@import "./blocks/nav";
+@import "./blocks/card";
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
+
+.logo {
+  display: block;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 50px 40px;
+
+  &__contaier {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $gap-b-cards;
+    width: calc(
+      (#{$card-width} * #{$cards-in-line}) +
+      (#{$gap-b-cards} * (#{$cards-in-line - 1})));
+  }
 }
