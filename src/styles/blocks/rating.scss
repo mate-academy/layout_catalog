@@ -1,0 +1,26 @@
+.rating {
+  @include display (flex, center, space-between);
+  font-size: 10px;
+  font-weight: $font-weight-regular;
+  color: $main-gray-accent;
+
+  &__stars {
+    display: flex;
+    flex-wrap: wrap;
+
+    @for $index from 1 through 5 {
+      &--#{$index} :nth-child(-n+#{$index}) {
+        background-image: url("/images/star-active.svg");
+      }
+    }
+  }
+
+  &__star {
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url("/images/star.svg");
+    background-repeat: no-repeat;
+  }
+}
