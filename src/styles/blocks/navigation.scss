@@ -1,4 +1,5 @@
 @import "../utils/extends";
+@import "../utils/variables";
 
 .navigation {
   &__list {
@@ -6,25 +7,41 @@
     list-style: none;
   }
 
-  &__list-item {
+  &__item {
     margin-left: 20px;
   }
 
-  &__list-item:first-child {
+  &__item:first-child {
     margin: 0;
   }
 
   &__link {
     @extend %navigation-links-paddings;
-    color: var(--dark-blue-color);
+    color: $dark-blue-color;
     display: flex;
     align-items: center;
     text-decoration: none;
     text-transform: uppercase;
-    font-style: normal;
   }
 
+  &__link--is-active {
+    color: $light-blue-color;
+    position: relative;
+  }
+  
+  &__link--is-active:after {
+    content: "";
+    height: 4px;
+    background-color: $light-blue-color;
+    width: 100%;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+
   &__link:hover {
-    color: var(--light-blue-color);
+    color: $light-blue-color;
   }
 }
