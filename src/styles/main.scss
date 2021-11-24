@@ -1,3 +1,22 @@
-body {
-  margin: 0;
+@import "./utils/reset";
+@import "./utils/variables";
+@import "./blocks/rating__stars";
+@import "./blocks/header.scss";
+@import "./blocks/nav";
+@import "./blocks/card";
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 50px 40px;
+
+  &__contaier {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $gap-b-cards;
+    width: calc(
+      (#{$card-width} * #{$cards-in-line}) +
+      (#{$gap-b-cards} * (#{$cards-in-line - 1})));
+  }
 }
