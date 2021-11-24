@@ -15,10 +15,10 @@
     margin: 46px 24px 0;
   
     &:nth-child(#{$cards-per-row}n+1) {
-      margin-left: $side-screen-margin;
+      margin-left: 0;
     }
     &:nth-child(#{$cards-per-row}n+#{$cards-per-row}) {
-      margin-right: $side-screen-margin;
+      margin-right: 0;
     }
     &:nth-child(-n+#{$cards-per-row}) {
       margin-top: 50px;
@@ -59,20 +59,23 @@
     &__stars {
       display: flex;
       justify-content: flex-start;
+
+      @for $index from 1 through 5 {
+        &--#{$index} :nth-child(-n+#{$index}) {
+          background-image: url("../images/star-active.svg");
+        }
+      }
     }
+
     &__star {
       height: 16px;
       width: 16px;
-      background-image: url("../images/star-active.svg");
+      background-image: url("../images/star.svg");
       background-repeat: no-repeat;
       background-position: 50%;
       margin-right: 4px;
-  
-      &:nth-child(5) {
-        background-image: url("../images/star.svg");
-      }
     }
-  
+
     &__feedback-counter {
       font-size: 10px;
       line-height: 14px;
