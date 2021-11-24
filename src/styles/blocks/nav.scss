@@ -1,0 +1,48 @@
+.nav {
+  @include flexing(flex, flex-end, none);
+  flex-direction: row;
+
+  &__ul {
+    @include flexing(flex, left, none);
+    padding: 0;
+  }
+
+  &__li {
+    @include flexing(flex, center, baseline);
+    margin-right: 20px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 22px 0;
+    color: $c-black;
+    font-size: 12px;
+    transition: color $transition;
+
+    &--is-active {
+      color: $c-blue;
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        background: $c-blue;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__link:hover {
+    color: $c-blue;
+  }
+}
