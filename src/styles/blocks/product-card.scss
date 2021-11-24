@@ -1,0 +1,126 @@
+@use "../utils/variables" as *;
+
+.product {
+  &-card-wrapper {
+    box-sizing: border-box;
+    width: $product-card-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #f3f3f3;
+    padding: 32px 16px 16px;
+    align-items: center;
+    margin: 46px 24px 0;
+  
+    &:nth-child(#{$cards-per-row}n+1) {
+      margin-left: 0;
+    }
+    &:nth-child(#{$cards-per-row}n+#{$cards-per-row}) {
+      margin-right: 0;
+    }
+    &:nth-child(-n+#{$cards-per-row}) {
+      margin-top: 50px;
+    }
+  }
+
+  &-picture {
+    display: block;
+    height: 134px;
+    width: 160px;
+    background-image: url("../images/imac.jpeg");
+  }
+
+  &-name {
+    margin-top: 40px;
+    color: $moyo-black;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  &-code {
+    align-self: flex-start;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    margin-top: 4px;
+    color: $moyo-grey;
+  }
+
+  &-rating {
+    margin-top: 16px;
+    display: flex;
+    width: 166px;
+    justify-content: space-between;
+    align-items: center;
+  
+    &__stars {
+      display: flex;
+      justify-content: flex-start;
+
+      @for $index from 1 through 5 {
+        &--#{$index} :nth-child(-n+#{$index}) {
+          background-image: url("../images/star-active.svg");
+        }
+      }
+    }
+
+    &__star {
+      height: 16px;
+      width: 16px;
+      background-image: url("../images/star.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      margin-right: 4px;
+    }
+
+    &__feedback-counter {
+      font-size: 10px;
+      line-height: 14px;
+      color: $moyo-black;
+    }
+  }
+
+  &-price {
+    margin-top: 24px;
+    display: flex;
+    width: 166px;
+    justify-content: space-between;
+  
+    &__label {
+      color: $moyo-grey;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+    }
+  
+    &__value {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &-buy-button {
+    margin-top: 16px;
+    background-color: $moyo-blue;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid $moyo-blue;
+    width: 166px;
+    height: 40px;
+    border-style: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+  
+    &:hover {
+      background-color: white;
+      color: $moyo-blue;
+      border: 1px solid $moyo-blue;
+    }
+  }
+}
