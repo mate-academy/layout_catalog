@@ -1,0 +1,62 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: $border-rule #f3f3f3;
+  border-radius: 5px;
+  width: 200px;
+  min-height: fit-content;
+  box-sizing: border-box;
+  flex-grow: 0;
+  margin-right: 50px;
+  margin-bottom: 50px;
+
+  &:nth-child(4n) {
+    margin-right: 50px;
+  }
+
+  &__photo {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    padding: 32px 19px 20px;
+  }
+
+  &__text {
+    display: flex;
+    @extend %large-text;
+    margin: 0;
+    padding: 20px 15px 4px;
+    line-height: 18px;
+  }
+
+  &__code {
+    @include inline-flex-start;
+    margin: 4px 16px;
+    @extend %small-grey-text;
+  }
+
+  &__feedback {
+    @include inline-flex-end;
+    @extend %small-black-text;
+    padding-top: 160px;
+  }
+
+  &__label {
+    @include inline-flex-start;
+    @extend %small-grey-text;
+    padding-left: 16px;
+    padding-right: 55px;
+    margin: 0;
+  }
+
+  &__tag {
+    @include inline-flex-end;
+    @extend %price-tag;
+    margin: 0;
+    padding-top: 245px;
+  }
+}
