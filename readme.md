@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://marina-tilniak.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://marina-tilniak.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -22,7 +22,7 @@ and SCSS
 - cards should have fixed width and fixed distances between them
 - cards container should have fixed paddings (see 1024px example), bottom the same as top
 - use semantic tags. `<header>`, `<nav>`, `<main>`
-- add class `is-active` to the first link (`Apple`) in navigation
+- add class `is-active` to the first link (`Apple`) in navigation ?????
 - add attribute `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Ноутбуки и компьютеры`)
 - add attribute `data-qa="card"` to the first card
 - add attribute `data-qa="card-hover"` (not just `hover`) to the link `Купить` inside first card
