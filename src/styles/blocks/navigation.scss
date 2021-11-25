@@ -1,0 +1,46 @@
+@import "../utils/extends";
+@import "../utils/variables";
+
+.navigation {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+  }
+
+  &__item:first-child {
+    margin: 0;
+  }
+
+  &__link {
+    @extend %navigation-links-paddings;
+    color: $dark-blue-color;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__link--is-active {
+    color: $light-blue-color;
+    position: relative;
+  }
+
+  &__link--is-active:after {
+    content: "";
+    height: 4px;
+    background-color: $light-blue-color;
+    width: 100%;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__link:hover {
+    color: $light-blue-color;
+  }
+}
