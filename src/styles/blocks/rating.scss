@@ -1,0 +1,27 @@
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__review {
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-accent;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    margin-right: 4px;
+    @include star-size($star-side);
+    background: center no-repeat url("../images/star.svg");
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} .stars__star:nth-child(-n+#{$index}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+}
