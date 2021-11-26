@@ -1,3 +1,37 @@
-body {
-  margin: 0;
+@import "./utils/_variables";
+@import "./utils/functions.scss";
+@import url(./card/common.scss);
+@import url(./header/header.scss);
+@import url(./header/nav.scss);
+@import url(./card/card.scss);
+@import url(./card/content.scss);
+@import url(./card/reviews.scss);
+@import url(./card/stars.scss);
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 73px;
+}
+
+.assortment {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 1024px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: mainWidth($width-card, $margin-card);
+
+  &__card {
+    margin-right: 48px;
+
+    &:nth-child(-n+4) {
+      margin-bottom: 46px;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
 }
