@@ -1,4 +1,4 @@
-@import "./utils/_variables";
+@import "../utils/variables";
 
 .nav {
 
@@ -18,21 +18,21 @@
     @extend %large-text;
     text-transform: uppercase;
     position: relative;
+    transition: $transition-speed;
+
+    &--is-active::after {
+      content: "";
+      width: 100%;
+      border-radius: 8px;
+      position: absolute;
+      background-color: $blue-color;
+      height: 5px;
+      top: 32px;
+      left: 0;
+    }
   }
 
   &__links:hover {
     color: $blue-color;
-    transition: $transition-speed;
-  }
-
-  .is-active::after {
-    content: "";
-    width: 100%;
-    border-radius: 8px;
-    position: absolute;
-    background-color: $blue-color;
-    height: 4px;
-    top: 34px;
-    left: 0;
   }
 }
