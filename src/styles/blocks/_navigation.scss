@@ -1,0 +1,38 @@
+@import "../utils/variables";
+
+.nav {
+
+  &__list {
+    display: flex;
+    padding-right: 50px;
+  }
+
+  &__item {
+    padding-right: 20px;
+    list-style: none;
+  }
+
+  &__links {
+    line-height: 12px;
+    text-decoration: none;
+    @extend %large-text;
+    text-transform: uppercase;
+    position: relative;
+    transition: $transition-speed;
+
+    &--is-active::after {
+      content: "";
+      width: 100%;
+      border-radius: 8px;
+      position: absolute;
+      background-color: $blue-color;
+      height: 5px;
+      top: 32px;
+      left: 0;
+    }
+  }
+
+  &__links:hover {
+    color: $blue-color;
+  }
+}
