@@ -1,0 +1,29 @@
+.catalog {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  min-width: 1024px;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: getCardContainerWidth(
+      $product-card-width,
+      $number-of-columns,
+      $space-between-columns
+    );
+
+    & :nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+
+  &__product-card {
+    margin-right: $space-between-columns;
+    margin-bottom: $space-between-rows;
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
