@@ -1,3 +1,199 @@
+@import url(./blocks/header.scss);
+@import url(./blocks/logo.scss);
+@import url(./blocks/wrap.scss);
+
+$main-accent: #060b35;
+$blue-accent: #00acdc;
+$text-price: #616070;
+
+%font-text {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  @extend %font-text;
+  font-size: 10px;
+  line-height: 14px;
+  color: $main-accent;
+}
+
 body {
   margin: 0;
+}
+
+.nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    @extend %font-text;
+    font-style: normal;
+    font-weight: 500;
+    cursor: pointer;
+    color: $main-accent;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    @extend %font-text;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-accent;
+  }
+
+  &__link:hover {
+    color: $blue-accent;
+    text-decoration: underline;
+  }
+  
+  &__link.is-active {
+    color: $blue-accent;
+  }
+  
+  &__link.is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: $blue-accent;
+    border-radius: 2px;
+  }
+}
+
+@for $index from 1 through 8 {
+  .card {
+    margin-bottom: 48px;
+    margin-right: 50px;
+    box-sizing: border-box;
+    padding: 32px 16px 16px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    width: 200px;
+  
+    &__img {
+      margin: 0 auto 40px;
+      display: block;
+      width: 160px;
+      height: 134px;
+    }
+  
+    &__title {
+      margin: 0 0 4px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 500;
+    }
+  
+    &__phrase {
+      margin: 0;
+      margin-bottom: 14px;
+      color: $text-price;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+  
+  .card__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  
+    &__reviews-review {
+      margin: 0;
+      font-size: 10px;
+    
+    }
+  }
+  
+  .stars {
+    display: flex;
+  
+    &__star {
+      margin-right: 4px;
+      width: 16px;
+      height: 16px;
+      background-image: url(../images/star.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &--active {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+  
+  .card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  
+    &-text {
+      margin: 0;
+      color: $text-price;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  
+    &-value {
+      margin: 0;
+      line-height: 18px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  
+  .buy {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 166px;
+    height: 40px;
+    line-height: 16px;
+    color: #fff;
+    background: $blue-accent;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+  
+    &:hover {
+      border: 1px solid $blue-accent;
+      border-radius: 5px;
+      color: $blue-accent;
+      background: #fff;
+    }
+  }
 }
