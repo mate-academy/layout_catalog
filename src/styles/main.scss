@@ -1,3 +1,198 @@
-body {
+$dark-color: #060b35;
+$light-color: #616070;
+$small-font-size: 10px;
+$button-color: #00acdc;
+
+$card-container-hor-padding: 41px;
+$imac-card-right-margin: 50px;
+$imac-card-width: 200px;
+
+body,
+p,
+h2 {
   margin: 0;
+
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+  padding: 0 50px;
+
+  &__logo {
+    margin: 10px 0;
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+  
+  &__link {
+    position: relative;
+    margin-left: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #060b35;
+
+    &:hover {
+      color: $button-color;
+      text-decoration: underline;
+    }
+
+    &--#{is-active} {
+      color: $button-color;
+      
+      &::after {
+        content: "";
+        height: 4px;
+        background-color: $button-color;
+        border-radius: 2px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 34px;
+      }
+    }
+  }
+}
+
+.main__cards-container {
+  margin: 0 auto;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 51px $card-container-hor-padding;
+  width: $card-container-hor-padding * 2
+    + $imac-card-right-margin * 3 
+    + $imac-card-width * 4;
+
+  &__imac-card {
+    margin-right: $imac-card-right-margin;
+    margin-bottom: 48px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.imac-card {
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $imac-card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  &__image {
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+  
+  &__name {
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: $dark-color;
+  }
+  
+  &__code {
+    margin-bottom: 16px;
+    font-size: $small-font-size;
+    color: $light-color;
+  }
+  
+  &__reviews {
+    margin-bottom: 24px;
+  }
+  
+  &__price {
+    margin-bottom: 16px;
+  }
+}
+
+.stars {
+  display: flex;
+  
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  @for $index from 1 through 4 {
+    &--#{$index} &__star:nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+
+  &__amount {
+    font-size: $small-font-size;
+    color: $dark-color;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  &__name {
+    color: $light-color;
+  }
+  
+  &__amount {
+    font-weight: 700;
+    font-size: 16px;
+    color: $dark-color;
+  }
+}
+
+.button {
+  display: flex;
+  box-sizing: border-box;
+  width: 166px;
+  height: 40px;
+  background-color: $button-color;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &__link {
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    margin: auto;
+  }
+  
+  &:hover {
+    border: 1px solid $button-color;
+    background-color: #fff;
+  }
+  
+  &:hover &__link {
+    color: $button-color;
+  }
 }
