@@ -7,6 +7,10 @@ $card-container-hor-padding: 41px;
 $imac-card-right-margin: 50px;
 $imac-card-width: 200px;
 
+body {
+  min-width: 1024px;
+}
+
 body,
 p,
 h2 {
@@ -20,7 +24,6 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 500px;
   box-shadow: 0 2px 4px 0 #0000000d;
   padding: 0 50px;
 
@@ -30,8 +33,11 @@ h2 {
 }
 
 .nav {
+
   &__list {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
   }
   
@@ -40,28 +46,31 @@ h2 {
     margin-left: 20px;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 500;
     color: #060b35;
+    padding: 22.5px 0 19.5px;
+    line-height: 60px;
 
     &:hover {
       color: $button-color;
-      text-decoration: underline;
     }
+  }
+}
 
-    &--#{is-active} {
-      color: $button-color;
-      
-      &::after {
-        content: "";
-        height: 4px;
-        background-color: $button-color;
-        border-radius: 2px;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 34px;
-      }
-    }
+.is-active {
+  color: $button-color;
+  margin-left: 0;
+  
+  &::after {
+    content: "";
+    height: 4px;
+    background-color: $button-color;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 57px;
   }
 }
 
@@ -73,7 +82,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 51px $card-container-hor-padding;
+  padding: 50px $card-container-hor-padding;
   width: $card-container-hor-padding * 2
     + $imac-card-right-margin * 3 
     + $imac-card-width * 4;
@@ -106,6 +115,7 @@ h2 {
   
   &__name {
     font-weight: 500;
+    line-height: 18px;
     margin-bottom: 4px;
     color: $dark-color;
   }
@@ -157,6 +167,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  line-height: 18px;
   
   &__name {
     color: $light-color;
