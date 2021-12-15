@@ -1,0 +1,135 @@
+.product-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: $cards-width;
+  border: 1px solid rgba(230, 230, 230, 0.5);
+  border-radius: 5px;
+  padding: 16px;
+
+  &--space:not(:nth-last-child(-n + 4)) {
+    margin-bottom: $cards-space-column;
+  }
+
+  &--space:not(:nth-child(4n)) {
+    margin-right: $cards-space-row;
+  }
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+
+  &--position {
+    margin: 16px 0;
+  }
+
+  &__photo {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $dark-text-color;
+
+    &--position {
+      margin-top: 40px;
+    }
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $light-text-color;
+
+    &--position {
+      margin-top: 4px;
+    }
+  }
+
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--position {
+    margin-top: 24px;
+  }
+
+  &__description {
+    font-size: 12px;
+    font-weight: 400;
+    color: $light-text-color;
+  }
+
+  &__value {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $dark-text-color;
+  }
+
+}
+
+.product-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__stars {
+    display: flex;
+
+    @for $index from 1 through $card-rating-stars {
+      &--#{$index} > :nth-child(-n + #{$card-rating-stars}) {
+        background-image: url(/images/star-active.svg);
+      }
+    }
+  }
+
+  &__star {
+    margin-right: 4px;
+    height: 16px;
+    width: 16px;
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    color: $dark-text-color;
+  }
+}
+
+.product-buy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  border: 1px solid $button-color;
+  background-color: $button-color;
+
+  &--position {
+    margin-top: 16px;
+  }
+
+  &:hover {
+    background-color: white;
+    color: $button-color;
+  }
+}
