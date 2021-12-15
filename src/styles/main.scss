@@ -68,7 +68,7 @@ body {
 
   &__link:hover {
     color: $blue-accent;
-    text-decoration: underline;
+    text-decoration: none;
   }
   
   &__link.is-active {
@@ -89,19 +89,25 @@ body {
 
 @for $index from 1 through 8 {
   .card {
-    margin-bottom: 48px;
-    margin-right: 50px;
+    margin-bottom: 46px;
+    margin-right: 48px;
     box-sizing: border-box;
     padding: 32px 16px 16px;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     width: 200px;
-  
-    &__img {
-      margin: 0 auto 40px;
-      display: block;
-      width: 160px;
-      height: 134px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    @for $image from 1 to 8 {
+      &__img {
+        margin: 0 auto 40px;
+        display: block;
+        width: 160px;
+        height: 134px;
+      }
     }
   
     &__title {
@@ -113,26 +119,50 @@ body {
   
     &__phrase {
       margin: 0;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       color: $text-price;
       font-size: 10px;
       line-height: 14px;
     }
-  }
-  
-  .card__reviews {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-  
-    &__reviews-review {
-      margin: 0;
-      font-size: 10px;
-    
+
+    &__reviews {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+
+      &-rewiev {
+        margin: 0;
+      }
     }
   }
-  
+}
+
+@for $buy from 1 through 8 {
+  .buy {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 40px;
+    line-height: 16px;
+    color: #fff;
+    background: $blue-accent;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+
+    &:hover {
+      border: 1px solid $blue-accent;
+      border-radius: 5px;
+      color: $blue-accent;
+      background: #fff;
+    }
+  }
+
   .stars {
     display: flex;
   
@@ -144,8 +174,10 @@ body {
       background-repeat: no-repeat;
       background-position: center;
 
-      &--active {
-        background-image: url(../images/star-active.svg);
+      @for $background from 1 through 4 {
+        &--active:nth-child(-n + 4) {
+          background-image: url(../images/star-active.svg);
+        }
       }
     }
   }
@@ -168,32 +200,6 @@ body {
       line-height: 18px;
       font-size: 16px;
       font-weight: bold;
-    }
-  }
-  
-  .buy {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    width: 166px;
-    height: 40px;
-    line-height: 16px;
-    color: #fff;
-    background: $blue-accent;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 700;
-  
-    &:hover {
-      border: 1px solid $blue-accent;
-      border-radius: 5px;
-      color: $blue-accent;
-      background: #fff;
     }
   }
 }
