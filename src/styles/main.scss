@@ -1,11 +1,25 @@
-/* #region root */
-:root {
-  --color-blue: #00acdc;
-  --color-white: #fff;
-}
-/* #endregion */
+$blue-accent-color: #00acdc;
+$text-main-color: #060b35;
+$text-secondary-color: #616070;
+$star-size: 16px;
 
-/* #region reset */
+@mixin sizes($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%font-size {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -17,182 +31,187 @@ ul,
 p {
   margin: 0;
 }
-/* #endregion */
 
-/* #region page */
 .page {
   font-family: "Roboto", sans-serif;
-  font-size: 11px;
-  background-color: #fff;
-}
-/* #endregion */
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-secondary-color;
 
-/* #region header */
+  &__cards {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-center();
 
   padding: 0 50px;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  background-color: var(--color-white);
+
+  &__logo {
+    margin-right: 20px;
+  }
+
+  .logo {
+    display: inline-flex;
+  }
 }
 
-.header__logo {
-  margin-right: 20px;
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    @extend %font-size;
+    color: $text-main-color;
+
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    position: relative;
+  }
+
+  &__link.is-active {
+    color: $blue-accent-color;
+  }
+
+  &__link.is-active::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    border-radius: 8px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $blue-accent-color;
+  }
+
+  &__link:hover {
+    color: $blue-accent-color;
+  }
 }
-/* #endregion */
-
-/* #region logo */
-.logo {
-  display: inline-flex;
-}
-/* #endregion */
-
-/* #region nav */
-.nav__list {
-  display: flex;
-  padding: 0;
-  list-style: none;
-}
-
-.nav__item:not(:first-child) {
-  margin-left: 20px;
-}
-
-.nav__link {
-  font-weight: 500;
-  font-size: 12px;
-  color: #000;
-
-  display: flex;
-  align-items: center;
-  height: 60px;
-
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-
-  position: relative;
-}
-
-.nav__link.is-active {
-  color: var(--color-blue);
-}
-
-.nav__link.is-active::after {
-  position: absolute;
-  content: "";
-  height: 4px;
-  border-radius: 8px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--color-blue);
-}
-
-.nav__link:hover {
-  color: var(--color-blue);
-}
-/* #endregion */
 
 .cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 50px 40px 0;
+  padding: 50px 40px;
+
+  &__product {
+    margin-bottom: 46px;
+  }
 }
 
-.card {
+.product {
   width: 200px;
   border: 1px solid #f3f3f3;
-  background-color: var(--color-white);
   border-radius: 5px;
 
-  padding: 29px 14px 14px;
-  margin-bottom: 50px;
-}
+  padding: 32px 16px 16px;
 
-.card__image {
-  display: block;
-  width: 160px;
-  height: 134px;
+  &__card-image {
+    margin: 0 auto 40px;
+  }
+  .card-image {
+    display: block;
+    width: 160px;
+    height: 134px;
+  }
 
-  margin: 0 auto 45px;
-}
+  &__card-title {
+    margin-bottom: 4px;
+  }
+  .card-title {
+    @extend %font-size;
+    color: $text-main-color;
+  }
 
-.card__title {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
+  &__card-code {
+    margin-bottom: 16px;
+  }
 
-  margin-bottom: 6px;
-}
+  &__card-rating {
+    margin-bottom: 24px;
+  }
+  .card-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
-.card__code {
-  margin-bottom: 15px;
-}
+    &__stars {
+      display: flex;
+    }
 
-.card__reviews {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    &__star {
+      @include sizes($star-size);
+      background-image: url(../images/star.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
 
-  margin-bottom: 20px;
-}
+    &__star:nth-child(-n + 4) {
+      background-image: url(../images/star-active.svg);
+      margin-right: 4px;
+    }
 
-.stars {
-  display: flex;
-}
+    &__reviews {
+      color: $text-main-color;
+    }
+  }
 
-.stars__star {
-  height: 15px;
-  width: 15px;
-  background-image: url(../images/star.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
+  &__price-container {
+    margin-bottom: 16px;
+  }
+  .price-container {
+    @include flex-center();
 
-.stars__star:nth-child(-n + 4) {
-  background-image: url(../images/star-active.svg);
-  margin-right: 4px;
-}
+    &__text {
+      @extend %font-size;
+    }
 
-.card__price {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+    &__sum {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: bold;
+      color: $text-main-color;
+    }
+  }
 
-  margin-bottom: 20px;
-}
+  &__buy {
+    @include flex-center();
+    height: 40px;
 
-.card__price-sum {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-}
+    border: 1px solid $blue-accent-color;
+    border-radius: 5px;
 
-.card__buy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 5px;
-  color: var(--color-white);
-  background-color: var(--color-blue);
-}
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $blue-accent-color;
+    color: #fff;
+  }
 
-.card__buy:hover {
-  color: var(--color-blue);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-blue);
+  &__buy:hover {
+    color: $blue-accent-color;
+    background-color: #fff;
+    border: 1px solid $blue-accent-color;
+  }
 }
