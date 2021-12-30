@@ -1,3 +1,7 @@
+%active-star-background {
+  background-image: url("../images/star-active.svg");
+}
+
 .stars {
   display: flex;
 
@@ -10,13 +14,9 @@
     background-position: center;
   }
 
-  &--1 > &__star:nth-child(-n + 1),
-  &--2 > &__star:nth-child(-n + 2),
-  &--3 > &__star:nth-child(-n + 3),
-  &--4 > &__star:nth-child(-n + 4),
-  &--5 > &__star:nth-child(-n + 5) {
-    background-image: url("../images/star-active.svg");
-    background-position: center;
-    background-repeat: no-repeat;
+  @for $count from 1 through 5 {
+    &--#{$count} &__star:nth-child(-n + #{$count}) {
+      @extend %active-star-background;
+    }
   }
 }
