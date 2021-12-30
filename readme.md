@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
 - [DEMO LINK](https://vonatlus.github.io/layout_catalog/)
-- [TEST REPORT LINK](vonatlus.github.io/layout_catalog/report/html_report/)
+- [TEST REPORT LINK](https://vonatlus.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
