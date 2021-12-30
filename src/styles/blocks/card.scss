@@ -1,0 +1,73 @@
+.card {
+  width: 200px;
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  list-style: none;
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    @extend %small-font;
+    color: $light-text-color;
+  }
+
+  &__rating {
+    @extend %justify-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    margin-top: 2px;
+    @extend %small-font;
+  }
+
+  &__price {
+    @extend %justify-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    color: $light-text-color;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+  }
+
+  &__buy-button {
+    display: block;
+    border-radius: 5px;
+    line-height: 38px;
+    @include buy-button($buy-button-main-color);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $buy-button-side-color;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  &__buy-button:hover {
+    background-color: $buy-button-side-color;
+    color: $buy-button-main-color;
+  }
+}

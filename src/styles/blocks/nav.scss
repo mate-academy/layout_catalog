@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    @extend %align-center;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 60px;
+    font-weight: 500;
+    color: $main-dark-color;
+    transition: color 0.3s;
+
+    &--is-active {
+      position: relative;
+      color: $buy-button-main-color;
+    }
+
+    &--is-active::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: $buy-button-main-color;
+    }
+  }
+
+  &__link:hover {
+    position: relative;
+    color: $buy-button-main-color;
+  }
+}
