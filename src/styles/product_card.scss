@@ -1,4 +1,3 @@
-
 $cardWidth: 200px;
 $gapX: 40px;
 $paddingX: 40px;
@@ -9,7 +8,6 @@ $colums: 4;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 0;
   padding: 46px 26px 46px 28px;
   width: $colums * $cardWidth + ($colums - 1) * $gapX + 2 * $paddingX;
 
@@ -28,18 +26,21 @@ $colums: 4;
 }
 
 .cards {
-  width: 200px;
-  height: 406px;
-  border: 1px solid rgb(243, 243, 243);
+  width: #{$cardWidth};
   border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  padding: 32px 16px 26px;
 
   &__photo {
-    margin: 0 3px 36.5px;
+    margin: 0 3px 36px;
+  }
 
-    &_product {
-      width: 100%;
-      height: 134px;
-    }
+  &__product {
+    width: 160px;
+    height: 134px;
   }
 
   &__name {
@@ -68,24 +69,20 @@ $colums: 4;
     margin-bottom: 28px;
     display: flex;
     justify-content: space-between;
-
-    &_name {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 18px;
-      color: rgba(97, 96, 112, 1);
-    }
-
-    &_numb {
-      font-weight: 700;
-      font-size: 16px;
-      color: rgba(6, 11, 53, 1);
-      line-height: 18px;
-    }
   }
 
-  &__container {
-    margin: 32px 16px 16px;
+  &__priceName {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(97, 96, 112, 1);
+  }
+
+  &__numb {
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(6, 11, 53, 1);
+    line-height: 18px;
   }
 
   &__button {
