@@ -1,3 +1,235 @@
-body {
+$blue_color: #00acdc;
+$dark-blue_color: #060b35;
+$card-items_width: 166px;
+
+@mixin card_size {
+  width: 198px;
+  height: 406px;
+}
+
+@mixin star_size {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.header,
+.nav__list,
+.nav__item,
+.nav__link,
+.is-active {
+  display: flex;
+}
+
+.header {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.nav__list {
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+  height: 60px;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
+}
+
+.nav__link {
+  flex-direction: column;
+  text-decoration: none;
+  justify-content: center;
+  color: $dark-blue_color;
+  height: 60px;
+}
+
+.nav__item:hover > .nav__link {
+  color: $blue_color;
+}
+
+.is-active {
+  color: $blue_color;
+}
+
+.is-active::after,
+.nav__link:active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $blue_color;
+  border-radius: 8px;
+}
+
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 51px;
+  width: 944px;
+  height: 862px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  margin-right: 50px;
+  margin-bottom: 48px;
+  box-sizing: border-box;
+  @include card_size;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+  &__product_image {
+    margin-bottom: 40px;
+    height: 134px;
+  }
+  
+  &__product_image_img {
+    width: 160px;
+  }
+  
+  &__product_name_value {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $dark-blue_color;
+    width: $card-items_width;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  
+  &__product_code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #616070;
+    width: $card-items_width;
+    margin-bottom: 16px;
+  }
+  
+  &__product_review {
+    display: flex;
+    justify-content: space-between;
+    width: $card-items_width;
+    height: 16px;
+    margin-bottom: 24px;
+  }
+  
+  &__review_stars {
+    display: flex;
+  }
+  
+  &__review_stars_star {
+    @include star_size;
+    background-image: url("/images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  
+  &__review_stars_star--active:nth-child(-n + 4) {
+    background-image: url("/images/star-active.svg");
+  }
+  
+  &__review_text {
+    display: flex;
+    align-items: center;
+    width: 53px;
+    height: 16px;
+  }
+  
+  &__review_text_link {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    text-decoration: none;
+    color: $dark-blue_color;
+  }
+  
+  &__product_price {
+    display: flex;
+    justify-content: space-between;
+    width: $card-items_width;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  
+  &__product_price_text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #616070;
+    width: 32px;
+  }
+  
+  &__product_price_value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $dark-blue_color;
+    width: 79px;
+  }
+  
+  &__product_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $card-items_width;
+    height: 40px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: $blue_color;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+  }
+  
+  &__product_button:hover {
+    color: $blue_color;
+    background-color: #fff;
+    border-color: $blue_color;
+  }
 }
