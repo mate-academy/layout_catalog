@@ -1,0 +1,24 @@
+.catalog-content {
+  box-sizing: border-box;
+  margin: 0 auto;
+  @extend %aligning-flex;
+  min-width: 1024px;
+  width: $card-width * $number-card + ($number-card - 1)
+    * $Xgap-card + $Xpading-catalog * 2;
+  flex-wrap: wrap;
+  padding: 50px $Xpading-catalog;
+
+  &__card {
+    box-sizing: border-box;
+    margin-right: $Xgap-card;
+    margin-bottom: $Ygap-card;
+  
+    &:nth-last-child(-n+4) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
