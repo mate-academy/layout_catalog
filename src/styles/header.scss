@@ -1,12 +1,14 @@
-$blue: #00acdc;
-$main-accent: #060b35;
-$secondary: #616070;
+@use "./styles/__variebles";
+
+html {
+  font-family: "Roboto", sans-serif;
+}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  box-sizing: border-box;
   height: 60px;
   background-color: #fff;
   font-family: "Roboto", sans-serif;
@@ -26,8 +28,6 @@ $secondary: #616070;
 .nav__list {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav__link {
@@ -41,12 +41,15 @@ $secondary: #616070;
   text-decoration: none;
   height: 60px;
   transition: color 0.3s;
+  
   &--active {
     color: $blue;
   }
+  
   &:hover {
     color: $blue;
   }
+  
   &--active::after {
     height: 4px;
     width: 100%;
