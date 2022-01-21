@@ -11,7 +11,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &__nav-list {
-    @include nav-link (12px, 600);
+    @include nav-link (12px, 500);
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -26,28 +26,28 @@
     color: $links-color;
     text-decoration: none;
     height: 60px;
-  }
 
-  &__nav-link-item:not(:last-child) {
-    margin-right: 20px;
-  }
+    &--is-active {
+      color: $blue-color;
+    }
 
-  &__nav-link:hover {
-    color: $blue-color;
+    &-item:not(:last-child) {
+      margin-right: 20px;
+    }
+    
+    &:hover {
+      color: $blue-color;
+    }
+    
+    &--is-active::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      background-color: $blue-color;
+      border-radius: 8px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
-
-  &__nav-link--is-active::after {
-    content: "";
-    position: absolute;
-    height: 4px;
-    background-color: $blue-color;
-    border-radius: 8px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
-.nav-link_is-active {
-  color: $blue-color;
 }
