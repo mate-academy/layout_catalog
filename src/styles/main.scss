@@ -1,3 +1,279 @@
 body {
   margin: 0;
 }
+
+$maincolor: #060b35;
+$secondarycolor:#00ACDC;
+$font_family:"Roboto", sans-serif;
+
+@mixin Nav_values {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+.Logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-left: 50px;
+}
+
+.Nav {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-right: 50px;
+
+  &__ALL {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list {
+    margin-left: 20px;
+  }
+  &__list:nth-child(1) {
+    margin-left: 0px
+  }
+  
+  &__1 {
+    @include Nav_values;
+    color: $secondarycolor;
+  }
+
+  &__1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 2px;
+    background:$secondarycolor;
+  }
+
+  &__2 {
+    @include Nav_values;
+    color: $maincolor;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+
+  &__3 {
+    @include Nav_values;
+    color: $maincolor;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+
+  &__4 {
+    @include Nav_values;
+    color: $maincolor;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+
+  &__5 {
+    @include Nav_values;
+    color: $maincolor;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+
+  &__6 {
+    @include Nav_values;
+    color: $maincolor;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+
+  &__7 {
+    @include Nav_values;
+    color: $maincolor;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+
+  &__8 {
+    @include Nav_values;
+    color: $maincolor;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+}
+
+.Block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.All_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1024px;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-top: 50px;
+}
+
+.Card:nth-child(4n){
+  margin-right: 0;
+}
+
+.Card {
+  Width: 200px;
+  Height: 408px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fff;
+  padding-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 48px;
+  margin-bottom: 46px;
+
+
+  &__picture {
+    display: flex;
+    margin-left: 3px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__product {
+    font-weight: 500;
+    font-family:$font_family;
+    margin-top: 40px;
+    width: 166px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $maincolor;
+  }
+
+  &__code {
+    font-family:$font_family;
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 4px;
+    line-height: 14px;
+    color: #616070;
+    width: 92px;
+    height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+    justify-content: space-between;
+    height: 16px;
+  }
+
+  &__flo {
+    font-family:$font_family;
+    font-weight: 400;
+    font-size: 10px;
+    color: $maincolor;
+    display: flex;
+  }
+
+  &__price_container {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info_price {
+    display: flex;
+    font-family:$font_family;
+    font-weight: 400;
+    line-height: 18px;
+    font-size: 12px;
+    color: #616070;
+  }
+
+  &__price {
+    font-family:$font_family;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $maincolor;
+    height: 18px;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-family:$font_family;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: $secondarycolor;
+    color: #fff;
+    margin-top: 16px;
+
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $secondarycolor;
+      box-sizing: border-box;
+      border-radius: 5px;
+      color: $secondarycolor;
+      background-color: transparent;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+}
+
+.stars--4 .stars__star:nth-child(-n+4) {
+  background-image: url("../images/star-active.svg");
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  background-image: url("../images/star.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
