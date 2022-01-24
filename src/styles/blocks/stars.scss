@@ -9,14 +9,13 @@
     background-image: url("../images/star.svg");
     background-position: center;
     background-repeat: no-repeat;
-  }
 
-  &:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-
-  @for $index from 1 through $stars-count {
-    &-#{$index} {
+  @for $index from 1 to 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
       background-image: url("../images/star-active.svg");
     }
   }
