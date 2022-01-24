@@ -1,0 +1,47 @@
+.nav {
+  &__links {
+    display: flex;
+
+    font-size: $fs-regular;
+    font-weight: $fw-medium;
+    text-transform: uppercase;
+  }
+
+  &__item,
+  &__link {
+    padding: 23px 0;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    transition: color $transition-default ease;
+
+    &:hover,
+    &--active {
+      color: $primary;
+    }
+
+    &--active {
+      &::before {
+        content: "";
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 4px;
+
+        border-radius: 8px;
+        background-color: $primary;
+      }
+    }
+  }
+}
