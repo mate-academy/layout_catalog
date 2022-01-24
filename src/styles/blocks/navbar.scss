@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    height: 40px;
+  }
+}
+
+.nav {
+  font-weight: 500;
+  &__list {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    padding: 23px 0;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(6, 11, 53, 1);
+
+    &:hover {
+      color: $color-aqua;
+    }
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.is-active {
+  position: relative;
+
+  color: $color-aqua;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    height: 4px;
+
+    background-color: $color-aqua;
+    border-radius: 8px;
+  }
+}
