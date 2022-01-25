@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    padding: 23px 0;
+    @include text-styles(12px, 14px, 500);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-text-color;
+    transition: color 500ms ease;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &--active {
+      margin-left: 0;
+      color: $accent-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $accent-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
