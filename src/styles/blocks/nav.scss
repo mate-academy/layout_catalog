@@ -1,0 +1,51 @@
+.nav {
+  padding: 0;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    padding: 23px 0;
+    margin-left: $nav-link-margin;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $nav-link-font-size;
+    line-height: 14px;
+    font-style: normal;
+    font-weight: 500;
+
+    color: $nav-link-default-color;
+
+    transition: color, 0.3s;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+
+    &--is-active {
+      position: relative;
+      color: $link-hover-color;
+      margin-left: 0;
+    }
+
+    &--is-active::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background-color: #00acdc;
+      border-radius: 8px;
+    }
+  }
+}
