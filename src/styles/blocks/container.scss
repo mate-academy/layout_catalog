@@ -1,0 +1,24 @@
+.container {
+
+  padding: 50px 40px;
+
+  &__products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    width: getContainerWidth($card-width, $card-margin, $cards-row);
+    margin: 0 auto;
+  }
+
+  &__card {
+    flex-grow: 0;
+
+    &:not(:nth-child(4n)) {
+      margin-right: $card-margin;
+    }
+
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: $card-margin - 2;
+    }
+  }
+}
