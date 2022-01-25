@@ -1,0 +1,22 @@
+@use "../utils/variables" as *;
+
+.cards {
+  &__products {
+    display: flex;
+    flex-wrap: wrap;
+
+    max-width: getContainerWidth($colmn, $max-width, $gap-size);
+    margin: 0 auto;
+    padding: 50px 0 70px;
+  }
+
+  &__product {
+    &:not(:nth-child(4n)) {
+      margin-right: $gap-size;
+    }
+  }
+
+  &__product:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+}

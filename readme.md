@@ -1,14 +1,14 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://GoDfreE25.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://GoDfreE25.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
 > Write styles in `src/styles/main.scss` instead of `src/style.css`.
 ___
 
-## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
+## ❗️❗️❗️ DON"T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
 ## The task
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
@@ -26,7 +26,7 @@ and SCSS
 - add class `is-active` to the first link (`Apple`) in navigation
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Ноутбуки и компьютеры`)
-- add `data-qa="card"` to the first card
+- add `` to the first card
 - add `data-qa="card-hover"` (not just `hover`) to the link `Купить` inside the first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
@@ -35,4 +35,4 @@ and SCSS
 
 ---
 ### Tips & Hints
-Don't use flex `gap` property, it's not yet supported by tests.
+Don"t use flex `gap` property, it"s not yet supported by tests.
