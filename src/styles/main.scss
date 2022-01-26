@@ -1,3 +1,30 @@
-body {
-  margin: 0;
+@import "_vars";
+@import "_reset";
+@import "_header";
+@import "_card";
+@import "_stars";
+
+$col-numb: 4;
+$map-gapX: 48px;
+$map-gapY: 48px;
+$map-width:  $col-numb * $card-width + ($col-numb - 1) * $map-gapX;
+
+.catalog-map {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: auto;
+  padding-top: 50px;
+  width: $map-width;
+
+  &__cell {
+
+    &:not(:nth-child(#{$col-numb}n)) {
+      margin-right: $map-gapX;
+    }
+
+    &:not(:nth-child(n + #{$col-numb})) {
+      margin-bottom: $map-gapY;
+    }
+  }
 }
