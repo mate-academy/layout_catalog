@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: block;
+    @include square;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    padding: 23px 0;
+
+    color: $color-black;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-light-blue;
+    }
+  }
+
+  .is-active {
+    position: relative;
+    color: $color-light-blue;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $color-light-blue;
+      height: 4px;
+      border-radius: 8px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

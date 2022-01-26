@@ -1,0 +1,20 @@
+$cards-in-row: 4;
+$card-margin-y: 48px;
+
+.content {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  padding: 50px 0;
+  margin: auto;
+  width: $card-width * $cards-in-row + $card-margin-y * ($cards-in-row - 1);
+
+  & > :not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+
+  &__card:not(:nth-child(4n)) {
+    margin-right: $card-margin-y;
+  }
+}
