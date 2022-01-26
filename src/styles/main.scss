@@ -28,6 +28,7 @@ body {
 }
 
 .logo {
+  display: flex;
   width: 40px;
   height: 40px;
   align-self: center;
@@ -45,10 +46,7 @@ body {
 
 .nav_link {
   text-decoration: none;
-
-  &:visited {
-    color: black;
-  }
+  color: black;
   
   &:hover {
     color: #00acdc;
@@ -72,18 +70,21 @@ body {
   }
 }
 
+$cell-width: 200px;
+$cell-height: 404px;
+$margin-right: 50px;
+$margin-top: 48px;
+$cards-in-a-row: 4;
+$cards-in-a-col: 2;
+
 .main {
   display: flex;
   flex-wrap: wrap;
-  box-sizing: border-box;
-  width: 950px;
-  height: 856px;
+  width: $cell-width * $cards-in-a-row + $margin-right * ($cards-in-a-row - 1);
+  height: $cell-height* $cards-in-a-col + $margin-top * ($cards-in-a-col - 1);
   justify-content: space-between;
   margin: auto;
   margin-top: 50px;
-}
-.card-block:nth-last-child(-n + 4){
-  margin-top: 48px;
 }
 
 .card-block {
@@ -95,6 +96,11 @@ body {
   flex-wrap: wrap;
   box-sizing: border-box;
   padding: 16px;
+  
+  
+  &:nth-last-child(-n + 4) {
+    margin-top: 48px;
+  }
 
   &__photo {
     width: 160px;
