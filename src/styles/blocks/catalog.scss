@@ -1,0 +1,32 @@
+.catalog {
+  $catalog-per-line: 4;
+  $gap: 48px;
+
+  padding-top: 50px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  &__container {
+    width: $card-width * 4 + $gap * ($catalog-per-line - 1);
+
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    margin-right: $gap;
+    margin-bottom: $gap - 2px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
