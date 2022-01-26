@@ -1,113 +1,92 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap");
-
-* {
-  box-sizing: border-box;
+@mixin fontFamily ($main-font, $second-font) {
+  font-family: #{$main-font}, #{$second-font};
 }
 
-/* #region card */
+$card-width: 200px;
+$card-price-height: 18px;
+
 .card {
-  width: 200px;
+  width: $card-width;
   margin: 0 auto;
   padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $c-white-extra;
   border-radius: 5px;
-}
-/* #endregion */
 
-/* #region picture */
-.picture {
-  display: block;
-  width: 160px;
-  height: 134px;
-}
+  &__picture {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
 
-.card__picture {
-  margin: 0 auto 40px;
-}
-/* #endregion */
+  &__description {
+    @include fontFamily ($main-font, $second-font);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $c-dark-blue;
+    margin-bottom: 4px;
+  }
 
-/* #region description */
-.description {
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  color: #060b35;
-}
+  &__extra-text {
+    @include fontFamily ($main-font, $second-font);
+    font-size: 10px;
+    color: $c-grey;
+    margin-top: 0;
+    margin-bottom: 17px;
+  }
 
-.card__description {
-  margin-bottom: 4px;
-}
-/* #endregion */
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
 
-/* #region extra-text */
-.extra-text {
-  font-family: Roboto, sans-serif;
-  font-size: 10px;
-  color: #616070;
-}
-
-.card__extra-text {
-  margin-top: 0;
-  margin-bottom: 17px;
-}
-/* #endregion */
-
-/* #region grade */
-.grade {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__price {
+    margin-bottom: 4px;
+  }
 }
 
-.card__grade {
-  margin-bottom: 12px;
-}
-
-.grade-text {
+.rating-text {
+  align-self: center;
   font-family: Roboto, sans-serif;
   font-size: 10px;
-  color: #060b35;
+  color: $c-dark-blue;
+  margin: 0;
 }
-/* #endregion */
 
-/* #region price */
 .price {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card__price {
-  margin-bottom: 4px;
-}
-
 .price-title {
-  font-family: Roboto, sans-serif;
+  @include fontFamily ($main-font, $second-font);
   font-size: 12px;
-  color: #616070;
-  line-height: 18px;
+  color: $c-grey;
+  line-height: $card-price-height;
 }
 
 .price-number {
-  font-family: Roboto, sans-serif;
+  @include fontFamily ($main-font, $second-font);
   font-weight: bold;
   font-size: 16px;
-  color: #060b35;
-  line-height: 18px;
+  color: $c-dark-blue;
+  line-height: $card-price-height;
+  margin: 0;
 }
-/* #endregion */
 
-/* #region buy */
 .buy {
+  @include fontFamily ($main-font, $second-font);
   display: inline-block;
   width: 100%;
   height: 40px;
-  background: #00acdc;
-  border: 1px solid #00acdc;
+  background: $c-ocean;
+  border: 1px solid $c-ocean;
   border-radius: 5px;
-  color: #fff;
-  font-family: Roboto, sans-serif;
+  color: $c-white;
   font-weight: bold;
   font-size: 14px;
   line-height: 40px;
@@ -116,37 +95,9 @@
   text-transform: uppercase;
 }
 
-.card__buy {
-  /* margin:  0 0; */
-}
-
 .card:hover .buy {
-  background-color: #fff;
-  color: #00acdc;
+  background-color: $c-white;
+  color: $c-ocean;
   transition: background-color 0.3s ease-in-out,
     color 0.4s ease;
 }
-/* #endregion */
-
-/* #region stars */
-.stars {
-  display: flex;
-}
-
-.star {
-  height: 16px;
-  width: 16px;
-  margin-right: 4px;
-  background-image: url("./../images/star.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.grade__stars--1 :nth-child(-n+1),
-.grade__stars--2 :nth-child(-n+2),
-.grade__stars--3 :nth-child(-n+3),
-.grade__stars--4 :nth-child(-n+4),
-.grade__stars--5 :nth-child(-n+5) {
-  background-image: url("./../images/star-active.svg");
-}
-/* #endregion */
