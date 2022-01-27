@@ -1,5 +1,6 @@
 $card-width: 200px;
 $gap: 48px;
+$column: 4;
 
 .page {
   &__cards-container {
@@ -7,7 +8,7 @@ $gap: 48px;
 
     display: flex;
     flex-wrap: wrap;
-    max-width: getContainerWidth(4, $card-width, $gap);
+    max-width: getContainerWidth($column, $card-width, $gap);
     padding: 50px 0 70px;
   }
 
@@ -19,16 +20,5 @@ $gap: 48px;
     &:not(:nth-last-child(-n + 4)) {
       margin-bottom: $gap - 2px;
     }
-  }
-
-  &__product-card {
-    margin: 0 auto;
-
-    padding: 32px 16px 16px;
-
-    max-width: $card-width;
-
-    border-radius: 5px;
-    border: 1px solid #f3f3f3;
   }
 }
