@@ -14,8 +14,7 @@ ___
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
 
 ## Requirements:
-- use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
-and SCSS
+- use `Card` and `Header` blocks from previous tasks but rewrite them using BEM and SCSS
 - Nav links color is not `black` any more
 - there should always be 4 cards in a row (not 2, 3 or 5)
   - use `:nth-child(4n)` to select every 4th element
