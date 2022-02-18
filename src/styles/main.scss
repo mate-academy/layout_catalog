@@ -1,3 +1,248 @@
 body {
   margin: 0;
 }
+
+* {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+  box-shadow: 0 1px 1px 1px #f3f3f3;
+
+  &__content {
+    display: flex;
+  }
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    height: 60px;
+    color: #060b35;
+    position: relative;
+
+    transition-duration: 400ms;
+
+    &.is-active,
+    &:hover {
+      color: #00acdc;
+    }
+  }
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #00acdc;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  margin-left: 128px;
+  margin-right: 128px;
+
+  @media (max-width:1024px) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  @media (min-width: 1201px) {
+    margin-right: 160px;
+    margin-left: 160px;
+  }
+}
+
+.card {
+  width: 198px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  margin-bottom: 46px;
+
+  @media (min-width: 1201px) {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  &-picture {
+    padding: 32px 19px 36px;
+    width: 160px;
+    height: 134px;
+    transition: 400ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &-product__description {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 16px;
+    color: #060b35;
+  }
+
+  &-product__code {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    margin-left: 16px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    color: #616070;
+  }
+
+  &-rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 14px;
+    margin-left: 16px;
+    margin-bottom: 24px;
+
+    &__stars {
+      display: flex;
+
+      & > :not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+
+    &__feedback {
+      display: flex;
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      margin-right: 16px;
+      color: #060b35;
+    }
+  }
+
+  &-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__word {
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
+      color: #616070;
+      margin-left: 16px;
+    }
+
+    &__number {
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 18px;
+      margin-right: 16px;
+      display: flex;
+      color: #060b35;
+    }
+  }
+
+  &-buy {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    width: 166px;
+    height: 40px;
+    background: #00acdc;
+    color: #fff;
+    border-radius: 5px;
+
+    transition-duration: 400ms;
+
+    &:hover {
+      box-sizing: border-box;
+      background: #fff;
+      color: #00acdc;
+      border: 1px solid #00acdc;
+    }
+  }
+}
+
+.str {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.5px;
+  background-image: url(/images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.stars-4 :nth-child(-n+4) {
+  background-image: url(/images/star-active.svg);
+}
