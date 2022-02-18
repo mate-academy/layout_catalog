@@ -1,0 +1,50 @@
+@import "../utils/_variables.scss";
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  &__item {
+    display: block;
+    list-style: none;
+    position: sticky;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    color: $color-dark;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 60px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-blue;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &--is-active {
+      position: relative;
+      color: $color-blue;
+
+      &::after {
+        position: absolute;
+        background-color: $color-blue;
+        content: "";
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 8px;
+      }
+    }
+  }
+}
