@@ -1,0 +1,111 @@
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  padding: $card-padding;
+  width: $card-width;
+
+  border-radius: 5px;
+  background-color: $card-background-color;
+  border: $card-border;
+
+  &__image {
+    height: 134px;
+    object-fit: contain;
+  }
+  &__title {
+    margin-top: 40px;
+    font-size: $card-title-name-font-size;
+    font-weight: 500;
+    line-height: 18px;
+    color: #060b35;
+    text-align: left;
+  }
+  &__code {
+    margin-top: 4px;
+    font-size: $card-code-name-font-size;
+    line-height: 14px;
+    font-weight: 400;
+    color: $card-text-second-color;
+    text-align: left;
+  }
+  &__score {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__feedback {
+    font-size: $score-feedback-font-size;
+    font-weight: 400;
+    color: $card-text-main-color;
+  }
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(./../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &__stars {
+    display: flex;
+    flex-direction: row;
+
+    & :not(:last-child) {
+      margin-right: 4px;
+    }
+    &--1 :nth-child(-n+1),
+    &--2 :nth-child(-n+2),
+    &--3 :nth-child(-n+3),
+    &--4 :nth-child(-n+4),
+    &--5 :nth-child(-n+5) {
+      background-image: url(./../images/star-active.svg);
+    }
+  }
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-name {
+      font-size: $card-price-name-font-size;
+      font-weight: 400;
+      color: $card-text-second-color;
+    }
+    &-value {
+      font-size: $card-price-value-font-size;
+      line-height: 18px;
+      font-weight: 700;
+      color: $card-text-main-color;
+    }
+  }
+  &__button {
+    margin-top: 16px;
+    &:link {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $card-background-color;
+      font-size: $button-font-size;
+      font-weight: 700;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      height: 40px;
+
+      background-color: $main-color;
+      border: 1px solid transparent;
+      border-radius: 5px;
+    }
+    &:visited {
+      color: $card-background-color;
+    }
+    &:hover {
+      background-color: $card-background-color;
+      color: $main-color;
+      border: 1px solid $main-color;
+    }
+  }
+}
