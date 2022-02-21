@@ -1,12 +1,16 @@
+$count-card: 4;
+$width-card: 200px;
+$max-width: $width-card * $count-card + 48 * ($count-card - 1);
+
 .page {
   margin: 0 auto 73px;
   display: flex;
   flex-wrap: wrap;
-  max-width: 944px;
+  max-width: #{$max-width};
 }
 
 .card {
-  width: 200px;
+  width: #{$width-card};
   padding: 16px;
   margin-top: 46px;
   margin-right: 48px;
@@ -14,7 +18,7 @@
   border-radius: 5px;
   font-family: Roboto, sans-serif;
 
-  &:nth-child(4n) {
+  &:nth-child(#{$count-card}n) {
     margin-right: 0;
   }
 
