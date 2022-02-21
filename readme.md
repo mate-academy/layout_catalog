@@ -11,7 +11,7 @@ ___
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
 ## The task
-Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/euXjY316CHKYkPRO1K0kjLsF/Moyo-Catalog?node-id=0%3A1).
+Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/zoFyK6rKrTwCCfKcqjkjnA/Moyo-%2F-Catalog).
 
 ## Requirements:
 - use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
