@@ -1,0 +1,48 @@
+.nav {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    @include font(12px, $basic-color, 500, 14px);
+    padding: 22.8px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      color: $active-color;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+    }
+
+    &--is-active {
+      color: $active-color;
+    }
+
+    &:active::after {
+      background-color: $active-color;
+    }
+
+    &--is-active::after {
+      background-color: $active-color;
+    }
+  }
+}
