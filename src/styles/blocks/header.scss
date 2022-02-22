@@ -1,0 +1,77 @@
+@import "../utils/reset";
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+  box-shadow: 0 1px 1px 1px #f3f3f3;
+
+  &__content {
+    display: flex;
+  }
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    height: 60px;
+    color: #060b35;
+    position: relative;
+
+    transition-duration: 400ms;
+
+    &.is-active,
+    &:hover {
+      color: #00acdc;
+    }
+  }
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #00acdc;
+}
+
+a {
+  text-decoration: none;
+}
