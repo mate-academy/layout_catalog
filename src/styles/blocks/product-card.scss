@@ -1,0 +1,146 @@
+.product-card {
+  box-sizing: border-box;
+  width: $card-width;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 $card-spacing 46px;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:nth-child(#{$cards-in-row}n) {
+    margin-right: 0;
+  }
+
+  &:nth-child(#{$cards-in-row}n + 1) {
+    margin-left: 0;
+  }
+
+  &:nth-last-child(-#{$cards-in-row} + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    margin: 32px 19px 0;
+  }
+
+  &__name {
+    margin: 40px 16px 0;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__code {
+    margin: 4px 16px 0;
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #616070;
+  }
+
+  &__review {
+    margin: 16px 16px 0;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__review-counter {
+    display: flex;
+    align-items: flex-end;
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #060b35;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 24px 16px 0;
+
+    .price-word {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #616070;
+    }
+
+    .price-number {
+      line-height: 18px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #060b35;
+    }
+  }
+
+  &__button {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button-link {
+    box-sizing: border-box;
+
+    width: 166px;
+    height: 40px;
+    padding-top: 11px;
+
+    justify-content: center;
+
+    background: #00acdc;
+    border-radius: 5px;
+    border: 1px solid #00acdc;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+  }
+
+  &__button-link:hover {
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #00acdc;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__star:last-child {
+    margin-right: 0;
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
