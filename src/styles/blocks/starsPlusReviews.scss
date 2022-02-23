@@ -1,0 +1,42 @@
+.starsPlusReviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 16px;
+
+  font-size: 10px;
+  margin-bottom: 24px;
+
+  &__prodReviews {
+    color: $main-accent-color;
+    font-size: 10px;
+    width: 53px;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &div:last-child {
+    margin-right: 0;
+    //doesnot work! test wo this margin, fix after or delete
+  }
+}
+
+.starsPlusReviews__stars--5 .stars__star,
+.starsPlusReviews__stars--1 .stars__star:first-child,
+.starsPlusReviews__stars--2 .stars__star:nth-child(-n+2),
+.starsPlusReviews__stars--3 .stars__star:nth-child(-n+3),
+.starsPlusReviews__stars--4 .stars__star:nth-child(-n+4) {
+  background-image: url(/images/star-active.svg);
+}
