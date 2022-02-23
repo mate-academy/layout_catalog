@@ -14,12 +14,12 @@ to identify how to position the next element
 GOOD example:
 ```html
 <div class="product__rating">
-  <div class="product__stars stars stars--4">
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
+  <div class="product__stars card__rating stars--4">
+    <div class="star__stars star"></div>
+    <div class="star__stars star"></div>
+    <div class="star__stars star"></div>
+    <div class="star__stars star"></div>
+    <div class="star__stars star"></div>
   </div>
 </div>
 ```
@@ -36,8 +36,8 @@ BAD example:
   </div>
 </div>
 
-`stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
-`star` is another block, stars should be the elements of the `stars` block
+`stars--4` is a modifier of the `card__rating` block, but `card__rating` block does not exist in HTML;
+`star` is another block, card__rating should be the elements of the `card__rating` block
 ```
 
 7. [BEM & STYLES] - Don't add external styles (positioning or margins) to
