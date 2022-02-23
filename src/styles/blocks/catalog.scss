@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+$catalog-cols: 4;
+$catalog-item-width: $card-width;
+$catalog-gap: 50px;
+
+.catalog {
+  padding-inline: calc(
+    50% - (
+      #{$catalog-item-width} * #{$catalog-cols}
+      + #{$catalog-gap} * #{$catalog-cols - 1}
+    ) / 2
+  );
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex-shrink: 0;
+
+    &:not(:nth-of-type(#{$catalog-cols}n)) {
+      margin-right: 50px;
+    }
+
+    &:nth-of-type(n + #{$catalog-cols+1}) {
+      margin-top: 48px;
+    }
+  }
+}
