@@ -1,0 +1,137 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 50px 0;
+  max-width: $main-width;
+}
+
+.card {
+  &:not(:nth-child(4n)) {
+    margin-right: $card-gap;
+  }
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: $card-width;
+
+  &__images {
+    margin-top: 32px;
+    margin-left: 19px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    margin-top: 36px;
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__code {
+    margin-top: 4px;
+    margin-left: 16px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #616070;
+  }
+
+  &__reviews {
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__stars {
+    display: flex;
+
+    & .stars__star {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../images/star.svg);
+    }
+  }
+  .stars--1 :nth-child(-n+1),
+  .stars--2 :nth-child(-n+2),
+  .stars--3 :nth-child(-n+3),
+  .stars--4 :nth-child(-n+4),
+  .stars--5 :nth-child(-n+5) {
+    background-image: url(../images/star-active.svg);
+  }
+
+  &__review {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #060b35;
+  }
+
+  &__price {
+    margin-top: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    & .price__name {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #616070;
+    }
+
+    & .price__currency {
+      display: flex;
+      align-items: flex-end;
+      text-align: right;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: #060b35;
+    }
+  }
+
+  &__button {
+    padding: 0;
+    margin: 16px;
+    width: 166px;
+    height: 40px;
+    background: #00acdc;
+    border: none;
+    border-radius: 5px;
+
+    & .button__buy {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    & .button__buy:hover {
+      color: #00acdc;
+      background-color: #fff;
+      border: 1px solid #00acdc;
+      border-radius: 5px;
+    }
+  }
+}
