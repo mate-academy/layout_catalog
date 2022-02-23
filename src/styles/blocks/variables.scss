@@ -1,0 +1,20 @@
+$cards-number: 4;
+$card-width: 200px;
+$card-spacing: 48px;
+$main-width:
+  $cards-number * $card-width + ($cards-number - 1) * $card-spacing;
+$logo-size: 40px;
+$main-color: #060b35;
+$secondary-color: #00acdc;
+$color-of-code: #616070;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@function getMaxWidth($card-width, $card-spacing, $cards-number) {
+  @return
+    calc(#{$card-width} * #{$cards-number} +
+    #{$card-spacing} * (#{$cards-number - 1}));
+}
