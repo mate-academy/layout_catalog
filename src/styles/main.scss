@@ -1,3 +1,237 @@
-body {
+$header-paddings: 0 50px;
+$header-height: 60px;
+$underline-height: 4px;
+$header-item-shifts: 20px;
+$card-width: 200px;
+$margin-between-cards: 50px;
+$text-color: #060b35;
+$moyo-blue-color: #00acdc;
+$stars-size: 16px;
+$stars-shifts: 4px;
+$button-border-width: 1px;
+$button-height: 40px;
+
+@mixin stars ($stars-size) {
+  width: $stars-size;
+  height: $stars-size;
+}
+
+.page-catalog {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+
+  &__header {
+    margin-bottom: 51px;
+  }
+
+  &__content {
+    margin: auto;
+  }
+}
+
+.header {
+  padding: $header-paddings;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px 0 #0000000d;
+}
+
+.nav {
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: $header-item-shifts;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: $header-height - $underline-height;
+    display: block;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover {
+      color: $moyo-blue-color;
+    }
+
+    &.is-active {
+      color: $moyo-blue-color;
+
+      &::after {
+        content: "";
+        position: relative;
+        display: block;
+        background-color: $moyo-blue-color;
+        border-radius: 8px;
+        height: $underline-height;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 4 * $card-width + 3 * $margin-between-cards;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: $card-width;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding: 32px 16px 16px;
+    box-sizing: border-box;
+  }
+}
+
+.content .content__card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.content .content__card:nth-last-child(-n + 4) {
+  margin-top: 48px;
+}
+
+.card {
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &__image {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__rate {
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+
+  &__pic {
+    height: 134px;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 12px;
+  text-align: left;
+  line-height: 18px;
+  color: $text-color;
+}
+
+.code {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400;
+  color: #616070;
+  text-align: left;
+}
+
+.rate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__responses {
+    font-size: 10px;
+    font-weight: 400;
+    color: $text-color;
+    margin: 0;
+  }
+}
+
+.stars {
+  width: $stars-size * 5 + $stars-shifts * 4;
+  height: $stars-size;
+  display: flex;
+  align-items: space-between;
+
+  &__star {
+    @include stars($stars-size);
+    background: url(../images/star.svg) no-repeat;
+    background-position: 50%;
+  
+    &:not(:last-child) {
+      margin-right: $stars-shifts;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background: url(../images/star-active.svg) no-repeat;
+    background-position: 50%;
+  }
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #616070;
+  }
+
+  &__amount {
+    font-weight: 700;
+    font-size: 16px;
+    color: $text-color;
+  }
+}
+
+.button {
+  line-height: $button-height - 2 * $button-border-width;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  background-color: $moyo-blue-color;
+  text-transform: uppercase;
+  border: $button-border-width solid $moyo-blue-color;
+
+  &:hover {
+    background-color: #fff;
+    color: $moyo-blue-color;
+  }
 }
