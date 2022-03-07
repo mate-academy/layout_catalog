@@ -5,25 +5,24 @@
 @import "blocks/navigation.scss";
 @import "blocks/card.scss";
 
-.main {
-  display: flex;
-  justify-content: center;
-}
-
 .container {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
-  max-width: getMaxWidth($card-width, $card-spacing, $cards-number);
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin: 0 auto;
   align-items: baseline;
+  max-width: getMaxWidth($card-width, $card-spacing, $cards-number);
+  padding-top: 50px;
 
-  &__card:not(:nth-child(4n)) {
-    margin-right: $card-spacing;
-  }
-
-  &__card:not(:nth-last-child(-n + 4)) {
+  &__card {
+    margin-right: 48px;
     margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
 }
