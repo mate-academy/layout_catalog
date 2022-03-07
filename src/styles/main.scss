@@ -1,3 +1,28 @@
-body {
-  margin: 0;
+@import "blocks/normalize.scss";
+@import "blocks/variables.scss";
+@import "blocks/stars.scss";
+@import "blocks/header.scss";
+@import "blocks/navigation.scss";
+@import "blocks/card.scss";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: baseline;
+  max-width: getMaxWidth($card-width, $card-spacing, $cards-number);
+  padding-top: 50px;
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
 }
