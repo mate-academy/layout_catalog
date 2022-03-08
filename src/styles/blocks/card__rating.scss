@@ -1,0 +1,48 @@
+.card__rating {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+
+  height: 16px;
+  line-height: 14px;
+  margin-bottom: 24px;
+}
+
+.stars {
+  display: flex;
+  align-items: flex-start;
+
+  &__star {
+    display: flex;
+
+    width: 16px;
+    height: 16px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(/images/star.svg);
+  }
+
+  &-text {
+    display: flex;
+    font-size: 10px;
+    line-height: 14px;
+    color: rgb(6, 11, 53);
+    font-weight: 400;
+
+    margin: 0;
+  }
+
+  &--1 :nth-child(-n+1),
+  &--2 :nth-child(-n+2),
+  &--3 :nth-child(-n+3),
+  &--4 :nth-child(-n+4),
+  &--5 :nth-child(-n+5) {
+    background-image: url(/images/star-active.svg);
+  }
+
+  & :not(:last-child) {
+    margin-right: 4px;
+  }
+}
