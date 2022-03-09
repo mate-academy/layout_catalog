@@ -6,9 +6,11 @@
     align-items: center;
     text-transform: uppercase;
   }
+
   &__list :not(:last-of-type) {
     margin-right: 20px;
   }
+
   &__link {
     display: flex;
     align-items: center;
@@ -20,9 +22,19 @@
     text-decoration: none;
     cursor: pointer;
     position: relative;
+
+    &--is-active {
+      color: #00acdc;
+    }
+
+    &--is-active::after {
+      background-color: #00acdc;
+    }
+    
     &:hover {
       color: #00acdc;
     }
+
     &::after {
       display: block;
       position: absolute;
@@ -32,6 +44,7 @@
       content: "";
       border-radius: 2px;
     }
+
     &:active::after {
       background-color: #00acdc;
     }

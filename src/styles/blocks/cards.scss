@@ -2,7 +2,20 @@
   display: flex;
   flex-wrap: wrap;
 
-  width: 1024px;
+  width: $cards-block-width;
   padding: 50px 40px;
-  margin: 0 auto;
+  margin: auto;
+
+  &__card {
+    margin-right: $gap-between-cards;
+    margin-bottom: $gap-between-row-cards;
+  }
+
+  & :nth-child(#{$cards-in-row-count}n) {
+    margin-right: 0;
+  }
+
+  & :nth-last-child(-n+#{$cards-in-row-count}) {
+    margin-bottom: 0;
+  }
 }
