@@ -14,12 +14,12 @@ to identify how to position the next element
 GOOD example:
 ```html
 <div class="product__rating">
-  <div class="product__stars card__rating stars--4">
-    <div class="star__stars star"></div>
-    <div class="star__stars star"></div>
-    <div class="star__stars star"></div>
-    <div class="star__stars star"></div>
-    <div class="star__stars star"></div>
+  <div class="product__stars stars stars--4">
+    <div class="stars__star star"></div>
+    <div class="stars__star star"></div>
+    <div class="stars__star star"></div>
+    <div class="stars__star star"></div>
+    <div class="stars__star star"></div>
   </div>
 </div>
 ```

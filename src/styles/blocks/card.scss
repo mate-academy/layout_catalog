@@ -1,0 +1,134 @@
+@import "../variables.scss";
+/* #region card */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  margin-bottom: 46px;
+
+  &:not(:nth-child(4n)) {
+    margin-right: $card-spacing;
+  }
+
+  &__item-img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    align-content: center;
+    margin: 0 auto 40px;
+  }
+
+  &__item-article {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    text-align: left;
+    color: $main-color;
+    margin: 0 0 4px;
+  }
+
+  &__item-code {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: left;
+    color: $third-color;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__stars {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &-word {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      line-height: 18px;
+      font-size: 12px;
+      color: $third-color;
+    }
+
+    &-count {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      line-height: 18px;
+      font-size: 16px;
+      color: $main-color;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 11px;
+    background-color: $second-color;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 1);
+
+    font-weight: 700;
+    line-height: 16px;
+    font-size: 14px;
+
+    width: 166px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: $second-color;
+      border: 1px solid $second-color;
+    }
+  }
+}
+/* #endregion */
+/* #region card__rating */
+.star {
+  &__stars {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &-likes {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-color;
+  }
+}
+
+@for $index from 1 through 5 {
+  .stars--#{$index} :nth-child(-n + #{$index}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+/* #endregion */
