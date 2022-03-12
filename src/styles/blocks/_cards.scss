@@ -1,34 +1,31 @@
-.container {
-  max-width: 1100px;
+.card {
+  width: $container-width;
   margin: 0 auto;
   padding: 84px 8px;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+  gap: 50px 48px;
 
-.card {
-  display: flex;
-  flex-direction: column;
+  &__piece {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  color: var(--main-color);
+    font-weight: 400;
+    color: $main-color;
 
-  box-sizing: border-box;
-  max-width: 200px;
-  padding: 32px 16px 16px;
+    width: $card-width;
+    padding: 32px 16px 16px;
 
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-
-  &--gap {
-    margin: 24px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
   }
 
   &__main-picture-wrapper {
-    max-width: 160px;
+    width: 160px;
+    height: 134px;
     margin: 0 auto 40px;
   }
 
@@ -37,17 +34,15 @@
   }
 
   &__main-title {
-    font-size: 12px;
     line-height: 18px;
-    font-weight: 500;
     margin-bottom: 4px;
   }
 
   &__item-number {
-    font-size: 10px;
+    font-size: $font-size-small;
     line-height: 14px;
     margin-bottom: 16px;
-    color: var(--secondary-color);
+    color: $secondary-color;
   }
 
   /* Price */
@@ -59,9 +54,8 @@
   }
 
   &__price-name {
-    font-size: 12px;
     line-height: 18px;
-    color: var(--secondary-color);
+    color: $secondary-color;
   }
 
   &__price-summa {
@@ -75,25 +69,29 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    min-height: 40px;
   }
 
   &__button-link {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--white-color);
-    background-color: var(--blue-color);
+    color: $white-color;
+    background-color: $blue-color;
 
-    padding: 12px 55px;
-    border: var(--blue-color) solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: $blue-color solid 1px;
     border-radius: 5px;
     text-decoration: none;
     transition: color 0.6s, background-color 0.6s;
   }
 
   &__button-link:hover {
-    background-color: var(--white-color);
-    color: var(--blue-color);
+    background-color: white-color;
+    color: blue-color;
   }
 }
 
@@ -110,7 +108,7 @@
   &__star {
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(../images/star-active.svg);
+    background-image: url(../images/star.svg);
     height: 16px;
     width: 16px;
     cursor: pointer;
@@ -120,16 +118,14 @@
     }
   }
 
-  &__list--1 :nth-child(n+2),
-  &__list--2 :nth-child(n+3),
-  &__list--3 :nth-child(n+4),
-  &__list--4 :nth-child(n+5),
-  &__list--5 :nth-child(n+6) {
-    background-image: url(../images/star.svg);
+  @for $index from 1 to 5 {
+    &__list--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 
   &__amount {
-    font-size: 10px;
+    font-size: $font-size-small;
     line-height: 14px;
   }
 }
