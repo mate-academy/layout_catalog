@@ -2,28 +2,13 @@
   height: 16px;
   width: 16px;
   margin-right: 4px;
-  background-image: url(../../../images/star.svg);
+  background-image: url(/images/star.svg);
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.stars--4 .stars__star:nth-child(-n+4) {
-  height: 16px;
-  width: 16px;
-  margin-right: 4px;
-  background-image: url(../../../images/star-active.svg);
-}
-
-.card {
-  &__stars {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &__stars-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 23px;
+@for $index from 1 to 5 {
+  .stars--#{$index} .stars__star:nth-child(-n+#{$index}) {
+    background-image: url(/images/star-active.svg);
   }
 }
