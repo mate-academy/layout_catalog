@@ -1,0 +1,131 @@
+.card {
+  width: $container-width;
+  margin: 0 auto;
+  padding: 84px 8px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px 48px;
+
+  &__piece {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    font-weight: 400;
+    color: $main-color;
+
+    width: $card-width;
+    padding: 32px 16px 16px;
+
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+  }
+
+  &__main-picture-wrapper {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__main-picture {
+    width: 100%;
+  }
+
+  &__main-title {
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__item-number {
+    font-size: $font-size-small;
+    line-height: 14px;
+    margin-bottom: 16px;
+    color: $secondary-color;
+  }
+
+  /* Price */
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-name {
+    line-height: 18px;
+    color: $secondary-color;
+  }
+
+  &__price-summa {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+
+  /* Button */
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 40px;
+  }
+
+  &__button-link {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white-color;
+    background-color: $blue-color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: $blue-color solid 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: color 0.6s, background-color 0.6s;
+  }
+
+  &__button-link:hover {
+    background-color: $white-color;
+    color: $blue-color;
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__star {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/star.svg);
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+
+    &:not(:first-of-type) {
+      margin-right: 4px;
+    }
+  }
+
+  @for $index from 1 to 5 {
+    &__list--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__amount {
+    font-size: $font-size-small;
+    line-height: 14px;
+  }
+}
