@@ -1,0 +1,50 @@
+.nav {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:first-child) {
+      padding-left: 20px;
+    }
+  }
+
+  &__link {
+    padding: 23px 0;
+
+    line-height: 60px;
+    text-decoration: none;
+    color: $main-accent;
+
+    transition: 0.3s;
+
+    &:hover {
+      color: $blue-accent;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-accent;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    content: "";
+
+    width: 100%;
+    height: 4px;
+
+    background-color: $blue-accent;
+    border-radius: 2px;
+  }
+}
