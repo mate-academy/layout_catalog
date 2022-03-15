@@ -1,33 +1,9 @@
-.star {
-  display: flex;
-}
-
-.stars_star {
-  display: flex;
-  margin-left: 4px;
-  background-image: url(../images/star.svg);
-  background-repeat: no-repeat;
-  width: 16px;
-  height: 16px;
-  background-position: center;
-}
-
-.stars--5 .stars_star:not(:nth-child(n + 6)),
-.stars--3 .stars_star:not(:nth-child(n + 4)),
-.stars--2 .stars_star:not(:nth-child(n + 3)),
-.stars--1 .stars_star:nth-child(1),
-.stars--4 .stars_star:not(:nth-child(n + 5)) {
-  background-image: url(../images/star-active.svg);
-}
-
-.star .stars_star:first-child {
-  margin-left: 0;
-}
+@import "./rate.scss";
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  flex-basis: 200px;
   background-color: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
@@ -132,26 +108,17 @@
   }
 }
 
-@for $var from 1 to 3 {
-  .row#{$var} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  .row#{$var} .card {
-    margin-right: 48px;
-  }
-  .row#{$var} .card:nth-child(4n) {
-    margin-right: 0;
-  }
-}
-
-.row1 {
-  margin-bottom: 46px;
-}
-
 .main {
   padding-top: 50px;
   padding-bottom: 73px;
+  display: flex;
+  justify-content: center;
+  margin: 0 41px;
+}
+
+.sect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
 }
