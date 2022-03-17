@@ -1,0 +1,22 @@
+.starsPlusReviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 16px;
+
+  font-size: 10px;
+  margin-bottom: 24px;
+
+  &__prodReviews {
+    color: $main-accent-color;
+    font-size: 10px;
+    width: 53px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .starsPlusReviews__stars--#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background-image: url(/images/star-active.svg);
+  }
+}
