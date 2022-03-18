@@ -1,0 +1,19 @@
+.stars {
+  height: 16px;
+  width: 96px;
+  display: flex;
+  justify-content: space-between;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url(../images/star.svg) no-repeat 50%;
+  }
+
+  @for $star-count from 1 to 5 {
+    $first-active: 6 - $star-count;
+    &--#{$star-count} :nth-last-child(n + #{$first-active}) {
+      background: url(../images/star-active.svg) no-repeat 50%;
+    }
+  }
+}
