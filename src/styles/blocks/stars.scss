@@ -10,11 +10,10 @@
     background: url(../images/star.svg) no-repeat 50%;
   }
 
-  &--1 :nth-last-child(n + 5),
-  &--2 :nth-last-child(n + 4),
-  &--3 :nth-last-child(n + 3),
-  &--4 :nth-last-child(n + 2),
-  &--5 :nth-last-child(n + 1) {
-    background: url(../images/star-active.svg) no-repeat 50%;
+  @for $star-count from 1 to 5 {
+    $first-active: 6 - $star-count;
+    &--#{$star-count} :nth-last-child(n + #{$first-active}) {
+      background: url(../images/star-active.svg) no-repeat 50%;
+    }
   }
 }
