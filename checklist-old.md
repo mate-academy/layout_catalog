@@ -95,7 +95,7 @@
 - BEM doesn't allow nesting selectors, it increases selectors specificity and code nesting
 >**WRONG WAY**
 >```scss
->.card__rating {
+>.card__review-container {
 >  height: 15px;
 >  display: flex;
 >
