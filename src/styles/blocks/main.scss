@@ -1,14 +1,14 @@
-.container {
+.main {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   box-sizing: border-box;
-  width: 950px;
   margin: 0 auto;
+  width: calc($cardsize * 4 + $gapX * 3 + 2 * $padX);
 }
 
 .card {
-  width: 200px;
+  width: $cardsize;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -16,7 +16,16 @@
   padding: 32px 16px 16px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  margin-bottom: 48px;
+  margin-bottom: $gapY;
+  margin-right: $gapX;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
 
   &__img {
     display: block;
