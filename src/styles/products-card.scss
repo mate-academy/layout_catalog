@@ -1,38 +1,34 @@
-.main {
-  margin: 50px 40px 72px;
-}
+@import "./_variables.scss";
 
-.main__container {
+.catalog {
   margin: 0 auto;
-
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 980px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 200px;
   padding: 32px 16px 16px;
-  margin-bottom: 46px;
 
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
-  color: #060b35;
+  color: $mainColor;
 
   &__img {
-    width: 160px;
-    margin: 0 auto;
+    display: block;
+    height: 134px;
+
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 0 3px;
   }
 
   &__title {
+    font-size: 12px;
     font-weight: 500;
     line-height: 18px;
 
-    margin: 40px 0 0;
+    margin-bottom: 4px;
   }
 
   &__code {
@@ -40,54 +36,39 @@
     line-height: 14px;
     color: #616070;
 
-    margin: 4px 0 0;
+    margin-bottom: 16px;
   }
 
   &__rating-block {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
-    margin-top: 16px;
+    margin-bottom: 24px;
   }
 
-  .stars {
-    display: flex;
-  }
-
-  .stars__star {
-    content: url("../images/star.svg");
-
-    margin-right: 4px;
-  }
-
-  .stars__star:last-child {
-    margin-right: 0;
-  }
-
-  .stars--4 > .stars__star:nth-child(-n+4) {
-    content: url("../images/star-active.svg");
-  }
-
-  .feedbacks {
+  &__rating-feedbacks {
     font-size: 10px;
+
+    display: flex;
+    align-items: center;
   }
 
   &__price-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin-top: 24px;
   }
 
   &__price-text {
+    font-size: 12px;
+    line-height: 18px;
     color: #616070;
   }
 
   &__price-value {
     font-weight: 700;
     font-size: 16px;
+    line-height: 18px;
   }
 
   &__button {
@@ -100,19 +81,20 @@
     text-decoration: none;
     cursor: pointer;
 
-    background-color: #00acdc;
+    background-color: $buttonColor;
     border: 1px solid transparent;
     border-radius: 5px;
 
     padding: 12px 0;
     margin-top: 16px;
+    height: 40px;
 
     transition: 0.4s ease;
 
     &:hover {
-      color: #00acdc;
+      color: $buttonColor;
       background-color: #fff;
-      border-color: #00acdc;
+      border-color: $buttonColor;
     }
   }
 }
