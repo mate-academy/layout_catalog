@@ -4,7 +4,7 @@ option
 selectors specificity unless completely necessary.
 3. [STYLES] - If you need to adjust positioning with `1px` or fractional numbers
 like `0.5`, you are doing something wrong, change the alignment technique you use
-4. [STYLES] - Be consistent with your margins - if you have many sections in a
+4. [STYLES] - Be consistent with your margins - if you have many divs in a
 row, add margins either to the bottom or to the top so that it will be easier
 to identify how to position the next element
 5. [BEM] - Check your BEM structure using BEM-linter (`npm run lint`) and

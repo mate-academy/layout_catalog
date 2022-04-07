@@ -115,12 +115,12 @@
 >```html
 ><main class="main container">
 >
->  <section class="catalog">
+>  <div class="catalog">
 >
 >    <article data-qa="catd" class="catalog__card">
 >```
 - don't add extra wrappers if you can add styles to the tag itself
-- if you have many sections in a row, add margins either to the bottom or to the top so that it will be easier to identify how to position the next element
+- if you have many divs in a row, add margins either to the bottom or to the top so that it will be easier to identify how to position the next element
 - don't split a name of a BEM-element in SCSS, it should be easy to find the element searching by its name like `__element-name`
 >**WRONG WAY**
 >```scss
