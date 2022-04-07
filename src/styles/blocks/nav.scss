@@ -1,16 +1,9 @@
 
 .nav {
-  margin: 0 50px 0 auto;
 
   &__list {
     display: flex;
-    align-items: center;
-  
-    margin: 0;
-    padding: 0;
-  
     list-style: none;
-    // height: 60px;
   }
 
   &__item:not(:first-child) {
@@ -19,26 +12,48 @@
 
   &__link {
     display: flex;
+    justify-content: center;
     align-items: center;
 
     font-family: inherit;
     font-weight: 500;
 
     font-size: 12px;
+    line-height: 14px;
     height: 60px;
 
     
     cursor: pointer;
     text-transform: uppercase;
-    color: #000;
+    color: #060b35;
     text-decoration: none;
   }
   
   &__link:hover {
     color: #00acdc;
+    transition: 1s;
   }
       
   &__link:active {
     color: #00acdc;
+  }
+
+  &__link--active {
+    color: $base-color;
+    position: relative;
+  }
+  
+  &__link--active::after {
+    content: "";
+    position: absolute;
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    height: 4px;
+    
+    background: $base-color;
+    border-radius: 8px;
   }
 }
