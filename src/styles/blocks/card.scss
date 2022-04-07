@@ -7,24 +7,28 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 944px;
+    justify-content: center;
+    width: 4 * $cardWidth + 3 * $gapX + 2 * $paddingX;
 
   }
 
   &__card {
-    margin: 0 0 46px;
+    margin-bottom: $gapY;
+    margin-right: $gapX;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
   }
 }
 
 .card {
-  height: 408px;
   width: $cardWidth;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
-  padding: 32px 16px 28px;
+  padding: 32px 16px 16px;
   box-sizing: border-box;
 
   &__price {
@@ -47,15 +51,15 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    width: 166px;
-    color: #060b35;
+    width: 100%;
+    color: $darkBlueColor;
     text-align: left;
     margin: 40px 0 0;
   }
 
   &__image {
-    max-width: 162px;
-    max-height: 134px;
+    width: 160px;
+    height: 134px;
     margin: 0 auto;
   }
 
@@ -63,7 +67,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
-    color: #060b35;
+    color: $darkBlueColor;
   }
 
   &__price-text {
@@ -78,7 +82,8 @@
     font-weight: 400;
     line-height: 14px;
     text-align: left;
-    color: #060b35;
+    color: $darkBlueColor;
+    justify-content: baseline;
   }
 
   &__button-link {
