@@ -1,17 +1,25 @@
 .nav {
-  display: block;
-  padding: 22.5px 50px 22.5px 0;
 
   &__list {
     display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
     list-style: none;
   }
 
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
   &__link {
+    display: flex;
+    height: $headerHeight;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     color: $mainColor;
@@ -20,19 +28,24 @@
     cursor: pointer;
     transition: 0.3ms;
 
-    &--is-active::after {
-      content: " ";
-
-      display: inline-block;
-      height: 4px;
-      width: 100%;
-      background: #00acdc;
-      border-radius: 8px;
+    &:hover {
+      color: $activeColor;
     }
 
-    &:hover {
-      color: #00acdc;
+    &--active {
+      position: relative;
+      color: $activeColor;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: $activeColor;
+        border-radius: 8px;
+      }
     }
   }
-
 }
