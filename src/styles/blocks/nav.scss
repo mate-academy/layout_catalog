@@ -1,0 +1,42 @@
+.nav {
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: $header-item-shifts;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: $header-height - $underline-height;
+    display: block;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover {
+      color: $moyo-blue-color;
+    }
+
+    &.is-active {
+      color: $moyo-blue-color;
+
+      &::after {
+        content: "";
+        position: relative;
+        display: block;
+        background-color: $moyo-blue-color;
+        border-radius: 8px;
+        height: $underline-height;
+      }
+    }
+  }
+}

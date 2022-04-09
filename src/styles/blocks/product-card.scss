@@ -1,0 +1,105 @@
+.card {
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &__image {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__rate {
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background: url(../images/star-active.svg) no-repeat;
+    background-position: 50%;
+  }
+}
+
+.button {
+  line-height: $button-height - 2 * $button-border-width;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  background-color: $moyo-blue-color;
+  text-transform: uppercase;
+  border: $button-border-width solid $moyo-blue-color;
+
+  &:hover {
+    background-color: #fff;
+    color: $moyo-blue-color;
+  }
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #616070;
+  }
+
+  &__amount {
+    font-weight: 700;
+    font-size: 16px;
+    color: $text-color;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 12px;
+  text-align: left;
+  line-height: 18px;
+  color: $text-color;
+}
+
+.code {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400;
+  color: #616070;
+  text-align: left;
+}
+
+.rate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__responses {
+    font-size: 10px;
+    font-weight: 400;
+    color: $text-color;
+    margin: 0;
+  }
+}
