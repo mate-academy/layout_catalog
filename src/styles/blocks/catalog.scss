@@ -1,0 +1,33 @@
+.page__catalog {
+  width: 4 * $cardWidth + 3 * $gapX + 2 * $paddingX;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $paddingY $paddingX;
+
+  &__product-card {
+    margin-right: $gapX;
+    margin-bottom: $gapY;
+    width: $cardWidth;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    padding-left: 128px;
+  }
+
+  .page__catalog {
+    width: 4 * $cardWidth + 3 * $gapX + $paddingX + 128px;
+  }
+}
