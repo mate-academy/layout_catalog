@@ -1,0 +1,56 @@
+@import "_variables.scss";
+
+.nav {
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    height: 60px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+
+    color: $mainColor;
+
+    &:hover {
+      color: $buttonColor;
+    }
+
+    &--active {
+      position: relative;
+      color: $buttonColor;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        background-color: $buttonColor;
+        color: $buttonColor;
+        height: 4px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
