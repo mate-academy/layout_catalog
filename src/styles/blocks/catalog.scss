@@ -1,25 +1,22 @@
-$cardWidth: 200px;
-$gapX: 50px;
-$gapY: 40px;
-$paddingX: 40px;
-$paddingY: 50px;
+@import "../utils/variables";
 
 .catalog {
   display: flex;
   flex-wrap: wrap;
   padding: $gapX $gapY 0;
+
+  &__card {
+    width: $cardWidth;
+    margin-right: $gapX;
+    margin-bottom: 48px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 73px;
+    }
+  }
 }
 
-.catalog__card {
-  width: $cardWidth;
-  margin-right: $gapX;
-  margin-bottom: 48px;
-
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
-
-  &:nth-last-child(-n + 4) {
-    margin-bottom: 73px;
-  }
-}
