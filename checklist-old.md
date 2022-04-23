@@ -7,8 +7,8 @@
 - follow BEM naming convention:
 >**WRONG WAY**
 >```html
-><div class="product__rating">
->  <div class="product__stars stars--4">
+><div class="product_rating">
+>  <div class="product_stars stars--4">
 >    <div class="star"></div>
 >    <div class="star"></div>
 >    <div class="star"></div>
@@ -22,13 +22,13 @@
 >
 >**RIGHT WAY**
 >```html
-><div class="product__rating">
->  <div class="product__stars stars">
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
+><div class="product_rating">
+>  <div class="product_stars stars">
+>    <div class="stars_star"></div>
+>    <div class="stars_star"></div>
+>    <div class="stars_star"></div>
+>    <div class="stars_star"></div>
+>    <div class="stars_star"></div>
 >  </div>
 ></div>
 >```
@@ -44,18 +44,18 @@
 - write styles for different states of BEM-element inside the element itself
 >**WRONG WAY**
 >```scss
->&__buy-link {
+>&_buy-link {
 >  display: flex;
 >  margin-top: 20px;
 >}
 >
->&__buy-link:hover {
+>&_buy-link:hover {
 >  color: blue;
 >}
 >```
 >**RIGHT WAY**
 >```scss
->&__buy-link {
+>&_buy-link {
 >  display: flex;
 >  margin-top: 20px;
 >
@@ -95,14 +95,14 @@
 - BEM doesn't allow nesting selectors, it increases selectors specificity and code nesting
 >**WRONG WAY**
 >```scss
->.card__rating {
+>.card_rating {
 >  height: 15px;
 >  display: flex;
 >
->  .card__stars {
+>  .card_stars {
 >    display: flex;
 >
->    .card__star {
+>    .card_star {
 >      height: 15px;
 >    }
 >  }
@@ -117,14 +117,14 @@
 >
 >  <section class="catalog">
 >
->    <article data-qa="catd" class="catalog__card">
+>    <article data-qa="catd" class="catalog_card">
 >```
 - don't add extra wrappers if you can add styles to the tag itself
 - if you have many sections in a row, add margins either to the bottom or to the top so that it will be easier to identify how to position the next element
-- don't split a name of a BEM-element in SCSS, it should be easy to find the element searching by its name like `__element-name`
+- don't split a name of a BEM-element in SCSS, it should be easy to find the element searching by its name like `_element-name`
 >**WRONG WAY**
 >```scss
->&__price {
+>&_price {
 >  align-items: flex-end;
 >
 >  &-title {
@@ -134,11 +134,11 @@
 >```
 >**RIGHT WAY**
 >```scss
->&__price {
+>&_price {
 >  align-items: flex-end;
 >}
 >
->&__price-title {
+>&_price-title {
 >  line-height: 14px;
 >}
 >```

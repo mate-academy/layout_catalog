@@ -13,21 +13,21 @@ to identify how to position the next element
 
 GOOD example:
 ```html
-<div class="product__rating">
-  <div class="product__stars stars stars--4">
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
+<div class="product_rating">
+  <div class="product_stars stars stars--4">
+    <div class="stars_star star"></div>
+    <div class="stars_star star"></div>
+    <div class="stars_star star"></div>
+    <div class="stars_star star"></div>
+    <div class="stars_star star"></div>
   </div>
 </div>
 ```
 
 BAD example:
 ```html
-<div class="product__rating">
-  <div class="product__stars stars--4">
+<div class="product_rating">
+  <div class="product_stars stars--4">
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
@@ -48,14 +48,14 @@ GOOD example
 ```html
 <!--index.html-->
 <div class="container">
-  <div class="container__card card">
+  <div class="container_card card">
     ...
   </div>
 </div>
 ```
 ```css
 /*style.css*/
-.container__card {
+.container_card {
   margin: 48px 24px;
 }
 
@@ -90,7 +90,7 @@ selectors inside general selector. As well as media queries.
 
 GOOD example:
 ```scss
-&__buy-link {
+&_buy-link {
   display: flex;
   margin-top: 20px;
 
@@ -102,12 +102,12 @@ GOOD example:
 
 BAD example:
 ```scss
-&__buy-link {
+&_buy-link {
   display: flex;
   margin-top: 20px;
 }
 
-&__buy-link:hover {
+&_buy-link:hover {
   color: blue;
 }
 ```
