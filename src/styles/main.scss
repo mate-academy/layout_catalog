@@ -1,3 +1,249 @@
+$main-color: #060b35;
+$second-color: #616070;
+$links-color: #00acdc;
+$margin-content: 16px;
+$card-width: 200px;
+$card-margin: 48px;
+
 body {
+  font-family: "Roboto", sans-serif;
+  display: block;
   margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  list-style: none;
+
+  &-logo {
+    height: 40px;
+    width: 40px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-nav {
+    display: flex;
+    list-style: none;
+  }
+
+  &-item__link {
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 60px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    position: relative;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-color;
+    transition: color 0.3s;
+  }
+
+  &-item__link:hover {
+    color: $links-color;
+  }
+
+}
+
+.is-active {
+  color: $links-color;
+
+  &::after {
+    content: " ";
+    background-color: $links-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 8px;
+  }
+}
+
+li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.container-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  margin-right: $card-margin;
+  margin-bottom: 46px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto 40px;
+    display: block;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+ 
+  &__text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    color: $main-color;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $second-color;
+    margin-bottom: $margin-content;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &_star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} {
+
+      .stars_star:nth-child(-n+#{$index}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+
+}
+
+.stars-rewiew {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .rewiew-text {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-color;
+  }
+}
+
+.prise {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: $margin-content;
+
+  &__title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $second-color;
+  }
+
+  &__content {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-color;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid $links-color;
+    background: $links-color;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+  }
+
+  &__link:hover {
+    border: 1px solid $links-color;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $links-color;
+  }
 }
