@@ -1,0 +1,47 @@
+.nav {
+  display: flex;
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item:not(:first-of-type) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: $font-family-main;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-s;
+    line-height: $line-height-s;
+    text-transform: uppercase;
+    color: $color-main-accent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    flex-wrap: nowrap;
+    position: relative;
+
+    &:hover {
+      color: $color-blue-accent;
+    }
+  }
+}
+
+.is-active {
+  color: $color-blue-accent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 8px;
+    height: 4px;
+    background-color: $color-blue-accent;
+  }
+}
