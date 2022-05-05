@@ -1,0 +1,113 @@
+.page__catalog {
+  margin: auto;
+}
+
+.catalog {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 50px 40px;
+}
+
+.card {
+  @extend %flex-center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $width-card;
+  @extend %normal-text;
+  background: #{$color-white};
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px $size-shift $size-shift;
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+
+  &__image {
+    margin: 0 19px 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #{$color-dark-text};
+  }
+
+  &__id {
+    margin-bottom: $size-shift;
+    align-self: start;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #{$color-light-text};
+  }
+
+  &__rating {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+  }
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #{$color-dark-text};
+  }
+
+  &__price {
+    margin-bottom: $size-shift;
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+  }
+
+  &__price-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #{$color-light-text};
+  }
+
+  &__price-figure {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #{$color-dark-text};
+  }
+
+  &__buy {
+    width: 166px;
+    height: #{$height-button};
+    background: #{$main-color};
+    border-radius: 5px;
+    @extend %flex-center;
+    flex-grow: 1;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: #{$height-button};
+    text-transform: uppercase;
+    color: #{$color-white};
+  }
+
+  &__buy:hover {
+    background: #{$color-white};
+    border: 1px solid #{$main-color};
+    color: #{$main-color};
+  }
+}
