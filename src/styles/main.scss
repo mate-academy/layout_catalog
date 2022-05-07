@@ -1,3 +1,40 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.page {
+  &__body {
+    margin: 0;
+
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+  }
+}
+
+.main {
+  &__section {
+    margin: auto;
+  }
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: $cards-in-row*$card-width + ($cards-in-row - 1) * $row-gap;
+  padding: 50px 40px;
+
+  &__card {
+    margin-right: $row-gap;
+    margin-bottom: 46px;
+  }
+
+  &__card:nth-child(#{$cards-in-row}n) {
+    margin-right: 0;
+  }
+
+  &__card:nth-last-child(-n + #{$cards-in-row}) {
+    margin-bottom: 0;
+  }
 }
