@@ -1,8 +1,15 @@
 .container {
   display: flex;
-  padding: 50px $width;
+  padding: 0 $width;
+  flex-wrap: wrap;
+  max-width: ($width-between-cards * $cards-in-line)
+    + ($width-card * $cards-in-line) + ($width * 2);
 
   &__elem:not(:first-child) {
     padding-left: $width-between-cards;
+  }
+
+  &__elem:nth-child(5n) {
+    padding-left: 0;
   }
 }
