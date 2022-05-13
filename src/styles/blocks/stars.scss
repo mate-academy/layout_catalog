@@ -1,0 +1,24 @@
+@import "../utils/reset";
+@import "../utils/normalize";
+@import "../utils/mixins";
+
+.stars {
+  display: flex;
+
+  &__star {
+    @include star-size($star-measures);
+    display: flex;
+    text-decoration: none;
+    background-image: url(/images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+
+  @for $index from 0 through 5 {
+    &--#{$index} &__star:nth-child(n + #{$index + 1}) {
+      background-image: url(/images/star.svg);
+    }
+  }
+
+}

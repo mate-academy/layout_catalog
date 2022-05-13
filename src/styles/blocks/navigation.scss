@@ -1,0 +1,51 @@
+@import "../utils/variables";
+@import "../utils/reset";
+@import "../utils/normalize";
+
+.nav {
+  display: flex;
+  flex-shrink: 0;
+  padding-right: 40px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    list-style: none;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 500;
+    text-decoration: none;
+    color: $dark-blue-color;
+    text-transform: uppercase;
+    height: 60px;
+
+    &--is-active,
+    &:hover {
+      color: $blue-color;
+    }
+
+    &--is-active::after {
+      content: "";
+      height: 4px;
+      border-radius: 2px;
+      background: $blue-color;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
