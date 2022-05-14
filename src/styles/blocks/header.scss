@@ -1,0 +1,49 @@
+@import "../utils/variebles";
+@import "../utils/mixins";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+
+  height: $header-height;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: white;
+
+  &__logo {
+    display: block;
+    flex-shrink: 1;
+    @include square($logo-size);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: $gap-link;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    @extend %medium-text;
+    color: $color-dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    height: $header-height;
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+}

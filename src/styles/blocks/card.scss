@@ -1,0 +1,104 @@
+@import "../utils/variebles";
+@import "../utils/functions";
+@import "../utils/extends";
+
+.card {
+  padding: 50px 40px;
+
+  &__field {
+    @extend %display-flex-center;
+    flex-wrap: wrap;
+    width: getWidth($base-shift-x, $cell-width, $row-count);
+    margin: 0 auto;
+  }
+
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: $cell-width;
+
+    padding: 32px 16px 16px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    margin-right: $base-shift-x;
+    margin-bottom: $base-shift-y;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    color: $color-dark;
+    @extend %medium-text;
+    margin-bottom: 4px;
+  }
+
+  &__id {
+    margin-bottom: 16px;
+    @extend %small-text;
+    color: $color-grey;
+  }
+
+  &__review {
+    @extend %display-flex-space;
+    margin-bottom: 24px;
+  }
+
+  &__feedback {
+    @extend %small-text;
+    color: $color-dark;
+  }
+
+  &__price {
+    @extend %display-flex-space;
+    margin-bottom: 16px;
+  }
+
+  &__phrase-name {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    color: $color-grey;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    color: $color-dark;
+  }
+
+  &__button {
+    @extend %display-flex-center;
+    box-sizing: border-box;
+    height: 40px;
+    background-color: $active-color;
+
+    border: 1px solid $active-color;
+    border-radius: 5px;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+
+    &:hover {
+      color: $active-color;
+      background-color: white;
+    }
+  }
+}
