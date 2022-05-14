@@ -1,0 +1,20 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: ($product-card-width * 4) + (3 * $product-card-horizontal-gap);
+  margin: 0 auto;
+
+  &__product-card {
+    &:not(:nth-child(-n + 4)) {
+      margin-top: $product-card-vertical-gap - 4px;
+    }
+
+    &:nth-child(-n + 4) {
+      margin-top: $product-card-vertical-gap;
+    }
+
+    &:not(:nth-child(4n)) {
+      margin-right: $product-card-horizontal-gap;
+    }
+  }
+}
