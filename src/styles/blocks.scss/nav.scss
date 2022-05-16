@@ -1,0 +1,43 @@
+.nav {
+  margin: $droppingSettings;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    @extend %flexCenter;
+    box-sizing: border-box;
+    align-items: center;
+    position: relative;
+    height: $navigationHeight;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(6, 11, 53);
+  }
+
+  &__link:hover {
+    color: $blueColor;
+  }
+
+  .is-active {
+    color: $blueColor;
+  }
+
+  .is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $blueColor;
+  }
+}

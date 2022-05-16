@@ -1,0 +1,24 @@
+.stars {
+  display: flex;
+
+  &__star {
+    margin-right: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: $sizeStar;
+    height: $sizeStar;
+    @extend %starsBackgroundPicture;
+  }
+
+  &__star:last-child {
+    margin-right: 0;
+  }
+
+  @for $number from 1 through 5 {
+    @for $amount from $number through 5 {
+      &--#{$amount} &__star:nth-child(#{$number}) {
+        @extend %activeStar;
+      }
+    }
+  }
+}
