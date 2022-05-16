@@ -10,11 +10,9 @@
     @include square($square-size);
   }
 
-  &--1 .stars__star:nth-child(-n+1),
-  &--2 .stars__star:nth-child(-n+2),
-  &--3 .stars__star:nth-child(-n+3),
-  &--4 .stars__star:nth-child(-n+4),
-  &--5 .stars__star:nth-child(-n+5) {
-    background-image: url("../images/star-active.svg");
+  @for $numb from 1 through 5 {
+    &--#{$numb} > &__star:nth-child(-n + #{$numb}) {
+      background-image: url("../images/star-active.svg");
+    }
   }
 }
