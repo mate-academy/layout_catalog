@@ -1,15 +1,12 @@
 .card {
   box-sizing: border-box;
   display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 32px 16px 16px;
   flex-wrap: wrap;
-  height: $card-height;
+
+  padding: 32px 16px 16px;
   width: $card-width;
+
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
@@ -23,82 +20,79 @@
     margin-bottom: 46px;
   }
 
-  &__image-imac {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-
   &__image {
-    display: flex;
-    justify-content: center;
-    @include iMacSize($imac-height, $imac-width);
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    height: $imac-height;
+    width: $imac-width;
   }
 
   &__name {
-    font-weight: 500px;
+    margin-bottom: 4px;
+
+    font-weight: 500;
     font-size: 12px;
     line-height: 18px;
+
     color: $main-text-color;
-    margin-bottom: 4px;
   }
 
   &__code {
-    align-self: flex-start;
+    margin-bottom: 16px;
+
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
-    padding-bottom: 17px;
+
     color: $secondary-text-color;
   }
 
   &__rating {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     width: 100%;
-    height: 16px;
-    padding-bottom: 23px;
+    margin-bottom: 24px;
   }
 
   &__stars {
     display: flex;
     justify-content: space-between;
+
     line-height: 16px;
-    margin-bottom: 23px;
-
   }
 
-  &__stars .star-1,
-  &__stars .star-2,
-  &__stars .star-3,
-  &__stars .star-4 {
+  &__star {
     height: 16px;
     width: 16px;
     margin-right: 4px;
-    background: url("../images/star-active.svg");
+
+    background-image: url("../images/star.svg");
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
   }
 
-  &__stars .star-5 {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-    background: url("../images/star.svg");
-    background-repeat: no-repeat;
-    background-position: top;
+  @for $index from 1 through 5 {
+    &__stars--#{$index} &__star:nth-child(-n+#{$index}) {
+      @extend %active-star;
+    }
   }
 
   &__reviews {
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
+
     color: $main-text-color;
   }
 
   &__price {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     width: 100%;
     margin-bottom: 16px;
   }
@@ -112,17 +106,21 @@
     font-size: 16px;
     line-height: 18px;
     font-weight: 700;
+
+    color: $main-text-color;
   }
 
   &__buy {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+
     height: 40px;
     width: 166px;
-    text-decoration: none;
     font-size: 14px;
     line-height: 16px;
+
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
@@ -133,6 +131,7 @@
   &__buy:hover {
     width: 164px;
     height: 38px;
+
     background-color: #fff;
     border: 1px solid #00acdc;
     color: #00acdc;
