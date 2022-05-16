@@ -1,5 +1,6 @@
 .nav {
   font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
 
   &__list {
@@ -7,20 +8,31 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
   }
 
   &__link {
     display: inline-block;
     color: $main-accent-color;
-    text-decoration: unset;
+    text-decoration: unset; //reset
     line-height: 60px;
     position: relative;
 
     &:hover {
       color: $blue-accent-color;
+    }
+
+    &--is-active {
+      color: $blue-accent-color;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 4px solid $blue-accent-color;
+        border-radius: 8px;
+        content: " ";
+        width: 100%;
+      }
     }
   }
 
@@ -34,20 +46,6 @@
 
     &:last-child {
       padding-right: 0;
-    }
-
-    .is-active {
-      color: $blue-accent-color;
-
-      &::after {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-bottom: 4px solid $blue-accent-color;
-        border-radius: 8px;
-        content: " ";
-        width: 100%;
-      }
     }
   }
 }
