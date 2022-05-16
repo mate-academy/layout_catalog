@@ -1,0 +1,25 @@
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  &__star {
+    @include square($star-size);
+
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__star:not(:last-child) {
+    margin-left: 4px;
+  }
+
+  &--1 :nth-child(n+5),
+  &--2 :nth-child(n+4),
+  &--3 :nth-child(n+3),
+  &--4 :nth-child(n+2),
+  &--5 :nth-child(n) {
+    background-image: url(../images/star-active.svg);
+  }
+}
