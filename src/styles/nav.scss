@@ -1,0 +1,75 @@
+$mainColor: #00acdc;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    margin: auto 0;
+    margin-top: 10px;
+  }
+}
+
+.nav {
+  background: #fff;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    display: flex;
+    line-height: 60px;
+    padding-right: 20px;
+
+    &--last {
+      padding-right: 0;
+    }
+  }
+  &__link {
+    height: 60px;
+    color: rgba(6, 11, 53, 1);
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #{$mainColor};
+    }
+
+    &--active {
+      color: #{$mainColor};
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: " ";
+        position: relative;
+        display: block;
+        top: -4px;
+        background-color: #{$mainColor};
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+      }
+    }
+
+    &:active {
+      color: #{$mainColor};
+
+      &::after {
+        content: " ";
+        position: relative;
+        display: block;
+        top: -4px;
+        background-color: #{$mainColor};
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+  }
+}
