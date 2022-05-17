@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  align-self: center;
+  height: 40px;
+}
+
+.nav {
+  &__ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__li {
+    display: flex;
+  }
+
+  &__li:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    text-decoration: none;
+    color: $color-dark-blue;
+  }
+
+  &__link:hover,
+  .is-active {
+    color: $color-light-blue;
+  }
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  background-color: $color-light-blue;
+}
