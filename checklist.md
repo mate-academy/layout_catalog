@@ -1,6 +1,6 @@
-1. [LAYOUT] - Don't forget about semantics, div development is not a better
+1. [LAYOUT] - Don"t forget about semantics, div development is not a better
 option
-2. [STYLES] - Get used to style all elements using classes. And don't increase
+2. [STYLES] - Get used to style all elements using classes. And don"t increase
 selectors specificity unless completely necessary.
 3. [STYLES] - If you need to adjust positioning with `1px` or fractional numbers
 like `0.5`, you are doing something wrong, change the alignment technique you use
@@ -40,22 +40,22 @@ BAD example:
 `star` is another block, stars should be the elements of the `stars` block
 ```
 
-7. [BEM & STYLES] - Don't add external styles (positioning or margins) to
+7. [BEM & STYLES] - Don"t add external styles (positioning or margins) to
    BEM-blocks. Use mix where necessary and move all external styles under element
    selector.
 
 GOOD example
 ```html
 <!--index.html-->
-<div class="container">
-  <div class="container__card card">
+<div class="container__item">
+  <div class="card card">
     ...
   </div>
 </div>
 ```
 ```css
 /*style.css*/
-.container__card {
+.card {
   margin: 48px 24px;
 }
 
@@ -68,7 +68,7 @@ GOOD example
 BAD example
 ```html
 <!--index.html-->
-<div class="container">
+<div class="container__item">
   <div class="card">
     ...
   </div>
@@ -112,11 +112,11 @@ BAD example:
 }
 ```
 
-10. [SASS] - use variables for the main values so that you'll be able to reuse
-them and give them descriptive names. But don't overuse them, don't create
-variable for the value that's used just once.
+10. [SASS] - use variables for the main values so that you"ll be able to reuse
+them and give them descriptive names. But don"t overuse them, don"t create
+variable for the value that"s used just once.
 
-11. [LAYOUT] - don't hardcode max-width, your catalog container should work fine for any number of cards
+11. [LAYOUT] - don"t hardcode max-width, your catalog container__item should work fine for any number of cards
 
 GOOD example:
 
