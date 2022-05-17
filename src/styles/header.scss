@@ -1,0 +1,68 @@
+$logoSize: 40px;
+$blueColor: #00acdc;
+$whiteColor: #ffff;
+$blackColor: #060b35;
+$grayColor: #616070;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  width: $logoSize;
+  height: $logoSize;
+}
+
+.nav {
+  display: flex;
+  text-align: center;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: block;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $blackColor;
+    padding: 23px 0;
+
+    &:hover {
+      color: $blueColor;
+    }
+
+    &--active {
+      color: $blueColor;
+      position: relative;
+    }
+
+    &--active::before {
+      content: "";
+      background-color: $blueColor;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      border-radius: 2px;
+    }
+  }
+}
