@@ -152,7 +152,9 @@ BAD example:
 them and give them descriptive names. But don't overuse them, don't create
 variable for the value that's used just once.
 
-12. [LAYOUT] - don't hardcode max-width, your catalog container should work fine for any number of cards
+12. [CODE STYLE] - Remember about styles properties order - ([css order](https://codeguide.academy/html-css.html#css-order))
+
+13. [LAYOUT] - don't hardcode max-width, your catalog container should work fine for any number of cards
 
 GOOD example:
 
