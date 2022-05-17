@@ -1,0 +1,21 @@
+.stars {
+  display: flex;
+}
+
+.stars .stars__star {
+  background-image: url("../images/star-active.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: $star-size;
+  height: $star-size;
+}
+
+.stars__star:not(:first-child) {
+  margin-left: 4px;
+}
+
+@for $index from 0 through 5 {
+  .stars--#{$index} .stars__star:nth-child(n + #{$index +1}) {
+    background-image: url("../images/star.svg");
+  }
+}
