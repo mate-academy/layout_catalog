@@ -1,4 +1,4 @@
-.maincon {
+.container {
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -7,11 +7,11 @@
   width: $colums * $cardWidth + ($colums - 1) * $gapX + 2 * $paddingX;
 
   &__product-card {
-    margin-right: 48px;
+    margin-right: 0;
     margin-bottom: 46px;
 
-    &:nth-child(4n) {
-      margin-right: 0;
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
     }
 
     &:nth-last-child(-n + 4) {
@@ -20,13 +20,13 @@
   }
 }
 
-.cards {
-  width: #{$cardWidth};
-  border-radius: 5px;
+.card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #f3f3f3;
+  width: #{$cardWidth};
   padding: 32px 16px 16px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
 
   &__photo {
     margin: 0 3px 37px;
@@ -82,16 +82,16 @@
   &__button {
     display: block;
     width: 100%;
-    border-radius: 5px;
-    text-transform: uppercase;
-    text-align: center;
-    background-color: $mainColor;
-    border: 1px solid $mainColor;
-    color: #fff;
     font-size: 14px;
     font-weight: 700;
     line-height: 38px;
+    text-align: center;
+    color: #fff;
     text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: $mainColor;
+    border: 1px solid $mainColor;
 
     &:hover {
       background-color: #fff;
@@ -100,7 +100,7 @@
   }
 }
 
-.cards_rating_comments {
+.card_rating-comments {
   font-size: 10px;
   font-weight: 400;
   line-height: 16px;
