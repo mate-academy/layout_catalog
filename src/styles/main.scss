@@ -1,3 +1,236 @@
+/* #region reset */
+
 body {
   margin: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+
+/* #endregion */
+
+/* #region header */
+
+$header-height: 60px;
+$font-weight-m: 500;
+$active-line-height: 4px;
+$active-button-position: 56px;
+$header-font-size: 12px;
+$active-button-width: 36px;
+$active-button-border-radius: 8px;
+$link-left-margin: 20px;
+$header-hover-color: #00acdc;
+$font-color: #0b0b35;
+
+$star-size: 16px;
+$card-width: 200px;
+$small-font-size: 10px;
+$font-weight-s: 400;
+$font-size-l: 700;
+$bc-card: #fff;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: $header-height;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $font-color;
+    font-weight: #{$font-weight-m};
+    height: $header-height;
+    text-transform: uppercase;
+    font-size: $header-font-size;
+    margin-left: $link-left-margin;
+    white-space: nowrap;
+  }
+
+  &__link:hover {
+    color: $header-hover-color;
+  }
+}
+
+.is-active {
+  color: $header-hover-color;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: #{$font-weight-m};
+  height: $header-height;
+  text-transform: uppercase;
+  font-size: $header-font-size;
+  white-space: nowrap;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: $active-button-position;
+    width: $active-button-width;
+    height: $active-line-height;
+    bottom: 0;
+    background-color: $header-hover-color;
+    border-radius: $active-button-border-radius;
+  }
+}
+
+/* #endregion */
+
+/* #region main */
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+  margin: 0 41px;
+
+  &__card {
+    display: flex;
+    max-width: 950px;
+    margin-bottom: 46px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: $card-width;
+  background: $bc-card;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  margin-left: 48px;
+
+  &:nth-child(1),
+  &:nth-child(5) {
+    margin-left: 0;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+
+    .image {
+      width: 160px;
+      height: 134px;
+      margin-top: 32px;
+    }
+  }
+
+  &__description {
+    line-height: 18px;
+  }
+
+  &__name {
+    display: flex;
+    justify-content: center;
+    margin: 40px 16px 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #060b35;
+  }
+
+  &__code {
+    font-weight: $font-weight-s;
+    font-size: $small-font-size;
+    margin: 4px 90px 0 16px;
+    color: #616070;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 16px 0;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    height: $star-size;
+    width: $star-size;
+    background: url(/images/star.svg) no-repeat center;
+    margin-right: 4px;
+  }
+
+  &__stars &__star:nth-child(-n + 1),
+  &__stars &__star:nth-child(-n + 2),
+  &__stars &__star:nth-child(-n + 3),
+  &__stars &__star:nth-child(-n + 4) {
+    background-image: url(/images/star-active.svg);
+  }
+
+  &__feedbacks {
+    font-size: $small-font-size;
+    line-height: 14px;
+    color: #060b35;
+  }
+
+  &__pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 16px 0;
+  }
+
+  &__price {
+    color: #616070;
+    font-size: 12px;
+    font-weight: $font-weight-s;
+    line-height: 18px;
+  }
+
+  &__amount {
+    color: #060b35;
+    font-weight: $font-size-l;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: $font-size-l;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    background-color: #00acdc;
+    width: 166px;
+    margin: 16px;
+    height: 40px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  &__button:hover {
+    color: #00acdc;
+    background: #fff;
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+  }
+}
+
+/* #endregion */
