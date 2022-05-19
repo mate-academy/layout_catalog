@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0 10px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    color: $main-accent-color;
+    text-decoration: none;
+    line-height: 15px;
+    height: $header-height;
+    position: relative;
+
+    &:hover {
+      color: $blue-accent-color;
+    }
+
+    &.is-active {
+      color: $blue-accent-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $blue-accent-color;
+      }
+    }
+  }
+}
