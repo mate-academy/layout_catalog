@@ -38,35 +38,6 @@ $bc-card: #fff;
     display: flex;
     align-items: center;
   }
-
-  &__block {
-    display: flex;
-    align-items: center;
-  }
-
-  &__links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: $font-color;
-    font-weight: #{$font-weight-m};
-    height: $header-height;
-    text-transform: uppercase;
-    font-size: $header-font-size;
-    margin-left: $link-left-margin;
-    white-space: nowrap;
-  }
-
-  &__link:hover {
-    color: $header-hover-color;
-  }
 }
 
 .is-active {
@@ -89,6 +60,35 @@ $bc-card: #fff;
     bottom: 0;
     background-color: $header-hover-color;
     border-radius: $active-button-border-radius;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $font-color;
+    font-weight: #{$font-weight-m};
+    height: $header-height;
+    text-transform: uppercase;
+    font-size: $header-font-size;
+    margin-left: $link-left-margin;
+    white-space: nowrap;
+  }
+
+  &__link:hover {
+    color: $header-hover-color;
   }
 }
 
@@ -163,24 +163,6 @@ $bc-card: #fff;
     margin: 16px 16px 0;
   }
 
-  &__stars {
-    display: flex;
-  }
-
-  &__star {
-    height: $star-size;
-    width: $star-size;
-    background: url(/images/star.svg) no-repeat center;
-    margin-right: 4px;
-  }
-
-  &__stars &__star:nth-child(-n + 1),
-  &__stars &__star:nth-child(-n + 2),
-  &__stars &__star:nth-child(-n + 3),
-  &__stars &__star:nth-child(-n + 4) {
-    background-image: url(/images/star-active.svg);
-  }
-
   &__feedbacks {
     font-size: $small-font-size;
     line-height: 14px;
@@ -231,6 +213,21 @@ $bc-card: #fff;
     border: 1px solid #00acdc;
     border-radius: 5px;
   }
+}
+
+.stars {
+  display: flex;
+}
+
+.stars__star {
+  height: 16px;
+  width: 16px;
+  background: url(/images/star.svg) no-repeat center;
+  margin-right: 4px;
+}
+
+.stars--4 .stars__star:nth-child(-n + 4) {
+  background-image: url(/images/star-active.svg);
 }
 
 /* #endregion */
