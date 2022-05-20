@@ -14,7 +14,7 @@ to identify how to position the next element
 GOOD example:
 ```html
 <div class="product_rating">
-  <div class="product_stars stars stars--4">
+  <div class="product_stars stars container-mark_stars container-mark_stars--4">
     <div class="stars_star star"></div>
     <div class="stars_star star"></div>
     <div class="stars_star star"></div>
@@ -27,7 +27,7 @@ GOOD example:
 BAD example:
 ```html
 <div class="product_rating">
-  <div class="product_stars stars--4">
+  <div class="product_stars container-mark_stars container-mark_stars--4">
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
@@ -36,7 +36,7 @@ BAD example:
   </div>
 </div>
 
-`stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
+`container-mark_stars container-mark_stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
 `star` is another block, stars should be the elements of the `stars` block
 ```
 
