@@ -1,0 +1,58 @@
+@use "../utils/variables" as *;
+@use "../utils/functions" as *;
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: $window-width;
+  max-width: $window-width;
+}
+
+.product-card {
+  width: $product-card-width;
+  height: $product-card-heigth;
+  margin-left: getLeftGap(
+    $window-width, 
+    $horisontal-gap, 
+    $product-card-width
+  );
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 51px;
+}
+
+.product-card:nth-child(4n) {
+  margin-right: getExternalGap(
+    $window-width, 
+    $internal-gap-between-cards, 
+    $product-card-width
+  );
+  margin-left: $internal-gap-between-cards;
+}
+
+.product-card:nth-child(4n + 1) {
+  margin-left: getExternalGap(
+    $window-width, 
+    $internal-gap-between-cards, 
+    $product-card-width
+  );
+}
+
+.product-card:nth-child(2),
+.product-card:nth-child(3),
+.product-card:nth-child(6),
+.product-card:nth-child(7) {
+  margin-left: $internal-gap-between-cards;
+}
+
+.product-card:nth-last-child(-n + 4) {
+  margin-top: $top-gap-between-cards;
+}
+
+.product-card:nth-child(-n + 4) {
+  margin-top: $gap-between-header-cards;
+}
