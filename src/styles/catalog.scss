@@ -1,0 +1,20 @@
+@function catalogWidth($cardWidth, $gap, $count) {
+  @return $cardWidth * $count + ($count - 1) * $gap;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  max-width: catalogWidth($cardWidth, $horGap, 4);
+  padding-top: 50px;
+
+  &__card {
+    margin-right: $horGap;
+    margin-bottom: $verGap;
+  }
+
+  &__card:nth-child(4n) {
+    margin-right: 0;
+  }
+}
