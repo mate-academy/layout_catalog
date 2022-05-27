@@ -1,0 +1,41 @@
+.menu {
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding: 23px 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-dark-color;
+
+    &:hover {
+      color: $main-acent-color;
+    }
+
+    &.is-active {
+      color: $main-acent-color;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $main-acent-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
