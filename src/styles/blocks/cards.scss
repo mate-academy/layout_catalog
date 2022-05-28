@@ -1,0 +1,44 @@
+@use "../utils/variables" as *;
+@use "../utils/functions" as *;
+
+.catalog {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 944px;
+    margin: 0 auto;
+  }
+}
+
+.product-card {
+  width: $product-card-width;
+  height: $product-card-heigth;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 51px;
+}
+
+.product-card:nth-child(4n) {
+  margin-left: $internal-gap-between-cards;
+}
+
+.product-card:nth-child(2),
+.product-card:nth-child(3),
+.product-card:nth-child(6),
+.product-card:nth-child(7) {
+  margin-left: $internal-gap-between-cards;
+}
+
+.product-card:nth-last-child(-n + 4) {
+  margin-top: $top-gap-between-cards;
+}
+
+.product-card:nth-child(-n + 4) {
+  margin-top: $gap-between-header-cards;
+}
