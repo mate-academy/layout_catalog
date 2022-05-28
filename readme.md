@@ -1,12 +1,12 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https:/havrysh.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://Havrysh.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
-___
+__
 > Write styles in `src/styles/main.scss` instead of `src/style.css`.
-___
+__
 
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
@@ -26,8 +26,8 @@ and SCSS
 - add class `is-active` to the first link (`Apple`) in navigation
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Ноутбуки и компьютеры`)
-- add `data-qa="card"` to the first card
-- add `data-qa="card-hover"` (not just `hover`) to the link `Купить` inside the first card
+- add `` to the first card
+- add `data-qa="card-hover"` (not just `hover`) to the link `купить` inside the first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 ---
