@@ -1,0 +1,30 @@
+.stars {
+  display: flex;
+  align-content: flex-start;
+  width: 100%;
+  line-height: 16px;
+
+  font-size: 10px;
+  margin-bottom: 24px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__prodReviews {
+    margin-left: auto;
+    color: $main-accent-color;
+    font-size: 10px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n+#{$i}) {
+    background-image: url(/images/star-active.svg);
+  }
+}
