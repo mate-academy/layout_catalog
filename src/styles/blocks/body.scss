@@ -1,0 +1,22 @@
+body {
+  @extend %normal-text;
+  line-height: 14px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px $contanerHorizPadings;
+  margin: auto;
+  width: getCatalogWidth($cardWidth, $cardGapLeft, $contanerHorizPadings, 4);
+
+  &__card:not(:nth-child(4n)) {
+    margin-right: $cardGapLeft;
+  }
+
+  &__card:not(:nth-last-child(-n + 4)) {
+    margin-bottom: $cardGapBottom;
+  }
+}
