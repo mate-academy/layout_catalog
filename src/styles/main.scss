@@ -75,6 +75,9 @@ body {
 
 // PRODUCT CARD STYLES
 
+$card-width: 198px;
+$gap: 50px;
+
 @mixin border {
   border: 1px solid #00acdc;
   background-color: #fff;
@@ -86,7 +89,7 @@ body {
   padding: 50px 128px 72px;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  gap: $gap;
 }
 
 .product-card {
@@ -94,7 +97,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 16px;
-  width: 198px;
+  width: $card-width;
   border: 1px solid #f3f3f3;
   background-color: #fff;
   border-radius: 5px;
@@ -145,9 +148,9 @@ body {
     @include border();
   }
 
-  &:nth-last-child(-n + 4) {
-    @include border();
-  }
+  // &:nth-last-child(-n + 4) {
+  //   @include border();
+  // }
 }
 
 .rating {
@@ -226,6 +229,18 @@ body {
   .cards-container {
     display: flex;
     padding: 50px 129px 72px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cards-container {
+    display: flex;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 0 0;
+    justify-content: flex-start;
+    width: calc(3 * #{$gap} + 4 * #{$card-width});
   }
 }
 // PRODUCT CARD STYLES
