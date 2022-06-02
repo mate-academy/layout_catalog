@@ -1,0 +1,139 @@
+@import "../utils/variables";
+
+.main {
+  display: flex;
+  min-width: $mintWidth;
+  max-width: $maxWidth;
+  padding: 50px 0 46px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 1192px) {
+  .main {
+    padding: 50px 100px 46px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-right: $card-gap;
+  width: $card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+    
+  &:nth-child(-n + 4) {
+    margin-bottom: $card-buttonGap;
+  }
+
+  &__image {
+    margin: auto;
+    max-height: 134px;
+  }
+  
+  &__product_name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+    margin-top: 40px;
+    color: $mainBlack;
+  }
+  
+  &__product_id {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    margin-top: 4px;
+    color: $mainGrey;
+  }
+  
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  
+    &_feedback {
+      display: flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      color: $mainBlack;
+    }
+  }
+  
+  &__stars {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  
+    &_title {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      text-align: left;
+      color: $mainGrey;
+    }
+  
+    &_value {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      text-align: right;
+      color: $mainBlack;
+    }
+  }
+  
+  &__button {
+    background-color: $mainBlue;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $mainWhite;
+    margin: auto;
+
+    &:hover {
+      background-color: $mainWhite;
+      border: 1px solid $mainBlue;
+      color: $mainBlue;
+    }
+  }
+
+  .stars__star {
+    background-image: url("/images/star-active.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+  
+  .stars--4 :nth-child(n + 5) {
+    background-image: url("/images/star.svg");
+  }
+}
