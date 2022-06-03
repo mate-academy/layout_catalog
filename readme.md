@@ -1,14 +1,14 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://serhii-yunnikov.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://serhii-yunnikov.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
 > Write styles in `src/styles/main.scss` instead of `src/style.css`.
 ___
 
-## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
+## ❗️❗️❗️ DON"T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
 ## The task
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/zoFyK6rKrTwCCfKcqjkjnA/Moyo-%2F-Catalog?node-id=0%3A1).
@@ -35,4 +35,4 @@ and SCSS
 
 ---
 ### Tips & Hints
-Don't use flex `gap` property, it's not yet supported by tests.
+Don"t use flex `gap` property, it"s not yet supported by tests.
