@@ -1,3 +1,187 @@
-body {
+@import "./blocks/reset.scss";
+@import "./blocks/fonts.scss";
+@import "./utils/variables.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+
+  &__logo {
+    background: url(../images/logo.png) no-repeat;
+    width: $logo-width;
+    height: $logo-height;
+    top: 50%;
+    margin: 10px 0;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__link {
+    display: flex;
+    position: relative;
+    color: #060b35;
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 500;
+    font-size: $header-font-size;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 23px 0;
+
+    &.is-active {
+      color: #00acdc;
+
+      &::after {
+        content: "";
+        width: 100%;
+        background-color: #00acdc;
+        height: 4px;
+        border-radius: 8px;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.card {
+  width: $card-width;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    width: $card__image-width;
+    height: $card__image-height;
+    margin: 0 3px 36px;
+  }
+}
+
+.product {
+  &__name {
+    color: #060b35;
+    font-size: $product__name-font-size;
+    font-family: "Roboto-Medium", sans-serif;
+    font-weight: 500;
+    margin: 0 0 4px;
+    line-height: 18px;
+  }
+
+  &__code {
+    color: #616070;
+    font-weight: 400;
+    font-size: $product__code-font-size;
+    margin: 0 0 16px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: $product__rating-height;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    height: $product_price--height;
+  }
+}
+
+.people-reviews {
+  font-size: 10px;
+  font-weight: 400;
+  color: #060b35;
   margin: 0;
+  line-height: $product__rating-height;
+}
+
+.price-name {
+  color: #616070;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: $product_price--height;
+  margin: 0;
+}
+
+.item-price {
+  margin: 0;
+  line-height: $product_price--height;
+  font-family: "Roboto-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #060b35;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: $star-height;
+
+  &__star {
+    background: url(../images/star-active.svg) no-repeat 50%;
+    height: $star-height;
+    width: $star-width;
+    margin-right: $star-margin-right;
+  }
+
+  &:last-child {
+    background: url(../images/star.svg) no-repeat 50%;
+    margin-right: 0;
+  }
+}
+
+.button {
+  background-color: #00acdc;
+  border-radius: 5px;
+  height: $button-height;
+  width: 100%;
+  border: none;
+
+  &:hover {
+    background-color: #fff;
+    border: 1px solid #00acdc;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    font-size: $button-font-size;
+    font-family: "Roboto-Bold", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-items: center;
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
 }
