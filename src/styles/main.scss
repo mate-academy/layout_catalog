@@ -1,3 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import "./utils/variables.scss";
+@import "./blocks/header.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
 body {
   margin: 0;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: $cards-container-size;
+  margin: auto;
+  padding: 50px 40px;
+
+  & > .card {
+    margin-right: $card-indent;
+
+    &:nth-child(#{$cards-in-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$cards-in-row}) {
+      margin-top: 46px;
+    }
+  }
 }
