@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  background-color: $color-light;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    @include square($logo-size);
+    margin: 10px 0;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    @extend %header-text;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    &:hover {
+      color: $main-color-light;
+    }
+  }
+}
+
+.is-active {
+  color: $main-color-light;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $main-color-light;
+    border-radius: 8px;
+    height: 4px;
+  }
+}
