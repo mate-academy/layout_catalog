@@ -9,13 +9,16 @@
   }
 
   &__cards-row {
-    min-width: calc(#{$card-width} * 5);
+    width: $container-width;
     margin: auto;
     display: flex;
-    justify-content: center;
-    gap: 48px;
+    flex-wrap: wrap;
 
-    &:not(:last-child) {
+    & > :not(:nth-child(4n)) {
+      margin-right: $cards-gap;
+    }
+
+    & > :not(:nth-last-child(-n + 4)) {
       margin-bottom: 46px;
     }
   }
