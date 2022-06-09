@@ -1,0 +1,61 @@
+@use "../utils/variables" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav {
+    height: 60px;
+
+    &-list {
+      padding: 0;
+      display: flex;
+      list-style-type: none;
+      margin-top: 0;
+    }
+
+    &-item:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &-link {
+      display: flex;
+      padding: 23px 0;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: var(--moyo-black-color);
+    }
+
+    &-link:hover {
+      color: var(--moyo-blue-color);
+    }
+  }
+
+  .is-active {
+    position: relative;
+    color: var(--moyo-blue-color);
+  }
+
+  .is-active::after {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    border: 2px solid;
+    border-radius: 8px;
+  }
+}

@@ -1,3 +1,38 @@
+@import "./utils/variables";
+@import "./utils/reset";
+
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--moyo-black-color);
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px calc((100% - #{$content-width}) / 2);
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 22px;
+  }
+
+  &__card:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__card:nth-child(-n + 4) {
+    margin-bottom: 46px;
+  }
 }
