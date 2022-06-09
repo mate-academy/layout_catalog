@@ -1,0 +1,83 @@
+@import "../utils/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: $widthMin;
+  max-width: $widthMax;
+  padding: 0 50px;
+  height: 60px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: flex;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__nav {
+    display: flex;
+
+    &_list {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    &_item {
+      margin-right: 20px;
+    }
+
+    &_item:last-child {
+      margin: 0;
+    }
+
+    &_link {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      position: relative;
+      color: $darkBlue;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 12px;
+      font-style: normal;
+      line-height: 14px;
+      text-transform: uppercase;
+    }
+  
+    .is-active,
+    &_link:hover {
+      color: $aqua;
+    }
+
+    .is-active::after {
+      position: absolute;
+      content: "";
+      display: flex;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background: $aqua;
+      margin-top: 28px;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: $widthMin;
+  max-width: $widthMax;
+  margin: 0 auto;
+  padding: 50px 0 46px;
+}
+
+@media (min-width: 1192px) {
+  .main {
+    padding: 50px 100px 46px;
+  }
+}
