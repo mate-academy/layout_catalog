@@ -1,0 +1,51 @@
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    display: flex;
+    position: relative;
+    width: auto;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-black;
+    padding: 22px 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+}
+
+.is-active {
+  color: $color-blue;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link.is-active::after {
+  display: flex;
+  position: absolute;
+  content: "";
+  overflow: hidden;
+  background-color: $color-blue;
+  border-radius: 8px;
+  height: 4px;
+  width: 100%;
+  bottom: 0;
+}
