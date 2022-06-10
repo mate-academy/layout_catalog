@@ -1,3 +1,43 @@
+@import "./blocks/variables.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/header.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  width: $container__width;
+  margin: 50px 40px;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__card {
+    margin-left: 0;
+  }
+
+  &__card:not(:nth-child(4n)) {
+    margin-right: $gap;
+  }
+
+  &__card:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
 }
