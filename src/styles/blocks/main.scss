@@ -1,0 +1,20 @@
+.main {
+  padding: 50px 0 73px;
+  display: flex;
+
+  &__catalog {
+    width: ( $cardWidth * $cardsAmountInRow +
+    + $distanceBetweenCards * ($cardsAmountInRow - 1));
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+
+    .card {
+      margin-bottom: 46px;
+
+      &:not(:nth-child(#{$cardsAmountInRow}n)) {
+        margin-right: $distanceBetweenCards;
+      }
+    }
+  }
+}
