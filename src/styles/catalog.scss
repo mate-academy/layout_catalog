@@ -1,123 +1,19 @@
 .catalog {
   display: flex;
-  margin: 0 auto;
   flex-wrap: wrap;
-  width: $catalog-width;
-  padding: 51px 0 0;
-}
+  padding: 50px calc((100% - #{$catalog-width}) / 2);
+  min-width: 1024px;
 
-.card {
-  background: #fff;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  padding: 32px 16px 16px;
-  font-size: 10px;
-
-  &__image {
-    display: flex;
-    align-self: center;
-    height: 134px;
-    margin-bottom: 40px;
-  }
-
-  &__title {
-    line-height: 18px;
-    font-size: 12px;
-    color: $font-color;
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-
-  &__code {
-    line-height: 14px;
-    color: #616070;
-    margin-bottom: 16px;
-    font-size: 10px;
-    font-weight: 400;
-  }
-
-  &__rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-
-  &__review {
-    line-height: 14px;
-    color: $font-color;
-    font-size: 10px;
-    font-weight: 400;
-  }
-
-  &__prices {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 14px;
-    margin-bottom: 16px;
-  }
-
-  &__price {
-    font-size: 12px;
-    line-height: 18px;
-    color: #616070;
-  }
-
-  &__amount {
-    font-size: 16px;
-    line-height: 18px;
-    color: $font-color;
-    font-weight: 700;
-  }
-
-  &__buy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    color: #fff;
-    background-color: $color-of-selected;
-    border: 1px solid $color-of-selected;
-    border-radius: 5px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 12px 56px;
-    width: 100%;
-  }
-
-  &__buy:hover {
-    color: $color-of-selected;
-    background-color: #fff;
-  }
-
-  &:not(:nth-child(4n)) {
+  &__card {
     margin-right: 48px;
+    margin-bottom: 22px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(-n + 4) {
+      margin-bottom: 46px;
+    }
   }
-
-  &:not(:nth-last-child(-n + 4)) {
-    margin-bottom: 46px;
-  }
-
-}
-
-.is-active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 4px;
-  background: $color-of-selected;
-  position: absolute;
-  bottom: 0;
-}
-
-.is-active {
-  color: $color-of-selected;
 }
