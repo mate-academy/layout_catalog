@@ -1,3 +1,40 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+@import "components/header";
+@import "components/card";
+@import "components/stars";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  &__container {
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    max-width: 944px;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    margin-bottom: 46px;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 40px;
+  }
 }
