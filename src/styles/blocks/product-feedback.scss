@@ -1,0 +1,39 @@
+.feedback {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__stars {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background: url(../images/star.svg) no-repeat center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  &__count {
+    font-size: 10px;
+    line-height: 14px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__stars--0 .stars__star {
+    background: url(../images/star.svg) no-repeat center;
+  }
+
+  &__stars--1 .feedback__star:first-child,
+  &__stars--2 .feedback__star:nth-child(-n + 2),
+  &__stars--3 .feedback__star:nth-child(-n + 3),
+  &__stars--4 .feedback__star:nth-child(-n + 4),
+  &__stars--5 .feedback__star:nth-child(-n + 5) {
+    background: url(../images/star-active.svg) no-repeat center;
+  }
+}
