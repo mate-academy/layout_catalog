@@ -1,25 +1,24 @@
 .page {
-  box-sizing: border-box;
-
-  &__content {
-    margin: 0;
-  }
 
   &__main {
-    max-width: 4 * $card-width + 3 * $card-margin-right;
-    margin: 0 auto 73px;
-    padding: 51px 0 0;
+    max-width: 4 * $card-width + 3 * $card-margin-right + 2 * $page-paddings;
+    margin: 0 auto;
+    padding-top: 51px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   &__card {
     margin-right: $card-margin-right;
     margin-bottom: $card-margin-bottom;
-  }
 
-  &__card:nth-child(4n) {
-    margin-right: 0;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
 }
