@@ -1,0 +1,23 @@
+$card-weigth: 200px;
+$card-margin: 48px;
+$card-padding: 50px;
+$card-number-of: 4;
+$catalog-wwidth: $card-number-of * ($card-weigth + $card-margin) - $card-margin;
+
+.catalog {
+  padding: $card-padding 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: $catalog-wwidth;
+  margin: 0 auto;
+  
+  &__cell:nth-child(n) {
+    box-sizing: border-box;
+    margin-right: $card-margin;
+    margin-bottom: 46px;
+  }
+  
+  &__cell:nth-child(#{$card-number-of}n) {
+    margin-right: 0;
+  }
+}
