@@ -1,0 +1,74 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: (5 / 4) * $card-image-width;
+  background-color: $card-background-color;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  @include padding-card($card-image-width);
+  &__image {
+    @include logo-card-size($card-image-width);
+    margin: 0 auto (1 / 4) * $card-image-width;
+  }
+
+  &__product-name {
+    @extend %product-name-font-styles;
+    margin-bottom: (1 / 40) * $card-image-width;
+  }
+
+  &__product-code {
+    @extend %product-code-font-styles;
+    margin-bottom: (1 / 10) * $card-image-width;
+    color: $secondary-accent-color;
+  }
+
+  &__product-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: (3 / 20) * $card-image-width;
+  }
+
+  &__reviews {
+    @extend %reviews-font-styles;
+    color: $main-accent-color;
+  }
+
+  &__product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: (1 / 10) * $card-image-width;
+  }
+
+  &__price-title {
+    @extend %price-title-font-styles;
+    color: $secondary-accent-color;
+  }
+
+  &__price-value {
+    @extend %price-value-font-styles;
+    color: $main-accent-color;
+  }
+
+  &__link {
+    width: 100%;
+    height: (1 / 4) * $card-image-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    @extend %card-link-font-styles;
+    color: $card-background-color;
+    background-color: $blue-accent-color;
+    border-radius: 5px;
+
+    &:hover {
+      color: $blue-accent-color;
+      background-color: $card-background-color;
+      border: 1px solid $blue-accent-color;
+      transition: 0.5s;
+    }
+  }
+}
