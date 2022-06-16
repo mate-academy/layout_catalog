@@ -1,0 +1,127 @@
+.card {
+  margin-right: $card-marginR;
+  margin-bottom: 46px;
+
+  padding: 0 16px;
+  @include flex(center, space-between, column);
+
+  max-width: $card-width;
+  height: 408px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__img {
+    margin: 32px auto 36px;
+
+    .img {
+      margin: 0 auto;
+      width: 160px;
+      height: 134px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: $text-normal;
+    line-height: 1.5;
+    color: $text-color;
+  }
+
+  &__id {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: $text-small;
+    line-height: 1.4;
+    color: $secondary-color;
+  }
+
+  &__feedback {
+    margin-bottom: 24px;
+    @include flex(space-between, center, row);
+  }
+
+  &__stars {
+    @include flex(none, none, column);
+  }
+
+  &__comments {
+    font-size: $text-small;
+    line-height: 1.4;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    @include flex(space-between, none, row);
+
+    .price-title {
+      font-weight: 400;
+      font-size: $text-normal;
+      line-height: 1.5;
+      color: $secondary-color;
+    }
+
+    .price-value {
+      font-weight: 700;
+      font-size: $text-big;
+      line-height: 1.12;
+      color: $text-color;
+    }
+  }
+
+  @media (min-width: $catalog-width_1) and (max-width: $catalog-width_2) {
+    &:nth-child(n) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $catalog-width_2) and (max-width: $catalog-width_3) {
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $catalog-width_3) and (max-width: $catalog-width_4) {
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $catalog-width_4) {
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*  stars -*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+.stars {
+  @include flex(flex-start, center, row);
+
+  &__star {
+    margin: 0 2px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 2px;
+    }
+  }
+}
+
+.stars--1 :nth-child(1),
+.stars--2 :nth-child(-n + 2),
+.stars--5 :nth-child(-n + 5),
+.stars--3 :nth-child(-n + 3),
+.stars--4 :nth-child(-n + 4) {
+  background-image: url(../images/star-active.svg);
+}

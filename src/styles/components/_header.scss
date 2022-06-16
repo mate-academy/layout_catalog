@@ -1,0 +1,49 @@
+.header {
+  @include flex(space-between, center, row);
+  padding: 0 50px;
+  min-height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__img {
+    @include flex(center, center, row);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.navbar {
+  &__list {
+    @include flex(center, center, row);
+  }
+
+  &__item {
+    margin-right: 20px;
+    text-transform: uppercase;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    padding: 23px 0;
+    display: block;
+    align-items: stretch;
+    font-weight: 500;
+    font-size: 12px;
+    position: relative;
+    color: $link-color;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-color;
+}
+
+.is-active::after {
+  @extend %is-active;
+}
