@@ -1,0 +1,67 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/reset" as *;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+  align-items: center;
+  background: $brand-color-secondary;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    padding: 23px 0;
+    font-family: $primary-font;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $primary-font-color;
+    line-height: 30px;
+
+    &--is-active {
+      color: $brand-color-main;
+      position: relative;
+    }
+
+    &--is-active::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: $brand-color-main;
+      border-radius: 8px;
+    }
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link:hover {
+    color: $brand-color-main;
+  }
+}
