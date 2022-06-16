@@ -1,0 +1,115 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/reset" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  box-sizing: border-box;
+  background: $brand-color-secondary;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    align-self: center;
+    max-width: 160px;
+    max-height: 134px;
+    margin: 32px 19px 40px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 16px 4px;
+    color: $primary-font-color;
+    @include font-size-1;
+  }
+
+  &__code {
+    display: inline;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 0;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    color: $secondary-font-color;
+    @include font-size-m;
+  }
+
+  &__cost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__price {
+    font-style: normal;
+    font-weight: 400;
+    color: $secondary-font-color;
+    margin-left: 16px;
+    @include font-size-1;
+  }
+
+  &__amount {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    padding-right: 16px;
+    color: $primary-font-color;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+  
+    background: $brand-color-main;
+    border-radius: 5px;
+    margin: 16px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $brand-color-secondary;
+    width: 166px;
+    height: 40px;
+  }
+
+  &__link:hover {
+    background: $brand-color-secondary;
+    color: $brand-color-main;
+    border: 1px solid $brand-color-main;
+    border-radius: 5px;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__reviews-number {
+    color: $primary-font-color;
+    font-weight: 500;
+    font-family: $primary-font;
+    padding-right: 16px;
+    @include font-size-m;
+  }
+}
