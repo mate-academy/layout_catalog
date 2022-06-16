@@ -1,0 +1,45 @@
+.nav {
+  box-sizing: border-box;
+
+  &__list {
+
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    // margin: 0 5px;
+    // // padding: 0;
+
+    &:first-child {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    &:last-child {
+      margin-right: -10px;
+      padding-right: 0;
+    }
+  }
+
+  &__link {
+    @extend %nav-text-style;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    padding: 0 10px;
+
+    &:active::after {
+      @extend %nav-line-after;
+    }
+
+    &:hover {
+      @extend %nav-link-hover-color;
+    }
+  }
+
+}
