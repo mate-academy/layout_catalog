@@ -11,7 +11,8 @@ p {
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   .logo {
@@ -20,76 +21,56 @@ p {
     background: transparent;
   }
 
-  .wrapper {
+  .nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 50px;
+    height: 60px;
+    align-content: flex-end;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
 
-    @media (min-width: 1024px) {
-      width: 1024px;
-    }
-
-    @media (min-width: 1200px) {
-      width: 1200px;
-    }
-
-    .nav {
+    &__list {
+      list-style: none;
       display: flex;
-      height: 60px;
-      align-content: flex-end;
-      font-family: "Roboto", sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 18px;
+      align-items: center;
+      padding-left: 0;
 
-      &__list {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        padding-left: 0;
+      .nav__item {
+        margin-right: 20px;
 
-        li {
-          padding: 0 10px;
+        &:last-child {
+          margin-right: 0;
+        }
 
-          &:first-child {
-            padding-left: 0;
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $color_main;
+          display: flex;
+          align-items: center;
+          height: 60px;
+
+          &:hover {
+            color: $color_blue;
           }
 
-          &:last-child {
-            padding-right: 0;
+          &.is-active {
+            position: relative;
+            width: auto;
+            color: $color_blue;
           }
-        }
-      }
 
-      &__item {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: $color_main;
-        display: flex;
-        align-items: center;
-        height: 60px;
-
-        &:hover {
-          color: $color_blue;
-        }
-
-        &.is-active {
-          position: relative;
-          width: auto;
-          color: $color_blue;
-        }
-
-        &.is-active::before {
-          content: "";
-          height: 4px;
-          width: 100%;
-          background: $color_blue;
-          border-radius: 8px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
+          &.is-active::before {
+            content: "";
+            height: 4px;
+            width: 100%;
+            background: $color_blue;
+            border-radius: 8px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
         }
       }
     }
