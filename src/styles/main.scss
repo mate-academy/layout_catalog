@@ -1,3 +1,255 @@
+$size-logo: 40px;
+$size-star: 16px;
+$color-active: #00acdc;
+$color-text-card: #060b35;
+$height-header: 60px;
+$card-height: 408px;
+$card-width: 200px;
+$content-width: 944px;
+$content-height: 862px;
+$quant-col: 4;
+$quant-raw: 2;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@function shiftBottom(
+  $size-content,
+  $size-card,
+  $quant-raw,
+) {
+  @return $size-content - $quant-raw * $size-card;
+}
+
+@function shiftRight(
+  $size-content,
+  $size-card,
+  $quant-col,
+) {
+  @return ($size-content - $quant-col * $size-card) / ($quant-col - 1);
+}
+
+%position {
+  display: flex;
+  justify-content: space-between;
+}
+
+%large-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  @extend %position;
+  align-items: center;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+  
+.logo {
+  display: block;
+  @include square($size-logo);
+}
+
+.nav {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+    
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $height-header;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #060b35;
+  }
+    
+  &__link:hover {
+    color: $color-active;
+  }
+    
+  &__link.is-active {
+    color: $color-active;
+  }
+    
+  &__link.is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: $color-active;
+  }
+
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  
+  box-sizing: border-box;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+
+  &__card {
+    margin-right: shiftRight(
+      $content-width,
+      $card-width,
+      $quant-col,
+    );
+    margin-bottom: shiftBottom(
+      $content-height,
+      $card-height,
+      $quant-raw
+    );
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  background: #fff;
+  border: 1px solid  #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: $card-width;
+  height: $card-height;
+  padding: 32px 16px 16px;
+  
+  &__picture {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__description {
+    margin: 0 0 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-text-card;
+  }
+  
+  &__product_code {
+    margin-bottom: 16px;
+    @extend %large-text;
+    color: #616070;
+  }
+  &__reviews {
+    @extend %large-text;
+    color: $color-text-card;
+  }
+  
+  &__frame-card-revier {
+    margin-bottom: 24px;
+    @extend %position;
+    align-items: flex-end;
+  }
+  
+  &__frame-price {
+    margin-bottom: 16px;
+    @extend %position;
+    align-items: center;
+  }
+  
+  &__text_value {
+    font-weight: 400;
+    font-size: 12px;
+    color: #616070;
+    line-height: 18px;
+  }
+  
+  &__number_value {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-text-card;
+  }
+  
+  &__link {
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    height: 40px;
+    background: $color-active;
+    border-radius: 5px;
+    border: 1px solid $color-active;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  &__link:hover {
+    background: #fff;
+    color: $color-active;
+  }
+
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    @include square($size-star);
+    margin-left: 4px;
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__star:first-child {
+    margin-left: 0;
+  }
+      
+  &--1 :nth-child(-n+1),
+  &--2 :nth-child(-n+2),
+  &--3 :nth-child(-n+3),
+  &--4 :nth-child(-n+4),
+  &--5 :nth-child(-n+5) {
+    background-image: url(/images/star-active.svg);
+  }
 }
