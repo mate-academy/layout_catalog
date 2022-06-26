@@ -1,0 +1,23 @@
+.card_star {
+  display: flex;
+  margin-left: 4px;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  width: $star_size;
+  height: $star_size;
+  background-position: center;
+
+  @for $var from 1 through 4 {
+    .stars--#{$var} &:not(:nth-child(n + #{$var + 1})) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  & .card_star:first-child {
+    margin-left: 0;
+  }
+}
