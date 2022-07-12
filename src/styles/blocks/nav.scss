@@ -1,24 +1,25 @@
 .nav {
   &__list {
     position: relative;
+    margin: 0;
+    margin-right: 50px;
+    height: 100%;
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
     white-space: nowrap;
-    @extend %nav-link-text;
-    text-transform: uppercase;
+    font-size: 12px;
     line-height: 14px;
-    margin: 0;
-    height: 100%;
-    margin-right: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 
   &__link {
+    height: 100%;
     color: $primary-text-color;
     position: relative;
     display: flex;
     align-items: center;
-    height: 100%;
     cursor: pointer;
   }
 
@@ -29,19 +30,18 @@
   &__item:not(:last-of-type) > .nav__link {
     margin-right: 20px;
   }
-
 }
 
 .is-active {
   position: relative;
   color: $decoration-color;
-}
 
-.is-active::after {
-  position: absolute;
-  content: "";
-  border-bottom: 4px solid $decoration-color;
-  border-radius: 8px;
-  width: 100%;
-  bottom: 0;
+  &::after {
+    position: absolute;
+    content: "";
+    border-bottom: 4px solid $decoration-color;
+    border-radius: 8px;
+    width: 100%;
+    bottom: 0;
+  }
 }
