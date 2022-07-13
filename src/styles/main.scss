@@ -6,11 +6,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 .header {
   width: 100%;
   display: flex;
@@ -85,27 +80,22 @@ body {
 }
 
 .main {
+  padding: 50px 40px;
   margin: 0 auto;
-  padding-top: 50px;
-
-  &__row {
-    display: flex;
-    margin-bottom: 46px;
-  }
-
-  &__row:last-child {
-    margin-bottom: 72px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 944px;
 
   &__card {
-    margin: 0 24px;
+    margin: 0 24px 46px;
   }
 
-  &__card:first-child {
+  &__card:nth-child(4n + 1) {
     margin-left: 0;
   }
 
-  &__card:last-child {
+  &__card:nth-child(4n) {
     margin-right: 0;
   }
 }
@@ -231,11 +221,9 @@ body {
     margin-left: 0;
   }
 
-  &--1 :first-child,
-  &--2 :nth-child(-n + 2),
-  &--3 :nth-child(-n + 3),
-  &--4 :nth-child(-n + 4),
-  &--5 :nth-child(-n + 5) {
-    background-image: url("../images/star-active.svg");
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n + #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
   }
 }
