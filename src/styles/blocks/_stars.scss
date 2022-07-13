@@ -1,35 +1,31 @@
-.card__stars {
-  display: flex;
-  flex-direction: column;
+@mixin square($size) {
+  width: $size;
+  height: $size;
 }
+
+$star-size: 16px;
 
 .stars {
   display: flex;
-  justify-content: flex-start;
-}
 
-.stars__star {
-  margin: 0 2px;
-  width: 16px;
-  height: 16px;
-  background-image: url(../images/star.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
+  &__star {
+    @include square($star-size);
 
-.stars__star:first-child {
-  margin-left: 0;
-}
 
-.stars__star:last-child {
-  margin-right: 2px;
-}
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-.stars--1 :nth-child(1),
-.stars--2 :nth-child(-n + 2),
-.stars--5 :nth-child(-n + 5),
-.stars--3 :nth-child(-n + 3),
-.stars--4 :nth-child(-n + 4) {
-  background-image: url(../images/star-active.svg);
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &--1 &__star:nth-child(-n + 1),
+  &--2 &__star:nth-child(-n + 2),
+  &--3 &__star:nth-child(-n + 3),
+  &--4 &__star:nth-child(-n + 4),
+  &--5 &__star:nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
 }
