@@ -1,0 +1,89 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  @extend %card-border;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-style: normal;
+  margin-bottom: 46px;
+  height: 408px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 40px;
+  }
+
+  &__title,
+  &__rating,
+  &__price,
+  &__pay {
+    margin: #{$global-margin};
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &__title p:first-child {
+    margin: 0;
+    @extend %product-name-text;
+    color: #{$main-color};
+  }
+
+  &__title p:last-child {
+    margin: 4px 0 0;
+    @extend %product-code-text;
+    color: #{$secondary-color};
+    margin-bottom: 8px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+  }
+
+  &__rating_feedback {
+    font-weight: 400;
+    font-size: 10px;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price p:first-child {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #{$secondary-color};
+  }
+
+  &__price p:last-child {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #{$main-color};
+  }
+
+  &__pay {
+    @extend %button-text;
+    @extend %button-border;
+    display: flex;
+    width: 164px;
+    height: 38px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    transition: 0.3s;
+  }
+  &__pay:hover {
+    color: #{$button-color};
+    background: #fff;
+  }
+}
