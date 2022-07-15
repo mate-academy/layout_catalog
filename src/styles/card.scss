@@ -1,0 +1,142 @@
+%larg-text {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+$card-count: 4;
+$card-whidth: 200px;
+$card-margin-left: 24px;
+$card-margin-right: 24px;
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: $card-count *
+    ($card-whidth+ $card-margin-left +
+    $card-margin-right);
+
+  &__item {
+    @extend %larg-text;
+    box-sizing: border-box;
+    width: $card-whidth;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px 16px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+
+    &--container {
+      margin-right: $card-margin-right;
+      margin-left: $card-margin-left;
+      margin-bottom: 46px;
+
+      &:nth-last-child(-n + 4) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__foto {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__h2 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #060b35;
+    margin-bottom: 4px;
+  }
+
+  &__cod {
+    align-self: flex-start;
+    margin-bottom: 16px;
+    color: #616070;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__respond {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+    color: #060b35;
+  }
+  &__respond-item {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: #060b35;
+  }
+
+  &__price-p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__price-item {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__button {
+    display: flex;
+    padding: 0;
+    background: #00acdc;
+    border-radius: 5px;
+    width: 166px;
+    border: 1px solid #00acdc;
+  }
+
+  &__link {
+    margin: 0;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    padding: 11px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
+  &__button:hover {
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+    background: #fff;
+    color: #00acdc;
+  }
+
+  &__link:hover {
+    color: #00acdc;
+  }
+}
