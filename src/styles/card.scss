@@ -1,0 +1,89 @@
+.main__container {
+  width: 1024px;
+  display: flex;
+  padding: 50px 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.card-block {
+  display: flex;
+  flex-flow: column wrap;
+  width: 200px;
+  font-family: $main-font-family;
+  margin: 0 48px 46px 0;
+  padding: 32px 16px 16px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  border-radius: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__picture {
+    @include size (160px, 134px);
+    margin: 0 auto 40px;
+  }
+
+  &__product-name {
+    @include font-style (500, 12px, 18px);
+    // font-style: normal;
+    margin: 0 0 4px;
+  }
+
+  &__vew-container {
+    @include flex (flex, space-between, center);
+    margin-bottom: 24px;
+  }
+
+  &__feedback {
+    @include font-style (400, 10px, 14px);
+    color: #060b35;
+    display: flex;
+  }
+
+  &__product-code {
+    margin-bottom: 16px;
+    padding: 0;
+    @include font-style (400, 10px, 14px);
+    color: rgba(97, 96, 112, 1);
+  }
+
+  &__price {
+    @include flex (flex, space-between, center);
+    margin-bottom: 16px;
+  }
+
+  &__prise-word {
+    @include font-style (400, 12px, 18px);
+    font-style: normal;
+    color: #616070;
+  }
+
+  &__prise-number {
+    @include font-style (700, 16px, 18px);
+  }
+
+  &__button {
+    @include size (166px, 40px);
+  }
+
+  &__link-buy {
+    @include  flex (flex, center, center);
+    @include size (100%, 100%);
+    @include font-style (700, 14px, 14px);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: $primary-color;
+    transition: color 0.3s;
+  }
+
+  &__button:hover &__link-buy {
+    background-color: white;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}
