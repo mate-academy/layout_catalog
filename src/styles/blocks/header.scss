@@ -1,0 +1,66 @@
+@import "../utils/variables";
+
+*,
+:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  &__logo-link {
+    display: flex;
+  }
+
+  .header-menu {
+    &__links-list {
+      display: flex;
+
+      list-style-type: none;
+    }
+
+    &__list-item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__menu-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 60px;
+
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14px;
+      color: $color-black;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    &__menu-item:hover,
+    &__menu-item.is-active {
+      color: $color-blue;
+    }
+  }
+}
+
+.is-active::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  border: 2px solid $color-blue;
+  border-radius: 8px;
+
+}
