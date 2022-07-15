@@ -1,0 +1,136 @@
+
+.main {
+  padding: $padding-medium-screen;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__container {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 32px 16px 16px;
+    margin-right: 48px;
+    margin-bottom: 48px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 3px 40px;
+  }
+
+  &__headline {
+    margin-bottom: 4px;
+    line-height: 18px;
+    @extend %text-medium;
+    color: $main-accent-color;
+  }
+
+  &__code {
+
+    margin-bottom: 16px;
+    @extend %text-small;
+    line-height: 14px;
+  }
+
+  &__revies {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  &__count-review {
+    @extend %text-small;
+    line-height: 14px;
+    color: $main-accent-color;
+  }
+
+  &__cost-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__cost {
+
+    margin: 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $blue-accent;
+  }
+
+  &__how-cost {
+
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-accent-color;
+  }
+  &__container:nth-child(4) {
+    margin-right: 0;
+  }
+  &__container:nth-child(8) {
+    margin-right: 0;
+  }
+  &__container:nth-last-child(-n+4) {
+    margin-bottom: 0;
+  }
+
+  @media(min-width: 1025px) {
+    padding: $padding-big-screen;
+  }
+}
+
+.call-back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  background: $blue-accent;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    background: #fff;
+    border: 1px solid $blue-accent;
+    color: $blue-accent;
+  }
+
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--1 .stars__star:nth-child(-n+1),
+  &--2 .stars__star:nth-child(-n+2),
+  &--3 .stars__star:nth-child(-n+3),
+  &--4 .stars__star:nth-child(-n+4),
+  &--5 .stars__star:nth-child(-n+5) {
+    background-image: url(../images/star-active.svg);
+  }
+}
