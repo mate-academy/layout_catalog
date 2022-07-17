@@ -1,0 +1,38 @@
+.stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  &__stars4 {
+    display: flex;
+  }
+  
+  &__star {
+    background-image: url(\images\star.svg);
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__star:first-child {
+    margin-left: 0;
+  }
+  
+  &__stars1 > &__star:nth-child(-n+1),
+  &__stars2 > &__star:nth-child(-n+2),
+  &__stars3 > &__star:nth-child(-n+3),
+  &__stars4 > &__star:nth-child(-n+4),
+  &__stars5 > &__star:nth-child(-n+5) {
+    background-image: url(\images\star-active.svg);
+  }
+  
+  &__count {
+    @include font-parameters ($fontFamily, 400, normal);
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0;
+  }
+}
