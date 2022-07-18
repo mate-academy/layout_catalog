@@ -1,0 +1,40 @@
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  --card-width: 200px;
+  --card-space-between: 50px;
+  --card-space-bottom: 48px;
+}
+
+.main__card {
+  margin-right: var(--card-space-between);
+  margin-bottom: var(--card-space-bottom);
+  flex-grow: 1;
+
+}
+
+.main__card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.main__card:nth-last-child(-n + 4) {
+  margin-bottom: 73px;
+}
+
+@media (min-width: 1151px) and (max-width: 2500px) {
+  main {
+    padding-left: 129px;
+    max-width: calc((var(--card-width) * 4) +
+    var(--card-space-between) * 3 + 255px);
+  }
+}
+
+@media (min-width: 50px) and (max-width: 1150px) {
+  main {
+    padding-left: 41px;
+    max-width: calc((var(--card-width) * 4) +
+    var(--card-space-between) * 3 + 80px);
+  }
+}
