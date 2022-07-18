@@ -4,16 +4,20 @@
   flex-direction: row;
   flex-wrap: wrap;
 
-  &__container {
-    box-sizing: border-box;
-    width: 200px;
-    padding: 32px 16px 16px;
-    margin-right: 48px;
-    margin-bottom: 46px;
-    background: #fff;
-    border: 1px solid #f3f3f3;
-    border-radius: 5px;
+  @media(min-width: 1025px) {
+    padding: $padding-big-screen;
   }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
+  margin-right: 48px;
+  margin-bottom: 46px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
 
   &__image {
     display: block;
@@ -30,7 +34,6 @@
   }
 
   &__code {
-
     margin-bottom: 16px;
     @extend %text-small;
     line-height: 14px;
@@ -57,8 +60,6 @@
   }
 
   &__cost {
-
-    margin: 0;
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
@@ -66,25 +67,20 @@
   }
 
   &__how-cost {
-
-    margin: 0;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
     color: $main-accent-color;
   }
 
-  &__container:nth-child(4n) {
+  &:nth-child(4n) {
     margin-right: 0;
   }
 
-  &__container:nth-last-child(-n+4) {
+  &:nth-last-child(-n+4) {
     margin-bottom: 0;
   }
 
-  @media(min-width: 1025px) {
-    padding: $padding-big-screen;
-  }
 }
 
 .call-back-button {
@@ -108,31 +104,4 @@
     color: $blue-accent;
   }
 
-}
-
-.stars {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0;
-
-  &__star {
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
-    background-image: url(../images/star.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &--1 .stars__star:nth-child(-n+1),
-  &--2 .stars__star:nth-child(-n+2),
-  &--3 .stars__star:nth-child(-n+3),
-  &--4 .stars__star:nth-child(-n+4),
-  &--5 .stars__star:nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
-  }
 }
