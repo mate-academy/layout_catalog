@@ -49,18 +49,10 @@
   &__stars {
     display: flex;
 
-    // @for $index from 1 through 5{
-    //   &--amount-stars--#{$index}:nth-of-type(-n+#{$index}) {
-    //     background-image: url(../images/star-active.svg);
-    //   }
-    // }
-
-    &--amount-stars--5 :nth-of-type(-n+5),
-    &--amount-stars--4 :nth-of-type(-n+4),
-    &--amount-stars--3 :nth-of-type(-n+3),
-    &--amount-stars--2 :nth-of-type(-n+2),
-    &--amount-stars--1 :nth-of-type(-n+1) {
-      background-image: url(../images/star-active.svg);
+    @for $index from 1 through 5 {
+      &--amount-stars--#{$index} :nth-of-type(-n+#{$index}) {
+        background-image: url(../images/star-active.svg);
+      }
     }
   }
 
