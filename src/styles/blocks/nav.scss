@@ -14,10 +14,10 @@
     font-weight: 500;
     font-size: 12px;
     text-transform: uppercase;
-  }
 
-  &__item:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__link {
@@ -25,23 +25,25 @@
     text-decoration: none;
     line-height: 60px;
     color: #{$main-accent-color};
-  }
 
-  &__link:hover {
-    color: #{$blue-accent};
+    &:hover {
+      color: #{$blue-accent};
+    }
   }
 
   .is-active {
     color: #{$blue-accent};
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 4px;
+      width: 100%;
+      background-color: #{$blue-accent};
+      border-radius: 2px;
+    }
   }
 
-  .is-active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    background-color: #{$blue-accent};
-    border-radius: 2px;
-  }
+
 }
