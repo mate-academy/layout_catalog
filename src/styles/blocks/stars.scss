@@ -1,11 +1,10 @@
 .stars {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin-bottom: 24px;
 
   @for $index from 1 to 6 {
-    &__count--#{$index} {
+    &--#{$index} {
       display: flex;
       margin: 0;
     }
@@ -16,6 +15,7 @@
     margin-left: 4px;
     width: 16px;
     height: 16px;
+
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -25,16 +25,9 @@
   }
 
   @for $index from 1 to 6 {
-    &__count--#{$index} >
+    &--#{$index} >
     &__star:nth-child(-n+#{$index}) {
       background-image: url(\images\star-active.svg);
     }
-  }
-  
-  &__count {
-    @include font-parameters ($fontFamily, 400, normal);
-    font-size: 10px;
-    line-height: 14px;
-    margin: 0;
   }
 }
