@@ -1,6 +1,13 @@
 .stars {
   display: flex;
 
+  $indexes:
+    "one" 1,
+    "two" 2,
+    "three" 3,
+    "four" 4,
+    "five" 5;
+
   &__star {
     width: 16px;
     height: 16px;
@@ -8,12 +15,10 @@
     background: url("/images/star.svg") center no-repeat;
     border-radius: 0.5px;
   }
-}
 
-.stars--1 > .stars__star:first-of-type,
-.stars--2 > .stars__star:nth-child(-n+2),
-.stars--3 > .stars__star:nth-child(-n+3),
-.stars--4 > .stars__star:nth-child(-n+4),
-.stars--5 > .stars__star:nth-child(-n+5) {
-  background: url("/images/star-active.svg") center no-repeat;
+  @each $name, $index in $indexes {
+    &--#{$name} &__star:nth-child(-n + #{$index}) {
+      @extend %active-star-background;
+    }
+  }
 }
