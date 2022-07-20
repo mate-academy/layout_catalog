@@ -1,0 +1,50 @@
+.nav {
+  flex-shrink: 0;
+
+  &__menu {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    padding: 23px 0;
+    @extend %text-medium;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: $main-accent-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue-accent;
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    padding-right: 20px;
+    list-style: none;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-accent;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $blue-accent;
+    border-radius: 8px;
+
+  }
+}
