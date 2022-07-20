@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 0 24px;
+  margin-bottom: 24px;
 
   @for $index from 1 to 6 {
     &__count--#{$index} {
@@ -23,14 +23,12 @@
   &__star:first-child {
     margin-left: 0;
   }
-  
-  &__count--4 > &__star:nth-child(-n+1),
-  &__count--4 > &__star:nth-child(-n+2),
-  &__count--4 > &__star:nth-child(-n+3),
-  &__count--4 > &__star:nth-child(-n+4),
-  &__count--4 > &__star:nth-child(-n+5) {
 
-    background-image: url(\images\star-active.svg);
+  @for $index from 1 to 6 {
+    &__count--#{$index} >
+    &__star:nth-child(-n+#{$index}) {
+      background-image: url(\images\star-active.svg);
+    }
   }
   
   &__count {
