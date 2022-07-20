@@ -1,0 +1,25 @@
+.catalog {
+  display: flex;
+  justify-content: center;
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: $catalog_cards-paddings-vertical 0;
+    margin-bottom: 72 - $catalog_cards-paddings-vertical;
+    width: $card-width * $cards-amount
+      + ($cards-amount - 1) * $cards-margin-between-horizontal
+    ;
+  }
+
+  &__card {
+
+    &:not(:nth-child(#{$cards-amount}n)) {
+      margin-right: $cards-margin-between-horizontal;
+    }
+
+    &:not(:nth-last-child(-n + #{$amount-of-last-childs})) {
+      margin-bottom: $cards-margin-between-vertical;
+    }
+  }
+}
