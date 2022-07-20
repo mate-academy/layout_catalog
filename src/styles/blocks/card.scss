@@ -1,27 +1,6 @@
-@import "../utiles/extends";
-@import "../utiles/resets";
-@import "../blocks/stars.scss";
-@import "../utiles/variables";
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px 40px;
-  margin: 0 auto;
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    width: 944px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
 .card {
   display: flex;
-  max-width: 200px;
+  width: $card-width;
   flex-direction: column;
   background-color: $white-color;
   border: 1px solid #f3f3f3;
@@ -33,15 +12,19 @@
     margin-right: 0;
   }
 
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
   &__picture {
     margin-top: 32px;
     @extend %justify-center;
+  }
 
-    &-sizes {
-      @extend %justify-center;
-      width: 160px;
-      height: 134px;
-    }
+  &__picture-sizes {
+    @extend %justify-center;
+    width: 160px;
+    height: 134px;
   }
 
   &__name {
@@ -68,22 +51,22 @@
     font-size: 10px;
   }
 
-  &__price {
+  &__price-container {
     margin-top: 24px;
     @extend %space-between;
+  }
 
-    &-text {
-      color: $silver-color;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 18px;
-    }
+  &__price {
+    color: $silver-color;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
 
-    &-value {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 18px;
-    }
+  &__value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
   }
 
   &__buy-link {
@@ -93,6 +76,8 @@
     height: 40px;
     background: $blue-color;
     border-radius: 5px;
+    border: 1px solid $blue-color;
+    transition: 0.4s;
 
     text-decoration: none;
     font-weight: 700;
@@ -103,9 +88,7 @@
 
     &:hover {
       background: $white-color;
-      border: 1px solid $blue-color;
       color: $blue-color;
-      transition: 0.4s;
     }
   }
 }
