@@ -76,8 +76,8 @@ h2 {
     box-sizing: border-box;
     height: 40px;
 
-    background-color: #00acdc;
-    border: 1px solid #00acdc;
+    background-color: $colorback;
+    border: 1px solid $colorback;
     border-radius: 5px;
 
     font-size: 14px;
@@ -86,12 +86,14 @@ h2 {
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
+
+    transition: 0.3s;
   }
 
   &__button:hover {
     background-color: #fff;
-    color: #00acdc;
-    border: 1px solid #00acdc;
+    color: $colorback;
+    border: 1px solid $colorback;
     border-radius: 5px;
   }
 }
@@ -105,14 +107,11 @@ h2 {
     background-image: url("../images/star.svg");
     background-repeat: no-repeat;
     background-position: center;
-
   }
-  &--1 > .stars__star:nth-child(1),
-  &--2 > .stars__star:nth-child(-n+2),
-  &--3 > .stars__star:nth-child(-n+3),
-  &--4 > .stars__star:nth-child(-n+4),
-  &--5 > .stars__star:nth-child(-n+5) {
-    background-image: url("../images/star-active.svg");
+  @for $index from 1 through 5 {
+    &--#{$index} &__star:nth-child(-n + #{$index}) {
+      background-image: url("../images/star-active.svg");
+    }
   }
   &--4 .stars__star:not(:last-child) {
     margin-right: 4px;
