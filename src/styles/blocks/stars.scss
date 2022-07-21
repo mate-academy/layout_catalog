@@ -1,7 +1,3 @@
-%active-star-background {
-  background-image: url(../images/star-active.svg);
-}
-
 .stars {
   display: flex;
 
@@ -26,8 +22,8 @@
   }
 
   @each $name, $index in $indexes {
-    &--#{name} &__star:nth-child(-n + #{$index}) {
-      @extend %active-star-background;
+    &--#{$name} &__star:nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
     }
- }
+  }
 }
