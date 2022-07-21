@@ -3,16 +3,19 @@
   align-items: center;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
 
-.logo {
-  height: 40px;
-  margin-left: 50px;
+  &__logo {
+    height: 40px;
+    margin-left: 50px;
+  }
+
+  &__nav {
+    margin-right: 50px;
+  }
 }
 
 .nav {
   margin-left: auto;
-  margin-right: 50px;
 
   &__list {
     margin: 0;
@@ -34,6 +37,18 @@
     text-transform: uppercase;
     color: #060b35;
     font-weight: 500;
+
+    &::after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      height: 4px;
+      bottom: 0;
+      margin-top: 18.5px;
+      background-color: $blue-color;
+      border-radius: 8px;
+    }
   }
 
   &__link,
@@ -41,18 +56,6 @@
   &__link:hover,
   &__link:active {
     text-decoration: none;
-  }
-
-  &__link::after {
-    content: "";
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    height: 4px;
-    bottom: 0;
-    margin-top: 18.5px;
-    background-color: $blue-color;
-    border-radius: 8px;
   }
 
   &__link:hover {
