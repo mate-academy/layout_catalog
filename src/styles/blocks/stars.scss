@@ -1,0 +1,24 @@
+.stars {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+.stars .stars__star:nth-of-type(n) {
+  height: 16px;
+  width: 16px;
+  background-image: url(../../src/images/star-active.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@each $number, $value in $star {
+  &--#{$number} :nth-child(-n+#{$value}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
