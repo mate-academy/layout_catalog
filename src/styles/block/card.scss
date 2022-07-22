@@ -1,6 +1,6 @@
 
 .card {
-  width: 200px;
+  width: $cell-size;
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -8,12 +8,6 @@
   border-radius: 5px;
   box-sizing: border-box;
   padding: 32px 16px 16px;
-
-  &__card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   &__image {
     display: block;
@@ -33,7 +27,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
-    color: #060b35;
+    color: $color;
     margin-bottom: 4px;
   }
 
@@ -61,26 +55,11 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
-    color: #060b35;
+    color: $color;
   }
 
   &__stars:last-child {
     margin-right: 0;
-  }
-
-  &__prise-block {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-
-  &__prise-text {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: #616070;
   }
 
   &__prise {
@@ -89,13 +68,27 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    color: #060b35;
+    color: $color;
+
+    &-text {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #616070;
+    }
+
+    &-block {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
   }
 
   &__card-buy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     box-sizing: border-box;
     height: 40px;
     border: 1px solid transparent;
@@ -106,15 +99,15 @@
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: #00acdc;
+    background-color: $color-blue;
     font-family: "Roboto", sans-serif;
     font-style: normal;
     text-align: center;
-  }
 
-  &__card-buy:hover {
-    background-color: #fff;
-    border: 1px solid #00acdc;
-    color: #00acdc;
+    &:hover {
+      background-color: #fff;
+      border: 1px solid $color-blue;
+      color: $color-blue;
+    }
   }
 }
