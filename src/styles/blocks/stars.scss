@@ -2,21 +2,25 @@
   display: flex;
 
   &__star {
-    background: url(../images/star.svg) no-repeat center;
-    width: 16px;
-    height: 16px;
+    @include size(16px, 16px);
     margin-right: 4px;
+    background: url(../images/star.svg) no-repeat center;
 
     &:last-child {
       margin: 0;
     }
   }
-}
 
-.stars--1 > .stars__star:nth-child(-n + 1),
-.stars--2 > .stars__star:nth-child(-n + 2),
-.stars--3 > .stars__star:nth-child(-n + 3),
-.stars--4 > .stars__star:nth-child(-n + 4),
-.stars--5 > .stars__star:nth-child(-n + 5) {
-  background-image: url(../images/star-active.svg);
+  $indices:
+    "one" 1,
+    "two" 2,
+    "three" 3,
+    "four" 4,
+    "five" 5;
+
+  @each $name, $index in $indices {
+    &--#{$name} &__star:nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
