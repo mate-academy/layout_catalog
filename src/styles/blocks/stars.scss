@@ -1,0 +1,17 @@
+.stars {
+  @extend %adjust-flex;
+
+  &__star {
+    margin-right: $card-base-gap;
+    @include square(16px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/star.svg);
+  }
+
+  @for $i from 1 through 5 {
+    &--rate--#{$i} :nth-last-child(1n+ #{5 - ($i - 1)}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
