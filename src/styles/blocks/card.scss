@@ -1,0 +1,139 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 50px $main-padding;
+  width: $main-width;
+
+  &__card {
+    margin-right: $cards-distance;
+    margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+  
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  &__image {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__text {
+    display: flex;
+    padding: 40px 0 4px;
+    @extend %normal-text;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &__small-text {
+    font-style: normal;
+    @extend %small-text;
+    color: $secondary-text;
+  }
+
+  &__price {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-letters {
+    color: $secondary-text;
+    font-size: 12px;
+  }
+
+  &__price-numbers {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &__link {
+    height: 40px;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  &__link-text {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: $white-color;
+    background: $blue-sky-color;
+    border-radius: 5px;
+  }
+
+  &__link-text:hover {
+    color: $blue-sky-color;
+    background-color: $white-color;
+    border: 1px solid $blue-sky-color;
+  }
+}
+
+.star {
+  display: flex;
+  margin-top: 16px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__stars {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__text {
+    display: flex;
+    font-style: normal;
+    @extend %small-text;
+  }
+}
+
+.stars {
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+}
+
+.stars--4:first-child {
+  margin: 0;
+}
+
+.stars--4 :nth-child(-n + 4) {
+  background-image: url(../images/star-active.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
