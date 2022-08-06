@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    @extend %font-style;
+    @extend %primary-text;
+
+    padding-top: 23px;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-hover;
+    }
+  }
+}
+
+.is-active {
+  color: $color-hover;
+
+  &::after {
+    content: "";
+    margin-top: 19px;
+    display: block;
+    height: 4px;
+    background-color: $color-hover;
+    border-radius: 8px;
+  }
+}
