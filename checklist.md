@@ -95,7 +95,7 @@ GOOD example
   margin: 48px 24px;
 }
 
-.card {
+& {
   font-size: 16px;
   background-color: purple;
 }
@@ -112,7 +112,7 @@ BAD example
 ```
 ```css
 /*style.css*/
-.card {
+& {
   margin: 48px 24px;
   font-size: 16px;
   background-color: purple;
