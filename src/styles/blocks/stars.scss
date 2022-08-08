@@ -1,0 +1,20 @@
+.stars {
+  display: flex;
+
+  &__star {
+    margin-left: 4px;
+    height: $star-size;
+    width: $star-size;
+    background: center no-repeat url("/images/star.svg");
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @for $counter from 1 through 5 {
+    &--#{$counter} .stars__star:not(:nth-of-type(n + #{$counter + 1})) {
+      background: center no-repeat url("/images/star-active.svg");
+    }
+  }
+}
