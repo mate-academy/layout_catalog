@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://yevhenii-stanchenko.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://yevhenii-stanchenko.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -36,3 +36,28 @@ and SCSS
 ---
 ### Tips & Hints
 Don't use flex `gap` property, it's not yet supported by tests.
+
+
+## Требования:
+- использовать блоки "Карточка" и "Заголовок" из предыдущих задач, но переписать их с помощью БЭМ
+и СКСС
+- Цвет навигационных ссылок больше не черный.
+- всегда должно быть 4 карты подряд (не 2, 3 или 5)
+  - используйте `:nth-child(4n)` для выбора каждого 4-го элемента
+  - используйте `:nth-last-child(-n + 4)`, чтобы выбрать 4 последних элемента
+- карты должны иметь фиксированную ширину и фиксированные расстояния между ними
+- Контейнер для карточек должен иметь фиксированные отступы (см. пример 1024px), нижняя часть такая же, как и верхняя
+- использовать семантические теги. `<header>`, `<nav>`, `<main>`
+- добавить класс is-active к первой ссылке ("Apple") в навигации
+- удалить старые атрибуты `data-qa`
+- добавить `data-qa="nav-hover"` (а не просто `hover`) к 4-й навигационной ссылке для тестирования (`Ноутбуки и компьютеры`)
+- добавить `data-qa="card"` к первой карточке
+- добавить `data-qa="card-hover"` (а не просто `hover`) к ссылке "Купить" внутри первой карточки
+---
+--> [КОНТРОЛЬНЫЙ СПИСОК] (https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
+---
+![скриншот](./references/catalog-example.png)
+
+---
+### Советы и подсказки
+Не используйте свойство flex `gap`, оно еще не поддерживается тестами.
