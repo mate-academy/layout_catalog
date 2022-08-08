@@ -1,3 +1,25 @@
+@use "./blocks/card.scss";
+@use "./blocks/cards.scss";
+@use "./blocks/header.scss";
+@use "./blocks/logo.scss";
+@use "./blocks/nav.scss";
+@use "./blocks/stars.scss";
+
+@use "./utils/variables" as *;
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-secondary-color;
+}
+
 body {
   margin: 0;
+}
+
+@for $index from 1 through 5 {
+  .stars--#{$index} .stars__star:nth-child(-n+#{$index}) {
+    background-image: url(/images/star-active.svg);
+  }
 }
