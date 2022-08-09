@@ -1,0 +1,53 @@
+
+@import "../utils/mixins";
+
+/*#region nav-list*/
+.nav-list {
+  font-family: Roboto, sans-serif;
+  @include font-weight-size-lineHeight-color(500, 12px, 14px, #000);
+  font-style: normal;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+
+  &__click_block {
+    display: flex;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__nav-link {
+    display: flex;
+    flex-direction: column;
+    color: #060b35;
+    text-decoration: none;
+    padding: 23px 0;
+
+    &:hover {
+      color: #00acdc;
+    }
+
+    &--is-active {
+      color: #00acdc;
+    }
+
+    &--is-active::after {
+      content: "";
+      @include rectangle(100%, 4px);
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+      background-color: #00acdc;
+    }
+  }
+}
+
+/*#endregion*/

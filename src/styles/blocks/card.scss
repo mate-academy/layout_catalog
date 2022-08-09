@@ -1,0 +1,94 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+/* #region card */
+.card {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+  padding: 32px 16px 16px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include rectangle($card-width, 406px);
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+
+  &:nth-child(n + #{$elements-number + 1}) {
+    margin-top: $shift-cards;
+  }
+
+  &:not(:nth-child(#{$elements-number}n)) {
+    margin-right: $shift-cards;
+  }
+
+  &:nth-child(#{$elements-number}n) {
+    margin-right: 0;
+  }
+
+  &__img {
+    @include rectangle(160px, 134px);
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font-weight-size-lineHeight-color(700, 14px, 16px, #fff);
+    text-transform: uppercase;
+    text-decoration: none;
+    @include rectangle(164px, 38px);
+    background-color: #00acdc;
+    border-radius: 5px;
+    border: 1px solid #00acdc;
+    padding: 0;
+  }
+
+  &__button:hover {
+    background-color: #fff;
+    color: #00acdc;
+  }
+
+  &__name {
+    padding-top: 40px;
+    width: 100%;
+    @include font-weight-size-lineHeight-color(500, 12px, 18px, #060b35);
+  }
+
+  &__code {
+    display: flex;
+    width: 100%;
+    padding-top: 4px;
+    @include font-weight-size-lineHeight-color(400, 10px, 14px, #616070);
+  }
+
+  &__price-tag {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 16px;
+  }
+
+  &__price {
+    @include font-weight-size-lineHeight-color(400, 12px, 18px, #616070);
+  }
+
+  &__amount {
+    @include font-weight-size-lineHeight-color(700, 16px, 18px, #060b35);
+  }
+
+  &__star {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+
+  &__review {
+    @include font-weight-size-lineHeight-color(400, 10px, 14px, #060b35);
+  }
+}
+
+/* #endregion */
