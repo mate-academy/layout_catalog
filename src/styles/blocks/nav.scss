@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 1.29rem;
+    align-items: baseline;
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 0;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &--is-active {
+      color: $color-blue;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $color-blue;
+        position: relative;
+        top: 1.15rem;
+      }
+    }
+  }
+
+  &__element:nth-child(4) &__link {
+    color: $color-blue;
+  }
+}
