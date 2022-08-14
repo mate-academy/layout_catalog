@@ -1,34 +1,15 @@
-.main {
+.catalog {
   display: flex;
   flex-wrap: wrap;
+  max-width: 944px;
 
-  @media (min-width : 1024px) {
-    padding: 50px 40px;
-    width: calculate-width();
-    margin: 0 auto;
-  }
+  &__card {
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
 
-  @media (min-width : 1200px) {
-    padding: 50px 128px;
-    width: calculate-width(128);
-    margin: 0 auto;
-  }
-}
-
-.catalog {
-  @extend %flex-center;
-  margin-bottom: 46px;
-  width: $card-width;
-
-  color: $color-primary;
-  border: 1px solid $color-border;
-  border-radius: 5px;
-
-  &:not(:nth-child(4n)) {
-    margin-right: 48px;
-  }
-
-  &:nth-last-child(-n + 4) {
-    margin-bottom: 0;
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: 46px;
+    }
   }
 }
