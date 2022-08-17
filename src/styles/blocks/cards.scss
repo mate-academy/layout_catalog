@@ -1,0 +1,18 @@
+.cards {
+  display: flex;
+  width: $card-width * $cards-count-in-row
+    + $card-right-gap * ($cards-count-in-row - 1);
+  flex-wrap: wrap;
+  padding: 51px 0 73px;
+
+  &__item {
+    margin: 0 $card-right-gap 48px 0;
+
+    &:nth-child(#{$cards-count-in-row}n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + #{$cards-count-in-row}) {
+      margin-bottom: 0;
+    }
+  }
+}
