@@ -1,3 +1,47 @@
-body {
-  margin: 0;
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/extends';
+@import './utils/functions';
+
+@import './blocks/header';
+@import './blocks/nav';
+@import './blocks/cart';
+@import './blocks/stars';
+
+* {
+  box-sizing: border-box;
 }
+
+body,
+h2,
+p,
+button,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-main-color;
+}
+
+.main {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__cart {
+      margin-bottom: 48px;
+
+      &:not(:nth-child(4n)) {
+          margin-right: 50px;
+        }
+    }
+}
+
+
+
