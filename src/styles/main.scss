@@ -1,12 +1,12 @@
-@import './utils/variables';
-@import './utils/mixins';
-@import './utils/extends';
-@import './utils/functions';
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/extends";
+@import "./utils/functions";
 
-@import './blocks/header';
-@import './blocks/nav';
-@import './blocks/cart';
-@import './blocks/stars';
+@import "./blocks/header";
+@import "./blocks/nav";
+@import "./blocks/cart";
+@import "./blocks/stars";
 
 * {
   box-sizing: border-box;
@@ -30,18 +30,16 @@ html {
 }
 
 .main {
-  display:flex;
-  justify-content: space-between;
+  @extend %space-between;
   flex-wrap: wrap;
+  max-width: mainWidth($cart-width,$space-between-carts);
+  margin: 0 auto;
 
   &__cart {
-      margin-bottom: 48px;
+    margin-bottom: 48px;
 
-      &:not(:nth-child(4n)) {
-          margin-right: 50px;
-        }
+    &:not(:nth-child(4n)) {
+      margin-right: $space-between-carts;
     }
+  }
 }
-
-
-
