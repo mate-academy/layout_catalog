@@ -1,5 +1,4 @@
 .card {
-  box-sizing: border-box;
   width: 200px;
   padding: 32px 16px 16px;
   margin-right: 48px;
@@ -12,6 +11,7 @@
   }
 
   &__image {
+    box-sizing: content-box;
     height: 134px;
     width: 160px;
     padding: 0 3px;
@@ -34,8 +34,6 @@
   }
 
   &__price {
-    width: 100%;
-
     display: flex;
     justify-content: space-between;
     padding: 24px 0 16px;
@@ -60,18 +58,20 @@
     background-color: $lightblue;
     color: #fff;
 
+    text-transform: uppercase;
     font-weight: 700;
     line-height: 16px;
 
     border-radius: 5px;
     border: 1px solid $lightblue;
 
-    transition: 0.5s;
+    transition: background-color 0.8s,
+      color 0.8s;
+    cursor: pointer;
   }
 
   &__button:hover {
     background-color: #fff;
     color: $lightblue;
-    cursor: pointer;
   }
 }
