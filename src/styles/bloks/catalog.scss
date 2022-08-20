@@ -1,0 +1,152 @@
+
+.catalog {
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    max-width: 944px;
+  }
+
+  &__item {
+    margin-right: 48px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(n + 5) {
+      margin-top: 46px;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 198px;
+  font-family: Roboto, sans-serif;
+  
+  &__content {
+    max-width: 166px;
+  }
+
+  &__image-blok {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__info {
+    margin-top: 40px;
+  }
+
+  &__name {
+    @extend %medium-text;
+    line-height: 18px;
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-grey;
+  }
+
+  &__feedback {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__review {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    margin-left: 2px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-grey;
+  }
+
+  &__product-price {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166px;
+    height: 40px;
+    margin: 16px 0;
+    background: $color-blue;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-blue;
+      background-color: #fff;
+      border: 1px solid $color-blue;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: top 2px left 0;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  & > :nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: top 2px left 0;
+  }
+}
