@@ -3,6 +3,7 @@
   flex-direction: column;
   width: $cart-width;
   padding: 32px 16px 16px;
+
   background-color: $background-color;
   border: solid #f3f3f3 1px;
   border-radius: 5px;
@@ -27,13 +28,14 @@
   }
 
   &__price {
-    @extend %space-between;
     margin-bottom: 16px;
   }
 
   &__button {
     display: flex;
     justify-content: center;
+    text-align: center;
+    padding: 11px;
 
     font-weight: 700;
     line-height: 16px;
@@ -43,6 +45,8 @@
     background-color: $button-color;
     border: solid transparent 1px;
     border-radius: 5px;
+
+    @extend %link-transformation;
     transition: background-color 0.3s ease;
 
     &:hover {
@@ -50,14 +54,6 @@
       border-color: $button-color;
       background-color: $background-color;
     }
-  }
-
-  &__link {
-    display: block;
-    padding: 11px;
-
-    color: inherit;
-    @extend %link-transformation;
   }
 }
 
@@ -77,6 +73,8 @@
 }
 
 .price {
+  @extend %space-between;
+
   font-size: 12px;
   line-height: 18px;
 
