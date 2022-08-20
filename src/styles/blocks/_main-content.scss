@@ -1,26 +1,38 @@
 .main {
   display: flex;
   justify-content: center;
+  width: fit-content;
 
   &__content {
+    display: flex;
+    flex-wrap: wrap;
     max-width: maxWidth(
       $card-width,
       $cards-columns-quantity,
       $cards-gaps-value,
       $cards-gaps-quantity
     );
+    min-width: maxWidth(
+      $card-width,
+      $cards-columns-quantity,
+      $cards-gaps-value,
+      $cards-gaps-quantity
+    );
     padding: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: center;
+    margin: 0 auto;
   }
 
   &__card {
     margin-right: $cards-gaps-value;
     margin-bottom: 46px;
+    height: fit-content;
 
     &:nth-child(4n) {
       margin-right: 0;
+    }
+
+    &:nth-last-child(-n+4) {
+      margin-bottom: 0;
     }
   }
 }
