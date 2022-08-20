@@ -1,20 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import "./variables";
+@import "./reset.scss";
+@import "./header.scss";
+@import "./navigation.scss";
+@import "./container.scss";
+@import "./card.scss";
+@import "./stars.scss";
 
-// @import "_variables";
-// @import "_mixins";
-// @import "_reset";
-// @import "page";
-@import "header";
-@import "navigation";
-@import "container";
-@import "card";
-@import "stars";
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  width: $cards-per-line * ($card-width + 48);
+  margin: auto;
 
-* {
-  box-sizing: border-box;
-}
+  &__item {
+    margin: 50px 24px 0;
 
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
+    &:nth-last-child(-n + 4) {
+      margin-top: 46px;
+    }
+  }
 }

@@ -1,9 +1,16 @@
 .container {
-  margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
-  min-width: 800px;
-  max-width: 1000px;
+  flex-shrink: 0;
+  width: $cards-per-line * ($card-width + 48);
+  margin: auto;
+
+  &__item {
+    margin: 50px 24px 0;
+
+    &:nth-last-child(-n + 4) {
+      margin-top: 46px;
+    }
+  }
 }
