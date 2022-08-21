@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+$card-border: #f3f3f3;
+$main: #060b35;
+$secondary: #616070;
+$white: #fff;
+$blue-accent: #00acdc;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-right: 48px;
+
+  box-sizing: border-box;
+  max-width: 200px;
+  border: 1px solid $card-border;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  font-family: "Roboto", sans-serif;
+  
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-top: 46px;
+  }
+
+  &__photo {
+    display: flex;
+    margin: 0 3px 40px;
+    max-width: 100%;
+    max-height: 134px;
+  }
+
+  &__title {
+    display: flex;
+    color: $main;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 0 0 4px;
+  }
+
+  &__code {
+    color: $secondary;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  /* #region RATING */
+
+  &-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    &__star {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../../images/star.svg);
+    }
+  
+    &__stargroup {
+      display: flex;
+    }
+        
+    &__stargroup--1 &__star:nth-child(-n + 1),
+    &__stargroup--2 &__star:nth-child(-n + 2),
+    &__stargroup--3 &__star:nth-child(-n + 3),
+    &__stargroup--4 &__star:nth-child(-n + 4),
+    &__stargroup--5 &__star:nth-child(-n + 5) {
+      background-image: url(../../images/star-active.svg);
+    }
+    
+    &__quontity {
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+      color: $main;
+    }
+
+  }
+  /* #endregion */
+
+  /* #region PRICE */
+
+  &-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &__text {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary;
+    }
+
+    &__price {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $main;
+    }
+  }
+
+  /* #endregion */
+
+  &__buy {
+    box-sizing: border-box;
+    display: flex;
+    min-width: 166px;
+    flex-basis: 40px;
+    border-radius: 5px;
+    background-color: $blue-accent;
+    color: $white;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__buy:hover {
+    background: $white;
+    border: 1px solid $blue-accent;
+    color: $blue-accent;
+    line-height: 16px;
+  }
+
+}
