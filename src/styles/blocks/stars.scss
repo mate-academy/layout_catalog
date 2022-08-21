@@ -1,0 +1,16 @@
+.stars__star {
+  @include star(16px);
+  background: url("../images/star.svg") no-repeat;
+  background-position: 50%;
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n + #{$i}) {
+    background: url("../images/star-active.svg") no-repeat;
+    background-position: 50%;
+  }
+}
