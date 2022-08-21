@@ -2,9 +2,7 @@
   display: flex;
 
   &__list {
-    margin: 0;
     display: flex;
-    list-style: none;
   }
 
   &__item {
@@ -12,9 +10,7 @@
     margin-right: 20px;
     text-transform: uppercase;
 
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
+    @extend %typography;
   }
 
   &__item:last-child {
@@ -24,17 +20,17 @@
   &__link {
     padding: 22.5px 0;
     text-decoration: none;
-    color: #060b35;
+    color: $typographyPrimary;
   }
 
   &__link:hover {
-    color: #00acdc;
+    color: $colorSecondary;
   }
 }
 
 .is-active {
   position: relative;
-  color: #00acdc;
+  color: $colorSecondary;
 
   &::after {
     content: "";
@@ -43,7 +39,7 @@
     height: 4px;
     bottom: 0;
     left: 0;
-    background-color: #00acdc;
+    background-color: $colorSecondary;
     border-radius: 8px;
   }
 }
