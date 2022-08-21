@@ -1,11 +1,29 @@
+@import "./variables";
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  min-width: 944px;
+  max-width: 944px;
+  padding: 50px 0 0;
+  margin: 0 auto;
+}
 
 .card {
   display: flex;
   flex-direction: column;
-  max-width: 198px;
-  padding: 32px 0 16px;
-  border: 1px solid #f3f3f3;
+  width: 166px;
+  padding: 32px 16px 16px;
+  border: 1px solid $border-color;
   border-radius: 5px;
+
+  margin: 0 48px 46px 0;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 
   &__logo {
     display: flex;
@@ -19,10 +37,6 @@
     height: 134px;
   }
 
-  &__content {
-    padding: 0 16px;
-  }
-
   &__title {
     font-weight: 500;
     margin-bottom: 4px;
@@ -33,14 +47,14 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
-    color: #616070;
+    color: $primary-grey;
     margin-bottom: 16px;
   }
 
   &__response {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 24px;
   }
 
@@ -54,16 +68,16 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-  }
 
-  &__price-item {
-    color: #616070;
-  }
+    &-item {
+      color: $primary-grey;
+    }
 
-  &__price-value {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
   }
 
   &__buy {
@@ -75,17 +89,18 @@
     display: flex;
     justify-content: center;
     color: #fff;
-    padding: 12px 0;
-    width: 100%;
-    background-color: #00acdc;
+    padding: 11px 0;
+    width: calc(100% - 2px);
+    background-color: $primary-blue;
     border: 1px solid transparent;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      border: 1px solid $primary-blue;
+      color: $primary-blue;
+      background-color: #fff;
+    }
   }
 
-  &__buy:hover {
-    border: 1px solid #00acdc;
-    color: #00acdc;
-    background-color: #fff;
-  }
 }
