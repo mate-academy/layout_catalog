@@ -1,0 +1,89 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: calc(#{$width-container} + 2 * #{$padding-x-container});
+  padding: 50px $padding-x-container;
+}
+
+.card {
+  max-width: 200px;
+  padding: 32px 16px 16px;
+  margin-bottom: 46px;
+  margin-right: 48px;
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-secondary-color;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background: $light-color;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__product {
+    margin-bottom: 4px;
+    @include font-style (500, 12px);
+    line-height: 18px;
+    color: $text-accent-color;
+  }
+
+  &__vendor-code {
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    @include flex-beetwen;
+    align-items: center;
+    margin-bottom: 24px;
+    color: $text-accent-color;
+  }
+
+  &__price {
+    @include flex-beetwen;
+    margin-bottom: 16px;
+    line-height: 18px;
+    font-size: 12px;
+    color: $text-secondary-color;
+  }
+
+  &__price :last-child {
+    @include font-style (700, 16px);
+    color: $text-accent-color;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: $main-color;
+    border-radius: 5px;
+    @include font-style (700, 14px);
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $light-color;
+
+    &:hover {
+      background: $light-color;
+      border: 1px solid $main-color;
+      color: $main-color;
+    }
+  }
+
+}
