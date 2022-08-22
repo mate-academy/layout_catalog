@@ -2,6 +2,8 @@
 @import "_variables.scss";
 
 .header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
   &__logo {
     line-height: 0;
   }
@@ -10,36 +12,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    padding: 0 50px;
+    padding: 0 $side-padding;
+  }
+}
+
+.nav {
+  line-height: 60px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
   }
 
-  &__nav {
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
 
-    &-list {
-      display: flex;
-      align-items: center;
-      list-style: none;
-    }
-
-    &-item:not(:first-child) {
-      margin-left: 20px;
-    }
-
-    &-link {
-      font-size: 12px;
-      line-height: 60px;
-      font-weight: 500;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #000;
-      position: relative;
-      padding: 23px 0;
-      transition: color 0.3s;
-
-      &:hover {
-        color: $primary-blue;
-      }
+  &__link {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $primary-black;
+    position: relative;
+    padding: 23px 0;
+    transition: color 0.3s;
+    &:hover {
+      color: $primary-blue;
     }
   }
 }

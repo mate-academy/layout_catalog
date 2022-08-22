@@ -1,24 +1,26 @@
 @import "./variables";
 
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
-  min-width: 944px;
-  max-width: 944px;
-  padding: 50px 0 0;
-  margin: 0 auto;
+  width: $container-width;
+  margin-top: 50px;
 }
 
 .card {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 166px;
-  padding: 32px 16px 16px;
   border: 1px solid $border-color;
   border-radius: 5px;
-
+  padding: 32px 16px 16px;
   margin: 0 48px 46px 0;
 
   &:nth-child(4n) {
@@ -37,10 +39,14 @@
     height: 134px;
   }
 
+  &__content {
+    max-width: $card-width;
+  }
+
   &__title {
     font-weight: 500;
-    margin-bottom: 4px;
     line-height: 18px;
+    margin-bottom: 4px;
   }
 
   &__code {
@@ -83,22 +89,25 @@
   &__buy {
     font-size: 14px;
     line-height: 16px;
+    color: #fff;
     font-weight: 700;
+
     text-decoration: none;
     text-transform: uppercase;
+
     display: flex;
     justify-content: center;
-    color: #fff;
     padding: 11px 0;
-    width: calc(100% - 2px);
+    width: 100%;
+
     background-color: $primary-blue;
     border: 1px solid transparent;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 
     &:hover {
-      border: 1px solid $primary-blue;
       color: $primary-blue;
+      border: 1px solid $primary-blue;
       background-color: #fff;
     }
   }
