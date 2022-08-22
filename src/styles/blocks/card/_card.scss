@@ -15,14 +15,25 @@
 
   &__card {
     margin-right: $card-margin;
-  }
+    margin-bottom: 46px;
 
-  &__card:nth-last-child(-n + 4) {
-    margin-top: 46px;
-  }
-
-  &__card:nth-child(4n) {
-    margin-right: 0;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    // margin bottom 0 for elements in last row
+    @for $i from 1 through 4 {
+      @if $i == 1 {
+        &:first-child:nth-last-child(#{$i}) {
+          margin-bottom: 0;
+        }
+      }
+      @else {
+        &:first-child:nth-last-child(#{$i}),
+        &:first-child:nth-last-child(#{$i}) ~ div {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }
 
