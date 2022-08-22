@@ -1,7 +1,7 @@
-.cart {
+.card {
   display: flex;
   flex-direction: column;
-  width: $cart-width;
+  width: $card-width;
   padding: 32px 16px 16px;
 
   background-color: $background-color;
@@ -16,19 +16,41 @@
 
   &__title {
     margin-bottom: 4px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
   }
 
   &__code {
     align-self: flex-start;
     margin-bottom: 16px;
+
+    line-height: 14px;
+    color: $text-second-color;
   }
 
   &__reviews {
     margin-bottom: 24px;
+
+    @extend %space-between;
   }
 
   &__price {
+    @extend %space-between;
     margin-bottom: 16px;
+
+    font-size: 12px;
+    line-height: 18px;
+
+    &-name {
+      color: $text-second-color;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+    }
   }
 
   &__button {
@@ -43,7 +65,7 @@
     color: $background-color;
 
     background-color: $button-color;
-    border: solid transparent 1px;
+    border: solid $button-color 1px;
     border-radius: 5px;
 
     @extend %link-transformation;
@@ -51,39 +73,7 @@
 
     &:hover {
       color: $button-color;
-      border-color: $button-color;
       background-color: $background-color;
     }
-  }
-}
-
-.title {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-}
-
-.code {
-  line-height: 14px;
-  color: $text-second-color;
-}
-
-.reviews {
-  @extend %space-between;
-}
-
-.price {
-  @extend %space-between;
-
-  font-size: 12px;
-  line-height: 18px;
-
-  &_name {
-    color: $text-second-color;
-  }
-
-  &_value {
-    font-weight: 700;
-    font-size: 16px;
   }
 }
