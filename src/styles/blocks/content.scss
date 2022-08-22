@@ -1,22 +1,28 @@
 .content {
   display: flex;
   flex-wrap: wrap;
-  max-width: 944px;
+  max-width: $width-of-content;
   margin: 0 auto;
   padding: 50px 0 73px;
 
-  &__card {
-    flex-basis: 0;
-    margin-right: 48px;
+  &__card.card {
+    display: none;
+    margin-right: $marg-right;
     margin-bottom: 46px;
 
-    &:nth-child(4n) {
+    &:nth-child(#{$card-in-row}n) {
       margin-right: 0;
     }
 
-    &:nth-last-child(-n + 4) {
+    &:nth-last-child(-n + #{$card-in-row}) {
       margin-bottom: 0;
       height: fit-content;
+    }
+  }
+
+  @for $index from 1 through 8 {
+    &--card-count--#{$index} :nth-child(-n + #{$index}) {
+      display: flex;
     }
   }
 }
