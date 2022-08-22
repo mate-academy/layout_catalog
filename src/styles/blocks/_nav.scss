@@ -3,7 +3,6 @@
     list-style: none;
     display: flex;
     align-items: center;
-    height: 60px;
     margin: 0;
     padding: 0;
   }
@@ -11,7 +10,6 @@
   &__item {
     position: relative;
     margin-right: 20px;
-    height: 100%;
 
     &:last-child {
       margin-right: 0;
@@ -19,17 +17,16 @@
   }
 
   &__link {
+    display: inline-block;
     font-weight: 500;
     font-size: 12px;
-    height: 100%;
-    display: block;
     line-height: 60px;
     color: $color-main-text;
     text-transform: uppercase;
     text-decoration: none;
 
     &.is-active {
-      color: $color-accent;
+      @extend %accent-link;
 
       &::after {
         content: "";
@@ -45,7 +42,7 @@
     }
 
     &:hover {
-      color: $color-accent;
+      @extend %accent-link;
     }
   }
 }

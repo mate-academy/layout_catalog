@@ -1,22 +1,21 @@
+@import "./stars";
+
 .card {
   width: 200px;
+  padding: 32px 16px 15px;
   border: 1px solid $color-light;
   border-radius: $main-radius;
-
-  &__inner {
-    padding: 32px 16px 15px;
-  }
 
   &__img {
     width: 159px;
     height: 134px;
     margin: 0 auto 40px;
+  }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__title {
@@ -24,7 +23,7 @@
     font-size: 12px;
     line-height: 18px;
     color: $color-main-text;
-    margin-bottom: 4px;
+    margin: 0 0 4px;
   }
 
   &__code {
@@ -32,68 +31,41 @@
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
-    margin-bottom: 16px;
+    margin: 0 0 16px;
   }
 
-  &__review {
+  &__rating {
     margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__stars {
+    margin: 0;
+  }
+
+  &__reviews {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-main-text;
   }
 
   &__pricing {
     margin-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-}
 
-.stars {
-  width: 100px;
-  display: flex;
-  justify-content: flex-start;
-  list-style: none;
-  padding: 0;
-
-  &__star {
-    width: 16px;
-    height: 16px;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
-    margin-right: 4px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
-.review {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__stars {
+  &__pricing-title {
     margin: 0;
 
-    &--4 {
-      & .stars__star:nth-child(-n+4) {
-        background-image: url(../images/star-active.svg);
-      }
-    }
-  }
-
-  &__reviews {
-    font-weight: 400;
-    font-size: 10px;
-    color: $color-main-text;
-  }
-}
-
-.pricing {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__title {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
@@ -106,9 +78,7 @@
     line-height: 18px;
     color: $color-main-text;
   }
-}
 
-.action {
   &__btn {
     display: inline-block;
     width: 166px;
