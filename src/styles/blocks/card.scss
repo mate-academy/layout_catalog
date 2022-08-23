@@ -6,16 +6,15 @@
 
   margin: 0 auto;
 
-  max-width: 944px;
+  width: getCatalogWidth($card-width, $card-gaps, $card-gaps-count, $card-row-count);
 }
 
 .card {
-  width: 200px;
-  height: 406px;
+  width: $card-width;
 
   padding: 32px 16px 16px;
 
-  margin-right: 48px;
+  margin-right: $card-gaps;
 
   display: flex;
   flex-direction: column;
@@ -29,7 +28,7 @@
   }
 
   &:nth-child(-n + 4) {
-    margin-bottom: 48px;
+    margin-bottom: 46px;
   }
 
   &__image {
@@ -45,7 +44,7 @@
     line-height: 18px;
     font-size: 12px;
     font-weight: 500;
-    color: #060b35;
+    color: $color-main;
   }
 
   &__product-code {
@@ -104,7 +103,8 @@
     border: 1px solid transparent;
     border-radius: 5px;
 
-    line-height: 40px;
+    padding: 12px 0;
+
     font-size: 14px;
     font-weight: 700;
 
