@@ -1,5 +1,5 @@
 .catalog {
-  max-width: 944px;
+  max-width: $container-width;
   padding: 50px 0;
 
   display: flex;
@@ -7,17 +7,12 @@
   flex-wrap: wrap;
 
   &__card {
-    margin-right: 48px;
-    margin-bottom: 47px;
-
-    &:nth-child(4n) {
-      margin-right: 0;
+    &:not(:nth-child(4n)) {
+      margin-right: $cards-offset;
     }
 
-    &:nth-last-child(-n + 4) {
-      margin-bottom: 0;
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: 47px;
     }
   }
 }
-
-@import "./card";
