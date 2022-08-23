@@ -2,6 +2,8 @@
 
 .nav {
 
+  @include font-size-12-500;
+
   &__list {
     display: flex;
     align-items: center;
@@ -27,24 +29,25 @@
     text-transform: uppercase;
     transition: color 0.3s;
 
+    &--active {
+      color: $primary-color;
+    }
+
+    &--active::after {
+      content: "";
+      display: block;
+      position: absolute;
+
+      background: $primary-color;
+
+      width: 100%;
+      bottom: 0;
+      height: 4px;
+      border-radius: 8px;
+    }
+
     &:hover {
       color: $primary-color;
     }
-  }
-}
-
-.is-active {
-  color: $primary-color;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-
-    background: $primary-color;
-    width: 100%;
-    bottom: 0;
-    height: 4px;
-    border-radius: 8px;
   }
 }
