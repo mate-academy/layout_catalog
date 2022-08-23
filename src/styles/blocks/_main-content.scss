@@ -1,0 +1,32 @@
+.main {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: maxWidth(
+      $card-width,
+      $cards-columns-quantity,
+      $cards-gaps-value,
+      $cards-gaps-quantity
+    );
+    min-width: maxWidth(
+      $card-width,
+      $cards-columns-quantity,
+      $cards-gaps-value,
+      $cards-gaps-quantity
+    );
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+
+  &__card {
+    height: fit-content;
+
+    &:not(:nth-child(4n)) {
+      margin-right: $cards-gaps-value;
+    }
+
+    &:not(:nth-last-child(-n+4)) {
+      margin-bottom: 46px;
+    }
+  }
+}
