@@ -1,14 +1,10 @@
 .stars {
-  @extend %flex-space-between;
-  padding-top: 16px;
 
-  &__field {
-    display: flex;
+  display: flex;
 
-    @for $index from 1 through 5 {
-      &--light-#{$index} > .stars__star:nth-child(n+#{$index+1}) {
-        background-image: url("../images/star.svg");
-      }
+  @for $index from 1 through 5 {
+    &--light-#{$index} > .stars__star:nth-child(n+#{$index+1}) {
+      background-image: url("../images/star.svg");
     }
   }
 
@@ -22,13 +18,5 @@
     &:last-child {
       margin: 0;
     }
-  }
-
-  &__reviews-text {
-    display: flex;
-    text-align: right;
-    color: $darkblue;
-    font-size: 10px;
-    line-height: 14px;
   }
 }
