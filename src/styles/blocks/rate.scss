@@ -1,0 +1,38 @@
+.rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    display: block;
+    height: 14px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+    color: $darcBlue;
+  }
+
+  &__star {
+    @include square($star-size);
+    padding: 0;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    @for $index from 1 through 5 {
+      &--#{$index} .rate__star:nth-child(-n + #{$index}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+}
