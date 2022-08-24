@@ -1,0 +1,42 @@
+.catalog {
+  min-width: 1024px;
+  &__container {
+    max-width: $catalog-container-width;
+
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+
+  &__list {
+    @extend %list-reset;
+
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    &:not(:nth-child(4n)) {
+      margin-right: $card-margin-right;
+    }
+
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: $card-margin-bottom;
+    }
+  }
+
+  &__heading {
+    &--hidden {
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      border: 0;
+      padding: 0;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      margin: -1px;
+    }
+  }
+}
