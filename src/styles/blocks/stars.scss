@@ -1,0 +1,22 @@
+.stars {
+
+  display: flex;
+
+  @for $index from 1 through 5 {
+    &--light-#{$index} > .stars__star:nth-child(n+#{$index+1}) {
+      background-image: url("../images/star.svg");
+    }
+  }
+
+  &__star {
+    @include stars-size;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/star-active.svg");
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
