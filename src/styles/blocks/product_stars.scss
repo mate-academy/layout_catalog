@@ -13,12 +13,9 @@
     margin-right: 0;
   }
 
-}
-
-.stars--1 :nth-child(-n+1),
-.stars--2 :nth-child(-n+2),
-.stars--3 :nth-child(-n+3),
-.stars--4 :nth-child(-n+4),
-.stars--5 :nth-child(-n+5) {
-  background: url("../images/star-active.svg") center no-repeat;
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background: url("../images/star-active.svg") center no-repeat;
+    }
+  }
 }
