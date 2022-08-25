@@ -1,11 +1,8 @@
-@import "../utils/vars";
-
 .stars {
   display: flex;
 
   &__star {
-    height: $star-size;
-    width: $star-size;
+    @include figure($star-size, $star-size);
     background: $star-inactive;
   }
 
@@ -13,7 +10,7 @@
     margin-right: $star-distance;
   }
 
-  @for $i from 1 to $star-count {
+  @for $i from 1 through $star-count {
     &--#{$i} > &__star:nth-child(-n + #{$i}) {
       background: $star-active;
     }
