@@ -1,7 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 .card {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   padding: 32px 16px 16px;
   border: 1px solid $white-border-color;
   border-radius: $card-border-radius;
@@ -10,13 +13,13 @@
   &__info-logo {
     width: 160px;
     height: 134px;
-    padding: 0 3px;
+    margin: 0 auto;
     margin-bottom: 40px;
   }
 
   &__info-title {
     color: $dark-color;
-    font-weight: 500;
+    font-weight: $regular-weight;
     font-size: 12px;
 
     line-height: 18px;
@@ -35,11 +38,11 @@
 
     line-height: 14px;
     margin-bottom: 24px;
+  }
 
-    &-mark {
-      font-size: 10px;
-      line-height: 14px;
-    }
+  &__mark {
+    font-size: 10px;
+    line-height: 14px;
   }
 
   &__price {
@@ -53,7 +56,7 @@
     }
 
     &-amount {
-      font-weight: 700;
+      font-weight: $bold-weight;
       font-size: 16px;
       line-height: $card-price-line;
       color: $dark-color;
@@ -61,7 +64,7 @@
   }
 
   &__button {
-    height: 38px;
+    height: 40px;
 
     color: $white-color;
     background: $sea-color;
@@ -69,7 +72,7 @@
     @extend %flex-center-center;
     text-decoration: none;
 
-    font-weight: 700;
+    font-weight: $bold-weight;
     font-size: 14px;
     line-height: 16px;
     text-transform: uppercase;
@@ -77,7 +80,7 @@
     border: 1px solid $sea-color;
     border-radius: $card-border-radius;
 
-    transition: color 0.5s ease-out, background-color 0.5s ease-out;
+    transition: color $duration ease-out, background-color $duration ease-out;
 
     &:hover {
       background: $white-color;
