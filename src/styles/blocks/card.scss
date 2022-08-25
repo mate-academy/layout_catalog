@@ -2,7 +2,7 @@
   width: $card-width;
   padding: 32px 16px 16px;
 
-  background-color: #fff;
+  background-color: $c-white;
   border: 1px solid $c-light;
   border-radius: 5px;
   display: flex;
@@ -93,7 +93,7 @@
     border-radius: 5px;
     border: 1px solid $c-accent-text;
 
-    color: #fff;
+    color: $c-white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
@@ -107,26 +107,24 @@
     margin-top: 16px;
 
     transition: color 0.3s, background-color 0.3s;
-  }
 
-  &__button:hover {
-    background-color: #fff;
-    color: $c-accent-text;
+    &:hover {
+      background-color: $c-white;
+      color: $c-accent-text;
+    }
   }
 }
 
 .stars {
   display: flex;
 
-  $root: &;
-
   &__star {
     margin-right: 4px;
-    width: 16px;
-    height: 16px;
     background-image: url("/images/star.svg");
     background-repeat: no-repeat;
     background-position: center;
+
+    @include star-square($star-size);
 
     &:last-child {
       margin-right: 0;
