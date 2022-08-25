@@ -1,0 +1,19 @@
+/*  STARS BLOCK:  */
+
+.stars {
+  display: flex;
+
+  &__star {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    background: url("../images/star.svg") no-repeat center;
+    margin-right: 4px;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} > .stars__star:nth-child(-n+#{$i}) {
+      background: url("../images/star-active.svg") no-repeat center;
+    }
+  }
+}
