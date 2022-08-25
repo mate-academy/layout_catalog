@@ -1,0 +1,27 @@
+$card-width: 200px;
+@function catalogSize() {
+  @return $card-width * 5;
+}
+
+.catalog {
+  display: flex;
+  justify-content: center;
+  min-width: catalogSize();
+  padding-top: 51px;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: catalogSize();
+  }
+
+  &__item {
+    padding-bottom: 51px;
+  }
+
+  &__item:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+}
