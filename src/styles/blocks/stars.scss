@@ -1,0 +1,18 @@
+.stars {
+  display: flex;
+
+  &__star {
+    @include figure($star-size, $star-size);
+    background: $star-inactive;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: $star-distance;
+  }
+
+  @for $i from 1 through $star-count {
+    &--#{$i} > &__star:nth-child(-n + #{$i}) {
+      background: $star-active;
+    }
+  }
+}
