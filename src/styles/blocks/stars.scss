@@ -1,0 +1,28 @@
+@import "../styles/utils/variables";
+@import "../styles/utils/mixins.scss";
+@import "../styles/utils/reset.scss";
+
+.stars {
+  display: flex;
+
+  $root: &;
+
+  &__star {
+    width: $starSize;
+    height: $starSize;
+    background-image: url(/src/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @for $i from 1 through 5 {
+      #{$root}--#{$i} > &:nth-child(-n + #{$i}) {
+        background-image: url(/src/images/star-active.svg);
+      }
+    }
+  }
+}
