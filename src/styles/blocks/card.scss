@@ -9,22 +9,16 @@
     height: 134px;
     width: 160px;
     display: block;
-    margin: 0 3px 40px;
+    margin: 0 auto 40px;
   }
 
   &__title {
-    color: $primary-color;
-    font-size: $font-size-sm;
-    line-height: $line-height-lg;
-    font-weight: $font-weight-medium;
+    @include text($fsize-sm, $fweight-medium, $lheight-lg, $primary-color);
     margin-bottom: 4px;
   }
 
   &__prodcode {
-    color: $secondary-color;
-    font-size: $font-size-xs;
-    line-height: $line-height-sm;
-    font-weight: $font-weight-light;
+    @include text($fsize-xs, $fweight-light, $lheight-sm, $secondary-color);
     margin-bottom: 16px;
   }
 
@@ -36,10 +30,7 @@
   }
 
   &__rating-reviews {
-    color: $primary-color;
-    font-weight: $font-weight-light;
-    font-size: $font-size-xs;
-    line-height: $line-height-sm;
+    @include text($fsize-xs, $fweight-light, $lheight-sm, $primary-color);
   }
 
   &__price-label {
@@ -55,38 +46,32 @@
   }
 
   &__price-text {
-    color: $secondary-color;
-    font-size: $font-size-sm;
-    line-height: $line-height-lg;
-    font-weight: $font-weight-light;
+    @include text($fsize-sm, $fweight-light, $lheight-lg, $secondary-color);
   }
 
   &__price-number {
-    color: $primary-color;
-    font-size: $font-size-lg;
-    line-height: $line-height-lg;
-    font-weight: $font-weight-bold;
+    @include text($fsize-lg, $fweight-bold, $lheight-lg, $primary-color);
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   &__btn {
     display: block;
     text-transform: uppercase;
-    color: $white-color;
     text-decoration: none;
     text-align: center;
-    font-size: $font-size-md;
-    font-weight: $font-weight-bold;
+    @include text($fsize-md, $fweight-bold, $lheight-md, $white-color);
     background-color: $theme-color;
-    line-height: $line-height-md;
     padding: 11px 0;
-    border-radius: 5px;
-    transition: 0.3s color ease-in;
     border: 1px solid $theme-color;
+    border-radius: 5px;
+    transition: $transition-duration color;
   }
 
   &__btn:hover {
     color: $theme-color;
     background-color: $white-color;
   }
-
 }
