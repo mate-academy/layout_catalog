@@ -1,14 +1,20 @@
 .content {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
 
   max-width: $content-size;
   min-width: $content-size;
-  margin: 50px auto 0;
+
+  padding: 50px 0;
 
   &__product-card {
-    margin-right: $card-margin-right;
-    margin-bottom: $card-margin-bottom;
+    &:not(:nth-child(4n)) {
+      margin-right: $card-margin-right;
+    }
+
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: $card-margin-bottom;
+    }
   }
 }
