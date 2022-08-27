@@ -115,7 +115,7 @@
 >```html
 ><main class="main container">
 >
->  <section class="catalog">
+>  <div class="catalog">
 >
 >    <article data-qa="catd" class="catalog__card">
 >```
