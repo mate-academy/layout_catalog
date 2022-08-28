@@ -18,22 +18,6 @@
       font-size: 12px;
       line-height: 60px;
       position: relative;
-
-      &--is-active {
-        color: $color-blue;
-        cursor: default;
-      }
-
-      &--is-active::after {
-        display: block;
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 4px;
-        border-radius: 8px;
-        background-color: $color-blue;
-        top: 33px;
-      }
     }
 
     &-link:hover {
@@ -48,5 +32,27 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+}
+
+.is-active {
+  position: relative;
+
+  color: $color-blue;
+  cursor: default;
+
+  &::after {
+    position: absolute;
+
+    top: 33px;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    content: "";
+    border-radius: 8px;
+    background-color: $color-blue;
   }
 }
