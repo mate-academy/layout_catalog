@@ -1,102 +1,107 @@
+$color-blue-dark: rgba(6, 11, 53, 1);
+$color-border-card: #f3f3f3;
+$color-card-code-price: #616070;
+$color-blue-light: rgba(0, 172, 220, 1);
+
 .card {
   display: flex;
   flex-direction: column;
   width: 200px;
   padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $color-border-card;
   border-radius: 5px;
-}
 
-.card__image {
-  width: 160px;
-  margin: 0 auto 40px;
-}
+  &__image {
+    width: 160px;
+    margin: 0 auto 40px;
+  }
 
-.card__title {
-  font-weight: 500;
-  font-size: 12px;
-  color: rgba(6, 11, 53, 1);
-  margin-bottom: 4px;
-  line-height: 18px;
-}
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    color: $color-blue-dark;
+    margin-bottom: 4px;
+    line-height: 18px;
+  }
 
-.card__code {
-  color: #616070;
-  margin-bottom: 16px;
-}
+  &__code {
+    color: $color-card-code-price;
+    margin-bottom: 16px;
+  }
 
-.card__rate {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-title {
+    font-size: 12px;
+    color: $color-card-code-price;
+  }
+
+  &__price-number {
+    font-weight: 700;
+    font-size: 16px;
+    color: $color-blue-dark;
+  }
+
+  &__link {
+    text-decoration: none;
+
+  }
+
+  &__link-text {
+    background: $color-blue-light;
+    border-radius: 5px;
+    width: 166px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  &__link:hover &__link-text {
+    border: 1px solid $color-blue-light;
+    color: $color-blue-light;
+    background: #fff;
+  }
 }
 
 .stars {
   display: flex;
-}
 
-.stars__star {
-  width: 16px;
-  height: 16px;
-  border-radius: 0.5px;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 4px;
-  background-image: url(../images/star-active.svg);
-}
+  &__star {
+    width: 16px;
+    height: 16px;
+    border-radius: 0.5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+    background-image: url(../images/star-active.svg);
+  }
 
-.stars--0 .stars__star:nth-child(n),
-.stars--1 .stars__star:nth-child(n+2),
-.stars--2 .stars__star:nth-child(n+3),
-.stars--3 .stars__star:nth-child(n+4),
-.stars--4 .stars__star:nth-child(n+5) {
-  background-image: url(../images/star.svg);
+  &--0 &__star:nth-child(n),
+  &--1 &__star:nth-child(n+2),
+  &--2 &__star:nth-child(n+3),
+  &--3 &__star:nth-child(n+4),
+  &--4 &__star:nth-child(n+5) {
+    background-image: url(../images/star.svg);
+  }
 }
 
 .rate__reviews {
-  color: rgba(6, 11, 53, 1);
+  color: $color-blue-dark;
 }
 
-.card__price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.card__price-title {
-  font-size: 12px;
-  color: #616070;
-}
-
-.card__price-number {
-  font-weight: 700;
-  font-size: 16px;
-  color: rgba(6, 11, 53, 1);
-}
-
-.card__link {
-  text-decoration: none;
-
-}
-
-.card__link-text {
-  background: rgba(0, 172, 220, 1);
-  border-radius: 5px;
-  width: 166px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.card__link:hover .card__link-text {
-  border: 1px solid #00acdc;
-  color: #00acdc;
-  background: #fff;
-}
