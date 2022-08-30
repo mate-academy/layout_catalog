@@ -4,6 +4,7 @@
     display: flex;
     justify-content: flex-end;
     background-color: white;
+    text-transform: uppercase;
   }
 
   &__item:not(:last-child) {
@@ -14,14 +15,36 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #000e36;
+    color: $nav-color;
     line-height: 14px;
     padding: 23px 0;
 
     transition: color 0.3s;
 
     &:hover {
-      color: $blue-color-usein-nav-card;
+      color: $color-usein-nav-card;
     }
+
+    &--is-active {
+      color: $color-usein-nav-card;
+      position: relative;
+
+    }
+
+    &--is-active::after {
+      content: "";
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      background-color: $color-usein-nav-card;
+      border-radius: 8px;
+    }
+
+    // &:hover {
+    //   color: $color-usein-nav-card;
+    // }
   }
+
 }
