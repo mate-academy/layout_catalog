@@ -1,19 +1,23 @@
+$sum-cards: 4;
 $card-width: 198px;
-$box-width: $card-width * 4 + 198px;
+$box-width: $card-width * $sum-cards +152;
+$height-conteiner: 406px * 2 + 50px;
 $color-dark: #060b35;
 $color-blue: #00acdc;
 
 .main {
   display: flex;
   justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
 
   &__content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     max-width: $box-width;
-    max-height: 944px;
     flex: 0 0 auto;
+    max-height: $height-conteiner;
   }
 
   &__container {
@@ -24,22 +28,18 @@ $color-blue: #00acdc;
     width: $card-width;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
-    margin-top: 50px;
-    &:nth-child(4n) {
-      margin-right: 0;
+    margin-left: 48px;
+    margin-bottom: 46px;
+
+    &:nth-child(-n+4) {
+      margin-top: 50px;
     }
 
-    &:nth-last-child(-n+4) {
-      margin-top: 0;
-      margin-bottom: 0;
+    &:first-child {
+      margin-left: 0;
     }
-
-    &:not(:nth-child(4n)) {
-      margin-right: 48px;
-    }
-  
-    &:not(:nth-last-child(-n+4)) {
-      margin-bottom: 46px;
+    &:nth-child(5n) {
+      margin-left: 0;
     }
   }
 
