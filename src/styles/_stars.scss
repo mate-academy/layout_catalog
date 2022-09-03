@@ -1,8 +1,9 @@
 .stars {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+
   &__star {
     width: 16px;
     height: 16px;
@@ -12,11 +13,10 @@
     background-position: 50%;
     background-size: auto;
   }
-  &--1 &__star:last-child,
-  &--2 &__star:nth-child(n+4),
-  &--3 &__star:nth-child(n+3),
-  &--4 &__star:nth-child(n+2),
-  &--5 &__star:nth-child(n) {
-    background-image: url(../images/star-active.svg);
+  
+  @for $i from 1 through 5 {
+    &--#{$i} &__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
