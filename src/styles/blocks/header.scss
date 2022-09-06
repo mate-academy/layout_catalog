@@ -1,5 +1,4 @@
-@use "../utils/variables" as *;
-@use "../utils/extends";
+@import "../utils/extends";
 
 .header {
   display: flex;
@@ -7,7 +6,7 @@
   align-items: center;
   padding: 0 50px;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 5%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -31,14 +30,15 @@
     list-style: none;
   }
 
-  &__list-item {
+  &__item {
     margin-left: 20px;
   }
 
-  &__list-item:first-child {
+  &__item:first-child {
     margin-left: 0;
   }
-  &__list_item_link {
+
+  &__link {
     position: relative;
     display: flex;
     align-items: center;
@@ -47,26 +47,26 @@
     font-weight: 500;
     white-space: nowrap;
     text-decoration: none;
-    color: $link--blue;
+    color: #060b35;
     transition: color 0.3s;
   }
 
-  &__list_item_link:hover {
-    color: $nav--color;
+  &__link:hover {
+    color: #00acdc;
   }
-}
 
-.is-active {
-  color: $nav--color;
-}
+  &__link.is-active {
+    color: #00acdc;
+  }
 
-.is-active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  border-radius: 2px;
-  background-color: $nav--color;
+  &__link.is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #00acdc;
+  }
 }
