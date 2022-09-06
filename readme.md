@@ -20,6 +20,7 @@ and SCSS
 - there should always be 4 cards in a row (not 2, 3 or 5)
   - use `:nth-child(4n)` to select every 4th element
   - use `:nth-last-child(-n + 4)` to select 4 last elements
+- the distance between cards on the design includes borders (zoom in to see it);
 - cards should have fixed width and fixed distances between them
 - cards container should have fixed paddings (see 1024px example), bottom the same as top
 - use semantic tags. `<header>`, `<nav>`, `<main>`
