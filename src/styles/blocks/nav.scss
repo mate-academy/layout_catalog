@@ -1,0 +1,45 @@
+.nav {
+  display: flex;
+  height: 60px;
+
+  &__list {
+    display: flex;
+    height: 60px;
+    padding: 0 40px;
+  }
+
+  &__item {
+    list-style: none;
+    margin: auto;
+  }
+
+  &__link {
+    display: flex;
+    margin: auto 10px;
+    text-transform: uppercase;
+    align-items: center;
+    text-decoration: none;
+    color: #{$color-title};
+    height: 60px;
+
+    &--active {
+      color: #{$color-of-active};
+      position: relative;
+    
+      &::after {
+        content: "";
+        height: 4px;
+        width: 37px;
+        border-radius: 8px;
+        background-color: #{$color-of-active};
+        bottom: 0;
+        position: absolute;
+      }
+    }
+
+    &:hover &--active,
+    &:hover {
+      color: #{$color-of-active};
+    }
+  }
+}
