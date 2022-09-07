@@ -1,0 +1,19 @@
+.stars {
+  display: flex;
+  
+  &__star {
+    @include star($star-size, $star-icon);
+
+    &:not(:first-child) {
+      margin-left: 4px;
+    }
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} {
+      .stars__star:nth-child(-n + #{$index}) {
+        background: $star-icon-fill no-repeat center;
+      }
+    }
+  }
+}
