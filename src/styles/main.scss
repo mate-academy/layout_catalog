@@ -1,3 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #090b35;
+}
+
 body {
   margin: 0;
+  box-sizing: border-box;
 }
+
+img {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+//#region---------HEADER STARTS ---------//
+
+.header {
+  height: 60px;
+  max-width: 1200px;
+  min-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 51px;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
+
+.nav {
+  &__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover::after {
+      content: "";
+      height: 4px;
+      width: 100%;
+      background: #00acdc;
+      border-right: 8px;
+      position: absolute;
+      bottom: -18.5px;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__item:nth-child(4) {
+    min-width: max-content;
+  }
+
+  &__link:hover {
+    color: #00acdc;
+  }
+}
+
+.is-active {
+  color: #00acdc;
+}
+
+//#endregion---------#HEADER ENDS ---------//
+
+// #region---------CARDS START ---------//
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  max-width: 1150px;
+  gap: 50px;
+  margin: 0 auto 50px;
+}
+
+.card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 19px 16px 16px;
+
+  &__image-wrapper {
+    align-self: center;
+  }
+
+  &__image {
+    max-width: 160px;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 16px;
+
+    &-text {
+      color: #616070;
+    }
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &-text {
+      text-align: right;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+      color: #616070;
+    }
+
+    &-value {
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    background: #00acdc;
+    padding: 12px 0;
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+    align-self: center;
+
+    &:hover {
+      color: #00acdc;
+      background: #fff;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/star.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@for $index from 1 through 5 {
+  .stars--#{$index} >
+  .stars__star:nth-child(-n + #{$index}) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+
+// #endregion---------CARDS END ---------//
