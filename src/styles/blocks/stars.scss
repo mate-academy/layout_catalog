@@ -2,22 +2,23 @@
   display: flex;
   align-items: center;
 
+  @for $i from 1 through 5 {
+    &--#{$i} > &__star:nth-child(-n+#{$i}) {
+      background: url("../images/star-active.svg") no-repeat center;
+    }
+  }
+
   &__star {
-    width: 16px;
-    height: 16px;
+    @include square;
 
     background-image: url(../images/star.svg);
     object-fit: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 4px;
-  }
 
-  &__star:last-child {
-    margin-right: 0;
-  }
-
-  &--4 > &__star:nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
