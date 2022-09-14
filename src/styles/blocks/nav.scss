@@ -1,0 +1,54 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+
+  &__item {
+    margin-right: 20px;
+    position: relative;
+    height: 100%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-main-text;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+
+    display: block;
+    line-height: 60px;
+
+    transition: color 0.3s;
+
+    &--is-active,
+    &:hover {
+      color: $c-accent-text;
+    }
+
+    &.is-active::after {
+      content: "";
+      position: absolute;
+      background: $c-accent-text;
+      height: 4px;
+      display: block;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+}
