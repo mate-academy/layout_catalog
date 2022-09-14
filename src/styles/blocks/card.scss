@@ -113,27 +113,13 @@
       color: $c-accent-text;
     }
   }
-}
 
-.stars {
-  display: flex;
-
-  &__star {
-    margin-right: 4px;
-    background-image: url("/images/star.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-
-    @include star-square($star-size);
-
-    &:last-child {
-      margin-right: 0;
-    }
-
+  &:not(:nth-child(4n)) {
+    margin-right: $cards-margin;
   }
 
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
 }
 
-.stars--4 .stars__star:nth-child(-n+4) {
-  background-image: url("/images/star-active.svg");
-}
