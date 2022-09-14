@@ -1,0 +1,39 @@
+@import "../utils/variables";
+
+.menu {
+  display: flex;
+
+  &__link {
+    text-transform: uppercase;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 21px 0;
+    color: #060b35;
+    position: relative;
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link:hover {
+    color: $second-color;
+  }
+
+  .is-active {
+    color: $second-color;
+  }
+
+  .is-active::before {
+    content: "";
+    height: 4px;
+    background-color: $second-color;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-radius: 8px;
+  }
+}
