@@ -1,12 +1,7 @@
-$blue-color: #00acdc;
-$main-color: #060b35;
-
-%display-flex {
-  display: flex;
-}
+@import "../utils/variables";
 
 .header {
-  @extend %display-flex;
+  display: flex;
   justify-content: space-between;
   height: 60px;
   padding: 0 50px;
@@ -15,50 +10,52 @@ $main-color: #060b35;
 }
 
 .logo {
-  @extend %display-flex;
+  display: flex;
   align-items: center;
 }
 
-.nav__list {
-  @extend %display-flex;
-}
+.nav {
+  &__list {
+    display: flex;
+  }
 
-.nav__item {
-  @extend %display-flex;
-}
+  &__item {
+    display: flex;
+  }
 
-.nav__item:not(:first-child) {
-  margin-left: 20px;
-}
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
 
-.nav__link {
-  @extend %display-flex;
-  align-items: center;
-  height: 60px;
-  font-size: 12px;
-  line-height: 14px;
-  font-weight: 500;
-  color: $main-color;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: $main-color;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 
-.nav__link:hover {
-  color: $blue-color;
+  &__link:hover {
+    color: $blue-color;
+  }
 }
 
 .is-active {
   position: relative;
   color: $blue-color;
-}
 
-.is-active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 4px;
-  border-radius: 8px;
-  background-color: $blue-color;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $blue-color;
+  }
 }
