@@ -1,3 +1,21 @@
-body {
-  margin: 0;
+@import "utils/variables";
+@import "reset";
+@import "blocks/header";
+@import "blocks/card";
+@import "blocks/stars";
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: $page-width;
+  padding: 50px 0;
+  margin: auto;
+
+  & > :not(:nth-child(4n)) {
+    margin-right: $card-horizontal-gap;
+  }
+
+  & > :not(:nth-last-child(-n + 4)) {
+    margin-bottom: $card-vertical-gap;
+  }
 }
