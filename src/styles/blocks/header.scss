@@ -1,0 +1,66 @@
+.header {
+  position: relative;
+  display: flex;
+  padding: 0 50px;
+  min-width: 924px;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  &__menu {
+    display: flex;
+    align-content: space-between;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__nav-link {
+    font-weight: 500;
+    color: $main-text-color;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 23px 0;
+
+    &:hover {
+      color: $moyo-color;
+    }
+  }
+}
+
+.is-active {
+  color: $moyo-color;
+  position: relative;
+}
+
+.is-active::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: $moyo-color;
+  border-radius: 8px;
+}
