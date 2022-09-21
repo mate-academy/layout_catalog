@@ -1,3 +1,29 @@
-body {
-  margin: 0;
+@import "./header.scss";
+@import "./star.scss";
+@import "./card.scss";
+@import "./normalise.scss";
+
+$card-width:200px;
+$card-margin:48px;
+$catalog-width: 4 * $card-width + 3 * $card-margin;
+
+.catalog__content {
+  display: flex;
+  flex-wrap: wrap;
+  width: $catalog-width;
+  margin: 0 auto;
+  padding: 50px 0 73px;
+}
+
+.catalog__card {
+  margin-right: 48px;
+  margin-bottom: 46px;
+}
+
+.catalog__card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.catalog__card:nth-last-child(-n + 4) {
+  margin-bottom: 0;
 }
