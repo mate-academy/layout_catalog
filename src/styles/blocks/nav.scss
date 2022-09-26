@@ -1,0 +1,50 @@
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 23px 0;
+
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $black-color;
+    font-size: 12px;
+
+    @include transition($smooth-color-transition);
+
+    &:hover {
+      color: $button-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+
+  color: $button-color;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 4px;
+    width: 100%;
+
+    background: $button-color;
+    border-radius: 8px;
+  }
+}

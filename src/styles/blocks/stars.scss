@@ -1,0 +1,17 @@
+.stars {
+  display: flex;
+
+  &__star {
+    @include square(16px);
+
+    background: url(../images/star.svg) no-repeat center;
+
+    &:not(:last-child) {
+      margin-right: $margin-small;
+    }
+  }
+
+  &--4 &__star:nth-last-child(n + 2) {
+    background-image: url(/images/star-active.svg);
+  }
+}
