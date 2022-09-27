@@ -1,0 +1,132 @@
+//local variables
+$width: 200px;
+$marginRight: 48px; //50
+$containerWidth: $width*4 + $marginRight*3;
+
+//styles
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px; //51
+  padding-bottom: 73px;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: $containerWidth;
+  }
+
+  &__card {
+    padding: 0 16px 16px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    width: $width;
+
+    &--margin {
+      margin-right: $marginRight;
+      margin-bottom: 46px;  //48
+    }
+
+    &--margin:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__header ,
+  &__common-text ,
+  &__price-tag ,
+  &__link {
+    font-family: "Roboto" , sans-serif;
+  }
+
+  &__header {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $darkGray;
+    margin-bottom: 4px;
+  }
+
+  &__common-text {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $lightGray;
+
+    //not all common-text element have margin 
+    //bottom 16px
+    &--position {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__price ,
+  &__reviewes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+  }
+
+  &__reviewes {
+    margin-bottom: 24px;
+  }
+
+  &__price-tag {
+    color: $darkGray;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $lightBlue;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid $lightBlue;
+
+    &:hover ,
+    &:focus {
+      background: none;
+      color: $lightBlue;
+    }
+  }
+
+  &__common-text--sizeUp {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__div {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.darkGray {
+  color: $darkGray;
+}
