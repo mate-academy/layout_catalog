@@ -1,0 +1,46 @@
+.nav__linksBar {
+  display: flex;
+  align-items: center;
+  height: $header-height;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.nav__listItem {
+  position: relative;
+}
+
+.nav__listItem + .nav__listItem {
+  margin-left: $header-height / 3;
+}
+
+.nav__link {
+  @extend %links-text;
+  line-height: $basic-font-size / 12 * 14;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  display: block;
+  padding: 23px 0;
+}
+
+.nav__link:hover {
+  color: $second-color;
+}
+
+.is-active {
+  color: $second-color;
+}
+
+.is-active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: $second-color;
+  height: $header-height / 15;
+  border-radius: $header-height / 7.5;
+}
