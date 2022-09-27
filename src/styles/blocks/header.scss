@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: $header-shadow;
+
+  &__logo {
+    margin: 10px 0 0 50px;
+  }
+}
+
+.nav {
+  margin-right: 50px;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    color: $main-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 23px 0;
+    display: block;
+  }
+
+  &__link:hover {
+    color: $active-color;
+  }
+}
+
+.is-active {
+  color: $active-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: $active-color;
+    width: 100%;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+  }
+}
