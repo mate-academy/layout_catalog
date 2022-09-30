@@ -1,108 +1,132 @@
 .card {
+  width: $card-width-without-border - ($border-size * 2);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
 
-  width: $card-width-without-border - ($border-size * 2);
+  font-family: "Roboto", sans-serif;
+  
   border: $border-size #f3f3f3 solid;
 
-  margin-right: 48px;
-  margin-bottom: 46px;
-}
+  &__img-link {
+    margin-top: ($card-width-without-border * 0.16);
+    margin-left: 0;
+    margin-bottom: ($card-width-without-border*0.2);
+    margin-right: 0;
+  }
 
-.card:nth-child(4n) {
-  margin-right: 0;
-}
+  &__img {
+    margin: 0 auto;
+    width: $card-width-without-border * 0.8;
+    height: $card-width-without-border * 0.67;
 
-.card__imgLink {
-  margin-top: ($card-width-without-border * 0.16);
-  margin-left: 0;
-  margin-bottom: ($card-width-without-border*0.2);
-  margin-right: 0;
-}
+    display: block;
+  }
 
-.card__img {
-  display: block;
-  margin: 0 auto;
-  width: $card-width-without-border * 0.8;
-  height: $card-width-without-border * 0.67;
-}
+  &__name-link {
+    width: $card-width-without-border * 0.83;
+    margin-bottom: $card-width-without-border * 0.02;
+    
+    color: $primary-color;
+    text-decoration: none;
 
-.card__nameLink {
-  @extend %links-text;
-  line-height: $basic-font-size * 1.5;
-  text-decoration: none;
+    &_text {
+      margin: 0;
 
-  width: $card-width-without-border * 0.83;
-  margin-bottom: $card-width-without-border * 0.02;
-}
+      @extend %links-text;
+      line-height: $basic-font-size * 1.5;
+    }
+  }
+  
+  &__product-code {
+    width: $card-width-without-border * 0.83;
+    margin-bottom: $card-width-without-border * 0.08;
+    margin-top: 0;
 
-.card__productCode {
-  font-style: normal;
-  font-weight: $basic-font-weight * 0.8;
-  font-size: $basic-font-size * 10 / 12;
-  line-height: $basic-font-size * 14 / 12;
-  color: $third-color;
+    text-align: left;
+    font-style: normal;
+    font-weight: $basic-font-weight * 0.8;
+    font-size: $basic-font-size * 10 / 12;
+    line-height: $basic-font-size * 14 / 12;
+    color: $third-color;
+  }
 
-  width: $card-width-without-border * 0.83;
-  text-align: left;
-  margin-bottom: $card-width-without-border * 0.08;
-  margin-top: 0;
-}
+  &__reviews {
+    width: $card-width-without-border * 0.83;
+    margin-bottom: $card-width-without-border * 0.12;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: flex-end;
 
-.card__productPrice {
-  display: flex;
-  justify-content: space-between;
+    &_link {
+      font-style: normal;
+      text-decoration: none;
+      font-weight: $basic-font-weight * 0.8;
+      font-size: $basic-font-size * 10 / 12;
+      line-height: $basic-font-size * 14 / 12;
+      color: $primary-color;
+    }
+  }
 
-  width: $card-width-without-border * 0.83;
-  margin-bottom: $card-width-without-border * 0.08;
-}
+  &__product-price {
+    width: $card-width-without-border * 0.83;
+    margin-bottom: $card-width-without-border * 0.08;
 
-.card__productPrice_p {
-  font-style: normal;
-  font-weight: $basic-font-weight * 0.8;
-  font-size: $basic-font-size;
-  line-height: $basic-font-size * 1.5;
-  color: $third-color;
+    display: flex;
+    justify-content: space-between;
 
-  margin: 0;
-}
+    &_p {
+      margin: 0;
 
-.card__productPrice_InCur {
-  font-style: normal;
-  font-weight: $basic-font-weight * 1.4;
-  font-size: $basic-font-size * 16 / 12;
-  line-height: $basic-font-size * 1.5;
-  color: $primary-color;
+      font-style: normal;
+      font-weight: $basic-font-weight * 0.8;
+      font-size: $basic-font-size;
+      line-height: $basic-font-size * 1.5;
+      color: $third-color;
+    }
 
-  margin: 0;
-}
+    &_InCur {
+      margin: 0;
 
-.card__buyLink {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+      font-style: normal;
+      font-weight: $basic-font-weight * 1.4;
+      font-size: $basic-font-size * 16 / 12;
+      line-height: $basic-font-size * 1.5;
+      color: $primary-color;
+    }
+  }
 
-  width: ($card-width-without-border * 0.83) - ($border-size * 2);
-  height: ($card-width-without-border * 0.2) - ($border-size * 2);
-  margin-bottom: $card-width-without-border * 0.08;
+  &__buy-link {
+    width: ($card-width-without-border * 0.83);
+    height: ($card-width-without-border * 0.2);
+    margin-bottom: $card-width-without-border * 0.08;
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  
+    font-style: normal;
+    font-weight: $basic-font-weight * 1.4;
+    font-size: $basic-font-size * 14 / 12;
+    line-height: $basic-font-size * 16 / 12;
+    color: #fff;
+    text-decoration: none;
+  
+    background-color: $second-color;
+    border: $border-size transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
 
-  font-style: normal;
-  font-weight: $basic-font-weight * 1.4;
-  font-size: $basic-font-size * 14 / 12;
-  line-height: $basic-font-size * 16 / 12;
-  color: #fff;
-  text-decoration: none;
-
-  background-color: $second-color;
-  border: $border-size $second-color solid;
-  border-radius: 5px;
-}
-
-.card__buyLink:hover {
-  color: $second-color;
-  background-color: #fff;
+    &:hover {
+      border: $border-size $second-color solid;
+      color: $second-color;
+      background-color: #fff;
+    }
+  }
 }
