@@ -1,0 +1,26 @@
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include square(16px);
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+@for $number from 1 to 5 {
+  .stars--#{$number} .stars__star:nth-child(-n + #{$number}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
