@@ -1,8 +1,4 @@
-@mixin flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
+// all block model styles outside
 .catalog__card {
   padding-top: 32px;
   margin-bottom: 48px;
@@ -22,7 +18,7 @@
 
   &:nth-child(4n) {
     margin-right: 0;
-    @media (max-width: 943px) {
+    @media (max-width: 943px) { //media request for 13 point in checklist
       margin-right: 48px;
     }
   }
@@ -70,22 +66,6 @@
     color: $text--color-dark;
   }
 
-  &__stars {
-    @include flex();
-
-    &-star {
-      margin-right: 4px;
-      width: 16px;
-      height: 16px;
-      background: url(../images/star-active.svg) no-repeat center center;
-
-      &:last-child {
-        margin-right: 4px;
-        background-image: url(../images/star.svg);
-      }
-    }
-  }
-
   &__price-box {
     padding-top: 24px;
     padding-left: 16px;
@@ -129,5 +109,28 @@
   &__button:hover {
     background-color: $text--color-white;
     color: $text--color-blue;
+  }
+}
+
+// ---- stars
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url(../images/star.svg) no-repeat center center;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+  &--1 :nth-child(-n + 1),
+  &--2 :nth-child(-n + 2),
+  &--3 :nth-child(-n + 3),
+  &--4 :nth-child(-n + 4),
+  &--5 :nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
   }
 }
