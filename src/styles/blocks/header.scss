@@ -1,0 +1,65 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../utils/extends";
+
+.header {
+  @extend %page-text;
+  max-width: 1024px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  padding: 0 50px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  &__logo {
+    @include square($logo-size);
+  }
+}
+
+.nav {
+  & &__list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & &__list &__item {
+    margin-right: 20px;
+  }
+
+  & &__list &__item:last-child {
+    margin-right: 0;
+  }
+  
+  &__link {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    color: $color-dark-blue;
+  }
+  
+  &__link:hover {
+    color: $color-blue;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $color-blue;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid $color-blue;
+    border-radius: 4px;
+  }
+}

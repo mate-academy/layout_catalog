@@ -1,0 +1,24 @@
+.stars {
+  @extend %page-text;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+
+  &__star {
+    @include square($star-size);
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__star + &__star {
+    margin-left: 4px;
+  }
+
+  @for $index from 1 through $star-count {
+    &--#{$index} &__star:nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
