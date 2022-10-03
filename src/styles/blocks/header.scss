@@ -4,11 +4,10 @@
 
 .header {
   @extend %page-text;
-  max-width: 1024px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-transform: uppercase;
   padding: 0 50px;
   box-shadow: 0 2px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -19,7 +18,9 @@
 }
 
 .nav {
-  & &__list {
+  display: flex;
+  justify-content: space-evenly;
+  &__list {
     display: flex;
     justify-content: flex-end;
     list-style: none;
@@ -27,18 +28,19 @@
     margin: 0;
   }
 
-  & &__list &__item {
-    margin-right: 20px;
-  }
-
-  & &__list &__item:last-child {
-    margin-right: 0;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
   }
   
   &__link {
     display: block;
-    height: 60px;
-    line-height: 60px;
+    line-height: 14px;
+    padding: 23px 0;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
     text-decoration: none;
     color: $color-dark-blue;
   }
