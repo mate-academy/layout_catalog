@@ -2,6 +2,10 @@
 @import "./utils/mixins";
 @import "./utils/reset";
 
+* {
+  box-sizing: border-box;
+}
+
 .page__content {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -12,8 +16,9 @@
 .page__card-container {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: content-box;
   width: $card-width * $row-count + $card-right-margin * ($row-count - 1);
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   margin: auto;
   padding: 50px 40px;
@@ -22,15 +27,17 @@
 @import "./blocks/header";
 
 .page__card {
+  width: $card-width;
   margin-right: $card-right-margin;
 
   &:nth-child(4n) {
     margin-right: 0;
   }
 
-  &:nth-last-child(-n + 4) {
+  &:nth-child(n + 5) {
     margin-top: $card-top-margin;
   }
 }
 
 @import "./blocks/card";
+@import "./blocks/stars";
