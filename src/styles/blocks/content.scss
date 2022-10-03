@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  padding: 50px $min-horiz-padding-content 72px;
+  flex-wrap: wrap;
+
+  @media (min-width: $min-width) {
+    padding-right: calc(
+      #{$min-horiz-padding-content} + ((#{$device-width} - #{$min-width}) / 2)
+    );
+    padding-left: calc(
+      #{$min-horiz-padding-content} + ((#{$device-width} - #{$min-width}) / 2)
+    );
+  }
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
