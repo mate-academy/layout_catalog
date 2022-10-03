@@ -1,0 +1,48 @@
+.nav {
+  margin-right: 50px;
+
+  &__list {
+    @extend %flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 23px 10px;
+  }
+
+  &__item:first-child {
+    padding: 23px 10px 23px 0;
+  }
+
+  &__item:last-child {
+    padding: 23px 0  23px 10px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    color: $color-black;
+    padding: 23px 0;
+    cursor: pointer;
+  }
+
+  &__link:hover {
+    color: $color-blue;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $color-blue;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: $active-width;
+    height: $active-height;
+    background-color: #00acdc;
+    top: $active-top-position;
+    border-radius: 8px;
+  }
+}
