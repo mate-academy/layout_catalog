@@ -8,8 +8,8 @@
   justify-content: center;
 
   &__card {
-    width: 198px;
-    height: 406px;
+    box-sizing: border-box;
+    width: 200px;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     margin: 0 48px 46px 0;
@@ -24,7 +24,9 @@
   }
 
   &__image {
-    width: 100%;
+    display: block;
+    width: 160px;
+    height: 134px;
     margin: 32px auto 0;
   }
 
@@ -97,7 +99,7 @@
     &:hover {
       background-color: $white;
       color: $blue-color;
-      border: 1px solid $blue-color;
+      border-color: $blue-color;
     }
   }
 }
@@ -107,15 +109,8 @@
   margin: auto;
 }
 
-.image {
-  display: block;
-  width: 160px;
-  height: 134px;
-}
-
 .stars {
   display: flex;
-  flex-direction: row;
 
   &__star {
     width: $star-size;
@@ -127,6 +122,10 @@
   }
 }
 
-.stars--4 :nth-child(-n + 4) {
+.stars--1 > :nth-child(-n + 1),
+.stars--2 > :nth-child(-n + 2),
+.stars--3 > :nth-child(-n + 3),
+.stars--4 > :nth-child(-n + 4),
+.stars--5 > :nth-child(-n + 5) {
   background-image: url("../images/star-active.svg");
 }
