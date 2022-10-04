@@ -1,23 +1,38 @@
+@import "./utils/variables.scss";
+@import "./utils/functions.scss";
+
 @import "./blocks/header.scss";
 @import "./blocks/card.scss";
 @import "./blocks/stars.scss";
 
 body,
 h1,
-p {
+p,
+ul {
   margin: 0;
+  padding: 0;
+}
+
+.body__content {
+  margin: 0 auto;
 }
 
 .content {
   display: flex;
-  padding: 110px 40px;
+  flex-wrap: wrap;
+  width: catalogWidth($card-width, $card-margin-rigth);
+  padding: 50px 40px;
+  
+  &__card {
+    margin-right: $card-margin-rigth;
+    margin-bottom: 46px;
 
-  &:nth-child(n) {
-    margin-right: 48px;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
-
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
-
 }
