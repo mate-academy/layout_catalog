@@ -5,13 +5,16 @@
 .main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 
-  max-width: ($card-total-width + $card-shift * 2) * 4;
+  width: $card-total-width * 4 + $card-shift * 8;
   padding-top: 50px;
 
   &__card {
-    margin: 0 $card-shift;
+    margin: 0 #{$card-shift};
     margin-bottom: #{$card-bottom-shift};
+  }
+
+  &__card:nth-child(4n) {
+    break-after: always;
   }
 }
