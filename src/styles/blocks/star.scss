@@ -1,0 +1,23 @@
+.stars {
+  display: flex;
+
+  &__star {
+    @include nav-logo-star-size($star-size);
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.5px;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+}
