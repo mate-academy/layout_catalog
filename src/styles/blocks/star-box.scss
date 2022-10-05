@@ -1,0 +1,34 @@
+.star-box {
+  @extend %space-between-items;
+  margin-bottom: 24px;
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+
+    color: $dark-blue;
+  }
+
+  &__stars {
+    display: flex;
+
+    &-star {
+      content: " ";
+      background-image: url(../images/star-active.svg);
+      background-repeat: no-repeat;
+
+      background-position: 50%;
+    
+      @include imageSize(16px, 16px);
+    }
+
+    &-star:not(:last-child) {
+      margin-right: 4px;
+    }
+
+    & > &-star:last-child {
+      background-image: url(../images/star.svg);
+    }
+  }
+}
