@@ -1,0 +1,91 @@
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1000px;
+  margin: 0 auto;
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include cardSize();
+    @include cardsIndents();
+
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &__image {
+      @include imageSize();
+      padding-top: 32px;
+      font-weight: $font-weight-card;
+    }
+
+    &__name {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-top: 40px;
+      font-size: $font-size-price-text;
+      font-weight: $font-weight-card;
+      line-height: 18px;
+      color: $text-color;
+    }
+
+    &__id {
+      align-self: flex-start;
+      padding-top: 4px;
+      padding-left: 18px;
+      font-size: $font-size-id;
+      font-weight: 400;
+      color: $text-color-light;
+    }
+
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    &__price-text {
+      font-size: $font-size-price-text;
+      font-weight: 400;
+      color: $text-color-light;
+    }
+
+    &__price-dollars {
+      font-size: $font-size-price-dollar;
+      font-weight: 700;
+      color: $text-color;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: 16px;
+      width: 166px;
+      height: 40px;
+
+      text-align: center;
+      text-decoration: none;
+
+      background-color: $blue-color;
+      border-radius: 5px;
+      color: #fff;
+
+      &:hover {
+        background-color: #fff;
+        border: 1px solid $blue-color;
+        color: $blue-color;
+      }
+    }
+  }
+}
