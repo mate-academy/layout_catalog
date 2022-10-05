@@ -1,0 +1,63 @@
+.logo {
+  @include square($logoSize);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px #bd27270d;
+}
+
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-color;
+
+    &:hover {
+      color: $cardsBackgoundColor;
+    }
+  }
+}
+
+.is-active {
+  @extend .nav__link;
+
+  position: relative;
+  color: $cardsBackgoundColor;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: $cardsBackgoundColor;
+    border-radius: 2px;
+  }
+}
