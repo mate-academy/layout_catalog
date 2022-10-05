@@ -1,0 +1,53 @@
+.nav {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: $primary-color;
+
+  &__list {
+    display: flex;
+
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 23px 0 19px;
+
+    text-decoration: none;
+    color: inherit;
+
+    &:visited {
+      color: $primary-color;
+    }
+
+    &:hover {
+      color: $highlight-color;
+      transition: color 0.2s;
+    }
+  }
+}
+
+.is-active {
+  color: $highlight-color;
+
+  &:visited {
+    color: $highlight-color;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    position: relative;
+    top: 19px;
+    border-radius: 8px;
+    background-color: $highlight-color;
+  }
+}

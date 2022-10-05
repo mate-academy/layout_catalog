@@ -1,0 +1,20 @@
+.card__star-container {
+  display: flex;
+}
+
+.card__star {
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  @include starSize($star-size);
+}
+
+.card__star:not(:last-child) {
+  margin-right: 4px;
+}
+
+@for $starIndex from 1 to 6 {
+  .card__star-container--star_#{$starIndex} > :nth-child(-n + #{$starIndex}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
