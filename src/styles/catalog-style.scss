@@ -1,0 +1,28 @@
+@function catalogWidth($cardWidth, $gap, $count) {
+  @return $cardWidth * $count + ($count - 1) * $gap;
+}
+
+.catalog {
+  padding: 50px 40px;
+  margin: 0 auto;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: catalogWidth(200px, 48px, 4);
+  }
+}
+
+.product-card {
+  margin: 0 48px 46px 0;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog__list {
+    margin: auto;
+  }
+}
