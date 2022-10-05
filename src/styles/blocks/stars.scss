@@ -8,17 +8,15 @@
     margin-right: 4px;
 
     background: url(../images/star.svg) no-repeat center;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 
-  &__star:last-of-type {
-    margin-right: 0;
-  }
-
-  &--1 :nth-of-type(-n+1),
-  &--2 :nth-of-type(-n+2),
-  &--3 :nth-of-type(-n+3),
-  &--4 :nth-of-type(-n+4),
-  &--5 :nth-of-type(-n+5) {
-    background: url(../images/star-active.svg) no-repeat center;
+  @for $star from 1 through 5 {
+    &--#{$star} :nth-child(-n + #{$star}) {
+      background: url(../images/star-active.svg) no-repeat center;
+    }
   }
 }
