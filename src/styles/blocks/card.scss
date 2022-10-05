@@ -1,0 +1,136 @@
+/* @import 'src/images/star.svg';
+@import 'src/images/star-active.svg'; */
+
+.main__container-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.card {
+  width: 200px;
+  padding: 32px 16px 16px;
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 46px;
+  margin-right: 48px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--main-accent);
+    margin: 0;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--secondary);
+    margin: 4px 0 16px;
+  }
+
+  &__review-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stars {
+    display: flex;
+
+    &__star {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background-image: url("/images/star.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__star:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .stars--1 .stars__star:nth-child(-n+1),
+  .stars--2 .stars__star:nth-child(-n+2),
+  .stars--3 .stars__star:nth-child(-n+3),
+  .stars--4 .stars__star:nth-child(-n+4),
+  .stars--5 .stars__star:nth-child(-n+5) {
+    background-image: url("/images/star-active.svg");
+  }
+
+  &__review-text {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: var(--main-accent);
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 16px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--secondary);
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--main-accent);
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: var(--secondary-light-blue);
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    background-color: var(--white);
+    border: 1px solid var(--secondary-light-blue);
+    color: var(--secondary-light-blue);
+  }
+}
