@@ -1,30 +1,39 @@
 $card-width: 200px;
-$card-margin: 48px;
+$card-margin: 46px;
 
 .cards {
   display: flex;
-  width: 4 * $card-width + 3 * $card-margin;
   margin: 0 auto;
-  margin-top: 49px;
   flex-wrap: wrap;
+
+  @media (min-width: 1024px) {
+    width: 4 * $card-width + 3 * ($card-margin + 2) + 2 * 40px;
+    padding: 50px 40px 0;
+  }
+
+  @media (min-width: 1200px) {
+    width: 4 * $card-width + 3 * ($card-margin + 2) + 2 * 128px;
+    padding: 50px 128px 0;
+  }
 }
 
 .card {
   width: #{$card-width};
   padding: 16px;
   padding-top: 32px;
-  margin-right: #{$card-margin};
+  margin-right: #{$card-margin + 2};
   margin-bottom: #{$card-margin};
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
   &__img {
     width: 100%;
+    height: 134px;
     padding: 0 3px;
   }
 
   &__name {
-    margin-top: 37px;
+    margin-top: 36px;
 
     font-weight: 500;
     font-size: 12px;
@@ -92,6 +101,7 @@ $card-margin: 48px;
       display: block;
       padding: 11px 0;
 
+      font-family: "Roboto", sans-serif;
       text-decoration: none;
       font-weight: 700;
       font-size: 14px;
@@ -101,6 +111,7 @@ $card-margin: 48px;
       &:hover {
         background-color: #fff;
         border-radius: 5px;
+
         color: #00acdc;
       }
     }
@@ -109,4 +120,5 @@ $card-margin: 48px;
   &:nth-of-type(4n) {
     margin-right: 0;
   }
+
 }
