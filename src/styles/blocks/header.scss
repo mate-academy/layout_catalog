@@ -2,9 +2,8 @@
   margin-top: 0;
   padding: 0 50px;
   
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexible ();
+  
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -15,7 +14,7 @@
 
 .nav {
   text-align: center;
-  background-color: #fff;
+  background-color: #{$background-color};
   display: block;
 
   &__list {
@@ -52,23 +51,23 @@
     cursor: pointer;
   
     text-decoration: none;
-    color: #060b35;
+    color: #{$main-color};
 
     &:hover {
-      color: #00acdc;
+      color: #{$accent-color};
     }
   }
 }
 
 .is-active {
-  color: #00acdc;
+  color: #{$accent-color};
 
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
   
-    background-color: #00acdc;
+    background-color: #{$accent-color};
     height: 4px;
     width: 100%;
     border-radius: 8px;
