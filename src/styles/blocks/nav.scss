@@ -1,48 +1,45 @@
 .nav {
-
   &__list {
+    list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
   }
 
-  &__item {
-    display: flex;
-    margin: 0 10px;
+  &__item:not(:first-child) {
+    margin-left: $nav-item-gap ;
   }
 
   &__link {
-    display: inline-block;
-    padding: 20px 0;
-    text-decoration: none;
-    color: $colorblue;
-    line-height: 14px;
-  }
-  &__item:last-of-type {
-    margin-right: 30px;
-  }
+    height: $nav-link-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &__link:hover {
-    color: $clorueacqua;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $main-color;
+
+    &:hover {
+      color: $accent-color;
+    }
+
   }
 }
 
 .is-active {
-  position: relative;
-  color: $clorueacqua;
+  color: #00acdc;
 
   &::after {
+    content: " ";
     position: absolute;
-    bottom: 0;
-
-    display: block;
-    width: 100%;
+    width: 37px;
     height: 4px;
+    top: 56px;
+    background: $accent-color;
     border-radius: 8px;
-
-    background-color: $clorueacqua;
-
-    content: "";
-
   }
 }
