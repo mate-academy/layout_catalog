@@ -4,17 +4,18 @@
   &__star-rate {
     width: 16px;
     height: 16px;
-    
+
     background-image: url(../images/star.svg);
     background-position: center;
     background-repeat: no-repeat;
-  }
 
-  &__star-rate:not(:last-child) {
-    padding-right: 4px;
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
   }
-
-  &__star-rate:nth-child(-n + 4) {
-    background-image: url(../images/star-active.svg);
+  @each $raiting in $productRaiting {
+    &--#{$raiting} :nth-child(-n + #{$raiting}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
