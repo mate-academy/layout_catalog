@@ -1,34 +1,19 @@
-.star-container {
+.stars {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 16px 16px 24px;
-  box-sizing: border-box;
-  color: $text-color;
 
-  &__stars {
-    display: flex;
+  &__star {
+    @include starSize($star-size);
+    margin-right: 4px;
 
-    &-new {
-      @include starSize($star-size);
-      margin: 0 2px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 
-      background-image: url(../images/star.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-
-      &:nth-child(1),
-      &:nth-child(-n + 2),
-      &:nth-child(-n + 3),
-      &:nth-child(-n + 4),
-      &:nth-child(-n + 5) {
-        background-image: url(../images/star-active.svg);
-      }
+    &:nth-child(-n + 1),
+    &:nth-child(-n + 2),
+    &:nth-child(-n + 3),
+    &:nth-child(-n + 4) {
+      background-image: url(../images/star-active.svg);
     }
-  }
-
-  &__reviews {
-    font-size: 10px;
-    font-weight: 400;
   }
 }
