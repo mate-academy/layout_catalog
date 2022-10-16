@@ -1,14 +1,13 @@
 .card {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 32px 16px 16px;
   width: $card-width;
-  justify-content: center;
-  margin-bottom: 46px;
+  box-sizing: border-box;
   margin-right: $card-gap;
+  padding: 32px 16px 16px;
+  margin-bottom: 46px;
   border-radius: 5px;
-  @include border(1px, solid, #f3f3f3);
+  @include border (#f3f3f3);
 
   &:nth-child(4n) {
     margin-right: 0;
@@ -37,15 +36,14 @@
 
   &__rate {
     display: flex;
-    height: 16px;
     justify-content: space-between;
     margin-bottom: 24px;
     align-items: center;
-  }
-
-  &__rate-review {
-    display: flex;
-    @include styleOfText(400, 10px, 14px, #060b35);
+    height: 16px;
+    &-review {
+      display: flex;
+      @include styleOfText(400, 10px, 14px, #060b35);
+    }
   }
 
   &__price {
@@ -53,14 +51,18 @@
     justify-content: space-between;
     margin-bottom: 16px;
     align-items: center;
-    color: #616070;
   }
 
   &__price-text {
-    @include styleOfText(400, 12px, 18px, #616070);
+    display: flex;
+    align-items: flex-end;
+    @include styleOfText(400, 12px, 12px, #616070);
   }
 
   &__price-amount {
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
     @include styleOfText(700, 16px, 18px, #060b35);
   }
 
@@ -71,6 +73,7 @@
     box-sizing: border-box;
     height: 40px;
     width: 166px;
+    @include border (transparent);
     text-transform: uppercase;
     @include styleOfText(700, 14px, 40px, #ffff);
     background-color: $main-color;
@@ -78,7 +81,7 @@
 
     &:hover {
       color: $main-color;
-      border: 1px solid $main-color;
+      @include border ($main-color);
       background-color: #ffff;
     }
   }
