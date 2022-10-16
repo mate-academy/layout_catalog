@@ -1,0 +1,23 @@
+@import "../utils/mixins";
+
+/* #region stars */
+.stars {
+  display: flex;
+
+  &__star {
+    background-image: url(../../images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    @include rectangle(16px, 16px);
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  &--4 :nth-of-type(n+5) {
+    background-image: url(../../images/star.svg);
+  }
+}
+
+/* #endregion */
