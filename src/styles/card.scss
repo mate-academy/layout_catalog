@@ -1,0 +1,85 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+  width: $card-width;
+  justify-content: center;
+  margin-bottom: 46px;
+  margin-right: $card-gap;
+  border-radius: 5px;
+  @include border(1px, solid, #f3f3f3);
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__img {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    @include styleOfText(500, 12px, 18px, #060b35);
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    @include styleOfText(400, 10px, 14px, #616070);
+    margin-bottom: 16px;
+  }
+
+  &__rate {
+    display: flex;
+    height: 16px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  &__rate-review {
+    display: flex;
+    @include styleOfText(400, 10px, 14px, #060b35);
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    align-items: center;
+    color: #616070;
+  }
+
+  &__price-text {
+    @include styleOfText(400, 12px, 18px, #616070);
+  }
+
+  &__price-amount {
+    @include styleOfText(700, 16px, 18px, #060b35);
+  }
+
+  &__basket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    width: 166px;
+    text-transform: uppercase;
+    @include styleOfText(700, 14px, 40px, #ffff);
+    background-color: $main-color;
+    border-radius: 5px;
+
+    &:hover {
+      color: $main-color;
+      border: 1px solid $main-color;
+      background-color: #ffff;
+    }
+  }
+}
