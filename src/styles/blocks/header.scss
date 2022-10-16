@@ -1,0 +1,49 @@
+.header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.menu {
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $darkColor;
+    font-weight: $fontWeightMedium;
+    font-size: rem(12);
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    line-height: rem(60);
+    &:hover {
+      color: $skyColor;
+    }
+  }
+}
+
+.is-active {
+  color: $skyColor;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: $skyColor;
+    border-radius: 8px;
+  }
+}
