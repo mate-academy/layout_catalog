@@ -1,0 +1,51 @@
+@import "./../utils/variables";
+@import "./../utils/extends";
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.header {
+  background: $white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    @extend %link-style;
+    color: #060b35;
+    margin-left: 20px;
+
+    &:hover,
+    :active {
+      color: $blue;
+    }
+    &:active::after {
+      @extend %active;
+    }
+  }
+}
+
+.is-active {
+  @extend %link-style;
+  color: $blue;
+
+  &::after {
+    @extend %active;
+  }
+}
