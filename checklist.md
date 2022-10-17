@@ -134,3 +134,23 @@ $color-accent-blue: #00acdc;
 ```
 
 11. [SASS] - Try using _for_ loops for the stars selector.
+
+BAD example:
+```scss
+.stars--1 > :nth-child(-n + 1),
+.stars--2 > :nth-child(-n + 2),
+.stars--3 > :nth-child(-n + 3),
+.stars--4 > :nth-child(-n + 4),
+.stars--5 > :nth-child(-n + 5) {
+  background-image: url("../images/star-active.svg");
+}
+```
+
+GOOD example:
+```scss
+@for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+```
