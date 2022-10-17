@@ -137,20 +137,20 @@ $color-accent-blue: #00acdc;
 
 BAD example:
 ```scss
-.stars--1 > :nth-child(-n + 1),
-.stars--2 > :nth-child(-n + 2),
-.stars--3 > :nth-child(-n + 3),
-.stars--4 > :nth-child(-n + 4),
-.stars--5 > :nth-child(-n + 5) {
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
   background-image: url("../images/star-active.svg");
 }
 ```
 
 GOOD example:
 ```scss
-@for $index from 1 through 5 {
-    &--#{$index} :nth-child(-n + #{$index}) {
-      background-image: url(/images/star-active.svg);
+@for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
     }
   }
 ```
