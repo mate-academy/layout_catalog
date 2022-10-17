@@ -49,8 +49,8 @@ to identify how to position the next element
 
 6. [BEM] - Check your BEM structure using BEM-linter (`npm run lint`) and
 [this list](https://mate-academy.github.io/fe-program/css/typical-bem-mistakes).
-Also, make sure to follow BEM naming convention:
 
+7. [BEM] - Make sure to follow BEM naming convention:
 
 GOOD example:
 ```html
@@ -81,14 +81,14 @@ BAD example:
 `star` is another block, stars should be the elements of the `stars` block
 ```
 
-7. [BEM & STYLES] - Don't add external styles (positioning or margins) to
+8. [BEM & STYLES] - Don't add external styles (positioning or margins) to
    BEM-blocks. Use mix where necessary and move all external styles under element
    selector.
 
-8. [BEM] - create a separate file per each BEM block styles that have the same
+9. [BEM] - create a separate file per each BEM block styles that have the same
 name as the block
 
-9. [SASS] - Make use of SASS nesting - write pseudo-class, pseudo-element
+10. [SASS] - Make use of SASS nesting - write pseudo-class, pseudo-element
 selectors inside general selector. As well as media queries.
 
 GOOD example:
@@ -115,7 +115,7 @@ BAD example:
 }
 ```
 
-10. [SASS] - use variables for the main values so that you'll be able to reuse
+11. [SASS] - use variables for the main values so that you'll be able to reuse
 them and **give them descriptive names**. But don't overuse them, don't create
 variable for the value that's used just once.
 
@@ -133,7 +133,7 @@ $color-secondary: #616070;
 $color-accent-blue: #00acdc;
 ```
 
-11. [SASS] - Try using _for_ loops for the stars selector.
+12. [SASS] - Try using _for_ loops for the stars selector.
 
 BAD example:
 ```scss
