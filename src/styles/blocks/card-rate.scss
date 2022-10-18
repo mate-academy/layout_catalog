@@ -1,19 +1,21 @@
-.rate-stars {
+.card__stars {
   display: flex;
 }
 
 .rate-star {
-  height: 16px;
-  width: 16px;
-  background-image: url(../images/star-active.svg);
+  height: $rate-star-height;
+  width: $rate-star-width;
+  background-image: url(../images/star.svg);
   background-repeat: no-repeat;
   background-position: center;
 
-  &:not(:last-child) {
-    margin-right: 4px;
+  @for $index from 1 through 5 {
+    .stars--#{$index} &:nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 
-  &:last-child {
-    background-image: url(../images/star.svg);
+  &:not(:last-child) {
+    margin-right: 4px;
   }
 }
