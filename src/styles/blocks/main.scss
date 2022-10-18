@@ -3,7 +3,6 @@
     $card-width: 200px;
     $card-margin: 48px;
     $card-row: 4;
-    $card-total: 8;
     $container-width: $card-width * $card-row +
       $card-margin * ($card-row - 1);
 
@@ -15,35 +14,17 @@
     margin: 0 auto;
     padding: 50px 0;
 
-    @media (min-width: $container-width) {
-      .card:nth-child(#{$card-row}n) {
-        margin-right: 0;
-      }
-
-      .card:nth-child(-n + #{$card-total - $card-row}) {
-        margin-bottom: $card-margin - 2px;
-      }
-    }
-
-    @for $i from $card-row to 1 {
-      $container-width-max: $card-width * $i + $card-margin * ($i - 1);
-      $container-width-min: $container-width-max - $card-width - $card-margin;
-
-      @media (min-width: $container-width-min) and
-        (max-width: $container-width-max) {
-        .card:nth-child(#{$i - 1}n) {
-          margin-right: 0;
-        }
-
-        .card:nth-child(-n + #{$card-total - ($i - 1)}) {
-          margin-bottom: $card-margin - 2px;
-        }
-      }
-    }
-
     .card {
       margin-right: $card-margin;
       margin-bottom: 0;
+
+      &:nth-child(#{$card-row}n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(-n + #{$card-row}) {
+        margin-bottom: $card-margin - 2px;
+      }
     }
   }
 }
