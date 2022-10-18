@@ -7,24 +7,34 @@
 .catalog {
   display: flex;
   flex-wrap: wrap;
+  width: getCatalogWidth($card-gap, $card-width );
   
   &__card {
+    width: $card-width;
     margin-bottom: 46px;
 
     &:not(:last-child) {
       margin-right: 48px;
     }
-  }
 
-  @media (max-width: 1250px) {
-    width: 944px;
-
-    &__card:nth-child(4n + 4) {
+    &:nth-child(4n + 4) {
       margin-right: 0;
     }
 
-    &__card:nth-last-child(-n + 4) {
+    &:nth-last-child(-n + 4) {
       margin-bottom: 0;
     }
   }
+
+  // @media (max-width: 1250px) {
+  //   width: 944px;
+
+  //   &__card:nth-child(4n + 4) {
+  //     margin-right: 0;
+  //   }
+
+  //   &__card:nth-last-child(-n + 4) {
+  //     margin-bottom: 0;
+  //   }
+  // }
 }
