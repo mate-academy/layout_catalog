@@ -105,7 +105,7 @@ BAD example
 ```html
 <!--index.html-->
 <div class="container">
-  <div class="card">
+  <div class="card content__card">
     ...
   </div>
 </div>
