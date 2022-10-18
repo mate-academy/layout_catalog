@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  
+  &__card {
+    margin-bottom: 46px;
+
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    width: 944px;
+
+    &__card:nth-child(4n + 4) {
+      margin-right: 0;
+    }
+
+    &__card:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
