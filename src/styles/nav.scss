@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 100%;
+  }
+
+  &__list-item:not(:last-child) {
+    padding-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $main-text-color;
+    cursor: pointer;
+    padding: 23px 0;
+  }
+
+  &__link:hover {
+    color: $active-link-color;
+  }
+}
+
+.is-active {
+  color: $active-link-color;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  border-bottom: 4px solid $active-link-color;
+  width: 37px;
+  border-radius: 8px;
+  color: $active-link-color;
+}
