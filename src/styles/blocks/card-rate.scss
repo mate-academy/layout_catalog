@@ -1,0 +1,21 @@
+.card__stars {
+  display: flex;
+}
+
+.rate-star {
+  height: $rate-start-size;
+  width: $rate-start-size;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @for $index from 1 through 5 {
+    .stars--#{$index} &:nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+}
