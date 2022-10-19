@@ -1,0 +1,79 @@
+$logo_size: 40px;
+$active_color: #00acdc;
+
+%nav_text {
+  padding-top: 23px;
+  padding-bottom: 19px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+%element--hover {
+  color: $active_color;
+  cursor: pointer;
+}
+
+%element--active {
+  content: "-";
+  line-height: 4px;
+  color: $active_color;
+  background-color: $active_color;
+  border-radius: 8px;
+}
+
+.logo {
+  background: url(../images/logo.png) no-repeat center;
+  width: $logo_size;
+  height: $logo_size;
+}
+
+.nav_container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  &__list {
+    list-style-type: none;
+
+    &--position {
+      margin-left: 20px;
+    }
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+
+    &--active {
+      &:hover {
+        .nav_container__text--hover {
+          @extend %element--hover;
+        }
+      }
+
+      &:active {
+        &::after {
+          @extend %element--active;
+        }
+      }
+    }
+  }
+
+  &__text {
+    @extend %nav_text;
+    color: #060b35;
+  }
+}
+
+.is-active {
+  @extend %element--hover;
+  & > * {
+    @extend %nav_text;
+  }
+  &::after {
+    @extend %element--active;
+  }
+}
