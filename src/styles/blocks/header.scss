@@ -1,0 +1,61 @@
+@import "../utils/variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: $main-color;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &--is-active {
+      position: relative;
+      color: $blue-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $blue-color;
+      }
+    }
+  }
+}
