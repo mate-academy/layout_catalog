@@ -1,0 +1,28 @@
+.main {
+  padding: 50px 0 72px;
+  
+  &__catalog-container {
+    margin: 0 auto;
+    min-width: elementWidth($card-quantity, $card-gap, $card-width );
+  }
+}
+
+.catalog-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: elementWidth($card-quantity, $card-gap, $card-width);
+
+  &__card {
+    width: $card-width;
+    margin-right: $card-gap;
+    margin-bottom: 46px;
+  
+    &:nth-child(#{$card-quantity}n) {
+      margin-right: 0;
+    }
+  
+    &:nth-last-child(-n + #{$card-quantity}) {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.list {
+  padding: 0;
+  list-style-type: none;
+  
+  &__item {
+    margin-right: 20px;
+  
+    &:last-child() {
+      margin: 0;
+    }
+  }
+  
+  &__link {
+    @extend %centerText;
+    color: $main-text-color;
+    text-decoration: none;
+    padding: 23px 0;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+  
+    &:hover {
+      color: $theme-color;
+    }
+  }
+  
+  .is-active {
+    color: $theme-color;
+  
+    &::after {
+      content: "";
+      background-color: $theme-color;
+      height: 4px;
+      width: 37px;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
