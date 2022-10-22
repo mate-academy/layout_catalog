@@ -1,14 +1,6 @@
 $logo_size: 40px;
 $active_color: #00acdc;
 
-%nav_text {
-  padding-top: 23px;
-  padding-bottom: 19px;
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
 %element--hover {
   color: $active_color;
   cursor: pointer;
@@ -20,6 +12,7 @@ $active_color: #00acdc;
   color: $active_color;
   background-color: $active_color;
   border-radius: 8px;
+  margin-top: 19px;
 }
 
 .logo {
@@ -30,9 +23,10 @@ $active_color: #00acdc;
 
 .nav_container {
   display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
+  height: 60px;
+  color: #060b35;
 
   &__list {
     list-style-type: none;
@@ -45,13 +39,14 @@ $active_color: #00acdc;
   &__element {
     display: flex;
     flex-direction: column;
-    height: 60px;
+    padding-top: 23px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
 
     &--active {
       &:hover {
-        .nav_container__text--hover {
-          @extend %element--hover;
-        }
+        @extend %element--hover;
       }
 
       &:active {
@@ -61,18 +56,11 @@ $active_color: #00acdc;
       }
     }
   }
-
-  &__text {
-    @extend %nav_text;
-    color: #060b35;
-  }
 }
 
 .is-active {
   @extend %element--hover;
-  & > * {
-    @extend %nav_text;
-  }
+
   &::after {
     @extend %element--active;
   }
