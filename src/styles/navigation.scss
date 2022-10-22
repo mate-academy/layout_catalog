@@ -1,0 +1,67 @@
+$logo_size: 40px;
+$active_color: #00acdc;
+
+%element--hover {
+  color: $active_color;
+  cursor: pointer;
+}
+
+%element--active {
+  content: "-";
+  line-height: 4px;
+  color: $active_color;
+  background-color: $active_color;
+  border-radius: 8px;
+  margin-top: 19px;
+}
+
+.logo {
+  background: url(../images/logo.png) no-repeat center;
+  width: $logo_size;
+  height: $logo_size;
+}
+
+.nav_container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  color: #060b35;
+
+  &__list {
+    list-style-type: none;
+
+    &--position {
+      margin-left: 20px;
+    }
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    padding-top: 23px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &--active {
+      &:hover {
+        @extend %element--hover;
+      }
+
+      &:active {
+        &::after {
+          @extend %element--active;
+        }
+      }
+    }
+  }
+}
+
+.is-active {
+  @extend %element--hover;
+
+  &::after {
+    @extend %element--active;
+  }
+}
