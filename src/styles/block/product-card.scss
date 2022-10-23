@@ -1,0 +1,112 @@
+body {
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+
+.main {
+  padding-top: 51px;
+  margin: 0 auto;
+  width: #{$base-width};
+  height: 862px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 72px;
+}
+
+.card {
+  width: 200px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  @for $index from 1 through 4 {
+    position: absolute;
+    &--#{$index} {
+      margin-left: $container-shift-left * ($index - 1);
+    }
+  }
+
+  @for $index from 5 through 8 {
+    position: absolute;
+    &--#{$index} {
+      margin-left: $container-shift-left * ($index - 5);
+      margin-top: $container-shift-top;
+    }
+  }
+}
+
+.picture {
+  padding: 0 3px;
+  width: 160px;
+  height: 134px;
+  margin-top: 32px;
+}
+
+.link {
+  margin-top: 36px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #060b35;
+  text-decoration: none;
+}
+
+.productCode {
+  font-weight: 400;
+  font-size: 10px;
+  color: #616070;
+}
+
+.buttom {
+  margin-top: 14px;
+  display: block;
+  margin-bottom: 16px;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  background: #00acdc;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+.buttom:hover {
+  width: 100%;
+  border-color: #00acdc;
+  border-radius: 5px;
+  background: #fff;
+  color: #00acdc;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.priceName {
+  display: flex;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  align-items: flex-end;
+  color: #616070;
+}
+
+.priceNumber {
+  display: flex;
+  font-weight: 700;
+  font-size: 16px;
+  align-items: flex-end;
+  text-align: right;
+  color: #060b35;
+}
