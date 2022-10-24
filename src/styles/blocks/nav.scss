@@ -1,0 +1,60 @@
+.nav {
+  // to make navigation a standalone, independent and re-usable block, I have
+  // created BEM mix here to ensure paddings, position and box-shadow
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: $text-primary-color;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 14px;
+
+    text-transform: uppercase;
+
+    &:hover {
+      color: #00acdc;
+    }
+
+    &.is-active {
+      color: $accent-color-blue;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        content: "";
+        height: 4px;
+
+        background-color: #00acdc;
+      }
+    }
+  }
+}
