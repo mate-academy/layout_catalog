@@ -1,0 +1,29 @@
+.cards {
+  $card-width: 200px;
+  $card-margin: 48px;
+  $card-row: 4;
+  $block-width: $card-width * $card-row +
+    $card-margin * ($card-row - 1);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: $block-width;
+  max-width: $block-width;
+  margin: 0 auto;
+  padding: 50px 0;
+
+  .card {
+    margin-right: $card-margin;
+    margin-bottom: 0;
+
+    &:nth-child(#{$card-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(-n + #{$card-row}) {
+      margin-bottom: $card-margin - 2px;
+    }
+  }
+}
