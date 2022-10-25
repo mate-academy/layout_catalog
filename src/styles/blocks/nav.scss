@@ -1,0 +1,49 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    height: 60px;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  &__link {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text-color-main;
+    line-height: 60px;
+  }
+
+  &__item:nth-child(n+2) {
+    margin-left: 20px;
+  }
+
+  &__link:hover {
+    color: $text-color-bottom;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+}
+
+.is-active {
+  color: $text-color-bottom;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background-color: $text-color-bottom;
+  border-radius: 2px;
+}
