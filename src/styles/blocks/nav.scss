@@ -1,0 +1,48 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 0;
+  }
+
+  &__item {
+    list-style: none;
+
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    padding: 23px 0;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-accent;
+
+    &:hover {
+      color: $blue-accent;
+    }
+
+    &--active {
+      position: relative;
+
+      color: $blue-accent;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 4px;
+
+        border-radius: 8px;
+        background-color: $blue-accent;
+      }
+    }
+  }
+}
