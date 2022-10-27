@@ -1,5 +1,5 @@
-@use "../utils/mixins.scss" as m;
-@use "../utils/variables" as v;
+@use "../utils/mixins.scss" as underLine;
+@use "../utils/variables" as mainColor;
 
 .header {
   display: flex;
@@ -22,12 +22,10 @@
   &__list {
     list-style: none;
     display: flex;
-  
   }
   
   &__item {
     margin-right: 20px;
-    font-style: normal;
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 0;
@@ -38,7 +36,7 @@
     }
 
     & .is-active {
-      color: v.$main-link-color;
+      color: mainColor.$main-link-color;
     }
   }
   
@@ -52,11 +50,11 @@
     text-decoration: none;
 
     &:hover {
-      color: v.$main-link-color;
+      color: mainColor.$main-link-color;
     }
   }
 }
 
 .is-active::after {
-  @include m.underline-link;
+  @include underLine.underline-link;
 }
