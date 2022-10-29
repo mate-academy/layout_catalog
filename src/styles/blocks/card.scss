@@ -4,12 +4,56 @@
   padding: 10px;
   width: 198px;
   height: 406px;
-  
+
   &__img {
     display: block;
     width: 160px;
     height: 134px;
     object-fit: cover;
     margin: 10px auto;
+  }
+
+  &__title {
+    margin-top: 36px;
+    line-height: 18px;
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-size: $fs-100;
+    font-weight: $fw-400;
+    line-height: 14px;
+    color: $color-secondary;
+  }
+
+  &__rating {
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @for $i from 1 through 5 {
+    &__stars--star-#{$i} {
+      background-image: url(../images/star.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 16px;
+      height: 16px;
+    }
+
+    &__stars--#{$i} {
+      @for $j from 1 through $i {
+        & .card__stars--star-#{$j} {
+          background-image: url(../images/star-active.svg);
+        }
+      }
+    }
   }
 }
