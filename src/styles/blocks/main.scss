@@ -11,8 +11,9 @@
 
 .section {
   width: 20%;
-  margin: 50px 50px 0  0;
-  flex-grow: 1;
+  min-width: 198px;
+  max-height: 406px;
+  margin: 50px 50px 0 0;
 }
 
 .section:nth-child(4n) {
@@ -38,8 +39,9 @@
   }
 
   &__image {
-    content: url("../images/imac.jpeg");
     margin: 32px 19px 40px;
+    content: url("../images/imac.jpeg");
+    background-size: cover;
     width: 160px;
     height: 134px;
   }
@@ -48,7 +50,6 @@
     width: 166px;
     font-size: 12px;
     line-height: 18px;
-    font-style: normal;
     color: #060b35;
     font-weight: 500;
     margin: 0 16px 4px;
@@ -69,7 +70,6 @@
     align-items: center;
     font-size: 12px;
     font-weight: 400;
-    font-style: normal;
     line-height: 18px;
     margin: 0 16px 16px;
     width: 166px;
@@ -123,16 +123,23 @@
 
 .list-stars {
   margin-left: 2px;
+  display: flex;
 
   &__star {
     margin-right: 5px;
     
     &--active {
-      content: url("../images/star-active.svg");
+      background-image: url("../images/star-active.svg");
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
     }
   
     &--inactive {
-      content: url("../images/star.svg");
+      background-image:  url("../images/star.svg");
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
     }
   }
 }
