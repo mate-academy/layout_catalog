@@ -1,0 +1,21 @@
+.stars {
+  @include flexbox-between;
+
+  &__star {
+    background: url(../images/star.svg) center no-repeat;
+    height: 16px;
+    width: 16px;
+    border-radius: 0.5px;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  &--1 :first-child,
+  &--2 :nth-child(-n + 2),
+  &--3 :nth-child(-n + 3),
+  &--4 :nth-child(-n + 4),
+  &--5 :nth-child(n) {
+    background-image: url(../images/star-active.svg);
+  }
+}
