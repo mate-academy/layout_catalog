@@ -1,0 +1,20 @@
+@use "../utils/mixin";
+@use "../utils/extends";
+@use "../utils/variables" as *;
+
+.stars {
+  display: flex;
+
+  &__star {
+    @include mixin.square($star-size);
+    background: url(/images/star.svg) no-repeat center;
+    margin-right: 4px;
+  }
+
+  @for $index from 1 through $amound-stars {
+    &--#{$index} 
+    &__star:nth-child(-n+#{$index}) {
+      background: url(/images/star-active.svg) no-repeat center;
+    }
+  }
+}
