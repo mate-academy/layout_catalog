@@ -1,58 +1,76 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-
+  margin-top: 0;
   padding: 0 50px;
 
-  &__logo {
-    height: 40px;
-    width: 40px;
-    margin: 10px 0;
-  }
+  @include flexible ();
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
 }
 
 .nav {
+  text-align: center;
+  background-color: #{$background-color};
+  display: block;
+
   &__list {
     list-style: none;
     display: flex;
-
-    margin: 0;
     padding: 0;
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 14px;
   }
 
-  &__item:not(:first-child) {
-    margin-left: 20px;
+  &__item {
+    position: relative;
+    margin: 0 10px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__link {
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 60px;
+    cursor: pointer;
 
-    font-size: 12px;
-    padding: 23px 0;
-    color: $block-color;
     text-decoration: none;
-    text-transform: uppercase;
+    color: #{$main-color};
 
     &:hover {
-      color: $aqua-color;
+      color: #{$accent-color};
     }
   }
 }
 
 .is-active {
-  color: $aqua-color;
+  color: #{$accent-color};
 
-  &:after {
+  &::after {
     content: "";
-    display: block;
     position: absolute;
+    bottom: 0;
 
-    top: 56px;
-    width: 37px;
+    background-color: #{$accent-color};
     height: 4px;
+    width: 100%;
     border-radius: 8px;
-    background-color: $aqua-color;
   }
 
 }
