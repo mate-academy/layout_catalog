@@ -1,0 +1,24 @@
+@function calcWidth($cardWidth, $cardIndentGor) {
+  @return $cardWidth * 4 + $cardIndentGor * 3;
+}
+
+.catalog {
+  margin: 0 auto;
+  padding: 50px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: calcWidth($cardWidth, $cardIndentGor);
+
+  &__card {
+    margin-right: $cardIndentGor;
+    margin-bottom: $cardIndentVer;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
