@@ -1,11 +1,10 @@
 @use "../utils/mixins.scss" as underLine;
-@use "../utils/variables" as mainColor;
+@use "../utils/variables" as *;
 
 .header {
   display: flex;
   justify-content: space-between;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 0 50px;
   height: 60px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
@@ -37,21 +36,21 @@
     }
 
     & .is-active {
-      color: mainColor.$main-link-color;
+      color: $main-link-color;
     }
   }
   
   .nav__link {
+    position: relative;
     display: flex;
-    height: 60px;
     justify-content: center;
     align-items: center;
-    position: relative;
-    color: #060b35;
+    height: 60px;
+    color: $main-text-color;
     text-decoration: none;
 
     &:hover {
-      color: mainColor.$main-link-color;
+      color: $main-link-color;
     }
   }
 }

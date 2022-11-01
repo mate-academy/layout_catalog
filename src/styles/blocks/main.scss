@@ -1,3 +1,9 @@
+@use "../utils/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
 .main-content {
   margin: auto;
   min-width: 1024px;
@@ -33,51 +39,50 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
-    box-sizing: border-box;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
   }
 
   &__image {
-    margin: 32px 19px 40px;
     content: url("../images/imac.jpeg");
-    background-size: cover;
+    margin: 32px 19px 40px;
     width: 160px;
     height: 134px;
+    background-size: cover;
   }
 
   &__title {
     width: 166px;
     font-size: 12px;
     line-height: 18px;
-    color: #060b35;
+    color: $main-text-color;
     font-weight: 500;
     margin: 0 16px 4px;
   }
 
   &__product-code {
-    font-size: 10px;
-    line-height: 14px;
     align-self: flex-start;
     margin: 0 16px;
+    font-size: 10px;
+    line-height: 14px;
     font-weight: normal;
-    color: #616070;
+    color: $light-main-text;
   }
 
   &__price {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 16px 16px;
+    width: 166px;
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
-    margin: 0 16px 16px;
-    width: 166px;
-    color: #616070;
+    color: $light-main-text;
 
     &-digit {
       font-size: 16px;
-      color: #060b35;
+      color: $main-text-color;
   
       &--bold {
         font-weight: 700;
@@ -88,20 +93,19 @@
   &__button-buy {
     width: 166px;
     height: 40px;
-    background-color: #00acdc;
+    background-color: $button-color;
     text-transform: uppercase;
-    color: #fff;
+    color: $white-color;
     font-size: 14px;
     font-weight: 700;
     border: none;
     border-radius: 5px;
     margin: 0 16px 16px;
-    box-sizing: border-box;
 
     &--hover:hover {
-      background-color: #fff;
-      color: #00acdc;
-      border: 1px solid #00acdc;
+      background-color: $white-color;
+      color: $button-color;
+      border: 1px solid $button-color;
     }
   }
   
@@ -110,20 +114,20 @@
 .feedback {
   display: flex;
   justify-content: space-between;
-  margin: 18px 18px 15px;
+  align-items: center;
+  margin: 16px 18px 24px;
   width: 166px;
   font-size: 10px;
   font-weight: 400;
-  line-height: 14px;
 
   &__count {
-    margin-top: -1px;
+    margin: 0 0 2px;
   }
 }
 
 .list-stars {
-  margin-left: 2px;
   display: flex;
+  margin-left: 2px;
 
   &__star {
     margin-right: 5px;
