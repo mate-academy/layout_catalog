@@ -1,0 +1,27 @@
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > *:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+@for $i from 1 through 5 {
+  &__stars-star-#{$i} {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__stars--#{$i} {
+    @for $j from 1 through $i {
+      & .card__stars-star-#{$j} {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+}
