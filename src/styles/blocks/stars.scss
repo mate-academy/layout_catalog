@@ -1,0 +1,25 @@
+// @use '../utils/variables' as *;
+
+.stars {
+  display: flex;
+
+  &--margin {
+    margin: 0 0 24px 16px;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url(../images/star.svg) center no-repeat;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  @for $index from 1 through 5 {
+    &--#{$index} &__star:nth-child(-n + #{$index}) {
+      background: url(../images/star-active.svg) center no-repeat;
+    }
+  }
+}
