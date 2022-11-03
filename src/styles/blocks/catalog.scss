@@ -1,39 +1,41 @@
 /* #region catalog */
 .catalog {
-  font-family: Roboto, sans-serif;
-  color: #060b35;
-
-  &__content {
-    margin: 0;
-  }
-
-  &__cards-container {
+  &__container {
     margin: 0 auto;
-    box-sizing: border-box;
+    padding: #{$catalog-container-top-padding}
+      #{$catalog-container-hor-min-padding}
+      #{$catalog-container-bottom-padding}
+    ;
+    min-width: getWidth(
+      $card-width,
+      $catalog-card-hor-right-margin,
+      $catalog-container-hor-min-padding
+    );
+    max-width: getWidth(
+      $card-width,
+      $catalog-card-hor-right-margin,
+      $catalog-container-hor-max-padding
+    );
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 50px #{$catalog-cards-container-hor-min-padding} 72px;
-    min-width: 4 * $card-width +
-      3 * $catalog-card-hor-right-margin +
-      2 * $catalog-cards-container-hor-min-padding
-    ;
-    max-width: 4 * $card-width +
-      3 * $catalog-card-hor-right-margin +
-      2 * $catalog-cards-container-hor-max-padding
-    ;
-  }
 
-  @media (min-width: 1200px) {
-    &__cards-container {
-      padding: 50px #{$catalog-cards-container-hor-max-padding} 72px;
+    @media (min-width: 1200px) {
+      & {
+        padding: #{$catalog-container-top-padding}
+          #{$catalog-container-hor-max-padding}
+          #{$catalog-container-bottom-padding}
+        ;
+      }
     }
   }
 
   &__card {
-    margin: 0 #{$catalog-card-hor-right-margin} 46px 0;
+    margin-right: #{$catalog-card-hor-right-margin};
+    margin-bottom: 46px;
 
     &:nth-child(4n) {
       margin-right: 0;
