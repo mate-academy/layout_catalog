@@ -1,0 +1,97 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  max-width: getContainerWidth($card-width, $card-margin-right, 40);
+  padding: 50px 40px;
+
+  &--centered {
+    margin: 0 auto;
+  }
+  &__card {
+    margin-right: $card-margin-right;
+    margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__picture {
+    display: block;
+    margin: 0 auto 40px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: $main-text-color;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+
+  }
+
+  &__review-container {
+    @include flex-centering;
+    margin-bottom: 24px;
+  }
+
+  &__review-count {
+    color: $main-text-color;
+  }
+
+  &__price-container {
+    @include flex-centering;
+    margin-bottom: 16px;
+    line-height: 18px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+    color: $main-text-color;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    @include flex-centering;
+    height: 40px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: $button-color;
+    border: 1px solid  $button-color;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #fff;
+      color: $button-color;
+    }
+  }
+}
