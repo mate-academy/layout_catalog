@@ -1,0 +1,109 @@
+@use '../utils/extends';
+@use '../utils/variables' as *;
+@use '../utils/function';
+
+.card-container {
+  max-width: function.rowWidth($card-width, $card-offset, $cards-per-row);
+  @extend %centre-flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.phone-card {
+  @extend %centre-flex;
+  width: #{$card-width};
+  margin: 50px 24px 46px;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: #{$card-padding};
+
+  &:nth-child(n +5) {
+    margin-top: 0;
+  }
+
+  &__image-box {
+    margin: 16px 0 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__mac-model {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+
+  &__product-code {
+    font-style: normal;
+    padding: 4px 0 0;
+    margin: 0;
+    width: 166px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #616070;
+  }
+
+  &__price {
+    margin: 0;
+    padding: 24px 0 16px;
+    width: calc(#{$card-content-width} + 6px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+  }
+
+  &__price-title {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #616070;
+  }
+
+  &__price-total {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__button-div {
+    width: #{$card-content-width};
+  }
+
+  &__button {
+    margin: 0;
+    height: 40px;
+    width: 100%;
+    @extend %centre-flex;
+    background: #{$button-colour};
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__button:hover {
+    background-color: #fff;
+    color: #{$button-colour};
+    border: 1px solid #{$button-colour};
+  }
+
+  }
+
+
+
+
+
