@@ -1,0 +1,84 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 0;
+  width: $card-width;
+  border: 1px solid $light-white;
+  border-radius: 5px;
+
+  &:not(:nth-child(4n)) {
+    margin-right: $cards-margin-right;
+  }
+
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: $cards-margin-bottom;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-top: 0;
+  }
+
+  &__img {
+    @include imageSize(160px, 134px);
+    margin: 0 auto 40px;
+  }
+
+  &__name {
+    margin-bottom: 4px;
+
+    color: $dark-blue;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+
+    color: $grey;
+
+    @include cardCode ($card-code-size, $card-code-height, $card-code-weight);
+  }
+
+  &__price {
+    @extend %space-between-items;
+    margin-bottom: 16px;
+
+    &-text {
+      color: $grey;
+
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    &-amount {
+      @include cardAmount ($card-amount-size, $card-amount-weight, $card-amount-height);
+
+      color: $dark-blue;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    @include cardBuy ($card-buy-size, $card-buy-height, $card-buy-weight);
+
+    background-color: $blue;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      border-color: $blue;
+      color: $blue;
+    }
+  }
+}
