@@ -1,0 +1,26 @@
+.stars {
+  display: flex;
+  justify-content: center;
+  
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 4px 0 0;
+  }
+
+  $indexes:
+    "1" 1,
+    "2" 2,
+    "3" 3,
+    "4" 4,
+    "5" 5;
+
+  @each $name, $index in $indexes {
+    &--#{$name} &__star:nth-child(-n+#{$index}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+}
