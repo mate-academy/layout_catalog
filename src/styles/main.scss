@@ -1,8 +1,14 @@
 @import "./blocks/card.scss";
 @import "./blocks/header.scss";
+@import "./blocks/stars.scss";
 
 html {
   font-family: "Roboto", sans-serif;
+  color: #060b35;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 nav,
@@ -10,4 +16,26 @@ header,
 ul,
 body {
   margin: 0;
+}
+
+.page__card-container {
+  width: catalogSize($card-size, $distance-between-cards, $numberOfCardinRow);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 51px;
+}
+
+.page__content {
+  display: flex;
+  justify-content: center;
+}
+
+.container__card:not(:nth-child(4n)) {
+  margin-right: $distance-between-cards;
+}
+
+.container__card:nth-of-type(-n + 4) {
+  margin-bottom: 46px;
 }
