@@ -1,15 +1,47 @@
 .content {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
 
-  @media (min-width: 1200px) {
-    padding: 50px 128px;
+    margin: 0 auto;
+    padding: #{$content-container-top-padding}
+      #{$content-container-hor-min-padding}
+      #{$content-container-bottom-padding}
+    ;
+    min-width: getWidth(
+      $cardwidth,
+      $content-card-hor-right-margin,
+      $content-container-hor-min-padding
+    );
+    max-width: getWidth(
+      $cardwidth,
+      $content-card-hor-right-margin,
+      $content-container-hor-max-padding
+    );
+
+    @media (min-width: 1200px) {
+      & {
+        padding: #{$content-container-top-padding}
+          #{$content-container-hor-max-padding}
+          #{$content-container-bottom-padding}
+        ;
+      }
+    }
   }
 
-  margin: 0;
-  padding: 50px 40px;
-  width: 100%;
+  &__card {
+    margin-right: #{$content-card-hor-right-margin};
+    margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
 }
