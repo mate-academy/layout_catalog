@@ -2,7 +2,7 @@
   display: flex;
 
   &__star {
-    padding: 8px;
+    @include square(16px);
     margin-right: 4px;
     background-image: url("../images/star.svg");
     background-repeat: no-repeat;
@@ -10,11 +10,8 @@
   }
 
   @for $index from 1 through 5 {
-    &--#{$index} {
-      .stars__star:nth-child(-n+#{$index}) {
-        background-image: url("../images/star-active.svg");
-      }
+    &--#{$index} .stars__star:nth-child(-n + #{$index}) {
+      background-image: url("../images/star-active.svg");
     }
   }
-
 }
