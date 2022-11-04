@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    height: 60px;
+    color: $block-color;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $aqua-color;
+    }
+
+    &--is-active {
+      color: $aqua-color;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+
+        top: 56px;
+        width: 37px;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $aqua-color;
+      }
+    }
+
+  }
+}
