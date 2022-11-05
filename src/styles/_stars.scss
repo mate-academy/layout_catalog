@@ -13,6 +13,12 @@
 
   &__list {
     display: flex;
+
+    @for $starCount from 1 through 5 {
+      &--#{$starCount} .stars__item:nth-child(-n + #{$starCount}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
   }
 
   &__item {
@@ -20,13 +26,8 @@
     height: 16px;
     margin-right: 4px;
 
-    background-image: url(../images/star-active.svg);
+    background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
-
-    &:last-child {
-      background-image: url(../images/star.svg);
-      margin-right: 0;
-    }
   }
 }
