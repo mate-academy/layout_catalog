@@ -1,106 +1,124 @@
 .card {
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: $card-width;
-  background: $color-mainwhite;
-  border: 1px solid $color-secondwhite;
-  border-radius: 5px;
   padding: 32px 16px 16px;
+
+  &__product-img {
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__product-name {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #060b35;
+    line-height: 18px;
+    margin: 0;
+    padding-top: 40px;
+  }
+
+  &__product-code {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #616070;
+    line-height: 14px;
+    padding-top: 4px;
+  }
+
+  &__card-price-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 24px;
+  }
+
+  &__price-title {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #616070;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__button-buy {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+    margin-top: 16px;
+    background-color: $main-color;
+    border: 1px hidden $main-color;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__button-buy:hover {
+    background-color: #fff;
+    border-style: solid;
+    color: $main-color;
+  }
+
+  .card-rate-n-reviews {
+    display: flex;
+    padding-top: 16px;
+    justify-content: space-between;
+
+    &__product-reviews {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      color: #060b35;
+      line-height: 16px;
+    }
+  }
 }
 
-.card:nth-child(-n + 4) {
-  margin-bottom: 46px;
-}
-
-.card:not(:nth-child(4n)) {
-  margin-right: $card-margin;
-}
-
-.card__img {
-  height: 134px;
-  width: 160px;
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
-
-.card__title {
-  margin: auto;
-  width: 100%;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  color: $color-darkblue;
-}
-
-.card__text-product-code {
-  margin: auto;
-  margin-bottom: 16px;
-  width: 100%;
-  padding-top: 4px;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  color: #616070;
-}
-
-.card__reviews {
+.stars {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.card__reviews-text {
-  font-size: 10px;
-  line-height: 14px;
-  color: $color-darkblue;
-}
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-.card__price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.card__price-text {
-  padding-top: 24px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  color: #616070;
-}
-
-.card__price-amount {
-  padding-top: 24px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
-  color: $color-darkblue;
-}
-
-.card__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0 auto;
-  height: 40px;
-  width: 100%;
-
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  color: $color-secondwhite;
-
-  background-color: $color-blue;
-  border-radius: 5px;
-}
-
-.card__button:hover {
-  color: $color-blue;
-  background-color: $color-mainwhite;
-  border: 1px solid $color-blue;
+  @for $i from 1 through 5 {
+    .stars--#{$i} &__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
