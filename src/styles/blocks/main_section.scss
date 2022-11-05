@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 22px;
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px $cards-wraper-side-padding;
+    justify-content: center;
+    width: ($card-width * $cards-in-row) + $card-margin * ($cards-in-row - 1) + $cards-wraper-side-padding * 2;
+    flex-shrink: 0;
+  }
+
+  &__card:not(:nth-child(#{$cards-in-row}n)) {
+    margin-right: $card-margin;
+  }
+  &__card:not(:nth-last-child(-n + #{$cards-in-row})) {
+    margin-bottom: 46px;
+  }
+}
