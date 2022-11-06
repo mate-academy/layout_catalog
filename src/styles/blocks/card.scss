@@ -1,43 +1,43 @@
-.card {
+.catalog__card {
+  display: flex;
+  flex-grow: 0;
   width: $card-width;
+}
+
+.card {
   flex-direction: column;
   background: $card-background-color;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-
-  &__link {
-    margin: 0;
-    text-decoration: none;
-    color: inherit;
-  }
+  padding: 32px 16px 16px;
 
   &__imagine {
     display: flex;
+    align-self: center;
     height: $card-imagine-height;
     width: $card-imagine-width;
-    margin: 32px 19px 0;
+    margin-bottom: 40px;
   }
 
   &__name {
     @extend %large-text;
     align-items: flex-end;
-    line-height: 18px;
-    margin: 40px $block-position-side_margins 0;
     color: $main-text-color;
+    margin-bottom: 4px;
   }
 
   &__code {
     @extend %medium-text;
     line-height: 14px;
     color: #616070;
-    margin: 4px $block-position-side_margins 0;
+    margin-bottom: 16px;
   }
 
   &__rate {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 16px $block-position-side_margins 0;
+    margin-bottom: 24px;
   }
 
   &__reviews {
@@ -52,7 +52,7 @@
     justify-content: space-between;
     align-items: center;
     line-height: 18px;
-    margin: 24px $block-position-side_margins 0;
+    margin-bottom: 16px;
   }
 
   &__text-price {
@@ -66,17 +66,19 @@
     color: #060b35;
   }
 
-  &__button {
+  &__link {
     @extend %content-center;
     @extend %font-button;
     display: flex;
+
     cursor: pointer;
-    width: 166px;
-    height: 40px;
-    margin: $card-button-margin;
+
+    padding: 11px;
+
     background: $button-background-color;
     color: $card-background-color;
-    border: 1px solid #{$button-background-color};
+
+    border: 1px solid $button-background-color;
     border-radius: 5px;
 
     &:hover {
