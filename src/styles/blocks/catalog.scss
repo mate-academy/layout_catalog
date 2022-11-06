@@ -1,20 +1,18 @@
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 950px;
-  margin: 0 auto;
-  padding: 50px 0;
-
-  &__card-margin {
-    margin-right: 50px;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 50px 40px;
+    width: getCatalogWidth($card-width, $card-margin-right, $card-qty-row);
   }
-  
-  &__card-margin:nth-child(4n) {
-    margin-right: 0;
+
+  &__card-margin:not(:nth-child(4n)) {
+    margin-right: $card-margin-right;
   }
   
   &__card-margin:not(:nth-child(-n + 4)) {
-    margin-top: 47px;
+    margin-top: 46px;
   }
 }
