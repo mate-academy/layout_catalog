@@ -1,0 +1,32 @@
+.catalog {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: getWidth(
+      $card-width,
+      $card-right-margin,
+      $cards-in-one-row,
+      $number-of-right-margins
+    );
+  }
+
+  &__card {
+    margin-right: #{$card-right-margin};
+    margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
