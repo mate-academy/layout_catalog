@@ -1,0 +1,144 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: $conteiner-top;
+  padding-bottom: $conteiner-bottom;
+  width: $conteiner-width;
+  margin: 0 auto;
+
+  &__card {
+    margin-right: $card-distance;
+    margin-bottom: $card-bottom;
+    box-sizing: border-box;
+
+    &__card:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.card {
+  width: $card-width;
+  height: $card-height;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+
+  &__image-wrapper {
+    padding: 32px 0 0;
+    margin-bottom: 40px;
+  }
+
+  &__image {
+    width: $image-width;
+    height: $image-height;
+    display: block;
+    margin: auto;
+  }
+
+  &__name {
+    font-weight: 500;
+    line-height: 18px;
+    color: $header-card-name-color;
+    margin: 0;
+    padding: 0 16px;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-size: 10px;
+    color: #616070;
+    padding: 0 16px;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__star {
+    display: flex;
+
+    &_star {
+      @include star-size($star-size);
+      list-style-type: none;
+      margin-right: 4px;
+      background-image: url(../images/star.svg);
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-bottom: 24px;
+    align-items: center;
+
+    &-stars_4 {
+      padding: 0;
+      margin: 0;
+    }
+    &-stars_1 .card__star_star:nth-of-type(-n+1),
+    &-stars_2 .card__star_star:nth-of-type(-n+2),
+    &-stars_3 .card__star_star:nth-of-type(-n+3),
+    &-stars_4 .card__star_star:nth-of-type(-n+4),
+    &-stars_5 .card__star_star:nth-of-type(-n+5) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__button {
+    width: $button-width;
+    height: $button-heigth;
+    border-radius: 5px;
+    background-color: $color-primary;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    border: none;
+    padding: 0;
+    margin: 0 16px 16px ;
+  }
+
+  &__button:hover {
+    background-color: #fff;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+  }
+
+  &__stars-reviews {
+    font-weight: 400;
+    font-size: 10px;
+    color: $header-card-name-color;
+    margin: 0;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    padding: 0 16px;
+
+    &_text {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    &_text-price {
+      line-height: 18px;
+      color: #616070;
+    }
+
+    &_text-mount {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $header-card-name-color;
+    }
+  }
+}
