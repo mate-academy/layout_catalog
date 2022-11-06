@@ -1,0 +1,121 @@
+@use "../utils/variables" as *;
+@use "../utils/extends";
+
+.card {
+  box-sizing: border-box;
+  border: 1px solid $border-color-light;
+  border-radius: 5px;
+  width: $card-width;
+  padding: 32px 16px 16px;
+
+  &__image {
+    display: block;
+
+    margin: 0 auto 40px;
+    height: 134px;
+    width: 160px;
+
+    // transition: transform 0.4s;
+
+    // &:hover {
+    //   box-sizing: border-box;
+    //   border: 3px solid $border-color-light;
+    //   border-radius: 5px;
+    //   transform: scale(1.2, 1.2);
+    // }
+  }
+
+  &__name {
+    margin-bottom: 4px;
+
+    line-height: 18px;
+    font-weight: 500;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    color: $font-color-light;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+  }
+
+  &__review-count {
+    font-size: 10px;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &__stars--#{$i} :nth-child(-n+#{$i}) {
+      @extend %stars-active;
+    }
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+    line-height: 18px;
+  }
+
+  &__price-label {
+    color: $font-color-light;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    border: 1px solid $theme-color-blue;
+    border-radius: 5px;
+
+    height: 40px;
+    line-height: 16px;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background-color: $theme-color-blue;
+    // transition: color 0.4s;
+
+    &:hover {
+      background: #fff;
+      color: $theme-color-blue;
+    }
+  }
+}
