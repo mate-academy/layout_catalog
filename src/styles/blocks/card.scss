@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include widthAndHeight(200px, 406px);
+  background-color: $color-white;
+  border: 1px solid $color-dark-white;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  margin: 0 50px 48px 0;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__product-image {
+    @include widthAndHeight(160px, 134px);
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    color: $color-dark;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  &__product-code {
+    color: $color-light;
+    align-self: flex-start;
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 4px;
+    line-height: 14px;
+  }
+
+  &__reviews {
+    display: flex;
+    @include widthAndHeight;
+    justify-content: space-between;
+    margin: 16px 0 24px;
+
+    &-text {
+      align-self: flex-end;
+      font-size: 10px;
+      color: $color-dark;
+      line-height: 14px;
+    }
+  }
+
+  &__stars {
+    display: flex;
+
+    &-star {
+      background: url("../images/star.svg") no-repeat center;
+      @include widthAndHeight(16px, 16px);
+      margin-right: 4px;
+    }
+
+    &-star:nth-child(-n + 4) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+
+  &__price {
+    @include widthAndHeight;
+    margin-bottom: 16px;
+    line-height: 18px;
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      font-weight: 400;
+      color: $color-light;
+      font-size: 12px;
+    }
+
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    @include widthAndHeight;
+    font-size: 14px;
+    min-height: 40px;
+    background-color: $color-blue;
+    color: $color-white;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue;
+    }
+  }
+}
