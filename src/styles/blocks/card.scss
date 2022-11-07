@@ -3,18 +3,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  margin-left: $productDistance;
-  margin-bottom: $productDistance;
+
+  margin-right: $productDistance;
+  margin-bottom: 46px;
 
   width: $cardWidth;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
   &__product {
     display: flex;
-    align-items: flex-end;
-    margin: 32px 0 40px;
+    margin: 32px auto 40px;
     width: 160px;
     height: 134px;
   }
@@ -28,14 +35,15 @@
   &__name {
     color: $mainColor;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: $fontWeight-medium;
     line-height: 150%;
   }
 
   &__code {
-    font-size: 10px;
-    font-weight: 400;
     margin: 4px 0 17px;
+
+    font-size: 10px;
+    font-weight: $fontWeight-small;
 
     color: $secondaryColor;
   }
@@ -47,31 +55,33 @@
   }
 
   &__reviews {
-    font-weight: 400;
+    font-weight: $fontWeight-small;
     font-size: 10px;
     color: $mainColor;
-    bottom: 0;
+    line-height: 14px;
   }
 
   &__pricing {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin-top: 23px;
+    margin-top: 24px;
   }
 
   &__pricing-text {
     margin: 0;
+
     font-size: 12px;
-    font-weight: 400;
+    font-weight: $fontWeight-small;
     color: $secondaryColor;
   }
 
   &__pricing-price {
     margin: 0;
+    line-height: 18px;
+
     font-size: 16px;
-    font-weight: 700;
+    font-weight: $fontWeight-bold;
     color: $mainColor;
   }
 
@@ -85,7 +95,7 @@
     margin: 16px 0;
 
     font-size: 14px;
-    font-weight: 700;
+    font-weight: $fontWeight-bold;
     text-decoration: none;
     line-height: 16px;
 
@@ -93,7 +103,7 @@
     border-radius: 5px;
     color: #fff;
     border: 1px solid $linkColor;
-    /* transition: background-color 1s, color 1s; */
+    transition: background-color 1s, color 1s;
   }
 
   &__link:hover {
@@ -106,11 +116,13 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  line-height: 14px;
 
   &__star {
-    background-image: url(/src/images/star.svg);
     height: $starSize;
     width: $starSize;
+
+    background-image: url(../images/star.svg);
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -121,7 +133,8 @@
 
   @for $rating from 1 through 5 {
     &--#{$rating} .stars__star:nth-child(-n + #{$rating}) {
-      background-image: url(/src/images/star-active.svg);
+      background-image: url(../images/star-active.svg);
+      line-height: 14px;
     }
   }
 }
