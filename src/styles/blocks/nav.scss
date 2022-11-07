@@ -1,0 +1,53 @@
+@use "../utils/variables" as *;
+
+.nav {
+  &__list {
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+
+    white-space: nowrap;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $font-color-dark;
+
+    // transition: color 0.4s;
+
+    &:hover {
+      color: $theme-color-blue;
+    }
+  }
+}
+
+.is-active {
+  color: $theme-color-blue;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    content: "";
+
+    height: 4px;
+    background-color: $theme-color-blue;
+    border-radius: 2px;
+  }
+}
