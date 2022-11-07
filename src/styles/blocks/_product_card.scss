@@ -57,10 +57,21 @@
     margin-bottom: 16px;
   }
 
-  &__star {
+  &__reviews {
     display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
 
-    &_star {
+  .stars {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    &__star {
       @include star-size($star-size);
       list-style-type: none;
       margin-right: 4px;
@@ -70,24 +81,12 @@
     }
   }
 
-  &__stars {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 16px;
-    margin-bottom: 24px;
-    align-items: center;
-
-    &-stars_4 {
-      padding: 0;
-      margin: 0;
-    }
-    &-stars_1 .card__star_star:nth-of-type(-n+1),
-    &-stars_2 .card__star_star:nth-of-type(-n+2),
-    &-stars_3 .card__star_star:nth-of-type(-n+3),
-    &-stars_4 .card__star_star:nth-of-type(-n+4),
-    &-stars_5 .card__star_star:nth-of-type(-n+5) {
-      background-image: url(../images/star-active.svg);
-    }
+  .stars--1 .stars__star:nth-of-type(-n+1),
+  .stars--2 .stars__star:nth-of-type(-n+2),
+  .stars--3 .stars__star:nth-of-type(-n+3),
+  .stars--4 .stars__star:nth-of-type(-n+4),
+  .stars--5 .stars__star:nth-of-type(-n+5) {
+    background-image: url(../images/star-active.svg);
   }
 
   &__button {
@@ -110,8 +109,7 @@
     color: $color-primary;
   }
 
-  &__stars-reviews {
-    font-weight: 400;
+  &__reviews-text {
     font-size: 10px;
     color: $header-card-name-color;
     margin: 0;
@@ -120,25 +118,22 @@
   &__price {
     margin-bottom: 16px;
     padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+  }
 
-    &_text {
-      display: flex;
-      justify-content: space-between;
-      padding: 0;
-      margin: 0;
-      list-style-type: none;
-    }
+  &__price-text_price {
+    line-height: 18px;
+    color: #616070;
+    margin: 0;
+  }
 
-    &_text-price {
-      line-height: 18px;
-      color: #616070;
-    }
-
-    &_text-mount {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 18px;
-      color: $header-card-name-color;
-    }
+  &__price-text_mount {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $header-card-name-color;
+    margin: 0;
   }
 }
