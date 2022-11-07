@@ -1,0 +1,46 @@
+$card-width: 200px;
+
+$right-margin: 48px;
+$min-padding: 40px;
+$max-padding: 128px;
+$top-padding: 50px;
+$bottom-padding: 72px;
+
+@function getWidth($cardWidth, $rightMargin, $padding) {
+  @return 4 * $cardWidth + 3 * $rightMargin + 2 * $padding;
+}
+
+.catalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    min-width: getWidth(
+      $card-width,
+      $right-margin,
+      $min-padding
+    );
+    max-width: getWidth(
+      $card-width,
+      $right-margin,
+      $max-padding
+    );
+
+    padding: #{$top-padding} #{$min-padding} #{$bottom-padding};
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
