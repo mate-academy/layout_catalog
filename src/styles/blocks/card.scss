@@ -1,0 +1,127 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: $productDistance;
+  margin-bottom: $productDistance;
+
+  width: $cardWidth;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__product {
+    display: flex;
+    align-items: flex-end;
+    margin: 32px 0 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__specs {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  &__name {
+    color: $mainColor;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    margin: 4px 0 17px;
+
+    color: $secondaryColor;
+  }
+
+  &__ratings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    color: $mainColor;
+    bottom: 0;
+  }
+
+  &__pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 23px;
+  }
+
+  &__pricing-text {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: $secondaryColor;
+  }
+
+  &__pricing-price {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: $mainColor;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 164px;
+    height: 38px;
+    margin: 16px 0;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 16px;
+
+    background-color: $linkColor;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid $linkColor;
+    /* transition: background-color 1s, color 1s; */
+  }
+
+  &__link:hover {
+    background-color: #fff;
+    color: $linkColor;
+  }
+}
+
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  &__star {
+    background-image: url(/src/images/star.svg);
+    height: $starSize;
+    width: $starSize;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__star:nth-child(n+2) {
+    margin-left: 4px;
+  }
+
+  @for $rating from 1 through 5 {
+    &--#{$rating} .stars__star:nth-child(-n + #{$rating}) {
+      background-image: url(/src/images/star-active.svg);
+    }
+  }
+}
