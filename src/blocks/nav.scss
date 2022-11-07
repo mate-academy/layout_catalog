@@ -1,3 +1,6 @@
+$nav-menu-height: 60px;
+$nav-link-height: 14px;
+
 .nav {
   &__list {
     display: flex;
@@ -5,45 +8,43 @@
   }
 
   &__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 60px;
     margin-right: 20px;
   }
 
   &__link {
-    height: 15px;
-    padding: 22.5px 0;
-    color: #000;
+    padding: (($nav-menu-height - $nav-link-height) / 2) 0;
+
     font-size: 12px;
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
-  }
+    line-height: #{$nav-link-height};
 
-  &__link:hover {
-    color: #00acdc;
+    color: #060b35 !important;
+    transition: color 0.3s;
   }
 
   &__item:last-child {
     margin-right: 0;
   }
 
-  &__is-active {
-    position: relative;
+  &__link:hover {
     color: #00acdc;
   }
 
-  &__is-active:after {
-    display: block;
-    position: absolute;
-    content: "";
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    border-radius: 8px;
-    background-color: #00acdc;
+  .is-active {
+    position: relative;
+    color: #00acdc !important;
+
+    &::after {
+      display: block;
+      position: absolute;
+      content: "";
+      bottom: 0;
+      height: 4px;
+      width: 100%;
+      border-radius: 8px;
+      background-color: #00acdc;
+    }
   }
 }
