@@ -1,0 +1,136 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  margin-bottom: 46px;
+
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $accent-color;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $secondary-color;
+    margin-bottom: 16px;
+  }
+
+  /* #region Product review */
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  /* #region Product starts */
+
+  .stars {
+    display: flex;
+
+    &__star {
+      display: block;
+      background-image: url("../images/star.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    .stars--#{$i} .stars__star:nth-child(-n +  #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+
+  /* #endregion */
+
+  &__review-rate {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $accent-color;
+    text-align: right;
+  }
+
+  /* #endregion */
+
+  /* #region Product price */
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: $secondary-color;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: right;
+    color: $accent-color;
+  }
+
+  /* #endregion */
+
+  /* #region Product button */
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    background-color: $main-color;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  &__btn:hover {
+    background-color: #fff;
+    color: $main-color;
+  }
+
+  /* #endregion */
+
+}
