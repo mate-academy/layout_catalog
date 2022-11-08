@@ -1,7 +1,11 @@
 @function catalog-size (
   $card-size, 
+  $cards-per-row,
   $card-margin-right, 
-  $catalog-padding-right
+  $catalog-padding-side
 ) {
-  @return $card-size * 4 + $card-margin-right * 3 + $catalog-padding-right * 2;
+  @return 
+    ($card-size * $cards-per-row) + 
+    ($card-margin-right * ($cards-per-row - 1)) + 
+    ($catalog-padding-side * 2);
 }
