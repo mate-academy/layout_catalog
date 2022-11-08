@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 50px 40px;
 
-  width: catalog-max-width (
+  width: catalog-max-width(
     $card-width,
     $number-of-cards-in-a-row,
     $card-margin-right,
@@ -12,7 +12,7 @@
   @media (min-width: 1200px) {
     padding-left: 128px;
 
-    width: catalog-size(
+    width: catalog-max-width(
       $card-width, 
       $number-of-cards-in-a-row, 
       $card-margin-right, 
@@ -23,5 +23,17 @@
   &__flex {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  &__card {
+    margin: 0 $card-margin-right 46px 0;
+  
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
 }
