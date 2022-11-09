@@ -1,9 +1,15 @@
+$paddingX: 40px;
+
+@function getWidth($card-width) {
+  @return 4 * $card-width + 2 *$paddingX + 3 * 48;
+}
+
 .cards-container {
   flex-wrap: wrap;
   box-sizing: border-box;
-  width: 1024px;
+  width: getWidth($card-width);
   margin: 0 auto;
-  padding: 50px 40px 37px;
+  padding: 50px $paddingX 37px;
 
   &__page {
     display: block;
