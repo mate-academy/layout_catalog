@@ -1,0 +1,133 @@
+.card {
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+
+  margin-right: $productDistance;
+  margin-bottom: 46px;
+
+  width: $cardWidth;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__product {
+    display: flex;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    color: $mainColor;
+    font-size: 12px;
+    font-weight: $fontWeight-medium;
+    line-height: 150%;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    margin-bottom: 17px;
+
+    font-size: 10px;
+    font-weight: $fontWeight-small;
+
+    color: $secondaryColor;
+  }
+
+  &__ratings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-weight: $fontWeight-small;
+    font-size: 10px;
+    color: $mainColor;
+    line-height: 14px;
+  }
+
+  &__pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__pricing-text {
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: $fontWeight-small;
+    color: $secondaryColor;
+  }
+
+  &__pricing-price {
+    margin: 0;
+    line-height: 18px;
+
+    font-size: 16px;
+    font-weight: $fontWeight-bold;
+    color: $mainColor;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 164px;
+    height: 38px;
+
+    font-size: 14px;
+    font-weight: $fontWeight-bold;
+    text-decoration: none;
+    line-height: 16px;
+
+    background-color: $linkColor;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid $linkColor;
+    transition: background-color 1s, color 1s;
+
+    &:hover {
+      background-color: #fff;
+      color: $linkColor;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  line-height: 14px;
+
+  &__star {
+    height: $starSize;
+    width: $starSize;
+
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__star:nth-child(n+2) {
+    margin-left: 4px;
+  }
+
+  @for $rating from 1 through 5 {
+    &--#{$rating} .stars__star:nth-child(-n + #{$rating}) {
+      background-image: url(../images/star-active.svg);
+      line-height: 14px;
+    }
+  }
+}
