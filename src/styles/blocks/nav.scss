@@ -1,0 +1,61 @@
+
+.nav {
+
+  &__list {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+  }
+
+  &__item {
+    white-space: nowrap;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: $header-height;
+    // if the whole area is clickable it means our element
+    //takes the full height of the space.
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    // cursor: pointer; is set by default for links
+    transition: color 0.3s;
+    color: $primary-text-color;
+
+    &:hover {
+      color: $main-color;
+    }
+
+    &--is-active {
+      color: $main-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        display: block;
+        height: 4px;
+        background-color: $main-color;
+        background-repeat: no-repeat;
+        border-radius: 2px;
+      }
+    }
+  }
+}
