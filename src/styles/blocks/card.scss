@@ -1,0 +1,125 @@
+.card {
+  width: $cardWidth;
+  background-color: $white;
+  border: 1px solid $grey;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+
+  padding: 32px 16px 16px;
+  margin-bottom: 46px;
+  margin-right: $rowGap;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-accent;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__review-wrapper {
+    @include flex-justify-align(space-between, center);
+    margin-bottom: 24px;
+  }
+
+  .stars {
+    display: flex;
+
+    &__star {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background-image: url("../images/star.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__star:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  @for $rating from 1 through 5 {
+    .stars--#{$rating} .stars__star:nth-child(-n + #{$rating}) {
+      background-image: url("/images/star-active.svg");
+    }
+  }
+
+  &__review-text {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-accent;
+  }
+
+  &__price-wrapper {
+    @include flex-justify-align(space-between, initial);
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondary;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-accent;
+  }
+
+  &__link {
+    @include flex-justify-align(center, center);
+    height: 40px;
+    background-color: $secondary-light-blue;
+
+    box-sizing: border-box;
+
+    border-radius: 5px;
+    color: $white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    background-color: $white;
+    border: 1px solid $secondary-light-blue;
+    color: $secondary-light-blue;
+  }
+}

@@ -1,0 +1,69 @@
+.header {
+  height: 60px;
+  padding: 0 50px;
+
+  @include flex-justify-align(space-between, center);
+  flex-direction: row;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    @include flex-justify-align(initial, center);
+
+    width: 40px;
+    height: 40px;
+  }
+
+  &__logo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav {
+    &__item {
+      margin-left: 20px;
+    }
+
+    &__item:first-child {
+      margin-left: 0;
+    }
+
+    &__list {
+      padding: 0;
+      display: flex;
+    }
+
+    &__link {
+      height: 60px;
+      position: relative;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      text-transform: uppercase;
+
+      @include flex-justify-align(initial, center);
+
+      &.is-active {
+        color: $secondary-light-blue;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 4px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-radius: 2px;
+          background-color: $secondary-light-blue;
+        }
+      }
+
+    }
+
+    &__link:hover {
+      color: $secondary-light-blue;
+    }
+  }
+
+}
