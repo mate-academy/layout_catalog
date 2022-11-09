@@ -1,0 +1,44 @@
+.nav {
+  font-size: 12px;
+  font-weight: 500;
+
+  &__item {
+    display: inline-block;
+    padding: 23px 0;
+  }
+  
+  &__list {
+    margin: 0;
+  }
+  
+  &__item:not(:last-child) {
+    margin-right: 17px;
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: #060b35;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 23px 0;
+
+    &--is-active ,
+    &:hover {
+      color: $color-blue;
+    }
+
+    &--is-active {
+      position: relative;
+    }
+    
+    &--is-active::after {
+      content: "";
+      display: block;
+      border-bottom: 4px solid $color-blue;
+      border-radius: 8px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
