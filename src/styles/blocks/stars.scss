@@ -2,16 +2,21 @@
   display: flex;
 
   &__star {
-    @include star-size($star-size);
-    margin-right: $star-margin-right;
-    background-image: url(../images/star-active.svg);
+    width: 16px;
+    height: 16px;
+
+    background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
   }
 
-  &--4 {
-    .stars__star:nth-child(n+5) {
-      background-image: url(../images/star.svg);
+  @for $score from 1 through 5 {
+    &--#{$score} &__star:nth-child(-n + #{$score}) {
+      background-image: url(../images/star-active.svg);
     }
   }
 }
