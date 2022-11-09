@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item {
+    margin-left: 20px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    position: relative;
+    height: 60px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $focusColor;
+    transition: color 0.3s;
+    font-weight: 500;
+    &:hover {
+      color: $cyanColor;
+    }
+  }
+  .is-active::after {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: $cyanColor;
+  }
+  .is-active {
+    color: $cyanColor;
+  }
+}
