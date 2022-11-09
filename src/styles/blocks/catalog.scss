@@ -1,0 +1,26 @@
+.catalog {
+  width: $cards-per-row * ($card-width + $catalog-vertical-gap) -
+    $catalog-vertical-gap;
+
+  margin: 0 auto;
+  padding: 50px 0 73px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__card {
+    margin-bottom: $catalog-horizontal-gap;
+    margin-right: $catalog-vertical-gap;
+
+    &:nth-child(#{$cards-per-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$cards-per-row}) {
+      margin-bottom: 0;
+    }
+  }
+}
