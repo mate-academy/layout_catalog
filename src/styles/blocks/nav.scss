@@ -1,0 +1,45 @@
+@import "../utils/variables";
+@import "../utils/extends";
+
+.nav {
+  &__list {
+    @extend %flex-center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__link {
+    @extend %flex-center;
+    color: #{$black-colour};
+    font-weight: 500;
+    font-size: #{$text-size-12px};
+    line-height: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    height: 60px;
+    text-decoration: none;
+  }
+  &__item {
+    margin-left: 20px;
+  }
+  &__link:hover {
+    color: #{$blue-colour};
+    cursor: pointer;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: #{$blue-colour};
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #{$blue-colour};
+  border-radius: 8px;
+}
