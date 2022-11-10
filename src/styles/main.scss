@@ -1,3 +1,33 @@
-body {
-  margin: 0;
+@import "./cssreset.scss";
+@import "./units/variables.scss";
+@import "./units/placeholders.scss";
+@import "./blocks/header.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.main {
+  display: flex;
+}
+
+.main__catalog {
+  margin: 0 auto;
+  width: 1024px;
+}
+
+.catalog {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 40px;
+
+  &__card {
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
+
+    &:nth-last-child(n - 4) {
+      margin-bottom: 46px;
+    }
+  }
 }
