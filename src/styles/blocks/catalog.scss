@@ -1,0 +1,22 @@
+.catalog {
+  &__box {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: getCatalogWidth($cards-row-value, $card-width, $cards-distance);
+    margin: 0 auto;
+
+    padding: 50px 0;
+  }
+
+  &__card {
+    &:not(:nth-child(#{$cards-row-value}n)) {
+      margin-right: $cards-distance;
+    }
+
+    &:not(:nth-last-child(-n + #{$cards-row-value})) {
+      margin-bottom: 46px;
+    }
+  }
+}
