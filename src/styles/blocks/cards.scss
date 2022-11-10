@@ -1,0 +1,103 @@
+@use '../utils/variables' as *;
+
+.cards {
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 4 * $card-size + 3 * $card-shift;
+  padding: 0 40px;
+
+  &__card {
+    margin-right: $card-shift;
+    margin-bottom: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-top: 0;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  width: $card-size;
+  padding: 32px 16px 16px;
+
+  &__image {
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__item-model {
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $text-accent-color;
+  }
+
+  &__product-code {
+    margin-bottom: 16px;
+    color: $text-secondary-color;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  &__review {
+    color: $text-accent-color;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-secondary-color;
+  }
+
+  &__price-number {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    color: $text-accent-color;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $buttom-color;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $main-color;
+  }
+
+  &__button:hover {
+    background-color: $buttom-color;
+    color: $main-color;
+  }
+}
