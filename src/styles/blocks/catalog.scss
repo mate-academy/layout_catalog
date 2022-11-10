@@ -1,14 +1,23 @@
 .catalog {
+  &__wrap {
   display: flex;
-  max-width: 944px;
-  margin: 0 auto;
-
-  justify-content:space-between;
   flex-wrap: wrap;
-
+  margin: auto;
   padding: 50px 0;
 
+  width: 4 * $cards-width + 3 * $left-right-distans-betwin-cards;
+  }
+
   &__card {
-    margin-bottom: 46px;
-  };
+    margin-right:$left-right-distans-betwin-cards;
+
+    &:nth-child(-n + 4) {
+      margin-top: 0;
+      margin-bottom: 46px;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
 }
