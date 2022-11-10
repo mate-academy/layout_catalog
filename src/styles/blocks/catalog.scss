@@ -4,18 +4,18 @@
     align-items: flex-start;
     flex-wrap: wrap;
 
-    width: 944px;
+    width: getCatalogWidth($cards-row-value, $card-width, $cards-distance);
     margin: 0 auto;
 
     padding: 50px 0;
   }
 
   &__card {
-    &:not(:nth-child(4n)) {
-      margin-right: 48px;
+    &:not(:nth-child(#{$cards-row-value}n)) {
+      margin-right: $cards-distance;
     }
 
-    &:not(:nth-last-child(-n+4)) {
+    &:not(:nth-last-child(-n + #{$cards-row-value})) {
       margin-bottom: 46px;
     }
   }
