@@ -1,35 +1,36 @@
+@import "../utils/variables";
+@import "../utils/extends";
+
 .nav {
   &__list {
-    display: flex;
+    @extend %flex-center;
     list-style: none;
     padding: 0;
     margin: 0;
   }
   &__link {
-    color: #060b35;
+    @extend %flex-center;
+    color: #{$black-colour};
     font-weight: 500;
-    font-size: 12px;
+    font-size: #{$text-size-12px};
     line-height: 14px;
     text-transform: uppercase;
     text-align: center;
-    display: flex;
-    align-items: center;
     height: 60px;
     text-decoration: none;
-    font-family: inherit;
   }
   &__item {
     margin-left: 20px;
   }
   &__link:hover {
-    color: #00acdc;
+    color: #{$blue-colour};
     cursor: pointer;
   }
 }
 
 .is-active {
   position: relative;
-  color: #00acdc;
+  color: #{$blue-colour};
 }
 
 .is-active::after {
@@ -39,6 +40,6 @@
   left: 0;
   height: 4px;
   width: 100%;
-  background-color: #00acdc;
+  background-color: #{$blue-colour};
   border-radius: 8px;
 }
