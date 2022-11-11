@@ -1,6 +1,5 @@
 .stars {
   display: flex;
-
   &__star {
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
@@ -9,15 +8,9 @@
     height: 16px;
     width: 16px;
   }
-
-  @for $index from 1 through 5 {
-    &--#{$index} &__star:nth-child(-n+#{$index}) {
+  @for $starCount from 1 to 6 {
+    &--#{$starCount} &__star:nth-child(-n+#{$starCount}) {
       background-image: url(../images/star-active.svg);
-
     }
   }
-
-& &__star:nth-child(5) {
-  background-image: url(../images/star.svg);
-}
 }
