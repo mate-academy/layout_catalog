@@ -1,0 +1,29 @@
+@import "../utils/variables";
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: $contentSize;
+  padding: 50px 0;
+
+  &__element {
+    margin-right: 48px;
+
+    &:nth-child(4n) {
+      margin: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-top: 46px;
+    }
+  }
+  @media (width: 1024px) {
+    width: 1024px;
+    padding: 50px ((1024px - $contentSize) / 2) 50px;
+  }
+  @media (width: 1200px) {
+    width: 1200px;
+    padding: 50px ((1200px - $contentSize) / 2) 50px;
+  }
+}
