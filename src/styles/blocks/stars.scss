@@ -1,0 +1,31 @@
+.stars {
+  &__quantity {
+    display: flex;
+  }
+
+  &__reviews {
+    font-size: $font-sz-small;
+    line-height: 14px;
+    color: $color-dark;
+  }
+
+  &__star {
+    background-image: url(../images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 16px;
+    width: 16px;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @for $starQuantity from 0 through 4 {
+    &__quantity--#{$starQuantity}
+    > &__star:nth-child(n + #{$starQuantity + 1}) {
+      background-image: url(../images/star.svg);
+    }
+  }
+}
