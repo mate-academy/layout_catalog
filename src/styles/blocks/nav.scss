@@ -1,0 +1,58 @@
+@import "../utiles/_variables.scss";
+
+.nav {
+
+  &__list {
+    display: flex;
+    vertical-align: center;
+    align-items: center;
+
+    list-style: none;
+    background-color: #fff;
+  }
+
+  &__item {
+    height: 100%;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    padding: 23px 0;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $title-color;
+
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $button-hover-color;
+    }
+  }
+  .is-active {
+    color: $button-hover-color;
+    position: relative;
+  }
+
+  .is-active::after {
+    content: "";
+
+    position: absolute;
+    height: 4px;
+    bottom: 0;
+
+    display: block;
+    width: 100%;
+
+    background-color: $button-hover-color;
+    border-radius: 8px;
+  }
+}
