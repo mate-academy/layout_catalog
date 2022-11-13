@@ -14,7 +14,7 @@
     margin: 0 auto 40px;
   }
 
-  &__name {
+  &__title {
     margin-bottom: 4px;
 
     font-weight: $font-weight-middle;
@@ -36,7 +36,7 @@
     margin-bottom: 24px;
 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -68,12 +68,14 @@
     line-height: 18px;
   }
 
-  &__buy {
-    height: 40px;
+  &__button {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    height: 40px;
+    width: 100%;
 
     background-color: $color-blue;
     border-radius: 5px;
@@ -81,16 +83,24 @@
 
     line-height: 16px;
     color: $color-white;
-    $font-weight-bold: 700;
-    $font-size-3: 14px;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-3;
 
     text-decoration: none;
     text-transform: uppercase;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
   }
 
-  &__buy:hover {
+  &__button:hover {
     background-color: $color-white;
+    color: $color-blue;
+  }
+
+  &:hover &__button {
+    background-color: #fff;
+    border-color: $color-blue;
     color: $color-blue;
   }
 }
