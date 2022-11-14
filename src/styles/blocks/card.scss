@@ -1,0 +1,94 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../utils/extends";
+
+.card {
+  display: block;
+  width: $card-width;
+  border: 1px solid $card-border;
+  border-radius: 5px;
+  @extend %page-text;
+  padding: 32px 16px 16px;
+
+  &__image {
+    display: block;
+    margin: 0 3px 40px;
+    @include rectangle($card-image-width, $card-image-height);
+    object-fit: contain;
+  }
+  
+  &__name {
+    margin: 0 0 4px;
+    line-height: 18px;
+    color: $color-dark-blue;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    @extend %regular-text;
+    color: $color-gray;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 24px;
+  }
+
+  &__review-reviews {
+    order: 1;
+    flex-grow: 0;
+    @extend %regular-text;
+    color: $color-dark-blue;
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 0 16px ;
+  }
+
+  &__price-text {
+    order: 0;
+    flex-grow: 0;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-gray;
+  }
+
+  &__price-total {
+    order: 1;
+    flex-grow: 0;
+    text-align: right;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-dark-blue;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    background-color: $color-blue;
+    color: $color-white;
+  }
+
+  &__link:hover {
+    background-color: $color-white;
+    border: 1px solid $color-blue;
+    color: $color-blue;
+  }
+}
