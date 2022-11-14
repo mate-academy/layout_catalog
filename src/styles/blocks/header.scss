@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__link {
+    height: 60px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $card-main;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: $card-secondary;
+    }
+
+    &:active,
+    &--active { /* keeping these for possible tests */
+      position: relative;
+      color: $card-secondary;
+    }
+
+    &:active::after,
+    &--active::after { /* keeping these for possible tests */
+      content: "";
+      border-radius: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: $card-secondary;
+    }
+  }
+
+  .nav__item:not(:first-child) {
+    margin-left: 20px;
+  }
+}
