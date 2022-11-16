@@ -1,0 +1,43 @@
+.navigation {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding: 23px 0;
+    margin-right: 20px;
+    text-decoration: none;
+    color: $color-dark-blue;
+
+    &:hover {
+      color: $color-aqua-blue;
+    }
+  }
+
+  &__item {
+    display: block;
+
+    &:last-child .navigation__link {
+      margin-right: 0;
+    }
+  }
+}
+
+.is-active {
+  color: $color-aqua-blue;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: $color-aqua-blue;
+    border-radius: 8px;
+  }
+}
