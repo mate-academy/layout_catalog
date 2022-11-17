@@ -1,3 +1,234 @@
 body {
   margin: 0;
 }
+
+$maincolor: #060b35;
+$secondarycolor:#00ACDC;
+$font_family:"Roboto", sans-serif;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+.Logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 60px;
+
+  .nav__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav__item {
+    margin-left: 20px;
+  }
+  .nav__item:nth-child(1) {
+    margin-left: 0px;
+
+    .nav__link{
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      cursor: pointer;
+      color: $secondarycolor;
+
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 2px;
+      background:$secondarycolor;
+      }
+
+    }
+
+  }
+
+  .nav__link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    transition: color 0.3s;
+    cursor: pointer;
+    color: $maincolor;
+
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1024px;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-top: 50px;
+}
+
+.card:nth-child(4n){
+  margin-right: 0;
+}
+
+
+.card {
+  display: block;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 32px 16px 16px;
+  margin-right: 48px;
+  margin-bottom: 46px;
+
+
+  &__picture {
+    display: flex;
+    margin-left: 3px;
+    width: 160px;
+  }
+
+  &__product {
+    font-weight: 500;
+    font-family:$font_family;
+    margin-top: 40px;
+    width: 166px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $maincolor;
+  }
+
+  &__code {
+    font-family:$font_family;
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 4px;
+    line-height: 14px;
+    color: #616070;
+    width: 92px;
+  }
+
+  &__rating {
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .star {
+    display: flex;
+  }
+  
+  .stars__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url("../images/star-active.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .stars__star:last-child {
+    background-image: url("../images/star.svg");
+    margin-right: 0;
+  }
+
+  &__flo {
+    font-family:$font_family;
+    font-weight: 400;
+    font-size: 10px;
+    color: $maincolor;
+    display: flex;
+  }
+
+  &__price_container {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info_price {
+    display: flex;
+    font-family:$font_family;
+    font-weight: 400;
+    line-height: 18px;
+    font-size: 12px;
+    color: #616070;
+  }
+
+  &__price {
+    font-family:$font_family;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $maincolor;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-family:$font_family;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: $secondarycolor;
+    color: #fff;
+    margin-top: 16px;
+
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $secondarycolor;
+      box-sizing: border-box;
+      border-radius: 5px;
+      color: $secondarycolor;
+      background-color: transparent;
+    }
+  }
+}
