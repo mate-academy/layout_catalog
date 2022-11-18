@@ -1,0 +1,35 @@
+@import "../variables.scss";
+
+.stars1 {
+  margin-right: 4px;
+}
+
+.star {
+  display: flex;
+  justify-content: flex-start;
+
+  &__stars {
+    height: 16px;
+    width: 16px;
+
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &-likes {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-color;
+  }
+}
+
+.stars {
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}

@@ -17,18 +17,18 @@
 >  </div>
 ></div>
 >```
->`stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
->`star` is another block, stars should be the elements of the `stars` block
+>`stars--4` is a modifier of the `card__rating` block, but `card__rating` block does not exist in HTML;
+>`star` is another block, card__rating should be the elements of the `card__rating` block
 >
 >**RIGHT WAY**
 >```html
 ><div class="product__rating">
->  <div class="product__stars stars">
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
+>  <div class="product__stars card__rating">
+>    <div class="star__stars"></div>
+>    <div class="star__stars"></div>
+>    <div class="star__stars"></div>
+>    <div class="star__stars"></div>
+>    <div class="star__stars"></div>
 >  </div>
 ></div>
 >```
@@ -108,7 +108,7 @@
 >  }
 >}
 >```
-- reuse your code, if you've already written code for stars in the previous homework, use it as an independent block
+- reuse your code, if you've already written code for card__rating in the previous homework, use it as an independent block
 - there is no need to add `--first` modifier to the first element, use pseudo-classes
 - empty lines between sibling blocks of code improve readability, but not between a parent and a child
 >**WRONG WAY**

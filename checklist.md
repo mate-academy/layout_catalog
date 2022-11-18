@@ -77,8 +77,8 @@ BAD example:
   </div>
 </div>
 
-`stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
-`star` is another block, stars should be the elements of the `stars` block
+`stars--4` is a modifier of the `card__rating` block, but `card__rating` block does not exist in HTML;
+`star` is another block, card__rating should be the elements of the `card__rating` block
 ```
 
 8. [BEM & STYLES] - Don't add external styles (positioning or margins) to
