@@ -1,16 +1,23 @@
-.all-cards {
+.cards-block {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 50px 40px;
+  justify-content: center;
+  padding: 50px 0;
+
+  &__all-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: $card-width * 4 + $card-gap * 3;
+  }
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: $card-width;
+  $margin-right: $card-gap;
   padding: 32px 16px 16px;
-
   border-color: $color;
   border: $border #f3f3f3;
   border-radius: $border-radius-card;
@@ -91,12 +98,10 @@
   }
 }
 
-.card:nth-last-child(-n + 4) {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 46px;
+.card:nth-child(4n) {
+  margin-right: 0;
 }
 
-// .card:nth-child(4n) {
-//   margin-right: 0;
-// }
+.card:nth-last-child(-n + 4) {
+  margin-top: 46px;
+}
