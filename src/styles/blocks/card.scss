@@ -7,9 +7,21 @@
   padding: 32px 16px 16px;
   width: 200px;
   height: 408px;
-  margin-right: 48px;
-  margin-top: 50px;
-  margin-bottom: 46px;
+
+  &-container {
+    margin-top: 50px;
+    margin-bottom: 46px;
+    margin-right: 48px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-top: 0;
+      margin-bottom: 72px;
+    }
+  }
 
   &__img {
     margin: 0 auto;
@@ -81,19 +93,11 @@
     text-align: center;
     text-decoration: none;
     color: $color-white;
+    transition: color 250ms linear;
 
     &:hover {
       background-color: $color-white;
       color: $color-blue;
     }
-  }
-
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
-
-  &:nth-last-child(-n + 4) {
-    margin-top: 0;
-    margin-bottom: 72px;
   }
 }
