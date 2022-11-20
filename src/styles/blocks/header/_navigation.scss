@@ -8,33 +8,28 @@
 
 .nav__value:not(:first-child) {
   margin-left: 20px;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .nav__link {
   @extend %nav-styles;
+  position: relative;
 
   &:hover {
-    color: $colorForlinksHover;
+    color: $color-for-links-hover;
   }
 }
 
 .is-active {
-  @extend %nav-styles;
-  color: $colorForlinksHover;
-  padding-bottom: 0;
+  color: $color-for-links-hover;
 
   &::after {
     content: "";
-    position: relative;
+    position: absolute;
     display: block;
-    top: 19px;
+    bottom: 0;
     width: 100%;
     height: 4px;
     border-radius: 4px;
-    background-color: $colorForlinksHover;
+    background-color: $color-for-links-hover;
   }
 }
