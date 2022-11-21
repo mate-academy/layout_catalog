@@ -1,0 +1,35 @@
+.nav__list {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  list-style: none;
+}
+
+.nav__value:not(:first-child) {
+  margin-left: 20px;
+}
+
+.nav__link {
+  @extend %nav-styles;
+  position: relative;
+
+  &:hover {
+    color: $color-for-links-hover;
+  }
+}
+
+.is-active {
+  color: $color-for-links-hover;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: $color-for-links-hover;
+  }
+}

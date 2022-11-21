@@ -1,0 +1,38 @@
+@import "./utils/variables";
+@import "./utils/extends";
+@import "./header/header";
+@import "./header/navigation";
+@import "./main/card";
+@import "./main/star";
+
+html {
+  font-family: Roboto, Arial, serif;
+  color: $color-main;
+}
+
+body,
+p {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  padding: 50px 0;
+  width: $cards-container-width;
+  min-width: $cards-container-width;
+
+  & > :not(:nth-child(4n)) {
+    margin-right: $margins-between-cards;
+  }
+}
