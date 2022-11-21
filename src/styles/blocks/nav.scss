@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: inherit;
+    padding-inline-start: 0;
+  }
+  
+  &__list-li:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__list-a {
+    height: 60px;
+    color: #060b35;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &::after,
+    &::before {
+      content: "";
+      height: 4px;
+    }
+    
+    &:hover,
+    &.is-active {
+      color: $button-color;
+    }
+    
+    &.is-active::after {
+      width: 100%;
+      border-radius: 4px;
+      background-color: $button-color;
+    }
+  }
+}
