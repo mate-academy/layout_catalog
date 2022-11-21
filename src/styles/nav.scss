@@ -1,24 +1,26 @@
 .nav {
   &__list {
     display: flex;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__item {
     list-style: none;
-    text-transform: uppercase;
-  }
-
-  &__item:not(:last-child) {
-    margin-right: 20px;
+    margin: 0;
+    padding: 0;
   }
 
   &__link {
-    padding: 23px 0;
     display: block;
-    text-decoration: none;
     color: $dark-blue-color;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 23px 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__link:hover {
@@ -31,13 +33,14 @@
   position: relative;
 }
 
-.is-active::after {
+.is-active::after,
+.nav__link:active::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
   height: 4px;
-  width: 37px;
   background-color: $color-blue;
   border-radius: 8px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
