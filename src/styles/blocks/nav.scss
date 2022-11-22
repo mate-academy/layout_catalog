@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    font-family: $main-font-family;
+    @include text($color-dark-blue, 12px, 500);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 23px 0;
+    position: relative;
+  }
+
+  &__link:hover {
+    color: $color-cyan;
+  }
+}
+
+.is-active {
+  color: $color-cyan;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $color-cyan;
+    position: absolute;
+    bottom: 0;
+  }
+}
