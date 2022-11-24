@@ -9,11 +9,23 @@ html {
 }
 
 .content {
-  height: 862px;
-  width: 944px;
+  padding: 50px 40px;
   display: flex;
   flex-wrap: wrap;
-  margin: 51px auto;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0 auto;
+
+  &__card:not(:nth-child(4n + 4)) {
+    margin-right: 48px;
+  }
+
+  &__card:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
 }
+
+// @for $index from 1 through 4 {
+//   .card:nth-child(-n + #{$index}) {
+//     margin-top: 50px;
+
+//   }
+// }
