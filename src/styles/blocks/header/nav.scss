@@ -1,0 +1,41 @@
+.main-nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    list-style: none;
+
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    @include font(500, 12px, 14px);
+    padding: 23px 0;
+    text-transform: uppercase;
+    color: $color-black;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+}
+
+.is-active {
+  color: $color-blue;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: $color-blue;
+    border-radius: 8px;
+  }
+}
