@@ -24,7 +24,7 @@ and SCSS
 - cards should have fixed width and fixed distances between them
 - cards container should have fixed paddings (see 1024px example), bottom the same as top
 - use semantic tags. `<header>`, `<nav>`, `<main>`
-- add class `is-active` to the first link (`Apple`) in navigation
+- add class `is-active` to the first link (`Apple`) in nav
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
