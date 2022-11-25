@@ -1,0 +1,94 @@
+@import "./stars.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  background-color: $color-white;
+  border: 1px solid $color-dirty-white;
+  border-radius: 5px;
+
+  &:not(:nth-child(-n + 4)) {
+    margin-top: 46px;
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: $card-margin;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 12px;
+    color: $color-dark-blue;
+    line-height: 18px;
+    margin: 40px 0 4px;
+  }
+
+  &__text {
+    font-size: 10px;
+    font-weight: 400;
+    color: $color-light-grey;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__reviews-container {
+    @extend %flexConfigSpaceBetween;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews-text {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $color-dark-blue;
+  }
+
+  &__price-snippet {
+    @extend %flexConfigSpaceBetween;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-light-grey;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $color-dark-blue;
+  }
+
+  &__buy-link {
+    @extend %flexConfigCenter;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $color-blue;
+    color: $color-white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  &__buy-link:hover {
+    background-color: $color-white;
+    border: 1px solid $color-blue;
+    color: $color-blue;
+  }
+}
