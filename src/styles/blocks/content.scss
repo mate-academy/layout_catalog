@@ -1,0 +1,19 @@
+.content {
+  padding: $content-y-padding $content-x-padding;
+  display: flex;
+  flex-wrap: wrap;
+  width: getContainerWidth(
+    $cards-in-row,
+    $cars-width,
+    $row-gap,
+    $content-x-padding
+  );
+
+  &__card:not(:nth-child(4n + 4)) {
+    margin-right: $row-gap;
+  }
+
+  &__card:not(:nth-last-child(-n + 4)) {
+    margin-bottom: $column-gap;
+  }
+}
