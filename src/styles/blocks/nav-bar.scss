@@ -1,0 +1,46 @@
+@import "../utils/variables";
+
+.nav-bar {
+  &__listOfLinks {
+    display: flex;
+    flex-shrink: 1;
+  }
+
+  &__item {
+    height: 60px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__link {
+    display: flex;
+    padding: 23px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-black;
+    &:hover {
+      color: $main-blue;
+    }
+    &:active {
+      border-bottom: 4px solid #00acdc;
+      padding: 23px 0 19px;
+      color: $main-blue;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $main-blue;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 4px;
+    background: $main-blue;
+  }
+}
