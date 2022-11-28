@@ -1,0 +1,235 @@
+// add header block
+// add nav block
+// add list block
+// add is-active block
+
+@import "./utils/variables";
+
+@mixin main-text-style {
+  font-family: $main-font-family;
+  font-size: $font-size-main;
+  font-weight: $font-weight-medium;
+  color: $main-color;
+}
+
+@mixin flex-betweeen {
+  display: flex;
+  justify-content: space-between;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  &__content {
+    width: 100%;
+    @include main-text-style;
+    margin: 0;
+  }
+}
+
+.is-active {
+  @extend .list__item-link;
+  color: $main-background-color;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    border-radius: 8px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $main-background-color;
+  }
+}
+
+// #region Header
+
+.header {
+  @include flex-betweeen;
+  flex-flow: row wrap;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__logo-link {
+    display: flex;
+    align-self: center;
+  }
+}
+
+.main-nav {
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__list > :not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.list__item {
+  display: list-item;
+  align-self: center;
+}
+
+.list__item-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $main-color;
+  padding: 23px 0;
+  transition: ($transition-time);
+
+  &:hover {
+    color: $main-background-color;
+  }
+}
+
+// #endregion
+
+.cards-container {
+
+  max-width: $card-container-width;
+  padding: 0 auto;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    @media (min-width: 1100px) {
+      margin-top: 100px;
+
+    }
+  }
+
+  &__card {
+    margin-right: 50px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+// #region Card
+
+.card {
+  width: 200px;
+  max-height: ($card-height);
+  color: ($cards-main-color);
+  border: ($card-border);
+  border-radius: ($card-border-radius);
+  padding: 32px 16px 16px;
+
+  &__pic {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    @include main-text-style;
+    line-height: 18px;
+    margin: 0 0 4px;
+    padding: 0;
+  }
+
+  &__id {
+    font-size: ($font-size-code-review);
+    font-weight: ($font-weight-regular);
+    color: ($id-price-label-color);
+    margin: ($code-price-margins);
+  }
+
+  &__review {
+    @include flex-betweeen;
+
+    align-items: center;
+    font-weight: ($font-weight-regular);
+    margin-bottom: 24px;
+  }
+
+  &__feedbacks {
+    font-size: ($font-size-code-review);
+    font-weight: ($font-weight-regular);
+  }
+
+  &__price {
+    @include flex-betweeen;
+    margin: ($code-price-margins);
+  }
+
+  &__button {
+    display: block;
+    max-width: ($button-width);
+    max-height: ($button-height);
+    font-size: ($font-size-button);
+    font-weight: ($font-weight-bold);
+    text-decoration: none;
+    text-align: center;
+    background-color: ($main-background-color);
+    border: 1px solid ($main-background-color);
+    border-radius: ($card-border-radius);
+    padding: 12px 70px;
+    color: ($color-white);
+    transition: ($transition-time);
+
+    &:hover {
+      background-color: ($color-white);
+      color: ($main-background-color);
+    }
+  }
+}
+
+// #endregion
+
+// #region stars-price
+.stars {
+  display: flex;
+
+  &__star {
+    width: ($stars-size);
+    height: ($stars-size);
+    background-image: url("../images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.stars--4 .stars__star:nth-child(-n + 4) {
+  background-image: url("../images/star-active.svg");
+}
+
+.price {
+  &__label {
+    align-self: center;
+    color: ($id-price-label-color);
+    font-weight: ($font-weight-regular);
+    font-size: ($font-size-main);
+    margin: 0;
+  }
+
+  &__value {
+    font-weight: ($font-weight-bold);
+    font-size: ($font-size-price);
+    margin: 0;
+  }
+}
+
+// #endregion
