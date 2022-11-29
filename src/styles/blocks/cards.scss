@@ -1,10 +1,13 @@
+
+
 /* #region page__catalog */
 .page__catalog {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   box-sizing: border-box;
-  width: 992px;
+
+  width: $catalog-width;
   margin: 0 auto;
 }
 
@@ -13,8 +16,11 @@
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  margin-right: 48px;
-  width: 200px;
+
+  width: #{$card-width};
+  margin-right: #{$card-right-gap};
+  margin-bottom: 46px;
+
   padding: 32px 16px 16px;
 
   border: 1px solid #f3f3f3;
@@ -24,8 +30,8 @@
     margin-right: 0;
   }
 
-  &:nth-child(-n + 4) {
-    margin-bottom: 46px;
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
   }
 
   &_photo {
@@ -96,7 +102,6 @@
     border-style: none;
 
     &:hover {
-      // font-weight: 700;
       color: $color-accent-blue;
       background: $color-accent-white;
       border: 1px solid #00acdc;
