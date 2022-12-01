@@ -1,0 +1,55 @@
+@import "./utils/function";
+@import "../utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+p,
+a,
+h2 {
+  margin: 0;
+}
+
+.page__main {
+  display: flex;
+  width: mainsize($margin-between-card, $card-width);
+  flex-wrap: wrap;
+  margin: 0 auto 23px;
+  padding: $padding-main;
+  box-sizing: content-box;
+
+  @media (min-width: 1024px) {
+    $padding-main: 40px;
+    padding: 50px $padding-main;
+  }
+
+  @media (min-width: 1200px) {
+    $padding-main: 128px;
+    padding: 50px $padding-main;
+  }
+
+  & .card:nth-child(n) {
+    margin-right: $margin-between-card;
+    margin-bottom: 45px;
+  }
+  & .card:nth-child(4n) {
+    margin-right: 0;
+  }
+  & .card:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+}
