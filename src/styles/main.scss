@@ -1,3 +1,27 @@
+@import "./variables.scss";
+@import "./header.scss";
+@import "./cards.scss";
+@import "./stars.scss";
+
+@function getMaxwidth ($base, $size, $index) {
+  @return $base * ($index - 1) + $index * $size;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: getMaxwidth($margin-rights, $cards-width, $row-count);
+  margin: 0 auto;
+  padding: 50px 0;
 }
