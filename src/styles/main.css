@@ -32,11 +32,12 @@ html {
 .catalog {
   display: flex;
   flex-wrap: wrap;
-  width: 1024px;
-  justify-content: center;
-  align-items: center;
+  width: 944px;
+  box-sizing: border-box;
+  /* justify-content: center;
+  align-items: center; */
   margin: 0 auto;
-  padding: 50px;
+  padding: 50px 0;
 }
 
 .catalog__card {
@@ -45,15 +46,23 @@ html {
   align-items: center;
   box-sizing: border-box;
   width: 200px;
-  height: 406px;
+  /* height: 406px; */
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 50px;
-}
-
-.catalog__card:not(:nth-child(4n)) {
   margin-right: 48px;
 }
+
+.catalog__card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.catalog__card:nth-child(-n + 4) {
+  margin-top: 48px;
+}
+
+/* .catalog:not(:nth-child(4n)) {
+  margin-right: 48px;
+} */
 
 .mainCard {
   display: flex;
