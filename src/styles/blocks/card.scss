@@ -2,26 +2,16 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 200px;
-  height: 454px;
+  width: $card-width;
   padding: 16px;
   background-color: white;
   border: 1px solid $color-grey-elemnes;
   border-radius: 5px;
-  margin-right: 50px;
+  margin-right: $card-margin-right;
   margin-bottom: 48px;
-
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
-
-  &:nth-last-child(-n+4) {
-    margin-bottom: 0;
-  }
 
   &__image {
     width: 100%;
-    height: 134px;
     margin: 16px auto 40px;
   }
 
@@ -35,8 +25,13 @@
   }
 
   &__code {
+    display: flex;
     width: 100%;
-    margin: 0 84px 16px 0;
+    text-align: left;
+    align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-bottom: 16px;
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
@@ -45,7 +40,6 @@
 
   &__price {
     width: 100%;
-    height: 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,6 +48,8 @@
 
   &__price-name {
     display: flex;
+    margin-block-start: 0;
+    margin-block-end: 0;
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
@@ -62,6 +58,8 @@
 
   &__price-number {
     display: flex;
+    margin-block-start: 0;
+    margin-block-end: 0;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
@@ -69,19 +67,17 @@
   }
 
   &__buy {
+    position: relative;
     box-sizing: border-box;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     border: 1px solid $color-blue-accent;
     width: 100%;
-    height: 38px;
     background-color: $color-blue-accent;
     border-radius: 5px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
     color: white;
     text-decoration: none;
 
@@ -89,14 +85,24 @@
       background-color: white;
       color: $color-blue-accent;
     }
+
+    &::before {
+      display: flex;
+      position: absolute;
+      content: "buy";
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
   }
 
   &__rating {
-    width: 166px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 0 auto 24px;
+    margin-bottom: 24px;
 
     &-reviews {
       height: 14px;
