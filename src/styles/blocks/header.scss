@@ -1,0 +1,45 @@
+.header {
+  font-family: "roboto", sans-serif;
+  @include flex(center, space-between);
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+  &__list {
+    @include flex(center);
+  }
+
+  &__item {
+    @include font(500, 12px);
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    padding: 24px 0;
+    color: $primary-text-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.is-active {
+  color: $primary-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    @include size(100%, 4px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    background-color: $primary-color;
+  }
+}
