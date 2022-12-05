@@ -1,3 +1,36 @@
+@import "./variables";
+@import "./header/header.scss";
+@import "./card/reset.scss";
+@import "./card/card.scss";
+@import "./card/stars.scss";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  margin: 0 auto;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: $amount-of-cards * $card-width + 3 * $margine-between-card;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+
+  &__card-position {
+    margin-bottom: 46px;
+  }
+  
+  &__card-position:not(:nth-child(4n)) {
+    margin-right: $margine-between-card;
+  }
+  
 }
