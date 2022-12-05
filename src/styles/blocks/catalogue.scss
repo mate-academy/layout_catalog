@@ -1,0 +1,150 @@
+.catalogue {
+  display: flex;
+  justify-content: center;
+  padding-top: 51px;
+
+  &__card-wraper {
+    @include card-padding($cards-gap);
+    padding-bottom: 48px;
+  }
+
+  &__container {
+    display: flex;
+    width: $container-width;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    width: $card-width;
+    padding: 32px 16px 0;
+  }
+
+  &__picture {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+
+    &-image {
+      width: 160px ;
+      height: 134px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__item-name {
+    margin-bottom: 4px;
+    font-family: Roboto, sans-serif;
+    color: #060b35;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(97, 96, 112, 1);
+    line-height: 14px;
+  }
+
+  &__item-rate {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__stars-row {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+
+    &--1 :nth-child(1),
+    &--2 :nth-child(-n+2),
+    &--3 :nth-child(-n+3),
+    &--4 :nth-child(-n+4),
+    &--5 :nth-child(-n+5) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+
+  &__star {
+    background-image: url(/images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+
+  &__reviews {
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: #060b35;
+    display: flex;
+    line-height: 14px;
+    align-items: flex-end;
+  }
+
+  &__item-price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: #616070;
+  }
+
+  &__value {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__buy {
+    display: flex;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+
+    &-button {
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
+      background-color: #00acdc;
+      border-radius: 5px;
+      flex-grow: 1;
+      text-align: center;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      line-height: 16px;
+      border: 1px solid #00acdc;
+      box-sizing: border-box;
+
+      &:hover {
+        border-color: #00acdc;
+        background-color: #fff;
+        color: #00acdc;
+      }
+    }
+  }
+}
