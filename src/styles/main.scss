@@ -1,3 +1,222 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
   margin: 0;
+}
+
+body,
+ul,
+p,
+h3 {
+  margin: 0;
+}
+
+p,
+a {
+  display: block;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+$primary-color: #00acdc;
+$primary-text-color: #060b35;
+$secondary-text-color: #616070;
+
+@mixin flex($ai, $jc: normal) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin font($fw, $fs) {
+  font-weight: $fw;
+  font-size: $fs;
+}
+
+html {
+  font-family: "roboto", sans-serif;
+}
+
+.header {
+  @include flex(center, space-between);
+  padding: 0 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+  &__list {
+    @include flex(center);
+  }
+
+  &__item {
+    @include font(500, 12px);
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    padding: 24px 0;
+    color: $primary-text-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.is-active {
+  color: $primary-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    background-color: $primary-color;
+  }
+}
+
+.main {
+  margin-bottom: 72px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 944px;
+  margin: 0 auto;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 32px 16px 16px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
+
+    &:not(:nth-child(n + 4)) {
+      margin-bottom: 46px;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    object-position: center;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    margin-bottom: 6px;
+    @include font(500, 12px);
+    line-height: 150%;
+    color: $primary-text-color;
+  }
+
+  &__product-code {
+    margin-bottom: 18px;
+    font-size: 10px;
+    color: $secondary-text-color;
+  }
+
+  &__reviews {
+    @include flex(center, space-between);
+    margin-bottom: 24px;
+  }
+}
+
+.stars {
+  @include flex(center);
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url("../images/star.svg") center no-repeat;
+    &:nth-child(-n + 4) {
+      background-image: url("../images/star-active.svg");
+      margin-right: 4px;
+    }
+  }
+}
+
+.cards__reviews-amount {
+  font-size: 10px;
+  color: $primary-text-color;
+}
+
+.cards__price-block {
+  @include flex(center, space-between);
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: $secondary-text-color;
+}
+
+.cards__price-tag {
+  @include font(700, 16px);
+  line-height: 18px;
+  color: $primary-text-color;
+}
+
+.cards__button {
+  @include flex(center, center);
+  height: 40px;
+  @include font(700, 14px);
+  text-transform: uppercase;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  color: #fff;
+  background-color: $primary-color;
+
+  &:hover {
+    background-color: #fff;
+    color: $primary-color;
+  }
 }
