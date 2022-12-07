@@ -11,31 +11,30 @@
   }
 
   &__link {
+    position: relative;
     display: block;
-    font-family: $main-font-family;
+    padding: 23px 0;
     @include text($color-dark-blue, 12px, 500);
     text-transform: uppercase;
     text-decoration: none;
-    padding: 23px 0;
-    position: relative;
-  }
 
-  &__link:hover {
-    color: $color-cyan;
-  }
-}
+    &:hover {
+      color: $color-cyan;
+    }
 
-.is-active {
-  color: $color-cyan;
+    &--is-active {
+      color: $color-cyan;
 
-  &::after {
-    content: "";
-    display: block;
-    height: 4px;
-    width: 100%;
-    border-radius: 8px;
-    background-color: $color-cyan;
-    position: absolute;
-    bottom: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $color-cyan;
+      }
+    }
   }
 }
