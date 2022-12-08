@@ -1,0 +1,33 @@
+.card__star {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .stars {
+    display: flex;
+    justify-content: flex-start;
+
+    @for $starCount from 1 through 5 {
+      &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+
+    &__star {
+      height: 16px;
+      width: 16px;
+      background: url(../images/star.svg) no-repeat center;
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-text-color;
+  }
+}
