@@ -1,0 +1,58 @@
+@use "../utils/variables" as *;
+@use "../utils/extends";
+
+.nav {
+  display: flex;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #060b35;
+
+    &:hover {
+      color: $act_hov_btn_color;
+    }
+
+    &:active,
+    &:focus {
+      outline: 0;
+      color: $act_hov_btn_color;
+    }
+
+    &:active::after,
+    &:focus::after {
+      @extend %underline-after;
+    }
+
+  }
+}
+
+.is-active {
+  color: $act_hov_btn_color;
+
+  &::after {
+    @extend %underline-after;
+  }
+  
+}
