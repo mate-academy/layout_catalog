@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    margin-right: 20px;
+    font-weight: 500;
+  }
+
+  &__item:last-of-type {
+    margin-right: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 23px 0;
+    color: $main-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &.is-active {
+      color: $accent-color;
+      position: relative;
+    }
+
+    &.is-active::after {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 100%;
+      background-color: $accent-color;
+      border-radius: 8px;
+      position: absolute;
+      top: 94%;
+    }
+  }
+}
