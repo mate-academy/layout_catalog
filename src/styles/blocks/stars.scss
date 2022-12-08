@@ -1,0 +1,26 @@
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    
+    background-image: url(../images/star.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+  }
+
+  // add yellow stars instead of plain stars
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  // remove extra space after each 4d card in row
+  &__star:last-child {
+    margin-right: 0;
+  }
+}
