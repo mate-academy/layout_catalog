@@ -1,20 +1,29 @@
 .nav {
   &__list {
     display: flex;
-    width: 100%;
-    margin: 0;
-    padding: 0;
     list-style: none;
     font-size: 12px;
     text-transform: uppercase;
   }
 
-  &__link {
-    padding: 23px 0;
+  &__item {
     margin-right: 20px;
-    text-decoration: none;
-    color: $main-color;
     font-weight: 500;
+  }
+
+  &__item:last-of-type {
+    margin-right: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 23px 0;
+    color: $main-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-color;
+    }
 
     &.is-active {
       color: $accent-color;
@@ -31,13 +40,5 @@
       position: absolute;
       top: 94%;
     }
-  }
-
-  &__link:last-of-type {
-    margin-right: 0;
-  }
-
-  &__link:hover {
-    color: $accent-color;
   }
 }
