@@ -1,0 +1,48 @@
+.nav {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    list-style: none;
+    padding: 0 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__link {
+    padding: 23px 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: $mainColor;
+    text-decoration: none;
+    &:hover {
+      color: $buttonColorBlue;
+    }
+
+    &--is-active {
+      position: relative;
+      color: $buttonColorBlue;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $buttonColorBlue;
+        border-radius: 8px;
+      }
+    }
+  }
+}
