@@ -1,0 +1,55 @@
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #060b35;
+
+    &:hover {
+      color: $main-color;
+    }
+
+    &:active,
+    &:focus {
+      outline: 0;
+      color: $main-color;
+    }
+
+    &:active::after,
+    &:focus::after {
+      @extend %underline-after;
+    }
+
+  }
+}
+
+.is-active {
+  color: $main-color;
+
+  &::after {
+    @extend %underline-after;
+  }
+
+}
