@@ -1,9 +1,13 @@
+@function blockWidth($width, $margin, $padding) {
+  @return ($width * 4) + ($margin * 3) + ($padding * 2);
+}
+
 .block {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 1024px;
-  padding: 50px 40px 75px;
+  width: blockWidth($card-width, $margin-r, $padding-x);
+  padding: 50px $padding-x 75px;
 
   &__card {
     display: flex;
@@ -11,12 +15,12 @@
     margin-bottom: 46px;
     border: 1px solid #{$card-border-color};
     border-radius: 5px;
-    width: 200px;
+    width: $card-width;
     padding: 32px 16px 16px;
     background: #{$white-color};
 
     &:not(:nth-child(4n)) {
-      margin-right: 48px;
+      margin-right: $margin-r;
     }
 
     &_img {
@@ -34,7 +38,7 @@
     }
 
     &_code {
-      margin-bottom: 16px;
+      margin: 0 0 16px;
       font-size: #{$font-size-xs};
       line-height: #{$line-height-s};
       color: #{$text-color-light};
@@ -64,12 +68,14 @@
     }
 
     &_total {
+      margin: 0;
       font-size: #{$font-size-s};
       font-weight: #{$font-weight-s};
       color: #{$text-color-light};
     }
 
     &_sum {
+      margin: 0;
       font-size: #{$font-size-l};
       line-height: #{$line-height-l};
       font-weight: #{$font-weight-l};
@@ -80,13 +86,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 auto;
       border-radius: 5px;
-      width: 166px;
       height: 40px;
       background: #{$cyan-color};
       font-size: #{$font-size-m};
-      line-height: #{$line-height-m};
       font-weight: #{$font-weight-l};
       text-align: center;
       text-decoration: none;
