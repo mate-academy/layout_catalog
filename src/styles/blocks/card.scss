@@ -5,9 +5,20 @@
 .cards-section {
   display: flex;
   flex-wrap: wrap;
-  max-width: calc((#{$card_width} * 4) + (48px * 3));
   margin: 0 auto;
   margin-bottom: 0;
+}
+
+.cards-section--size_4-cards-in-row {
+  max-width: calc((#{$card_width} * 4) + (48px * 3));
+}
+
+.cards-section__card {
+  margin-right: 48px;
+  margin-bottom: 47px;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 }
 
 .card {
@@ -18,8 +29,6 @@
   flex-direction: column;
   padding: 16px;
   align-items: center;
-  margin-right: 48px;
-  margin-bottom: 47px;
 
   &__image {
     width: 160px;
@@ -40,7 +49,6 @@
     font-weight: 400;
     font-size: 10px;
     color: $minor-text_color;
-    text-align: left;
     width: $blocks_width;
     margin-top: 4px;
   }
@@ -104,8 +112,4 @@
     color: $button_color;
     border: 1px solid $button_color;
   }
-}
-
-.card:nth-child(4n) {
-  margin-right: 0;
 }
