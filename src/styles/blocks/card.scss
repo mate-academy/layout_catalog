@@ -3,18 +3,19 @@
   display: flex;
   flex-wrap: wrap;
   padding: 50px 0 73px;
-  width: 944px;
+  width: getWidth($card-width, $card-margin-right, $cards-column);
   margin: 0 auto;
 }
 
 .card {
+  margin-right: $card-margin-right;
+  margin-bottom: $card-margin-bottom;
   display: inline-flex;
   flex-direction: column;
-  font-family: "Roboto", sans-serif;
-  padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
+  height: 408px;
+  padding: $card-paddding-top $card-paddding-side $card-paddding-bottom;
+  border: $card-border solid #f3f3f3;
   border-radius: 5px;
-  margin: 0 48px 46px 0;
 
   &:nth-child(4n) {
     margin-right: 0;
@@ -33,7 +34,7 @@
   &__product-name {
     font-size: 12px;
     line-height: 18px;
-    width: 166px;
+    width: getWidthName($card-width, $card-paddding-side, $card-border);
     height: 36px;
     overflow: hidden;
     font-weight: 500;
@@ -77,7 +78,7 @@
     font-weight: 700;
   }
 
-  &__btn {
+  &__button {
     font-size: 14px;
     line-height: 40px;
     font-weight: 700;
