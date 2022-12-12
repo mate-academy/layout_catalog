@@ -3,7 +3,15 @@
   flex-flow: row wrap;
   justify-content: center;
 
-  width: getCountWidth($card-width, $card-gap, $card-padding);
+  max-width: getCountWidth($card-width, $card-gap, $card-padding);
   padding: 50px $card-padding;
   margin: auto;
+
+  &__card:not(:nth-child(4n)) {
+    margin-right: $card-gap;
+  }
+
+  &__card:nth-child(-n+4) {
+    margin-bottom: 46px;
+  }
 }
