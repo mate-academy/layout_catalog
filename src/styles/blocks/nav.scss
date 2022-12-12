@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    text-decoration: none;
+    height: 60px;
+    color: $main-text-color;
+
+    &:hover,
+    &--is-active {
+      color: $main-header-color;
+    }
+
+    &--is-active:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      display: block;
+      height: 4px;
+      width: 100%;
+      border-radius: 8px;
+      background-color: $main-header-color;
+    }
+  }
+
+  &__item:not(:last-child) {
+    display: flex;
+    margin-right: 20px;
+  }
+}
