@@ -1,0 +1,45 @@
+@import "../utils/variables";
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    color: #060b35;
+    position: relative;
+    display: block;
+    padding: 23px 0;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-cyan;
+    }
+
+    &--is-active {
+      color: $color-cyan;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $color-cyan;
+      }
+    }
+  }
+}
