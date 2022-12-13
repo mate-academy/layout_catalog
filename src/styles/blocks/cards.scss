@@ -6,8 +6,7 @@
   &__collection {
     display: flex;
     flex-wrap: wrap;
-    max-width: ($card-width * $cards-in-row) +
-      ($space-between-cards * ($cards-in-row - 1));
+    max-width: maxWidth($card-width, $cards-in-row, $space-between-cards);
   }
 }
 
@@ -16,7 +15,6 @@
   box-sizing: border-box;
   flex-direction: column;
   padding: 32px 16px 16px;
-  background: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   width: $card-width;
@@ -78,7 +76,6 @@
 
   &__price-text {
     font-weight: 400;
-    font-size: 12px;
     color: $color-secondary;
   }
 
@@ -104,10 +101,10 @@
     margin-top: 16px;
     height: 40px;
     transition: color 0.3s;
-  }
 
-  &__button:hover {
-    background: #fff;
-    color: $color-blue-accent;
+    &:hover {
+      background: #fff;
+      color: $color-blue-accent;
+    }
   }
 }
