@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  --card-max-width: 198px;
+  --card-margin-left-first: 41px;
+  --card-margin-left: 50px;
+  --card-max-width: 200px;
   --card-border: 1px;
   --card-border-radius: 5px;
   --min-section-gap: 16px;
@@ -87,25 +89,61 @@ ul {
 }
 
 .main {
-
   display: flex;
   flex-wrap: wrap;
+  float: center;
+  margin-left: calc(
+    (100% -
+    (var(--card-max-width) * 4 + var(--card-margin-left) * 3))
+    / 2);
+  margin-right: calc(
+    (100% -
+    (var(--card-max-width) * 4 + var(--card-margin-left) * 3))
+    / 2);
+  max-width: calc(
+    var(--card-max-width) * 4
+    + var(--card-margin-left) * 3);
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
 }
 
 .card {
+  box-sizing: border-box;
   margin-top: 51px;
-  margin-left: 50px;
+  margin-bottom: 48px;
+  margin-left: var(--card-margin-left);
   max-height: 408px;
-  max-width: var(--card-max-width);
+  width: var(--card-max-width);
   background-color: #fff;
   border: var(--card-border) solid #f3f3f3;
   border-radius: var(--card-border-radius);
 }
 
+.main :first-child {
+  margin-left: 0;
+}
+
+.main :nth-child(5) {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.main :nth-child(6) {
+  margin-top: 0;
+}
+
+.main :nth-child(7) {
+  margin-top: 0;
+}
+
+.main :nth-child(8) {
+  margin-top: 0;
+}
+
 .card__sectionimage {
+  box-sizing: border-box;
+  width: 100%;
   margin: var(--card-margin);
   display: flex;
   align-items: center;
@@ -115,8 +153,10 @@ ul {
   padding-top: var(--card-header-top-gap);
 }
 
-.card__main {
+.card__section {
   display: block;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .card__image {
@@ -153,6 +193,8 @@ ul {
 }
 
 .card__stars {
+  box-sizing: border-box;
+  width: 100%;
   padding: var(--card-padding);
   margin: var(--card-margin);
   padding-left: var(--min-section-gap);
@@ -207,7 +249,9 @@ ul {
   color: #616070;
 }
 
-footer {
+.card__footer {
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -233,6 +277,8 @@ footer {
 }
 
 .card__link {
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -256,7 +302,7 @@ footer {
   border-radius: var(--card-border-radius);
 }
 
-.card:hover .card__button {
+.card__button:hover {
   background-color: #fff;
   border: var(--card-border) solid #00acdc;
   border-radius: var(--card-border-radius);
