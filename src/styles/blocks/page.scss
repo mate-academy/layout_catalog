@@ -1,0 +1,23 @@
+.page {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: getPageContainerWidth(
+      $card-width, $card-count-per-row, $card-row-margin
+    );
+    margin: 0 auto;
+    padding: 50px 0 72px;
+  }
+
+  &__card {
+    flex: 0 0 200px;
+
+    &:not(:nth-child(#{$card-count-per-row}n)) {
+      margin-right: $card-row-margin;
+    }
+
+    &:not(:nth-last-child(-n + #{$card-count-per-row})) {
+      margin-bottom: 46px;
+    }
+  }
+}
