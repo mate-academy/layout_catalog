@@ -1,0 +1,112 @@
+@import "./utils/_variables.scss";
+
+.catalog {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 4*$card-width+3*$card-margin-right;
+  padding-top: 51px;
+  padding-bottom: 73px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $main-color;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: $card-width;
+  
+  &:not(:nth-child(4n)) {
+    margin-right: $card-margin-right;
+  }
+
+  &:nth-last-child(-n+4) {
+    margin-top: $card-margin-top;
+  }
+
+  &__imac_image {
+    width: 160px;
+    height: 134px;
+    margin-top: 32px;
+  }
+
+  &__product_name {
+    width: 100%;
+    margin: 40px auto 4px;
+    font-family: "Roboto", normal, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: $main-text-color;
+    line-height: 18px;
+  }
+
+  &__product_code {
+    width: 100%;
+    color: #616070;
+    font-size: 10px;
+  }
+
+  &__block_rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  &__reviews {
+    display: flex;
+    font-size: 10px;
+    color: $main-text-color;
+  }
+
+  &__block_price {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 24px;
+  }
+
+  &__price {
+    font-size: 12px;
+    color: #616070;
+  }
+
+  &__price_meaning {
+    font-size: 16px;
+    font-weight: 700;
+    color: $main-text-color;
+  }
+
+  &__buy_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $link-color;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $main-color;
+    padding: 11px;
+    margin: 16px;
+    width: 100%;
+    
+
+    &:hover {
+      background-color: $main-color;
+      color: $link-color;
+      border-color: $link-color;
+    }
+  }
+}
