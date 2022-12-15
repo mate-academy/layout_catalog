@@ -2,17 +2,21 @@
   display: flex;
 
   &__star {
-    width: 20px;
+    width: 16px;
     height: 16px;
-    background-image: url(/../src/images/star-active.svg);
+    background-image: url("../images/star.svg");
+    background-position: center;
     background-repeat: no-repeat;
-    background-origin: border-box;
-    background-position: 2px center;
-  }
 
-  @for $starCount from 1 through 5 {
-    &--#{$starCount - 1} &__star:nth-child(n + #{$starCount}) {
-      background-image: url(/../src/images/star.svg);
+    &:not(:last-child) {
+      margin-right: 4px;
     }
+
+    @for $count-stars from 1 to 5 {
+      .stars--#{$count-stars} &:nth-child(-n + #{$count-stars}) {
+        background-image: url("../images/star-active.svg");
+      }
+    }
+
   }
 }
