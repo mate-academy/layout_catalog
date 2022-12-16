@@ -1,27 +1,16 @@
-body {
-  margin: 0;
-  --card-max-width: 198px;
-  --card-border: var(1px);
-  --card-border-radius: 5px;
-  --min-section-gap: 16px;
-  --min-section-top-gap: 16px;
-  --card-header-top-gap: 32px;
-  --card-margin: 0;
-  --card-padding: 0;
-  --card-padding-top: 40px;
-  --card-image-height: 134px;
-  --card-font-size: 12px;
-  --cardfont-color: #060b35;
-}
-
 .card {
-  max-width: var(--card-max-width);
+  box-sizing: border-box;
+  margin: 50px 0 46px var(--card-margin-left);
+  max-height: 408px;
+  width: var(--card-max-width);
   background-color: #fff;
   border: var(--card-border) solid #f3f3f3;
   border-radius: var(--card-border-radius);
 }
 
-.card__header {
+.card__sectionimage {
+  box-sizing: border-box;
+  width: 100%;
   margin: var(--card-margin);
   display: flex;
   align-items: center;
@@ -31,8 +20,10 @@ body {
   padding-top: var(--card-header-top-gap);
 }
 
-.main {
+.card__section {
   display: block;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .card__image {
@@ -40,18 +31,6 @@ body {
   margin: var(--card-margin);
   padding: var(--card-padding);
 }
-
-/* .title semantic tag {
-  padding: 0;
-  margin: 0;
-  margin-top: 40px;
-  padding-right: 16px;
-  padding-left: 16px;
-  display: flex;
-  justify-content: center;
-  text-align: flex-start;
-  align-content: top;
-} */
 
 .card__title {
   margin: var(--card-margin);
@@ -67,16 +46,6 @@ body {
   color: var(--cardfont-color);
 }
 
-/* .description {
-  margin: 0;
-
-  margin-right: 84px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-} */
-
 .card__description {
   margin: 0;
   padding: 0;
@@ -90,19 +59,9 @@ body {
   font-style: normal;
 }
 
-/* .distance1 :nth-child(1) {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-.distance1 :nth-child(2) {
-  display: flex;
-  align-items: bottom;
-  justify-content: right;
-} */
-
-section {
+.card__stars {
+  box-sizing: border-box;
+  width: 100%;
   padding: var(--card-padding);
   margin: var(--card-margin);
   padding-left: var(--min-section-gap);
@@ -113,39 +72,7 @@ section {
   justify-content: space-between;
 }
 
-.stars {
-  margin: var(--card-margin);
-  padding: var(--card-padding);
-
-  display: flex;
-  align-items: center;
-  justify-items: left;
-}
-
-.stars__star {
-  padding: 0;
-  margin: 0;
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  background-image: url(images/star.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.stars :nth-child(-n + 4) {
-  background: url("./images/star-active.svg") center no-repeat;
-}
-
-/* .rewievs  semantic tag {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  text-align: bottom;
-  justify-content: right;
-} */
-
-.card__rewievs {
+.card__reviews {
   margin: 0;
   padding-left: 17px;
   line-height: 14px;
@@ -154,26 +81,6 @@ section {
   color: var(--cardfont-color);
   font-family: Roboto, sans-serif;
 }
-
-/* .distance2 :nth-child(1) {
-  display: flex;
-  align-items: top;
-  justify-content: left;
-}
-
-.distance2 :nth-child(2) {
-  display: flex;
-  align-items: bottom;
-  justify-content: right;
-} */
-
-/* .price semantic tag {
-  display: flex;
-  justify-content: left;
-  align-items: top;
-  margin: 0;
-  padding: 0;
-} */
 
 .card__price {
   margin: 0;
@@ -185,7 +92,9 @@ section {
   color: #616070;
 }
 
-footer {
+.card__footer {
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -211,6 +120,8 @@ footer {
 }
 
 .card__link {
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -218,6 +129,7 @@ footer {
   padding-left: var(--min-section-gap);
   padding-right: var(--min-section-gap);
   padding-bottom: 16px;
+  text-decoration: none;
 }
 
 .card__button {
@@ -234,7 +146,7 @@ footer {
   border-radius: var(--card-border-radius);
 }
 
-.card:hover .card__button {
+.card__button:hover {
   background-color: #fff;
   border: var(--card-border) solid #00acdc;
   border-radius: var(--card-border-radius);
