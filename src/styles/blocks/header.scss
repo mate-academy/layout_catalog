@@ -1,0 +1,57 @@
+.header {
+  background-color: $white_color;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  align-items: center;
+
+  &__link-img {
+    display: inline-block;
+    align-items: center;
+    @include square($logo-sige);
+    padding: 0;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__link {
+    display: flex;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $dark-color-header;
+    margin-right: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 23px 0;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
+
+.header__link--last {
+  margin-right: 0;
+}
+
+.is-active {
+  position: relative;
+  color: $blue-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $blue-color;
+  }
+}
