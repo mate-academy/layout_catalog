@@ -1,8 +1,19 @@
-.cards{
+.cards__card {
+  &:nth-child(n) {
+    margin-bottom: 46px;
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+}
+
+.cards {
   display: flex;
   flex-wrap: wrap;
   width: get-width(200px, 4, 48px);
   margin: 0 auto;
+  padding: 50px 0;
 
   .card {
     display: flex;
@@ -12,15 +23,7 @@
     border-radius: 5px;
     background: $color-white;
     padding: 32px 16px 16px;
-
-    &:not(:nth-child(4n)) {
-      margin-right: 48px;
-    }
-
-    &:nth-last-child(-n + 4) {
-      margin-top: 46px;
-    }
-
+    
     &__image {
       width: 160px;
       height: 134px;
@@ -47,13 +50,13 @@
       justify-content: space-between;
       margin-bottom: 16px;
 
-        &-text {
-          @include text($font-size-s, 400, $color-secondry-text, 18px);
-        }
+      &-text {
+        @include text($font-size-s, 400, $color-secondry-text, 18px);
+      }
 
-        &-product {
-          @include text($font-size-l, 700, $color-main-text, 18px);
-        }
+      &-product {
+        @include text($font-size-l, 700, $color-main-text, 18px);
+      }
     }
 
     &__button-buy {
