@@ -1,0 +1,33 @@
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px $cards-container-padding;
+  margin: 0 auto;
+
+  width: widthCardsContainer(
+    $width-card,
+    $margin-between-cards,
+    $cards-container-padding);
+
+  @media (min-width: 1200px) {
+    width: widthCardsContainer(
+      $width-card,
+      $margin-between-cards,
+      $cards-container-1200px-padding);
+
+    padding: 50px $cards-container-1200px-padding;
+  }
+
+  &__card {
+    margin-right: $margin-between-cards;
+    margin-top: 46px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(-n + 4) {
+      margin-top: 0;
+    }
+  }
+}

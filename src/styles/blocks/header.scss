@@ -1,0 +1,61 @@
+.header {
+  @extend %flex-space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    @include logoSquare(40px);
+    margin: 10px 0;
+  }
+
+  &__nav-list {
+    display: flex;
+    padding-left: 0;
+    height: 100%;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__nav-item {
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    font-size: $font-medium;
+    font-weight: $weight-medium;
+    color: $color-main-accent;
+    line-height: 14px;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-blue-accent;
+    }
+  }
+
+  .is-active {
+    color: $color-blue-accent;
+
+    &::after {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      content: "";
+      height: 4px;
+      width: 100%;
+      background: $color-blue-accent;
+      border-radius: 8px;
+    }
+  }
+}
