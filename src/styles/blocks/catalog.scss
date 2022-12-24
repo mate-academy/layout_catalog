@@ -1,0 +1,25 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: getWidthCatalog(
+    $width-card,
+    $card-margin-right,
+    $card-count,
+    $catalog-padding-horiz);
+
+  padding: 50px $catalog-padding-horiz;
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+
+    &:nth-child(#{$card-count}n) {
+      margin-right: 0;
+    }
+  
+    &:nth-last-child(-n + #{$card-count}) {
+      margin-bottom: 0;
+    }
+  }
+}
