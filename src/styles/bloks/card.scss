@@ -1,0 +1,81 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+
+  &__img {
+    display: block;
+    margin: 0 auto 40px;
+    max-width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  &__product-code,
+  &__reviews-text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__product-code,
+  &__price {
+    margin-bottom: 16px;
+  }
+
+  &__reviews,
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews {
+    margin-bottom: 24px;
+  }
+
+  &__product-code,
+  &__price-text {
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__button {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 11px 0;
+    color: #fff;
+    background-color: $color-accent-blue;
+    border: 1px solid $color-accent-blue;
+    border-radius: 5px;
+    transition: all 1s;
+
+    &:hover {
+      color: $color-accent-blue;
+      background-color: #fff;
+    }
+  }
+
+  &--catalog:not(:nth-child(#{$card-column-count}n)) {
+    margin-right: $card-gap-right;
+  }
+
+  &--catalog:not(:nth-last-child(-n + #{$card-column-count})) {
+    margin-bottom: $card-gap-bottom;
+  }
+}
