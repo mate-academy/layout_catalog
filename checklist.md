@@ -128,7 +128,7 @@ $blue: #00acdc;
 
 GOOD example:
 ```scss
-$color-main-accent: #060b35;
+$color-main-dark: #060b35;
 $color-secondary: #616070;
 $color-accent-blue: #00acdc;
 ```
