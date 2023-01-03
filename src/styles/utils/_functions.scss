@@ -1,5 +1,9 @@
-@function max-width($cardsNumber, $cardWidth, $cardsMargin, $catalogPadding) {
-  $max-width: 4 * ($cardWidth)+ ($cardsMargin * 3) + (2 * $catalogPadding);
-
-  @return $max-width;
+@function getCatalogWidth(
+  $products-in-row,
+  $product-card-width,
+  $spaces-between-cards,
+  $x-padding) {
+  @return ($products-in-row * $product-card-width
+  + $spaces-between-cards * ($products-in-row - 1)
+  + $x-padding * 2);
 }
