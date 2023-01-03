@@ -11,56 +11,58 @@
     width: 40px;
   }
   
-  .nav__list {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    &-item {
-      display: inline-block;
-    }
+  .nav{
     
-    &-item--active {
-      color: $color-light-blue;
-      position: relative;
-    }
-
-    &-item--active::after {
-      content: "";
-      position: absolute;
-      display: block;
-      border-bottom: 4px solid $color-light-blue;
-      border-radius: 8px;
-      width: 100%;
-      bottom: 0;
-    }
-
-    &-item:not(:last-child) {
-      margin-right: 20px;
-    }
-    
-    &-link {
+    &__list {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: inherit;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: $color-dark-blue;
-      text-decoration: none;
-      height: 60px;
-      
-      &:hover {
-        color: $color-light-blue;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+  
+      &-item {
+        display: inline-block;
+  
+        &--active {
+          color: $color-light-blue;
+          position: relative;
+           
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            border-bottom: 4px solid $color-light-blue;
+            border-radius: 8px;
+            width: 100%;
+            bottom: 0;
+          }
+        }
       }
-    }
-
-    &-link--active {
-      color: $color-light-blue;
-      position: relative;
+  
+      &-item:not(:last-child) {
+        margin-right: 20px;
+      }
+      
+      &-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $color-dark-blue;
+        text-decoration: none;
+        height: 60px;
+        
+        &:hover {
+          color: $color-light-blue;
+        }
+  
+        &--active {
+          color: $color-light-blue;
+          position: relative;
+        }
+      }
     }
   }
 }
