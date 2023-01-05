@@ -1,12 +1,18 @@
 .catalog {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
 
-  &__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 50px;
-    width: getWidth($card-width, $margin-right, $cards-per-row);
+  padding-top: 50px;
+  max-width: getWidth($card-width, $margin-right, $cards-per-row);
+
+  &__card:not(:nth-child(#{$cards-per-row}n)) {
+    margin-right: $margin-right;
+  }
+  
+  &__card:not(:nth-last-child(-n + #{$cards-per-row})) {
+    margin-bottom: $margin-bottom;
   }
 }
