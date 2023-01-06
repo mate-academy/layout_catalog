@@ -1,0 +1,56 @@
+.header {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    @include square(40px);
+  }
+}
+
+.nav {
+  &__items {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  &__list:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    padding: 23px 0;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-dark;
+
+    &:hover {
+      color: $color-azure;
+    }
+  }
+
+  .is-active {
+    color: $color-azure;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      background-color: $color-azure;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      border-radius: 8px;
+      content: "";
+    }
+  }
+}
