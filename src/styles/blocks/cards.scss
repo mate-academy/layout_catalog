@@ -3,8 +3,9 @@
   flex-direction: column;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  padding: 0 16px;
+  height: 100%;
   margin-bottom: 46px;
+  padding: 0 16px;
   max-width: $cards-width-size;
   background: $color-white;
 
@@ -22,7 +23,6 @@
   &__text {
     display: flex;
     align-self: center;
-    margin: 0;
     padding-top: 40px;
     width: 166px;
     font-size: $small-font-size;
@@ -34,7 +34,6 @@
   &__code {
     @extend %small-text;
 
-    margin: 0;
     padding-top: 4px;
     color: $color-secondary-grey;
   }
@@ -49,7 +48,6 @@
   &__review {
     @extend %small-text;
 
-    margin: 0;
     color: $color-light-black;
   }
 
@@ -61,7 +59,6 @@
   }
 
   &__price-label {
-    margin: 0;
     font-size: $small-font-size;
     line-height: $medium-line-height;
     font-weight: $small-font-weight;
@@ -69,7 +66,6 @@
   }
 
   &__price-value {
-    margin: 0;
     font-size: 16px;
     line-height: $medium-line-height;
     font-weight: $big-font-weight;
@@ -103,8 +99,17 @@
     color: $color-accent-blue;
     background: $color-white;
   }
+
+  &__code--margin,
+  &__review--margin,
+  &__text--margin,
+  &__price-label--margin,
+  &__price-value--margin {
+    margin: 0;
+  }
+
 }
 
-.card:not(:nth-of-type(4n)) {
+.card--margin-right:not(:nth-of-type(4n)) {
   margin-right: $cards-margin-right;
 }
