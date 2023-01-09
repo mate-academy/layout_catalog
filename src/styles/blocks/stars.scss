@@ -4,6 +4,13 @@
   align-items: center;
   &__image {
     display: flex;
+    @for $index from 1 through 5 {
+      &--stars_#{$index} .stars__star:nth-child(-n + #{$index}) {
+        background-image: url("../images/star-active.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
   }
   &__star {
     background-image: url("../images/star.svg");
@@ -17,13 +24,6 @@
   }
   &__text {
     font-size: 10px;
-    color: $main-accent;
-  }
-  @for $index from 1 through 5 {
-    &__image--stars_#{$index} &__star:nth-child(-n + #{$index}) {
-      background-image: url("../images/star-active.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+    color: $color-main-accent;
   }
 }
