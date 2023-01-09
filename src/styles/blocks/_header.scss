@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: $bg-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    height: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__item {
+    margin-left: 20px;
+ 
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+            
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    color: $text-color;
+    padding: 23px 0;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.is-active {
+  color: $main-color;
+
+  &::after {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    content: "";
+    width: 37px;
+    height: 4px;
+    background-color: $main-color;
+    border-radius: 8px;
+  }
+}
