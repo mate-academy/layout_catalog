@@ -75,6 +75,7 @@
     line-height: 40px;
     font-weight: 700;
     text-decoration: none;
+    text-transform: uppercase;
     text-align: center;
     color: #fff;
 
@@ -82,7 +83,7 @@
     border: 1px solid transparent;
     border-radius: 5px;
 
-    transition: 0.3s;
+    transition: $transition;
 
     &:hover {
       color: $color-blue;
@@ -90,5 +91,12 @@
       border: 1px solid $color-blue;
       background-color: #fff;
     }
+  }
+  &:not(:nth-child(#{$cards-in-row}n)) {
+    margin-right: 48px;
+  }
+
+  &:nth-child(-n + #{$cards-in-row}) {
+    margin-bottom: 46px;
   }
 }

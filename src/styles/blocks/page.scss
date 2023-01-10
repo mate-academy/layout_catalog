@@ -1,23 +1,9 @@
 .page {
   &__cards-container {
     display: flex;
-    max-width: getMaxWidth($min-padding);
-    margin: auto;
-    padding: 50px $min-padding 72px;
     flex-wrap: wrap;
-
-    @media (min-width:1200px) {
-      max-width: getMaxWidth($max-padding);
-      padding: 50px $max-padding 72px;
-    }
+    width: getWidth($card-width, $card-distance, $cards-in-row);
+    margin: 0 auto;
+    padding: 50px 0;
   }
-
-  &__item:not(:nth-child(-n + #{$cards-in-row})) {
-    margin-top: 46px;
-  }
-
-  &__item:not(:nth-child(#{$cards-in-row}n)) {
-    margin-right: 48px;
-  }
-
 }
