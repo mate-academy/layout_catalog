@@ -1,26 +1,21 @@
-.wrapper02 {
+.stars {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 24px;
-
-  .stars {
-    display: flex;
   
-    &__star {
-      width: 16px;
-      height: 16px;
-      background: url(../images/star.svg) no-repeat center;
-  
-      &:not(:nth-child(n+5)) {
-        margin-right: 4px;
-        background-image: url(../images/star-active.svg);
-      }
-    }
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url(../images/star.svg) no-repeat center;
   }
-  &__text {
-    margin-left: auto;
-    color: $color-dark-blue;
-    line-height: 14px;
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &--1 :first-child ,
+  &--2 :not(:nth-child(n+3)) ,
+  &--3 :not(:nth-child(n+4)) ,
+  &--4 :not(:last-child) ,
+  &--5 :nth-child(n) {
+    background-image: url(../images/star-active.svg);
   }
 }
