@@ -5,14 +5,12 @@
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
-    height: $star-size;
-    width: $star-size;
+    @include square($star-size);
   }
 
-  &--active :nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
-    margin-right: 4px;
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
-
-
