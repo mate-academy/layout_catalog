@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+.header {
+  padding: 0 50px;
+  height: #{$header-height};
+  font-weight: 500;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 1px 3px rgb(234, 234, 234);
+}
+
+.logo {
+  @include square(40px);
+}
+
+.menu {
+  &__list {
+    list-style: none;
+  
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+  
+  &__link {
+    @extend %flex-all-center;
+    position: relative;
+  
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #{$color-main-accent};
+    height: #{$header-height};
+    transition: 0.2s;
+    
+    &:hover {
+      color: #{$color-blue-accent};
+    }
+  }
+}
+
+.is-active {
+  color: #{$color-blue-accent};
+
+  &::after {
+    content: "";
+    background-color: #{$color-blue-accent};
+    height: 4px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
