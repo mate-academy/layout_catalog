@@ -1,0 +1,18 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__position {
+    margin: 0 auto;
+    padding-top: 50px;
+    width: getWidth($card-width, $margin-right, $cards-per-row);
+  }
+
+  &__card:not(:nth-child(#{$cards-per-row}n)) {
+    margin-right: $margin-right;
+  }
+  
+  &__card:not(:nth-child(-n + #{$cards-per-row})) {
+    margin-top: $margin-top;
+  }
+}
