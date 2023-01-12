@@ -1,0 +1,21 @@
+.stars {
+  display: flex;
+
+  &__star-rate {
+    width: 16px;
+    height: 16px;
+
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  @each $raiting in $productRaiting {
+    &--#{$raiting} :nth-child(-n + #{$raiting}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
