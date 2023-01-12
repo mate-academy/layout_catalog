@@ -11,19 +11,16 @@
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 4px;
+
+    & :last-child {
+      margin-right: 0;
+    }
+
+    @for $starCount from 1 through 5 {
+      &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
   }
 
-  &__star :last-child {
-    margin-right: 0;
-  }
-
-  &__star--1 :nth-child(-n+1),
-  &__star--2 :nth-child(-n+2),
-  &__star--3 :nth-child(-n+3),
-  &__star--4 :nth-child(-n+4),
-  &__star--5 :nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
-  }
 }
-
-
