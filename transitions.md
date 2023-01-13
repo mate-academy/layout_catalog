@@ -5,12 +5,12 @@
 
 ## Task
 - Make all the changes smooth on hover (All links and buttons).
-- Smoothly (during 400ms) increase the card image by 20 percent on image hover.
+- Smoothly (during 400ms) increase the catalog__card image by 20 percent on image hover.
 - (*) Add 3px border to the image when hovering.
-  - Border should be the same color as the card border.
+  - Border should be the same color as the catalog__card border.
   - It should appear immediately.
   - The picture should not "jump".
-- (*) Add padding so the top left and right borders of the image match the outer borders of the card.
+- (*) Add padding so the top left and right borders of the image match the outer borders of the catalog__card.
 
 | start | end |
 | ----- | --- |
