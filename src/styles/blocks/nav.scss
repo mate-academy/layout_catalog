@@ -1,0 +1,40 @@
+.nav {
+  &__navigation {
+    display: flex;
+    margin: $nav-margin;
+    padding: $nav-padding;
+    list-style: none;
+  }
+  
+  &__link {
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-decoration: none;
+    color: $main-link-color;
+    height: $nav-link-height;
+  }
+  
+  &__list:not(:first-child) {
+    margin-left: $nav-link-margin;
+  }
+  
+  &__link:hover {
+    color: $active-link-color;
+  }
+  
+  .is-active {
+    color: $active-link-color;
+  }
+  
+  .is-active::after {
+    position: absolute;
+    display: flex;
+    background-color: $active-link-color;
+    border-radius: $nav-link-line-radius;
+    content: "";
+    width: 100%;
+    height: $nav-link-line-height;
+    bottom: 0;
+  }
+}
