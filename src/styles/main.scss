@@ -1,3 +1,266 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+//========== Body, Section, Row =========== //
+.body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.main_content {
+  margin: 50px auto 0;
+  width: 944px;
+  height: 862px;
+  // background-color: aquamarine;
+}
+
+.row {
+  display: flex;
+  // width: 944px;
+  // height: 408px;
+  // background-color: coral;
+  justify-content: center;
+  align-items: center;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 46px;
+}
+
+//========== Header ============= //
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.header__logo {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.nav__item {
+  display: flex;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link {
+  padding-top: 22.5px;
+  padding-bottom: 22.5px;
+  position: relative;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  color: #060b35;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: #00acdc;
+}
+
+.is-active {
+  position: relative;
+  justify-self: center;
+  color: #00acdc;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  padding-top: 22.5px;
+  padding-bottom: 22.5px;
+  align-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 56px;
+  left: 0;
+  background: #00acdc;
+  border-radius: 8px;
+  display: block;
+}
+
+// ============= Card ============= //
+.card {
+  width: 200px;
+  padding: 32px 16px 16px;
+  // background: #ffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:not(:last-child) {
+  margin-right: 48px;
+}
+
+.card__img {
+  width: 160px;
+  height: 134px;
+}
+
+.card__content {
+  margin-top: 40px;
+  width: 166px;
+  height: 36px;
+}
+
+.card__content_text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #060b35;
+  line-height: 18px;
+  margin: 0;
+}
+
+.card__product_code {
+  width: 98px;
+  height: 14px;
+  margin-top: 4px;
+  align-self: flex-start;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.card__product_code_text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #616070;
+  margin: 0;
+}
+
+.card__reviews {
+  display: flex;
+  width: 166px;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.card__reviews_content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.card__reviews_content_text {
+  font-weight: 400;
+  font-size: 10px;
+  color: #060b35;
+  margin: 0;
+}
+
+.card__price {
+  display: flex;
+  width: 166px;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+// .card__price_label {
+//   text-align: center;
+//   align-items: center;
+// }
+
+.card__price_label_text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #616070;
+  margin: 0;
+}
+
+// .card__price_digit {
+//   text-align: center;
+//   align-items: center;
+// }
+
+.card__price_digit_text {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: #060b35;
+  margin: 0;
+}
+
+.card__button_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 16px;
+  border-radius: 5px;
+  width: 166px;
+  height: 40px;
+  background: #00acdc;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.card__button_link:hover {
+  color: #00acdc;
+  background: white;
+  border-color: #00acdc;
+}
+
+// ============= Stars ================= //
+.stars {
+  display: flex;
+}
+
+.stars__star {
+  height: 16px;
+  width: 16px;
+  background-image: url(/images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stars__star:not(:last-child) {
+  margin-right: 4px;
+}
+
+.stars--1 .stars__star:first-child,
+.stars--2 .stars__star:nth-child(-n+2),
+.stars--3 .stars__star:nth-child(-n+3),
+.stars--4 .stars__star:nth-child(-n+4),
+.stars--5 .stars__star:nth-child(n) {
+  background-image: url(/images/star-active.svg);
 }
