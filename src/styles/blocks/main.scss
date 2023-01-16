@@ -3,22 +3,18 @@
 
   &__card {
     display: flex;
-    width: maxWidth($min-padding);
     margin: auto;
-    padding: 50px $min-padding 72px;
     flex-wrap: wrap;
-
-    @media (min-width:1200px) {
-      width: maxWidth($max-padding);
-      padding: 50px $max-padding 72px;
-    }
+    width: 4 * $card-width + 3 * $card-margin-right + 2 * 40;
+    padding-top: 50px;
+    justify-content: center;
   }
 
-  &__item:not(:nth-last-child(-n + #{$cards-in-row})) {
+  &__item {
     margin-bottom: 46px;
   }
 
-  &__item:not(:nth-child(#{$cards-in-row}n)) {
+  &__item:not(:nth-child(4n)) {
     margin-right: 48px;
   }
 }
