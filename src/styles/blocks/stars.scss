@@ -1,11 +1,17 @@
 .rating__stars {
   display: flex;
   align-items: center;
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .rating__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
 
 .rating__star {
-  width: 16px;
-  height: 16px;
+  width: $star-side;
+  height: $star-side;
   margin-right: 4px;
   background-image: url(/images/star.svg);
   background-position: center;
@@ -14,12 +20,4 @@
   &:last-child {
     margin-right: 0;
   }
-}
-
-.rating__stars--1 .rating__star:nth-child(1),
-.rating__stars--2 .rating__star:nth-child(-n + 2),
-.rating__stars--3 .rating__star:nth-child(-n + 3),
-.rating__stars--4 .rating__star:nth-child(-n + 4),
-.rating__stars--5 .rating__star:nth-child(-n + 5) {
-  background-image: url(/images/star-active.svg);
 }
