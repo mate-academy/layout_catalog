@@ -1,0 +1,48 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    padding-top: 23px;
+    padding-bottom: 22px;
+    line-height: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    color: $color-font-main-accent;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-blue-accent;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+  }
+
+  .is-active {
+    color: $color-blue-accent;
+
+    &::after {
+      display: block;
+      position: absolute;
+      top: 56px;
+      content: "";
+      height: 4px;
+      width: 100%;
+      background-color: $color-blue-accent;
+      border-radius: 8px;
+    }
+  }
+}
