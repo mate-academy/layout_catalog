@@ -1,0 +1,96 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-shrink: 1;
+  border: $standart-border;
+  border-radius: $card-border-radius;
+  background: $white-background-color;
+  
+  &:nth-child(n + 2), {
+    margin-left: $cards-margin-left-and-top;
+  }
+   
+  &:nth-child(5n) {
+    margin-left: $fifth-card-margin-left;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-top: $cards-margin-left-and-top;
+  }
+  
+  &__image {
+    padding: $image-paddings;
+    width: $image-width;
+    height: $image-height;
+  }
+  
+  &__content {
+    @extend %content-text;
+    margin: $content-margin;
+    padding: $content-padding;
+    color: $black-text-color;
+  }
+  
+  &__code {
+    @extend %product-code-text;
+    margin: $code-margin;
+    padding: $code-padding;
+    color: $grey-text-color;
+  }
+  
+  &__review {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: $review-padding;
+  }
+  
+  &__review-text {
+    @extend %product-code-text;
+    display: flex;
+    flex-direction: flex-end;
+    align-items: center;
+    margin: $review-text-padding;
+    color: $black-text-color;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding: $price-padding;
+  }
+  
+  &__price-text {
+    @extend %price-text-text;
+    margin: $price-text-margin;
+    color: $grey-text-color;
+  }
+  
+  &__price-label {
+    @extend %price-label-text;
+    margin: $price-label-margin;
+  }
+  
+  &__button-label {
+    @extend %button-label-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: $button-label-margin;
+    width: $button-label-width;
+    height: $button-label-height;
+    text-decoration: none;
+    background-color: $blue-background-color;
+    border-radius: $button-label-border-radius;
+    color: $button-text-color;
+  }
+  
+  &__button-label:hover {
+    @extend %button-label-hover-text;
+    border: $blue-border;
+    border-radius: $button-label-border-radius;
+    background-color: $white-background-color;
+    color: $blue-background-color;
+  }
+}
