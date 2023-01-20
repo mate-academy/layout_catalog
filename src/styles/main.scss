@@ -1,3 +1,237 @@
-body {
+$color-main: #00acdc;
+$color-title: #060b35;
+$color-white: #fff;
+$color-text: #616070;
+$header-height: 60px;
+$card-margin: 16px;
+$logo-size: 40px;
+$star-size: 16px;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+body,
+h2,
+p {
   margin: 0;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: $color-text;
+}
+
+.header {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  background: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo-img {
+  @include square($logo-size);
+}
+
+.nav {
+  display: block;
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: center;
+  }
+  
+  &__item {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  &__link {
+    color: $color-title;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: $header-height;
+    white-space: nowrap;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+  &__link:nth-of-type(4) {
+    flex-shrink: 0;
+  }
+
+  &__link:hover {
+    color: $color-main;
+  }
+
+  &__link:link {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .is-active {
+    color: $color-main;
+  }
+
+  .is-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $color-main;
+  }
+}
+
+.main-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 1024px;
+  padding: 50px 40px;
+  margin: 0 auto;
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+  }
+}
+
+.main-catalog > :nth-last-child(-n + 4) {
+  margin-bottom: 0;
+  margin-right: 48px;
+}
+
+.main-catalog :nth-child(4n) {
+  margin-right: 0;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 200px;
+  box-sizing: border-box;
+  background: $color-white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  & > * {
+    display: flex;
+    margin-bottom: $card-margin;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    color: $color-title;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+  }
+
+  &__rating {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: space-between;
+
+    &__star {
+      @include square($star-size);
+      margin-right: 4px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @for $index from 0 through 4 {
+      &--#{$index} :nth-child(n + #{$index}) {
+        background-image: url(../images/star.svg);
+      }
+    }
+
+    @for $index from 1 through 5 {
+      &--#{$index} :nth-child(-n + #{$index}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+
+  &__reviews {
+    color: $color-title;
+    font-weight: 400;
+  }
+
+  &__price {
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: $card-margin;
+  }
+
+  &__price-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    color: $color-title;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__button {
+    display: block;
+    height: 40px;
+    background: $color-main;
+    border-radius: 5px;
+    text-decoration: none;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $color-main;
+    margin-bottom: 0;
+  }
+
+  &__button:hover {
+    color: $color-main;
+    background-color: $color-white;
+  }
 }
