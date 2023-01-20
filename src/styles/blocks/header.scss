@@ -1,0 +1,60 @@
+.header {
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $backgroundPage;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    &__items {
+      display: flex;
+      position: relative;
+    }
+    
+    &__items:not(:last-child) {
+      margin-right: 20px;
+    }
+    
+    &__link {
+      white-space: nowrap;
+      padding: 23px 0;
+      color: $colorText;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &__link:hover {
+      color: $colorLink;
+    }
+  }
+
+  .is-active {
+    color: $colorLink;
+  
+    &::after {
+      content: " ";
+      display: block;
+      height: 4px;
+      width: 100%;
+      background-color: $colorLink;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
