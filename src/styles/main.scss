@@ -1,3 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto+Slab:wght@900&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto+Slab:wght@900&family=Roboto:wght@400;500;700&display=swap");
+$color-blue: #00acdc;
+$color-grey: #616070;
+$color-black: #060b35;
+$color-white: #fff;
+$padding2pcs: 41px;
+$width-card: 198px;
+$margin3cards: 50px;
+
+@function size($card) {
+  @return 4*$card+3*$margin3cards+2*$padding2pcs;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.general-container {
+  max-width: size($width-card);
+}
+//**************блок добавленный
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+//**************блок добавленный
+
+.row-card-first > .card:not(:last-child) {
+  margin-right: 50px;
+}
+
+.row-card-second {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: size($width-card);
+}
+
+.row-card-first {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: size($width-card);
+  margin-top: 51px;
+}
+
+.card-container > .row-card-first,
+.card-container > .row-card-second {
+  margin-right: 41px;
+  margin-left: 41px;
+}
+
+.header {
+  display: flex;
+  background: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    display: block;
+    line-height: 60px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $color-black;
+  }
+  &__link:hover {
+    color: $color-blue;
+  }
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $color-blue;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $color-blue;
+    border-radius: 8px;
+  }
+}
+//**************блок добавленный
+
+.card-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $color-black;
+  padding: 0 16px;
+  margin-top: 36px;
+}
+
+.card__reviews-block {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__reviews {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--color-light);
+}
+
+.picture-bem1__elem {
+  height: 134px;
+  width: 160px;
+  border: none;
+  position: relative;
+}
+
+.stars {
+  display: flex;
+  padding: 0 16px;
+
+  & :nth-child(1),
+  & :nth-child(2),
+  & :nth-child(3),
+  & :nth-child(4),
+  & :nth-child(5) {
+    width: 16px;
+    height: 16px;
+    border-radius: 0.5px;
+    background: url(/images/star-active.svg) no-repeat center;
+  }
+  & :nth-child(5) {
+    width: 16px;
+    height: 16px;
+    border-radius: 0.5px;
+    background: url(/images/star.svg) no-repeat center;
+  }
+  & :not(:last-child) {
+    margin-right: 4px;
+  }
+}
+
+.picture-box {
+  margin: 0 19px;
+}
+
+.code-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $color-grey;
+  padding: 0 84px 0 16px;
+  margin-top: 4px;
+}
+
+.reviews {
+  font-weight: 400;
+  font-size: 10px;
+  width: 53px;
+  height: 16px;
+  line-height: 14px;
+  color: $color-black;
+  padding: 0 16px 0 17px;
+  white-space: nowrap;
+}
+
+.price {
+  font-style: "Regular";
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $color-grey;
+}
+
+.price-cost {
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.cost {
+  font-style: "Bold";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: $color-black;
+}
+
+.button-buy {
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 166px;
+  background-color: $color-blue;
+  border-radius: 5px;
+  color: white;
+  margin: 16px;
+  line-height: 16px;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $color-white;
+    border-color: $color-blue;
+    color: $color-blue;
+  }
 }
