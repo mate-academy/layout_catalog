@@ -1,18 +1,22 @@
 .card {
+  display: flex;
+  flex-direction: column;
   width: $card-width;
   padding: 32px 16px 16px;
-  background: $white-color;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
   &__photo {
     width: $card-img-width;
     height: $card-img-height;
-    margin: 0 3px 38px;
+    margin: 0 auto 40px;
+    align-self: center;
+    object-fit: contain;
+    object-position: center;
   }
 
   &__name {
-    margin: 0 0 4px;
+    margin-bottom: 4px;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
@@ -20,21 +24,22 @@
   }
 
   &__code {
+    margin-bottom: 16px;
     font-size: 10px;
+    font-weight: 400;
     line-height: 14px;
     color: $card-secondary-color;
-    margin: 0 0 16px;
   }
 
   &__rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
   }
 
   &__reviews {
-    display: flex;
+    align-self: center;
     font-weight: 400;
     font-size: 10px;
     color: $card-main-color;
@@ -42,14 +47,13 @@
 
   &__price {
     display: flex;
-    height: 18px;
     justify-content: space-between;
-    align-items: baseline;
     margin-bottom: 16px;
   }
 
   &__price-text {
     font-size: 12px;
+    font-weight: 400;
     line-height: 18px;
     color: $card-secondary-color;
   }
@@ -62,23 +66,25 @@
   }
 
   &__button {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 700;
     font-size: 14px;
-    line-height: 40px;
+    line-height: 16px;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
     color: $white-color;
     background-color: $card-btn-main-color;
-    width: $card__button-width;
     height: $card__button-height;
     border-radius: 5px;
+    border: 1px solid transparent;
 
     &:hover {
       background: $white-color;
       color: $card-btn-main-color;
-      border: 1px solid $card-btn-main-color;
+      border-color: $card-btn-main-color;
     }
   }
 }

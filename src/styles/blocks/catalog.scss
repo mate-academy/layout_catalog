@@ -1,23 +1,19 @@
 .catalog {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  max-width: catalog($card-width, $card-horiz-margin, $cards-in-row);
+  width: catalog($card-width, $card-horiz-margin, $cards-in-row);
   margin: 0 auto;
   padding: 50px 0;
 
   &__card {
-    display: block;
-    max-width: $card-width;
-    max-height: $card-height;
-    margin-right: $card-horiz-margin;
-    margin-bottom: 48px;
-
-    &:nth-child(4n) {
-      margin-right: 0;
+    &:not(:nth-child(4n)) {
+      margin-right: $card-horiz-margin;
     }
 
-    &:nth-last-child(-n + 4) {
-      margin-bottom: 0;
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: $card-veritcal-margin;
     }
   }
 }
