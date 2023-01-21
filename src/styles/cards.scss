@@ -1,22 +1,6 @@
 @import "./variables.scss";
 
-body,
-h2,
-p,
-.page {
-  margin: 0;
-}
-
-.main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 4 * $card-width + 3 * $card-margin;
-  padding-top: 50px;
-  margin: auto;
-}
+@import "./cycles.scss";
 
 .card {
   font-family: Roboto, sans-serif;
@@ -29,8 +13,6 @@ p,
   border-radius: 5px;
   box-sizing: border-box;
   padding: 32px 16px 16px;
-  margin-right: #{$card-margin};
-  margin-bottom: 46px;
 
   &__image {
     height: 134px;
@@ -78,14 +60,14 @@ p,
     padding-bottom: 16px;
     width: 100%;
 
-    .price__words {
+    &-words {
       color: #{$color-light};
       font-size: 12px;
       font-weight: 400;
       text-align: start;
     }
 
-    .price__numbers {
+    &-numbers {
       color: #{$color-dark};
       font-size: 16px;
       font-weight: 700;
@@ -108,11 +90,11 @@ p,
   &__buy:hover {
     color: #{$main-color};
     background-color: #fff;
-    border: 1px solid #{$main-color};
+    outline: 1px solid #{$main-color};
     border-radius: 5px;
   }
-}
 
-.card:nth-child(4n) {
-  margin-right: 0;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 }

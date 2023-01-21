@@ -4,8 +4,27 @@
 
 @use "./stars.scss";
 
-@use "./variables.scss";
+@use "./reset.scss";
 
-body {
-  margin: 0;
+@use "./page.scss";
+
+@import "./cycles.scss";
+
+@import "./functions.scss";
+
+@import "./variables.scss";
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: getWidth($card-row-q, $card-width, $card-margin);
+  padding-top: 50px;
+
+  &__card {
+    margin-right: #{$card-margin};
+    margin-bottom: 46px;
+  }
 }
