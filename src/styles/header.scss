@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: #{$header-height};
+  padding: 0 50px;
+  font-weight: 500;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__img {
+    height: 40px;
+    width: 40px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: #{$header-height};
+    text-decoration: none;
+    color: #060b35;
+
+    &:hover {
+      color: #{$main-color};
+    }
+  }
+
+  &__item:nth-child(n+2) {
+    margin-left: 20px;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: #{$main-color};
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #{$main-color};
+  }
+}
