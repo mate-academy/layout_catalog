@@ -1,3 +1,235 @@
-body {
+$color-action: #00acdc;
+$header-size: 60px;
+$color-white: #fff;
+$logo-size: 40px;
+$main-color: #060b35;
+$main-secondary-color: #616070;
+$star-size: 16px;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+body,
+h2,
+h3 {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: $header-size;
+  background-color: $color-white;
+}
+
+.logo {
+  @include square($logo-size);
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.nav {
+  display: block;
+  list-style: none;
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: center;
+  }
+
+  &__item {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  &__link {
+    color: $main-color;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: $header-size;
+    white-space: nowrap;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+  &__link:last-child {
+    margin-right: 0;
+  }
+
+  &__link:hover {
+    color: $color-action;
+  }
+
+  &__link:link {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .is-active {
+    color: $color-action;
+  }
+}
+
+.is-active:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+  background-color: $color-action;
+}
+
+.main-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 1024px;
+  padding: 50px 40px;
+  margin: 0 auto;
+}
+
+.card {
+  margin-right: 48px;
+  margin-bottom: 46px;
+  width: 200px;
+  background-color: $color-white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-color;
+    margin-top: 40px;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 16px;
+    margin-top: 4px;
+    color: $main-secondary-color;
+  }
+
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__count {
+    font-size: 10px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    color: $main-secondary-color;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+
+  &__buy {
+    display: block;
+    padding: 11px;
+    border: 1px solid $color-action;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-white;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: $color-action;
+  }
+
+  &__buy:hover {
+    color: $color-action;
+    background-color: $color-white;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    @include square($star-size);
+
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @for $index from 0 through 4 {
+    &--#{$index} :nth-child(n + #{$index}) {
+      background-image: url(../images/star.svg);
+    }
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
