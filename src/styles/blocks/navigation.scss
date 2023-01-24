@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  font-weight: 500;
+
+  &__menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-dark;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 23px 0;
+    font-size: 12px;
+    &:hover {
+      color: $color-main;
+      cursor: pointer;
+    }
+  }
+}
+
+.is-active {
+  color: $color-main;
+}
+
+.is-active::after {
+  display: block;
+  position: absolute;
+  background-color: $color-main;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  border-radius: 8px;
+  content: "";
+  margin-top: 19px;
+}
