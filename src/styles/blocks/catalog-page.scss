@@ -1,0 +1,29 @@
+
+.catalog-page {
+  font-family: $main-font;
+
+  &__content {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  &__catalog {
+    max-width: max-width($col-count, $card-width, $card-shift-r);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px 40px;
+  }
+
+  &__card {
+    @include card-shift($card-shift-r, $card-shift-b);
+
+    &:nth-child(#{$col-count}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$col-count}) {
+      margin-bottom: 0;
+    }
+  }
+}
