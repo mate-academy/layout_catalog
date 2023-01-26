@@ -38,22 +38,15 @@ h3 {
 
 .logo {
   @include square($logo-size);
-
-  &__image {
-    height: 100%;
-    width: 100%;
-  }
 }
 
 .nav {
-  display: block;
   list-style: none;
 
   &__list {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: stretch;
     align-content: center;
@@ -62,6 +55,10 @@ h3 {
   &__item {
     display: flex;
     margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   &__link {
@@ -71,23 +68,19 @@ h3 {
     font-size: 12px;
     line-height: $header-size;
     white-space: nowrap;
-  }
 
-  &__item:first-child {
-    margin-left: 0;
-  }
+    &:last-child {
+      margin-right: 0;
+    }
 
-  &__link:last-child {
-    margin-right: 0;
-  }
+    &:hover {
+      color: $color-action;
+    }
 
-  &__link:hover {
-    color: $color-action;
-  }
-
-  &__link:link {
-    position: relative;
-    text-decoration: none;
+    &:link {
+      position: relative;
+      text-decoration: none;
+    }
   }
 
   .is-active {
@@ -202,11 +195,11 @@ h3 {
     text-transform: uppercase;
     text-align: center;
     background-color: $color-action;
-  }
 
-  &__buy:hover {
-    color: $color-action;
-    background-color: $color-white;
+    &:hover {
+      color: $color-action;
+      background-color: $color-white;
+    }
   }
 }
 
