@@ -1,0 +1,14 @@
+@function getCatalogContainerWidth(
+  $product-card-width,
+  $catalog-product-card-horizontal-margin,
+  $catalog-product-cards-per-row,
+  $catalog-container-horizontal-padding
+) {
+  $width-for-cards: $product-card-width * $catalog-product-cards-per-row;
+  $width-for-margins:
+    $catalog-product-card-horizontal-margin
+    * ($catalog-product-cards-per-row - 1);
+  $width-for-paddings: $catalog-container-horizontal-padding * 2;
+
+  @return $width-for-cards + $width-for-margins + $width-for-paddings;
+}
