@@ -1,12 +1,14 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  size: 100%;
+  max-width: 200px;
   padding: 32px 16px 16px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   box-sizing: border-box;
   flex-grow: 1;
+  margin-right: 50px;
 
   &-text {
     font-weight: 500;
@@ -18,34 +20,26 @@
 }
 
 .card-container {
-  margin: 0 auto;
   border: 0;
-}
-
-.row-card-first > .card:not(:last-child),
-.row-card-second > .card:not(:last-child) {
-  margin-right: 50px;
-}
-
-.row-card-second {
   display: flex;
+  width: size($width-card);
+  flex-wrap: wrap;
   flex-direction: row;
-  flex-wrap: nowrap;
-  margin-top: 48px;
-  margin-bottom: 73px;
-}
-
-.row-card-first {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   margin-top: 51px;
-}
-
-.card-container > .row-card-first,
-.card-container > .row-card-second {
   margin-right: 41px;
   margin-left: 41px;
+}
+
+.card:nth-child(4n + 4) {
+  margin-right: 0;
+}
+
+.card:nth-last-child(-n + 4) {
+  margin-bottom: 0;
+}
+
+.card:nth-child(n + 5) {
+  margin-top: 48px;
 }
 
 .card__reviews-block {
