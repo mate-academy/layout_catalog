@@ -1,22 +1,22 @@
+$cards-in-a-row: 4;
+$card-width: 200px;
+$card-margin-x: 48px;
+$card-margin-y: 46px;
+
 .catalog {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  max-width: calc(var(--number-of-cards) * var(--card-width)
-  + var(--cards-distance-x) * 3);
-
-  --number-of-cards: 4;
-  --card-width: 200px;
-  --cards-distance-x: 48px;
-  --cards-distance-y: 50px;
+  max-width: $cards-in-a-row * $card-width
+    + $card-margin-x * ($cards-in-a-row - 1);
 
   &__item {
     &:not(:nth-child(4n)) {
-      margin-right: var(--cards-distance-x);
+      margin-right: $card-margin-x;
     }
 
     &:not(:nth-last-child(-n+4)) {
-      margin-bottom: var(--cards-distance-y);
+      margin-bottom: $card-margin-y;
     }
   }
 }
