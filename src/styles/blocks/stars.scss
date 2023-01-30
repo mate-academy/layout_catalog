@@ -1,11 +1,5 @@
-@mixin square($size) {
-  width: $size;
-  height: $size;
-}
-
 .stars {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 
@@ -17,11 +11,9 @@
     background-image: url("./../images/star.svg");
   }
 
-  .stars--1 &__star:nth-child(-n+1),
-  .stars--2 &__star:nth-child(-n+2),
-  .stars--3 &__star:nth-child(-n+3),
-  .stars--4 &__star:nth-child(-n+4),
-  .stars--5 &__star:nth-child(-n+5) {
-    background-image: url("./../images/star-active.svg");
+  @for $index from 1 through 5 {
+    .stars--#{$index} &__star:nth-child(-n + #{$index}) {
+      background-image: url("./../images/star-active.svg");
+    }
   }
 }
