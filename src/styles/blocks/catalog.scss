@@ -1,0 +1,22 @@
+$cards-in-a-row: 4;
+$card-width: 200px;
+$card-margin-x: 48px;
+$card-margin-y: 46px;
+
+.catalog {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $cards-in-a-row * $card-width
+    + $card-margin-x * ($cards-in-a-row - 1);
+
+  &__item {
+    &:not(:nth-child(4n)) {
+      margin-right: $card-margin-x;
+    }
+
+    &:not(:nth-last-child(-n+4)) {
+      margin-bottom: $card-margin-y;
+    }
+  }
+}
