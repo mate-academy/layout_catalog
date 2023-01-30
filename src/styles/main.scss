@@ -1,91 +1,139 @@
-// #region Variables
-// Sizes
-$logo-size: 40px;
-// Color
-$color-fonts-primary: #060b35;
-$color-accent: #00acdc;
-$color-fonts-secondary: #616070;
-$color-bcg-white: #fff;
-// #endregion Variables
+@import "../styles/utils/variables";
+@import "../styles/utils/reset";
+@import "../styles/utils/mixins";
 
-// #region Reset
-html {
-  box-sizing: border-box;
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 12px;
-}
+@import "../styles/blocks/header.scss";
 
-body,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: $color-bcg-white;
-}
-// #endregion Reset
-
-// #region Mixins
-@mixin logo-size($size) {
-  width: $size;
-  height: $size;
-}
-// #endregion Mixins
-
-// #region Header
-.header {
+// #region Card
+.card {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 50px;
-  background-color: $color-bcg-white;
 
-  &__logo {
-    @include logo-size($logo-size);
+  width: 200px;
+  padding: 32px 16px 16px;
+
+  background: $color-bcg-white;
+  border: 1px solid $color-card-border;
+  border-radius: $border-radius-card;
+
+  &__image {
+    margin-bottom: 40px;
+
+    width: 160px;
+    height: 134px;
   }
 
-  &__list {
-    display: flex;
-    align-items: center;
-    padding: 23px 0;
+  &__title {
+    margin-bottom: 4px;
 
-    list-style: none;
-  }
-
-  &__item:not(:last-child) {
-    margin-right: 20px;
-  }
-
-  &__link {
-    padding: 23px 0;
-
-    color: $color-fonts-primary;
     font-weight: 500;
-    font-size: inherit;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-fonts-primary;
+  }
+
+  &__id {
+    margin-bottom: 16px;
+
+    align-self: flex-start;
+
+    font-weight: 400;
+    font-size: 10px;
     line-height: 14px;
+    color: $color-fonts-secondary;
+  }
+
+  &__reviews {
+    margin-bottom: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 166px;
+  }
+
+  &__description {
+    color: $color-fonts-primary;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__cost {
+    margin-bottom: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 166px;
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-fonts-secondary;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-fonts-primary;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 40px;
+    border-radius: $border-radius-card;
+    border: 1px solid transparent;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-bcg-white;
     text-decoration: none;
     text-transform: uppercase;
-  }
 
-  &__link:hover {
-    color: $color-accent;
-  }
-
-  &__link.is-active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    border-radius: 8px;
     background-color: $color-accent;
   }
+
+  &__button:hover {
+    color: $color-accent;
+    background-color: $color-bcg-white;
+    border-color: $color-accent;
+  }
 }
 
-.is-active {
-  position: relative;
-  color: $color-accent;
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @for $star from 1 through 5 {
+    &--#{$star} .stars__star:nth-child(-n + #{$star}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
-// #endregion Header
+// #endregion Card
