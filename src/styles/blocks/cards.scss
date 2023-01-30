@@ -8,18 +8,20 @@
     $card-width);
   margin: 0 auto;
   padding: 50px 40px;
-  // gap: 46px 48px;
-}
 
-.card-container {
-  margin-right: $card-right-margin;
-  margin-top: 46px;
-
-  &:nth-child(#{$cards-in-a-row}n) {
-    margin-right: 0;
+  @media (min-width: 1200px) {
+    padding: 50px 128px;
   }
 
-  &:nth-child(-n + #{$cards-in-a-row}) {
-    margin-top: 0;
+  &__container {
+    margin-right: $card-right-margin;
+
+    &:nth-child(#{$cards-in-a-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(n + #{$cards-in-a-row + 1}) {
+      margin-top: 44px;
+    }
   }
 }
