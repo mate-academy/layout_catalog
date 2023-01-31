@@ -1,0 +1,28 @@
+.card__stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 22px;
+  &-star {
+    width: 16px;
+    height: 16px;
+    background-image: url($star);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+  &-star:not(:last-child) {
+    margin-right: 4px;
+  }
+  &--1 &-star:first-child,
+  &--2 &-star:first-child,
+  &--2 &-star:nth-child(2),
+  &--4 &-star:not(:last-child),
+  &--5 &-star *,
+  &--3 &-star:first-child,
+  &--3 &-star:nth-child(2),
+  &--3 &-star:nth-child(3) {
+    background-image: url($star-active);
+  }
+}
