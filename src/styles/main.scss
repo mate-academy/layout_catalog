@@ -19,12 +19,17 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   height: 406px;
+  margin-bottom: 48px;
 }
 
 .body {
   font-size: 12px;
   margin: 0;
   font-family: Roboto, Arial, sans-serif;
+
+  & * {
+    box-sizing: border-box;
+  }
 }
 
 .header {
@@ -44,6 +49,10 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
 
 .nav {
 
+  &-list__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
   &-list__link {
     display: inline-block;
     text-align: center;
@@ -56,16 +65,11 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
     line-height: 0;
     max-height: 60px;
     box-sizing: border-box;
-    margin-right: 20px;
     font-weight: 500;
     
     &:hover {
       color: $blue;
     }
-  }
-
-  .nav-list__item:last-child {
-    margin-right: -20px;
   }
 
   &-list {
@@ -75,9 +79,8 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
     margin: 0;
     padding: 0;
   }
-
 }
- 
+
 .is-active {
   position: relative;
   color: $blue;
@@ -98,25 +101,13 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
 .main-data {
   display: flex;
   flex-wrap: wrap;
-  max-inline-size: $rowWidth;
+  max-width: $rowWidth;
   margin: auto;
-
-  & > * {
-    box-sizing: border-box;
-  }
+  margin-top: 51px;
 }
 
 .card {
-  &:nth-child(-n + 4) {
-    margin-top: 51px;
-    margin-bottom: 48px;
-  }
-
   @include cardStyle();
-
-  & > * {
-    display: flex;
-  }
 
   &:not(:nth-child(4n)) {
     margin-right: $gap;
@@ -125,14 +116,8 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
   &__image {
     max-width: 160px;
     height: 134px;
-  }
-
-  &__image--possition {
+    display: flex;
     margin: 32px 19px 40px;
-  }
-
-  &__model--possition {
-    margin: 0 16px 4px;
   }
 
   &__model {
@@ -140,44 +125,38 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
     color: $black;
     font-size: 12px;
     line-height: 18px;
-  }
-
-  &__product-code--possition {
-    margin: 0 16px 16px;
+    display: flex;
+    margin: 0 16px 4px;
   }
 
   &__product-code {
     font-size: 10px;
     color: $grey;
     line-height: 14px;
+    display: flex;
+    margin: 0 16px 16px;
   }
 
   &__price-container {
     font-size: 12px;
     justify-content: space-between;
     line-height: 18px;
+    display: flex;
+    margin: 0 16px 16px;
   }
 
   &__price-text {
     color: $grey;
   }
 
-  &__price-text--possition {
-    margin: 0 0 16px 16px;
-  }
-  
   &__price-amount {
     color: $black;
     font-weight: 700;
     font-size: 16px;
   }
-  
-  &__price-amount--possition {
-    margin: 0 16px 16px 0;
-  }
-  
-  &__button--possition {
-    margin: 0 16px 16px;
+
+  &__link {
+    display: flex;
   }
   
   &__button {
@@ -192,6 +171,7 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    margin: 0 16px 16px;
   }
   
   &__button:hover {
@@ -205,13 +185,11 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
 .stars {
   justify-content: space-between;
   align-items: center;
+  display: flex;
+  margin: 0 16px 24px;
 
   &__block {
     display: flex;
-  }
-
-  &__block--possition {
-    margin: 0 0 24px 16px;
   }
 
   &__star {
@@ -220,6 +198,7 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
     background-image: url(/images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
+
   }
 
   &__star:nth-child(-n + 4) {
@@ -230,9 +209,5 @@ $rowWidth: $cardWidth * 4 + $gap * 3;
   &__reviews {
     font-size: 10px;
     color: $black;
-  }
-
-  &__reviews--possition {
-    margin: 0 16px 24px 0;
   }
 }
