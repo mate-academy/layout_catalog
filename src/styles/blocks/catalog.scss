@@ -1,29 +1,34 @@
-.catalog {
-  padding: 50px 40px;
-  margin: 0 auto;
-  width: catalogWidth(
-    $card-width,
-    $cards-in-row,
-    $margin-between-cards
-  );
+.main {
 
-  display: flex;
-  flex-wrap: wrap;
+  &__catalog {
+    padding: 50px $main-paddings;
+    margin: 0 auto;
+    width: catalogWidth(
+      $card-width,
+      $cards-in-row,
+      $margin-between-cards
+    );
 
-  @media (min-width: 1199px) {
-    padding: 50px 128px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: 1199px) {
+      padding: 50px 128px;
+    }
   }
+}
 
+
+.catalog {
   &__card {
     margin-bottom: 46px;
 
-    &:nth-last-child(-n+4) {
+    &:nth-last-child(-n+#{$cards-in-row}) {
       margin-bottom: 0;
     }
 
-    &:not(:nth-child(4n)) {
+    &:not(:nth-child(#{$cards-in-row}n)) {
       margin-right: $margin-between-cards;
-
     }
   }
 }
