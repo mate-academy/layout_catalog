@@ -1,0 +1,80 @@
+@import "../utils/variables.scss";
+
+.nav {
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    line-height: 14px;
+    color: $mainColor;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+    color: $mainColor;
+
+    &:hover {
+      cursor: pointer;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $hoverColor;
+        border-radius: 8px;
+      }
+
+      .nav__item {
+        color: $hoverColor;
+      }
+
+    }
+  }
+
+}
+
+.is-active {
+  color: $hoverColor;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: $hoverColor;
+    border-radius: 8px;
+  }
+}
+
+.nav__link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: $hoverColor;
+  border-radius: 8px;
+}
