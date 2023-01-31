@@ -1,0 +1,24 @@
+.catalog {
+  max-width: calcMaxWidth(
+    $card-width,
+    $card-side-gap,
+    $catalog-side-padding,
+    $cards-count
+  );
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  &__card {
+    margin: 0 $card-side-gap 0 0;
+    margin-bottom: $card-bottom-gap;
+
+    &:nth-child(#{$cards-count}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$cards-count}) {
+      margin-bottom: 0;
+    }
+  }
+}
