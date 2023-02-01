@@ -1,0 +1,22 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: maxWidth($cardNumber, $cardWidth, $cardMargin);
+
+  margin: 0 auto;
+  padding: 50px 0;
+
+  &__card {
+    margin-right: $cardMargin;
+    margin-bottom: 46px;
+
+    &:nth-child(#{$cardNumber}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$cardNumber}) {
+      margin-bottom: 0;
+    }
+  }
+}
