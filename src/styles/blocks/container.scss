@@ -1,15 +1,23 @@
 .main {
-  padding: 50px 40px 0;
-
-  @media (min-width: 1200px) {
-    padding: 50px 128px 0;
-  }
-
   &__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1150px;
+    max-width: containerWidth(
+      $width-card,
+      $cards-in-row,
+      $width-between-card,
+      $padding-in-catalog-small);
+    padding: 50px 40px;
+
+    @media (min-width: 1200px) {
+      max-width: containerWidth(
+        $width-card,
+        $cards-in-row,
+        $width-between-card,
+        $padding-in-catalog-big);
+      padding: 50px 128px;
+    }
   }
 }
