@@ -2,7 +2,7 @@
   width: maxWidth($card-size,$margin-size);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 50px 0;
@@ -16,17 +16,12 @@
     margin-right: 0;
   }
 
-  &__card:nth-child(5),
-  &__card:nth-child(6),
-  &__card:nth-child(7),
-  &__card:nth-child(8) {
+  &__card:nth-last-child(-n + 4) {
     margin-bottom: 0;
   }
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   width: $card-size;
   padding: 32px 16px 16px;
 
@@ -34,6 +29,7 @@
   border-radius: 5px;
 
   &__image {
+    display: block;
     margin: 0 auto 40px;
     height: 134px;
   }
@@ -97,7 +93,6 @@
     line-height: 16px;
     text-transform: uppercase;
     color: #fff;
-    text-decoration: none;
 
     &:hover {
       background: #fff;
