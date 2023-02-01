@@ -1,0 +1,42 @@
+.navigation {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+
+    color: $c-main;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $c-blue;
+    }
+
+    &--is-active {
+      position: relative;
+      color: $c-blue;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+
+        height: 4px;
+        width: 100%;
+
+        border-radius: 8px;
+        background-color: $c-blue;
+      }
+    }
+  }
+}
