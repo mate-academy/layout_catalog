@@ -1,85 +1,85 @@
 .card {
-  box-sizing: border-box;
   width: 200px;
 
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  color: $text-primary-color;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 14px;
-
-  background-color: $card-bg-color;
-  border: 1px solid $card-border-color;
-  border-radius: 5px;
   padding: 32px 16px 16px;
 
-  margin-right: 48px;
-  margin-bottom: 46px;
+  border: 1px solid $c-border;
+  border-radius: 5px;
 
   &__product-image {
-    align-self: center;
-    height: 134px;
+    display: block;
+
     width: 160px;
-    margin-bottom: 40px;
+    height: 134px;
+
+    margin: 0 auto 40px;
   }
 
-  &__product-name {
-    font-size: 12px;
+  &__title {
+    @extend %text-big;
+    color: $c-dark;
     font-weight: 500;
-    line-height: 18px;
     margin-bottom: 4px;
   }
 
-  &__product-code {
-    color: $text-secondary-color;
+  &__code {
+    @extend %text-small;
+    color: $c-secondary;
     margin-bottom: 16px;
   }
 
-  &__product-rate {
-    display: flex;
-    justify-content: space-between;
+  &__rating {
+    @include flex-between;
     align-items: flex-end;
     margin-bottom: 24px;
+    line-height: 16px
   }
 
-  &__product-price {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &__reviews-count {
+    @extend %text-small;
+    color: $c-dark;
+  }
+
+  &__price {
+    @include flex-between;
     line-height: 18px;
+    align-items: center;
     margin-bottom: 16px;
+
   }
 
-  &__product-price-word {
-    font-size: 12px;
-    color: $text-secondary-color;
+  &__price-title {
+    @extend %text-big;
+    color: $c-secondary;
   }
 
-  &__product-price-amount {
+  &__price-amount {
+    color: $c-dark;
     font-size: 16px;
     font-weight: 700;
   }
 
   &__buy-button {
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+
     font-size: 14px;
-    line-height: 16px;
     font-weight: 700;
     text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
 
-    padding: 11px 0;
-    background-color: $button-primary-color;
-    border: 1px solid $button-primary-color;
+    background-color: $c-blue;
+    color: $c-white;
+    border: 1px solid $c-blue;
     border-radius: 5px;
+
+    transition: 0.3s ease all;
   }
 
   &__buy-button:hover {
-    background-color: #fff;
-    color: $button-primary-color;
+    background-color: $c-white;
+    color: $c-blue;
   }
 }

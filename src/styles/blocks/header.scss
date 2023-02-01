@@ -1,71 +1,18 @@
-.header,
-.nav__list,
-.nav__link {
-  display: flex;
-}
-
-.header,
-.nav__list {
-  justify-content: space-between;
-  align-items: center;
+.content__header {
+  margin-bottom: 50px;
 }
 
 .header {
-  padding: 0 50px;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin-bottom: 50px;
-  box-sizing: border-box;
+  @include flex-between;
+  align-items: center;
 
-  & .header__logo {
+  padding: 0 50px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
     height: 40px;
     width: 40px;
   }
 }
 
-.nav {
-  &__list,
-  &__link {
-    display: flex;
-  }
-
-  &__list {
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    &-item:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  &__link {
-    font-size: 12px;
-    font-weight: 500;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $text-primary-color;
-
-    position: relative;
-    align-items: center;
-    height: 60px;
-    transition: all 0.3s ease;
-  }
-
-  &__link:hover,
-  &__link.is-active {
-    color: $button-primary-color;
-  }
-
-  &__link.is-active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    background: $button-primary-color;
-    border-radius: 2px;
-  }
-}
