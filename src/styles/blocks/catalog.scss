@@ -2,16 +2,19 @@
   display: flex;
   flex-wrap: wrap;
 
-  max-width: 1024px;
+  max-width: containerWidth($card-number, $card-right-margin, $card-width);
   margin: 0 auto;
   padding: 50px 40px;
 
   &__card {
-    margin-right: 48px;
-    margin-bottom: 46px;
+    margin-right: $card-right-margin;
 
-    &:nth-child(4n) {
+    &:nth-child(#{$card-number}n) {
       margin-right: 0;
+    }
+
+    &:nth-child(n + #{$card-number + 1}) {
+      margin-top: 46px;
     }
   }
 }
