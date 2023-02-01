@@ -1,0 +1,14 @@
+@function catalogWidth (
+  $card-width,
+  $catalog-card-side-margin,
+  $catalog-cards-in-row,
+  $catalog-list-side-padding
+) {
+  $width-for-cards: $card-width * $catalog-cards-in-row;
+  $width-for-margins:
+    $catalog-card-side-margin
+    * ($catalog-cards-in-row - 1);
+  $width-for-paddings: $catalog-list-side-padding * 2;
+
+  @return $width-for-cards + $width-for-margins + $width-for-paddings;
+}

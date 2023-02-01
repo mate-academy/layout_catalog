@@ -1,0 +1,30 @@
+.catalog {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px $catalog-list-side-padding;
+
+    max-width: catalogWidth(
+      $card-width,
+      $catalog-card-side-margin,
+      $catalog-cards-in-row,
+      $catalog-list-side-padding
+    );
+  }
+
+  &__item {
+    display: flex;
+    margin: 0 $catalog-card-side-margin 46px 0;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n+4) {
+      margin-bottom: 0;
+    }
+  }
+}
