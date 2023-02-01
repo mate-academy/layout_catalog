@@ -1,7 +1,4 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: $card-width;
 
   border: 1px solid #f3f3f3;
@@ -9,11 +6,13 @@
   padding: 32px 16px 16px;
 
   &__product-image {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
     @include product-image-size(
       $card-product-img-width,
       $card-product-img-height
     );
-    margin-bottom: 40px;
   }
 
   &__product-title {
@@ -31,21 +30,12 @@
     line-height: 14px;
     color: $color-grey;
 
-    align-self: start;
     margin-bottom: 16px;
   }
 
-  &__elements-wrapper {
+  &__reviews-container {
     @extend %flex-space-between-center;
-    width: $card-elements-wrapper-width;
-
-    &--reviews {
-      margin-bottom: 24px;
-    }
-
-    &--price {
-      margin-bottom: 16px;
-    }
+    margin-bottom: 24px;
   }
 
   &__product-reviews {
@@ -53,6 +43,11 @@
     font-size: $small-font-size;
     line-height: 14px;
     color: $color-dark;
+  }
+
+  &__price-container {
+    @extend %flex-space-between-center;
+    margin-bottom: 16px;
   }
 
   &__product-price-title {
@@ -72,6 +67,8 @@
   }
 
   &__buy-link {
+    display: flex;
+    justify-content: center;
     font-weight: 700;
     font-size: $large-font-size;
     line-height: 16px;
@@ -79,7 +76,7 @@
     text-transform: uppercase;
     color: $color-white;
 
-    padding: 11px 69px;
+    padding: 11px 0;
     background-color: $color-blue;
 
     border: 1px solid transparent;
