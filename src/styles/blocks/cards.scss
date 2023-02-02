@@ -1,5 +1,4 @@
 .card {
-  box-sizing: border-box;
   width: 200px;
   border: 1px solid $color-grey;
   border-radius: 5px;
@@ -24,12 +23,10 @@
 
   &__product-code,
   &__review-value {
-    font-size: 10px;
-    line-height: 14px;
+    @extend %small-text;
   }
 
   &__product-code {
-    font-weight: 400;
     color: $color-secondary;
     margin-bottom: 16px;
   }
@@ -39,10 +36,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+  }
 
-    &-value {
-      color: $color-main-accent;
-    }
+  &__review-value {
+    color: $color-main-accent;
+
   }
 
   &__price {
@@ -69,9 +67,6 @@
   }
 
   &__buy-button {
-    box-sizing: border-box;
-    text-decoration: none;
-    width: 166px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -83,11 +78,11 @@
     font-size: 14px;
     line-height: 16px;
     text-transform: uppercase;
-  }
 
-  &__buy-button:hover {
-    border-color: $color-accent-blue;
-    color: $color-accent-blue;
-    background-color: #fff;
+    &:hover {
+      border-color: $color-accent-blue;
+      color: $color-accent-blue;
+      background-color: #fff;
+    }
   }
 }
