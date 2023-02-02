@@ -4,13 +4,15 @@
 
   max-width: getWidth($-amount-of-cards, $-width-card, $-card-hor-margin);
 
-  margin: auto;
 
-  .product-card {
-    margin: 0 $-card-hor-margin $-card-ver-margin 0;
+  &__product-card {
 
-    &:nth-child(4n) {
-      margin-right: 0;
+    &:not(:nth-child(#{$-amount-of-cards}n)) {
+      margin-right: $-card-hor-margin;
+    }
+
+    &:not(:nth-last-child(-n + #{$-amount-of-cards})) {
+      margin-bottom: $-card-ver-margin;
     }
   }
 }
