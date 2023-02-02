@@ -1,0 +1,43 @@
+.nav {
+  $gap: 20px;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: -($gap / 2);
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #060b35;
+    padding: 0 ($gap / 2);
+    transition: color 0.3s;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 60px;
+    text-transform: uppercase;
+
+    &--is-active {
+      color: #00acdc;
+    }
+
+    &--is-active::after {
+      position: absolute;
+      content: "";
+      height: 4px;
+      border-radius: 2px;
+      left: $gap / 2;
+      right: $gap / 2;
+      bottom: 0;
+      background-color: #00acdc;
+    }
+  }
+  
+  &__link:hover {
+    color: #00acdc;
+  }
+}
