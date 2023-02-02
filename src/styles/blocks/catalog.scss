@@ -1,0 +1,37 @@
+.page {
+  &__catalog {
+    margin: 0 auto;
+  }
+}
+
+main {
+  width: 100%;
+}
+
+$paddingX: 40px;
+$paddingY: 50px;
+$cardWidth: 200px;
+$cardCountInRow: 4;
+$gapx: 48px;
+$gapY: 46px;
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: $paddingY $paddingX;
+  width: $cardCountInRow * $cardWidth 
+    + ($cardCountInRow - 1) * $gapx 
+    + $paddingX * 2;
+
+  &__item {
+    width: $cardWidth;
+    &:not(:nth-child(#{$cardCountInRow}n)) {
+      margin-right: $gapx;
+    }
+    
+    &:not(:nth-child(-n + #{$cardCountInRow})) {
+      margin-top: $gapY;
+    }
+  }
+}
