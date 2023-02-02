@@ -7,15 +7,16 @@
     background-repeat: no-repeat;
     width: 16px;
     height: 16px;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
   }
 
-  &__star:not(:last-child) {
-    margin-right: 4px;
+  @for $starCount from 1 through 5 {
+    &.stars--#{$starCount} :nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
 
-@for $starCount from 1 through 5 {
-  &.stars--#{$starCount} :nth-child(-n + #{$starCount}) {
-    background-image: url(../images/star-active.svg);
-  }
-}
