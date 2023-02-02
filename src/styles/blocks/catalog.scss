@@ -1,0 +1,39 @@
+$paddingX: 40px;
+$paddingY: 50px;
+$paddingX--l: 128px;
+$cardWidth: 200px;
+$gapX: 48px;
+$gapY: 46px;
+
+.page {
+  &__catalog {
+    margin: 0 auto;
+  }
+}
+
+.catalog {
+  @media (min-width: 0px) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: $paddingY $paddingX;
+    width: 4 * $cardWidth + 3 * $gapX + 2 * $paddingX;
+  }
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: $paddingY $paddingX--l;
+    width: 4 * $cardWidth + 3 * $gapX + 2 * $paddingX--l;
+  }
+
+  &__item {
+    width: $cardWidth;
+
+    &:not(:nth-child(4n)) {
+      margin-right: $gapX;
+    }
+
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: $gapY;
+    }
+  }
+}
