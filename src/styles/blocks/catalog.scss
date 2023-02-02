@@ -1,0 +1,21 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $paddingY $paddingX;
+  width: $cardCountInRow * $cardWith +
+    ($cardCountInRow - 1) * $gapX +
+    2 * $paddingX
+  ;
+
+  &__item {
+    width: $cardWith;
+
+    &:not(:nth-child(#{$cardCountInRow}n)) {
+      margin-right: $gapX;
+    }
+
+    &:not(:nth-last-child(-n + #{$cardCountInRow})) {
+      margin-bottom: $gapY;
+    }
+  }
+}
