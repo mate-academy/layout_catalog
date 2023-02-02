@@ -1,0 +1,49 @@
+.navigation {
+  &__menu {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+
+    @extend %text-normal;
+    font-weight: 500;
+
+    color: $c-main;
+
+    &:hover {
+      color: $c-blue;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $c-blue;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 4px;
+
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+
+    background-color: $c-blue;
+  }
+}
