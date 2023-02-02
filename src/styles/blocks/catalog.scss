@@ -3,14 +3,14 @@
   flex-wrap: wrap;
 
   &__card {
-    margin: 0 $horizonMarginBetweenCards $verticalMarginBetweenCards 0;
+    width: $cardWidth;
 
-    &:nth-child(#{$cardsInRow}n) {
-      margin-right: 0;
+    &:not(:nth-child(#{$cardsInRow}n)) {
+      margin-right: $horizonMarginBetweenCards;
     }
 
-    &:nth-child(1 + #{$cardsInRow}) {
-      margin-bottom: 0;
+    &:not(:nth-last-child(-n + #{$cardsInRow})) {
+      margin-bottom: $verticalMarginBetweenCards;
     }
   }
 }
