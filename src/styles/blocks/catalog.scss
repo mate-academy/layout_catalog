@@ -1,0 +1,26 @@
+
+$cardwidth: 200px;
+$gapX: 48px;
+$gapY: 46px;
+$cardCountInRow: 4;
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 40px;
+  width: 1024px;
+  margin: 0 auto;
+
+  &__item {
+    width: $cardwidth;
+    margin-right: 48px;
+
+    &:not(:nth-child(-n + #{$cardCountInRow})) {
+      margin-top: $gapY;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
