@@ -1,29 +1,29 @@
 /* code here */
-@import "../utils/variables";
+@import "../utils/mixins";
 
 .product {
   display: flex;
-  box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 32px 16px 16px;
   width: $card-width;
-  height: $card-height;
 
   &:nth-child(-n + 4) {
-    margin-right: 48px;
-    margin-bottom: 46px;
+    @include margin-nth-child;
+
+    margin-right: $card-margin-right;
   }
 
   &:nth-last-child(-n + 4) {
-    margin-right: 48px;
-    margin-bottom: 55px;
+    @include margin-last-child;
+
+    margin-right: $card-margin-right;
   }
 
   &:nth-child(4n) {
-    margin-right: 0;
+    @include margin-r-last-child;
   }
 
   &__photo {
@@ -95,11 +95,11 @@
     background: $color-accent-blue;
     border: 1px solid transparent;
     border-radius: 5px;
-  }
 
-  &__button:hover {
-    border-color: $color-accent-blue;
-    background-color: #fff;
-    color: $color-accent-blue;
+    &:hover {
+      border-color: $color-accent-blue;
+      background-color: #fff;
+      color: $color-accent-blue;
+    }
   }
 }
