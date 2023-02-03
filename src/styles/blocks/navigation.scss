@@ -1,0 +1,44 @@
+.navigation {
+  &__list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+
+    padding: 23px 0;
+    font-weight: 500;
+    font-size: 12px;
+    
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-black;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &.is-active {
+      color: $color-blue;
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 4px;
+        border-radius: 8px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-blue;
+      }
+    }
+  }
+}
