@@ -2,7 +2,7 @@
   &__catalog {
     display: flex;
     flex-wrap: wrap;
-    max-width: 944px;
+    max-width: maxWidth($card-amount, $card-width, $card-margin-right);
     margin: 0 auto;
     padding: 50px 0 72px;
   }
@@ -12,11 +12,11 @@
   &__card {
     margin-right: $card-margin-right;
 
-    &:nth-child(4n) {
+    &:nth-child(#{$card-amount}n) {
       margin-right: 0;
     }
 
-    &:not(:nth-last-child(-n + 4)) {
+    &:not(:nth-last-child(-n + #{$card-amount})) {
       margin-bottom: $card-margin-bottom;
     }
   }
