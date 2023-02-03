@@ -1,37 +1,26 @@
 .stars {
-  margin-top: 16px;
   display: flex;
-  justify-content: space-between;
-
-  &__container {
-    display: flex;
-  }
 
   &__image {
-    background-image: url(../../images/star-active.svg);
+    background-image: url(../../images/star.svg);
     background-repeat: no-repeat;
     background-size: 13px 12px;
     background-position: center;
 
     width: 16px;
     height: 16px;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
   }
 
-  &__image:last-child {
-    background-image: url(../../images/star.svg);
+  @for $childCount from 1 through 5 {
+    @for $starsCount from $childCount through 5 {
+      &--#{$starsCount} &__image:nth-child(#{$childCount}) {
+        background-image: url(../../images/star-active.svg);
+      }
+    }
   }
 
-  &__image:not(:last-child) {
-    margin-right: 4px;
-  }
-
-  &__reviews {
-    display: flex;
-    align-self: center;
-    margin: 0;
-
-    font-size: 10px;
-    font-weight: 500;
-    color: #060b35;
-  }
 }
