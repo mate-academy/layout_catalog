@@ -1,28 +1,19 @@
 @import "../utils/_variables";
 
-.main__catalog {
-  display: flex;
-  margin: 0 auto 73px;
-  flex-wrap: wrap;
-}
-
 .catalog {
-  width: 944px;
+  display: flex;
+  flex-wrap: wrap;
+  width: $catalog-width;
+  padding: 50px 40px;
 
   &__card {
-    margin-left: $padding-size - 2;
 
-    &:first-child {
-      margin-left: 0;
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: $margin-size - $card-border;
     }
-  }
 
-  &__row {
-    display: flex;
-    padding-top: $padding-size - 4;
-
-    &:first-child {
-      padding-top: $padding-size;
+    &:not(:nth-child(4n)) {
+      margin-right: $margin-size;
     }
   }
 }
