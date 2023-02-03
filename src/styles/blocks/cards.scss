@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 944px;
+}
+
+.card {
+  width: 200px;
+  background-color: #{$white-color};
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  margin: 0;
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__title {
+    margin: 40px 0 0;
+    color: #{$dark-grey-color};
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #{$light-grey-color};
+    margin: 4px 0 0;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 16px;
+    width: 16px;
+  }
+
+  &__star:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  @for $starsAmount from 1 through 5 {
+    &--#{$starsAmount} .stars__star:nth-child(-n + #{$starsAmount}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+}
+
+.review {
+  margin: 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__amount {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #{$dark-grey-color};
+    margin: 0;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+
+  &__title {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #{$light-grey-color};
+    margin: 0;
+  }
+
+  &__amount {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #{$dark-grey-color};
+    margin: 0;
+  }
+}
+
+.card__buy-link {
+  padding: 11px 70px;
+  background-color: #{$main-color};
+  border-radius: 5px;
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #{$white-color};
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #{$main-color};
+
+  &:hover {
+    background-color: #{$white-color};
+    color: #{$main-color};
+  }
+}
