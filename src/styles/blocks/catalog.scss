@@ -1,0 +1,20 @@
+.catalog {
+  display: flex;
+  justify-content: center;
+  max-width: maxWidth($count-items-in-row, $width-card, $cards-margin-right);
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 50px 0 0 ;
+
+  &__card {
+    margin-right: $cards-margin-right;
+
+    &:nth-child(#{$count-items-in-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(n - #{$count-items-in-row}) {
+      margin-bottom: 46px;
+    }
+  }
+}

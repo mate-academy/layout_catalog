@@ -1,0 +1,56 @@
+.header {
+  @extend %flexCenterSpaceBetween;
+
+  padding: 0 50px;
+
+  background-color: $c-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+
+  &__logo {
+    @include squareSize($logo-size);
+  }
+
+  &__list {
+    @extend %flexAlignCenter;
+
+    padding: 23px 0;
+
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    padding: 23px 0;
+
+    color: $c-primary;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $c-blue;
+    }
+
+    &.is-active::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+
+      @extend %w100;
+
+      height: 4px;
+      border-radius: 8px;
+      background-color: $c-blue;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $c-blue;
+}
