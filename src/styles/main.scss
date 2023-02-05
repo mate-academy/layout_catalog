@@ -33,15 +33,23 @@
   @return $quantity * $content-width + ($quantity - 1) * $content-gap;
 }
 
-$font-roboto: roboto, helvetica, sans-serif;
 $main-text-color: #060b35;
 $additional-text-color: #616070;
 $link-color: #00acdc;
 $card-border-color: #e5e5e5;
+$additional-button-color: #fff;
 $card-width: 198px;
 $card-horizontal-gap: 50px;
 $card-vertical-gap: 48px;
 $columns: 4;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, Helvetica, sans-serif;
+}
 
 body,
 ul,
@@ -73,11 +81,10 @@ p {
   }
 
   &__link {
-    font-family: $font-roboto;
     @include justify-center;
     @include font-weight-size-height (500);
     display: flex;
-    height: 60px;
+    padding: 21px 0;
     text-decoration: none;
     text-transform: uppercase;
     color: $main-text-color;
@@ -115,14 +122,12 @@ p {
 
 .cards {
   @include font-weight-size-height ();
-  font-family: $font-roboto;
   display: flex;
   flex-wrap: wrap;
   max-width: calculateMaxWidth($card-width, $card-horizontal-gap);
 }
 
 .card {
-  box-sizing: border-box;
   display: flex;
   align-self: flex-start;
   flex-direction: column;
@@ -143,6 +148,7 @@ p {
   }
 
   &__image {
+    box-sizing: content-box;
     padding-top: 16px;
     width: 160px;
     height: 134px;
@@ -196,18 +202,17 @@ p {
     @include justify-center;
     @include font-weight-size-height (700, 14px, 16px);
     display: flex;
-    box-sizing: border-box;
     width: 100%;
     height: 40px;
     background: $link-color;
     border-radius: 5px;
     border: 1px solid $link-color;
-    color: #fff;
+    color: $additional-button-color;
     text-transform: uppercase;
     text-decoration: none;
 
     &:hover {
-      background-color: #fff;
+      background-color: $additional-button-color;
       color: $link-color;
     }
   }
