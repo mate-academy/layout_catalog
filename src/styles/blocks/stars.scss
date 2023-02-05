@@ -1,11 +1,9 @@
-@use "../utils/mixins" as *;
-
 .stars {
   display: flex;
 
   &__star {
     @include square(16px);
-    background: url(../../images/star.svg) center no-repeat;
+    background: url(../images/star.svg) center no-repeat;
   }
   
   &__star:not(:last-child) {
@@ -14,7 +12,7 @@
 
   @for $starCount from 1 through 5 {
     &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
-      background-image: url(../../images/star-active.svg);
+      background-image: url(../images/star-active.svg);
     }
   }
 }
