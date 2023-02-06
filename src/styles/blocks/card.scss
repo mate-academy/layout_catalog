@@ -1,24 +1,26 @@
+.cards {
+  &__container {
+    &:not(:nth-child(#{$cards-in-a-row}n)) {
+      margin-right: 48px;
+    }
+
+    &:not(:nth-last-child(-n + #{$cards-in-a-row})) {
+      margin-bottom: 46px;
+    }
+  }
+}
+
 .card {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
-  max-width: 200px;
-  margin-right: 48px;
+  max-width: $cards-width;
   padding: 0 16px 16px;
 
-  background-color: #fff;
+  background-color: $white-color;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-
-  &:nth-child(#{$cards-in-a-row}n) {
-    margin-right: 0;
-  }
-
-  &:nth-child(n + #{$cards-in-a-row + 1}) {
-    margin-top: 46px;
-  }
-
+  
   &__image-container {
     @extend %flex-centre;
     margin-top: 32px;
@@ -30,7 +32,7 @@
   }
 
   &__title {
-    margin: 40px 0 0;
+    margin-top: 40px;
 
     @extend %normal-text;
     font-weight: 500;
@@ -39,16 +41,12 @@
   }
 
   &__product-code {
-    margin: 4px 0 0;
+    margin-top: 4px;
 
     @extend %small-text;
     font-weight: 400;
 
     color: $secondary-text-color;
-  }
-
-  &__paragraph {
-    margin: 0;
   }
 
   &__rate-block {
@@ -59,27 +57,19 @@
     @extend %small-text;
   }
 
-  &__rate-block-reviews {
-    margin: 0;
-  }
-
   &__price-block {
     @extend %flex-space-between;
 
-    margin: 24px 0 0;
+    margin-top: 24px;
   }
 
   &__price-block-paragraph {
-    margin: 0;
-
     @extend %normal-text;
 
     color: $secondary-text-color;
   }
 
   &__price-block-sum {
-    margin: 0;
-
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
@@ -89,17 +79,15 @@
 
   &__buy-button {
     cursor: pointer;
-    box-sizing: border-box;
     @extend %flex-centre;
 
-    margin: 16px 0 0;
+    margin-top: 16px;
     height: 40px;
 
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
-    text-decoration: none;
-    color: #fff;
+    color: $white-color;
 
     background-color: $blue-accent-color;
     border: 1px solid $blue-accent-color;
@@ -107,7 +95,7 @@
 
     &:hover {
       transition: all 0.5s ease-out;
-      background-color: #fff;
+      background-color: $white-color;
       color: $blue-accent-color;
     }
   }
