@@ -1,0 +1,18 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: getWidth($-amount-of-cards, $-width-card, $-card-hor-margin);
+  margin: 0 auto;
+
+  &__product-card {
+
+    &:not(:nth-child(#{$-amount-of-cards}n)) {
+      margin-right: $-card-hor-margin;
+    }
+
+    &:not(:nth-last-child(-n + #{$-amount-of-cards})) {
+      margin-bottom: $-card-ver-margin;
+    }
+  }
+}
