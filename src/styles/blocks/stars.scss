@@ -1,0 +1,26 @@
+.stars {
+  display: flex;
+
+  &__item {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background: no-repeat url(../images/star.svg) 50%;
+  }
+
+  $counts: 
+    '1' '1',
+    '2' '2',
+    '3' '3',
+    '4' '4',
+    '5' '5';
+
+
+  @each $count, $selector in $counts {
+    &--#{$count} {
+        & :nth-child(-n+#{$selector}) {
+            background-image: url(../images/star-active.svg);
+        }
+    }
+  }
+}
