@@ -8,16 +8,9 @@
     background: no-repeat url(../images/star.svg) 50%;
   }
 
-  $counts: 
-    "1" "1",
-    "2" "2",
-    "3" "3",
-    "4" "4",
-    "5" "5";
-
-  @each $count, $selector in $counts {
-    &--#{$count} {
-      & :nth-child(-n+#{$selector}) {
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      & :nth-child(-n+#{$i}) {
         background-image: url(../images/star-active.svg);
       }
     }
