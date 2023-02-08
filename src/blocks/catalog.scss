@@ -1,0 +1,21 @@
+$cardwidth: 200px;
+$gapX: 48px;
+$gapY: 46px;
+$cardCountInRow: 4;
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 40px;
+  width: $cardCountInRow * $cardwidth +
+    ($cardCountInRow - 1) * $gapX + 2 * 40px;
+
+  &__item {
+    width: $cardwidth;
+
+    &:not(:nth-child(-n + #{$cardCountInRow})) {
+      margin-top: $gapY;
+    }
+  }
+}
