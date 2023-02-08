@@ -1,5 +1,4 @@
-$main-color: #00acdc;
-$link-color: #060b35;
+@import "./utils/_variables.scss";
 
 .header {
   display: flex;
@@ -21,8 +20,10 @@ $link-color: #060b35;
   padding: 0;
 }
 
-.nav__item:not(:last-child) {
-  margin-right: 20px;
+.nav__item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
 }
 
 .nav__link {
@@ -33,24 +34,24 @@ $link-color: #060b35;
   font-weight: 500;
   font-size: 12px;
   display: flex;
-}
 
-.nav__link:hover {
-  color: $main-color;
+  &:hover {
+    color: $main-color;
+  }
 }
 
 .is-active {
   position: relative;
   color: $main-color;
-}
 
-.is-active:after {
-  content: " ";
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  border-radius: 8px;
-  background-color: $main-color;
+  &:after {
+    content: " ";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background-color: $main-color;
+  }
 }
