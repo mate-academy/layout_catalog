@@ -1,0 +1,19 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  max-width: $cards * $width-card + $right-margin-card * ($cards - 1);
+
+  &__item {
+    width: $cardwidth;
+    margin-right: 48px;
+
+    &:not(:nth-child(-n + #{$cardCountInRow})) {
+      margin-top: $gapY;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
