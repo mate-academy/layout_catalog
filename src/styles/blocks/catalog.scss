@@ -1,0 +1,17 @@
+.catalog {
+  margin: 50px auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item:not(:nth-child(4n)) {
+    margin-right: $product-card-margin-x;
+  }
+
+  &__item:nth-last-child(-n + 4) {
+    margin-top: $product-card-margin-y;
+  }
+
+  max-width: ($catalog__cards-in-a-row *
+  ($product-card-width + $product-card-margin-x) - $product-card-margin-x);
+}
