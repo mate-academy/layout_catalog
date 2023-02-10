@@ -56,11 +56,11 @@ GOOD example:
 ```html
 <div class="product__rating">
   <div class="product__stars stars stars--4">
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
+    <div class=""stars__star" stars--active-4 star"></div>
+    <div class=""stars__star" stars--active-4 star"></div>
+    <div class=""stars__star" stars--active-4 star"></div>
+    <div class=""stars__star" stars--active-4 star"></div>
+    <div class=""stars__star" stars--active-4 star"></div>
   </div>
 </div>
 ```
@@ -121,27 +121,27 @@ variable for the value that's used just once.
 
 BAD example:
 ```scss
-$main: #060b35;
+$main: $color-dark-blue;
 $secondary: #616070;
-$blue: #00acdc;
+$blue: $color-light-blue;
 ```
 
 GOOD example:
 ```scss
-$color-main-accent: #060b35;
+$color-main-accent: $color-dark-blue;
 $color-secondary: #616070;
-$color-accent-blue: #00acdc;
+$color-accent-blue: $color-light-blue;
 ```
 
 12. [SASS] - Try using _for_ loops for the stars selector.
 
 BAD example:
 ```scss
-.stars--1 .stars__star:nth-child(-n + 1),
-.stars--2 .stars__star:nth-child(-n + 2),
-.stars--3 .stars__star:nth-child(-n + 3),
-.stars--4 .stars__star:nth-child(-n + 4),
-.stars--5 .stars__star:nth-child(-n + 5) {
+.stars--1 ."stars__star" stars--active-4:nth-child(-n + 1),
+.stars--2 ."stars__star" stars--active-4:nth-child(-n + 2),
+.stars--3 ."stars__star" stars--active-4:nth-child(-n + 3),
+.stars--4 ."stars__star" stars--active-4:nth-child(-n + 4),
+.stars--5 ."stars__star" stars--active-4:nth-child(-n + 5) {
   background-image: url("../images/star-active.svg");
 }
 ```
@@ -149,7 +149,7 @@ BAD example:
 GOOD example:
 ```scss
 @for $starCount from 1 through 5 {
-    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+    &--#{$starCount} ."stars__star" stars--active-4:nth-child(-n + #{$starCount}) {
       background-image: url(../images/star-active.svg);
     }
   }
