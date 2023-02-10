@@ -4,18 +4,17 @@
   justify-content: center;
   width: calculateWidth();
 
-  padding: 0 $padding;
+  padding: 0 $padding 50px;
 
   &__card {
-    margin-right: $cardMarginRight;
-    margin-bottom: 46px;
+    width: $cardWidth;
 
-    &:nth-child(4n) {
-      margin-right: 0;
+    &:not(:nth-child(#{$colsCount}n)) {
+      margin-right: $cardMarginRight;
     }
 
-    &:nth-last-child(-n + 4) {
-      margin-bottom: 0;
+    &:not(:nth-last-child(-n + #{$colsCount})) {
+      margin-bottom: 46px;
     }
   }
 }
