@@ -1,0 +1,20 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calculateWidth();
+
+  padding: 0 $padding 50px;
+
+  &__card {
+    width: $cardWidth;
+
+    &:not(:nth-child(#{$colsCount}n)) {
+      margin-right: $cardMarginRight;
+    }
+
+    &:not(:nth-last-child(-n + #{$colsCount})) {
+      margin-bottom: 46px;
+    }
+  }
+}
