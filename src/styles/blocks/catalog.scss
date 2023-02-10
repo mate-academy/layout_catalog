@@ -1,0 +1,24 @@
+.catalog {
+  padding: 50px 0 72px;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: conteinerWidth($card-countInRow, $card-width, $card-marginRight);
+    margin: 0 auto;
+  }
+
+  &__card {
+    width: $card-width;
+    margin-bottom: 46px;
+
+    &:not(:nth-child(#{$card-countInRow}n)) {
+      margin-right: $card-marginRight;
+    }
+
+    &:nth-last-child(- n + #{$card-countInRow}) {
+      margin-bottom: 0;
+    }
+  }
+}
