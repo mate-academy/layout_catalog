@@ -1,0 +1,19 @@
+.cards {
+  width: $card-width * $card-count-row + 
+    $gap-X * ($card-count-row - 1);
+  margin: 0 auto;
+  padding: $padding-Y $padding-X;
+
+  @include flexAlign(start);
+  flex-wrap: wrap;
+
+  &__card {
+    &:not(:nth-child(#{$card-count-row}n)) {
+      margin-right: $gap-X;
+    }
+
+    &:not(:nth-last-child(-n + #{$card-count-row})) {
+      margin-bottom: $gap-Y;
+    }
+  }
+}
