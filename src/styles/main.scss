@@ -1,3 +1,259 @@
+$card-width: 200px;
+$space-between-card: 48px;
+$amount-card-in-row: 4;
+$main-content-width:
+  ($card-width * $amount-card-in-row)
+  + $space-between-card * ($amount-card-in-row - 1);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-size: 12px;
+  line-height: 14px;
+
+  &__logo {
+    margin: 10px 0;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+    padding: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #060b35;
+  }
+
+  &__link:hover {
+    color: #00acdc;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: #00acdc;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #00acdc;
+  border-radius: 8px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    width: $main-content-width;
+    padding: 50px 0 72px;
+  }
+}
+
+.main__card:nth-last-child(n + #{$amount-card-in-row}) {
+  margin-bottom: 46px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 0 16px 16px;
+  border: 1px solid #f3f3f3;
+  background-color: #fff;
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    margin: 32px auto 0;
+  }
+
+  &__description {
+    margin-top: 40px;
+    width: 166px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 800px;
+    color: #060b35;
+  }
+
+  &__product-code {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #616070;
+  }
+
+  &__stars-container {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.stars-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__stars {
+    display: flex;
+  }
+
+  &__stars-container {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/star-active.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &__star:not(:nth-child(-n + 4)) {
+    background-image: url(../images/star.svg);
+  }
+
+  &__reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: #060b35;
+  }
+
+  &__button {
+    margin-top: 16px;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__name {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #616070;
+  }
+
+  &__amount {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #060b35;
+  }
+}
+
+.button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding: 0;
+  font-family: inherit;
+  background-color: #00acdc;
+
+  &:hover {
+    border: 1px solid #00acdc;
+    background-color: #fff;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__link:hover {
+    color: #00acdc;
+  }
+}
+
+.card__button {
+  margin-top: 16px;
 }
