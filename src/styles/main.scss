@@ -1,3 +1,31 @@
-body {
-  margin: 0;
+@import "./utils/reset";
+@import "./utils/fonts";
+@import "./utils/variables";
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.main {
+  display: flex;
+  justify-content: space-around;
+
+  &__cards-list {
+    width: $card-width * $card-count-row + $gap-right * ($card-count-row - 1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+  &__card {
+    margin: 50px $gap-right 0 0;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-top: 46px;
+    }
+  }
 }
