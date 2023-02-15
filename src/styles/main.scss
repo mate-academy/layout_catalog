@@ -1,6 +1,4 @@
-// body {
-//   margin: 0;
-// }
+
 $color-link: #00acdc;
 
 * {
@@ -9,6 +7,8 @@ $color-link: #00acdc;
 
 .page {
   font-family: Roboto, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
   &__body {
     margin: 0;
     padding: 0;
@@ -16,9 +16,6 @@ $color-link: #00acdc;
   }
   &__title {
     text-align: center;
-  }
-  a {
-    text-decoration: none;
   }
 }
 
@@ -39,40 +36,40 @@ $color-link: #00acdc;
 .nav {
   &__list {
     display: flex;
-    justify-content: flex-end;
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
-  &__item {
-    position: relative;
-    color: #060b35;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    cursor: pointer;
-    padding: 23px 0;
+
+  &__item:not(:last-child) {
     margin-right: 20px;
   }
-  &__item a:last-child {
-    margin-right: 0;
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #060b35;
+    line-height: 60px;
   }
-  &__item a:hover {
+
+  &__link:hover {
     color: $color-link;
   }
-  .is-active {
-    color: $color-link;
-  }
-  .is-active::after {
+}
+
+.is-active {
+  position: relative;
+  color: $color-link;
+  &::after {
     content: "";
-    display: block;
-    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 4px;
     border-radius: 8px;
     background-color: $color-link;
-    position: absolute;
-    bottom: 0;
   }
 }
 
@@ -106,7 +103,8 @@ $color-link: #00acdc;
   &__img {
     width: 160px;
     height: 134px;
-    margin: 0 auto 40px;
+    margin: 0 3px;
+    margin-bottom: 40px;
   }
 
   &__img-container {
@@ -132,7 +130,7 @@ $color-link: #00acdc;
     font-size: 10px;
     color: #616070;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     margin-top: 0;
   }
 
@@ -141,12 +139,13 @@ $color-link: #00acdc;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 23px;
+    margin-bottom: 24px;
   }
 
   &_rewies_info {
     font-size: 10px;
     color: #060b35;
+    margin: 0;
   }
 
   &__price {
@@ -158,15 +157,18 @@ $color-link: #00acdc;
     margin-bottom: 16px;
 
     &-text {
-      font-weight: 400;
       font-size: 12px;
+      line-height: 18px;
       color: #616070;
+      margin: 0;
     }
 
     &-value {
       font-weight: 700;
       font-size: 16px;
+      line-height: 18px;
       color: #060b35;
+      margin: 0;
     }
   }
   &__buy {
