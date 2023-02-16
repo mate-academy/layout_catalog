@@ -27,7 +27,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin: 0 10px 5px;
+    margin: 0 5px;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
@@ -36,18 +36,23 @@
     color: $main-text-color;
   }
 
+  &__item {
+    display: flex;
+    margin: 0 10px 5px;
+
+    @extend %left-right-margin;
+  }
+
   &__list {
     display: flex;
     justify-content: flex-end;
+    list-style-type: none;
     padding: 0;
     margin: 0 auto;
+
     .nav__link {
-      &:first-of-type {
-        margin-left: 0;
-      }
-      &:last-of-type {
-        margin-right: 0;
-      }
+      @extend %left-right-margin;
+
       &:hover {
         color: $button-linkHover-color;
       }
