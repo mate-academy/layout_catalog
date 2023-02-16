@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  box-sizing: border-box;
+
+  &__logo {
+    display: flex;
+    justify-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  &__img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px 50px;
+  }
+
+  &__nav {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.nav {
+  display: flex;
+  margin: 0 50px 0 auto;
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-text-color;
+  }
+
+  &__item {
+    display: flex;
+    margin: 0 10px;
+
+    @extend %left-right-margin;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+
+    .nav__link {
+      @extend %left-right-margin;
+
+      &:hover {
+        color: $button-linkHover-color;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $button-linkHover-color;
+  &:after {
+    content: "";
+    background: $button-linkHover-color;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
+  }
+}

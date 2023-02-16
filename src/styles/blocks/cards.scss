@@ -1,0 +1,130 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 50px 0;
+  box-sizing: border-box;
+  min-width: 1024px;
+  max-width: 1200px;
+}
+
+.card {
+  width: 200px;
+  background: $main-light-color;
+  margin: 0 24px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 16px;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 32px 3px 0;
+  }
+  
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-text-color;
+    margin: 36px 0 4px;
+  }
+  
+  &__code {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    justify-items: flex-end;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $sub-text-color;
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__review-text {
+    display: flex;
+    align-items: baseline;
+    font-size: 10px;
+    color: $main-text-color;
+  }
+  
+  &__price {
+    display: flex;
+    margin: 24px 0 16px;
+    justify-content: space-between;
+  }
+
+  &__button {
+    display: flex;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    width: 166px;
+    height: 40px;
+  }
+
+  &:nth-child(4n) {
+    margin-bottom: 46px;
+  }
+  
+  &:nth-last-child(-n+4) {
+    margin-bottom: 0;
+  }
+}
+
+.price-text {
+  @include price-display();
+  font-weight: 400;
+  font-size: 12px;
+  color: $sub-text-color;
+  order: 0;
+  flex-grow: 0;
+}
+
+.price-price {
+  @include price-display();
+  font-size: 16px;
+  font-weight: 700;
+  order: 1;
+  flex-grow: 0;
+  color: $main-text-color;
+}
+
+.button-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.button-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: $button-linkHover-color;
+  border: 1px solid $button-linkHover-color;
+  border-radius: 5px;
+  color: $main-light-color;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $main-light-color;
+    color: $button-linkHover-color;
+  }
+}
