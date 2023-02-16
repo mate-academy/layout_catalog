@@ -1,3 +1,26 @@
-body {
-  margin: 0;
+@import "./utils/reset";
+@import "./utils/fonts";
+@import "./utils/variables";
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.main {
+  display: flex;
+  justify-content: space-around;
+
+  &__cards-list {
+    width: $card-width * $card-count-row + $gap-right * ($card-count-row - 1);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0;
+  }
+
+  &__card {
+    margin: 0 $gap-right 46px 0;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
 }
