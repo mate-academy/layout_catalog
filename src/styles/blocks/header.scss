@@ -4,53 +4,53 @@
   align-items: center;
   padding: 0 50px;
 
-  .header__logo {
-    // height: 40px;
-    display: inline-block;
+  &__logo {
+    display: flex;
   }
   
-  .header__list {
+  &__list {
     display: flex;
     margin: 0;
     padding: 0;
     font-size: 12px;
+    font-weight: 500;
     text-transform: uppercase;
     list-style: none;
   }
   
-  .header__link {
+  &__link {
     position: relative;
     display: flex;
     align-items: center;
     padding: 23px 0;
     text-decoration: none;
-    color: #000;
+    color: inherit;
+
+    &:hover {
+      color: $color-hover-text;
+    }
   }
   
-  .header__item {
+  &__item {
     margin-left: 20px;
-  }
   
-  .header__item:first-child {
-    margin: 0;
-  }
-  
-  .header__link:hover {
-    color: var(--color-hover-text);
+    &:first-child {
+      margin: 0;
+    }
   }
 }
 
 .is-active {
-  color: var(--color-hover-text);
-}
+  color: $color-hover-text;
 
-.is-active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  background-color: var(--color-hover-text);
-  border-radius: 8px;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-hover-text;
+    border-radius: 8px;
+  }
 }
