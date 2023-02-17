@@ -1,16 +1,20 @@
-.card__rating-stars {
+.stars {
   display: flex;
-}
 
-.stars__star {
-  width: 16px;
-  height: 16px;
-  background-image: url("../images/star-active.svg");
-  margin-right: 4px;
-  background-position: 50%;
-  background-repeat: no-repeat;
-
-  &:last-child {
+  &__star {
+    height: 16px;
+    width: 16px;
     background-image: url("../images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  @for $childCount from 1 through 5 {
+    &--#{$childCount} &__star:nth-child(-n + #{$childCount}) {
+      background-image: url("../images/star-active.svg");
+    }
   }
 }
