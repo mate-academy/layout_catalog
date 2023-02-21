@@ -1,0 +1,65 @@
+.card {
+  @include cardLarge($card-width, $card-height);
+  box-sizing: border-box;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: $card-margins;
+  justify-content: space-between;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+
+  &__pic {
+    width: $card-pic;
+    object-fit: contain;
+    object-position: top center;
+  }
+  
+  &__title {
+    @extend %dark-font-color;
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 10px;
+    text-align: justify;
+  }
+  
+  &__code {
+    @extend %light-font-color;
+    font-weight: 400px;
+    font-size: 10px;
+  }
+  
+  &__price {
+    display: inline-flex;
+    align-items: baseline;
+  }
+  
+  &__price-tag {
+    @extend %light-font-color;
+    font-weight: 400px;
+    font-size: 10px;
+  }
+  
+  &__price-amount {
+    @extend %dark-font-color;
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 70px;
+  }
+  
+  &__buy-btn {
+    width: auto;
+    height: 40px;
+    background-color: #00acdc;
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .card__buy-btn:hover {
+    background-color: white;
+    color: #00acdc;
+  }
+}
