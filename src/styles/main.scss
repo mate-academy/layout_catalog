@@ -1,3 +1,40 @@
-body {
+
+@import "./utils/variables";
+@import "./blocks/header";
+@import "./blocks/main";
+@import "./blocks/stars";
+@import "./blocks/card";
+
+html,
+body,
+h2 {
   margin: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+// .is-active,
+// .header__nav-link:hover,
+// .header__nav-link:active {
+//   color: #{$color-active};
+// }
+
+.header__nav-link::after,
+.is-active::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 0;
+  top: 56px;
+  background-color: #{$color-active};
+  border-radius: 8px;
+}
+
+.is-active::after,
+.header__nav-link:active:after,
+.is-active:active:after {
+  width: 100%;
 }
