@@ -1,0 +1,37 @@
+@use "../utils/extends";
+@use "../utils/variables" as *;
+
+.stars {
+  padding: 16px 0 0;
+  margin: 0;
+  width: calc($card-content-width + 6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    font-weight: 400;
+    margin: 0;
+    font-size: $Smallest-font10;
+    color: $main-text-colour;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__star {
+    margin-right: 4px;
+    height: 16px;
+    width: 16px;
+    list-style: none;
+    background-image: url(src/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.5px;
+
+    &:nth-child(-n+4) {
+      background-image: url(src/images/star-active.svg);
+    }
+  }
+}

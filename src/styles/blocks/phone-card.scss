@@ -1,0 +1,95 @@
+@use "../utils/extends";
+@use "../utils/variables" as *;
+@use "../utils/function";
+
+.card-container {
+  max-width: function.rowWidth($card-width, $card-offset, $cards-per-row);
+  @extend %centre-flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  
+}
+
+.phone-card {
+  @extend %centre-flex;
+  width: $card-width;
+  margin: $card-margin;
+  flex-direction: column;
+  border: $card-border;
+  border-radius: $card-radius;
+  padding: $card-padding;
+
+  &:nth-child(n +5) {
+    margin-top: 0;
+  }
+
+  &__image-box {
+    margin: 16px 0 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__mac-model {
+    font-size: calc($Smallest-font10 * 1.2);
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-text-colour;
+  }
+
+  &__product-code {
+    font-style: normal;
+    padding: 4px 0 0;
+    width: 166px;
+    font-size: $Smallest-font10;
+    font-weight: 400;
+    line-height: 14px;
+    color: $lighter-text-colour;
+  }
+
+  &__price {
+    padding: 24px 0 16px;
+    width: calc($card-content-width + 6px);
+    display: flex;
+    font-size: calc($Smallest-font10 * 1.2);
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+  }
+
+  &__price-title {
+    font-weight: 400;
+    line-height: 18px;
+    color: $lighter-text-colour;
+  }
+
+  &__price-total {
+    color: $main-text-colour;
+    font-weight: 700;
+    font-size: calc($Smallest-font10 * 1.6);
+  }
+
+  &__button {
+    height: 40px;
+    width: 100%;
+    @extend %centre-flex;
+    background: $button-on-colour;
+    color: $button-off-colour;
+    border: none;
+    text-transform: uppercase;
+    border-radius: $card-radius;
+    text-decoration: none;
+    font-size: calc($Smallest-font10 * 1.4);
+    font-weight: 700;
+
+    &:hover {
+      background-color: $button-off-colour;
+      color: $button-on-colour;
+      border: 1px solid $button-on-colour;
+    }
+  }
+}
