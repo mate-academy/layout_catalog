@@ -1,0 +1,28 @@
+// STARS STYLES
+
+.star {
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@for $starCount from 1 through 5 {
+  .stars--#{$starCount} > :nth-child(-n + #{$starCount}) {
+    background-image: url("../images/star-active.svg");
+  }
+}

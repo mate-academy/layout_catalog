@@ -1,0 +1,114 @@
+//CARD STYLES
+@function getContainerWidth ($width, $margin, $count) {
+  @return $width * $count + $margin * ($count - 1);
+}
+
+@import "./star.scss";
+@import "../utils/variables";
+
+.main {
+  padding: 51px 41px;
+
+  &__container {
+    width: getContainerWidth($card-width, $card-mr, $card-number);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 1;
+
+  width: 198px;
+  padding: 16px;
+  margin-right: $card-mr;
+  margin-bottom: 48px;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__picture {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  &__logo {
+    line-height: 18px;
+    color: $main-color;
+    margin-top: 40px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    color: $font-color;
+    margin-top: 4px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+
+    &_text {
+      font-size: 10px;
+      line-height: 14px;
+      color: $main-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 24px;
+
+    &_text {
+      line-height: 18px;
+      color: $font-color;
+    }
+
+    &_cost {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $main-color;
+    }
+  }
+
+  &__button {
+    background: $button-color;
+    color: #fff;
+    border: 1px solid $button-color;
+    border-radius: 5px;
+    width: 100%;
+
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+
+    padding: 12px 0;
+    margin-top: 16px;
+
+    &:hover {
+      color: $button-color;
+      background: #fff;
+      border: 1px solid #f3f3f3;
+    }
+  }
+}
