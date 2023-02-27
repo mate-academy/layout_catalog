@@ -1,0 +1,49 @@
+$accent-color-blue: #00acdc;
+
+.nav {
+  display: flex;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+    align-items: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #060b35;
+  text-transform: uppercase;
+  position: relative;
+  padding: 22.5px 0;
+  font-weight: 500;
+
+  &:hover {
+    color: #{$accent-color-blue};
+  }
+}
+
+.is-active {
+  color: #{$accent-color-blue};
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    height: 4px;
+    background-color: #{$accent-color-blue};
+    border-radius: 8px;
+  }
+}
