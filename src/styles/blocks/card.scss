@@ -1,0 +1,101 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: $container-width;
+  padding: 50px 40px;
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-right: 48px;
+  max-width: 200px;
+  padding: 0 16px;
+  font-weight: 400;
+  color: $main-text-color;
+  background-color: $main-white-color;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-top: 44px;
+  }
+
+  &__image {
+    align-self: center;
+    height: 134px;
+    width: 160px;
+    margin: 32px 3px 0;
+  }
+
+  &__product-name {
+    @extend %card-large-text;
+    margin-top: 40px;
+    font-weight: 500;
+  }
+
+  &__product-code {
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 4px;
+    color: $secondary-text-color;
+  }
+
+  &__reviews {
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  &__price {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-between;
+  }
+
+  &__price-word {
+    @extend %card-large-text;
+    color: $secondary-text-color;
+  }
+
+  &__price-number {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__buy-link {
+    box-sizing: border-box;
+    display: flex;
+    margin: 16px 0;
+    justify-content: center;
+    cursor: pointer;
+    padding: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $main-white-color;
+    background-color: $main-teal-color;
+    border: 1px solid transparent;
+    border-radius: $card-border-radius;
+  }
+
+  &__buy-link:hover {
+    background-color: $main-white-color;
+    border-color: $main-teal-color;
+    color: $main-teal-color;
+  }
+}
