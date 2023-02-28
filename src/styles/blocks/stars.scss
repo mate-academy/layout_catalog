@@ -1,0 +1,40 @@
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+
+    // .stars--4 > &:nth-child(-n+4) {
+    //   background-image: url("../images/star-active.svg");
+    // }
+
+    @for $i from 1 through 5 {
+      .stars--#{$i} &:nth-child(-n+#{$i}) {
+        background-image: url("../images/star-active.svg");
+      }
+    }
+  }
+}
+
+.is-active {
+  color: #00acdc;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #00acdc;
+  left: 0;
+  bottom: 0;
+  border-radius: 8px;
+}
