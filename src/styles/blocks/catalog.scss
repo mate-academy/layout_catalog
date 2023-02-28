@@ -1,0 +1,33 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: catalogWidth(
+    $card-width,
+    $card-right-margin,
+    $catalog-container-horizontal-padding-small
+  );
+  padding: 50px $catalog-container-horizontal-padding-small;
+
+  @media (min-width: $media-large-width) {
+    width: catalogWidth(
+      $card-width,
+      $card-right-margin,
+      $catalog-container-horizontal-padding-large
+    );
+    padding: 50px $catalog-container-horizontal-padding-large;
+  }
+
+  &__card {
+    margin-right: $card-right-margin;
+    margin-bottom: $card-bottom-margin;
+
+    &:nth-child(#{$card-row}n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + #{$card-row}) {
+      margin-bottom: 0;
+    }
+  }
+}
