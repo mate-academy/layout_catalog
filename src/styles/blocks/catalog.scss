@@ -1,14 +1,19 @@
+@import "../utils/variables";
+@import "../utils/functions";
+@import "../utils/extends";
+
 .catalog {
   @extend %centered-flex-container;
-  flex-direction: column;
+  flex-wrap: wrap;
   padding: 50px 0;
+  width: getCatalogWidth($card_row_count,$card_width,$card_gap);
 
-  &__row {
-    @extend %centered-flex-container;
+  &__card {
     margin-bottom: 46px;
-  }
+    flex-basis: $card_width;
 
-  &__card:not(:last-child) {
-    margin-right: 48px;
+    &:not(:nth-child(#{$card_row_count}n)) {
+      margin-right: 48px;
+    }
   }
 }
