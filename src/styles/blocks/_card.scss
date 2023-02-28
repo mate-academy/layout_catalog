@@ -1,22 +1,9 @@
-html {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-
-.main {
+.container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 944px;
+  max-width: 944px;
   margin: 0 auto;
-  
-}
-
-.card-image {
-  display: block;
-  width: 160px;
-  height: 134px;
-  margin: 0 auto;
-  margin-bottom: 40px;
 }
 
 .card {
@@ -28,28 +15,57 @@ html {
   padding: 32px 16px 16px;
   border: 1px solid rgba(243, 243, 243, 1);
   margin-top: 50px;
-}
+  
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
 
-.card:nth-last-child(-n + 4) {
-  margin-top: 46px;
-  margin-bottom: 72px;
-}
+  &:nth-last-child(-n + 4) {
+    margin-top: 46px;
+    margin-bottom: 72px;
+  }
 
-.card-name {
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-  color: var(--main-text-color);
-  margin-bottom: 4px;
-}
+  &__name {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-text-color;
+    margin-bottom: 4px;
+  }
 
-.card-code {
-  font-weight: 400;
-  font-size: 10px;
-  font-family: inherit;
-  color: var(--secondary-text-color);
-  margin-bottom: 16px;
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    font-family: inherit;
+    color: $secondary-text-color;
+    margin-bottom: 16px;
+  }
+
+  &__buy {
+    width: 166px;
+    height: 40px;
+    background: $brand-color;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid transparent;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  
+    &:hover {
+      background-color: #fff;
+      border-color: $brand-color;
+      color: $brand-color;
+      cursor: pointer;
+      transition: all 600ms ease;
+    }
+  }
 }
 
 .client-review {
@@ -57,12 +73,12 @@ html {
   justify-content: space-between;
   margin-bottom: 24px;
   align-items: center;
-}
 
-.client-review__raiting {
-  display: flex;
-  font-size: 10px;
-  font-weight: 400;
+  &__raiting {
+    display: flex;
+    font-size: 10px;
+    font-weight: 400;
+  }
 }
 
 .price-section {
@@ -70,37 +86,16 @@ html {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-}
 
-.price-section__tag {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--secondary-text-color);
-}
+  &__tag {
+    font-size: 12px;
+    font-weight: 400;
+    color: $secondary-text-color;
+  }
 
-.price-section__value {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--main-text-color);
-}
-
-.buy {
-  width: 166px;
-  height: 40px;
-  background: var(--brand-color);
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid transparent;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.buy:hover {
-  background-color: #fff;
-  border-color: var(--brand-color);
-  color: var(--brand-color);
-  cursor: pointer;
-  transition: all 600ms ease;
+  &__value {
+    font-size: 16px;
+    font-weight: 700;
+    color: $main-text-color;
+  }
 }
