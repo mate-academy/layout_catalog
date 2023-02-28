@@ -93,13 +93,13 @@
 - do not combine selectors with `,` operator, it's hard to find them later (reset style files are not included here)
 - if you need to adjust positioning with `1px` or fractional numbers like `0.5`, you do something wrong, change the alignment technique you use
 - BEM doesn't allow nesting selectors, it increases selectors specificity and code nesting
->**WRONG WAY**
+> **WRONG WAY**
 >```scss
 >.card__rating {
 >  height: 15px;
 >  display: flex;
 >
->  .card__stars {
+>  .stars__star {
 >    display: flex;
 >
 >    .card__star {

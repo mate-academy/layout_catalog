@@ -37,26 +37,6 @@
     margin-bottom: 24px;
   }
 
-  &__star {
-    display: flex;
-  }
-
-  &__stars {
-    background: url("../images/star.svg") no-repeat;
-    background-position: center;
-    width: 16px;
-    height: 16px;
-
-    &:nth-child(-n + 4) {
-      background: url("../images/star-active.svg") no-repeat;
-      background-position: center;
-    }
-
-    &:not(:last-child) {
-      margin-right: 4px;
-    }
-  }
-
   &__reviews {
     font-size: 10px;
     color: $color-main-accent;
@@ -100,6 +80,27 @@
     &:hover {
       background-color: transparent;
       color: $color-accent-blue;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__star {
+    background: url("../images/star.svg") no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+
+    &:not(:last-child) {
+      margin-right: 4px;
     }
   }
 }
