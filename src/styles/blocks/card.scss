@@ -1,0 +1,125 @@
+@import "./variable";
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 32px 16px 16px;
+  width: $card-width;
+
+  border-radius: 5px;
+  background-color: $page-background-color;
+  border: 1px solid #f3f3f3;
+
+  &__image {
+    height: 134px;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-size: $text-main-font-size;
+    font-weight: 500;
+    line-height: 18px;
+    color: #060b35;
+    text-align: left;
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-size: $text-small-font-size;
+    line-height: 14px;
+    font-weight: 400;
+    color: $page-third-color;
+    text-align: left;
+  }
+
+  &__score {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__feedback {
+    font-size: $text-small-font-size;
+    font-weight: 400;
+    color: $page-second-color;
+  }
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(./../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__stars {
+    display: flex;
+    flex-direction: row;
+
+    & :not(:last-child) {
+      margin-right: 4px;
+    }
+
+    &--1 :nth-child(-n+1),
+    &--2 :nth-child(-n+2),
+    &--3 :nth-child(-n+3),
+    &--4 :nth-child(-n+4),
+    &--5 :nth-child(-n+5) {
+      background-image: url(./../images/star-active.svg);
+    }
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-name {
+      font-size: $text-main-font-size;
+      font-weight: 400;
+      color: $page-third-color;
+    }
+
+    &-value {
+      font-size: $text-big-font-size;
+      line-height: 18px;
+      font-weight: 700;
+      color: $page-second-color;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    &:link {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $page-background-color;
+      font-size: $text-middle-font-size;
+      font-weight: 700;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      height: 40px;
+
+      background-color: $page-first-color;
+      border: 1px solid transparent;
+      border-radius: 5px;
+    }
+
+    &:visited {
+      color: $page-background-color;
+    }
+
+    &:hover {
+      background-color: $page-background-color;
+      color: $page-first-color;
+      border: 1px solid $page-first-color;
+    }
+  }
+}
