@@ -1,7 +1,7 @@
-@import "./block/reset";
-@import "./block/header";
-@import "./block/star";
-@import "./block/cards";
+@import "./block/reset.scss";
+@import "./block/header.scss";
+@import "./block/star.scss";
+@import "./block/cards.scss";
 
 .main {
   display: flex;
@@ -12,14 +12,18 @@
     display: flex;
     flex-wrap: wrap;
     padding-top: 50px;
+    justify-content: center;
   }
 
   &__card--pos_dist {
-    margin-top: 46px;
     margin-right: 49px;
   }
 
-  &___card--pos_dist:nth-child(4n) {
-    margin-top: 0;
+  &__wrapper--pos_dist &__card--pos_dist:nth-last-child(-n + 4) {
+    margin-top: 46px;
+  }
+  
+  &__wrapper--pos_dist &__card--pos_dist:nth-child(4n) {
+    margin-right: 0;
   }
 }
