@@ -1,0 +1,15 @@
+.catalog {
+  @extend %centered-flex-container;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  width: getCatalogWidth($card_row_count,$card_width,$card_gap);
+
+  &__card {
+    margin-bottom: 46px;
+    flex-basis: $card_width;
+
+    &:not(:nth-child(#{$card_row_count}n)) {
+      margin-right: 48px;
+    }
+  }
+}
