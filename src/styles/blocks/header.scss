@@ -1,0 +1,69 @@
+@import "./../utils/variables";
+@import "./../utils/mixins";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: $bg-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo-link {
+    margin: 10px 0;
+    @include logo ($logo-size);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+  }
+  
+  &__item {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+    padding: 0;
+  }
+  
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $main-accent-color;
+  }
+
+  &__link:hover,
+  .is-active {
+    position: relative;
+    color: $main-blue-accent;
+  }
+
+  .is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: $main-blue-accent;
+    border-radius: 8px;
+  }
+}
