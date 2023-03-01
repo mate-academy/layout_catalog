@@ -2,11 +2,20 @@
   width: $card-width;
   border: 1px solid $bg-color-main;
   border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: $card-gap;
+  }
 
   &__image {
-    width: 160px;
+    width: 166px;
     height: 134px;
-    margin: 32px 19px 36px;
+    padding: 0 3px;
   }
 
   &__name {
@@ -14,26 +23,26 @@
     font-size: 12px;
     line-height: 18px;
     color: $color-main;
-    margin: 0 $min-section-gap 4px;
+    padding: 36px 0 4px;
+    margin: 0;
   }
 
   &__code {
     line-height: 14px;
     color: $color-secondary;
-    margin-bottom: 16px;
-    margin-left: $min-section-gap;
+    padding-bottom: 16px;
   }
 
   &__rating {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 $min-section-gap 24px;
+    padding-bottom: 24px;
   }
 
   &__price {
     display: flex;
-    margin: 0 $min-section-gap 16px;
+    padding-bottom: 16px;
     justify-content: space-between;
   }
 
@@ -62,13 +71,11 @@
     color: #fff;
     text-decoration: none;
     text-align: center;
-    margin: 0 $min-section-gap 16px;
-  }
 
-  &:hover &__buyLink {
-    background-color: #fff;
-    color: $color-button;
-    border-color: $color-button;
+    &:hover {
+      background-color: #fff;
+      color: $color-button;
+      border-color: $color-button;
+    }
   }
-
 }
