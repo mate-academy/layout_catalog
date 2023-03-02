@@ -1,22 +1,3 @@
-//CARD STYLES
-@function getContainerWidth ($width, $margin, $count) {
-  @return $width * $count + $margin * ($count - 1);
-}
-
-@import "./star.scss";
-@import "../utils/variables";
-
-.main {
-  padding: 51px 41px;
-
-  &__container {
-    width: getContainerWidth($card-width, $card-mr, $card-number);
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -24,9 +5,7 @@
   flex-shrink: 1;
 
   width: 198px;
-  padding: 16px;
-  margin-right: $card-mr;
-  margin-bottom: 48px;
+  padding: 32px 16px 16px;
 
   border: 1px solid #f3f3f3;
   border-radius: 5px;
@@ -35,9 +14,15 @@
     margin-right: 0;
   }
 
+  &:nth-child(n + 5) {
+    margin-bottom: 0;
+  }
+
   &__picture {
-    width: 100%;
-    margin-top: 16px;
+    display: block;
+    margin: 0 auto;
+    width: 160px;
+    height: 134px;
   }
 
   &__logo {
