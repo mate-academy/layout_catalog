@@ -1,10 +1,27 @@
+.page {
+  &__main {
+    margin: 0 auto;
+  }
+}
+
 .main {
   display: flex;
   flex-wrap: wrap;
 
   max-width: $max-main-width;
-  margin: 0 auto;
-  padding: 50px 0;
+
+  padding: 50px 40px;
+
+  &__card {
+
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
+
+    &:nth-child(-n + 4) {
+      margin-bottom: 46px;
+    }
+  }
 }
 
 .card {
@@ -14,11 +31,6 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 32px 16px 16px;
-  margin-bottom: $standard-margin;
-
-  &:not(:nth-child(4n)) {
-    margin-right: $standard-margin;
-  }
 
   &__image {
     width: 160px;
