@@ -1,0 +1,14 @@
+@function catalogSize(
+  $catalog-item-width,
+  $catalog-num-of-item,
+  $catalog-margin-btw-item
+) {
+  @return $catalog-item-width * $catalog-num-of-item
+    + ($catalog-margin-btw-item * ($catalog-num-of-item - 1));
+}
+
+@for $starCount from 1 through 5 {
+  .stars--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
