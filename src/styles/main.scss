@@ -1,3 +1,245 @@
-body {
-  margin: 0;
+$color-accent-blue: #00acdc;
+$color-white: #fff;
+$card-min-margin-side: 16px;
+$main-color-accent: #060b35;
+
+p {
+  margin: initial;
 }
+
+.logo {
+  padding: 10px 0;
+  width: 40px;
+  height: 40px;
+}
+// #region page
+.page {
+  font-family: "Roboto", sans-serif;
+
+  &__content {
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 1200px;
+    min-width: 1024px;
+  }
+
+  &__header {
+    min-height: 60px;
+    margin-bottom: 51px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // @media (min-width: 1023px) {
+    //   margin: 0 41px;
+    // }
+
+    // @media (min-width: 1201px) {
+    //   margin: 0 129px;
+    // }
+  }
+
+  &__card {
+    margin-bottom: 48px;
+    margin-right: 50px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n +4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// #endregion
+
+// #region nav
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    height: 60px;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    text-align: center;
+    line-height: 14px;
+    display: block;
+    padding: 22.5px 0;
+    text-decoration: none;
+    color: $main-color-accent;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &--is-active {
+      position: relative;
+      color: $color-accent-blue;
+      min-height: 15px;
+
+      &::after {
+        content: "";
+        border-radius: 8px;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        bottom: 0;
+        background: $color-accent-blue;
+      }
+    }
+
+    &:hover {
+      color: $color-accent-blue;
+    }
+  }
+}
+// #endregion
+
+//#region card
+.card {
+  background: $color-white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: 198px;
+  display: flex;
+  flex-direction: column;
+
+  &__logo {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 40px;
+  }
+
+  &__description {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-color-accent;
+    margin: 0 $card-min-margin-side 4px;
+  }
+
+  &__code {
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #616070;
+    margin-bottom: 16px;
+    margin-left: $card-min-margin-side;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 $card-min-margin-side 24px;
+  }
+
+  &__prices {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 $card-min-margin-side 16px;
+    box-sizing: border-box;
+  }
+
+  &__text {
+    color: #616070;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__amount {
+    color: $main-color-accent;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__link-buy {
+    border: 1px solid transparent;
+    background: $color-accent-blue ;
+    font-style: normal;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+    text-decoration: none;
+    padding: 12px 70px 12px 69px ;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 $card-min-margin-side 16px;
+
+    &:hover {
+      background: $color-white;
+      border-color: $color-accent-blue;
+      color: $color-accent-blue;
+    }
+  }
+}
+
+//#endregion
+
+//#region stars
+.stars {
+  &__reviews-text {
+    font-weight: 400;
+    font-size: 10px;
+    color: $main-color-accent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 14px;
+  }
+
+  &__container {
+    display: flex;
+    width: 96px;
+
+    &-star {
+      background-image: url(/images/star.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 16px;
+      width: 16px;
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+
+    @for $starCount from 1 through 5 {
+      &--#{$starCount} .stars__container-star:nth-child(-n + #{$starCount}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+}
+
+//#endregion
