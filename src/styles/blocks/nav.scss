@@ -2,33 +2,31 @@
   display: flex;
   align-items: stretch;
 
-  &_list {
+  &__list {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
 
-  &_item {
+  &__item {
     display: block;
     height: 100%;
-    margin-right: 20px;
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
-  &_item:last-child {
-    margin-right: 0;
-  }
-
-  &_links {
+  &__link {
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
     height: 100%;
     cursor: pointer;
-    color: #060b35;
+    color: $text-color-1;
     text-decoration: none;
     display: flex;
     text-align: center;
@@ -36,19 +34,19 @@
     align-items: center;
 
     &:hover {
-      color: #00acdc ;
+      color: $main-color;
     }
   }
 }
 
 .is-active {
-  color: #00acdc;
+  color: $main-color;
 
   &::after {
     position: absolute;
-    background: #00acdc;
+    background-color: $main-color;
     border-radius: 8px;
-    width: 37px;
+    width: 100%;
     height: 4px;
     content: "";
     bottom: 0;
