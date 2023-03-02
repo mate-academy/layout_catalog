@@ -2,10 +2,20 @@
   display: flex;
   flex-direction: column;
   padding: 32px 16px 16px ;
-  width: 166px;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &:not(:nth-last-child(-n+4)) {
+    margin-bottom: 46px;
+  }
   
   &__image {
-    margin: 0 3px 40px;
+    margin: 0 auto 40px;
     width: 160px;
     height: 134px;
   }
@@ -37,7 +47,7 @@
   
   &__reviews {
     font-size: 10px;
-    line-height: 14px;
+    line-height: 16px;
     color: $major-text-color;
   }
   
@@ -58,7 +68,7 @@
   &__button {
     display: flex;
     justify-content: center;
-    padding: 12px;
+    padding: 11px;
     background: $light-blue-color;
     border-radius: 5px;
     border: 1px solid $light-blue-color;
@@ -80,34 +90,4 @@
     color: $minor-text-color;
     line-height: 18px;
   }
-  
-  
-}
-
-.card:not(:nth-child(4n)) {
-  margin-right: 50px;
-}
-
-.card:not(:nth-child(-n-4)) {
-  margin-bottom: 46px;
-}
-
-.stars {
-  display: flex;
-
-  &__star {
-    //background-image: url(../../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 16px;
-    width: 16px;
-  }
-}
-
-//.stars--4 :nth-child(-n+4) {
-//  background-image: url(./src/images/star-active.svg);
-//}
-
-.stars__star:not(:last-child) {
-  margin-right: 4px;
 }
