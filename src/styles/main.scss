@@ -1,3 +1,34 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./utils/functions";
+
+@import "./blocks/normalize.scss";
+@import "./blocks/reset.scss";
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: maxContainerWidth(
+    $card-width,
+    $space-between-cards,
+    $cards-per-row
+  );
+  flex-basis: 25%;
+  margin: 0 auto;
+  padding: 50px 0;
+
+  &__item {
+    margin-right: $space-between-cards;
+    margin-bottom: 46px;
+
+    &:nth-child(#{$cards-per-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$cards-per-row}) {
+      margin-bottom: 0;
+    }
+  }
 }
