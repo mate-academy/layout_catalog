@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  padding-right: 50px;
+  background-color: $background-card;
+
+  &__logo {
+    display: flex;
+    justify-self: center;
+    margin-left: 50px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__link {
+    position: relative;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: $main-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:focus {
+      color: $blue;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 8px;
+        width: 100%;
+        height: 4px;
+        background: $blue;
+        color: $blue;
+      }
+    }
+  }
+
+  &__item {
+    padding-left: 20px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:hover > .nav__link {
+      color: $blue;
+    }
+  }
+}
+
+.is-active {
+  @extend .nav__link;
+  @extend .nav__link:focus;
+}
