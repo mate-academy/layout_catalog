@@ -6,12 +6,20 @@ $card-width: 200px;
 $vertical-shift: 50px;
 $horizontal-shift: 40px;
 $horizontal-card-ind: 48px;
-$vertical-card-ind: 48px;
-$nav-vertical-shift: 23px;
+$vertical-card-ind: 46px;
 
 @function getCatalogSize($card-width, $horizontal-shift, $horizontal-card-ind) {
   @return ($card-width * 4) +
     ($horizontal-shift * 2) + ($horizontal-card-ind * 3);
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 p {
@@ -28,10 +36,8 @@ p {
   font-family: "Roboto", sans-serif;
 
   &__content {
-    margin: 0 auto;
+    margin: 0;
     box-sizing: border-box;
-    max-width: 1200px;
-    min-width: 1024px;
   }
 
   &__header {
@@ -48,15 +54,19 @@ p {
     align-items: center;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: getCatalogSize($card-width, $horizontal-shift, $horizontal-card-ind);
+    max-width: getCatalogSize($card-width, $horizontal-shift,
+    $horizontal-card-ind);
     padding: $vertical-shift $horizontal-shift;
   }
 
   &__card {
-    margin-bottom: 48px;
-    margin-right: 48px;
+    // margin-right: 48px;
+    &:not(:nth-child(4n)) {
+      margin-right: $horizontal-card-ind;
+    }
+
     &:nth-child(4n) {
-      margin-right: 0;
+      margin-bottom: $vertical-card-ind;
     }
 
     &:nth-last-child(-n +4) {
@@ -127,12 +137,14 @@ p {
 
 //#region card
 .card {
+  margin-bottom: $vertical-card-ind;
   background: $color-white;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  width: 198px;
+  width: $card-width;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   &__logo {
     width: 160px;
@@ -141,6 +153,8 @@ p {
   }
 
   &__description {
+    font-family: inherit;
+    display: block;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
@@ -186,21 +200,20 @@ p {
   }
 
   &__link-buy {
+    display: block;
+    padding: 11px 69px 11px 68px;
+    background-color: $color-accent-blue;
     border: 1px solid transparent;
-    background: $color-accent-blue ;
-    font-style: normal;
     border-radius: 5px;
     font-weight: 700;
     font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
     line-height: 16px;
     text-align: center;
-    text-transform: uppercase;
-    color: $color-white;
     text-decoration: none;
-    padding: 12px 69px 12px 68px ;
-    box-sizing: border-box;
-    display: block;
     margin: 0 $card-min-margin-side 16px;
+    box-sizing: border-box;
 
     &:hover {
       background: $color-white;
