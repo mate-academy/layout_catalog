@@ -28,7 +28,7 @@ and SCSS
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
-- add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
+- add `` (not just `hover`) to the link `Buy` inside the first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 ---

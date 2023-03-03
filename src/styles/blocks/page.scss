@@ -1,0 +1,35 @@
+// #region page
+.page {
+  font-family: "Roboto", sans-serif;
+
+  &__content {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: getCatalogSize($card-width, $horizontal-shift,
+    $horizontal-card-ind);
+    padding: $vertical-shift 0;
+  }
+
+  &__card {
+    &:not(:nth-child(4n)) {
+      margin-right: $horizontal-card-ind;
+    }
+
+    &:nth-child(4n) {
+      margin-bottom: $vertical-card-ind;
+    }
+
+    &:nth-last-child(-n +4) {
+      margin-bottom: 0;
+    }
+  }
+}
+// #endregion
