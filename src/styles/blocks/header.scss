@@ -1,18 +1,19 @@
-@import "./utils/variables";
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding: 0 50px;
+
   background: $color-white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  padding: 0 50px;
 }
 
 .nav__list {
   display: flex;
-  list-style: none;
   padding: 0;
+
+  list-style: none;
 }
 
 .nav__item {
@@ -25,12 +26,15 @@
 }
 
 .nav__link {
+  position: relative;
+
+  padding: 23px 0;
+
+  font-weight: 500;
+  color: $color-main-accent;
+
   text-transform: uppercase;
   text-decoration: none;
-  position: relative;
-  color: $color-main-accent;
-  padding: 23px 0;
-  font-weight: 500;
 
   &:hover {
     color: $color-accent-blue;
@@ -41,13 +45,17 @@
   color: $color-accent-blue;
 
   &::after {
-    display: block;
-    position: absolute;
     content: "";
+    
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+    margin-bottom: 0;
+
     height: 4px;
     width: 100%;
-    bottom: 0;
-    margin-bottom: 0;
+
     background-color: $color-accent-blue;
     border-radius: 8px;
   }
