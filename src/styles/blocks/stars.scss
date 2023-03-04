@@ -2,14 +2,17 @@
   display: flex;
 
   &__star {
-    margin-right: 4px;
     background-image: url(/images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
     height: 16px;
     width: 16px;
   }
-  
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
   @for $starCount from 1 through 5 {
     &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
       background-image: url(/images/star-active.svg);
