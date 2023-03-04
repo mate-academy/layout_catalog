@@ -1,0 +1,46 @@
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+  flex-basis: 753px;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+  }
+  
+  &__link {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 18px 0;
+    position: relative;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $blue-color;
+  }
+  
+  &__link:active::after {
+    @extend %properties-after;
+  }
+}
+
+.is-active {
+  color: $blue-color;
+
+  &::after {
+    @extend %properties-after;
+  }
+}

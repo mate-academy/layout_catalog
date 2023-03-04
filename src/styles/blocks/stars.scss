@@ -1,0 +1,27 @@
+.stars-div {
+  height: 116px;
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url(../images/star.svg) 0 0/contain no-repeat;
+  }
+
+  &--5 &__star,
+  &--1 &__star:first-child,
+  &--2 &__star:nth-child(-n+2),
+  &--3 &__star:nth-child(-n+3),
+  &--4 &__star:not(:last-child) {
+  background: url(../images/star-active.svg) 0 0/contain no-repeat;
+  }
+}
