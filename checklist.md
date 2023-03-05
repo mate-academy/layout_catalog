@@ -123,14 +123,14 @@ BAD example:
 ```scss
 $main: #060b35;
 $secondary: #616070;
-$blue: $blue-color;
+$blue: $color-accent-blue;
 ```
 
 GOOD example:
 ```scss
 $color-main-accent: #060b35;
 $color-secondary: #616070;
-$color-accent-blue: $blue-color;
+$color-accent-blue: $color-accent-blue;
 ```
 
 12. [SASS] - Try using _for_ loops for the stars selector.
