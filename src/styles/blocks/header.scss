@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import "../utils/variables";
 
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background: hsl(0, 0%, 100%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -11,15 +12,19 @@
 .nav {
   display: flex;
   position: flex-end;
-  text-transform: uppercase;
   margin: 0;
+  text-transform: uppercase;
   
   &__item {
-    text-decoration: none;
     display: block;
     position: relative;
     line-height: 60px;
     font-weight: 500;
+
+    &--link {
+      text-decoration: none;
+      color: black;
+    }
   }
   
   &__item:not(:last-child) {
@@ -27,33 +32,29 @@
   }
   
   &__item:hover {
-    color: var(--hover-color);
+    color: $button-color;
     cursor: pointer;
   }
-  
 }
 
 .is-active {
-  color: var(--hover-color);
+  color: $button-color;
   text-decoration: none;
 
   &::after {
     display: block;
     position: absolute;
+    bottom: 0;
     content: "";
+
     width: 100%;
     height: 4px;
-    bottom: 0;
-    background-color: var(--hover-color);
+    background-color: $button-color;
     border-radius: 8px;
   }
-
 }
 
 .logo {
   width: 40px;
   height: 40px;
-  position: absolute;
-  left: 50px;
-  top: 10px;
 }
