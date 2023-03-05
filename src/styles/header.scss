@@ -1,77 +1,70 @@
+@import "mixins.scss";
+
 .header {
+  &__logo {
+    display: block;
+  }
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+
   padding: 0 50px;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05%);
 }
 
-.is-active {
-  position: relative;
-  padding: 23px 0;
-  font-size: 12px;
-  margin-right: 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #060b35;
-  cursor: pointer;
-  font-family: inherit;
-  transition: color 0.3s ;
-  font-weight: 500;
-
-  &::after {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: "";
-    background-color: #00acdc;
-    height: 4px;
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 0;
-  }
-}
-
 .nav {
-  &:hover,
-  .is-active {
-    color: #00acdc;
+  &__list {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
   }
 
-  &:nth-child(8) {
-    margin-right: 0;
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
-}
 
-.nav-list {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-}
+  &__link {
+    position: relative;
 
-.nav-item {
-  display: flex;
-  position: relative;
-}
+    display: flex;
+    align-items: center;
 
-.header-link {
-  padding: 23px 0;
-  font-size: 12px;
-  margin-right: 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #060b35;
-  cursor: pointer;
-  font-family: inherit;
-  transition: color 0.3s ;
-  font-weight: 500;
-}
+    height: 60px;
 
-.logo {
-  margin-top: 10px;
-  height: 50px;
+    @include fontParams(12px, 500);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $mainAccent;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $colorBlueAccent;
+    }
+
+    &--active {
+      color: $colorBlueAccent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 4px;
+
+        background-color: $colorBlueAccent;
+      }
+    }
+  }
 }
