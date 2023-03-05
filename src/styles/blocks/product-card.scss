@@ -1,6 +1,8 @@
 $productMarginY: 23px;
 $productMarginX: 24px;
 $productWidth: 200px;
+$c-white-smoke: #f3f3f3;
+$c-white: white;
 
 @function calcWidth ($cardWidth, $cardMarginX) {
   @return ($cardMarginX * 8 + $cardWidth * 4);
@@ -11,10 +13,6 @@ $productWidth: 200px;
   font-weight: $weight;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .products {
   display: flex;
   width: calcWidth($productWidth, $productMarginX);
@@ -23,20 +21,23 @@ $productWidth: 200px;
 }
 
 .page__products {
-  margin: (50px - $productMarginY) auto 72px;
+  margin: 50px auto 72px;
 }
 
 .products__card {
   margin: $productMarginY $productMarginX;
 }
 
+.products__card:nth-child(-n + 4) {
+  margin-top: 0;
+}
+
 .product-card {
-  box-sizing: border-box;
   padding: 32px 16px 16px;
   width: $productWidth;
   border-radius: 5px;
-  border: 1px solid #f3f3f3;
-  background-color: white;
+  border: 1px solid $c-white-smoke;
+  background-color: $c-white;
 
   &__image {
     margin: 0 3px 36px;
@@ -106,20 +107,18 @@ $productWidth: 200px;
   }
 
   &__link {
-    box-sizing: border-box;
-    text-align: center;
+    @include fontSizeWeight(14px, 700);
+
     width: 100%;
+    padding: 11px 0;
+
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
 
     background-color: $color-light-blue;
     border-radius: 5px;
-
-    text-decoration: none;
-    @include fontSizeWeight(14px, 700);
-    line-height: 16px;
-    padding: 11px 0;
-    text-transform: uppercase;
-
-    color: #fff;
     border: 1px solid $color-light-blue;
   }
 
