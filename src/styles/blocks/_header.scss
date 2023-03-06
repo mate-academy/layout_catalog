@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
   &__logo {
     width: 40px;
     height: 40px;
@@ -13,31 +15,40 @@
   &__list {
     display: flex;
   }
+
   &__item:not(:last-child) {
     margin-right: 20px;
   }
+
   &__link {
     position: relative;
+    display: block;
+    padding: 23px 0;
+
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
-    display: block;
-    padding: 23px 0;
+
     &:hover {
-      color: #00acdc;
-      transition: 0.5s color;
+      color: $link-color;
+      transition: $transitionDuration color;
     }
+
     &.is-active {
-      color: #00acdc;
+      color: $link-color;
+
       &:after {
         content: "";
         position: absolute;
         bottom: 0;
         left: 0;
-        background: #00acdc;
-        border-radius: 8px;
+
         width: 37px;
         height: 4px;
+
+        background: $link-color;
+        border-radius: 8px;
+
       }
     }
   }
