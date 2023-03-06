@@ -1,65 +1,61 @@
 
 .header {
-  background-color: white;
-  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  &__logo {
+    display: block;
   }
-}
-
-.logo {
-  background-image: url("../images/logo.png");
-  width: 40px;
-  height: 40px;
 }
 
 .nav {
   &__list {
     display: flex;
-    justify-content: space-between;
     list-style: none;
   }
 
-  &__item {
-    display: inline-block;
-    position: relative;
-    margin: 0 0 0 20px;
-  }
-
-  &__item:first-child {
-    margin: 0;
+  &__item:not(:first-child) {
+    margin-left: 20px;
   }
 
   &__link {
-    display: block;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 12px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
     height: 60px;
-    line-height: 60px;
-    color: $basic-color;
+
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $ColorMainAccent;
+    transition: color 0.3s;
 
     &:hover {
-      color: $button-color;
+      color: $ColorBlueAccent;
     }
-  }
-}
 
-.is-active {
-  color: $button-color;
+    &--active {
+      color: $ColorBlueAccent;
+    
+      &::after {
+        content: "";
+        position: absolute;
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 8px;
-    bottom: 0;
-    background-color: $button-color;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 4px;
+        border-radius: 4px;
+        background-color: $ColorBlueAccent;
+      }
+    }
   }
 }
