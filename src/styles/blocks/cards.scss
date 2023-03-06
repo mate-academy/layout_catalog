@@ -1,0 +1,116 @@
+.cards-catalog {
+  margin: 0 auto;
+  width: getWidthCatalog(
+    $card-width,
+    $card-horisontal-shift,
+    $horisontal-shift
+  );
+  padding: $vertical-shift $horisontal-shift;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  background-color: $color-white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  &:not(:nth-child(4n)) {
+    margin-right: $card-horisontal-shift;
+  }
+
+  &:nth-child(-n + 4) {
+    margin-bottom: $card-vertical-shift;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__image--position {
+    margin: 0 3px;
+  }
+
+  &__description {
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: $color-dark;
+  }
+
+  &__description--position_top {
+    margin-top: 40px;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-light-grey;
+  }
+
+  &__product-code--position_top {
+    margin-top: 4px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__price--position_top {
+    margin-top: 24px;
+  }
+
+  &__price-text {
+    font-weight: 400;
+    line-height: $price-line-height;
+    color: $color-light-grey;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: $price-line-height;
+    color: $color-dark;
+  }
+
+  &__link-buy {
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: $color-blue;
+    border-radius: 5px;
+    text-decoration: none;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 12px 69px;
+  }
+
+  &__link-buy--position_top {
+    margin-top: 16px;
+  }
+
+  &__link-buy:hover {
+    background-color: $color-white;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    color: $color-blue;
+  }
+}
