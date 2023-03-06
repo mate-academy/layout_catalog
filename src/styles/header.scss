@@ -3,9 +3,9 @@
   align-items: center;
   justify-content: space-between;
   height: $header-height;
-  background: #fff;
   padding: 0 50px;
   margin-bottom: 51px;
+  background: $c-whit;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   
   &__logo {
@@ -13,11 +13,11 @@
     
     &-pic {
       display: inline-block;
-      background-image: url(../images/logo.png);
-      background-repeat: no-repeat;
       height: $logo-size;
       width: $logo-size;
       margin-top: 10px;
+      background-image: url(../images/logo.png);
+      background-repeat: no-repeat;
     }
   }
 }
@@ -44,25 +44,25 @@
   &__link {
     text-decoration: none;
     display: inline-block;
-    color: $basicColor;
     line-height: $header-height;
+    color: $basicColor;
 
     &:hover {
       color: $activeLinkColor;
     }
 
     &.is-active {
-      color: $activeLinkColor;
       position: relative;
+      color: $activeLinkColor;
     }
     
     &.is-active::after {
+      display: block;
+      @include absolute-positioning;
       content: "";
       color: $activeLinkColor;
-      display: block;
       border: 2px solid $activeLinkColor;
       border-radius: 8px;
-      @include absolute-positioning;
     }
   }
 }
