@@ -1,0 +1,68 @@
+@import "../styles/variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
+
+  &__image {
+    padding-top: 4px;
+    text-decoration: none;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    margin: 0;
+  }
+
+  &__item {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    color: $color-main;
+    text-transform: uppercase;
+    cursor: pointer;
+    height: 60px;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+.is-active {
+  color: $link-color;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: $link-color;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 8px;
+  }
+}
