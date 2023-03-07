@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    display: flex;
+    padding: 22.5px 0;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    position: relative;
+
+    &--is-active {
+      color: $color-for-links;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 4px;
+        background-color: $color-for-links;
+        border-radius: 8px;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &:hover {
+      color: $color-for-links;
+    }
+  }
+}
