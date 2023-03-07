@@ -1,0 +1,109 @@
+.container {
+  width: getWitdth($card-width, $margin-between-cards, $cards-in-row);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.card {
+  width: 200px;
+  border: 1px solid $border-card-color;
+  background-color: $white-color;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  &:not(:nth-child(#{$cards-in-row}n)) {
+    margin-right: 48px;
+  }
+
+  &:nth-last-child(-n + #{$number-of-cards - $cards-in-row}) {
+    margin-top: 46px;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 40px 0 0;
+    padding: 0;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-color;
+  }
+
+  &__subtitle {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    color: $sub-text-color;
+  }
+
+  &__reviews {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews-number {
+    font-size: 10px;
+    line-height: 14px;
+    align-self: center;
+  }
+
+  &__price-area {
+    margin-top: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    color: $sub-text-color;
+  }
+
+  &__price-number {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $text-color;
+  }
+
+  &__button {
+    margin-top: 16px;
+    padding: 11px 69.2px 11px 68px;
+    background: $button-color;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: $white-color;
+    border: 1px solid $button-color;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $white-color;
+      color: $button-color;
+    }
+  }
+}
