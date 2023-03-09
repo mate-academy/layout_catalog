@@ -1,13 +1,13 @@
 //#region card
 .card {
-  margin-bottom: $vertical-card-ind;
-  background: $color-white;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  width: $card-width;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  width: $card-width;
+  margin-bottom: $vertical-card-ind;
+  background: $color-white;
+  border: 1px solid $border-color-card;
+  border-radius: 5px;
 
   &:not(:nth-child(4n)) {
     margin-right: $horizontal-card-ind;
@@ -28,35 +28,31 @@
   }
 
   &__description {
-    font-family: inherit;
     display: block;
+    margin: 0 $card-min-margin-side 4px;
+    font-family: inherit;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
     color: $main-color-accent;
-    margin: 0 $card-min-margin-side 4px;
   }
 
   &__code {
-    text-align: left;
-    font-style: normal;
-    font-weight: 400;
+    margin-left: $card-min-margin-side;
+    margin-bottom: 16px;
     font-size: 10px;
     line-height: 14px;
+    text-align: left;
     color: #616070;
-    margin-bottom: 16px;
-    margin-left: $card-min-margin-side;
   }
 
   &__stars {
-    display: flex;
-    justify-content: space-between;
+    @extend %flex-between;
     margin: 0 $card-min-margin-side 24px;
   }
 
   &__prices {
-    display: flex;
-    justify-content: space-between;
+    @extend %flex-between;
     margin: 0 $card-min-margin-side 16px;
     box-sizing: border-box;
   }
@@ -68,29 +64,27 @@
   }
 
   &__amount {
-    color: $main-color-accent;
-    font-weight: 700;
     font-size: 16px;
+    font-weight: 700;
     line-height: 18px;
+    color: $main-color-accent;
   }
 
   &__link-buy {
+    @extend %flex-center;
+    min-height: 40px;
+    box-sizing: border-box;
+    margin: 0 $card-min-margin-side 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    color: $color-white;
+    text-transform: uppercase;
+    text-decoration: none;
     background-color: $color-accent-blue;
     border-radius: 5px;
     border: 1px solid transparent;
-    margin: 0 $card-min-margin-side 16px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 40px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 14px;
-    color: #fff;
-    text-transform: uppercase;
-    line-height: 16px;
-    text-decoration: none;
 
     &:hover {
       background: $color-white;
