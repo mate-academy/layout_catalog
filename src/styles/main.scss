@@ -7,13 +7,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 html {
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
 }
 
 .is-active {
@@ -38,14 +40,13 @@ main {
 }
 
 @function count($cards-number) {
-  @return 200 * $cards-number + ($cards-number - 1) * 48 + 40 * 2;
+  @return 200 * $cards-number + ($cards-number - 1) * 48 + 40 * 2 * 1px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-  width: count(variables.$cards-number) * 1px;
+  width: count(variables.$cards-number);
   padding: 50px 40px;
   margin: 0 auto;
-  box-sizing: border-box;
 }
