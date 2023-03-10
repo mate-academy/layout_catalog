@@ -1,6 +1,6 @@
 .nav {
   &__list {
-    font-size: 12px;
+    font-size: $font-size-medium;
     font-weight: $font-weight-medium;
     text-transform: uppercase;
     list-style: none;
@@ -12,7 +12,7 @@
   }
 
   &__link {
-    height: 64px;
+    height: 60px;
     position: relative;
     display: flex;
     align-items: center;
@@ -20,19 +20,22 @@
     color: $font-color-main;
   }
 
-  &__link:hover,
-  &__link--active {
+  &__link:hover {
     color: $blue-color-accent;
   }
 
-  &__link--active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 4px;
-    border-radius: 2px;
-    background-color: $blue-color-accent;
+  &__link--is--active {
+    color: $blue-color-accent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $blue-color-accent;
+    }
   }
 }

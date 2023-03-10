@@ -1,0 +1,24 @@
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: $cards-container-width;
+  padding: {
+    top: 50px;
+    bottom: 72px;
+  };
+
+  &__card {
+    margin-bottom: $card-vertical-gap;
+    &:not(:nth-child(#{$cards-in-row}n)) {
+      margin-right: $card-horizontal-gap;
+    }
+    &:nth-last-child(-n + #{$cards-in-row}+ 1) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.wrapper__cards-container {
+  margin: 0 auto;
+}
