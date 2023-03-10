@@ -1,26 +1,15 @@
 @use "../utils/_variables" as *;
-
-.main {
-  display: flex;
-  max-width: 944px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-top: 50px;
-  margin: 0 auto;
-}
+@import "../utils/mixins.scss";
 
 .card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  max-width: 200px;
+  
   background: $clear_white-color;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $border-color;
   border-radius: 5px;
-
-  &--position {
-    display: flex;
-    flex-direction: column;
-    padding: 32px 16px 16px;
-    max-width: 200px;
-    margin-bottom: 46px;
-  }
 
   &__logo {
     align-self: center;
@@ -30,7 +19,6 @@
   }
 
   &__description {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
     line-height: 18px;
     margin-bottom: 4px;
     color: $dark_blue-for-text;
@@ -38,29 +26,25 @@
 
   &__code {
     color: $gray-for-text;
-    font-size: 10px;
+    @include fonts;
     margin-bottom: 16px;
-    font-weight: 400;
-    line-height: 14px;
+    line-height: $small-font-line-height;
   }
 
   &__raiting {
-    display: flex;
-    justify-content: space-between;
+    @include positioning;
     align-items: center;
     margin-bottom: 24px;
   }
 
   &__rating-number {
-    font-size: 10px;
+    @include fonts;
+    line-height: $small-font-line-height;
     color: $dark_blue-for-text;
-    font-weight: 400;
-    line-height: 14px;
   }
 
   &__price {
-    display: flex;
-    justify-content: space-between;
+    @include positioning;
     margin-bottom: 16px;
     align-items: center;
   }
@@ -72,30 +56,39 @@
   }
 
   &__price-amount {
-    font-weight: 700;
-    font-size: 16px;
-    color: $dark_blue-for-text;
+    font: {
+      size: 16px;
+      weight: 700;
+    }
     line-height: 18px;
+    color: $dark_blue-for-text;
   }
 
   &__buy-button {
     display: flex;
-    font-size: 14px;
-    font-weight: 700;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 11px 70px 11px 69px;
+
+    background-color: $blue-color;
+
+    font: {
+      size: 14px;
+      weight: 700;
+    }
     line-height: 16px;
     color: $clear_white-color;
     text-transform: uppercase;
-    background-color: $blue-color;
     text-align: center;
-    padding: 11px 70px 11px 69px;
-    border: 1px solid transparent;
-    border-radius: 5px;
   }
 
   &__buy-button:hover {
+    transition: background-color 1s;
+
+    border-color: $blue-color;
+
     background-color: $clear_white-color;
     color: $blue-color;
-    border-color: $blue-color;
-    transition: background-color 1s;
   }
 }

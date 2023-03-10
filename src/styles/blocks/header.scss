@@ -1,15 +1,15 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  @include positioning;
   align-items: center;
-  padding: 0 50px;
-  background: $clear_white-color;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
   margin: 0 auto;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+  background: $clear_white-color;
 
   &__image {
-    height: 40px;
-    width: 40px;
+    @include image-size;
   }
 }
 
@@ -24,14 +24,18 @@
 
   &__link {
     position: relative;
-    text-transform: uppercase;
+
     display: flex;
-    color: $dark_blue-for-text;
+
     padding: 23px 0;
 
+    color: $dark_blue-for-text;
+    text-transform: uppercase;
+
     &:hover {
-      color: $blue-color;
       transition: color 0.7s;
+
+      color: $blue-color;
     }
   }
 }
@@ -40,13 +44,16 @@
   color: $blue-color;
 
   &:after {
-    position: absolute;
     content: "";
-    background: $blue-color;
-    border-radius: 8px;
-    height: 4px;
+
+    position: absolute;
     bottom: 0;
     left: 0;
+
+    border-radius: 8px;
+    height: 4px;
     width: 100%;
+    
+    background: $blue-color;
   }
 }
