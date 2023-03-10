@@ -6,12 +6,17 @@ $background-link-color: #fff;
 $header-text-color: #000;
 $hover-text-color: #00acdc;
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: Roboto, sans-serif;
 }
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -24,6 +29,10 @@ body {
 }
 
 .nav {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
   &__ul {
     width: 100%;
     padding-left: 50px;
@@ -48,16 +57,46 @@ body {
     color: $header-text-color;
     padding: 22.5px 0;
   }
+
+  &__link:hover,
+  .is-active {
+    position: relative;
+    color: $hover-text-color;
+    padding: 23px 0;
+  }
+
+  &__link-is-active::after {
+    position: absolute;
+      content: "";
+    background-color: $hover-text-color;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 942px;
+  gap: 48px;
+
+  padding-top: 39px;
+  margin: 0 auto;
+
 }
 
 .card {
   width: 198px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-  border: 1px solid var(--card-border-color);
+  border: 1px solid $card-border-color;
   border-radius: 5px;
-  margin: 0 auto;
 
   &__img {
     padding-top: 32px;
@@ -151,6 +190,7 @@ body {
   &__star {
     height: 16px;
     width: 16px;
+
     background-image: url(/src/images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -162,6 +202,6 @@ body {
   .stars--3 :nth-child(-n + 3),
   .stars--4 :nth-child(-n + 4),
   .stars--5 :nth-child(-n + 5) {
-    background-image: url(./images/star-active.svg);
+    background-image: url(/src/images/star-active.svg);
   }
 }
