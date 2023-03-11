@@ -1,0 +1,110 @@
+.card {
+  width: 200px;
+  padding: 32px 16px 16px;
+  background-color: $color-white;
+  border: 1px solid $color-card-border;
+  border-radius: 5px;
+
+  &__img {
+    @include imgSize($product-img-height, $product-img-width);
+
+    display: block;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-main;
+    margin-bottom: 4px;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  &__stars-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    color: $color-main;
+  }
+
+  &__price-title {
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    margin: 0;
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: $color-main;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    width: 166px;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    background-color: $color-blue;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue;
+    }
+  }
+
+}
+
+.stars {
+  display: flex;
+
+  @for $stars from 1 through 5 {
+    &--#{$stars} :nth-child(-n + #{$stars}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+
+  &__star {
+    width: $star-size;
+    height: $star-size;
+    margin-right: 4px;
+
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+}
