@@ -1,3 +1,242 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+$color-main: #fff;
+$color-secondary: #00acdc;
+
+$card-border-color: #f3f3f3;
+$card-p-color: #616070;
+$card-h-color: #060b35;
+
+* {
+  box-sizing: border-box;
   margin: 0;
+}
+
+.header {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: $color-main;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo-pic {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0 10px 50px;
+  }
+
+  &__nav {
+    margin-right: 50px;
+  }
+}
+
+%resets {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__link {
+    @extend %resets;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 14px;
+    color: $card-h-color;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__item {
+    @extend %resets;
+
+    display: flex;
+
+    &:last-child * {
+      margin-right: 0;
+    }
+
+    &:first-child * {
+      margin-left: 0;
+    }
+  }
+}
+
+.is-active {
+  color: $color-secondary;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    bottom: 0;
+    background-color: $color-secondary;
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  padding: 50px 128px;
+
+  @media (max-width: 1025px) {
+    padding: 50px 40px;
+  }
+
+  &__card {
+    margin: 0 48px 46px 0;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+%font-default {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+}
+
+.card {
+  width: 200px;
+  background: $color-main;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  & a {
+    @extend %font-default;
+  }
+
+  & p {
+    @extend %font-default;
+  }
+
+  & h2 {
+    @extend %font-default;
+  }
+
+  &__img {
+    height: 134px;
+    display: block;
+    margin: 0 auto 40px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+    color: $card-h-color;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $card-p-color;
+    margin-bottom: 16px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    color: $card-h-color;
+  }
+
+  &__price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    color: $card-p-color;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+    color: $card-h-color;
+  }
+
+  &__buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-main;
+    background-color: $color-secondary;
+
+    &:hover {
+      color: $color-secondary;
+      background-color: $color-main;
+      border: 1px solid $color-secondary;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
