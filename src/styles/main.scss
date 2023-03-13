@@ -1,3 +1,52 @@
+@import "./utils/_variables.scss";
+@import "./parts/nav.scss";
+@import "./parts/stars.scss";
+@import "./parts/header.scss";
+@import "./parts/card.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  color: $color-main-accent;
+  font-size: 10px;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+@function scale($cards-number) {
+  @return 200 * $cards-number + ($cards-number - 1) * 48 + 40 * 2 * 1px;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  width: scale($cards-number);
+  padding: 50px 40px;
+  margin: auto;
+}
+
+.is-active {
+  color: $color-accent-blue;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $color-accent-blue;
+    width: 100%;
+    left: 0;
+    border-radius: 8px;
+    bottom: 0;
+    height: 4px;
+  }
 }
