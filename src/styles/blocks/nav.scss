@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: $link-color;
+    text-transform: uppercase;
+  }
+
+  &__link:hover {
+    color: $card-hover-color;
+  }
+}
+
+.is-active {
+  color: $card-hover-color;
+
+  &::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    content: "";
+    border-bottom: 4px solid;
+    border-radius: 8px;
+  }
+}
