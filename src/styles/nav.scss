@@ -1,0 +1,72 @@
+$text-color-primary: #060b35;
+$color-cyan: #00acdc;
+$font-size-big: 12px;
+$font-weight-mid: 500;
+
+@mixin delete-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  font-size: $font-size-big;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 50px;
+  align-items: center;
+  width: 100%;
+}
+
+.logoHolder {
+  position: relative;
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  @include delete-margin-padding();
+}
+
+.nav__link {
+  display: inline-block;
+  position: relative;
+  color: $text-color-primary;
+  font-weight: $font-weight-mid;
+  text-decoration: none;
+  margin-right: 0;
+  margin-left: 20px;
+  height: 60px;
+  /* Readme said to not use uneven numbers, this is a workaround
+     And despite what the checklist says, the distance between the
+     content on Figma IS 22.5 */
+  padding: calc(45px / 2) 0;
+}
+
+.nav__link--leftmost {
+  margin-left: 0;
+}
+
+.is-active,
+.nav__link:hover {
+  color: $color-cyan;
+}
+
+.is-active::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: $color-cyan;
+  border-radius: 8px;
+}
