@@ -1,4 +1,3 @@
-
 .nav {
   display: flex;
   justify-self: flex-end;
@@ -6,10 +5,10 @@
 
   &__item {
     margin-right: 20px;
-  }
 
-  &__item:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__list {
@@ -27,23 +26,26 @@
     line-height: 1em;
     font-weight: 500;
     color: inherit;
-  }
 
-  &__link:hover,
-  .is-active {
-    color: $header-primary-color;
-  }
+    &:hover {
+      color: $header-primary-color;
+    }
 
-  .is-active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
+    &--active {
+      color: $header-primary-color;
 
-    border-radius: 8px;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
 
-    background-color: $header-primary-color;
+        border-radius: 8px;
+
+        background-color: $header-primary-color;
+      }
+    }
   }
 
 }
