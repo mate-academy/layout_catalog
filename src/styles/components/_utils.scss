@@ -1,0 +1,26 @@
+@function dynamicWidth($content) {
+  @return 200px * $content + 48px * ($content - 1);
+}
+
+@mixin styling($columnCount) {
+  .cards {
+    width: dynamicWidth($columnCount);
+    &__card {
+      &:nth-child(#{$columnCount + n}) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 944px) {
+  @include styling($columnCount: 4);
+}
+@media screen and (min-width: 696px) and (max-width: 943px) {
+  @include styling($columnCount: 3);
+}
+@media screen and (min-width: 448px) and (max-width: 695px) {
+  @include styling($columnCount: 2);
+}
+@media screen and (max-width: 447px) {
+  @include styling($columnCount: 1);
+}
