@@ -1,0 +1,22 @@
+.stars {
+  display: flex;
+
+  &__star {
+    background-image: $Star;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+  }
+
+  & :not(:last-of-type) {
+    margin-right: 4px;
+  }
+
+  @for $starCount from 0 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: $StarActive;
+    }
+  }
+}
