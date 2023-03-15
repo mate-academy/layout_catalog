@@ -6,12 +6,10 @@ $background-link-color: #fff;
 $header-text-color: #000;
 $hover-text-color: #00acdc;
 
-* {
-  box-sizing: border-box;
-}
-
 html {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 body {
@@ -26,20 +24,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .nav {
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
 
   &__ul {
-    width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   &__li {
@@ -54,7 +49,7 @@ body {
 
   &__link {
     text-decoration: none;
-    color: $header-text-color;
+    color: $main-text-color;
     padding: 22.5px 0;
   }
 
@@ -65,9 +60,9 @@ body {
     padding: 23px 0;
   }
 
-  &__link-is-active::after {
+  .is-active::after {
     position: absolute;
-      content: "";
+    content: " ";
     background-color: $hover-text-color;
     height: 4px;
     left: 0;
@@ -81,15 +76,15 @@ body {
 main {
   display: flex;
   flex-wrap: wrap;
-  width: 942px;
-  gap: 48px;
+  justify-content: space-between;
+  width: 945px;
 
-  padding-top: 39px;
   margin: 0 auto;
 
 }
 
 .card {
+  margin-top: 48px;
   width: 198px;
   display: flex;
   flex-direction: row;
@@ -101,6 +96,7 @@ main {
   &__img {
     padding-top: 32px;
     height: 134px;
+    width: 160px;
     margin: 0 auto;
   }
 
@@ -111,15 +107,19 @@ main {
     font-weight: 500;
     font-size: 12px;
     color: $main-text-color;
+
     padding-left: 16px;
     margin: 0;
     line-height: 1.5;
+    width: 166px;
+
   }
 
   &__code {
-    padding-top: 5px;
+    padding-top: 4px;
     margin: 0;
     font-size: 10px;
+    font-weight: 400;
     color: $minor-text-color;
     padding-left: 16px;
   }
@@ -127,6 +127,7 @@ main {
   &__price-text {
     display: flex;
     font-size: 12px;
+    font-weight: 400;
     color: $minor-text-color;
     padding-left: 16px;
     align-items: flex-end;
@@ -138,7 +139,7 @@ main {
     font-size: 16px;
     color: $main-text-color;
     padding-left: 85px;
-    padding-top: 23px;
+    padding-top: 24px;
   }
 
   &__rate {
@@ -148,10 +149,12 @@ main {
   }
 
   &__reviews-text {
-    padding-left: 19px;
+
+    padding-left: 17px;
     margin: 0;
 
     font-size: 10px;
+    font-weight: 400;
     color: $main-text-color;
     margin-top: 18px;
   }
@@ -191,17 +194,17 @@ main {
     height: 16px;
     width: 16px;
 
-    background-image: url(/src/images/star.svg);
+    background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 4px;
   }
+}
 
-  .stars--1 :nth-child(1),
-  .stars--2 :nth-child(-n + 2),
-  .stars--3 :nth-child(-n + 3),
-  .stars--4 :nth-child(-n + 4),
-  .stars--5 :nth-child(-n + 5) {
-    background-image: url(/src/images/star-active.svg);
-  }
+.stars--1 :nth-child(1),
+.stars--2 :nth-child(-n + 2),
+.stars--3 :nth-child(-n + 3),
+.stars--4 :nth-child(-n + 4),
+.stars--5 :nth-child(-n + 5) {
+  background-image: url(../images/star-active.svg);
 }
