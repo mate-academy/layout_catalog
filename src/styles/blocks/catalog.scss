@@ -15,12 +15,24 @@
 
   padding: 50px 40px;
 
-  @media (min-width: 1024px) {
-    width: distance1($card-count);
+  &__card {
+    margin-bottom: 46px;
+
+    &:nth-child(-n+3) {
+      margin-right: 48px;
+    }
+
+    &:nth-child(n+5):not(:last-child) {
+      margin-right: 48px;
+    }
   }
 
-  @media (min-width: 1200px) {
-    width: distance2($card-count);
+  @media (width: 1024px) {
+    max-width: distance1($card-count);
+  }
+
+  @media (width: 1200px) {
+    max-width: distance2($card-count);
     padding: 50px 128px;
   }
 }
