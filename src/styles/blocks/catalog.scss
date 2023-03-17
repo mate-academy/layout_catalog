@@ -1,19 +1,15 @@
-@function distance1($card-count) {
-  @return 200px * $card-count / 2 + 48px * ($card-count / 2 - 1) + 80px;
-}
-
-@function distance2($card-count) {
-  @return 200px * $card-count / 2 + 48 * ($card-count / 2 - 1) + 256px;
+@function width($card-count) {
+  @return 200px * $card-count + 48px * ($card-count - 1) + 2 * 40px;
 }
 
 .catalog {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
   flex-wrap: wrap;
-
   padding: 50px 40px;
+  width: width($card-count);
 
   &__card {
     margin-bottom: 46px;
@@ -27,12 +23,4 @@
     }
   }
 
-  @media (width: 1024px) {
-    max-width: distance1($card-count);
-  }
-
-  @media (width: 1200px) {
-    max-width: distance2($card-count);
-    padding: 50px 128px;
-  }
 }
