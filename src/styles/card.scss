@@ -48,23 +48,29 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
 
-.stars__star {
-  background-image: url(../images/star.svg);
-  background-repeat: no-repeat;
-  width: 16px;
-  height: 16px;
-  background-position: center;
-  margin-right: 4px;
-}
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    
 
-.stars--1:first-child {
-  margin-left: 16px;
-}
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
 
-.stars--1 :nth-child(-n+4) {
-  background-image: url(../images/star-active.svg);
+    &:first-child {
+      margin-left: 16px;
+    }
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n+ #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
 
 .stars__reviews {
