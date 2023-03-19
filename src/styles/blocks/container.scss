@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: cardsInRow($cards-in-row);
+  padding: 50px 40px;
+  box-sizing: border-box;
+
+  &__card:not(:nth-child(#{$cards-in-row}n)) {
+    margin-right: $cards-space-between;
+  }
+
+  &__card:not(:nth-last-child(-n + #{$cards-in-last-row})) {
+    margin-bottom: 47px;
+  }
+}
