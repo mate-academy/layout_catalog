@@ -1,3 +1,52 @@
+@import "./utils/variables";
+@import "./utils/placeholders";
+@import "./utils/functions";
+@import "./blocks/header.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/card.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  color: $color-dark-blue;
+  font-size: 10px;
+  line-height: 14px;
+}
+
 body {
+  width: 100%;
   margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  width: dynamic-width($cards-per-row);
+  display: flex;
+  padding: 50px 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.is-active {
+  position: relative;
+  color: $color-light-blue;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: $color-light-blue;
 }
