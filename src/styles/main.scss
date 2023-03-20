@@ -1,6 +1,11 @@
+@import "./general";
 @import "./blocks/header";
 @import "./blocks/card";
 @import "./blocks/stars";
+
+* {
+  box-sizing: border-box;
+}
 
 body,
 h2,
@@ -11,42 +16,8 @@ a {
 }
 
 body {
-  box-sizing: border-box;
   font-family: "Roboto", Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-}
-
-// General styles //
-
-@function catalog-width(
-  $card-width,
-  $card-margin-right,
-  $catalog-horizontal-paddings
-) {
-  @return $card-width * 4 + $card-margin-right * 3 +
-    $catalog-horizontal-paddings * 2;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px 0;
-  min-width: 950px;
-  max-width: catalog-width(200px, 50px, 40px);
-
-  &__card:not(:nth-child(4n)) {
-    margin-right: 48px;
-  }
-
-  &__card:not(:nth-last-child(-n + 4)) {
-    margin-bottom: 46px;
-  }
 }
