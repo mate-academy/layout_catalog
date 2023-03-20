@@ -1,6 +1,6 @@
 @import "../utils/variables";
 
-.card {
+.product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,15 @@
 
   border: 1px solid $card-border;
   border-radius: 5px;
+  box-sizing: border-box;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
 
   &__image {
     width: 160px;
@@ -98,10 +107,15 @@
     text-transform: uppercase;
   }
 
-  &:hover &__link-btn {
+  &__link-btn:hover {
     color: $blue-color;
     
     background-color: $white-color;
     border: 1px solid $blue-color;
   }
+}
+
+.container__product-card {
+  margin-right: 48px;
+  margin-bottom: 46px;
 }
