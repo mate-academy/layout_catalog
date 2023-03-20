@@ -1,0 +1,130 @@
+$productMarginY: 23px;
+$productMarginX: 24px;
+$productWidth: 200px;
+$c-white-smoke: #f3f3f3;
+$c-white: white;
+
+@function calcWidth ($cardWidth, $cardMarginX) {
+  @return ($cardMarginX * 8 + $cardWidth * 4);
+}
+
+@mixin fontSizeWeight($size, $weight: 400) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+.products {
+  display: flex;
+  width: calcWidth($productWidth, $productMarginX);
+  flex-wrap: wrap;
+
+}
+
+.page__products {
+  margin: 50px auto 72px;
+}
+
+.products__card {
+  margin: $productMarginY $productMarginX;
+}
+
+.products__card:nth-child(-n + 4) {
+  margin-top: 0;
+}
+
+.product-card {
+  padding: 32px 16px 16px;
+  width: $productWidth;
+  border-radius: 5px;
+  border: 1px solid $c-white-smoke;
+  background-color: $c-white;
+
+  &__image {
+    margin: 0 3px 36px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    @include fontSizeWeight(12px, 500);
+    line-height: 150%;
+
+    color: $color-black;
+    margin: 0 0 4px;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    color: #616070;
+
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  &__review {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-black;
+
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    flex-grow: 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+
+    color: #616070;
+  }
+
+  &__price-dollar {
+    @include fontSizeWeight(16px, 700);
+    line-height: 18px;
+    text-align: right;
+    color: $color-black;
+  }
+
+  &__link {
+    @include fontSizeWeight(14px, 700);
+
+    width: 100%;
+    padding: 11px 0;
+
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+
+    background-color: $color-light-blue;
+    border-radius: 5px;
+    border: 1px solid $color-light-blue;
+  }
+
+  &__link:hover {
+    border: 1px solid $color-light-blue;
+    color: $color-light-blue;
+    background-color: white;
+  }
+}
