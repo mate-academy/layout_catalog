@@ -1,0 +1,62 @@
+.header {
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+  }
+
+}
+
+.nav {
+  min-height: 60px;
+  display: flex;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    color: $main-dark-color;
+    line-height: 60px;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-aqua-color;
+    }
+  }
+
+  &__link--is-active {
+    position: relative;
+    color: $main-aqua-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      right: 0;
+      border-radius: 8px;
+      background-color: $main-aqua-color;
+    }
+  }
+}
