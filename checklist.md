@@ -48,7 +48,7 @@ row, add margins either to the bottom or to the top so that it will be easier
 to identify how to position the next element
 
 6. [BEM] - Check your BEM structure using BEM-linter (`npm run lint`) and
-[this list](https://mate-academy.github.io/fe-program/css/typical-bem-mistakes).
+[this list](https://mate-academy.github.io/fe-program/css/typical-bem-mistakes-en).
 
 7. [BEM] - Make sure to follow BEM naming convention:
 
