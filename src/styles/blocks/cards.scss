@@ -1,0 +1,93 @@
+.cards-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: getWidthCatalog(
+    $card-width,
+    $card-horisontal-shift,
+    $horisontal-shift
+  );
+  padding: $vertical-shift $horisontal-shift;
+}
+  
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  background-color: $color-white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  margin-top: $card-vertical-shift;
+  
+  &:not(:nth-child(4n)) {
+    margin-right: $card-horisontal-shift;
+  }
+  
+  &:nth-child(-n + 4) {
+    margin-top: 0;
+  }
+  
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+  
+  &__name {
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 40px;
+    color: $color-black;
+  }
+  
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-light-grey;
+    margin-top: 4px;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  
+  &__price-text {
+    font-weight: 400;
+    line-height: $price-line-height;
+    color: $color-light-grey;
+  }
+  
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: $price-line-height;
+    color: $color-black;
+  }
+  
+  &__link-buy {
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    text-decoration: none;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 11px 68px;
+    margin-top: 16px;
+  
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue;
+    }
+  }
+}
