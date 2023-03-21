@@ -2,6 +2,10 @@
   @return 200px * $card-count + 48px * ($card-count - 1) + 2 * 40px;
 }
 
+@function width2($card-count) {
+  @return 200px * $card-count + 48px * ($card-count - 1) + 2 * 128px;
+}
+
 .catalog {
   display: flex;
   flex-direction: row;
@@ -10,6 +14,11 @@
   flex-wrap: wrap;
   padding: 50px 40px;
   min-width: width($card-count);
+
+  @media (min-width: 1200px) {
+    padding: 50px 128px;
+    min-width: width2($card-count);
+  }
 
   &__card {
     margin-bottom: 46px;
