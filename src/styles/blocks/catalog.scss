@@ -1,0 +1,39 @@
+@function width($card-count) {
+  @return 200px * $card-count + 48px * ($card-count - 1) + 2 * 40px;
+}
+
+@function width2($card-count) {
+  @return 200px * $card-count + 48px * ($card-count - 1) + 2 * 128px;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 50px 40px;
+  min-width: width($card-count);
+  max-width: width($card-count);
+
+  @media (min-width: 1200px) {
+    padding: 50px 128px;
+    min-width: width2($card-count);
+    max-width: width2($card-count);
+  }
+
+  &__card {
+    &:nth-child(-n+4) {
+      margin-bottom: 46px;
+    }
+
+    &:nth-child(-n+3) {
+      margin-right: 48px;
+    }
+
+    &:nth-child(n+5):not(:last-child) {
+      margin-right: 48px;
+    }
+  }
+
+}
