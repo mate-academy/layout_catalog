@@ -3,7 +3,7 @@ Replace `<your_account>` with your Github username and copy the links to Pull Re
 - [DEMO LINK](https://nazarl1997.github.io/layout_catalog/)
 - [TEST REPORT LINK](https://nazarl1997.github.io/layout_catalog/report/html_report/)
 
-> Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layount-tasks-on-github)
+> Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-tnhe-layount-tasks-on-github)
 ___
 > Write styles in `src/styles/main.scss` instead of `src/style.css`.
 ___
