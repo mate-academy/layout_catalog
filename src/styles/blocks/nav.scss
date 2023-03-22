@@ -1,5 +1,4 @@
 .nav {
-  margin-right: 50px;
 
   &__list {
     display: flex;
@@ -8,15 +7,17 @@
   &__item {
     display: flex;
     margin-left: 20px;
-    position: relative;
   }
 
   &__item:first-child {
     margin-left: 0;
   }
 
+  &__item:last-child {
+    margin-right: 0;
+  }
+
   &__link {
-    position: relative;
     padding: 23px 0;
     font-weight: 500;
     font-size: 12px;
@@ -24,7 +25,6 @@
     text-transform: uppercase;
     color: $color-header;
     text-decoration: none;
-    outline: none;
   }
 
   &__link:hover {
@@ -34,14 +34,15 @@
 
 .is-active {
   color: #00acdc;
+  position: relative;
 }
 
 .is-active::after {
   content: "";
-  display: block;
-  position: relative;
-  top: 18.5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-top: hsl(193, 100%, 43%) 4px solid;
   border-radius: 8px;
-  align-self: center;
 }

@@ -1,36 +1,20 @@
-.product {
+.card {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 200px;
+  background: $color-background;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  padding: 0 16px 16px;
+  margin-right: 48px;
+  margin-bottom: 46px;
 
-  @media (min-width: 1200px) {
-    padding: 50px 128px;
-    width: 1200px;
+  &:nth-child(#{$cards-per-row}n) {
+    margin-right: 0;
   }
 
-  @media (max-width: 1024px) {
-    padding: 50px 40px;
-    width: 1024px;
-  }
-
-  &__card {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    background: $color-background;
-    border: 1px solid $color-border;
-    border-radius: 5px;
-    padding: 0 16px 16px;
-    margin-right: 48px;
-    margin-bottom: 46px;
-
-    &:nth-child(#{$cards-per-row}n) {
-      margin-right: 0;
-    }
-
-    &:nth-last-child(-n + #{$cards-per-row}) {
-      margin-bottom: 0;
-    }
-    
+  &:nth-last-child(-n + #{$cards-per-row}) {
+    margin-bottom: 0;
   }
 
   &__image {
@@ -55,6 +39,18 @@
     margin-top: 4px;
   }
 
+  &__stars-reviews {
+    display: flex;
+    font-size: 10px;
+    line-height: 14px;
+    align-items: flex-end;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    margin-left: 16px;
+  }
+
   &__price {
     display: flex;
     align-items: center;
@@ -63,7 +59,6 @@
   }
   
   &__price-tag {
-    font-weight: 400;
     font-size: 12px;
     line-height: 18px;
     color: $color-secondary;
