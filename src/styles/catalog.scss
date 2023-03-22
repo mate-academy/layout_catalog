@@ -1,0 +1,124 @@
+.catalog {
+  padding: 50px 0;
+  display: flex;
+  width: width-calc($card-count-in-row);
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  &__card {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    margin: 0 48px 46px 0;
+    padding: 32px 16px 16px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+
+    &:nth-child(#{$card-count-in-row}n) {
+      margin-right: 0;
+    }
+
+    // "use `:nth-last-child(-n + 4)` to select 4 last elements" ~ Readme.md
+    &:nth-last-child(-n + #{$card-count-in-row}) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__imac {
+    display: flex;
+    justify-content: center;
+
+    &-image {
+      display: block;
+      position: relative;
+      height: 134px;
+      width: 160px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    &-title {
+      margin: 0;
+      line-height: $line-height-big;
+      font-size: $font-size-big;
+      font-weight: $font-weight-mid;
+      color: $text-color-primary;
+      font-style: normal;
+    }
+
+    &-sub {
+      margin: 4px 0;
+      line-height: $line-height-small;
+      font-size: $font-size-small;
+      font-weight: $font-weight-low;
+      color: $text-color-secondary;
+      font-style: normal;
+    }
+
+    &-review {
+      margin: 0;
+      line-height: $line-height-small;
+      font-size: $font-size-small;
+      font-weight: $font-weight-low;
+      color: $text-color-primary;
+      font-style: normal;
+    }
+
+    &-price {
+      &-title {
+        margin: 0;
+        line-height: $line-height-big;
+        font-size: $font-size-big;
+        font-weight: $font-weight-low;
+        color: $text-color-secondary;
+        font-style: normal;
+      }
+
+      &-value {
+        margin: 0;
+        line-height: $line-height-big;
+        font-size: 16px;
+        font-weight: $font-weight-high;
+        color: $text-color-primary;
+        font-style: normal;
+        text-align: right;
+      }
+    }
+  }
+
+  &__reviews,
+  &__price {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__button {
+    margin-top: 4px;
+    padding: 11px 0;
+    background: $color-cyan;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: $font-weight-high;
+    color: #fff;
+    font-style: normal;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+
+    /* Hover function */
+
+    &:hover {
+      background: transparent;
+      color: $color-cyan;
+      border-color: $color-cyan;
+    }
+  }
+}
