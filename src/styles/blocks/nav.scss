@@ -1,0 +1,40 @@
+.nav {
+  $gap: 20px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin-right: -($gap / 2);
+  }
+
+  &__link {
+
+    display: block;
+    padding: 0 ($gap / 2);
+    line-height: $header-height;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $c-main-accent;
+    transition: $delay easy;
+
+    &:hover {
+      color: $c-blue-accent;
+    }
+  }
+  
+  .is-active {
+    position: relative;
+  }
+
+  .is-active:before {
+    position: absolute;
+    bottom: 0;
+    left: $gap / 2;
+    right: $gap / 2;
+    content: "";
+    background: $c-blue-accent;
+    border-radius: 2px;
+    height: 4px;
+  }
+}
