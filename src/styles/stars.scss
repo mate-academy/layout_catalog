@@ -4,23 +4,23 @@
   list-style: none;
   display: flex;
   @include delete-margin-padding();
-}
 
-.stars__star {
-  background-image: url("/images/star.svg");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  height: 16px;
-  width: 16px;
-  margin-left: 4px;
+  &__star {
+    background-image: url("/images/star.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 16px;
+    width: 16px;
+    margin-left: 4px;
 
-  &:first-child {
-    margin-left: 0;
+    &:first-child {
+      margin-left: 0;
+    }
   }
-}
 
-@for $starCount from 1 through 5 {
-  .stars--#{$starCount} :nth-child(-n + #{$starCount}) {
-    background-image: url("/images/star-active.svg");
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} :nth-child(-n + #{$starCount}) {
+      background-image: url("/images/star-active.svg");
+    }
   }
 }
