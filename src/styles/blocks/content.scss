@@ -1,0 +1,22 @@
+.content {
+  &__products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    // gap: $gap-size;
+
+    max-width: getContainerWidth(4, $card-width, $gap-size);
+    margin: 0 auto;
+    padding: 50px 0 70px;
+  }
+
+  &__product {
+    &:not(:nth-child(4n)) {
+      margin-right: $gap-size;
+    }
+
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: $gap-size - 2px;
+    }
+  }
+}
