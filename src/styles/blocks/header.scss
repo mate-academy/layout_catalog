@@ -12,35 +12,38 @@
   flex-grow: 1;
 }
 
-.nav__block {
-  list-style: none;
-  display: flex;
-  font-size: 12px;
-  text-transform: uppercase;
-}
+.nav {
+  &__block {
+    list-style: none;
+    display: flex;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+  
+  &__pages {
+    margin-right: 20px;
+  }
 
-.nav__pages {
-  margin-right: 20px;
-}
+  .nav__link {
+    display: block;
+    color: $color-dark-text;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 23px 0;
+  
+    &:hover {
+      color: $card-color-blue;
+    }
+  }
 
-.nav__link {
-  display: block;
-  color: $color-dark-text;
-  text-decoration: none;
-  cursor: pointer;
-  padding: 23px 0;
-
-  &:hover {
-    color: $color-for-header;
+  &__pages:last-child {
+    margin-right: 0;
   }
 }
 
-.nav__pages:last-child {
-  margin-right: 0;
-}
-
-.is-active {
-  color: $color-for-header;
+.nav__pages .is-active {
+  color: $card-color-blue;
   position: relative;
 
   &::after {
@@ -48,7 +51,7 @@
     display: block;
     width: 100%;
     height: 4px;
-    background: $color-for-header;
+    background: $card-color-blue;
     border-radius: 8px;
     position: absolute;
     left: 0;
