@@ -20,22 +20,32 @@ html {
   width: 40px;
 }
 
-.nav__list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
 
-.nav__link {
-  padding: 23px 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #060b35;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
+  &__link {
+    padding: 23px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #060b35;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link:hover {
+    color: #{$color-action};
+  }
 }
 
 .is-active:after {
@@ -49,15 +59,7 @@ html {
   background-color: #{$color-action};
 }
 
-.nav__item:not(:last-child) {
-  margin-right: 20px;
-}
-
 .is-active {
   position: relative;
-  color: #{$color-action};
-}
-
-.nav__link:hover {
   color: #{$color-action};
 }
