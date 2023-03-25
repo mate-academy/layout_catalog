@@ -1,0 +1,150 @@
+@use "../utils/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+.main-content {
+  margin: auto;
+  min-width: 1024px;
+}
+
+.container-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 40px;
+}
+
+.section {
+  width: 20%;
+  min-width: 198px;
+  max-height: 406px;
+  margin: 50px 50px 0 0;
+}
+
+.section:nth-child(4n) {
+  margin-right: 0;
+}
+
+.section:nth-last-child(-n + 4) {
+  margin-top: 48px;
+}
+
+.card {
+  display: flex;
+
+  &__item {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+  }
+
+  &__image {
+    content: url("../images/imac.jpeg");
+    margin: 32px 19px 40px;
+    width: 160px;
+    height: 134px;
+    background-size: cover;
+  }
+
+  &__title {
+    width: 166px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-text-color;
+    font-weight: 500;
+    margin: 0 16px 4px;
+  }
+
+  &__product-code {
+    align-self: flex-start;
+    margin: 0 16px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: normal;
+    color: $light-main-text;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 16px 16px;
+    width: 166px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $light-main-text;
+
+    &-digit {
+      font-size: 16px;
+      color: $main-text-color;
+  
+      &--bold {
+        font-weight: 700;
+      }
+    }
+  }
+  
+  &__button-buy {
+    width: 166px;
+    height: 40px;
+    background-color: $button-color;
+    text-transform: uppercase;
+    color: $white-color;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    margin: 0 16px 16px;
+
+    &--hover:hover {
+      background-color: $white-color;
+      color: $button-color;
+      border: 1px solid $button-color;
+    }
+  }
+  
+}
+
+.feedback {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 18px 24px;
+  width: 166px;
+  font-size: 10px;
+  font-weight: 400;
+
+  &__count {
+    margin: 0 0 2px;
+  }
+}
+
+.list-stars {
+  display: flex;
+  margin-left: 2px;
+
+  &__star {
+    margin-right: 5px;
+    background-image: url("../images/star-active.svg");
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+  
+    &:last-child {
+      background-image: url("../images/star.svg");
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen  and (min-width: 1200px) {
+  .container-section {
+    margin: 0 128px;
+  }
+}

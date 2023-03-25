@@ -1,0 +1,60 @@
+@use "../utils/mixins.scss" as underLine;
+@use "../utils/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo-site {
+  height: 40px;
+  margin-top: 10px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  &__item {
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: 500;
+    
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+
+    & .is-active {
+      color: $main-link-color;
+    }
+  }
+  
+  .nav__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    color: $main-text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $main-link-color;
+    }
+  }
+}
+
+.is-active::after {
+  @include underLine.underline-link;
+}
