@@ -1,0 +1,26 @@
+
+.content {
+  display: flex;
+  justify-content: center;
+
+  &__tiles {
+    padding: $tiles-vertical-padding  $tiles-horizontal-padding;
+    display: flex;
+    flex-wrap: wrap;
+    width: getTilesContainerWith(
+      $card-width,
+      $tiles-in-row,
+      $tiles-gap,
+      $tiles-horizontal-padding
+    );
+  }
+
+  &__tile-item {
+    margin-bottom: $tiles-vertical-gap;
+    margin-right: $tiles-gap;
+
+    &:nth-child(#{$tiles-in-row}n) {
+      margin-right: 0;
+    }
+  }
+}
