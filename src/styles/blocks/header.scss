@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &__logo {
     display: flex;
@@ -28,7 +29,7 @@
     }
   }
 
-  &__item-link {
+  &__link {
     text-decoration: none;
     position: relative;
     cursor: pointer;
@@ -42,9 +43,11 @@
     justify-content: center;
     align-items: center;
     height: 60px;
+
     &:hover {
       color: $bg-color-blue;
     }
+
     &:focus::after {
       position: absolute;
       height: 4px;
@@ -56,18 +59,19 @@
       background-color: $bg-color-blue;
     }
   }
-}
 
-.is-active {
-  color: $bg-color-blue;
-  &::after {
-    position: absolute;
-    height: 4px;
-    content: "";
-    width: 100%;
-    left: 0;
-    top: 56px;
-    border-radius: 8px;
-    background-color: $bg-color-blue;
+  &__link--is-active {
+    color: $bg-color-blue;
+
+    &::after {
+      position: absolute;
+      height: 4px;
+      content: "";
+      width: 100%;
+      left: 0;
+      top: 56px;
+      border-radius: 8px;
+      background-color: $bg-color-blue;
+    }
   }
 }
