@@ -1,0 +1,65 @@
+.header-moyo {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+}
+
+.header-moyo__logo {
+  display: flex;
+  @include logo($logo-size);
+}
+
+.header-moyo__navigation {
+  padding: 1.9em 0;
+  @extend %maine-text;
+  text-transform: uppercase;
+}
+
+.navigation-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navigation-list-item {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.navigation-link {
+  padding: 23px 0;
+  color: $maine-color;
+  text-decoration: none;
+  transition-delay: 250ms;
+
+  &:hover {
+    color: $blue-color;
+  }
+
+  &--is-active {
+    position: relative;
+    text-decoration: none;
+    color: $blue-color;
+  
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 4px;
+      left: 0;
+      bottom: 0;
+      border-radius: 8px;
+      background-color: $blue-color;
+    }
+  }
+}
