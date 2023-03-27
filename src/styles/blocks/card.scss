@@ -1,0 +1,117 @@
+.main {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 40px 0;
+
+    max-width: 1024px;
+  }
+}
+
+.container__card {
+  padding: 32px 16px 16px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  background-color: white;
+
+  margin-right: 48px;
+  margin-bottom: 46px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-child(n + 4) {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  width: 200px;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+
+    margin: 0 auto 40px;
+  }
+
+  &__product-title {
+    color: $ColorMainAccent;
+    @include fontParams(12px, 500);
+    line-height: 150%;
+    margin-bottom: 4px;
+  }
+
+  &__product-code {
+    margin-bottom: 16px;
+
+    @include fontParams(10px);
+    line-height: 140%;
+
+    color: $ColorSecondaryAccent;
+  }
+
+  &__rating {
+    margin-bottom: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__amount-of-reviews {
+    @include fontParams(10px);
+    color: $ColorMainAccent;
+    line-height: 140%;
+  }
+
+  &__price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-bottom: 16px;
+  }
+
+  &__price-lable {
+    @include fontParams(12px);
+    color: $ColorSecondaryAccent;
+    line-height: 150%;
+  }
+  
+  &__price-value {
+    @include fontParams(16px, 700);
+    color: $ColorMainAccent;
+    line-height: 18px;
+  }
+  
+  &__button {
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @include fontParams(14px, 700);
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 16px;
+
+    color: white;
+    background-color: $ColorBlueAccent;
+    border: 1px solid $ColorBlueAccent;
+    border-radius: 5px;
+
+    transition: color 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover {
+      color: $ColorBlueAccent;
+      background-color: white;
+    }
+  }
+}
