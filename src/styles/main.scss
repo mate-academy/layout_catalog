@@ -151,13 +151,19 @@ a {
   margin-right: 4px;
 }
 
-.stars--1 :nth-child(-n+1),
-.stars--2 :nth-child(-n+2),
-.stars--3 :nth-child(-n+3),
-.stars--4 :nth-child(-n+4),
-.stars--5 :nth-child(-n+5) {
-  background: url("../images/star-active.svg") 0 50% / 81.4% no-repeat;
+@for $starCount from 1 through 5 {
+  .stars--#{$starCount} :nth-child(-n + #{$starCount}) {
+    background: url("../images/star-active.svg") 0 50% / 81.4% no-repeat;
+  }
 }
+
+// .stars--1 :nth-child(-n+1),
+// .stars--2 :nth-child(-n+2),
+// .stars--3 :nth-child(-n+3),
+// .stars--4 :nth-child(-n+4),
+// .stars--5 :nth-child(-n+5) {
+//   background: url("../images/star-active.svg") 0 50% / 81.4% no-repeat;
+// }
 
 /* #endregion */
 
@@ -171,10 +177,8 @@ a {
 .card__image {
   width: 160px;
   height: 134px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .card__title {
