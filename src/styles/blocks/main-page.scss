@@ -1,12 +1,26 @@
 .main-page {
   background-color: $color-white;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
 
-  &__catalog {
-    @include flex (flex, center, center, row);
-    flex-wrap: wrap;
-    width: calc(#{$card-size} * 4 + #{$card-margin-left} * 4);
-    margin: 0 auto;
-    padding: 50px 0 78px;
+.catalog {
+  @include flex (flex, center, center, row);
+  flex-wrap: wrap;
+  width: calc(#{$card-size} * 4 + #{$card-margin-left} * 4);
+  margin: 0 auto;
+  padding: 50px 0 78px;
+
+  &__product-card {
+    margin-left: $card-margin-left;
+    margin-bottom: $card-margin-bottom;
+
+    &:first-child,
+    &:nth-child(5) {
+      margin-left: 0;
+    }
+
+    &:nth-last-child(-n + 4) {
+      margin-bottom: 0;
+    }
   }
 }
