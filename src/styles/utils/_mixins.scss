@@ -1,6 +1,14 @@
-@mixin flex {
-  display: flex;
-  align-items: center;
+@mixin flex ($type: flex, $align: false, $justify: false, $direction: false) {
+  display: $type;
+  @if ($align) {
+    align-items: $align;
+  }
+  @if ($justify) {
+    justify-content: $justify;
+  }
+  @if ($direction) {
+    flex-direction: $direction;
+  }
 }
 
 @mixin fonts ($font-size, $line-height, $font-weight) {
@@ -9,7 +17,7 @@
   font-weight: $font-weight;
 }
 
-@mixin properties ($width, $height) {
+@mixin sizes ($width, $height) {
   width: $width;
   height: $height;
 }

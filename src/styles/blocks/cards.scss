@@ -1,18 +1,18 @@
 .product-card {
   @include fonts (10px, 14px, 400);
-  width: 200px;
-  display: flex;
-  flex-direction: column;
+  @include flex (flex, false, false, column);
+  width: $card-size;
   background: $color-white;
   color: $color-secondary;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 32px 16px 16px;
-  margin-right: 48px;
-  margin-bottom: 46px;
+  margin-bottom: $card-margin-bottom;
+  margin-left: $card-margin-left;
 
-  &:nth-child(4n) {
-    margin-right: 0;
+  &:first-child,
+  &:nth-child(5) {
+    margin-left: 0;
   }
 
   &:nth-last-child(-n + 4) {
@@ -22,7 +22,7 @@
   &__image {
     display: block;
     margin: 0 auto;
-    @include properties (160px, 134px);
+    @include sizes (160px, 134px);
   }
 
   &__name {
@@ -38,8 +38,7 @@
   }
 
   &__rating {
-    display: flex;
-    justify-content: space-between;
+    @include flex (flex, false, space-between, row);
     margin-top: 16px;
     line-height: 16px;
   }
@@ -50,15 +49,13 @@
   }
 
   &__price {
-    @include flex;
-    justify-content: space-between;
+    @include flex (flex, center, space-between, row);
     margin-top: 24px;
   }
 
   &__price-name {
     @include fonts (12px, 18px, 400);
-    display: flex;
-    align-items: flex-end;
+    @include flex (flex, flex-end, false, row);
     color: $color-secondary;
   }
 
@@ -69,7 +66,7 @@
 
   &__button {
     display: block;
-    @include properties (100%, 40px);
+    @include sizes (100%, 40px);
     @include fonts (14px, 40px, 700);
     margin-top: 16px;
     text-decoration: none;

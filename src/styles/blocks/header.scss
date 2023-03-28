@@ -1,27 +1,22 @@
 .header {
-  @include flex;
-  justify-content: space-between;
+  @include flex (flex, center, space-between, row);
   padding: 0 50px;
   background: $color-white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
 
   &__logo {
     display: block;
-    @include properties (40px, 40px);
+    @include sizes (40px, 40px);
   }
 
   &__nav-list {
-    @include flex;
-    justify-content: flex-end;
+    @include flex (flex, center, flex-end, row);
     list-style: none;
   }
 
-  &__nav-item {
+  &__nav-item:not(:first-child) {
     margin-left: 20px;
-
-    &:first-child {
-      margin: 0;
-    }
   }
 
   &__nav-link {
@@ -46,7 +41,7 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      @include properties (37px, 4px);
+      @include sizes (37px, 4px);
       background-color: $color-accent-blue;
       border-radius: 8px;
     }
