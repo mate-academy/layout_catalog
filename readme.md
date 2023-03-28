@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://NadieinOleh.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://NadieinOleh.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -28,7 +28,7 @@ and SCSS
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
-- add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
+- add `` (not just `hover`) to the link `Buy` inside the first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 ---
