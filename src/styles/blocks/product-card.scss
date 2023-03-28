@@ -1,0 +1,111 @@
+.product-cards {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+
+  &__collection {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: ($card-width * $cards-in-row) +
+      ($space-between-cards * ($cards-in-row - 1));
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  &:not(:nth-child(4n)) {
+    margin-right: $space-between-cards;
+  }
+
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-main-accent;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+    margin-bottom: 16px;
+  }
+
+  &__raiting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-main-accent;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-main-accent;
+  }
+
+  &__link {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: $color-blue-accent;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    transition: color 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      border-color: $color-blue-accent;
+      color: $color-blue-accent;
+    }
+  }
+}
