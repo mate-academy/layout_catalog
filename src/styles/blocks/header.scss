@@ -1,0 +1,55 @@
+.header {
+  @include rule-flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #{$color-default-white};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__link {
+    display: block;
+    width: 40px;
+    height: 40px ;
+  }
+
+  &__nav-list {
+    @include rule-flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+  
+  &__nav-item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__nav-link {
+    display: block;
+    position: relative;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #{$color-main-accent};
+
+    &:hover {
+      color: #{$color-accent-blue};
+    }
+  }
+
+  .is-active {
+    color: #{$color-accent-blue};
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-bottom: 4px solid #{$color-accent-blue};
+      border-radius: 8px;
+    }
+  }
+}
