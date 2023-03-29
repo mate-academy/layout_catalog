@@ -65,11 +65,14 @@ a {
     color: $color-black;
     height: 100%;
 
-    &:hover,
-    .is-active {
+    &:hover {
       color: #00acdc;
     }
   }
+}
+
+.is-active {
+  color: #00acdc;
 }
 
 .is-active::after {
@@ -86,103 +89,108 @@ a {
 /* #endregion */
 
 /* #region Card */
+.main {
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
 
 .container {
   display: flex;
   flex-wrap: wrap;
   max-width: 950px;
   margin: 0 auto;
-}
 
-.container__card {
-  padding: 16px;
+  &__card {
+    padding: 16px;
+  }
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   width: 200px;
-  margin: 50px 50px 0 0;
+  margin: 0 48px 45px 0;
   padding: 16px;
   border: 1px solid $color-white;
   border-radius: 5px;
-}
 
-.card:nth-child(4n) {
-  margin-right: 0;
-}
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 
-.card__img {
-  margin: 16px 3px 0;
-  width: 160px;
-  height: 134px;
-}
+  &__img {
+    margin: 16px 3px 0;
+    width: 160px;
+    height: 134px;
+  }
 
-.card__title {
-  margin: 0;
-  padding-top: 40px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.5;
-  color: $color-black;
-}
+  &__title {
+    margin: 0;
+    padding-top: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $color-black;
+  }
+  
+  &__code {
+    font-size: 10px;
+    line-height: 1.4;
+    color: $color-grey;
+    padding-top: 4px;
+  }
 
-.card__code {
-  font-size: 10px;
-  line-height: 1.4;
-  color: $color-grey;
-  padding-top: 4px;
-}
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
 
-.card__review {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 16px;
-}
+    &-reviews {
+      font-size: 10px;
+      line-height: 1.4;
+      color: $color-black;
+    }
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
 
-.review-reviews {
-  font-size: 10px;
-  line-height: 1.4;
-  color: $color-black;
-}
+    &-text {
+      font-size: 12px;
+      line-height: 1.5;
+      color: $color-grey;
+    }
+    
+    &-amount {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.12;
+      color: $color-black;
+    }
+  }
 
-.card__price {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 24px;
-}
+  &__buy {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    color: $color-white;
+    margin-top: 16px;
+    padding: 11px 70px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $color-blue;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  
+    &:hover {
+      color: $color-blue;
+      background: $color-white;
+      border-color: $color-blue;
+    }
+  }
 
-.card__price-text {
-  font-size: 12px;
-  line-height: 1.5;
-  color: $color-grey;
-}
-
-.card__price-amount {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.12;
-  color: $color-black;
-}
-
-.card__buy {
-  display: block;
-  font-weight: 700;
-  font-size: 14px;
-  color: $color-white;
-  margin-top: 16px;
-  padding: 11px 70px;
-  text-align: center;
-  text-transform: uppercase;
-  background-color: $color-blue;
-  border: 1px solid transparent;
-  border-radius: 5px;
-}
-
-.card__buy:hover {
-  color: $color-blue;
-  background: $color-white;
-  border-color: $color-blue;
 }
 
 /* #endregion */
@@ -196,18 +204,25 @@ a {
   background: url("../images/star.svg") no-repeat center;
   width: 16px;
   height: 16px;
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
 
-.stars__star:not(:last-child) {
-  margin-right: 4px;
-}
-
+/*
 .stars--1 :nth-child(1),
 .stars--2 :nth-child(-n+2),
 .stars--3 :nth-child(-n+3),
 .stars--4 :nth-child(-n+4),
 .stars--5 :nth-child(n) {
   background-image: url("../images/star-active.svg");
-}
+}*/
 
 /* #endregion */
