@@ -2,6 +2,12 @@ $color-black: #060b35;
 $color-grey: #616070;
 $color-blue: #00acdc;
 $color-white: #f3f3f3;
+$card-width: 200px;
+$card-margin-right: 48px;
+
+@function containerWidth($card-width, $card-margin-right) {
+  @return $card-width*4 + $card-margin-right*3;
+}
 
 * {
   box-sizing: border-box;
@@ -97,7 +103,7 @@ a {
 .container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 950px;
+  max-width: containerWidth($card-width, $card-margin-right);
   margin: 0 auto;
 
   &__card {
@@ -109,8 +115,8 @@ a {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 200px;
-  margin: 0 48px 45px 0;
+  width: $card-width;
+  margin: 0 $card-margin-right 45px 0;
   padding: 16px;
   border: 1px solid $color-white;
   border-radius: 5px;
@@ -190,7 +196,6 @@ a {
       border-color: $color-blue;
     }
   }
-
 }
 
 /* #endregion */
