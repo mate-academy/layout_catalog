@@ -1,0 +1,52 @@
+.nav {
+  align-self: flex-end;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px;
+    padding: 0;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: $ColorMainAccent;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    // margin nie może być tu, bo całe menu zjeżdża na dół
+
+    &::after {
+      content: "";
+      height: 0;
+      // border nie mogę stąd wyrzucić, bo linki są nierówne
+      border: 2px solid transparent;
+      border-radius: 4px;
+      margin-top: 19px;
+    }
+
+    &.is-active {
+      color: $ColorLightBlue;
+    }
+  }
+}
