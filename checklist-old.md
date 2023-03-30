@@ -1,5 +1,5 @@
 - check your work using basic recommendations [here](https://github.com/mate-academy/layout_search-bar-airbnb/blob/master/checklist.md)
-- use product item from `product card` task and header from `moyo header` task
+- use product item from `product cards__card` task and header from `moyo header` task
 - check your classes, are they ok? do they follow BEM methodology?
 - remember about hover effects
 - one `h1` tag per page
@@ -37,7 +37,7 @@
 - create a separate file per each BEM block that have the same name as the block
 - if you want to reset default styles, do it in `_reset.scss` file
 - if you need margins only for bottom side, use `margin-bottom: 20px` not `margin: 0 0 20px`
-- write your code so that the small design changes (like header height or card width) require you to change only 1 value
+- write your code so that the small design changes (like header height or cards__card width) require you to change only 1 value
 - if you want to round corners of an element, the radius shouldn't be greater than a half of a width or a height
 - delete styles that you don't use
 - if you make a mixin for some kind of font style, consider adding mixins for other font style too
@@ -89,20 +89,20 @@
 >normalText(14px)
 >```
 - use variables for the main values (don't overuse variables) so that you'll be able to reuse them and give them descriptive names
-- any values that depend on others (width of some smaller element, number of the cards, etc.) should be calculated with formula
+- any values that depend on others (width of some smaller element, number of the cards__cards, etc.) should be calculated with formula
 - do not combine selectors with `,` operator, it's hard to find them later (reset style files are not included here)
 - if you need to adjust positioning with `1px` or fractional numbers like `0.5`, you do something wrong, change the alignment technique you use
 - BEM doesn't allow nesting selectors, it increases selectors specificity and code nesting
 >**WRONG WAY**
 >```scss
->.card__rating {
+>.cards__card__rating {
 >  height: 15px;
 >  display: flex;
 >
->  .card__stars {
+>  .cards__card__stars {
 >    display: flex;
 >
->    .card__star {
+>    .cards__card__star {
 >      height: 15px;
 >    }
 >  }
@@ -117,7 +117,7 @@
 >
 >  <section class="catalog">
 >
->    <article data-qa="catd" class="catalog__card">
+>    <article data-qa="catd" class="catalog__cards__card">
 >```
 - don't add extra wrappers if you can add styles to the tag itself
 - if you have many sections in a row, add margins either to the bottom or to the top so that it will be easier to identify how to position the next element

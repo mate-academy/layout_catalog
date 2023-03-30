@@ -7,15 +7,15 @@ But don't add empty lines between parent and child elements
 GOOD example:
 ```html
 <ul>
-  <li class="nav__item">
+  <li class="header__item">
     <a href="#home">Home</a>
   </li>
 
-  <li class="nav__item">
+  <li class="header__item">
     <a href="#shop">Shop</a>
   </li>
 
-  <li class="nav__item">
+  <li class="header__item">
     <a href="#contacts">Contacts</a>
   </li>
 </ul>
@@ -24,13 +24,13 @@ BAD example:
 ```html
 <ul>
 
-  <li class="nav__item">
+  <li class="header__item">
     <a href="#home">Home</a>
   </li>
-  <li class="nav__item">
+  <li class="header__item">
     <a href="#shop">Shop</a>
   </li>
-  <li class="nav__item">
+  <li class="header__item">
     <a href="#contacts">Contacts</a>
   </li>
 
@@ -155,4 +155,4 @@ GOOD example:
   }
 ```
 
-13. [LAYOUT] - Use sass functions for dynamic max-width calculation, your catalog container should work fine for any number of cards.
+13. [LAYOUT] - Use sass functions for dynamic max-width calculation, your catalog container should work fine for any number of cards__cards.
