@@ -1,0 +1,21 @@
+.catalog {
+  @extend %flex-space-between;
+  flex-wrap: wrap;
+  width: getWidthCatalog(
+    $widthCard, 
+    $quantityCardsInRow, 
+    $distanceBetweenCards, 
+    $widthBorderCard
+  );
+ 
+  &__card {
+    margin-bottom: getGapBottomCard(
+      $distanceBetweenCardsVertical, 
+      $widthBorderCard
+    );
+
+    &:nth-child(n + 5) {
+      margin-bottom: 0;
+    }
+  }
+}
