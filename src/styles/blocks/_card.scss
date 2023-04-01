@@ -1,0 +1,130 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1024px;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-right: 48px;
+  padding: 32px 0 16px;
+  border: 1px solid $color-grey;
+  border-radius: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-top: 47px;
+  }
+
+  &__image {
+    padding: 0 19px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-main-accent;
+    padding: 40px 16px 0;
+    font-weight: $five-hundredth-weight;
+    line-height: 18px;
+    font-family: $basic-font-family;
+    font-size: 12px;
+  }
+  &__code {
+    padding: 0 16px;
+    margin: 4px 0 0;
+    color: $color-secondary;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    margin: 16px 0 0;
+
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 16px 0;
+
+    &-text {
+      font-weight: $four-hundredth-weight;
+      font-size: 12px;
+      color: $color-secondary;
+      line-height: 18px;
+    }
+
+    &-number {
+      font-weight: $seven-hundredth-weight;
+      font-size: 16px;
+      line-height: 18px;
+      color: $color-main-accent;
+    }
+  }
+  &__button-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 166px;
+    height: 40px;
+    margin: 15px auto 0;
+    color: $color-white;
+    background: $color-blue-accent;
+    border-radius: 5px;
+    border: 1px solid $color-blue-accent;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: $seven-hundredth-weight;
+    line-height: 40px;
+
+    &:hover {
+      box-sizing: border-box;
+      background-color: $color-white;
+      border: 1px solid $color-blue-accent;
+      color: $color-blue-accent;
+    }
+  }
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:nth-last-child(n) {
+    margin-right: 4px;
+  }
+
+  .stars--4 &:not(:nth-child(n+5)) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.stars__reviews {
+  line-height: 14px;
+  font-size: 10px;
+  margin-left: 18.5px;
+  color: $color-main-accent;
+  font-family: $basic-font-family;
+  font-weight: $four-hundredth-weight;
+}
