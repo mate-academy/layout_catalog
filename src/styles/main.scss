@@ -1,3 +1,42 @@
-body {
+@use "./blocks/header.scss";
+@use "./blocks/card.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+}
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.cards-container {
+  padding: 51px 125px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .card:not(:nth-child(4n)) {
+    margin-right: 50px;
+  }
+
+  .card:not(:nth-child(-n+4)) {
+    margin-top: 48px;
+  }
+
+  .card:nth-last-child(-n + 4) {
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards-container {
+    padding: 51px 37px;
+  }
 }

@@ -1,0 +1,115 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  .product-image {
+    padding: 16px 0;
+    margin: 0 auto;
+
+    .image {
+      width: 160px;
+      height: 134px;
+      object-fit: fill;
+    }
+  }
+
+  .product-description {
+    padding: 18px 0 4px;
+
+    &__link {
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: 500;
+      color: #{$main-color};
+      text-decoration: none;
+    }
+  }
+
+  .product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #{$second-color};
+  }
+
+  .product-rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+
+    &__stars {
+      display: flex;
+
+      .star {
+        @include square(16px);
+        background-image: url(../images/star.svg);
+        background-size: 13px 13px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .star:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+
+    &__reviews {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: #{$main-color};
+    }
+
+    @for $index from 1 through 5 {
+      .active-stars-#{$index} .star:nth-child(-n+#{$index}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+
+  .product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0 16px;
+
+    &__price {
+      font-size: 12px;
+      color: #{$second-color};
+      font-weight: 400;
+    }
+
+    &__amount {
+      font-weight: 700;
+      font-size: 16px;
+      color: #{$main-color};
+    }
+  }
+
+  .buy-button {
+    width: 100%;
+    background: #{$theme-color};
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    padding: 11px 0;
+    border: 1px solid transparent;
+    color: #{$button-hover-color};
+  }
+}
+
+.card:hover .buy-button {
+  background: #{$button-hover-color};
+  border: 1px solid #{$theme-color};
+  color: #{$theme-color};
+}
