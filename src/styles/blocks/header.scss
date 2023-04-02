@@ -1,50 +1,49 @@
-@use "../utils/variables" as *;
-@use "../utils/mixins" as *;
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 40px 0 50px;
 
   .logo-container a {
     display: block;
 
-    img {
+    .logo-img {
       display: block;
     }
   }
 
-  .nav ul {
+  .nav__list {
     display: flex;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 
-    li {
+    .nav__item {
       position: relative;
       overflow: hidden;
+    }
 
-      a {
-        display: block;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 500;
-        padding: 23px 10px;
-        white-space: nowrap;
-        font-size: 12px;
-        line-height: 14px;
-        color: #060b35;
-        overflow: hidden;
-      }
+    .nav__link {
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 23px 10px;
+      white-space: nowrap;
+      font-size: 12px;
+      line-height: 14px;
+      color: #060b35;
+      overflow: hidden;
 
-      a:hover {
+      &:hover {
         color: #{$theme-color};
       }
 
-      a.is-active {
+      &.is-active {
         color: #{$theme-color};
       }
 
-      a.is-active::after {
+      &.is-active::after {
         content: "";
         display: block;
         position: absolute;

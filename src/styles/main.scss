@@ -1,10 +1,13 @@
-@use "./blocks/header.scss";
-@use "./blocks/card.scss";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+
+@import "./blocks/header.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/card.scss";
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 html {
@@ -13,7 +16,7 @@ html {
 
 body {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: getWith(4, 250px);
 }
 
 .cards-container {
@@ -37,6 +40,7 @@ body {
 
 @media (max-width: 1024px) {
   .cards-container {
-    padding: 51px 37px;
+    padding: 41px 37px;
+    max-width: getWidth(4, 82px);
   }
 }
