@@ -1,11 +1,14 @@
 .laptop {
   display: flex;
-  font-family: Roboto, sans-serif;
-  font-size: 10px ;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  width: $card-width, $card-horisontal-shift, $horisontal;
-  padding: $card-vertical_shift, $card-vertical_shift;
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  margin-top: $cards-horisontal_shift;
+
+  
 }
 
 .card {
@@ -15,20 +18,26 @@
   border-radius: 5px;
   width: $cards-width;
   padding: 32px 16px 16px ;
+  margin-left: 50px;
+  margin-bottom: $cards-horisontal_shift;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 
   &:nth-child(-n + 4) {
     margin-top: 0;
   }
 
   &__img {
-    margin: 0 auto 40px;
+    margin: 0 auto;
     align-self: center;
     width: 160px;
     height: 134px;
   }
 
   &__name {
-    margin: $card-vertical_shift 0 0;
+    margin: 40px 0 0;
     bottom: 165px;
     font-weight: 500;
     font-size: 12px;
@@ -43,6 +52,13 @@
     width: 98px;
     height: 14px;
     color: $small_text-color;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
   }
 
   &__price {
