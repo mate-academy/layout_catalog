@@ -1,0 +1,100 @@
+@use "../utils/_variables" as *;
+@use "../utils/_extends";
+
+.card {
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  color: $color-dark-blue;
+  flex: 1;
+  margin-right: 48px;
+  margin-bottom: 46px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  &__image {
+    max-width: 160px;
+    width: 100%;
+    height: 134px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    @extend %small-text;
+    color: $color-light-grey;
+    margin-bottom: 16px;
+  }
+
+  &__rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    @extend %small-text;
+    color: $color-dark-blue;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &-text {
+      font-weight: 400;
+      color: $color-light-grey;
+    }
+
+    &-number {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $color-dark-blue;
+    }
+  }
+
+  &__btn {
+    height: 40px;
+    background: $color-light-blue;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid $color-light-blue;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-light-blue;
+      background-color: #fff;
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
