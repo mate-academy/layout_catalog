@@ -1,24 +1,22 @@
-.laptop {
+.card {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-family: Roboto, sans-serif;
   font-size: 10px;
-  margin-top: $cards-horisontal_shift;
-  width: 5 * $cards-width + 3 * $cards-horisontal_shift;
-}
+  width: getWidth(4, $cards-width, $cards-vertical_shift);
 
-.card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  width: $cards-width;
-  padding: 32px 16px 16px ;
-  margin-left: 50px;
-  margin-bottom: $cards-horisontal_shift;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    width: $cards-width;
+    padding: 32px 16px 16px ;
+    margin-left: 50px;
+    margin-bottom: $cards-horisontal_shift;
+  }
 
   &:nth-child(4n) {
     margin-right: 0;
@@ -36,7 +34,7 @@
   }
 
   &__name {
-    margin: 40px 0 0;
+    margin-top: 40px;
     bottom: 165px;
     font-weight: 500;
     font-size: 12px;
@@ -46,7 +44,8 @@
 
   &__code {
     font-size: 10px;
-    margin: 4px 0 0;
+    margin-top: 4px;
+    margin-bottom: 16px;
     line-height: 14px;
     width: 98px;
     height: 14px;
