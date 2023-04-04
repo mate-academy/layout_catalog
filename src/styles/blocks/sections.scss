@@ -1,0 +1,122 @@
+.main {
+  width: 944px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  margin: 0 auto;
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+  
+  &--1 div:nth-child(-n+1),
+  &--2 div:nth-child(-n+2),
+  &--3 div:nth-child(-n+3),
+  &--4 div:nth-child(-n+4),
+  &--5 div:nth-child(n) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  padding: 32px 16px 16px;
+  border: 1px solid $white;
+  width: max-content;
+  margin-right: 48px;
+  
+  &:nth-last-child(-n + 4) {
+    margin-top: 46px;
+  }
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+  &__image-container {
+    margin-bottom: 40px;
+    display: flex;
+    padding: 0 3px;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $dark;
+  }
+  
+  &__code {
+    margin: 4px 0 16px;
+    text-align: left;
+    font-size: 10px;
+    line-height: 14px;
+    color: $light-grey;
+  }
+  
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    font-size: 12px;
+    line-height: 18px;
+    justify-content: space-between;
+    color: $light-grey;
+ 
+
+    &-sum {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $dark;
+    }
+  }
+
+  &__rewiews {
+    display: flex;
+    background-image: none;
+    font-size: 10px;
+    line-height: 16px;
+    color: $dark;
+  }
+  
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    color: $white;
+    height: 40px;
+    text-align: center;
+    background-color: $blue;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid $blue;
+  }
+  
+  &__button:hover {
+    background-color: $white;
+    color: $blue;
+  }
+}
