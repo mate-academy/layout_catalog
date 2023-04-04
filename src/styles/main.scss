@@ -1,3 +1,32 @@
-body {
-  margin: 0;
+@import "./utils/reset";
+@import "./utils/variables";
+@import "./utils/extends";
+@import "./utils/mixins.scss";
+@import "./utils/functions";
+
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.html {
+  font-family: "Roboto", sans-serif;
+}
+
+.page__container {
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  width: getContainerSize($card-width, $card-margin-right);
+  flex-wrap: wrap;
+  padding: 50px 0;
+
+  &__card:not(:nth-child(4n)) {
+    margin-right: $card-margin-right;
+  }
+
+  &__card:nth-child(-n + 4) {
+    margin-bottom: 46px;
+  }
 }
