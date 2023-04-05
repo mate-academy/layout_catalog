@@ -1,0 +1,76 @@
+@import "../utils/variables";
+@import "../utils/extends";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+  @extend %product-text;
+}
+
+.header__logo {
+  height: 40px;
+  width: 40px;
+}
+
+.is-active {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    background: $s-blue;
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    color: #060b35;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 23px 0;
+    line-height: 14px;
+    &:hover {
+      color: $s-blue;
+    }
+  }
+
+  &__item {
+    margin-right: 0;
+
+    & .is-active {
+      color: $s-blue;
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
