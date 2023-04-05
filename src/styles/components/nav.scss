@@ -1,0 +1,43 @@
+.nav {
+  margin-right: 50px;
+
+  &__links {
+    @extend %flexbox;
+    list-style: none;
+    padding: 0;
+
+    & > :not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    padding-top: 23px;
+    padding-bottom: 23px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-header-accent;
+    position: relative;
+
+    &:hover {
+      color: $color-accent-blue;
+      text-decoration-line: none;
+    }
+  }
+}
+
+.is-active::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 4px;
+  width: 100%;
+  background-color: $color-accent-blue;
+  bottom: 0;
+  @include round(8px);
+}
+
+.is-active {
+  color: $color-accent-blue;
+}
