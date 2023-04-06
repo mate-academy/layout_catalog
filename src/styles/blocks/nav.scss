@@ -1,0 +1,49 @@
+@import "../utils/variables.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+  
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 23px 0;
+    color: $text-color;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $active-and-hover-link-color;
+    }
+  }
+
+  .is-active {
+    color: $active-and-hover-link-color;
+  }
+
+  .is-active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-radius: 8px;
+    border-bottom: 4px solid $active-and-hover-link-color;
+  }
+}
