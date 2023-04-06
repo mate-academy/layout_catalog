@@ -16,19 +16,19 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 ## Requirements:
 - use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
 and SCSS
-- Nav links color is not `black` any more
++ Nav links color is not `black` any more
 - there should always be 4 cards in a row (not 2, 3 or 5)
   - use `:nth-child(4n)` to select every 4th element
   - use `:nth-last-child(-n + 4)` to select 4 last elements
-- the distance between cards on the design includes borders (zoom in to see it);
-- cards should have fixed width and fixed distances between them
-- cards container should have fixed paddings (see 1024px example), bottom the same as top
-- use semantic tags. `<header>`, `<nav>`, `<main>`
-- add class `is-active` to the first link (`Apple`) in navigation
-- remove old `data-qa` attributes
-- add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
-- add `data-qa="card"` to the first card
-- add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
++ the distance between cards on the design includes borders (zoom in to see it);
++ cards should have fixed width and fixed distances between them
++ cards container should have fixed paddings (see 1024px example), bottom the same as top
++ use semantic tags. `<header>`, `<nav>`, `<main>`
++ add class `is-active` to the first link (`Apple`) in navigation
++ remove old `data-qa` attributes
++ add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
++ add `data-qa="card"` to the first card
++ add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 ---
