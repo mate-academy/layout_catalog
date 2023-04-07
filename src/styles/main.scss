@@ -1,3 +1,44 @@
-body {
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+
+@import "./blocks/header.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/product.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+p,
+h2 {
   margin: 0;
+}
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: getWith(4, 250px);
+}
+
+.cards-container {
+  padding: 51px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 1024px) {
+  body {
+    max-width: getWidth(4, 82px);
+  }
+  .cards-container {
+    padding: 51px 0;
+  }
 }
