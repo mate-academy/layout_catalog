@@ -1,0 +1,103 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: 200px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 48px;
+  margin-bottom: 46px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    padding: 0 3px;
+    margin: 32px 0 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    color: $color-darkgrey;
+    margin-bottom: 4px;
+    line-height: 18px;
+  }
+
+  &__code {
+    font-size: 10px;
+    color: $color-grey;
+    margin-bottom: 16px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    @include flex(space-between);
+    align-items: center;
+    margin-bottom: 24px;
+
+    &_value {
+      font-size: 10px;
+      color: $color-darkgrey;
+    }
+  }
+
+  &__price {
+    @include flex(space-between);
+    align-items: center;
+    margin-bottom: 16px;
+
+    &_text {
+      font-size: 12px;
+      color: $color-grey;
+    }
+
+    &_value {
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-darkgrey;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    @include flex(center);
+    background-color: $color-blue;
+    height: 40px;
+    width: 166px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue;
+      border: 1px solid $color-blue;
+    }
+  }
+}
