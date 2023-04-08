@@ -1,0 +1,98 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 32px 16px 16px;
+  margin-right: 48px;
+  margin-bottom: 46px;
+
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    align-self: center;
+    height: 134px;
+    width: 160px;
+
+    margin-bottom: 40px;
+  }
+
+  &__product-name {
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $basic-text-color;
+  }
+
+  &__product-code {
+    margin-bottom: 16px;
+    font-size: 10px;
+    line-height: 14px;
+    color: $price-and-code-color;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    line-height: 18px;
+    @extend %flex-align-center-space-between;
+  }
+
+  &__price-word {
+    font-size: 12px;
+    line-height: 18px;
+    color: $price-and-code-color;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    color: $basic-text-color;
+  }
+
+  &__rating {
+    margin-bottom: 24px;
+    @extend %flex-align-center-space-between;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $basic-text-color;
+  }
+
+  &__button-buy {
+    padding: 11px;
+    display: flex;
+    background-color: $blue-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid $blue-color;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $hover-change-color;
+    text-decoration: none;
+  }
+
+  &__button-buy:hover {
+    background-color: $hover-change-color;
+    color: $blue-color;
+  }
+}
