@@ -1,15 +1,10 @@
-:root {
-  --color-main: #060b35;
-  --color-secondary: #616070;
-  --border-radius: 5px;
-  --border-decoration: 1px solid #f3f3f3;
-  --button-color: #00acdc;
-  --button-text-color: #fff;
-  --button-color-hover: #fff;
-  --button-text-color-hover: #00acdc;
-  --button-border-hover: 1px solid #00acdc;
-  --background-color: #fff;
-}
+$color-main: #060b35;
+$color-secondary: #616070;
+$border-radius: 5px;
+$border-card: 1px solid #f3f3f3;
+$blue-color: #00acdc;
+$white-color: #fff;
+$button-border-hover: 1px solid #00acdc;
 
 * {
   box-sizing: border-box;
@@ -26,7 +21,7 @@ ul {
 .header {
   display: flex;
   justify-content: space-between;
-  background: var(--background-color);
+  background: $white-color;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 0 50px;
 
@@ -47,7 +42,7 @@ ul {
 
   &__nav-link {
     position: relative;
-    color: var(--color-main);
+    color: $color-main;
     text-decoration: none;
     padding: 23px 0;
   }
@@ -63,7 +58,7 @@ ul {
 
 .is-active,
 .header__nav-link:hover {
-  color: var(--button-text-color-hover);
+  color: $blue-color;
 }
 
 .is-active::after,
@@ -73,27 +68,33 @@ ul {
   position: absolute;
   height: 4px;
   width: 100%;
-  background-color: var(--button-text-color-hover);
+  background-color: $blue-color;
   top: 56px;
   border-radius: 8px;
-  color: var(--button-color);
+  color: $blue-color;
 }
 
 .main {
   margin: 0 auto;
-  padding: 50px 0;
-}
-
-.block {
+  padding: 50px 40px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 1024px;
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    width: 1200px;
+    padding: 50px 128px;
+  }
 }
 
 .product {
   padding: 32px 16px 0;
-  background: var(--background-color);
-  border: var(--border-decoration);
-  border-radius: var(--border-radius);
+  background: $white-color;
+  border: $border-card;
+  border-radius: $border-radius;
   flex-direction: column;
   width: 200px;
   height: 406px;
@@ -110,7 +111,7 @@ ul {
   &__name {
     font-size: 12px;
     font-weight: 500;
-    color: var(--color-main);
+    color: $color-main;
     margin-bottom: 17px;
   }
 
@@ -122,7 +123,7 @@ ul {
   &__name-code {
     font-size: 10px;
     font-weight: 400;
-    color: var(--color-secondary);
+    color: $color-secondary;
   }
 
   &__ratings {
@@ -131,11 +132,25 @@ ul {
     margin-bottom: 23px;
   }
 
+  &__stars {
+    display: flex;
+  }
+
+  &__stars-star {
+    height: 16px;
+    width: 16px;
+    background: url(../images/star.svg) center no-repeat;
+  }
+
+  &__stars-star:not(:last-child) {
+    margin-right: 4px;
+  }
+
   &__ratings-reviews {
     line-height: 16px;
     font-size: 10px;
     font-weight: 400;
-    color: var(--color-main);
+    color: $color-main;
   }
 
   &__price {
@@ -145,13 +160,13 @@ ul {
     margin-bottom: 16px;
     font-size: 16px;
     font-weight: 700;
-    color: var(--color-main);
+    color: $color-main;
   }
 
   &__price-price {
     font-size: 12px;
     font-weight: 400;
-    color: var(--color-secondary);
+    color: $color-secondary;
   }
 
   &__buy {
@@ -162,19 +177,19 @@ ul {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
-    width: 166px;
+    width: 100%;
     text-decoration: none;
     text-align: center;
-    padding: 11px 0 12px;
-    color: var(--button-text-color);
-    background-color: var(--button-color);
-    border-radius: var(--border-radius);
+    padding: 12px 0;
+    color: $white-color;
+    background-color: $blue-color;
+    border-radius: $border-radius;
   }
 
   &__buy-link:hover {
-    color: var(--button-text-color-hover);
-    background-color: var(--button-color-hover);
-    border: var(--button-border-hover);
+    color: $blue-color;
+    background-color: $white-color;
+    border: $button-border-hover;
   }
 }
 
@@ -186,24 +201,8 @@ ul {
   margin-bottom: 48px;
 }
 
-.ratings-stars {
-  display: flex;
-
-  &__star {
-    height: 16px;
-    width: 16px;
-    background: url(/images/star.svg) center no-repeat;
+@for $index from 1 through 5 {
+  .product__stars--#{$index} .product__stars-star:nth-child(-n+#{$index}) {
+    background-image: url(../images/star-active.svg);
   }
-
-  &__star:not(:last-child) {
-    margin-right: 4px;
-  }
-}
-
-.ratings-stars--1 .ratings-stars__star:nth-child(-n+1),
-.ratings-stars--2 .ratings-stars__star:nth-child(-n+2),
-.ratings-stars--3 .ratings-stars__star:nth-child(-n+3),
-.ratings-stars--4 .ratings-stars__star:nth-child(-n+4),
-.ratings-stars--5 .ratings-stars__star:nth-child(-n+5) {
-  background-image: url(/images/star-active.svg);
 }
