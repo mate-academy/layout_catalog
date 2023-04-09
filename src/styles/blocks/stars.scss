@@ -8,8 +8,9 @@
     background: url(../images/star.svg) no-repeat center center / 13px;
   }
 
-  &--4 .stars__star:nth-child(-n+4) {
-    margin-right: 4px;
-    background-image: url(../images/star-active.svg);
+  @for $index from 1 through 5 {
+    &--#{$index} &__star:not(:nth-child(n + #{$index + 1})) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
