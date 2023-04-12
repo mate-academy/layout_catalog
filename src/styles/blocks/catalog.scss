@@ -1,0 +1,19 @@
+.catalog {
+  position: relative;
+  width: $catalogWidth;
+  height: $catalogHeight;
+
+  &__card {
+    position: absolute;
+
+    @for $i from 1 through $columnCount {
+      &:nth-child(#{$columnCount}n + #{$i}) {
+        left: getHorizontalShift($cardWidth, $cardShiftHorizontal, $i);
+      }
+    }
+
+    &:nth-last-child(-n + #{$columnCount}) {
+      top: getVerticalShift($cardHeight, $cardShiftVertical);
+    }
+  }
+}
