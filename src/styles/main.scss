@@ -1,3 +1,41 @@
+@import "utils/variables";
+@import "utils/functions";
+
 body {
   margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
 }
+
+.header {
+  width: calc(100% - 2 * #{$horizontal-padding});
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 $horizontal-padding;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+@import "blocks/nav";
+
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: caclucateCardsWidth();
+  width: caclucateCardsWidth();
+  padding: 50px 0;
+}
+
+@import "blocks/product-card";
+@import "blocks/stars";
