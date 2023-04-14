@@ -1,0 +1,116 @@
+.card {
+  padding: 32px 16px 16px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-white;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+
+  &__photo-Mac {
+    height: 134px;
+    width: 160px;
+  }
+
+  &__description {
+    text-align: left;
+    padding-top: 40px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-dark-blue;
+  }
+
+  &__product-code {
+    padding-top: 4px;
+    text-align: left;
+    line-height: 14px;
+    font-size: 10px;
+    width: 100%;
+    color: $color-grey;
+    font-weight: 400;
+  }
+
+  &__rew-and-stars {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 16px;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    @include size-stars;
+    background-image: url("./../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 4px;
+  }
+
+  @for $starCount from 1 through 5 {
+    &__stars--stars-#{$starCount} &__star:nth-child(-n + #{$starCount}) {
+      background-image: url("./../images/star-active.svg");
+    }
+  }
+
+  &__stars &__star:last-child {
+    margin-right: 0;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-dark-blue;
+    align-self: center;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 24px;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+      color: $color-grey;
+    }
+
+    &-amount {
+      font-weight: 700;
+      line-height: 18px;
+      color: $color-dark-blue;
+    }
+  }
+
+  &__button-buy {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 16px;
+    background-color: $color-blue;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card:hover {
+  .card__button-buy {
+    color: $color-blue;
+    background-color: $color-white;
+    border-radius: 5px;
+    border: 1px solid $color-blue;
+  }
+}
