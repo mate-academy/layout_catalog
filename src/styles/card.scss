@@ -1,32 +1,37 @@
 .catalog {
+  max-width: getWidth($width, $gap, $index);
+  margin: 0 auto;
+
   &__row {
-    width: getWidth($width, $gap, $index)px;
-    margin-top: 51px;
     display: flex;
     justify-content: center;
-
-    // @media (max-width: 1024px) {
-    //   margin: 0 41px;
-    // }
-
+    &--padding--top {
+      padding-top: 51px;
+    }
+    &__padding--bottom {
+      padding-bottom: 51px;
+    }
   }
 }
 
 .card {
-  
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+
   &__container {
     width: 200px;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     padding: 16px;
-    // margin-right: 50px;
+    margin-bottom: 48px;
   }
 
   &__img {
     display: block;
     width: 160px;
     height: 134px;
-    margin: 0 auto 40px;
+    margin: 16px auto 40px;
   }
   &__title {
     margin-bottom: 4px;
@@ -96,8 +101,4 @@
     background: #fff;
   }
 
-  @media (max-width: 1024px) {
-    margin: 0 50px 50px 0;
-
-  }
 }
