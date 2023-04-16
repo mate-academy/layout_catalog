@@ -1,30 +1,34 @@
 .catalog {
   max-width: getWidth($width, $gap, $index);
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  &__row {
-    display: flex;
-    justify-content: center;
-    &--padding--top {
-      padding-top: 51px;
-    }
-    &__padding--bottom {
-      padding-bottom: 51px;
+  &__card{
+    padding-top: 51px;
+    
+    &:nth-child(4n) {
+      margin-right: 0;
     }
   }
+  &:nth-last-child(-n + 4){
+    padding-bottom: 51px;
+  }
+  
 }
 
 .card {
-  &:not(:last-child) {
-    margin-right: 50px;
-  }
-
+  
   &__container {
     width: 200px;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     padding: 16px;
-    margin-bottom: 48px;
+    margin: 0 50px 48px 0;
+
+  //   &:not(:last-child) {
+  //   margin-right: 50px;
+  // }
   }
 
   &__img {
