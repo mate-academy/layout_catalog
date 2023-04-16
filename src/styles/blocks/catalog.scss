@@ -1,0 +1,15 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  width: getCatalogWidth(4, $card-width,$gap);
+  margin: 0 auto;
+  padding: 50px 0 70px;
+  & > :not(:nth-child(4n)) {
+    margin-right: $gap;
+  }
+  @for $element from 1 through 4 {
+    & > :nth-child(-n + #{$element}) {
+      margin-bottom: 46px;
+    }
+  }
+}
