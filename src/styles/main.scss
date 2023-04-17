@@ -94,7 +94,7 @@ html {
     margin-right: 48px;
   }
 
-  &:nth-last-child(-n + 4) {
+  &:not(:nth-child(-n +4)) {
     margin-top: 46px;
   }
 
@@ -184,9 +184,8 @@ html {
   height: 16px;
 
   @for $starCount from 1 through 5 {
-    &__star {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
       background-image: url(../images/star-active.svg);
-      margin-right: 4px;
     }
   }
 
@@ -200,11 +199,5 @@ html {
     &:nth-child(-n+4) {
       margin-right: 4px;
     }
-  }
-}
-
-@for $starCount from 1 through 5 {
-  .stars--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
-    background-image: url(../images/star-active.svg);
   }
 }
