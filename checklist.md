@@ -155,4 +155,4 @@ GOOD example:
   }
 ```
 
-13. [LAYOUT] - Use sass functions for dynamic max-width calculation, your catalog container should work fine for any number of cards.
+13. [LAYOUT] - Use sass functions for dynamic max-width calculation, your catalog container should work fine for any number of catalog__cards.
