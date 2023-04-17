@@ -1,0 +1,130 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.main__container {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  width: (4 * $card-width) + (3 * $card-margin) + (2 * $inside-padding);
+  padding: 50px 0;
+}
+
+.card {
+  background-color: $white;
+  max-width: $card-width;
+  border: 1px solid $grey;
+  border-radius: 5px;
+  padding: 32px 16px 0;
+  cursor: pointer;
+  margin: 0 24px 46px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: flex;
+    margin: 0 auto 40px;
+  }
+
+  &__name {
+    font-size: 12px;
+    line-height: 18px;
+    color: $dark-blue;
+    margin-bottom: 4px;
+  }
+
+  &__product {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $card-color;
+    margin-bottom: 16px;
+  }
+
+  &__rewiews {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__stars-reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $dark-blue;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $card-color;
+  }
+
+  &__cost {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $dark-blue;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    line-height: 38px;
+    color: $white;
+    background-color: $aqua;
+    border: 1px solid $aqua;
+    border-radius: 5px;
+  }
+
+  &__button:hover {
+    background-color: transparent;
+    color: $aqua;
+  }
+
+  &:not:nth-child(4n) {
+    margin-right: 48px;
+  }
+
+  &:not:nth-last-child(-n + 4) {
+    margin-bottom: 46px;
+  }
+
+  &:nth-child(4n + 1) {
+    margin-left: 26px;
+  }
+
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background: url(../images/star.svg) center no-repeat;
+
+    &:last-child {
+      margin-right: 22px;
+    }
+  }
+
+  @for $count from 1 through 5 {
+    &--#{$count} &__star:nth-child(-n + #{$count}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
