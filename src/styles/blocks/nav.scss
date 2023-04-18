@@ -1,0 +1,43 @@
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__element:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    padding: 23px 0;
+    float: left;
+    position: relative;
+    text-decoration: none;
+    color: $color_dark_violet;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color_blue;
+    }
+
+    &.is-active::after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      background: $color_blue;
+      border-radius: 8px;
+    }
+
+    &.is-active {
+      color: $color_blue;
+    }
+  }
+}
