@@ -1,0 +1,36 @@
+.rating-stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+  &__item--1 :nth-child(1),
+  &__item--2 :nth-child(-n + 2),
+  &__item--3 :nth-child(-n + 3),
+  &__item--4 :nth-child(-n + 4),
+  &__item--5 :nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $default-card-color;
+  }
+}
