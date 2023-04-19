@@ -1,0 +1,25 @@
+.content {
+  width: getContentWidth(
+    $card-width,
+    $cards-per-row,
+    $item-margin-right,
+    $content-padding
+  );
+  padding: (1.25 * $content-padding) $content-padding;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-right: $item-margin-right;
+    margin-bottom: $item-margin-bottom;
+
+    &:nth-child(#{$cards-per-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$cards-per-row}) {
+      margin-bottom: 0;
+    }
+  }
+}
