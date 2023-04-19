@@ -1,15 +1,17 @@
 @import "utils/variables";
 @import "utils/functions";
+@import "reset";
 
 body {
   margin: 0;
   font-style: normal;
   font-weight: 400;
   font-family: Roboto, sans-serif;
+  overflow-x: hidden;
 }
 
 .header {
-  width: calc(100% - 2 * #{$horizontal-padding});
+  width: calc(100vw - 2 * #{$horizontal-padding});
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 0 $horizontal-padding;
@@ -26,14 +28,14 @@ body {
 .content {
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: calc(100% - calculateCardsWidth());
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-  min-width: caclucateCardsWidth();
-  width: caclucateCardsWidth();
+  min-width: calculateCardsWidth();
+  width: calculateCardsWidth();
   padding: 50px 0;
 }
 
