@@ -1,19 +1,18 @@
 .catalog {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
   width: $catalogWidth;
-  height: $catalogHeight;
+  margin: 0 auto;
+  padding: 50px $catalogHorisontalPadding;
 
   &__card {
-    position: absolute;
-
-    @for $i from 1 through $columnCount {
-      &:nth-child(#{$columnCount}n + #{$i}) {
-        left: getHorizontalShift($cardWidth, $cardShiftHorizontal, $i);
-      }
+    &:not(:nth-child(4n)) {
+      margin-right: $cardShiftHorizontal;
     }
 
-    &:nth-last-child(-n + #{$columnCount}) {
-      top: getVerticalShift($cardHeight, $cardShiftVertical);
+    &:not(:nth-last-child(-n + 4)) {
+      margin-bottom: 46px;
     }
   }
 }
