@@ -1,3 +1,239 @@
+$color-dark: #060b35;
+$color-small: #616070;
+$color-button: #00acdc;
+$color-bck: #f3f3f3;
+$width-card: 200px;
+$card-margin-right: 48px;
+$padding-horizont : 41px;
+$padding-vertical : 51px;
+$card-margin-bottom: 46px;
+$width: ($width-card * 4) + ($card-margin-right * 3) + (2 * $padding-horizont);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
 body {
   margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
+  
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  padding: 0 50px;
+
+  &__logo {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+}
+  
+.nav_list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.links {
+  margin-right: 20px;
+  position: relative;
+  list-style: none;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+
+  &__link_a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #060b35;
+    padding: 23px 0;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  &__link_a:active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #00acdc;
+    border-radius: 8px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.is-active,
+.links__link_a:hover {
+  color: #00acdc;
+}
+  
+.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #00acdc;
+  border-radius: 8px;
+}
+
+.catalog {//add media ??
+  display: flex;
+  flex-direction: row;  //????????
+  justify-content: center; //???sb
+  flex-wrap: wrap;
+  // box-sizing: border-box;
+  padding: $padding-vertical $padding-horizont;
+  // padding: 50px;
+  width: $width; //width 100% but main included to div
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.card {
+  width: $width-card;
+  border: 1px solid #{$color-bck};
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin-right: $card-margin-right;
+  margin-bottom: $card-margin-bottom;//????????????? the second line has 73
+  // box-sizing: border-box;
+  background-color: #fff;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 16px 3px 40px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #{$color-dark};
+    margin-bottom: 4px;
+    // width: 166px;
+  }
+  
+  &__type {
+    font-size: 10px;
+    line-height: 14px;
+    color: #{$color-small};
+    font-style: normal;
+    margin-bottom: 16px;
+  }
+
+  
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__review {
+    font-size: 10px;
+    line-height: 14px;
+    padding-left: 17px;
+  }
+    
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: #{$color-small};
+    padding-top: 24px;
+  }
+
+    
+  &__price-value {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #{$color-dark};
+    padding-top: 24px;
+  }
+  
+  &__buy-link {
+    width: 166px;
+    height: 40px;
+    background-color: #{$color-button};
+    border-radius: 5px;
+    text-align: center;
+    color: var(--color-bck);
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 70px 12px 69px;
+    margin-top: 16px;
+    border: 1px solid #{$color-button};
+  }
+  
+  &__buy-link:hover {
+    background-color: #{$color-bck};
+    color: #{$color-button};
+  }
+
+  &:nth-last-child(-n + 4) {//????????????????????
+    margin-bottom: 73px;
+  }
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+    
+.stars__star {
+  background-image: url(../images/star.svg);
+  width: 16px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stars__star:not(:last-child) {
+  margin-right: 4px;
+}
+
+.stars--1 .stars__star:first-child,
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(../images/star-active.svg);
 }
