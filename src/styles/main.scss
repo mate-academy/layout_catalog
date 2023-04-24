@@ -21,6 +21,7 @@
 
 :root {
   --hover-color: #00acdc;
+  --card-width: 200px;
 }
 
 body {
@@ -34,6 +35,7 @@ ul {
 }
 
 .header {
+  padding-right: 50px;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -56,7 +58,7 @@ ul {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0 50px;
+
   }
 
   &__item:not(:last-child) {
@@ -92,39 +94,44 @@ ul {
   margin-top: 18.5px;
   background-color: var(--hover-color);
   border-radius: 8px;
+
 }
 
-.main {
-  padding-top: 50px;
+.container {
+  margin-top: 50px;
+  width: 950px;
+  height: 862px;
   display: flex;
   flex-wrap: wrap;
 }
 
 @media(min-width: 1024px) {
-  .main {
-    padding-left: 41px;
-    padding-right: 41px;
-    justify-content: space-between;
-
+  .container {
+    margin-left: 40px;
   }
-
 }
 
-@media(min-width: 1200px) {
-  .main {
-    padding-left: 129px;
-    padding-right: 129px;
-    justify-content: space-between;
+@media (min-width: 1200px) {
+  .container {
+    margin-left: 130px;
   }
+}
 
+.container_item {
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.container_item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .card {
   box-sizing: border-box;
   padding: 32px 16px 16px;
-  margin-bottom: 48px;
   width: 200px;
   border: 1px solid #f3f3f3;
+  border-radius: 5px;
 
   &__img {
     display: block;
