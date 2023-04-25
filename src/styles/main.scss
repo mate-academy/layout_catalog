@@ -1,10 +1,7 @@
-$card-border-color: #f3f3f3;
-$main-text-color: #060b35;
-$minor-text-color: #616070;
-$link-style-color: #00acdc;
-$background-link-color: #fff;
-$header-text-color: #000;
-$hover-text-color: #00acdc;
+@import "./utils/variables.scss";
+@import "./blocks/card.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/stars.scss";
 
 * {
   box-sizing: border-box;
@@ -31,57 +28,6 @@ body {
   height: 40px;
 }
 
-.nav {
-
-  &__list {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    list-style: none;
-    display: flex;
-    font-size: 12px;
-    font-weight: 500;
-  }
-
-  &__item {
-    display: flex;
-    margin-left: 20px;
-  }
-
-  &__item:first-child {
-    margin: 0;
-    padding: 0;
-  }
-
-  &__link {
-    text-decoration: none;
-    color: $main-text-color;
-    padding: 23px 0;
-
-    &:hover {
-      position: relative;
-      color: $hover-text-color;
-    }
-  }
-
-  .is-active {
-    position: relative;
-    color: $hover-text-color;
-
-    &:after {
-      position: absolute;
-      content: " ";
-      background-color: $hover-text-color;
-      height: 4px;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      border-radius: 8px;
-    }
-  }
-
-}
-
 .main {
   display: flex;
   justify-content: center;
@@ -95,102 +41,6 @@ body {
   margin-top: 50px;
 }
 
-.card {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid $card-border-color;
-  border-radius: 5px;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-bottom: 46px;
-  margin-right: 48px;
-
-  &__img {
-    display: flex;
-    height: 134px;
-    width: 160px;
-    margin: 0 auto;
-    margin-top: 32px;
-  }
-
-  &__name {
-    font-size: 12px;
-    font-weight: 500;
-    color: $main-text-color;
-    margin: 0 auto;
-    line-height: 1.5;
-    margin-top: 40px;
-  }
-
-  &__code {
-    margin-top: 4px;
-    line-height: 1.4;
-    font-size: 10px;
-    font-weight: 400;
-    color: $minor-text-color;
-  }
-
-  &__rate {
-    display: flex;
-    margin-top: 16px;
-    justify-content: space-between;
-  }
-
-  &__reviews-text {
-    font-size: 10px;
-    font-weight: 400;
-    color: $main-text-color;
-    margin-top: 2px;
-  }
-
-  &__price {
-    display: flex;
-    line-height: 18px;
-    margin-top: 24px;
-    justify-content: space-between;
-  }
-
-  &__price-text {
-    display: flex;
-    font-size: 12px;
-    font-weight: 400;
-    color: $minor-text-color;
-    align-self: center;
-  }
-
-  &__price-amount {
-    font-weight: 700;
-    font-size: 16px;
-    color: $main-text-color;
-
-  }
-
-  &__link {
-    display: flex;
-    height: 40px;
-    margin-bottom: 16px;
-    margin-top: 16px;
-    line-height: 38px;
-    justify-content: center;
-
-    background: $link-style-color;
-    border: 1px solid $link-style-color;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-
-    text-transform: uppercase;
-    color: $background-link-color;
-  }
-
-  &__link:hover {
-    color: $link-style-color;
-    background-color: $background-link-color;
-  }
-}
-
 .card:nth-child(4),
 .card:nth-child(8) {
   margin-right: 0;
@@ -198,25 +48,4 @@ body {
 
 p {
   margin: 0;
-}
-
-.stars {
-  display: flex;
-
-  &__star {
-    height: 16px;
-    width: 16px;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 4px;
-  }
-}
-
-.stars--1 :nth-child(1),
-.stars--2 :nth-child(-n + 2),
-.stars--3 :nth-child(-n + 3),
-.stars--4 :nth-child(-n + 4),
-.stars--5 :nth-child(-n + 5) {
-  background-image: url(../images/star-active.svg);
 }
