@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    padding-left: 20px;
+    height: 100%;
+  }
+
+  &__link {
+    @include header-text-styles;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $cloroBlack;
+    transition: all 0.3s;
+  }
+
+  &__link:hover {
+    color: $font-btn;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $activeColor;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    display: block;
+    width: 100%;
+    height: 4px;
+
+    border-radius: 8px;
+    background-color: $activeColor;
+  }
+}

@@ -1,56 +1,19 @@
-.header {
+$verticalPadding: 10px;
+$horizontalPadding: 50px;
+
+%flexPosition {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  padding: 10px 50px;
+}
+
+.header {
+  box-sizing: border-box;
+  @extend %flexPosition;
+  padding: $verticalPadding $horizontalPadding;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &__logo {
-    height: 40px;
-    width: 40px;
+    @include square(40px);
   }
-
-  &__nav {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-  &__list {
-    display: flex;
-    height: 100%;
-  }
-  &__item {
-    display: flex;
-    padding-left: 20px;
-  }
-
-  &__link {
-    @include header-text-styles;
-    position: relative;
-    display: flex;
-    align-items: center;
-    color: $font-main;
-    height: 100%;
-    transition: all 0.3s;
-  }
-
-  &__link:hover {
-    color: $font-btn;
-  }
-}
-
-.is-active {
-  position: relative;
-  color: $font-btn;
-}
-
-.is-active::before {
-  content: "";
-  width: 100%;
-  position: absolute;
-  bottom: -10px;
-  height: 4px;
-  background: $font-btn;
-  border-radius: 8px;
 }
