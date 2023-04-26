@@ -1,0 +1,37 @@
+.card-stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  &__text {
+    font-size: 10px;
+    line-height: 14px;
+    text-align: right;
+    color: #060b35;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    border-radius: 0.5px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__star:last-of-type {
+    margin-right: 0;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+}
