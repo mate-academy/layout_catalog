@@ -1,0 +1,31 @@
+.catalog {
+  background-color: $background-color;
+
+  &__container {
+    display: flex;
+    margin: auto;
+    padding: 50px $catalog-side-padding;
+    max-width: getMaxWidth(
+      $card-width,
+      $card-margin-right,
+      $cards-number-in-row,
+      $catalog-side-padding);
+
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__product-card {
+    margin-right: $card-margin-right;
+    margin-bottom: 46px;
+  }
+
+  &__product-card:nth-child(#{$cards-number-in-row}n) {
+    margin-right: 0;
+  }
+
+  &__product-card:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+}
