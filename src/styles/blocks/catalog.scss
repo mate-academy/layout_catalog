@@ -1,0 +1,18 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: setWidth($card-width, $cards-count, $cards-indent);
+  margin: 0 auto;
+  padding: 50px 0;
+
+  &__card {
+
+    &:not(:nth-child(#{$cards-count}n)) {
+      margin-right: $cards-indent;
+    }
+
+    &:nth-last-child(-n+#{$cards-count}) {
+      margin-top: 46px;
+    }
+  }
+}
