@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    line-height: 60px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $main-color;
+
+    &:hover {
+      color: $highlight-color;
+    }
+
+    &--active {
+      position: relative;
+      color: $highlight-color;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 37px;
+        height: 4px;
+        bottom: 0%;
+        left: 0%;
+
+        background-color: $highlight-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
