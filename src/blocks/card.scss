@@ -1,0 +1,102 @@
+@import "../utils/function";
+@import "../utils/mixins";
+
+.catalog {
+  &__container {
+    @include container-property;
+    padding-top: $container-paddig-x;
+    width: set-width-container(200,4);
+
+    .card {
+      width: $card-width;
+      padding: 32px 16px 16px;
+      border: 1px solid $color-gray;
+      border-radius: 5px;
+
+      &.catalog__card {
+        margin-right: $card-margin-x;
+        margin-bottom: $card-margin-y;
+
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+
+        &:nth-last-child(-n + 4) {
+          margin-bottom: 0;
+        }
+      }
+
+      &__image {
+        display: block;
+        width: 160px;
+        height: 134px;
+        margin: 0 auto 40px;
+      }
+
+      &__title {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: $color-main-accent;
+        margin-bottom: 4px;
+      }
+
+      &__code {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        margin-bottom: 16px;
+        color: $color-secondary;
+      }
+
+      &__rating {
+        display: flex;
+        @include set-flex-property;
+        margin-bottom: 24px;
+      }
+
+      &__reviews {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        color: $color-main-accent;
+      }
+
+      &__value {
+        display: flex;
+        @include set-flex-property;
+        margin-bottom: 16px;
+      }
+
+      &__amount {
+        display: flex;
+        @include set-flex-property;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: $color-main-accent;
+      }
+
+      &__price {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $color-secondary;
+      }
+
+      &__buy {
+        @include buy-btn;
+        border: 1px solid transparent;
+        color: $color-white;
+        background: $color-blue-accent;
+        text-transform: uppercase;
+
+        &--hover:hover {
+          border-color: $color-blue-accent;
+          background: $color-white;
+          color: $color-blue-accent;
+        }
+      }
+    }
+  }
+}
