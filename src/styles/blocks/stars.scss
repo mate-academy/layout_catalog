@@ -1,7 +1,7 @@
 .stars {
   display: flex;
   flex-direction: row;
-  background-color: #fff;
+  background-color: $base-bg-color;
 
   &__star {
     height: 16px;
@@ -10,12 +10,12 @@
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 4px;
-  }
 
-  &__star:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-
+  
   @for $starCount from 1 through 5 {
     .stars_star--#{$starCount} &__star:nth-child(-n + #{$starCount}) {
       background-image: url(../images/star-active.svg);
