@@ -1,0 +1,46 @@
+@import "../utils/variables";
+
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+    line-height: 60px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    text-transform: uppercase;
+    display: block;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.is-active {
+  color: $main-color;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    border-radius: 8px;
+    content: "";
+    background-color: $main-color;
+  }
+}
