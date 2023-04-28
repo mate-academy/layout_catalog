@@ -1,41 +1,51 @@
 .nav {
+  &__menu-link-list {
+    position: relative;
 
-  &__list {
     display: flex;
-    list-style: none;
-  }
+    justify-content: space-between;
 
-  &__item:nth-child(n+2) {
-    margin-left: 20px;
-  }
-
-  &__link {
-    display: flex;
-    padding: 23px 0;
-    font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
-    text-decoration: none;
-    color: $first-color-text;
-    position: relative;
   }
 
-  &__link:hover {
-    color: $blue-color;
+  &__menu-section {
+    position: relative;
+
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__menu-link {
+    display: inline-block;
+
+    text-decoration: none;
+    color: var(--main-accent-color);
+    line-height: 60px;
+
+    &:hover {
+      color: $mainButtonColor;
+    }
   }
 }
 
 .is-active {
-  color: $blue-color;
-}
+  color: $mainButtonColor;
 
-.is-active:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  bottom: 0;
-  background: $blue-color;
-  border-radius: 8px;
+  &::after {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    width: 100%;
+    height: 4px;
+
+    content: "";
+    background-color: $mainButtonColor;
+    border-radius: 8px;
+  }
 }
