@@ -1,0 +1,122 @@
+.card {
+  padding: 16px;
+  width: $card-width;
+  background: $color-background;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-right: $cards-gap;
+  margin-bottom: 46px;
+
+  &:nth-child(#{$cards-per-row}n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + #{$cards-per-row}) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 134px;
+    margin: 16px 4px 40px;
+    align-self: center;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-emphasis;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    left: 0;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-regular;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__stars {
+    display: flex;
+
+    &__star {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background-image: url(../../images/star-active.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @for $starCount from 1 to 5 {
+      &--#{$starCount - 1} .stars__star:nth-child(n + #{$starCount}) {
+        background-image: url(../../images/star.svg);
+      }
+    }
+  }
+
+  &__review {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-emphasis;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-regular;
+  }
+
+  &__price-sum {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-emphasis;
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    background: $color-blue;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    align-self: center;
+    margin-top: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $color-background;
+
+    &:hover {
+      border: 1px solid $color-blue;
+      background: $color-background;
+      color: $color-blue;
+    }
+  }
+}
