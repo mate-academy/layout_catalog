@@ -1,0 +1,120 @@
+.card {
+  @include align-content-second;
+
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+  width: $base-card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  @for $index from 1 through 8 {
+    &--#{$index} {
+      margin: 0 $base-card-shift 46px 0;
+    }
+  }
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n+4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+
+    &--position {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $text-accent-color;
+
+    &--position {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__code {
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #616070;
+
+    &--position {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__price {
+    @include align-content;
+
+    width: 100%;
+
+    &--position {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__price-name {
+    font-size: 12px;
+    color: #616070;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price-amount {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $text-accent-color;
+  }
+
+  &__reviews {
+    @include align-content;
+
+    width: 100%;
+
+    &--position {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__rev {
+    font-size: 10px;
+    line-height: 14px;
+    color: $text-accent-color;
+    font-weight: 400;
+  }
+
+  &__link {
+    @include align-content-second;
+
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $secondary-color;
+    text-decoration: none;
+    background: $main-color;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+
+    &:hover {
+      background: $secondary-color;
+      color: $main-color;
+      border-radius: 5px;
+    }
+  }
+}
