@@ -1,0 +1,119 @@
+body,
+.card__title,
+.product-code,
+.stars__reviews,
+.price-name {
+  margin: 0;
+}
+
+html {
+  font-family: $mainFont ;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: $background-color;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  width: 200px;
+
+  &__img {
+    height: 134px;
+    width: 160px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-color-3;
+    margin-bottom: 4px;
+  }
+}
+
+.product-code {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #616070;
+  margin-bottom: 16px;
+}
+
+.stars-reviews,
+.price-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stars-reviews {
+  align-items: center;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $main-color-3;
+  margin-bottom: 24px;
+}
+
+.price-name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #616070;
+  margin: 0 0 16px;
+}
+
+.price-cost {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: $main-color-3;
+}
+
+.buy-button {
+  font-family: $mainFont;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  width: 166px;
+  height: 40px;
+  color: $background-color;
+  background: $main-color-2;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $background-color;
+    border-color: $main-color-2;
+    color: $main-color-2;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &-star {
+    background: url(../images/star.svg) center no-repeat;
+    height: 16px;
+    width: 16px;
+  }
+
+  &-star:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} &-star:nth-child(-n + #{$index}) {
+      background: url(../images/star-active.svg) center no-repeat;
+    }
+  }
+}
