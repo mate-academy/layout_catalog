@@ -1,0 +1,54 @@
+@import "../utils/variables.scss";
+
+.header {
+  padding: 0 $catalog-padding-y;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(197, 139, 139, 0.05);
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    line-height: 60px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark-blue-color;
+    transition: 0.3s;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $blue-color;
+
+  &:before {
+    position: absolute;
+
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    background-color: $blue-color;
+    height: 4px;
+    border-radius: 8px;
+    content: "";
+  }
+}
