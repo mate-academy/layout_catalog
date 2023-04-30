@@ -1,0 +1,24 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  width: getWidth(
+    $card-width,
+    $horizontal-card-margin,
+    $number-of-card-in-row
+  );
+  padding: 50px 40px;
+  margin: 0 auto;
+
+  &__card {
+    margin-bottom: 46px;
+    margin-right: 48px;
+  }
+}
+
+.card:not(:nth-child(#{$number-of-card-in-row}n)) {
+  margin-right: $horizontal-card-margin;
+}
+
+.card:not(:nth-last-child(-n + #{$number-of-card-in-row})) {
+  margin-bottom: $vertical-card-margin;
+}
