@@ -1,0 +1,95 @@
+.header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+
+  &__logo {
+    position: relative;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    margin: 10px 0;
+    transition: opacity $base-duration;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+  }
+
+  &__nav {
+    position: relative;
+    width: auto;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    position: relative;
+    height: 100%;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: $color-blue-dark;
+    text-decoration: none;
+    transition: color $base-duration;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $color-blue;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $base-duration, visibility $base-duration;
+    }
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &.is-active {
+      color: $color-blue;
+    }
+
+    &.is-active::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
