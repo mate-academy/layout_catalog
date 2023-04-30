@@ -1,14 +1,14 @@
 .cards {
   position: relative;
   display: block;
-  padding: 50px 40px;
+  padding: $col-gap 40px;
 
   &__block {
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 46px 50px;
-    width: 942px;
+    grid-gap: $row-gap $col-gap;
+    width: getContainerWidth($card-size, $col-gap);
     margin: 0 auto;
   }
 }
@@ -94,12 +94,14 @@
     line-height: 16px;
     color: $color-white;
     text-transform: uppercase;
-    padding: 11.2px 20px;
+    padding: 11px 20px;
     border-radius: 5px;
     border: 1px solid $color-blue;
     background-color: $color-blue;
     will-change: transform;
-    transition: color 0.4s, background-color 0.4s, transform 0.4s;
+    transition: color $base-duration,
+      background-color $base-duration,
+      transform $base-duration;
 
     &:hover {
       color: $color-blue;
