@@ -1,8 +1,21 @@
 .catalog {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  width: 944px;
   margin: 0 auto;
-  padding: 50px 0;
-  width: 950px;
+  padding-top: 50px;
+
+  & > :nth-child(n) {
+
+    margin-right: 48px;
+    margin-bottom: 45px;
+  }
+
+  & > :nth-child(#{$row-count}n) {
+    margin-right: 0;
+  }
+
+  & > :nth-last-child(-n + #{$row-count}) {
+    margin-bottom: 0;
+  }
 }
