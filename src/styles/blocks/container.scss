@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px $container-horisontal-padding;
+  width: containerWidth(
+    $card-width,
+    $cards-in-row,
+    $card-horizontal-gap,
+    $container-horisontal-padding
+  );
+
+  &__card {
+    &:not(:nth-child(#{$cards-in-row}n)) {
+      margin-right: $card-horizontal-gap;
+    }
+
+    &:not(:nth-last-child(-n + #{$cards-in-row})) {
+      margin-bottom: $card-vertical-gap;
+    }
+  }
+}
