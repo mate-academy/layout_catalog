@@ -4,10 +4,15 @@ $color-button: #00acdc;
 $color-bck: #f3f3f3;
 $width-card: 200px;
 $card-margin-right: 48px;
-$padding-horizont : 41px;
-$padding-vertical : 51px;
+$padding-horizont: 41px;
+$padding-vertical: 51px;
 $card-margin-bottom: 46px;
 $width: ($width-card * 4) + ($card-margin-right * 3) + (2 * $padding-horizont);
+$head-padding: 0 50px;
+$link-rightmarg: 20px;
+$link-padding: 23px 0;
+$font-ten: 10px;
+$font-twelve: 12px;
 
 * {
   box-sizing: border-box;
@@ -19,8 +24,8 @@ html {
 
 body {
   margin: 0;
-  width: 100%;
   padding: 0;
+  width: 100%;
 }
 
   
@@ -32,7 +37,9 @@ body {
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   width: 100%;
-  padding: 0 50px;
+  height: 60px;
+  min-width: 1024px; //?????
+  padding: $head-padding;
 
   &__logo {
     display: inline-block;
@@ -45,11 +52,11 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  text-align: center;
+  // text-align: center;
+  // list-style: none;
 }
 
 .links {
-  margin-right: 20px;
   position: relative;
   list-style: none;
   justify-content: center;
@@ -57,12 +64,14 @@ body {
   display: flex;
 
   &__link_a {
+    display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
     color: #060b35;
-    padding: 23px 0;
+    padding: $link-padding;
     font-weight: 500;
-    font-size: 12px;
+    font-size: $font-twelve;
+    line-height: 14px; //?????????????
   }
 
   &__link_a:active::after {
@@ -77,7 +86,7 @@ body {
   }
 
   &:not(:last-child) {
-    margin-right: 20px;
+    margin-right: $link-rightmarg;
   }
 }
 
@@ -97,17 +106,17 @@ body {
   border-radius: 8px;
 }
 
-.catalog {//add media ??
+.catalog {
   display: flex;
-  flex-direction: row;  //????????
-  justify-content: center; //???sb
+  justify-content: center;
   flex-wrap: wrap;
-  // box-sizing: border-box;
   padding: $padding-vertical $padding-horizont;
-  // padding: 50px;
-  width: $width; //width 100% but main included to div
+  // padding: 50px 0;
+  // width: 944px;
+  min-width: $width;
   margin: 0 auto;
   flex-shrink: 0;
+  max-width: 1200px;
 }
 
 .card {
@@ -124,14 +133,14 @@ body {
 
   &__img {
     width: 160px;
-    height: 134px;
+    // height: 134px;
     display: block;
     margin: 16px 3px 40px;
   }
 
   &__title {
     font-weight: 500;
-    font-size: 12px;
+    font-size: $font-twelve;
     line-height: 18px;
     color: #{$color-dark};
     margin-bottom: 4px;
@@ -139,7 +148,7 @@ body {
   }
   
   &__type {
-    font-size: 10px;
+    font-size: $font-ten;
     line-height: 14px;
     color: #{$color-small};
     font-style: normal;
@@ -154,7 +163,7 @@ body {
   }
 
   &__review {
-    font-size: 10px;
+    font-size: $font-ten;
     line-height: 14px;
     padding-left: 17px;
   }
@@ -166,7 +175,7 @@ body {
   }
   
   &__price-label {
-    font-size: 12px;
+    font-size: $font-twelve;
     line-height: 18px;
     color: #{$color-small};
     padding-top: 24px;
@@ -203,10 +212,6 @@ body {
     color: #{$color-button};
   }
 
-  &:nth-last-child(-n + 4) {//????????????????????
-    margin-bottom: 73px;
-  }
-
   &:nth-child(4n) {
     margin-right: 0;
   }
@@ -216,24 +221,23 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-    
-.stars__star {
-  background-image: url(../images/star.svg);
-  width: 16px;
-  height: 16px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-.stars__star:not(:last-child) {
-  margin-right: 4px;
-}
+  &__star {
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
 
-.stars--1 .stars__star:first-child,
-.stars--2 .stars__star:nth-child(-n + 2),
-.stars--3 .stars__star:nth-child(-n + 3),
-.stars--4 .stars__star:nth-child(-n + 4),
-.stars--5 .stars__star:nth-child(-n + 5) {
-  background-image: url(../images/star-active.svg);
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n+ #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+  
 }
