@@ -1,19 +1,15 @@
+@import "../styles";
+
 @mixin logo_size($size) {
   height: $size;
   width: $size;
 }
 
-body {
-  --header-horizontal-padding: 50px;
-  --header-hover-color: #00acdc;
-}
-
 .header {
   box-sizing: border-box;
   display: flex;
-  font-size: 12px;
   font-weight: 500;
-  padding: 0 var(--header-horizontal-padding);
+  padding: 0 $header-horizontal-padding;
   justify-content: space-between;
   align-items: center;
 
@@ -25,39 +21,37 @@ body {
 .nav {
   text-transform: uppercase;
 
+  & *:not(:link),
+  .is-active:after {
+    display: flex;
+  }
+
   &__list {
     margin: 0;
     padding: 0;
-    display: flex;
     list-style: none;
   }
 
-  &__item {
-    display: flex;
-    padding-right: 20px;
-  }
-
-  &__item:last-child {
-    padding-right: 0;
+  &__item:not(:last-child) {
+    margin-right: 20px;
   }
 
   &__item .is-active:after {
     content: "";
-    display: flex;
-    border-bottom: 4px solid var(--header-hover-color);
+    border-bottom: 4px solid $hover-color;
     border-radius: 8px;
     transform: translateY(19px);
   }
 
   &__link {
     text-decoration: none;
-    color: #060b35;
+    color: $text-color;
     padding-top: 23px;
     padding-bottom: 19px;
   }
 
   &__item .is-active,
   &__link:hover {
-    color: var(--header-hover-color);
+    color: $hover-color;
   }
 }
