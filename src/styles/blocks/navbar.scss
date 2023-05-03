@@ -1,0 +1,36 @@
+.navbar {
+  &__list {
+    @include reset-list;
+    display: flex;
+  }
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  &__link {
+    @include reset-link;
+    color: $color-text-primary;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-medium;
+    display: flex;
+    padding: 23px 0;
+    position: relative;
+    &:hover {
+      color: $color-branding;
+    }
+  }
+}
+
+.is-active {
+  color: $color-branding;
+}
+
+.is-active::after {
+  content: "";
+  background-color: $color-branding;
+  border-radius: 8px;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
