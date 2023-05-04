@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style-type: none;
+    text-transform: uppercase;
+  }
+
+  &__marker:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $color-dark-blue;
+    height: 100%;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+  
+    &:hover,
+    &--active {
+      color: $color-blue;
+    }
+
+    &--active::after {
+      content: "";
+      height: 4px;
+      width: 100%;
+      background: $color-blue;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

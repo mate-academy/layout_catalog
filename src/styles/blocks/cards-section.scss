@@ -1,0 +1,17 @@
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: getWidth(
+    $card-width,
+    $card-vertical-shift,
+    $number-of-cards-in-row);
+  padding: 50px 0;
+
+  &__card:not(:nth-child(#{$number-of-cards-in-row}n)) {
+    margin-right: $card-vertical-shift;
+  }
+  
+  &__card:not(:nth-last-child(-n + 4)) {
+    margin-bottom: $card-horizontal-shift;
+  }
+}
