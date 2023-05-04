@@ -1,4 +1,8 @@
 * {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
 }
 
@@ -17,8 +21,7 @@ html {
 .main {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 41px;
-  padding-top: 51px;
+  padding: 50px 40px;
 }
 
 .header {
@@ -83,15 +86,17 @@ html {
   }
 }
 
+.main__element {
+  margin-right: 50px;
+  margin-bottom: 48px;
+}
+
 .card {
   box-sizing: border-box;
   width: 200px;
   background-color: var(--white);
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  margin-right: 50px;
-  margin-bottom: 48px;
-  // height: 406px;
 
   &__image {
     width: 160px ;
@@ -207,17 +212,9 @@ html {
     margin-right: 4px;
   }
 
-  &--1 &__star:nth-child(-n+1),
-  &--2 &__star:nth-child(-n+2),
-  &--3 &__star:nth-child(-n+3),
-  &--4 &__star:nth-child(-n+4),
-  &--5 &__star:nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
-  }
-}
-
-@media (min-width:1100px) {
-  .main {
-    flex-basis: 25%;
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
