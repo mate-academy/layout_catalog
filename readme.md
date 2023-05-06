@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://RodionSav.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://RodionSav.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -18,8 +18,8 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 and SCSS
 - Nav links color is not `black` any more
 - there should always be 4 cards in a row (not 2, 3 or 5)
-  - use `:nth-child(4n)` to select every 4th element
-  - use `:nth-last-child(-n + 4)` to select 4 last elements
+- use `:nth-child(4n)` to select every 4th element
+- use `:nth-last-child(-n + 4)` to select 4 last elements
 - the distance between cards on the design includes borders (zoom in to see it);
 - cards should have fixed width and fixed distances between them
 - cards container should have fixed paddings (see 1024px example), bottom the same as top

@@ -8,13 +8,13 @@
 >**WRONG WAY**
 >```html
 ><div class="product__rating">
->  <div class="product__stars stars--4">
->    <div class="star"></div>
->    <div class="star"></div>
->    <div class="star"></div>
->    <div class="star"></div>
->    <div class="star"></div>
->  </div>
+><div class="product__stars stars--4">
+><div class="star"></div>
+><div class="star"></div>
+><div class="star"></div>
+><div class="star"></div>
+><div class="star"></div>
+></div>
 ></div>
 >```
 >`stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
@@ -23,13 +23,13 @@
 >**RIGHT WAY**
 >```html
 ><div class="product__rating">
->  <div class="product__stars stars">
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->    <div class="stars__star"></div>
->  </div>
+><div class="product__stars stars">
+><div class="stars__star"></div>
+><div class="stars__star"></div>
+><div class="stars__star"></div>
+><div class="stars__star"></div>
+><div class="stars__star"></div>
+></div>
 ></div>
 >```
 
@@ -45,45 +45,45 @@
 >**WRONG WAY**
 >```scss
 >&__buy-link {
->  display: flex;
->  margin-top: 20px;
+>display: flex;
+>margin-top: 20px;
 >}
 >
 >&__buy-link:hover {
->  color: blue;
+>color: blue;
 >}
 >```
 >**RIGHT WAY**
 >```scss
 >&__buy-link {
->  display: flex;
->  margin-top: 20px;
+>display: flex;
+>margin-top: 20px;
 >
->  &:hover {
->    color: blue;
->  }
+>&:hover {
+>color: blue;
+>}
 >}
 >```
 - if you want to create a mixin with font styles, it should contain all font styles not just some part of it
 >**WRONG WAY**
 >```scss
 >@mixin smallTex() {
->  font-size: 11px;
->  line-height: 13px;
+>font-size: 11px;
+>line-height: 13px;
 >}
 >
 >@mixin normalTex() {
->  font-size: 12px;
->  font-weight: 500;
+>font-size: 12px;
+>font-weight: 500;
 >}
 >```
 >it's better to add parameters to the mixin than include the existing one with different styles
 >**RIGHT WAY**
 >```scss
 >@mixin normalTex($lineHeight: 15px) {
->  font-size: 12px;
->  lineHeight: $lineHeight;
->  font-weight: 400;
+>font-size: 12px;
+>lineHeight: $lineHeight;
+>font-weight: 400;
 >}
 >
 >normalText(14px)
@@ -96,16 +96,16 @@
 >**WRONG WAY**
 >```scss
 >.card__rating {
->  height: 15px;
->  display: flex;
+>height: 15px;
+>display: flex;
 >
->  .card__stars {
->    display: flex;
+>.card__stars {
+>display: flex;
 >
->    .card__star {
->      height: 15px;
->    }
->  }
+>.card__star {
+>height: 15px;
+>}
+>}
 >}
 >```
 - reuse your code, if you've already written code for stars in the previous homework, use it as an independent block
@@ -115,9 +115,9 @@
 >```html
 ><main class="main container">
 >
->  <section class="catalog">
+><section class="catalog">
 >
->    <article data-qa="catd" class="catalog__card">
+><article data-qa="catd" class="catalog__card">
 >```
 - don't add extra wrappers if you can add styles to the tag itself
 - if you have many sections in a row, add margins either to the bottom or to the top so that it will be easier to identify how to position the next element
@@ -125,21 +125,21 @@
 >**WRONG WAY**
 >```scss
 >&__price {
->  align-items: flex-end;
+>align-items: flex-end;
 >
->  &-title {
->    line-height: 14px;
->  }
+>&-title {
+>line-height: 14px;
+>}
 >}
 >```
 >**RIGHT WAY**
 >```scss
 >&__price {
->  align-items: flex-end;
+>align-items: flex-end;
 >}
 >
 >&__price-title {
->  line-height: 14px;
+>line-height: 14px;
 >}
 >```
 
