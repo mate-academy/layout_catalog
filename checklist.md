@@ -7,32 +7,32 @@ But don't add empty lines between parent and child elements
 GOOD example:
 ```html
 <ul>
-  <li class="nav__item">
-    <a href="#home">Home</a>
-  </li>
+<li class="nav__item">
+<a href="#home">Home</a>
+</li>
 
-  <li class="nav__item">
-    <a href="#shop">Shop</a>
-  </li>
+<li class="nav__item">
+<a href="#shop">Shop</a>
+</li>
 
-  <li class="nav__item">
-    <a href="#contacts">Contacts</a>
-  </li>
+<li class="nav__item">
+<a href="#contacts">Contacts</a>
+</li>
 </ul>
 ```
 BAD example:
 ```html
 <ul>
 
-  <li class="nav__item">
-    <a href="#home">Home</a>
-  </li>
-  <li class="nav__item">
-    <a href="#shop">Shop</a>
-  </li>
-  <li class="nav__item">
-    <a href="#contacts">Contacts</a>
-  </li>
+<li class="nav__item">
+<a href="#home">Home</a>
+</li>
+<li class="nav__item">
+<a href="#shop">Shop</a>
+</li>
+<li class="nav__item">
+<a href="#contacts">Contacts</a>
+</li>
 
 </ul>
 ```
@@ -55,26 +55,26 @@ to identify how to position the next element
 GOOD example:
 ```html
 <div class="product__rating">
-  <div class="product__stars stars stars--4">
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-  </div>
+<div class="product__stars stars stars--4">
+<div class="stars__star star"></div>
+<div class="stars__star star"></div>
+<div class="stars__star star"></div>
+<div class="stars__star star"></div>
+<div class="stars__star star"></div>
+</div>
 </div>
 ```
 
 BAD example:
 ```html
 <div class="product__rating">
-  <div class="product__stars stars--4">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-  </div>
+<div class="product__stars stars--4">
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+</div>
 </div>
 
 `stars--4` is a modifier of the `stars` block, but `stars` block does not exist in HTML;
@@ -82,8 +82,8 @@ BAD example:
 ```
 
 8. [BEM & STYLES] - Don't add external styles (positioning or margins) to
-   BEM-blocks. Use mix where necessary and move all external styles under element
-   selector.
+ BEM-blocks. Use mix where necessary and move all external styles under element
+ selector.
 
 9. [BEM] - create a separate file per each BEM block styles that have the same
 name as the block
@@ -94,24 +94,24 @@ selectors inside general selector. As well as media queries.
 GOOD example:
 ```scss
 &__buy-link {
-  display: flex;
-  margin-top: 20px;
+display: flex;
+margin-top: 20px;
 
-  &:hover {
-    color: blue;
-  }
+&:hover {
+color: blue;
+}
 }
 ```
 
 BAD example:
 ```scss
 &__buy-link {
-  display: flex;
-  margin-top: 20px;
+display: flex;
+margin-top: 20px;
 }
 
 &__buy-link:hover {
-  color: blue;
+color: blue;
 }
 ```
 
@@ -142,17 +142,17 @@ BAD example:
 .stars--3 .stars__star:nth-child(-n + 3),
 .stars--4 .stars__star:nth-child(-n + 4),
 .stars--5 .stars__star:nth-child(-n + 5) {
-  background-image: url("../images/star-active.svg");
+background-image: url("../images/star-active.svg");
 }
 ```
 
 GOOD example:
 ```scss
 @for $starCount from 1 through 5 {
-    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
-      background-image: url(../images/star-active.svg);
-    }
-  }
+&--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+background-image: url(../images/star-active.svg);
+}
+}
 ```
 
 13. [LAYOUT] - Use sass functions for dynamic max-width calculation, your catalog container should work fine for any number of cards.
