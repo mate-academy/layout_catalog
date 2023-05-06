@@ -1,0 +1,27 @@
+.stars {
+  display: flex;
+
+  &__star {
+    @include starSquare($star-size);
+    background: url("../images/star.svg") center no-repeat;
+
+    &:not(:first-child) {
+      margin-left: 4px;
+    }
+  }
+}
+
+@for $active-stars from 1 through 5 {
+  .stars--#{$active-stars} :nth-child(-n + #{$active-stars}) {
+    background: url("../images/star-active.svg") center no-repeat;
+  }
+}
+
+@for $indexStars from 0 through 3 {
+  .stars--#{$indexStars} {
+    display: none;
+  }
+  .stars--5 {
+    display: none;
+  }
+}

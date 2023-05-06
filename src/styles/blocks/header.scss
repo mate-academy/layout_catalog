@@ -1,0 +1,52 @@
+.header {
+  @extend %element-location;
+  height: 60px;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    @include logoSquare($logo-size);
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 23px 0;
+    font-size: 12px;
+    color: $color-main-text;
+    text-decoration: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link:hover {
+    color: $color-link-button-hover;
+  }
+}
+
+.is-active {
+  color: $color-link-button-hover;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $color-link-button-hover;
+    bottom: 0;
+    right: 0;
+  }
+}
