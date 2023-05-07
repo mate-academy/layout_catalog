@@ -1,10 +1,9 @@
-$top-shift: 48px;
 $size: 200px;
 $shift-right: 50px;
 $shift-bottom: 48px;
 
 @function getWidth ($size, $shift-right) {
-  @return ($size*4) + ($shift-right*6);
+  @return ($size*4) + ($shift-right*3);
 }
 
 %containers {
@@ -23,12 +22,14 @@ $shift-bottom: 48px;
   display: flex;
   flex-wrap: wrap;
   width: getWidth(200px, 50px);
-  padding: 51px 50px 48px;
-  margin: auto;
+  margin: 50px auto 0;
 
   &__card {
     padding-right: #{$shift-right};
     padding-bottom: #{$shift-bottom};
+  }
+  &__card:nth-child(4n+4) {
+    padding-right: 0;
   }
 
   &__first {
