@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](Marinakyrychynska.github.io/layout_catalog/)
-- [TEST REPORT LINK](Mariychynska.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://Marinakyrychynska.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://Marinakyrychynska.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
