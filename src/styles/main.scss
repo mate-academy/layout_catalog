@@ -1,12 +1,15 @@
-@import "./blocks/card.scss";
-@import "./blocks/stars.scss";
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./blocks/card";
+@import "./blocks/stars";
 
 html {
   font-family: Roboto, sans-serif;
 }
 
 body,
-p {
+p,
+h2 {
   margin: 0;
 }
 
@@ -14,7 +17,7 @@ p {
   box-sizing: border-box;
 }
 
-.navi {
+.navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +31,7 @@ p {
   }
 }
 
-.nav {
+.nav-container {
   &__list {
     display: flex;
     background: #fff;
@@ -48,6 +51,21 @@ p {
     margin-right: 20px;
     color: #000;
 
+    &--active {
+      position: relative;
+      color: #00acdc;
+    }
+
+    &--active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      background: #00acdc;
+      border-radius: 8px;
+    }
+
     &--shift {
       margin-right: 0;
     }
@@ -56,24 +74,9 @@ p {
   &__item {
     list-style-type: none;
   }
-}
 
-.is-active {
-  position: relative;
-  color: #00acdc;
-}
-
-.is-active,
-.nav__link:hover {
-  color: #00acdc;
-}
-
-.is-active::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  bottom: 0;
-  background: #00acdc;
-  border-radius: 8px;
+  &__link--active,
+  &__link:hover {
+    color: #00acdc;
+  }
 }
