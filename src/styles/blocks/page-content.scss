@@ -1,0 +1,28 @@
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  &__list {
+    margin-top: 50px;
+    margin-bottom: 72px;
+    list-style: none;
+    width: getListWidth($width-of-card, $cards-in-row, $width-between-cards);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 48px;
+    margin-bottom: 46px;
+
+    &:nth-child(#{$cards-in-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + #{$cards-in-row}) {
+      margin-bottom: 0;
+    }
+  }
+}
