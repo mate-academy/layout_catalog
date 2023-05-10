@@ -15,10 +15,8 @@
   }
 }
 
-@for $i from 1 through 5 {
-  @for $j from 1 through $i {
-    .stars--#{$i} .stars__star:nth-child(#{$j}) {
-      background-image: url("../images/star-active.svg");
-    }
+@for $starCount from 1 through 5 {
+  &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+    background-image: url("../images/star-active.svg");
   }
 }
