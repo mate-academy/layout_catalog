@@ -1,0 +1,48 @@
+.navigation {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    font-weight: 500;
+
+    height: 60px;
+
+    @extend %text-normal;
+    color: $c-main;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $c-blue;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $c-blue;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 4px;
+    width: 100%;
+
+    border-radius: 8px;
+    background-color: $c-blue;
+    color: $c-blue;
+
+  }
+}

@@ -1,0 +1,17 @@
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__card {
+    width: $cardWidth;
+    height: max-content;
+
+    &:not(:nth-child(#{$cardsInRow}n)) {
+      margin-right: $horizonMarginBetweenCards;
+    }
+
+    &:not(:nth-last-child(-n + #{$cardsInRow})) {
+      margin-bottom: $verticalMarginBetweenCards;
+    }
+  }
+}
