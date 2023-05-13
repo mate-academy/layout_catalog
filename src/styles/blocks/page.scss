@@ -2,25 +2,27 @@
   font-family: "Roboto", sans-serif;
   &__header-block {
     padding: 0 $header-side-padding;
-    margin-bottom: 49px;
   }
   &__card {
     width: $card-width;
-    margin-right: 46px;
-    &:nth-child(4n) {
+    margin-right: $card-side-shift;
+    &:nth-child(#{$col-count}n) {
       margin-right: 0;
     }
 
     @for $ind from 1 through $col-count {
       &--number--#{$ind} {
-        margin-bottom: 45px;
+        margin-bottom: 46px;
       }
     }
   }
-  &__main-block {
-    width: $col-count * ($card-width + $card-side-shift) - $card-side-shift;
+
+  &__card-block {
+    width: $card-block-width;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
