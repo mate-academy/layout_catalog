@@ -1,0 +1,24 @@
+.stars {
+  display: flex;
+
+  &__star {
+    @include square(16px);
+    margin-right: 4px;
+    border-radius: 0.5px;
+    padding: 2px;
+
+    &::before {
+      content: "";
+      display: block;
+      @include square(12px);
+      background-image: url("../images/star.svg");
+      background-size: cover;
+    }
+  }
+
+  @for $index from 1 through 5 {
+    &--#{$index} &__star:nth-child(-n + #{$index})::before {
+      background-image: url("../images/star-active.svg");
+    }
+  }
+}
