@@ -1,0 +1,47 @@
+// $main-accent: #060B35;
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 20px;
+    text-transform: uppercase;
+    line-height: 14px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-accent-color;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $blue-accent-color;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-accent-color;
+
+  &::after {
+    background: $blue-accent-color;
+    content: "";
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 8px;
+  }
+}
