@@ -1,4 +1,3 @@
-/* #region stars */
 .stars {
   display: flex;
 
@@ -6,17 +5,14 @@
     width: 16px;
     height: 16px;
 
-    background: no-repeat url(/images/star.svg) center;
-
-  }
-
-  &__star:not(:last-child) {
     margin-right: 4px;
 
-    background: no-repeat url(/images/star-active.svg) center;
-
+    background: no-repeat url(/images/star.svg) center;
   }
 
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
 }
-
-/* #endregion */
