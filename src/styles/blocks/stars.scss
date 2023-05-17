@@ -1,0 +1,32 @@
+@import "../utils/variables";
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 16px 0;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: flex-end;
+    font-style: normal;
+    padding-left: 18.5px;
+    font-size: 10px;
+    line-height: 16px;
+    color: $main-accent;
+  }
+}
