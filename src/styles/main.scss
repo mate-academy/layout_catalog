@@ -1,55 +1,38 @@
-$color-dark: #060b35;
-$color-small: #616070;
-$color-button: #00acdc;
-$color-bck: #f3f3f3;
-$width-card: 200px;
-$card-margin-right: 48px;
-$padding-horizont: 41px;
-$padding-vertical: 51px;
-$card-margin-bottom: 46px;
-$width: ($width-card * 4) + ($card-margin-right * 3) + (2 * $padding-horizont);
-$head-padding: 0 50px;
-$link-rightmarg: 20px;
-$link-padding: 23px 0;
-$font-ten: 10px;
-$font-twelve: 12px;
+@import "../styles/vars/variables.scss";
+@import "../styles/mixins/mixin.scss"; 
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  width: 100%;//?????????
-  min-width: $width;//???????
+  width: 100%;
 }
-
-  
+ 
 .header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  // height: 60px;
-  // min-width: 1024px; //?????
+  min-width: 924px;
   padding: $head-padding;
 
   &__logo {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    @include square($size);
   }
 }
   
-.nav_list {
+.nav__list {
   display: flex;
   margin: 0;
   padding: 0;
@@ -72,10 +55,9 @@ body {
     padding: $link-padding;
     font-weight: 500;
     font-size: $font-twelve;
-    line-height: 14px; //?????????????
   }
 
-  &__link_a:active::after {
+  &__is-active::after {
     content: "";
     position: absolute;
     left: 0;
@@ -107,29 +89,43 @@ body {
   border-radius: 8px;
 }
 
-.catalog {
+.main {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  padding: $padding-vertical $padding-horizont;
-  // padding: 50px 0;
-  // width: 944px;
+  width: $width;
   min-width: $width;
-  margin: 0 auto;
-  flex-shrink: 0;
-  max-width: 1200px;
+  // margin-bottom: -48px;
+  padding-top: $padding-vertical;
+  
+}
+
+.main__container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 73px;
+  // width: $width;
+  
+  // padding: 51px 41px 73px;
+  
 }
 
 .card {
-  width: $width-card;
-  border: 1px solid #{$color-bck};
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   padding: 16px;
-  margin-right: $card-margin-right;
-  margin-bottom: $card-margin-bottom;//????????????? the second line 73
+  width: $width-card;
+  border: 1px solid #{$color-bck};
+  border-radius: 5px;
   background-color: #fff;
+  justify-content: center;
+  // align-items: center;
+  font-weight: 400;
+  font-size: 10px;
+  // line-height: 14px;
+  color: #060b35;
+  margin-right: $card-margin-right;
+  // margin-bottom: $card-margin-bottom;
 
   &__img {
     width: 160px;
@@ -144,7 +140,7 @@ body {
     line-height: 18px;
     color: #{$color-dark};
     margin-bottom: 4px;
-    // width: 166px;
+    margin-top: 0;
   }
   
   &__type {
@@ -153,9 +149,9 @@ body {
     color: #{$color-small};
     font-style: normal;
     margin-bottom: 16px;
+    margin-top: 0;
   }
 
-  
   &__review-container {
     display: flex;
     justify-content: space-between;
@@ -171,14 +167,15 @@ body {
   &__price {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
   }
   
   &__price-label {
     font-size: $font-twelve;
     line-height: 18px;
     color: #{$color-small};
-    padding-top: 24px;
+    margin-top: 24px;
+    margin-bottom: 0;
   }
 
     
@@ -187,7 +184,8 @@ body {
     line-height: 18px;
     font-weight: 700;
     color: #{$color-dark};
-    padding-top: 24px;
+    margin-top: 24px;
+    margin-bottom: 0;
   }
   
   &__buy-link {
@@ -199,10 +197,13 @@ body {
     color: $color-bck;
     text-decoration: none;
     font-weight: 700;
-    line-height: 16px;
+    line-height: 114%;
+    font-size: 14px;
+    font-style: normal;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     cursor: pointer;
-    padding: 12px 70px 12px 69px;
+    padding: 12px 0;
     margin-top: 16px;
     border: 1px solid #{$color-button};
   }
@@ -215,6 +216,18 @@ body {
   &:nth-child(4n) {
     margin-right: 0;
   }
+
+  &:nth-child(-n+4) {
+    margin-bottom: 46px;
+  }
+
+  // &:nth-last-child(-n + 4) {
+  //   padding-bottom: 50px;
+  // }
+
+  // &:nth-child(-n+4) {
+  //   margin-bottom: 46px;
+  // }
 }
 
 .stars {
@@ -239,5 +252,4 @@ body {
       background-image: url(../images/star-active.svg);
     }
   }
-  
 }
