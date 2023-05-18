@@ -2,114 +2,109 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  &__product {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    max-width: maxWidthOfProduct($cardWidth, $cardMarginRight, $cardsInRow);
+  }
 }
 
-.product {
+.card {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 50px;
-  padding-bottom: 25px;
-  max-width: maxWidthOfProduct($cardWidth, $cardMarginRight, $cardsInRow);
+  flex-direction: column;
+  margin-bottom: 46px;
+  margin-right: 48px;
+  padding: 16px;
+  width: 200px;
+  border: solid #f3f3f3 1px;
+  border-radius: $card-border-radius;
 
-  &-card {
-    margin-bottom: 46px;
-    margin-right: 48px;
-    padding: 16px;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__image {
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-top: 16px;
+    height: 134px;
+  }
+
+  &__name {
+    margin-top: 40px;
+    line-height: 18px;
+    color: $main-text-color;
+    font-weight: $font-weight-normal;
+    font-size: $main-font-size;
+  }
+
+  &__wrap-code {
+    margin-top: 4px;
+  }
+
+  &__code {
+    line-height: 14px;
+    font-size: $small-font-size;
+    font-weight: $font-weight-thin;
+    color: $secondary-text-color;
+  }
+
+  &__stars-reviews {
     display: flex;
-    flex-direction: column;
-    width: 200px;
-    border: solid #f3f3f3 1px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    font-size: $small-font-size;
+    font-weight: $font-weight-thin;
+    color: $main-text-color;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  &__price {
+    line-height: 18px;
+    font-size: $main-font-size;
+    font-weight: $font-weight-thin;
+    color: $secondary-text-color;
+    text-align: center;
+  }
+
+  &__value {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &__button {
+    width: 166px;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $color-button-white;
+    background-color: $link-hover-color;
+    border: transparent 1px;
     border-radius: $card-border-radius;
 
-    &:nth-child(4n) {
-      margin-right: 0;
-    }
-
-    &:nth-last-child(-n + 4) {
-      margin-bottom: 0;
-    }
-
-    &-image {
-      padding-right: 3px;
-      padding-left: 3px;
-      height: 134px;
-      margin-top: 16px;
-    }
-
-    &-name {
-      margin-top: 40px;
-      color: $main-text-color;
-      font-weight: $font-weight-normal;
-      font-size: $main-font-size;
-      line-height: 18px;
-    }
-
-    &-container-code {
-      margin-top: 4px;
-    }
-
-    &-code {
-      line-height: 14px;
-      font-size: $small-font-size;
-      font-weight: $font-weight-thin;
-      color: $secondary-text-color;
-    }
-
-    &-stars-reviews {
-      margin-top: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    &-reviews {
-      font-size: $small-font-size;
-      font-weight: $font-weight-thin;
-      color: $main-text-color;
-    }
-
-    &-cost {
-      margin-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    &-price {
-      font-size: $main-font-size;
-      font-weight: $font-weight-thin;
-      line-height: 18px;
-      color: $secondary-text-color;
-      text-align: center;
-    }
-
-    &-value {
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 18px;
-      color: $main-text-color;
-    }
-
-    &-button {
-      margin-top: 16px;
-      border: transparent 1px;
-      border-radius: $card-border-radius;
-      width: 166px;
-      text-align: center;
-      line-height: 40px;
-      color: $color-button-white;
-      background-color: $link-hover-color;
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-
-      &:hover {
-        cursor: pointer;
-        background-color: $color-button-white;
-        color: $link-hover-color;
-        border: solid $link-hover-color 1px;
-      }
+    &:hover {
+      color: $link-hover-color;
+      background-color: $color-button-white;
+      border: solid $link-hover-color 1px;
+      cursor: pointer;
     }
   }
 }
