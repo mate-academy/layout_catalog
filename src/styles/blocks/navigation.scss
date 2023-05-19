@@ -1,0 +1,60 @@
+@import "../utils/_variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+  margin-right: 50px;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    line-height: 60px;
+    color: $color-text;
+
+    &:hover {
+      color: $color-accent-blue;
+    }
+  }
+}
+
+.logo__img {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0 0 50px;
+}
+
+.is-active {
+  position: relative;
+  color: $color-accent-blue;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    background-color: $color-accent-blue;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    border-radius: 8px;
+  }
+
+}

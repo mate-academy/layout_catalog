@@ -1,0 +1,119 @@
+@import "../utils/_variables";
+
+main {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: (4 * $width-card) + (3 * $gap-card);
+  margin-top: 50px;
+  margin-bottom: 72px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: $width-card;
+    margin-right: $gap-card;
+    margin-bottom: $gap-card - 2px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    background: $color-background;
+    padding: 0 16px 16px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &__foto {
+      margin: 32px 3px 0;
+      width: 160px;
+      height: 134px;
+    }
+
+    &__title {
+      margin-top: 40px;
+      width: 166px;
+      height: 36px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: $htmlFont-weight;
+      color: $color-text;
+    }
+
+    &__product-code {
+      display: flex;
+      margin-top: 4px;
+      width: 98px;
+      height: 14px;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+      color: $color-text-grey;
+    }
+
+    &__price-word {
+      display: flex;
+      align-items: flex-end;
+      flex: none;
+      flex-grow: 0;
+      margin-top: 24px;
+      width: 31px;
+      height: 18px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $color-text-grey;
+      order: 0;
+    }
+
+    &__price {
+      display: flex;
+    }
+
+    &__price-number {
+      display: flex;
+      align-items: flex-end;
+      text-align: right;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      margin: 24px 16px 0 85px;
+      height: 18px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $color-text;
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 16px;
+      width: 166px;
+      height: 40px;
+      border: 1px $color-accent-blue solid;
+      background: $color-accent-blue;
+      border-radius: 5px;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $color-background;
+
+      &:hover {
+        background: $color-background;
+        color: $color-accent-blue;
+        border: 1px solid $color-accent-blue;
+        border-radius: 5px;
+      }
+    }
+  }
+}
