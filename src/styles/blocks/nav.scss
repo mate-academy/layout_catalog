@@ -1,0 +1,59 @@
+@import "../utils/variables";
+
+.nav {
+  &__link {
+    position: relative;
+    margin: 0 10px;
+    padding: 24px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #060b35;
+    line-height: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  &__item {
+    display: contents;
+    list-style-type: none;
+  }
+  
+  
+  &__link:hover,
+  &__link:active {
+    color: #{$main-color};
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.is-active::after,
+.nav__a:active::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  content: " ";
+  height: 4px;
+  width: 100%;
+  background-color: #{$main-color};
+  border-radius: 2px;
+}
+
+.is-active {
+  color: #{$main-color};
+}
+
+.nav__list .nav__item:first-child .nav__link {
+  margin-left: 0;
+}
+
+.nav__list .nav__item:last-child .nav__link {
+  margin-right: 0;
+}
