@@ -1,0 +1,91 @@
+.product-grid {
+  @extend %flex-style;
+  flex-wrap: wrap;
+
+  max-width: catalogSize(
+    $catalog-item-width,
+    $catalog-num-of-item,
+    $catalog-margin-btw-item
+  );
+
+  &__card:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  padding: 32px 16px 16px;
+  @extend %border-style;
+  border-color: #f3f3f3;
+
+  &__photo {
+    width: 160px;
+    height: 134px;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    @include fontStyle (12px, 18px, 500);
+    line-height: 18px;
+    color: $text-color_main-accent;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    color: $text-color__secondary-color;
+  }
+
+  &__reviews {
+    @extend %flex-style;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews-ammount {
+    color: $text-color__secondary-color;
+    line-height: 16px;
+  }
+
+  &__price-block {
+    @extend %flex-style;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-color__secondary-color;
+  }
+
+  &__price-ammount {
+    @include fontStyle(16px, auto, 700);
+    color: $text-color_main-accent;
+  }
+
+  &__button-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 0;
+    background: $accent-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $basic-color;
+    @include fontStyle(14px, 16px, 700);
+    @extend %border-style;
+    line-height: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+      background: $basic-color;
+      color: $accent-color;
+      border-color: $accent-color;
+    }
+  }
+}
