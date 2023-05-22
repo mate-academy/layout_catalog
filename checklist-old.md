@@ -95,14 +95,14 @@
 - BEM doesn't allow nesting selectors, it increases selectors specificity and code nesting
 >**WRONG WAY**
 >```scss
->.card__rating {
+>&__rating {
 >  height: 15px;
 >  display: flex;
 >
->  .card__stars {
+>  &__stars {
 >    display: flex;
 >
->    .card__star {
+>    &__star {
 >      height: 15px;
 >    }
 >  }
