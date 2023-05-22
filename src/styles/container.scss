@@ -1,0 +1,25 @@
+@mixin column-count($count) {
+  grid-template-columns: repeat($count, $card-width);
+}
+
+.container {
+  display: grid;
+  column-gap: 50px;
+  row-gap: 48px;
+  padding: 51px 41px;
+  justify-content: center;
+  align-content: center;
+  @include column-count(1);
+
+  @media (min-width: 488px) {
+    @include column-count(2);
+  }
+
+  @media (min-width: 768px) {
+    @include column-count(3);
+  }
+
+  @media (min-width: 1024px) {
+    @include column-count(4);
+  }
+}
