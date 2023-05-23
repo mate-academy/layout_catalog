@@ -1,0 +1,17 @@
+@function dynamicWidth($content) {
+  @return 200px * $content + ($content - 1) * 48 + 40 * 2;
+}
+
+.content {
+  display: flex;
+  padding: 50px 40px;
+  width: dynamicWidth($card-per-row);
+  margin: auto;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+  }
+}
