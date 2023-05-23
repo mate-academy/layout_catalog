@@ -1,0 +1,46 @@
+@mixin buildColums {
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $cardWidth);
+  }
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(3, $cardWidth);
+    $columnNumber: 3;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, $cardWidth);
+    $columnNumber: 2;
+  }
+
+  @media (max-width: 488px) {
+    grid-template-columns: repeat(1, $cardWidth);
+    $columnNumber: 1;
+  }
+}
+
+@mixin setMarginLeft {
+  @media (min-width: 1024px) {
+    &:not(:nth-child(4n + 1)) {
+      margin-left: 48px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .card:nth-child(3n) {
+      margin-left: 48px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card:nth-child(2n) {
+      margin-left: 48px;
+    }
+  }
+
+  @media (max-width: 488px) {
+    .card:nth-child(1n) {
+      margin-left: 48px;
+    }
+  }
+}
