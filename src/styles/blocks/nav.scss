@@ -1,0 +1,45 @@
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin-top: 19px;
+  }
+
+  &__item {
+    position: relative;
+    white-space: nowrap;
+    list-style: none;
+  }
+  
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: $text-main-color;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 23px 0;
+  }
+
+  &__link:hover {
+    color: $link-color;
+  }
+}
+
+.is-active {
+  color: $link-color;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: $link-color;
+  border-radius: 8px;
+  height: 4px;
+  width: 100%;
+  bottom: -22px;
+}
