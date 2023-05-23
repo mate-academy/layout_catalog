@@ -1,8 +1,13 @@
 
-main {
+.main {
   display: flex;
   justify-content: center;
   align-content: stretch;
+
+  &__catalog {
+    margin-top: 50px;
+    margin-bottom: 72px;
+  }
 }
 
 .catalog {
@@ -10,16 +15,17 @@ main {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  width: (4 * $width-card) + (3 * $gap-card);
-  margin-top: 50px;
-  margin-bottom: 72px;
+  width: $total-cards + $total-gaps;
+
+  &__card {
+    margin-right: $gap-card;
+    margin-bottom: $gap-card - $card-bottom-margin-adjustment;
+  }
 
   .card {
     display: flex;
     flex-direction: column;
     width: $width-card;
-    margin-right: $gap-card;
-    margin-bottom: $gap-card - 2px;
     border: 1px solid #f3f3f3;
     border-radius: 5px;
     background: $color-background;
@@ -29,7 +35,7 @@ main {
       margin-right: 0;
     }
 
-    &__foto {
+    &__photo {
       margin: 32px 3px 0;
       width: 160px;
       height: 134px;

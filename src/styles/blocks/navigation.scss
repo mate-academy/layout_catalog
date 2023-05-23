@@ -6,8 +6,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.nav {
+.navigation {
   margin-right: 50px;
+}
+
+.nav {
 
   &__list {
     display: flex;
@@ -29,6 +32,23 @@
     line-height: 60px;
     color: $color-text;
 
+    &.is-active {
+      position: relative;
+      color: $color-accent-blue;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        background-color: $color-accent-blue;
+        height: 4px;
+        left: 0;
+        bottom: 0;
+        border-radius: 8px;
+      }
+
+    }
+
     &:hover {
       color: $color-accent-blue;
     }
@@ -39,21 +59,4 @@
   display: flex;
   justify-content: flex-start;
   margin: 10px 0 0 50px;
-}
-
-.is-active {
-  position: relative;
-  color: $color-accent-blue;
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    background-color: $color-accent-blue;
-    height: 4px;
-    left: 0;
-    bottom: 0;
-    border-radius: 8px;
-  }
-
 }

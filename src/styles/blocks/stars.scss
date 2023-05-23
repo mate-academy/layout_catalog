@@ -3,45 +3,44 @@
   display: flex;
   margin-top: 16px;
 
-}
+  .stars {
+    display: flex;
 
-.stars {
-  display: flex;
-
-  &__star {
-    margin-left: 4px;
-    width: 16px;
-    height: 16px;
-    border-radius: 0.5px;
-    background-image: url(../images/star.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    list-style: none;
-  }
-
-  &__star:first-child {
-    margin-left: 0;
-  }
-
-  @for $starCount from 1 through 5 {
-    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
-      background-image: url(../images/star-active.svg);
+    &__star {
+      margin-left: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 0.5px;
+      background-image: url(../images/star.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      list-style: none;
     }
-  }
 
-  &-reviews {
-    align-items: flex-end;
-    margin-left: 17px;
-    width: 53px;
-    height: 16px;
-    font-size: 10px;
-    line-height: 14px;
-    font-weight: 400;
-    font-style: normal;
-    text-align: right;
-    color: $color-text;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    &__star:first-child {
+      margin-left: 0;
+    }
+
+    @for $starCount from 1 through 5 {
+      &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+
+    &__reviews {
+      align-items: flex-end;
+      margin-left: 17px;
+      width: 53px;
+      height: 16px;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+      font-style: normal;
+      text-align: right;
+      color: $color-text;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
   }
 }
