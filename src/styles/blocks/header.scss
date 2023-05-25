@@ -1,0 +1,49 @@
+.header {
+  @include flex (flex, center, space-between, row);
+  padding: 0 50px;
+  background: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+
+  &__logo {
+    display: block;
+    @include sizes (40px, 40px);
+  }
+
+  &__nav-list {
+    @include flex (flex, center, flex-end, row);
+    list-style: none;
+  }
+
+  &__nav-item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__nav-link {
+    display: block;
+    position: relative;
+    @include fonts (12px, 14px, 500);
+    padding: 23px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-main-accent;
+
+    &:hover {
+      color: $color-accent-blue;
+    }
+  }
+
+  .is-active {
+    color: $color-accent-blue;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include sizes (37px, 4px);
+      background-color: $color-accent-blue;
+      border-radius: 8px;
+    }
+  }
+}
