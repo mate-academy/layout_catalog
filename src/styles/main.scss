@@ -1,3 +1,36 @@
+@import "utils/variables";
+@import "block/header.scss";
+@import "block/card.scss";
+@import "block/stars.scss";
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: ($card-width * 4) + ($card-margin-rite * 3) + ($main-pading * 2);
+  margin: 0 auto;
+  padding: 50px $main-pading;
+
+  & > .card:nth-last-child(-n + 4) {
+    margin-top: 46px;
+  }
+
+  & > .card:nth-child(4n) {
+    margin-right: 0;
+  }
+
 }
