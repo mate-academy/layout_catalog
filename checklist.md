@@ -55,12 +55,12 @@ to identify how to position the next element
 GOOD example:
 ```html
 <div class="product__rating">
-  <div class="product__stars stars stars--4">
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
-    <div class="stars__star star"></div>
+  <div class="card__stars stars stars--4">
+    <div class="stars__star star star"></div>
+    <div class="stars__star star star"></div>
+    <div class="stars__star star star"></div>
+    <div class="stars__star star star"></div>
+    <div class="stars__star star star"></div>
   </div>
 </div>
 ```
@@ -68,7 +68,7 @@ GOOD example:
 BAD example:
 ```html
 <div class="product__rating">
-  <div class="product__stars stars--4">
+  <div class="card__stars stars stars--4">
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
@@ -137,11 +137,11 @@ $color-accent-blue: #00acdc;
 
 BAD example:
 ```scss
-.stars--1 .stars__star:nth-child(-n + 1),
-.stars--2 .stars__star:nth-child(-n + 2),
-.stars--3 .stars__star:nth-child(-n + 3),
-.stars--4 .stars__star:nth-child(-n + 4),
-.stars--5 .stars__star:nth-child(-n + 5) {
+.stars--1 .stars__star star:nth-child(-n + 1),
+.stars--2 .stars__star star:nth-child(-n + 2),
+.stars--3 .stars__star star:nth-child(-n + 3),
+.stars--4 .stars__star star:nth-child(-n + 4),
+.stars--5 .stars__star star:nth-child(-n + 5) {
   background-image: url("../images/star-active.svg");
 }
 ```
@@ -149,7 +149,7 @@ BAD example:
 GOOD example:
 ```scss
 @for $starCount from 1 through 5 {
-    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+    &--#{$starCount} .stars__star star:nth-child(-n + #{$starCount}) {
       background-image: url(../images/star-active.svg);
     }
   }
