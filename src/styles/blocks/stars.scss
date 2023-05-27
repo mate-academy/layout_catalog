@@ -1,6 +1,6 @@
 .card__stars {
   display: flex;
-  margin: 16px;
+  margin: 0 16px;
 }
 
 .stars__star {
@@ -11,10 +11,10 @@
   background-position: center;
   background-repeat: no-repeat;
   margin-right: 4px;
-}
 
-@for $starCount from 1 through 8 {
-  .stars--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
-    background-image: url("../images/star-active.svg");
+  @for $starCount from 1 through 8 {
+    .stars--#{$starCount} &:nth-child(-n + #{$starCount}) {
+      background-image: url("../images/star-active.svg");
+    }
   }
 }
