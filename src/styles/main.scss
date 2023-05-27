@@ -1,17 +1,10 @@
 @import "./navigation";
 @import "./stars.scss";
-@import "./block.scss";
 @import "./card";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 * {
   box-sizing: border-box;
-}
-
-p,
-a {
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -22,40 +15,22 @@ body {
 }
 
 .container {
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  width: 1024px;
-  margin-bottom: 72px;
+  width: 950px;
+  padding-bottom: 72px;
+  padding-top: 50px;
+
+  &__card {
+    margin-right: 48px;
+  }
 }
 
-.card {
-  flex: 0 1 198px;
+.container__card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.container__card:nth-last-child(-n + 4) {
   margin-top: 46px;
-  margin-left: 40px;
-  margin-right: 8px;
-}
-
-.card:nth-child(4),
-.card:nth-child(8) {
-  margin-left: 40px;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1200px;
-  }
-
-  .card:nth-child(1),
-  .card:nth-child(5) {
-    margin-left: 128px;
-  }
-
-  .card:nth-child(4),
-  .card:nth-child(8) {
-    margin-right: 128px;
-  }
-
-  .header {
-    width: 1200px;
-  }
 }
