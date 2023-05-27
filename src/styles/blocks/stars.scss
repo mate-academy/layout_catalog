@@ -1,0 +1,17 @@
+// these stars are used to rate products
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background: url("../images/star.svg") no-repeat center;
+  }
+}
+
+@for $starCount from 1 through 5 {
+  .stars--#{$starCount} :nth-child(-n + #{$starCount}) {
+    background-image: url("../images/star-active.svg");
+  }
+}
