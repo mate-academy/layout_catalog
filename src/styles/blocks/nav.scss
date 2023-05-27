@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(8, max-content);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style-type: none;
+    text-transform: uppercase;
+  }
+
+  &__marker:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $color-dark-blue;
+    height: 100%;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color $transition-speed;
+  
+    &:hover,
+    &--active {
+      color: $color-light-blue;
+    }
+
+    &--active::after {
+      content: "";
+      height: 4px;
+      width: 100%;
+      background: $color-light-blue;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
