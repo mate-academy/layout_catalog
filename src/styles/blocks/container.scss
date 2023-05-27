@@ -1,0 +1,32 @@
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
+  $breakpoints: ();
+  @for $column-count from $min-column-count through $max-column-count {
+    $breakpoint: break($row-card-shift, $card-row-interval, $column-count);
+    $width: size($row-card-shift, $card-row-interval, $column-count);
+  
+    $breakpoints: append($breakpoints, $breakpoint $width #{$column-count},);
+  }
+
+  @each $breakpoint, $width, $column-count in $breakpoints {
+    @media (min-width: #{$breakpoint}) {
+      width: #{$width};
+
+      &__card:nth-child(n) {
+        margin-right: $card-row-interval;
+        margin-top: $card-column-interval;
+      }
+
+      &__card:nth-child(#{$column-count}n) {
+        margin-right: 0;
+      }
+
+      &__card:nth-child(-n + #{$column-count}) {
+        margin-top: 0;
+      }
+    }
+  }
+}
