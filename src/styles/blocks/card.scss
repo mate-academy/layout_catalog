@@ -1,0 +1,90 @@
+.card {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  width: $card-width;
+  padding: 15px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  align-items: center;
+  margin-right: $card-horizontal-gap;
+  margin-bottom: $card-vertical-gap;
+
+  &:nth-child(#{$columns}n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + #{$columns}) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    box-sizing: content-box;
+    padding-top: 16px;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    @include font-weight-size-height (500);
+    color: $main-text-color;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    @include font-weight-size-height (400, 10px, 14px);
+    align-self: flex-start;
+    color: $additional-text-color;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    @include justify-space-between;
+    width: 100%;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  &__number-of-reviews {
+    @include font-weight-size-height (400, 10px, 14px);
+    color: $main-text-color;
+    text-align: right;
+  }
+
+  &__price {
+    @include justify-space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    @include font-weight-size-height ();
+    color: $additional-text-color;
+  }
+
+  &__price-number {
+    @include font-weight-size-height (700, 16px);
+    color: $main-text-color;
+  }
+
+  &__button {
+    @include justify-center;
+    @include font-weight-size-height (700, 14px, 16px);
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background: $link-color;
+    border-radius: 5px;
+    border: 1px solid $link-color;
+    color: $additional-button-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $additional-button-color;
+      color: $link-color;
+    }
+  }
+}
