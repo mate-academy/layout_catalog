@@ -5,24 +5,26 @@
   }
   &__card {
     width: $card-width;
-    margin-right: $card-side-shift;
-    &:nth-child(#{$col-count}n) {
-      margin-right: 0;
-    }
-
-    @for $ind from 1 through $col-count {
-      &--number--#{$ind} {
-        margin-bottom: 46px;
-      }
-    }
   }
 
   &__card-block {
-    width: $card-block-width;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 50px;
+    display: grid;
+    row-gap: 48px;
+    column-gap: 48px;
+    justify-content: center;
+    @media (min-width: 1024px) {
+      @include columns (4);
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @include columns (3);
+    }
+    @media (min-width: 488px) and (max-width: 767px) {
+      @include columns (2);
+    }
+    @media (max-width: 487px) {
+      @include columns (1);
+    }
   }
 }
