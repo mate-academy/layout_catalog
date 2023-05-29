@@ -1,0 +1,104 @@
+.main {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, $width-card);
+  row-gap: 46px;
+  column-gap: 48px;
+  padding: 50px 0 72px;
+  justify-content: center;
+}
+
+.card {
+  padding: 32px 16px 16px;
+  width: $width-card;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  @include transitionProperty(#{$value-transition});
+
+  &__images {
+    align-self: center;
+    width: $image-width;
+    height: $image-height;
+    margin: 0;
+  }
+
+  &__describe {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+
+    &-name {
+      margin: 0;
+      line-height: 18px;
+      font-weight: 500;
+      font-size: $size-text-medium;
+      color: $color-text-dark;
+    }
+
+    &-code {
+      font-weight: 400;
+      margin-top: 4px;
+      font-size: $size-text-small;
+      color: $color-text;
+    }
+  }
+  &:hover {
+    @include transformHover(#{$value-scale});
+  }
+  &:hover &__describe-name {
+    color: $color-hover;
+  }
+
+  &__stars {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    &-text {
+      color: $color-text;
+      font-size: $size-text-small;
+      text-align: left;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    &-text {
+      font-size: $size-text-medium;
+      color: $color-text;
+    }
+    &-number {
+      font-weight: 700;
+      font-size: $size-text-biggest;
+      color: $color-text-dark;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    &-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-text-button;
+      font-weight: 700;
+      font-size: $size-text-big;
+      line-height: 14px;
+      text-decoration: none;
+      padding: 12px 69px;
+      background-color: $color-button;
+      border-radius: 5px;
+      border: 1px solid $color-button;
+    }
+    &:hover &-text:hover {
+      background-color: $color-text-button;
+      color: $color-button;
+    }
+  }
+}
