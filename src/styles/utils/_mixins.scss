@@ -1,0 +1,48 @@
+@mixin fontStyle(
+  $font-size: 12px,
+  $font-weight: 400,
+  $line-height: 1,
+  $color: $color-main-accent
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin hover($property, $toValue, $nestedElem: false) {
+  transition: $property 0.3s ease;
+
+  @if $nestedElem {
+    &__#{$nestedElem} {
+      transition: $property 0.3s ease;
+    }
+
+    &:hover > &__#{$nestedElem} {
+      #{$property}: $toValue;
+    }
+  }
+  @else {
+    &:hover {
+      #{$property}: $toValue;
+    }
+  }
+}
+
+@mixin mediaQueries {
+  @each $min-width, $cards-count in $cards-in-row {
+    @media screen and (min-width: #{$min-width}) {
+      &__container {
+        max-width: containerMaxWitdh(
+          $cards-count,
+          $card-width,
+          $cards-column-gap
+        );
+      }
+
+      &__cards {
+        grid-template-columns: repeat($cards-count, $card-width);
+      }
+    }
+  }
+}

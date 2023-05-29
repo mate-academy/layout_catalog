@@ -1,0 +1,37 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+    @include fontStyle($font-weight: 500, $line-height: 116.6%);
+    @include hover(color, $color-blue-accent);
+
+    &.is-active {
+      color: $color-blue-accent;
+    }
+
+    &.is-active::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      bottom: 0;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $color-blue-accent;
+    }
+  }
+}
