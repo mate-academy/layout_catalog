@@ -1,0 +1,49 @@
+@import "../abstracts/variables";
+
+.nav {
+  height: 100%;
+  &__list {
+    height: inherit;
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    height: inherit;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 23px 0;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    color: $color-secondary;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .is-active {
+    color: $color-primary;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $color-primary;
+      height: 4px;
+      border-radius: 8px;
+    }
+  }
+}
