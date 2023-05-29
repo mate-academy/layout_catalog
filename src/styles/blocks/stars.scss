@@ -1,6 +1,6 @@
 .stars {
-  display: flex;
-  flex-direction: row-reverse;
+  display: inline-grid;
+  grid-template-columns: repeat(5, min-content);
 
   &__star {
 
@@ -13,7 +13,7 @@
   }
   
   @for $starCount from 1 through 5 {
-    .stars--#{$starCount} &__star:nth-last-child(-n + #{$starCount}) {
+    .stars--#{$starCount} &__star:nth-of-type(-n + #{$starCount}) {
       background-image: url(../images/star-active.svg);
     }
   }

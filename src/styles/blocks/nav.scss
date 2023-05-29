@@ -1,6 +1,7 @@
 .nav {
   &__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(8, max-content);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -21,17 +22,18 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 500;
+    transition: color $transition-speed;
   
     &:hover,
     &--active {
-      color: $color-blue;
+      color: $color-light-blue;
     }
 
     &--active::after {
       content: "";
       height: 4px;
       width: 100%;
-      background: $color-blue;
+      background: $color-light-blue;
       border-radius: 8px;
       position: absolute;
       bottom: 0;

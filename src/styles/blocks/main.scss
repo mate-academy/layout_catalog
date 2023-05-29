@@ -1,5 +1,14 @@
 .main {
-  &__cards-section {
-    margin: 0 auto;
+  display: grid;
+
+  @each $screenSize, $numberOfRow in $screenSize-numberOfRow {
+    @media (min-width: $screenSize) {
+      & {
+        grid-template-columns: repeat($numberOfRow, auto);
+      }
+    }
   }
+
+  justify-content: center;
+  gap: $card-horizontal-gap $card-vertical-gap;
 }
