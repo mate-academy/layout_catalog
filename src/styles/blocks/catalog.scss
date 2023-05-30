@@ -1,11 +1,11 @@
 .catalog {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
   width: $screen-l;
   margin: 0 auto;
   padding: 50px 128px 72px;
   box-sizing: border-box;
-  display: flex;
-  flex-shrink: 0;
-  flex-wrap: wrap;
 
   @media (max-width: $screen-m) {
     width: $screen-m;
@@ -14,16 +14,15 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
   width: 200px;
   min-height: 406px;
   padding: 32px 16px 16px;
   margin: 0 48px 46px 0;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-
   box-sizing: border-box;
-  background: #fff;
+  background-color: $color-bg;
   border: 1px solid $color-light-grey;
   border-radius: 5px;
   font-family: $font-main-roboto;
@@ -37,15 +36,14 @@
   }
 
   &__image {
+    display: inline-block;
     width: 160px;
     height: 134px;
     margin: 0 auto 40px;
-    display: inline-block;
   }
 
   &__title {
     margin-bottom: 4px;
-
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
@@ -54,7 +52,6 @@
 
   &__subtitle {
     margin-bottom: 16px;
-
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
@@ -98,10 +95,8 @@
     display: block;
     height: 40px;
     box-sizing: border-box;
-
     background: $color-accent-blue;
     border-radius: 5px;
-
     color: #fff;
     line-height: 40px;
     text-align: center;
@@ -109,11 +104,14 @@
     font-family: $font-main-roboto;
     font-weight: 700;
     font-size: 14px;
+    transition: border $effectDuration,
+      background-color $effectDuration,
+      color $effectDuration;
   }
 
   &__button:hover {
     border: 1px solid $color-accent-blue;
-    background: #fff;
+    background-color: $color-bg;
     color: $color-accent-blue;
   }
 }
