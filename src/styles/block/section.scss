@@ -1,59 +1,51 @@
 .card {
-  padding: 32px 16px 16px;
-  width: $width-card;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
   @include transitionProperty(#{$value-transition});
+  display: flex;
+  width: $width-card;
+  padding: 32px 16px 16px;
+  flex-direction: column;
+  border: 1px solid $border-color;
+  border-radius: 5px;
 
   &__images {
+    margin: 0;
     align-self: center;
     width: $image-width;
     height: $image-height;
-    margin: 0;
   }
 
   &__describe {
     display: flex;
-    flex-direction: column;
     padding-top: 40px;
+    flex-direction: column;
 
     &-name {
       margin: 0;
+      font-size: $size-text-medium;
       line-height: 18px;
       font-weight: 500;
-      font-size: $size-text-medium;
       color: $color-text-dark;
     }
 
     &-code {
-      font-weight: 400;
       margin-top: 4px;
+      font-weight: 400;
       font-size: $size-text-small;
       color: $color-text;
     }
   }
 
-  &:hover {
-    @include transformHover(#{$value-scale});
-  }
-
-  &:hover &__describe-name {
-    color: $color-hover;
-  }
-
   &__stars {
-    margin-top: 16px;
     display: flex;
+    margin-top: 16px;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
 
     &-text {
-      color: $color-text;
       font-size: $size-text-small;
       text-align: left;
+      color: $color-text;
     }
   }
 
@@ -69,24 +61,25 @@
     }
 
     &-number {
-      font-weight: 700;
       font-size: $size-text-biggest;
+      font-weight: 700;
       color: $color-text-dark;
     }
   }
 
   &__button {
     margin-top: 16px;
+
     &-text {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: $color-text-button;
+      padding: 12px 69px;
       font-weight: 700;
       font-size: $size-text-big;
       line-height: 14px;
       text-decoration: none;
-      padding: 12px 69px;
+      color: $color-text-button;
       background-color: $color-button;
       border-radius: 5px;
       border: 1px solid $color-button;
@@ -96,5 +89,12 @@
       background-color: $color-text-button;
       color: $color-button;
     }
+  }
+  &:hover {
+    @include transformHover(#{$value-scale});
+  }
+
+  &:hover &__describe-name {
+    color: $color-hover;
   }
 }
