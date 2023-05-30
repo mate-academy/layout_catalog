@@ -8,7 +8,6 @@ $big_line-height: 18px;
 
 * {
   box-sizing: border-box;
-  margin: 0;
 }
 
 html {
@@ -16,6 +15,7 @@ html {
 }
 
 body {
+  margin: 0;
   padding: 0;
 }
 
@@ -42,28 +42,32 @@ body {
   }
 }
 
-.nav__list {
-  margin: 0;
-  padding: 0;
-  display: flex;
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
 
-  &-item {
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $main-accent;
+
+    transition: .3s;
+
+    &:hover {
+      color: $blue-accent;
+    }
+  }
+
+  &__item {
     display: block;
     line-height: 60px;
     margin-right: 20px;
 
     &:last-child {
       margin-right: 0;
-    }
-  }
-
-  &-link {
-    display: block;
-    text-decoration: none;
-    color: $main-accent;
-
-    &:hover {
-      color: $blue-accent;
     }
   }
 }
@@ -88,17 +92,23 @@ body {
   display: flex;
   flex-direction: column;
   width: 200px;
-  background-color: $white;
+
   border: 1px solid $gray-elements;
   border-radius: 5px;
+
   font-size: 10px;
   line-height: 14px;
   padding: 32px 16px 16px;
+
   color: $main-accent;
+  background-color: $white;
+
+  margin: 0;
 
   transition: transform 300ms ease-in-out;
 
   &__image {
+    margin: 0;
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
@@ -110,6 +120,7 @@ body {
   }
 
   &__product-title {
+    margin: 0;
     font-weight: 500;
     font-size: 12px;
     line-height: $big_line-height;
@@ -117,11 +128,13 @@ body {
   }
 
   &__product-code {
+    margin: 0;
     margin-bottom: 16px;
     color: $secondary;
   }
 
   &__review {
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -129,23 +142,27 @@ body {
   }
 
   &__review-text {
+    margin: 0;
     color: $main-accent;
     padding: 0;
   }
 
   &__price {
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
 
     &-value {
+      margin: 0;
       font-weight: 700;
       font-size: 16px;
       line-height: $big_line-height;
     }
 
     &-text {
+      margin: 0;
       font-size: 12px;
       line-height: $big_line-height;
     }
@@ -196,14 +213,11 @@ body {
   &--3 :nth-child(-n+3),
   &--4 :nth-child(-n+4),
   &--5 :nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
-    background-repeat: no-repeat;
+    background: url(../images/star-active.svg) no-repeat;
   }
 
   &__star {
-    background-position: 50%;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
+    background: url(../images/star.svg) no-repeat 50%;
     height: 16px;
     width: 16px;
     margin-right: 4px;
