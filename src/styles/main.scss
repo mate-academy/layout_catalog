@@ -1,3 +1,41 @@
-body {
-  margin: 0;
+@import "./utils/_variables.scss";
+@import "./parts/nav.scss";
+@import "./parts/stars.scss";
+@import "./parts/header.scss";
+@import "./parts/card.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "./utils/reset";
+@import "./utils/function";
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  width: scale($cards-number);
+  padding: 50px 40px;
+  margin: auto;
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+
+    &:nth-child(#{$cards-number}n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.is-active {
+  color: $color-accent-blue;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $color-accent-blue;
+    width: 100%;
+    left: 0;
+    border-radius: 8px;
+    bottom: 0;
+    height: 4px;
+  }
 }
