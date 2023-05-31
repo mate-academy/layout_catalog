@@ -1,10 +1,16 @@
 .card {
+  display: flex;
+  flex-direction: column;
   max-width: 200px;
-  align-items: center;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   height: 406px;
   margin-bottom: 48px;
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &:nth-child(4n) {
     margin-right: 0;
@@ -32,28 +38,51 @@
     line-height: 18px;
     margin: 0 16px;
     color: $color-word;
+    transition: color $transition;
+
+    &:hover {
+      color: #34568b;
+    }
   }
 
   &__code {
     font-size: 10px;
     line-height: 14px;
+    font-weight: 400;
     margin: 4px 16px;
     color: $color-word2;
   }
 
-  &-price {
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 16px 24px;
+  }
+
+  &__rewiews {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin: 0;
+    text-align: right;
+    color: $color-word;
+  }
+
+  &__price {
     display: flex;
     justify-content: space-between;
     margin: 0 16px;
 
-    &__word {
+    &-word {
       margin: 0;
+      font-weight: 400;
       font-size: 12px;
       line-height: 18px;
       color: $color-word2;
     }
 
-    &__value {
+    &-value {
       margin: 0;
       font-size: 16px;
       font-weight: 700;
@@ -63,13 +92,12 @@
     }
   }
 
-  &-button {
+  &__button {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 16px;
     height: 40px;
-    border: 1px solid $color-botton;
     border-radius: 5px;
 
     font-size: 14px;
@@ -79,10 +107,11 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    background-color: $color-botton;
+    background-color: $color-button;
 
     &:hover {
-      color: $color-botton;
+      border: 1px solid $color-button;
+      color: $color-button;
       background-color: #fff;
     }
   }
