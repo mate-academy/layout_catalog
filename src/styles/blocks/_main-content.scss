@@ -1,0 +1,26 @@
+@use "../utils/mixins" as *;
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 40px;
+  width: 1024px;
+
+  @include large-up {
+    padding: 50px 128px;
+    width: 1200px;
+  }
+
+  &__item {
+    margin-bottom: 46px;
+    margin-right: 48px;
+  }
+
+  &__item:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__item:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+}
