@@ -1,0 +1,29 @@
+.nav {
+  &__list {
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__link {
+    display: block;
+    padding: 23px 0;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-standard;
+    color: $color-main-accent;
+    position: relative;
+
+    &:not(.is-active) {
+      margin-left: 20px;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-blue-accent;
+    }
+
+    &:active::after {
+      @extend %nav-link-underline;
+    }
+  }
+}
