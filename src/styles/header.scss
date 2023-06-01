@@ -1,0 +1,80 @@
+.header {
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+      max-width: 1024px;
+      margin: auto;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 1200px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    color: $black-main;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $blue-hover;
+    }
+
+    &.is-active {
+      color: $blue-hover;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+
+        border-radius: 8px;
+        background-color: $blue-hover;
+      }
+    }
+  }
+}
