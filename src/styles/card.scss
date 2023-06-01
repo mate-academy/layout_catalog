@@ -1,0 +1,111 @@
+
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+  column-gap: 48px;
+  justify-content: center;
+  padding: $custom-padding;
+}
+
+.product-card {
+  box-sizing: border-box;
+  justify-content: center;
+  width: $card-width;
+
+  &:nth-child(n-5) {
+    margin-bottom: 46px;
+  }
+
+  background-color: $bg-color;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: transform $transition-speed ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  &__picture {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 37px;
+  }
+
+  &__description {
+    margin: 0 16px;
+    font-size: $main-fz;
+    font-weight: $main-fw;
+    line-height: 18px;
+    color: $main-color;
+  }
+
+  &:hover .product-card__description {
+    color: #34568b;
+  }
+
+  &__code {
+    margin: 4px 16px 0;
+    font-size: 10px;
+    font-weight: $small-fw;
+    color: $second-color;
+  }
+
+  &__rating {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 16px 16px 0 17px;
+    align-items: center;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: $small-fw;
+    color: $main-color;
+  }
+
+  &__price {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 24px 16px 0;
+  }
+
+  &__price-title {
+    font-weight: $small-fw;
+    font-size: $main-fz;
+    line-height: 18px;
+    color: $second-color;
+  }
+
+  &__price-amount {
+    font-size: 16px;
+    font-weight: $bold-fw;
+    line-height: 18px;
+    color: $main-color;
+  }
+  
+  &__button {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: $bold-fw;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background-color: $buttons-color;
+    border-radius: 5px;
+    border: 1px solid $buttons-color;
+    transition: $transition-speed ease-in-out;
+  }
+  
+  &__button:hover {
+    background-color: $bg-color;
+    color: $buttons-color;
+    border: 1px solid $buttons-color;
+  }
+}
