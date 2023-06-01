@@ -1,11 +1,13 @@
 .card {
-  padding: 32px 16px 16px;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: $card-width;
+  padding: 32px 16px 16px;
+
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   box-sizing: border-box;
+  transition: color 300ms, transform 300ms;
 
   &__image {
     display: inline-block;
@@ -15,15 +17,17 @@
   }
 
   &__title {
+    margin: 40px 0 4px;
+
     @include text(500, 12px, 18px);
     color: $main-color;
-    margin: 40px 0 4px;
   }
 
   &__code {
+    margin: 0 0 16px;
+
     @include text(400, 10px, 14px);
     color: $additional-color;
-    margin: 0 0 16px;
   }
 
   &__rate {
@@ -36,9 +40,10 @@
   }
 
   &__reviews {
-    @include text(400, 10px, 14px);
-    color: #060b35;
     margin: 0;
+
+    @include text(400, 10px, 14px);
+    color: $main-color;
   }
 
   &__price {
@@ -50,36 +55,47 @@
   }
 
   &__text {
-    @include text(400, 12px, 18px);
     margin: 0;
-    color: #616070;
+
+    @include text(400, 12px, 18px);
+    color: $additional-color;
   }
 
   &__total {
     @include text(700, 16px, 18px);
-    color: #060b35;
+    color: $main-color;
   }
 
   &__button {
-    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 166px;
     height: 40px;
-    background-color: #00acdc;
-    border: 1px solid #00acdc;
-    border-radius: 5px;
+
     @include text(700, 14px, 16px);
-    text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
+    text-transform: uppercase;
+    color: $button-color-second;
     cursor: pointer;
 
+    background-color: $button-color;
+    border: 1px solid $button-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color 300ms, color 300ms;
+
     &:hover {
-      background-color: #fff;
       color: $button-color;
+      background-color: $button-color-second;
     }
   }
 
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+    }
+  }
 }
