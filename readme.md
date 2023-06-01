@@ -32,6 +32,12 @@ and SCSS
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
+
+---
+### Tips & Hints
+- Don't use flex `gap` property, it's not yet supported by tests.
+- Check `background-image: url()` to be relative to the `main.scss`. So should start with `../images`.
+
 ---
 
 ❗️❗️❗️ If you already familiar with **transform and transition**
@@ -43,7 +49,3 @@ Make all the changes smooth on hover (during 300ms):
 - change the button background to `#00acdc` on hover
 
 ![screenshot](./references/catalog-example.png)
-
----
-### Tips & Hints
-Don't use flex `gap` property, it's not yet supported by tests.
