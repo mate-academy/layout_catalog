@@ -1,0 +1,17 @@
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px 0;
+
+  @each $width, $count in $catalog-width {
+    @media (min-width: $width) {
+      grid-template-columns: repeat($count, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 50px 128px 0;
+  }
+}
