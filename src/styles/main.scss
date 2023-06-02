@@ -1,3 +1,214 @@
+$main-text-color: #060b35;
+$secondary-text-color: #616070;
+$button-color: #00acdc;
+$header-text-color: #00acdc;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  height: 60px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  
+
+  &__nav {
+    margin-right: 40px;
+  }
+  
+  &__icon {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+  }
+  
+  &__link-cont {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+  
+  &__nav-link {
+    color: $main-text-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 23px 0;
+    margin: 0 10px;
+  }
+
+  &__nav-link:hover {
+    color: $header-text-color;
+  }
+}
+
+.card {
+  // display: flex;
+  // flex-direction: column;
+  display: grid;
+  border: 1px rgb(245, 245, 245) solid;
+  border-radius: 5px;
+  width: 200px;
+  padding: 32px 16px 16px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 40px 0 4px;
+    color: $main-text-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  &__code {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: $secondary-text-color;
+    font-size: 10px;
+    line-height: 14px;
+  }
+  
+  &__review {
+    display: flex;
+    justify-content: end;
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0 0 0 17px;
+    color: $main-text-color;
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  &__price-label {
+    display: flex;
+    color: $secondary-text-color;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 7px 44px 0 0;
+  }
+  
+  &__price-value {
+    display: flex;
+    color: $main-text-color;
+    margin-left: 42px;
+    margin-top: 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__buybutton {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 166px;
+    padding: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: $button-color;
+    border-radius: 5px;
+    border: 1px $button-color solid;
+  }
+  
+  &__buybutton:hover {
+    background-color: white;
+    color: $button-color;
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__start {
+    width: 13px;
+    height: 13px;
+    margin: 0 7px 0 0;
+    background: no-repeat url("../images/star.svg");
+  }
+
+  .stars--1 &__start:nth-child(-n+1),
+  .stars--2 &__start:nth-child(-n+2),
+  .stars--3 &__start:nth-child(-n+3),
+  .stars--4 &__start:nth-child(-n+4),
+  .stars--5 &__start:nth-child(-n+5) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $header-text-color;
+  text-decoration: none;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 37px;
+    bottom: -0;
+    border-radius: 8px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background: $header-text-color;
+  }
+}
+
+.container {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  row-gap: 46px;
+  column-gap: 48px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  
+  // &__holder {
+  //   padding: 46px 24px 0;
+  // }
 }
