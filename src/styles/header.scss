@@ -1,0 +1,63 @@
+.header {
+  padding: 0 50px;
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    max-width: 1024px;
+  }
+}
+
+.logo_link {
+  width: 40px;
+  height: 40px;
+}
+
+.moyo_nav {
+  &__list {
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    list-style: none;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-color;
+
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.is-active {
+  color: $accent-color;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border-bottom: 4px solid;
+  border-radius: 8px;
+  color: $accent-color;
+}
