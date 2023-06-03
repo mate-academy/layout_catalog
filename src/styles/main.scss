@@ -2,6 +2,7 @@ $main-text-color: #060b35;
 $secondary-text-color: #616070;
 $button-color: #00acdc;
 $header-text-color: #00acdc;
+$card-width: 200px;
 
 * {
   box-sizing: border-box;
@@ -24,7 +25,7 @@ body {
   background: #fff;
   height: 60px;
   font-weight: 500;
-  margin-bottom: 50px;
+  margin-bottom: 4px;
   
 
   &__nav {
@@ -60,12 +61,11 @@ body {
 }
 
 .card {
-  // display: flex;
-  // flex-direction: column;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   border: 1px rgb(245, 245, 245) solid;
   border-radius: 5px;
-  width: 200px;
+  width: $card-width;
   padding: 32px 16px 16px;
 
   &__container {
@@ -155,6 +155,7 @@ body {
     background-color: white;
     color: $button-color;
   }
+
 }
 
 .stars {
@@ -200,15 +201,23 @@ body {
 .container {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  display: grid;
-  grid-template-columns: repeat(4, 200px);
-  row-gap: 46px;
-  column-gap: 48px;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  align-content: center;
+  flex-wrap: wrap;
   
-  // &__holder {
-  //   padding: 46px 24px 0;
+  
+  &__holder {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    margin: 46px -4px 0;
+  }
+
+  // &:nth-child(4n) {
+    
+  // }
+  
+  // &:nth-last-child(-n+4) {
+    
   // }
 }
