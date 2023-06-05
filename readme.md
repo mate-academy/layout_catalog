@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://TamaraShukalo.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://TamaraShukalo.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -43,7 +43,7 @@ and SCSS
 ❗️❗️❗️ If you already familiar with **transform and transition**
 
 Make all the changes smooth on hover (during 300ms):
-- increase the card by 20 percent (neighboring cards **should not be** affected)
+-   
 - change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
 - change navigation link text color to `#00acdc`
 - change the button background to `#00acdc` on hover
