@@ -1,0 +1,123 @@
+.goods {
+  --column-count: 1;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-size);
+  justify-content: center;
+  column-gap: 48px;
+  row-gap: 46px;
+
+  @media (width: 488px) {
+    --column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-count: 4;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $card-size;
+  padding: 32px 16px 16px;
+
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  transition: 0.3s;
+
+  &__title {
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-font-color;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    width: 160px;
+    height: 134px;
+
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    color: $second-font-color;
+  }
+
+  &__stars-reviews {
+    margin-bottom: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    color: $main-font-color;
+  }
+
+  &__price-tag {
+    margin-bottom: 16px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    line-height: 18px;
+    color: $second-font-color;
+  }
+
+  &__tag {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+
+    color: $main-font-color;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    background-color: $main-color-acept;
+    color: #fff;
+    border: 1px solid $main-color-acept;
+    border-radius: 5px;
+    transition: color 1s;
+
+    &:hover {
+      color: $main-color-acept;
+      background-color: #fff;
+    }
+  }
+}
