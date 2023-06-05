@@ -2,18 +2,6 @@
   display: block;
   margin-right: 50px;
 
-  &__item {
-    margin-left: 20px;
-  }
-
-  &__link {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding-top: 23px;
-    padding-bottom: 23px;
-  }
-
   &__list {
     display: flex;
     flex-direction: row;
@@ -22,24 +10,52 @@
     margin: 0;
   }
 
-  &__link--is-active::after {
+  &__item {
+    margin-left: 20px;
+  }
+
+  &__link {
     display: block;
-    content: "";
-    left: 0;
-    right: 0;
-    height: 4px;
-    border-radius: 8px;
-    background-color: #00acdc;
-    margin-top: 18.5px;
-  }
+    color: $main-accent;
+    text-decoration: none;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    transition: color 0.3s ease-in-out;
 
-  &__link--apple {
-    padding-bottom: 0;
-    color: #00acdc;
-  }
+    &::after {
+      display: block;
+      content: "";
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $blue-accent;
+      margin-top: 18.5px;
+      transition: transform 0.3s ease-in-out;
+      transform: scale(0);
+    }
 
-  &__link:hover {
-    color: #00acdc;
-    cursor: pointer;
+    &:hover {
+      color: $blue-accent;
+      cursor: pointer;
+    }
+
+    &:active {
+      color: $blue-accent;
+
+      &::after {
+        left: 0;
+        right: 0;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $blue-accent;
+
+  &::after {
+    transform: scale(1);
   }
 }
