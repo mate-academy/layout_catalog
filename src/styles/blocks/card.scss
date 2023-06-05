@@ -7,6 +7,8 @@
   border: 1px solid $color-border-white;
   border-radius: 5px;
 
+  transition: transform $transition-time;
+
   &__image {
     display: block;
     height: 134px;
@@ -19,6 +21,8 @@
     font-size: 12px;
     line-height: 18px;
     font-weight: 500;
+
+    transition: color $transition-time;
   }
 
   &__product-code {
@@ -70,10 +74,20 @@
     border: 1px solid transparent;
     border-radius: 5px;
 
+    transition: all $transition-time;
+
     &:hover {
       color: $color-accent-blue;
       background-color: $color-bg-white;
       border-color: $color-accent-blue;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__product-name {
+      color: $color-text-on-hover;
     }
   }
 }
