@@ -1,0 +1,43 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $main-text-color;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: $header-height;
+
+    transition: color $transition-time;
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+
+  .is-active {
+    position: relative;
+    color: $active-color;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      width: 100%;
+      background-color: $active-color;
+      height: 4px;
+      border-radius: 8px;
+    }
+  }
+}
