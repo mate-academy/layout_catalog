@@ -1,0 +1,22 @@
+.catalog {
+  padding: 50px 0;
+
+  &__container {
+    margin: 0 auto;
+    max-width: containerMaxWitdh($numberOfColumns, $cardWidth, $cardsRowGap);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat($numberOfColumns, $cardWidth);
+    grid-template-rows: repeat($numberOfRows, 1fr);
+    justify-content: center;
+    gap: $cardsRowGap $cardsColumnGap;
+  }
+
+  @media (max-width: 1024px) {
+    &__container {
+      max-width: containerMaxWitdh($numberOfColumns, $cardWidth, $cardsRowGap);
+    }
+  }
+}
