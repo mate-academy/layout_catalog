@@ -17,10 +17,12 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
 and SCSS
 - Nav links color is not `black` any more
-- there should always be 4 cards in a row (not 2, 3 or 5)
+- **flex layout**: there should always be 4 cards in a row (not 2, 3 or 5)
   - use `:nth-child(4n)` to select every 4th element in `flex` container
   - use `:nth-last-child(-n + 4)` to select 4 last elements `flex` container
-  - ❗️❗️❗️ if you already familiar with `grid` use it instead of `flex` and implement the [Grid Layout instead](./grid.md)
+- ❗️❗️❗️ **MANDATORY if you're familiar with the `grid`**
+  - use `grid` instead of `flex`
+  - implement the [Grid Layout instead](./grid.md)
 - the distance between cards on the design includes borders (zoom in to see it);
 - cards should have fixed width and fixed distances between them
 - cards container should have fixed paddings (see 1024px example), bottom the same as top
@@ -40,7 +42,7 @@ and SCSS
 
 ---
 
-❗️❗️❗️ If you already familiar with **transform and transition**
+❗️❗️❗️ **MANDATORY if you're familiar with the `transform and transition`**
 
 Make all the changes smooth on hover (during 300ms):
 - increase the card by 20 percent (neighboring cards **should not be** affected)
