@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #fff;
+}
+
+.logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 20px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    font-family: inherit;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    color: "#060B35";
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $color-hover;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $color-hover;
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: $color-hover;
+    bottom: 0;
+    width: 100%;
+  }
+}
