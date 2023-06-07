@@ -1,16 +1,27 @@
 .nav {
-  display: none;
-
-  @include onLaptop {
+  &__icon {
     display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("../images/icon-menu.svg");
+
+    @include onLaptop {
+      display: none;
+    }
   }
 
   &__list {
+    display: none;
+
     margin: 0;
     padding: 0;
 
-    display: flex;
+    // display: flex;
     list-style: none;
+
+    @include onLaptop {
+      display: flex;
+    }
   }
 
   &__item:not(:last-child) {
