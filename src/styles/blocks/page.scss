@@ -1,0 +1,41 @@
+.page {
+  font-family: "Roboto", sans-serif;
+  &__header-block {
+    padding: 0 $header-side-padding;
+  }
+  &__card {
+    width: $card-width;
+    align-self: center;
+    justify-self: center;
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:hover .card__product-name {
+      color: #34568b;
+    }
+
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  &__card-block {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    row-gap: 46px;
+    column-gap: 48px;
+    justify-content: center;
+    @media (min-width: 1024px) {
+      @include columns (4);
+    }
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      @include columns (3);
+    }
+    @media (min-width: 488px) and (max-width: 767px) {
+      @include columns (2);
+    }
+    @media (max-width: 487px) {
+      @include columns (1);
+    }
+  }
+}
