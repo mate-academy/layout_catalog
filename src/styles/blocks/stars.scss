@@ -1,0 +1,35 @@
+.card__rating {
+  display: flex;
+  margin-bottom: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__star {
+    border-radius: 0.5px;
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.card__reviews {
+  margin: 0;
+
+  color: $product-device-sum-color;
+  font-size: 10px;
+  line-height: 14px;
+}
