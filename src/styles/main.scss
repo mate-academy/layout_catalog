@@ -1,3 +1,109 @@
-body {
+@import "variables";
+@import "stars";
+@import "header";
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+.card {
+  width: $width--product-cards;
+  background: $background--color--card;
+  border: $border--thickness solid #f3f3f3;
+  border-radius: 5px;
+  height: 406px;
+
+  &__image {
+    margin: 32px 19px 0;
+    width: $width--card--image;
+    height: $height--card--image;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color--text;
+    margin: 37px 16px 4px;
+  }
+
+  &__code {
+    display: flex;
+    font-size: 10px;
+    color: $color--text--title;
+    margin: 0 16px 16px;
+    font-weight: 400;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__reviews {
+    display: flex;
+    font-size: 10px;
+    // line-height: 14px;
+    color: $color--text;
+    // margin: 0;
+    align-items: flex-end;
+    margin-right: 16px;
+    font-weight: 400;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 16px 16px;
+
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: $color--text;
+    }
+
+    &-title {
+      font-size: 12px;
+      line-height: 18px;
+      color: $color--text--title;
+      font-weight: 400;
+    }
+  }
+
+  &__button {
+    background: $color--button;
+    border: $border--thickness solid $color--button;
+    border-radius: 5px;
+    height: $height--button;
+    width: $width--button;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 16px;
+    color: #fff;
+    margin: 0 16px 16px;
+
+    &:hover {
+      background-color: #fff;
+      color: $color--button;
+      border: $border--thickness solid $color--button;
+      border-radius: 5px;
+    }
+  }
+}
+
+.main {
+  padding-top: 50px;
+}
+
+.card-main {
+  display: grid;
+  grid-template-columns: 198px 198px 198px 198px;
+  grid-template-rows: 406px 406px;
+  column-gap: 50px;
+  row-gap: 48px;
+  justify-items: center;
+  align-items: center;
 }
