@@ -1,0 +1,42 @@
+.nav {
+  height: fit-content;
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__link {
+    padding: 23px 0;
+    color: $main-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    @include transform-duration;
+    &:hover {
+      color: $accent-color;
+    }
+    &--is-active {
+      position: relative;
+      color: $accent-color;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 56px;
+        left: 0;
+        width: 37px;
+        height: 4px;
+        background-color: $accent-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
