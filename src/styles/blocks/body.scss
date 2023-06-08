@@ -1,0 +1,37 @@
+body,
+h1,
+p,
+a {
+  font-family: "Roboto", "Helvetica", sans-serif;
+  margin: 0;
+}
+
+.body__container {
+
+  @include gap($grid-gap);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 51px 41px;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+
+}
+
+@media (min-width: 488px) {
+  .body__container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .body__container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .body__container {
+    --column-count: 4;
+    }
+}

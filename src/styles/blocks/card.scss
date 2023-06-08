@@ -1,0 +1,115 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $width-card;
+  background: $color-white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__logo {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-text-dark;
+    margin-bottom: 4px;
+  }
+
+  &:hover &__title {
+    color: $color-title-hover;
+  }
+
+  &__product {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-text-light;
+    ;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    @include flex($justify: space-between, $align: center);
+    margin-bottom: 16px;
+  }
+
+  &__price-name {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-text-light;
+  }
+
+  &__price-amount {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-text-dark;
+  }
+
+  &__link {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 11px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    width: 100%;
+    background-color: $color-link;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__link:hover {
+    background-color: $color-white;
+    border-color: $color-link;
+    color: $color-link;
+   }
+}
+
+.stars {
+  @include flex($justify: space-between, $align: center);
+  margin-bottom: 24px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__star {
+    background-image: url("../images/star.svg");
+    background-repeat: space;
+    background-position: center;
+    height: 16px;
+    width: 16px;
+  }
+
+  &__star:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  &__star:nth-child(-n+4) {
+    background-image: url("../images/star-active.svg");
+  }
+
+  &__reviews {
+    color: $color-text-dark;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
