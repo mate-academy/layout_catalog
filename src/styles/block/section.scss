@@ -1,0 +1,100 @@
+.card {
+  @include transitionProperty(#{$value-transition});
+  display: flex;
+  width: $width-card;
+  padding: 32px 16px 16px;
+  flex-direction: column;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+
+  &__images {
+    margin: 0;
+    align-self: center;
+    width: $image-width;
+    height: $image-height;
+  }
+
+  &__describe {
+    display: flex;
+    padding-top: 40px;
+    flex-direction: column;
+
+    &-name {
+      margin: 0;
+      font-size: $size-text-medium;
+      line-height: 18px;
+      font-weight: 500;
+      color: $color-text-dark;
+    }
+
+    &-code {
+      margin-top: 4px;
+      font-weight: 400;
+      font-size: $size-text-small;
+      color: $color-text;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    &-text {
+      font-size: $size-text-small;
+      text-align: left;
+      color: $color-text;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    &-text {
+      font-size: $size-text-medium;
+      color: $color-text;
+    }
+
+    &-number {
+      font-size: $size-text-biggest;
+      font-weight: 700;
+      color: $color-text-dark;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+
+    &-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 69px;
+      font-weight: 700;
+      font-size: $size-text-big;
+      line-height: 14px;
+      text-decoration: none;
+      color: $color-text-button;
+      background-color: $color-button;
+      border-radius: 5px;
+      border: 1px solid $color-button;
+    }
+
+    &:hover {
+      background-color: $color-text-button;
+      color: $color-button;
+    }
+  }
+  &:hover {
+    @include transformHover(#{$value-scale});
+  }
+
+  &:hover &__describe-name {
+    color: $color-hover;
+  }
+}
