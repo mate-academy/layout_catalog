@@ -9,16 +9,22 @@
 }
 
 .card {
-  width: $width--product-cards;
   background: $background--color--card;
   border: $border--thickness solid #f3f3f3;
   border-radius: 5px;
-  height: 406px;
+  padding: 0 16px;
+  width: 200px;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
-    margin: 32px 19px 0;
-    width: $width--card--image;
-    height: $height--card--image;
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 32px auto 40px;
   }
 
   &__title {
@@ -26,15 +32,16 @@
     font-weight: 500;
     line-height: 18px;
     color: $color--text;
-    margin: 37px 16px 4px;
+    margin-bottom: 4px;
   }
 
   &__code {
     display: flex;
     font-size: 10px;
     color: $color--text--title;
-    margin: 0 16px 16px;
     font-weight: 400;
+    margin-bottom: 16px;
+    align-self: center;
   }
 
   &__rating {
@@ -45,18 +52,15 @@
   &__reviews {
     display: flex;
     font-size: 10px;
-    // line-height: 14px;
     color: $color--text;
-    // margin: 0;
-    align-items: flex-end;
-    margin-right: 16px;
     font-weight: 400;
+    margin-bottom: 26px;
   }
 
   &__price {
     display: flex;
     justify-content: space-between;
-    margin: 24px 16px 16px;
+    margin-bottom: 16px;
 
     &-value {
       font-size: 16px;
@@ -83,9 +87,11 @@
     font-weight: 700;
     line-height: 16px;
     color: #fff;
-    margin: 0 16px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
 
     &:hover {
+      transition: background-color $transition-duration;
       background-color: #fff;
       color: $color--button;
       border: $border--thickness solid $color--button;
@@ -96,14 +102,15 @@
 
 .main {
   padding-top: 50px;
-}
+  margin: 0 auto;
 
-.card-main {
-  display: grid;
-  grid-template-columns: 198px 198px 198px 198px;
-  grid-template-rows: 406px 406px;
-  column-gap: 50px;
-  row-gap: 48px;
-  justify-items: center;
-  align-items: center;
+  .card-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 46px;
+    justify-items: center;
+    align-items: center;
+  }
 }
