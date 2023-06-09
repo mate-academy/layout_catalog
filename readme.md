@@ -1,21 +1,28 @@
 # Frontend practice with catalog page
+
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+
+- [DEMO LINK](https://adv555.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://adv555.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
-___
+
+---
+
 > Write styles in `src/styles/main.scss` instead of `src/style.css`.
-___
+
+---
 
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
 ## The task
-Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
+
+Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](<https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354>).
 
 ## Requirements:
+
 - use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
-and SCSS
+  and SCSS
 - Nav links color is not `black` any more
 - **flex layout**: there should always be 4 cards in a row (not 2, 3 or 5)
   - use `:nth-child(4n)` to select every 4th element in `flex` container
@@ -32,7 +39,9 @@ and SCSS
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
+
 ---
+
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
 
 ---
@@ -45,6 +54,7 @@ and SCSS
 ❗️❗️❗️ **MANDATORY if you're familiar with the `transform and transition`**
 
 Make all the changes smooth on hover (during 300ms):
+
 - increase the card by 20 percent (neighboring cards **should not be** affected)
 - change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
 - change navigation link text color to `#00acdc`
