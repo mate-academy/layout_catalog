@@ -36,7 +36,6 @@
     font-size: 10px;
     line-height: 14px;
     color: $color-text-light;
-    ;
     margin-bottom: 16px;
   }
 
@@ -72,7 +71,7 @@
     border: 1px solid transparent;
     text-transform: uppercase;
     text-align: center;
-    color: #fff;
+    color: $color-white;
   }
 
   &__link:hover {
@@ -94,16 +93,18 @@
     background-image: url("../images/star.svg");
     background-repeat: space;
     background-position: center;
-    height: 16px;
     width: 16px;
+    height: 16px;
   }
 
   &__star:not(:first-child) {
     margin-left: 4px;
   }
 
-  &__star:nth-child(-n+4) {
-    background-image: url("../images/star-active.svg");
+  @for $starCount from 1 through 4 {
+    &__list .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 
   &__reviews {
