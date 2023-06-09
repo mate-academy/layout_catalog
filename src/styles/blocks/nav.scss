@@ -1,0 +1,49 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0 ;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 0;
+    height: 60px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $base-text-color;
+    text-decoration: none;
+
+    transition-duration: $transition-duration;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link:hover {
+    color: $main-color;
+  }
+}
+
+a.is-active {
+  position: relative;
+  color: $main-color;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+
+    height: 4px;
+    width: 37px;
+
+    background-color: $main-color;
+    border-radius: 8px;
+  }
+}
