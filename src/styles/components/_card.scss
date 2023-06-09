@@ -1,0 +1,114 @@
+@import "../abstracts/variables";
+
+.card {
+  padding: 32px 16px 16px;
+  max-width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+    color: $color-secondary;
+
+  }
+
+  &__description,
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__description {
+    margin: 0;
+    color: $color-tertiary;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    color: $color-secondary;
+  }
+
+  &__price {
+    &-wraper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    &-text {
+      margin: 0;
+      font-size: 12px;
+      line-height: 18px;
+      color: $color-tertiary;
+      font-weight: 400;
+    }
+    &-amount {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $color-secondary;
+    }
+  }
+
+  &__btn {
+    &:link,
+    &:visited {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      background-color: $color-primary;
+      border-radius: 5px;
+      border: 1px solid $color-primary;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover,
+    &:active {
+      background-color: #fff;
+      color: $color-primary;
+    }
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: #34568b;
+    }
+  }
+}
