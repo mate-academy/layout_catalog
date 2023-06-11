@@ -1,0 +1,111 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: $product-card-width;
+  margin-bottom: $rows-space;
+  padding: 32px 16px 16px;
+  border-radius: 5px;
+  border: 1px #f3f3f3 solid;
+
+  &__image {
+    display: flex;
+    align-self: center;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-darkblue;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    color: $color-grey;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: #060b35;
+    display: flex;
+    align-items: center;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $color-blue;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+
+  &__btn:hover {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px $color-blue solid;
+    color: $color-blue;
+  }
+
+  &__stars {
+    display: flex;
+
+    &-star {
+      height: 16px;
+      width: 16px;
+      background-image: url(/images/star.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 4px;
+    }
+
+    @for $index from 1 through 5 {
+      &--#{$index} &-star:nth-child(-n + #{$index}) {
+        background-image: url(/images/star-active.svg);
+      }
+    }
+  }
+
+  .price__word {
+    color: $color-grey;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .price__number {
+    color: $color-darkblue;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
