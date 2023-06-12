@@ -43,6 +43,8 @@ body {
 }
 
 .nav {
+  font-weight: 500;
+
   &__list {
     margin: 0;
     padding: 0;
@@ -122,17 +124,21 @@ body {
     }
   }
 
-  &__product-title {
-    margin: 0 0 4px;
+  &__product {
 
-    font-weight: 500;
-    font-size: 12px;
-    line-height: $big_line-height;
-  }
+    &-title {
+      margin: 0 0 4px;
 
-  &__product-code {
-    margin: 0 0 16px;
-    color: $secondary;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: $big_line-height;
+    }
+
+    &-code {
+      margin: 0 0 16px;
+      color: $secondary;
+    }
+
   }
 
   &__review {
@@ -141,12 +147,13 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
-  }
 
-  &__review-text {
-    margin: 0;
-    color: $main-accent;
-    padding: 0;
+    &-text {
+      margin: 0;
+      padding: 0;
+
+      color: $main-accent;
+    }
   }
 
   &__price {
@@ -166,6 +173,8 @@ body {
     &-text {
       margin: 0;
       font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
       line-height: $big_line-height;
     }
   }
@@ -177,6 +186,7 @@ body {
 
     background-color: $blue-accent;
     border: 1px solid $blue-accent;
+    border-radius: 5px;
 
     text-transform: uppercase;
     text-decoration: none;
@@ -184,17 +194,15 @@ body {
 
     font-weight: 700;
     font-size: 14px;
-    border-radius: 5px;
     line-height: 16px;
     color: $white;
 
     transition: 300ms ease-in-out;
-  }
 
-  &__link:hover {
-    background-color: $white;
-    border: 1px solid $blue-accent;
-    color: $blue-accent;
+    &:hover {
+      background-color: $white;
+      color: $blue-accent;
+    }
   }
 
   &:hover {
@@ -209,13 +217,12 @@ body {
 
 .stars {
   display: flex;
+  align-items: center;
 
-  &--1 :first-child,
-  &--2 :nth-child(-n+2),
-  &--3 :nth-child(-n+3),
-  &--4 :nth-child(-n+4),
-  &--5 :nth-child(-n+5) {
-    background: url(../images/star-active.svg) no-repeat;
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n+#{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 
   &__star {
@@ -228,35 +235,9 @@ body {
 
 .cards-container {
   display: grid;
-  padding-top: 50px 0 72px;
-  grid-template-columns: repeat(var(--column-count),200px);
-  row-gap: 46px;
+  padding: 50px 0 72px;
+  grid-template-columns: repeat(4, 200px);
+  row-gap: 47px;
   column-gap: 48px;
   justify-content: center;
-
-  --column-count: 1;
-}
-
-@media (max-width: 488px) {
-  .cards-container {
-    --column-count: 1;
-  }
-}
-
-@media (min-width: 488px) {
-  .cards-container {
-    --column-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .cards-container {
-    --column-count: 3;
-  }
-}
-
-@media (min-width: 1024px) {
-  .cards-container {
-    --column-count: 4;
-  }
 }
