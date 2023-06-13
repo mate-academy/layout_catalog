@@ -32,12 +32,6 @@
   color: $active-color;
 }
 
-.review {
-  margin: 0;
-  font-size: 10px;
-  font-weight: $font-weight;
-}
-
 .card {
   box-sizing: border-box;
   width: 200px;
@@ -46,6 +40,12 @@
   border-radius: 5px;
   padding: 32px 16px 16px;
   transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+  &__review {
+    margin: 0;
+    font-size: 10px;
+    font-weight: $font-weight;
+  }
 
   &:hover {
     transform: scale(1.2);
@@ -67,7 +67,7 @@
     color: #34568b;
   }
 
-  &__good {
+  &__img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,40 +120,16 @@
     }
 
   }
-}
-
-.price {
-  color: $description-color;
-  font-weight: $font-weight;
-  line-height: $line-height;
-}
-
-.money {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: $line-height;
-  color: $primary-color;
-}
-
-.stars {
-  display: flex;
-
-  &__star {
-    width: 16px;
-    height: 16px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("../images/star.svg");
+  &__price-text {
+    color: $description-color;
+    font-weight: $font-weight;
+    line-height: $line-height;
   }
 
-  &__star:not(:last-child) {
-    margin-right: 4px;
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: $line-height;
+    color: $primary-color;
   }
-
-  @for $starCount from 1 through 5 {
-    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
-      background-image: url(../images/star-active.svg);
-    }
-  }
-
 }
