@@ -1,4 +1,4 @@
-main {
+.catalog {
   margin: auto;
   padding: 50px 40px 74px;
   max-width: $max-width;
@@ -9,20 +9,20 @@ main {
 }
 
 @media (max-width: 1023px) {
-  main {
+  .catalog {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
   }
 }
 
 @media (max-width: 767px) {
-  main {
+  .catalog {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 487px) {
-  main {
+  .catalog {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -32,19 +32,29 @@ main {
   color: $active-color;
 }
 
+.review {
+  margin: 0;
+  font-size: 10px;
+  font-weight: $font-weight;
+}
+
 .card {
+  box-sizing: border-box;
   width: 200px;
   height: 406px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 32px 16px 16px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   }
 
   &__description {
+    color: $primary-color;
+    font-weight: 500;
     line-height: 150%;
     font-size: 12px;
     white-space: nowrap;
@@ -52,7 +62,8 @@ main {
     margin-top: 0;
   }
 
-  &:hover .card__description {
+  &:hover .card__description,
+  .review {
     color: #34568b;
   }
 
@@ -88,6 +99,7 @@ main {
   }
 
   &__purchase {
+    box-sizing: border-box;
     border: 1px solid $active-color;
     border-radius: 5px;
     text-decoration: none;
@@ -144,10 +156,4 @@ main {
     }
   }
 
-}
-
-.review {
-  margin: 0;
-  font-size: 10px;
-  font-weight: $font-weight;
 }
