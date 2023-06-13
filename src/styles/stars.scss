@@ -11,11 +11,9 @@
     margin-left: 4px;
   }
 
-  &--1 &__star:nth-child(-n + 1),
-  &--2 &__star:nth-child(-n + 2),
-  &--3 &__star:nth-child(-n + 3),
-  &--4 &__star:nth-child(-n + 4),
-  &--5 &__star:nth-child(-n + 5) {
-    background: no-repeat center url(../images/star-active.svg);
+  @for $starNomer from 1 to 6 {
+    &--#{$starNomer} &__star:nth-child(-n + #{$starNomer}) {
+      background: no-repeat center url(../images/star-active.svg);
+    }
   }
 }
