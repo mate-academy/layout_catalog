@@ -1,0 +1,40 @@
+.nav__link {
+  text-decoration: none;
+  color: $color--text;
+  display: flex;
+  padding: 23px 0;
+  transition: color $transition-duration;
+
+  &:hover {
+    color: $main-color;
+  }
+
+  &.is-active {
+    color: $main-color;
+
+    &::after {
+      content: "";
+      height: 4px;
+      background-color: $main-color;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 2px;
+    }
+  }
+}
+
+.nav__item {
+  position: relative;
+
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  text-transform: uppercase;
+}
