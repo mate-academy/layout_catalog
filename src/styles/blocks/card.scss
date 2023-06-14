@@ -1,0 +1,99 @@
+@import "../utils/variables";
+
+.card {
+  display: flex;
+  width: 200px;
+  padding: 32px 16px 16px;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:nth-child(#{$cards-row}n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + #{$cards-row}) {
+    margin-top: 46px;
+  }
+
+  &__images {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $main-accent;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    align-self: start;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $secondary;
+  }
+
+  &__price {
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+    justify-content: space-between;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary;
+    }
+
+    &-sum {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $main-accent;
+    }
+
+  }
+
+  &__button {
+    width: 166px;
+    display: inline-block;
+    padding: 12px 70px 12px 69px;
+    background: $blue-accent;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: $blue-accent;
+      background: #fff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__reviews-text {
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: right;
+    color: #060b35;
+  }
+}
