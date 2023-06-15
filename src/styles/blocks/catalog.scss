@@ -1,0 +1,159 @@
+.catalog {
+  display: flex;
+}
+
+.card-container {
+  display: grid;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: $card-gap;
+  row-gap: 46px;
+  justify-content: center;
+  grid: auto-flow / repeat(auto-fit, minmax(200px, 3fr));
+
+  @media (min-width: 488px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+}
+
+.card {
+  margin: 0;
+  width: $card-width;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  background: $text-white-color;
+  height: $card-height;
+  transition: transform 300ms;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-main-color;
+    transition: 300ms;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $text-secondary-color;
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  &__reviews {
+    justify-content: flex-end;
+    width: 53px;
+    height: 16px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    color: $text-main-color;
+  }
+
+  &__price-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-name {
+    display: flex;
+    justify-content: flex-start;
+    width: 31px;
+    height: 18px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    align-items: flex-end;
+    color: $text-secondary-color;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  &__price-price {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $text-main-color;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $text-white-color;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $active-color;
+    transition: 300ms;
+  }
+
+  &__button:hover {
+    background: $text-white-color;
+    color: $active-color;
+    border: 1px solid $active-color;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover > :nth-child(2) {
+    color: $card-info-hover-text-color;
+  }
+}
