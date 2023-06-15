@@ -1,0 +1,147 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+
+  border: 1px solid $gray-elements;
+  border-radius: 5px;
+
+  font-size: 10px;
+  line-height: 14px;
+  padding: 32px 16px 16px;
+
+  color: $main-accent;
+  background-color: $white;
+
+  margin: 0;
+
+  transition: transform 300ms ease-in-out;
+
+  &__image {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    &-img {
+      width: 160px;
+      height: 134px;
+    }
+  }
+
+  &__product {
+
+    &-title {
+      margin: 0 0 4px;
+
+      font-weight: 500;
+      font-size: 12px;
+      line-height: $big_line-height;
+    }
+
+    &-code {
+      margin: 0 0 16px;
+      color: $secondary;
+    }
+
+  }
+
+  &__review {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    &-text {
+      margin: 0;
+      padding: 0;
+
+      color: $main-accent;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-value {
+      margin: 0;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: $big_line-height;
+    }
+
+    &-text {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: $big_line-height;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $blue-accent;
+    border: 1px solid $blue-accent;
+    border-radius: 5px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 70px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $white;
+
+    transition: 300ms ease-in-out;
+
+    &:hover {
+      background-color: $white;
+      color: $blue-accent;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  &:hover &__product-title {
+    color: #34568b;
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n+#{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__star {
+    background: url(../images/star.svg) no-repeat 50%;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+}
+
+.cards-container {
+  display: grid;
+  padding: 50px 0 72px;
+  grid-template-columns: repeat(4, 200px);
+  row-gap: 47px;
+  column-gap: 48px;
+  justify-content: center;
+}
