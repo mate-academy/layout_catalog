@@ -1,106 +1,94 @@
-$card-width: fit-content;
-$card-bg-color: $basic-color;
-$card-font-size-basic: $font-size-basic;
-$card-fw-bold: 700;
-$card-fw-up-medium: 500;
-$card-padding: 16px;
-$card-parts-width: 166px;
-$card-parts-flex-direction: column;
-$card-space-between-elements: $card-font-size-basic + 2;
-$card-border: 1px solid #f3f3f3;
-$link-height: 40px;
-$card-link-border-rad: 5px;
-$card-link-first-color: $secondary-color;
-$card-link-second-color: $basic-color;
-
 .card {
   display: flex;
-  flex-direction: $card-parts-flex-direction;
-  width: $card-width;
-  border: $card-border;
-  padding: $card-padding;
-  background-color: $card-bg-color;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  padding: 32px 16px 16px;
+  background-color: $basic-color;
+  transition: transform $hover-transition-duration linear;
 
-  &__view {
-    width: $card-parts-width;
-    height: $card-parts-width;
-    padding: $card-space-between-elements 3px;
-    margin-bottom: $card-space-between-elements / 2;
+  &__image {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+  }
 
-    &-image {
-      width: 100%;
-      height: 100%;
+  & p {
+    margin: 0;
+  }
+
+  &__title {
+    font-size: $font-size-basic - 2px;
+    line-height: $font-size-basic + 4;
+    font-weight: $fw-up-medium;
+    margin-top: 40px;
+    transition: color $hover-transition-duration linear;
+  }
+
+  &__code {
+    color: $tertiary-color;
+    font-size: $font-size-basic - 4;
+    margin-top: 4px;
+  }
+
+  &__rating,
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__rating {
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    font-size: $font-size-basic - 4;
+  }
+
+  &__price {
+    margin-top: 24px;
+    line-height: $font-size-basic + 4;
+
+    &-text {
+      font-size: $font-size-basic - 2;
+      color: $tertiary-color;
+    }
+
+    &-value {
+      font-weight: $fw-bold;
+      font-size: $font-size-basic + 2;
     }
   }
 
-  &__product {
-    width: $card-parts-width;
+  &__link-to-buy {
+    display: block;
+    margin-top: 16px;
+    padding: 12px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $font-size-basic;
+    font-weight: $fw-bold;
+    text-align: center;
+    color: $basic-color;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    border: 1px solid $secondary-color;
+    transition: background-color $hover-transition-duration linear,
+      color $hover-transition-duration linear;
 
-    & > * {
-      margin-top: $card-space-between-elements;
+    &:hover {
+      background-color: $basic-color;
+      color: $secondary-color;
     }
+  }
 
-    & p {
-      margin: 0;
-    }
+  &:hover {
+    transform: scale(1.2);
+  }
 
-    &-name {
-      font-size: $card-font-size-basic - 2px;
-      line-height: $card-font-size-basic + 4;
-      font-weight: $card-fw-up-medium;
-      margin-bottom: 3px;
-    }
-
-    &-code {
-      color: $tertiary-color;
-      font-size: $card-font-size-basic - 4;
-    }
-
-    &-rating,
-    &-price {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    &-reviews {
-      font-size: $card-font-size-basic - 4;
-    }
-
-    &-price {
-      margin-top: $card-space-between-elements / 2 * 3;
-      line-height: $card-font-size-basic + 4;
-
-      &-text {
-        font-size: $card-font-size-basic - 2;
-        color: $tertiary-color;
-      }
-
-      &-value {
-        font-weight: $card-fw-bold;
-        font-size: $card-font-size-basic + 2;
-      }
-    }
-
-    &-link-to-buy {
-      display: block;
-      height: $link-height;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: $card-font-size-basic;
-      font-weight: $card-fw-bold;
-      text-align: center;
-      line-height: $link-height;
-      color: $card-link-second-color;
-      background-color: $card-link-first-color;
-      border-radius: $card-link-border-rad;
-      border: 1px solid $card-link-first-color;
-
-      &:hover {
-        background-color: $card-link-second-color;
-        color: $card-link-first-color;
-      }
-    }
+  &:hover &__title {
+    color: #34568b;
   }
 }

@@ -1,13 +1,3 @@
-$nav-height: 60px;
-$nav-items-gap: 20px;
-$nav-items-text-color: $primary-color;
-$nav-items-text-color-active: $secondary-color;
-$nav-items-text-fw: 500;
-$nav-items-text-fs: $font-size-basic - 2;
-$nav-items-underline-height: 4px;
-$nav-items-underline-border-rad: 8px;
-$nav-items-underline-bg-color: $secondary-color;
-
 .nav {
   &__list {
     display: flex;
@@ -20,7 +10,7 @@ $nav-items-underline-bg-color: $secondary-color;
     list-style: none;
 
     &:not(:first-child) {
-      margin-left: $nav-items-gap;
+      margin-left: 20px;
     }
   }
 
@@ -28,19 +18,20 @@ $nav-items-underline-bg-color: $secondary-color;
     display: block;
     position: relative;
     text-decoration: none;
-    color: $nav-items-text-color;
-    font-weight: $nav-items-text-fw;
-    line-height: $nav-height;
+    color: $primary-color;
+    font-weight: $fw-up-medium;
+    line-height: 60px;
     text-transform: uppercase;
-    font-size: $nav-items-text-fs;
+    font-size: 12px;
     text-align: center;
+    transition: color $hover-transition-duration linear;
 
     &:hover {
-      color: $nav-items-text-color-active;
+      color: $secondary-color;
     }
 
     &--is-active {
-      color: $nav-items-text-color-active;
+      color: $secondary-color;
 
       &::after {
         display: block;
@@ -48,9 +39,9 @@ $nav-items-underline-bg-color: $secondary-color;
         bottom: 0;
         width: 100%;
         content: "";
-        background-color: $nav-items-underline-bg-color;
-        height: $nav-items-underline-height;
-        border-radius: $nav-items-underline-border-rad;
+        background-color: $secondary-color;
+        height: 4px;
+        border-radius: 8px;
       }
     }
   }
