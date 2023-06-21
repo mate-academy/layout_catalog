@@ -1,3 +1,13 @@
+$nav-height: 60px;
+$nav-items-gap: 20px;
+$nav-items-text-color: $primary-color;
+$nav-items-text-color-active: $secondary-color;
+$nav-items-text-fw: 500;
+$nav-items-text-fs: $font-size-basic - 2;
+$nav-items-underline-height: 4px;
+$nav-items-underline-border-rad: 8px;
+$nav-items-underline-bg-color: $secondary-color;
+
 .nav {
   &__list {
     display: flex;
@@ -8,40 +18,40 @@
 
   &__item {
     list-style: none;
-  }
 
-  &__item:not(:first-child) {
-    margin-left: 20px;
+    &:not(:first-child) {
+      margin-left: $nav-items-gap;
+    }
   }
 
   &__link {
     display: block;
     position: relative;
     text-decoration: none;
-    color: $primary-color;
-    font-weight: 500;
-    line-height: 60px;
+    color: $nav-items-text-color;
+    font-weight: $nav-items-text-fw;
+    line-height: $nav-height;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: $nav-items-text-fs;
     text-align: center;
 
     &:hover {
-      color: $secondary-color;
+      color: $nav-items-text-color-active;
     }
 
     &--is-active {
-      color: $secondary-color;
-    }
+      color: $nav-items-text-color-active;
 
-    &--is-active::after {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      content: "";
-      background-color: $secondary-color;
-      height: 4px;
-      border-radius: 8px;
+      &::after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        content: "";
+        background-color: $nav-items-underline-bg-color;
+        height: $nav-items-underline-height;
+        border-radius: $nav-items-underline-border-rad;
+      }
     }
   }
 }

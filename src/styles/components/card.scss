@@ -1,12 +1,17 @@
 $card-width: fit-content;
+$card-bg-color: $basic-color;
+$card-font-size-basic: $font-size-basic;
+$card-fw-bold: 700;
+$card-fw-up-medium: 500;
 $card-padding: 16px;
 $card-parts-width: 166px;
 $card-parts-flex-direction: column;
-$card-space-between-elements: 16px;
+$card-space-between-elements: $card-font-size-basic + 2;
 $card-border: 1px solid #f3f3f3;
 $link-height: 40px;
-$card-link-first-color: #00acdc;
-$card-link-second-color: #fff;
+$card-link-border-rad: 5px;
+$card-link-first-color: $secondary-color;
+$card-link-second-color: $basic-color;
 
 .card {
   display: flex;
@@ -14,6 +19,7 @@ $card-link-second-color: #fff;
   width: $card-width;
   border: $card-border;
   padding: $card-padding;
+  background-color: $card-bg-color;
 
   &__view {
     width: $card-parts-width;
@@ -39,14 +45,15 @@ $card-link-second-color: #fff;
     }
 
     &-name {
-      font-size: 12px;
-      line-height: 18px;
-      font-weight: 500;
-      margin-bottom: $card-space-between-elements / 4;
+      font-size: $card-font-size-basic - 2px;
+      line-height: $card-font-size-basic + 4;
+      font-weight: $card-fw-up-medium;
+      margin-bottom: 3px;
     }
 
     &-code {
       color: $tertiary-color;
+      font-size: $card-font-size-basic - 4;
     }
 
     &-rating,
@@ -57,18 +64,22 @@ $card-link-second-color: #fff;
       flex-wrap: wrap;
     }
 
+    &-reviews {
+      font-size: $card-font-size-basic - 4;
+    }
+
     &-price {
       margin-top: $card-space-between-elements / 2 * 3;
-      line-height: 18px;
+      line-height: $card-font-size-basic + 4;
 
       &-text {
-        font-size: 12px;
+        font-size: $card-font-size-basic - 2;
         color: $tertiary-color;
       }
 
       &-value {
-        font-weight: 700;
-        font-size: 16px;
+        font-weight: $card-fw-bold;
+        font-size: $card-font-size-basic + 2;
       }
     }
 
@@ -77,13 +88,13 @@ $card-link-second-color: #fff;
       height: $link-height;
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: $card-font-size-basic;
+      font-weight: $card-fw-bold;
       text-align: center;
       line-height: $link-height;
       color: $card-link-second-color;
       background-color: $card-link-first-color;
-      border-radius: 5px;
+      border-radius: $card-link-border-rad;
       border: 1px solid $card-link-first-color;
 
       &:hover {
