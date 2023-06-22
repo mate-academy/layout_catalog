@@ -1,10 +1,21 @@
-$cards-container-columns: 4;
+$breakpoints-cards-column: (
+  map-get($breakpoints, "mobile"): 2,
+  map-get($breakpoints, "tablet"): 3,
+  map-get($breakpoints, "pc"): 4
+);
 
 .cards-container {
   padding: 50px 0;
   display: grid;
-  grid-template-columns: repeat($cards-container-columns, auto);
   justify-content: center;
   column-gap: 48px;
   row-gap: 46px;
+}
+
+@each $breakpoints-column, $column in $breakpoints-cards-column {
+  @media screen and (min-width: $breakpoints-column) {
+    .cards-container {
+      grid-template-columns: repeat($column, auto);
+    }
+  }
 }
