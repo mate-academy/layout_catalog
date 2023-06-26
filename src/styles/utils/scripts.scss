@@ -21,3 +21,11 @@
     --column-count: 4;
   }
 }
+
+@mixin background-stars($dgImage) {
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: #{$dgImage};
+    }
+  }
+}
