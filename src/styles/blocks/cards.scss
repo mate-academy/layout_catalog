@@ -1,0 +1,111 @@
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  background-color: $light-color;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-main-accent;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    font-size: 10px;
+    color: $color-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    color: $color-secondary;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-text {
+      font-size: 12px;
+      color: $color-secondary;
+    }
+
+    &-cost {
+      font-weight: 700;
+      font-size: 16px;
+      color: $color-main-accent;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    background: $color-accent-blue;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    color: $light-color;
+
+    &:hover {
+      background-color: $light-color;
+      border: 1px solid $color-accent-blue;
+      border-radius: 5px;
+      color: $color-accent-blue;
+    }
+  }
+}
