@@ -122,14 +122,14 @@ variable for the value that's used just once.
 BAD example:
 ```scss
 $main: #060b35;
-$secondary: #616070;
+$secondary: $spec-color;
 $blue: #00acdc;
 ```
 
 GOOD example:
 ```scss
 $color-main-accent: #060b35;
-$color-secondary: #616070;
+$color-secondary: $spec-color;
 $color-accent-blue: #00acdc;
 ```
 
