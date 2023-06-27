@@ -1,0 +1,74 @@
+.header {
+  background: #fff;
+  padding: 0 50px;
+  margin: 0 auto;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1200px) {
+    & {
+      max-width: 1200px;
+    }
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  &__nav {
+
+    &-list {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &-link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #060b35;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:hover {
+        color: #00acdc;
+      }
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $buy--color;
+
+  &:first-child {
+    color: $buy--color;
+  }
+}
+
+.is-active::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  content: "";
+  height: 4px;
+  border-radius: 8px;
+  background-color: $buy--color;
+}
