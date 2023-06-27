@@ -12,6 +12,10 @@ p {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -22,8 +26,6 @@ p {
 
 .header__logo {
   padding: 10px 0;
-  width: 40px;
-  height: 40px;
 }
 
 .nav {
@@ -88,7 +90,7 @@ p {
   background: $color-main;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  width: 166;
+  width: 200px;
   padding: 32px 16px 16px;
   transition: transform 300ms;
 }
@@ -141,14 +143,17 @@ p {
   height: 16px;
   background-repeat: no-repeat;
   margin-right: 4px;
+  background-position: center;
 }
 
 .stars__star:last-child {
   margin-right: 0;
 }
 
-.stars--5 .stars__star:nth-child(-n+4) {
-  background-image: url(../images/star-active.svg);
+@for $starCount from 1 through 5 {
+  .stars--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+    background-image: url(../images/star-active.svg);
+  }
 }
 
 .card__price {
@@ -202,6 +207,6 @@ p {
   transform: scale(1.2);
 }
 
-.card .card__list {
+.card:hover .card__list {
   color: #34568b;
 }
