@@ -1,0 +1,30 @@
+.main {
+  padding-inline: $inline-padding;
+  padding-top: 50px;
+
+  display: grid;
+  justify-content: center;
+
+  @include setColumns(1);
+
+  @media (min-width: 528px) and (max-width: 775px) {
+    @include setColumns(2);
+    .card:not(:nth-child(2n)) {
+      margin-right: 48px;
+    }
+  }
+
+  @media (min-width: 776px) and (max-width: 1023px) {
+    @include setColumns(3);
+    .card:not(:nth-child(3n)) {
+      margin-right: 48px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    @include setColumns(4);
+    .card:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
+  }
+}
