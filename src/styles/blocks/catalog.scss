@@ -1,0 +1,25 @@
+.catalog {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: 50px;
+    padding-bottom: 72px;
+    max-width: getCatalogWidth($card-width, $cards-in-row);
+  }
+
+  &__card {
+    width: $card-width;
+    
+    &:not(:nth-child(#{$cards-in-row}n)) {
+      margin-right: 48px;
+    }
+
+    &:not(:nth-child(-n + #{$cards-in-row})) {
+      margin-top: 46px;
+    }
+  }
+}
