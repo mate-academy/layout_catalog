@@ -1,0 +1,96 @@
+@import "../utils/mixins.scss";
+@import "../utils/variables.scss";
+
+.container {
+  --card-width: 200px;
+  display: grid;
+  row-gap: 46px;
+  column-gap: 48px;
+  grid-template-columns: repeat(4, var(--card-width));
+  max-width: 944px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+
+.card {
+  width: --card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+
+  &__image {
+    width: 100%;
+    @include center;
+    margin-bottom: 40px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__text {
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__code,
+  &__review {
+    font-size: 10px;
+  }
+
+  &__code {
+    color: $secondary;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    line-height: 14px;
+  }
+
+  &__price-text {
+    color: $secondary;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__row {
+    @include flex;
+  }
+  &__row--top {
+    margin-bottom: 23px;
+  }
+  &__row--bottom {
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    @include center;
+    height: 40px;
+    background-color: $component-color;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid $component-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__button:hover {
+    border: 1px solid $component-color;
+    color: $component-color;
+    background-color: #fff;
+    transition: 0.3s ease;
+  }
+}
+
+.image__image {
+  width: 160px;
+  height: 134px;
+}
