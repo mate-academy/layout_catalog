@@ -1,5 +1,51 @@
 @mixin space {
-  display: flex;
   justify-content: space-between;
   align-items: center;
+
+  display: flex;
+}
+
+@mixin onWatch() {
+  @media (max-width: 488px) {
+    @content;
+  }
+}
+
+@mixin onPhone() {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin onTablet() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin resolutionOption {
+
+  @include onWatch() {
+    grid-template-columns: repeat(1, $card-width);
+  }
+
+  @include onPhone() {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include onTablet() {
+    grid-template-columns: repeat(3, $card-width);
+    max-width: 1024px;
+  }
+
+  @include onDesktop() {
+    grid-template-columns: repeat(4, $card-width);
+    max-width: 1024px;
+  }
 }
