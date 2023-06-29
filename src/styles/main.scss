@@ -1,7 +1,7 @@
-$buttonColor: #00acdc;
-$darkBlueText: #060b35;
-$grayText: #616070;
-$borderRadius: 5px;
+@import "./block/stars.scss";
+@import "./utils/variables.scss";
+@import "./block/card.scss";
+@import "./block/nav.scss";
 
 html {
   font-family: "Roboto", "Helvetica", sans-serif;
@@ -21,28 +21,6 @@ body {
   box-shadow: 2px 4px 5px rgba(125, 125, 125, 0.1);
   font-size: 12px;
   font-weight: 500px;
-}
-
-.nav__item {
-  padding-right: 20px;
-
-  &:last-child {
-    padding: 0;
-  }
-}
-
-.nav__link {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 23px 0;
-  color: $darkBlueText;
-  cursor: pointer;
-
-  &:hover {
-    color: $buttonColor;
-  }
 }
 
 .is-active {
@@ -65,14 +43,6 @@ body {
   width: 40px;
 }
 
-.nav__list {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
 .container {
   --column-count: 1;
   display: grid;
@@ -86,111 +56,5 @@ body {
 @media (min-width: 1024px) {
   .container {
     --column-count: 4;
-  }
-}
-
-.card {
-  position: relative;
-  padding: 32px 16px 16px;
-  width: 166px;
-  border: 1px solid #f3f3f3;
-  border-radius: $borderRadius;
-
-  &__product-image {
-    display: block;
-    margin: 0 auto;
-    width: 160px;
-    height: 134px;
-    padding-bottom: 40px;
-  }
-
-  &__product-name {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    padding-bottom: 4px;
-    color: $darkBlueText;
-  }
-
-  &__product-code {
-    font-size: 10px;
-    line-height: 14px;
-    font-weight: 400px;
-    color: $grayText;
-    padding-bottom: 16px;
-  }
-
-  &__ratingbox {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 24px;
-    justify-content: space-between;
-  }
-
-  &_product-reviews {
-    display: flex;
-    align-items: flex-end;
-    color: $darkBlueText;
-    font-size: 10px;
-    line-height: 14px;
-  }
-
-  &__price {
-    font-size: 12px;
-    line-height: 18px;
-    color: $grayText;
-  }
-
-  &__price-amount {
-    font-size: 16px;
-    line-height: 18px;
-    color: $darkBlueText;
-    font-weight: 700;
-  }
-
-  &__product-price {
-    display: flex;
-    padding-bottom: 16px;
-    justify-content: space-between;
-  }
-
-  &__buy-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    font-weight: 700;
-    font-size: 14px;
-    background-color: $buttonColor;
-    border-radius: $borderRadius;
-    text-decoration: none;
-    color: white;
-  }
-
-  &__buy-button:hover {
-    background-color: white;
-    border: 1px solid $buttonColor;
-    color: $buttonColor;
-    border-radius: $borderRadius;
-  }
-}
-
-.stars {
-  display: flex;
-
-  &__star {
-    height: 16px;
-    width: 16px;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &__star:not(:last-child) {
-    margin-right: 4px;
-  }
-
-  &--4 .stars__star:nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
   }
 }
