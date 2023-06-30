@@ -1,0 +1,37 @@
+@mixin flexAlign ($alignItem: space-between) {
+  display: flex;
+  align-items: center;
+  justify-content: $alignItem;
+}
+
+@mixin responsive ($breakpoint) {
+  @if $breakpoint==desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktop-lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet-portrait {
+    @media (min-width: 488px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==mobile {
+    @media (max-width: 488px) {
+      @content;
+    }
+  }
+}
