@@ -1,14 +1,6 @@
-.cards {
-  // margin: 0 auto;
-  padding: 50px 40px;
-  @include pageGrid;
-
-  @include wideScreen;
-}
 
 .card {
   width: 200px;
-  box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   background: #fff;
@@ -37,7 +29,6 @@
   }
 
   &__code {
-    // color: $second-text-color ;
     color: $secondaryTextcolor;
     margin-bottom: 16px;
     font-size: 10px;
@@ -51,7 +42,6 @@
   }
 
   &__review-number {
-    // color: $main-accent;
     color: $mainTextcolor;
     font-size: 10px;
   }
@@ -66,7 +56,6 @@
   &__price-text {
     font-size: 12px;
     line-height: 18px;
-    // color: $second-text-color;
     color: $secondaryTextcolor;
   }
 
@@ -81,12 +70,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     height: 40px;
 
     text-decoration: none;
     border-radius: 5px;
-    background-color: #00acdc;
+    background-color: $blueContentcolor;
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
@@ -96,8 +84,8 @@
 
   &__buy:hover {
     background-color: #fff;
-    color: #00acdc;
-    border: 1px solid #00acdc;
+    color: $blueContentcolor;
+    border: 1px solid $blueContentcolor;
   }
 }
 
@@ -118,10 +106,8 @@
   background-position: center;
 }
 
-.stars--1 > .stars-star:first-child,
-.stars--2 > .stars-star:nth-child(-n+2),
-.stars--3 > .stars-star:nth-child(-n+3),
-.stars--4 > .stars-star:nth-child(-n+4),
-.stars--5 > .stars-star:nth-child(-n+5) {
-  background-image: url(/images/star-active.svg);
+@for $starCount from 1 through 4 {
+  .stars-star:nth-child(-n + #{$starCount}) {
+    background-image: url(/images/star-active.svg);
+  }
 }
