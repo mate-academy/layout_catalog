@@ -1,0 +1,131 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 166px;
+  padding: 32px 16px 16px;
+  background-color: $main-background-color;
+  border: 1px solid $card-border-color ;
+  border-radius: 5px;
+  transition: transform 300ms;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    padding-bottom: 4px;
+    font-size: $main-font-size;
+    line-height: 18px;
+    font-weight: 500;
+    color: $main-color-font;
+  }
+
+  &__code {
+    font-size: $small-font-size;
+    line-height: 14px;
+    font-weight: 400;
+    color: $card-secondary-font;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0 24px;
+  }
+
+  &__reviews {
+    font-size: $small-font-size;
+    line-height: 14px;
+    color: $main-color-font;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-color-font;
+  }
+
+  &__priceTitle {
+    font-weight: 400;
+    font-size: $main-font-size;
+    line-height: 18px;
+    color: $card-secondary-font;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $card-title-hover-color;
+    }
+  }
+
+  &__button {
+    display: block;
+    padding: 12px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-background-color;
+    background-color: $hover-color-font;
+    border: 1px solid $hover-color-font;
+    border-radius: 5px;
+
+    &:hover {
+      color: $hover-color-font;
+      background-color: transparent;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background: url(/images/star.svg) no-repeat center;
+    background-position: 50%;
+    margin-right: 4px;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} &__star:nth-child(-n + #{$starCount}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 72px;
+  grid-template-columns: repeat(1, 200px);
+  column-gap: 48px;
+  row-gap: 46px;
+  place-content: center;
+
+  @media (min-width:488px) {
+    grid-template-columns: repeat(2,200px);
+  }
+
+  @media (min-width:768px) {
+    grid-template-columns: repeat(3,200px);
+  }
+
+  @media (min-width:1024px) {
+    grid-template-columns: repeat(4,200px);
+  }
+}
