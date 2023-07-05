@@ -1,3 +1,48 @@
+@import "./utils/variables.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/card.scss";
+@import "./blocks/header.scss";
+@import "./blocks/nav.scss";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+.grid-container {
+  --columns-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns-count), 200px);
+  padding: 50px 0 72px;
+  justify-content: center;
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .grid-container {
+    --columns-count: 2;
+  }
+}
+@media (min-width: 768px) {
+  .grid-container {
+    --columns-count: 3;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-container {
+    --columns-count: 4;
+  }
 }
