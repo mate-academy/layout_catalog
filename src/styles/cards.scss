@@ -1,8 +1,10 @@
-.cards__container {
+.container {
   display: grid;
   grid-template-columns: repeat(4,200px);
   grid-gap: 46px 48px;
   justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 72px;
 }
 
 .card {
@@ -11,10 +13,18 @@
   height: 408px;
   display: flex;
   flex-direction: column;
-  position: absolute;
   background-color: $white-color;
   border-radius: 5px;
   justify-content: space-between;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__product-name {
+    color: $title-color;
+  }
 
   &__image {
     margin: 19px;
