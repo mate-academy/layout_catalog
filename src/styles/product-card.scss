@@ -1,0 +1,132 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  transition: all $duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 40px;
+  }
+
+  &__description {
+    width: $width;
+
+    &_name {
+      line-height: 18px;
+      font-weight: 500;
+      color: $dark-color;
+
+      margin-bottom: 4px;
+    }
+
+    &_id {
+      font-size: 10px;
+      line-height: 14px;
+      color: $light-color;
+      margin-bottom: 16px;
+    }
+  }
+
+  &:hover &__description_name {
+    color: #34568b;
+  }
+
+  &__rating {
+    width: $width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16px;
+    margin-bottom: 24px;
+
+    &_stars {
+      display: flex;
+
+      &_star {
+        width: $star-size;
+        height: $star-size;
+        background-image: url(../images/star-active.svg);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+        margin-right: 4px;
+      }
+    }
+
+    &_stars > :last-child {
+      background-image: url(../images/star.svg);
+    }
+
+    &_reviews {
+      font-size: 10px;
+      line-height: 14px;
+      color: $dark-color;
+    }
+  }
+
+  &__price {
+    width: $width;
+    display: flex;
+    justify-content: space-between;
+    line-height: 18px;
+
+    &_des {
+      line-height: 18px;
+      color: $light-color;
+    }
+
+    &_value {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $dark-color;
+    }
+  }
+
+  &__buy-button {
+    border: 1px solid $main-color;
+    width: $width;
+    height: $button-height;
+    margin: 16px;
+    background-color: $main-color;
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    text-transform: uppercase;
+
+    transition: all $duration;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &_link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: $button-height;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+
+      transition: all $duration;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
