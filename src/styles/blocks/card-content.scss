@@ -1,0 +1,110 @@
+.card-content {
+  &__container {
+    @extend %display-flex;
+    @include square_vertical_paddings($paddings-card-contant__container);
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: $cards-content-width;
+  }
+
+  &__card {
+    @extend %display-flex-column;
+    @extend %justify-content-align-items-center;
+    box-sizing: border-box;
+    width: $card-width;
+    margin: 0 $card-margin;
+    border: 1px solid $color-card-border;
+    border-radius: 5px;
+    padding: 32px 16px 16px;
+  }
+
+  &__card:nth-last-child(-n+4) {
+    margin-top: 46px;
+  }
+
+  &__image-container {
+    margin-bottom: 36px;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__name {
+    @include reset-margin-to-zero($reset-margin);
+    margin-bottom: 4px;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: $dark-blue-color;
+  }
+
+  &__code {
+    @include reset-margin-to-zero($reset-margin);
+    font-size: 10px;
+    color: $gray-color;
+  }
+
+  &__marks {
+    @extend %display-flex;
+    @extend %justify-content-spacebeetween-align-items-center;
+    margin-top: 17px;
+  }
+
+  &__stars {
+    @extend %display-flex-column;
+  }
+
+  &__reviews {
+    @include reset-margin-to-zero($reset-margin);
+    padding-bottom: 1px;
+    font-size: 10px;
+    color: $dark-blue-color;
+  }
+
+  &__price {
+    @extend %display-flex;
+    @extend %justify-content-spacebeetween-align-items-center;
+    margin-top: 23px;
+  }
+  
+  &__price-content {
+    @include reset-margin-to-zero($reset-margin);
+    font-size: 12px;
+    color: $gray-color;
+  }
+  
+  &__price-digit {
+    @include reset-margin-to-zero($reset-margin);
+    color: $dark-blue-color;
+  }
+  
+  &__button-container {
+    margin-top: 16px;
+  }
+  
+  &__button {
+    @extend %display-flex;
+    @extend %justify-content-align-items-center;
+  }
+  
+  &__link {
+    color: $white-color;
+    background-color: $light-blue-color;
+    padding: 11px 70px 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  &__link:hover {
+    color: $light-blue-color;
+    padding: 10px 69px 11px;
+    background-color: $white-color;
+    border: 1px solid $light-blue-color;
+  }
+}
