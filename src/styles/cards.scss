@@ -1,5 +1,4 @@
 .page {
-
   &__catalog {
     display: flex;
     justify-content: center;
@@ -8,30 +7,15 @@
 }
 
 .catalog {
-
   &__container {
     display: grid;
     margin-top: 50px;
     column-gap: 48px;
     row-gap: 46px;
 
-    @media (min-width: 488px) {
-      & {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 768px) {
-      & {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      & {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
+    @include adaptiveColAmount(488px, 2);
+    @include adaptiveColAmount(768px, 3);
+    @include adaptiveColAmount(1024px, 4);
 
     @media (max-width: 488px) {
       & {
