@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.logo-link {
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+
+  &__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 60px;
+
+    &:hover {
+      color: #{$product-color};
+    }
+  }
+
+  &__list {
+    @include between-block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    & .is-active {
+      color: #{$product-color};
+    }
+  }
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #{$product-color};
+  bottom: 0;
+}
