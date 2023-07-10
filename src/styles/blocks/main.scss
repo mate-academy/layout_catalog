@@ -1,8 +1,4 @@
-$main-color: #060b35;
-$main-secondary: #616070;
-$buttom-color: #00acdc;
-$buttom-hover: #fff;
-$border: #f3f3f3;
+@import '../utils/_variables.scss';
 
 .container {
   --column-count: 1;
@@ -157,11 +153,9 @@ $border: #f3f3f3;
     margin-left: 4px;
   }
 
-  &--1 :nth-child(-n+1),
-  &--2 :nth-child(-n+2),
-  &--3 :nth-child(-n+3),
-  &--4 :nth-child(-n+4),
-  &--5 :nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
