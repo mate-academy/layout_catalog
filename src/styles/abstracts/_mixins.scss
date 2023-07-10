@@ -3,7 +3,7 @@
 
 // A map of breakpoints.
 $breakpoints: (
-  xs: 4898x,
+  xs: 488px,
   sm: 768px,
   md: 1024px,
   lg: 1200px
@@ -24,8 +24,9 @@ $breakpoints: (
     }
 
     // If the breakpoint doesn't exist in the map.
-  } @else {
-    // Log a warning.
+  }
+  @else {
+
     @warn "Invalid breakpoint: #{$breakpoint}.";
   }
 }
@@ -46,7 +47,8 @@ $breakpoints: (
     }
 
     // If the breakpoint doesn't exist in the map.
-  } @else {
+  }
+  @else {
     // Log a warning.
     @warn "Invalid breakpoint: #{$breakpoint}.";
   }
@@ -64,12 +66,14 @@ $breakpoints: (
     $upper-breakpoint: map-get($breakpoints, $upper);
 
     // Write the media query.
-    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+    @media (min-width: $lower-breakpoint)
+      and (max-width: ($upper-breakpoint - 1)) {
       @content;
     }
 
     // If one or both of the breakpoints don't exist.
-  } @else {
+  }
+  @else {
     // If lower breakpoint is invalid.
     @if (map-has-key($breakpoints, $lower) == false) {
       // Log a warning.
