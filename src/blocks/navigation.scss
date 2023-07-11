@@ -1,51 +1,42 @@
 .nav {
-  font-size: 12px;
-  text-transform: uppercase;
-
   &__list {
-    list-style: none;
     display: flex;
-    flex-wrap: wrap;
     margin: 0;
     padding: 0;
-
-    &-item {
-      position: relative;
-      margin-left: 20px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-    }
+    list-style: none;
   }
 
   &__link {
-    display: block;
-    height: 100%;
-    color: var(--main-color);
+    color: $font-color;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
     line-height: 60px;
-
-    &.is-active {
-      color: $theme-color;
-      cursor: default;
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 4px;
-        width: 100%;
-        border-radius: 8px;
-        background-color: $theme-color;
-      }
-
-    }
+    font-weight: 500;
+    display: inline-block;
 
     &:hover {
-      color: $theme-color;
+      color: #00acdc;
     }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.is-active {
+  color: #00acdc;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: $theme-color;
+    border-radius: 8px;
   }
 }
