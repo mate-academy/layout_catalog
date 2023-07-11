@@ -1,0 +1,11 @@
+.catalog {
+  margin: 50px auto;
+  display: grid;
+  gap: 46px 48px;
+
+  @each $prop, $size, $columns in $medias {
+    @media(#{$prop}: #{$size}) {
+      grid-template-columns: repeat(#{$columns}, 1fr);
+    }
+  }
+}
