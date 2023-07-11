@@ -1,0 +1,36 @@
+@import "../utils/variables";
+
+
+.catalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__site {
+    --grid-rows: 4;
+
+    /* display */
+    display: grid;
+    padding: 50px 0 72px;
+
+    /* grid template */
+    grid-template-columns: repeat(var(--grid-rows), $card-bg-size-w);
+    gap: 46px 48px;
+
+    @media (min-width: 448px) {
+      --grid-rows: 2;
+    }
+
+    @media (min-width: 768px) {
+      --grid-rows: 3;
+    }
+
+    @media (min-width: 1024px) {
+      --grid-rows: 4;
+    }
+
+    @media (max-width: 447px) {
+      --grid-rows: 1;
+    }
+  }
+}

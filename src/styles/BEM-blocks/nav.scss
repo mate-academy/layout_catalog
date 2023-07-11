@@ -1,0 +1,85 @@
+
+.header {
+  /* display */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  padding: 0 50px;
+
+  /* font */
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  & > a {
+    cursor: pointer;
+  }
+
+  &__logo {
+    display: block;
+    margin-top: 3px;
+  }
+
+}
+
+.nav {
+  &__list {
+    /* display */
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+
+    /* design */
+    list-style-type: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.item__link {
+  color: $nav-text-color;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding-top: 23px;
+  padding-bottom: 23px;
+
+  /* animation */
+  transition-duration: color 300ms;
+
+  &:hover {
+    color: $nav-text-color-hover;
+  }
+
+  .list__item > & {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .list__item:first-child > & {
+    margin-left: 0;
+  }
+
+  .list__item:last-child > & {
+    margin-right: 0;
+  }
+}
+
+.is-active {
+  color: $nav-text-color-hover;
+}
+
+.is-active::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background: $nav-accent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
