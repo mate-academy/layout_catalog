@@ -1,0 +1,51 @@
+.nav {
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      position: relative;
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    color: var(--main-color);
+    text-decoration: none;
+    line-height: 60px;
+
+    &.is-active {
+      color: $theme-color;
+      cursor: default;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $theme-color;
+      }
+
+    }
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}
