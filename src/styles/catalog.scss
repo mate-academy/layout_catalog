@@ -1,0 +1,128 @@
+.catalog {
+  &__container {
+    display: grid;
+    margin-top: 50px;
+    column-gap: 48px;
+    row-gap: 46px;
+
+    @include adaptiveColAmount(488px, 2);
+    @include adaptiveColAmount(768px, 3);
+    @include adaptiveColAmount(1024px, 4);
+
+    @media (max-width: 488px) {
+      & {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+.card {
+  display: flex;
+  max-width: 200px;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  padding: 32px 16px 16px;
+  transition: transform 0.3s ease 0s;
+
+  &__image {
+    margin: 0 auto 40px;
+
+    & img {
+      height: 134px;
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 12px 0;
+    background-color: $color_blue;
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+
+    font-weight: 700;
+    color: $color_white;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid $color_blue;
+
+    &:hover {
+      color: $color_blue;
+      background-color: $color_white;
+    }
+  }
+
+  &__main {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    color: $color_dark-purple;
+    margin: 0;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1.5;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__poduct-code {
+    color: $color_white-grey;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__review {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__count {
+    color: $color_dark-purple;
+    font-size: 10px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+
+  &__legend {
+    color: $color_white-grey;
+  }
+
+  &__value {
+    color: $color_dark-purple;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+}
