@@ -1,10 +1,4 @@
-$roboto: "Roboto", sans-serif;
-$font-size: 10px;
-$color-main-accent: #060b35;
-$color-secondary: #616070;
-$color-blue-accent: #00acdc;
-$card-width: 200px;
-$gap: 48px;
+@import "./variables";
 
 body {
   font-family: $roboto;
@@ -13,33 +7,26 @@ body {
 
 .header {
   display: flex;
-  height: 60px;
-
   justify-content: space-between;
   align-items: center;
+  padding: 0 50px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &__logo {
-    padding-left: 50px;
-
-    &-img {
-      width: 40px;
-      height: 40px;
-      vertical-align: bottom;
-    }
-  }
-
-  &__nav {
-    height: 100%;
+    width: 40px;
+    height: 40px;
+    vertical-align: bottom;
   }
 }
 
 .nav {
+  height: 100%;
 
   &__list {
     display: flex;
     height: 100%;
     list-style: none;
-    margin: 0 10px;
   }
 
   &__list-elem {
@@ -70,7 +57,7 @@ body {
 
     &:last-child {
       font-family: $roboto;
-      margin-right: 40px;
+      margin-right: 0;
     }
 
     &:hover {
@@ -216,7 +203,7 @@ body {
       border: 1px solid $color-blue-accent;
     }
   }
-  
+
   &:hover {
     transform: scale(1.2);
     .card__title {
@@ -231,8 +218,8 @@ body {
 }
 
 .stars__star {
-  width: 16px;
-  height: 16px;
+  width: #{$star-size};
+  height: #{$star-size};
   margin-right: 4px;
   background-image: url(../images/star.svg);
   background-repeat: no-repeat;
@@ -264,14 +251,4 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #00acdc;
-  }
 }
