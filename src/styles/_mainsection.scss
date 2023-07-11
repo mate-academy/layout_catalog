@@ -1,0 +1,38 @@
+.main {
+  padding-top: 50px;
+
+  &__container {
+    height: 100%;
+    padding-bottom: 72px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, $card-width);
+    grid-auto-rows: $card-height;
+    gap: 46px 48px;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+      width: calc(4 * #{$card-width} + 3 * #{$gap});
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(3, 1fr);
+      width: calc(3 * #{$card-width} + 2 * #{$gap});
+    }
+
+    @media (min-width: 488px) and (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: calc(2 * #{$card-width} + #{$gap});
+    }
+
+    @media (max-width: 487px) {
+      grid-template-columns: 1fr;
+      width: $card-width;
+    }
+  }
+
+  &__card {
+    max-width: $card-width;
+  }
+}
