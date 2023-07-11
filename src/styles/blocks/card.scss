@@ -1,0 +1,146 @@
+@import "../utils/variables.scss";
+
+.catalog {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat($column-count, $width-card);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 46px 48px;
+  justify-content: center;
+
+  @media (max-width: 487px) {
+    $column-count: 1;
+    grid-template-columns: repeat($column-count, $width-card);
+  }
+
+  @media (min-width: 488px) {
+    $column-count: 2;
+    grid-template-columns: repeat($column-count, $width-card);
+  }
+
+  @media (min-width: 768px) {
+    $column-count: 3;
+    grid-template-columns: repeat($column-count, $width-card);
+  }
+
+  @media (min-width: 1024px) {
+    $column-count: 4;
+    grid-template-columns: repeat($column-count, $width-card);
+  }
+}
+
+.card {
+  width: $width-card;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image-container {
+    margin: 0 3px 38px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 98%;
+    object-fit: contain;
+  }
+
+  // &__content {
+  //   padding: 4px 16px 16px;
+  // }
+
+  &__title {
+    margin-bottom: 4px;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-main-accent;
+  }
+
+  &__product-code {
+    margin-bottom: 16px;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 10px;
+    color: $color-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-main-accent;
+  }
+
+  // &__review {
+  //   margin-top: 1px;
+  // }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-family;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-secondary;
+
+    &-value {
+      font-size: 16px;
+      font-family: $font-family;
+      font-weight: 700;
+      line-height: 18px;
+      color: $color-main-accent;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    padding: 11px 81px;
+    border: 1px solid $color-accent-blue;
+    border-radius: 5px;
+    background-color: $color-accent-blue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-size: 14px;
+    font-family: $font-family;
+    font-weight: 750;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover {
+      border-radius: 5px;
+      border: 1px solid  $color-accent-blue;
+      background: $color-white;
+
+      text-align: center;
+      font-size: 14px;
+      font-family: $font-family;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $color-accent-blue;
+    }
+  }
+}
