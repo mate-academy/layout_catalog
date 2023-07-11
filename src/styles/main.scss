@@ -1,3 +1,41 @@
-body {
+@import "./utilis/_variables.scss";
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  font-family: $default-font-family;
+}
+
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.container {
+  --columns: 1;
+  display: grid;
+  gap: 46px 48px;
+  grid-template-columns: repeat(var(--columns),200px);
+  justify-content: center;
+  padding: 50px 0 72px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    --columns: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --columns: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --columns: 4;
+  }
 }
