@@ -3,12 +3,12 @@
   margin-top: 16px;
 
   &__star {
-    background: url(../images/star.svg);
+    background: url(../images/star.svg) no-repeat center;
     width: 16px;
     height: 16px;
     margin-right: 4px;
-    
-    @include background;
+    background-position: center;
+    background-repeat: no-repeat;
 
     & :last-child() {
       margin-right: 0;
@@ -17,9 +17,7 @@
 
   @for $starCount from 1 through 5 {
     &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
-      background: url(../images/star-active.svg);
-
-      @include background;
+      background: url(../images/star-active.svg) no-repeat center;
     }
   }
 
