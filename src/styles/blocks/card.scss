@@ -1,0 +1,130 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  background-color: $background-color;
+  max-width: 200px;
+  transition: transform 300ms;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    align-self: center;
+    margin: 32px 19px 0;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $font-color;
+    margin: 40px 16px 0;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $details-color;
+    margin: 4px 0 0 16px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 16px 0;
+
+    &-reviews {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: $font-color;
+      font-family: "Roboto", sans-serif;
+      letter-spacing: 0;
+      text-align: right;
+
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 16px 0;
+    line-height: 18px;
+
+    &-label {
+      font-weight: 400;
+      font-size: 12px;
+      color: $details-color;
+      font-family: "Roboto", sans-serif;
+      line-height: 18px;
+      letter-spacing: 0;
+      text-align: left;
+
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      color: $font-color;
+      font-family: "Roboto", sans-serif;
+      line-height: 18px;
+      letter-spacing: 0;
+      text-align: right;
+
+    }
+  }
+
+  &__button {
+    margin: 16px;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $background-color;
+    background-color: $theme-color;
+    border: 1px solid $theme-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 300ms, color 300ms;
+  }
+
+  &__button:hover {
+    background-color: $background-color;
+    color: $theme-color;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(1) > &__star:nth-child(-n + 4) {
+    background-image: url("../images/star-active.svg");
+  }
+}
