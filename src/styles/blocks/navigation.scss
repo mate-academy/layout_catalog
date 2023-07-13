@@ -1,0 +1,52 @@
+@import "../utils/variables";
+
+.navigation {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &__list {
+    height: 60px;
+    display: flex;
+    margin: 0;
+    line-height: 60px;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    text-transform: uppercase;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    color: $main-accent;
+  }
+
+  &__item:not(:first-of-type) {
+    margin-left: 20px;
+  }
+
+  &__item:first-of-type::after {
+    position: relative;
+    bottom: 4px;
+    content: "";
+    background-color: $blue-accent;
+    height: 0;
+    padding: 2px 0;
+    border-radius: 2px;
+    width: 100%;
+  }
+
+  &__item > a {
+    text-decoration: none;
+    color: $main-accent;
+    transition-duration: 0.3s;
+  }
+
+  &__item > a:hover {
+    color: $blue-accent;
+  }
+
+  .is-active {
+    color: $blue-accent;
+  }
+}
