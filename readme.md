@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://ivanberdnyk.github.io/layout_moyo-header/)
+- [TEST REPORT LINK](https://ivanberdnyk.github.io/layout_moyo-header/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -17,12 +17,9 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
 and SCSS
 - Nav links color is not `black` any more
-- **flex layout**: there should always be 4 cards in a row (not 2, 3 or 5)
-  - use `:nth-child(4n)` to select every 4th element in `flex` container
-  - use `:nth-last-child(-n + 4)` to select 4 last elements `flex` container
-- ❗️❗️❗️ **MANDATORY if you're familiar with the `grid`**
-  - use `grid` instead of `flex`
-  - implement the [Grid Layout instead](./grid.md)
+- there should always be 4 cards in a row (not 2, 3 or 5)
+  - use `:nth-child(4n)` to select every 4th element
+  - use `:nth-last-child(-n + 4)` to select 4 last elements
 - the distance between cards on the design includes borders (zoom in to see it);
 - cards should have fixed width and fixed distances between them
 - cards container should have fixed paddings (see 1024px example), bottom the same as top
@@ -34,20 +31,9 @@ and SCSS
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 ---
 --> [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md)
+---
+![screenshot](./references/catalog-example.png)
 
 ---
 ### Tips & Hints
-- Don't use flex `gap` property, it's not yet supported by tests.
-- Check `background-image: url()` to be relative to the `main.scss`. So should start with `../images`.
-
----
-
-❗️❗️❗️ **MANDATORY if you're familiar with the `transform and transition`**
-
-Make all the changes smooth on hover (during 300ms):
-- increase the card by 20 percent (neighboring cards **should not be** affected)
-- change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
-- change navigation link text color to `#00acdc`
-- change the button background to `#fff` and text color to `#00acdc` on hover
-
-![screenshot](./references/catalog-example.png)
+Don't use flex `gap` property, it's not yet supported by tests.
