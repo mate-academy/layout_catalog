@@ -1,0 +1,103 @@
+@import "../utilis/variables";
+
+.cards-container {
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px;
+  grid-template-columns: repeat(var(--columns),200px);
+  --columns: 1;
+  padding: 50px 0 72px;
+}
+
+.card {
+  max-width: 200px;
+  width: 100%;
+  border: 1px solid #f3f3f3;
+  border-radius: $border-radius;
+  transition: 0.3s;
+  padding: 32px 16px 16px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 36px 3px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: $font-weight-500;
+    line-height: $bigger-line-height;
+    color: $text-dark;
+    margin: 0 0 4px;
+  }
+
+  &__code {
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+    color: $text-gray;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: $default-font-size;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &-amount {
+      font-size: 16px;
+      line-height: $bigger-line-height;
+      font-weight: $font-weight-700;
+      color: $text-dark;
+    }
+
+    &-caption {
+      font-size: 12px;
+      line-height: $bigger-line-height;
+      color: $text-gray;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: $default-line-height;
+    font-weight: $font-weight-700;
+    color: $color-white;
+    background-color: $color-blue;
+    text-transform: uppercase;
+    border: 1px solid $color-blue;
+    border-radius: $border-radius;
+    padding: 12px;
+
+    &:hover {
+      color: $color-blue;
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+  }
+
+  &:hover .card__title {
+    color: #34568b;
+  }
+}
+
+@for $i from 1 through 5 {
+  &.stars--#{$i} .stars__star:nth-child(-n + #{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
