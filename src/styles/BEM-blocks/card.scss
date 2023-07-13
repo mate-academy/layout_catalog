@@ -1,0 +1,123 @@
+@import "../utils/_variables.scss";
+
+.card {
+  box-sizing: border-box;
+  width: $card-bg-size-w;
+  height: $card-bg-size-h;
+  border-radius: $card-border-radius;
+  padding: 32px 16px 16px;
+
+  border: 1px solid $card-border-color;
+  background: $card-bg-light-color;
+  font-family: "Roboto", Helvetica, sans-serif;
+
+  transition: transform 300ms;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-left: 3px;
+  }
+
+  &__title {
+    margin-top: 36px;
+    color: $card-text-main-color;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color 300ms;
+  }
+
+  &__code {
+    margin-top: 4px;
+    color: $card-text-side-color;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__rating {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__reviews {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    color: $card-text-main-color;
+    text-align: right;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__price-text {
+    color: $card-text-side-color;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price-num {
+    color: $card-text-main-color;
+    text-align: right;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__buy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: $card-button-w;
+    height: $card-button-h;
+    border-radius: $card-border-radius;
+    margin-top: 16px;
+    box-sizing: border-box;
+
+    background-color: $card-blue-accent;
+    color: $card-bg-light-color;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    transition: color 300ms, background-color 300ms;
+
+    &:hover {
+      flex-shrink: 0;
+      width: $card-button-w;
+      height: $card-button-h;
+      border-radius: $card-border-radius;
+      border: 1px solid $card-blue-accent;
+      background-color: $card-bg-light-color;
+      color: $card-blue-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale(120%);
+  }
+
+  &:hover &__title {
+    color: $card-text-main-color-hover;
+  }
+}
