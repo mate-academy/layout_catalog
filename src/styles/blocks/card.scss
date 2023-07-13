@@ -1,15 +1,25 @@
 @import "./utils/variables";
 
 .card {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  padding: 32px 16px 16px;
-  border: 1px solid $color-border-card;
-  border-radius: 5px;
-  background-color: #ffff;
-  margin-right: 48px;
-  margin-bottom: 46px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  column-gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+  padding: 50px 40px;
+  margin: 0 auto;
+  width: fit-content;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 32px 16px 16px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    background-color: #ffff;
+    transition: transform 0.3s;
+  }
 
   &:nth-child(4n) {
     margin-right: 0;
@@ -88,10 +98,20 @@
     height: 40px;
     border-radius: 5px;
     text-transform: uppercase;
+    transition: color 0.3s, background-color 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: $color-accent-blue;
+    }
   }
 
-  &__button-link:hover {
-    background-color: white;
-    color: $color-accent-blue;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: #34568b;
   }
 }
