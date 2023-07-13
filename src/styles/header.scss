@@ -1,0 +1,70 @@
+@import "mixins.scss";
+
+.header {
+  &__logo {
+    display: block;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05%);
+}
+
+.nav {
+  &__list {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+
+    @include fontParams(12px, 500);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $mainAccent;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $colorBlueAccent;
+    }
+
+    &--active {
+      color: $colorBlueAccent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 4px;
+
+        background-color: $colorBlueAccent;
+      }
+    }
+  }
+}
