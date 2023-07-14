@@ -1,0 +1,47 @@
+.nav {
+  min-width: 635.54px;
+
+  &__list {
+    @include flex-centering(space-between);
+    width: 100%;
+  }
+
+  &__link {
+    display: block;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease 0s;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      border-radius: 8px;
+      transition: background-color 0.3s ease 0s, width 0.3s ease 0s;
+    }
+
+    &::before {
+      background-color: $blue;
+      width: 100%;
+    }
+
+    &.is-active {
+      color: $blue;
+    }
+
+    &.is-active::after {
+      width: 100%;
+      background-color: $blue;
+    }
+  }
+}
