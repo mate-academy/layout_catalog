@@ -26,7 +26,7 @@ p {
 
   padding: 0 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0,0.1);
-  max-width: 1200px;
+  width: 100%;
 }
 
 .header__logo {
@@ -112,6 +112,10 @@ p {
   padding: 32px 16px 16px;
 }
 
+.card:nth-last-child(-n + 4) {
+  margin-bottom: 0;
+}
+
 .card__image {
   width: 160px;
   height: 134px;
@@ -129,12 +133,6 @@ p {
 .card__product-code {
   color: var(--second-color);
   margin-bottom: 16px;
-}
-
-.stars__reviews {
-  color: var(--main-accent-color);
-  text-align: end;
-  margin: 0;
 }
 
 .card__price {
@@ -192,28 +190,35 @@ p {
 
 .stars {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  &__reviews {
+    color: var(--main-accent-color);
+    text-align: end;
+    margin: 0;
+  }
+
+  &--4 {
+    .stars__star:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
-.stars__star {
-  height: 16px;
-  width: 16px;
-  background-image: url(../images/star.svg);
-  background-position: 50%;
-  background-repeat: no-repeat;
-  margin-right: 4px;
-}
-
-.stars--4 .stars__star:last-child {
-  margin-right: 0;
-}
-
-.stars--1 .stars__star:nth-child(-n+1),
-.stars--2 .stars__star:nth-child(-n+2),
-.stars--3 .stars__star:nth-child(-n+3),
-.stars--4 .stars__star:nth-child(-n+4),
-.stars--5 .stars__star:nth-child(-n+5) {
-  background-image: url(../images/star-active.svg);
+@for $starCount from 1 through 5 {
+  .stars--#{$starCount} {
+    .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
