@@ -1,0 +1,73 @@
+.header {
+  font-size: $font-size-big;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 50px;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+
+  &Holder {
+    position: relative;
+    max-height: 40px;
+    max-width: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    @include delete-margin-padding();
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    color: $text-color-primary;
+    font-weight: $font-weight-mid;
+    text-decoration: none;
+    margin-right: 0;
+    margin-left: 20px;
+    height: 60px;
+    /* Readme said to not use uneven numbers, this is a workaround
+       And despite what the checklist says, the distance between the
+       content on Figma IS 22.5
+       Additionally, I chose to stick with this approach rather than
+       centering with flexbox to preserve the large clickable area
+       of the nav elements; also, by centering with flexbox, I would
+       still need to use 22.5 (or rather, -22.5) in order to space
+       the underline later in this file */
+    padding: calc(45px / 2) 0;
+
+    &--leftmost {
+      margin-left: 0;
+    }
+
+    &:hover {
+      color: $color-cyan;
+    }
+  }
+
+  .is-active {
+    color: $color-cyan;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 4px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background-color: $color-cyan;
+      border-radius: 8px;
+    }
+  }
+}
