@@ -11,11 +11,9 @@
 
   }
 
-  &--1 .card__stars-item:nth-child(-n+1),
-  &--2 .card__stars-item:nth-child(-n+2),
-  &--3 .card__stars-item:nth-child(-n+3),
-  &--4 .card__stars-item:nth-child(-n+4),
-  &--5 .card__stars-item:nth-child(-n+5) {
-    background-image: url(../images/star-active.svg);
+  @for $index from 1 through 5 {
+    &--#{$index} .card__stars-item:nth-child(-n+ #{$index}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }

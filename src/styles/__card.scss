@@ -1,9 +1,6 @@
-$primary-font-color: #060b35;
-$secondary-font-color: #616070;
-$button-color: #00acdc;
-$main-color: #fff;
+@import "variables";
 
-.album {
+.catalog {
   --columns: 1;
   display: grid;
   gap: 46px 48px;
@@ -12,19 +9,19 @@ $main-color: #fff;
 }
 
 @media (min-width: 488px) {
-  .album {
+  .catalog {
     --columns: 2;
   }
 }
 
 @media (min-width: 768px) {
-  .album {
+  .catalog {
     --columns: 3;
   }
 }
 
 @media (min-width: 1024px) {
-  .album {
+  .catalog {
     --columns: 4;
   }
 }
@@ -39,7 +36,7 @@ $main-color: #fff;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   background: $main-color;
-  transition: all 0.3s;
+  transition: scale 0.3s;
 
   &__image {
     width: 160px;
@@ -81,20 +78,20 @@ $main-color: #fff;
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 16px;
-  }
 
-  &__reviews-stars {
-    width: 96px;
-    height: 16px;
-  }
+    &-stars {
+      width: 96px;
+      height: 16px;
+    }
 
-  &__reviews-counter {
-    text-align: right;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    color: $primary-font-color;
-    margin: 0;
+    &-counter {
+      text-align: right;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      color: $primary-font-color;
+      margin: 0;
+    }
   }
 
   &__price {
@@ -103,25 +100,25 @@ $main-color: #fff;
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
-  }
 
-  &__price-text {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    color: $secondary-font-color;
-    margin: 0;
+    &-text {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: $secondary-font-color;
+      margin: 0;
 
-  }
+    }
 
-  &__price-sum {
-    text-align: right;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
-    color: $primary-font-color;
-    margin: 0;
+    &-sum {
+      text-align: right;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: $primary-font-color;
+      margin: 0;
 
+    }
   }
 
   &__button {
@@ -140,15 +137,20 @@ $main-color: #fff;
     align-items: center;
     text-decoration: none;
     margin: 16px;
-    transition: 0.3s;
+    transition: border, color, background-color, 0.3s;
+    box-sizing: border-box;
   }
 
   &__button:hover {
     background-color: $main-color;
     color: $button-color;
     border: solid 1px $button-color;
-    width: 164px;
-    height: 38px;
 
+    box-sizing: border-box;
+
+  }
+
+  &:hover {
+    scale: 120%;
   }
 }
