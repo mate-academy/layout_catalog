@@ -3,46 +3,49 @@
 body {
   margin: 0;
   font-family: $fonts;
-  font-size: 12px;
+  font-size: $fontsize-normal;
   font-weight: 500;
 }
 
-.navigation {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__logo {
+    width: 40px;
+    padding-left: 50px;
+    height: 40px;
+  }
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
+.nav {
+  margin-right: 50px;
 
-}
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+  }
 
-.nav-logo {
-  width: 40px;
-  padding-left: 50px;
-  height: 40px;
-}
+  &__link {
+    color: $color-darkblue;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    height: 60px;
+  }
 
-.nav__list {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  text-transform: uppercase;
-}
+  &__link:hover {
+    color: $color-blue-accent;
+  }
 
-.nav__link {
-  color: $color-darkblue;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  height: 60px;
-}
-
-.nav__link:hover {
-  color: $color-blue-accent;
+  &__list:first-of-type {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .is-active {
@@ -58,14 +61,4 @@ header {
   width: 100%;
   height: 4px;
   position: absolute;
-
-}
-
-.nav__list:first-of-type {
-  margin: 0;
-  padding: 0;
-}
-
-.nav {
-  margin-right: 50px;
 }
