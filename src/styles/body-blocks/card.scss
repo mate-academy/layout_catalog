@@ -1,14 +1,16 @@
 @import "../variables.scss";
 
 .card {
+  display: flex;
   flex-direction: column;
   width: 200px;
-  display: flex;
+  height: 406px;
   font-family: "Roboto", sans-serif;
   padding: 32px 16px 16px;
   box-sizing: border-box;
   border-radius: 5px;
   border: solid 1px #f3f3f3;
+  transition: transform 0.3s;
 
   &__picture {
     width: 160px;
@@ -34,12 +36,10 @@
 
   &__reviews {
     display: flex;
+    align-items: center;
     margin-bottom: 24px;
     justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  &__reviews-text {
+    color: $color-main-accent;
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
@@ -76,7 +76,6 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
-    font-style: normal;
     text-transform: uppercase;
     text-decoration: none;
     border: 1px solid $color-accent-blue;
@@ -88,30 +87,11 @@
     color: $color-accent-blue;
   }
 
-  @keyframes move {
-    0% {
-      size: 100%;
-    }
-    100% {
-      size: 120%;
-    }
-  }
-
   &:hover {
-    animation: move 0.3s;
-    animation-fill-mode: forwards;
+    transform: scale(1.2);
 
     .card__name {
       color: #34568b;
     }
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
   }
 }
