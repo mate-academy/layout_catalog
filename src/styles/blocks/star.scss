@@ -1,18 +1,21 @@
-.card__stars {
+.stars {
   display: flex;
-  &-star {
-    width: 16px;
+
+  &__star {
+    background: url(../images/star.svg) no-repeat center;
     height: 16px;
-    background-image: url(/images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 16px;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+
+    }
   }
-  &-star:not(:last-child) {
-    margin-right: 4px;
-  }
-  @for $starCount from 1 through 5 {
-    &--#{$starCount} &-star:nth-child(-n + #{$starCount}) {
-      background-image: url(/images/star-active.svg);
+
+  @for $n from 0 through 5 {
+    &--#{$n} &__star:nth-child(-n + #{$n}) {
+      background-image: url(../images/star-active.svg);
+
     }
   }
 }
