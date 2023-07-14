@@ -5,6 +5,7 @@
   color: $mainTxtColor;
   padding: 32px $gap $gap;
   @include base($cardMainCol, $cardBorder);
+  transition: transform 0.3s ease-in;
 
   &__product-preview {
     display: block;
@@ -16,6 +17,7 @@
   &__product-name {
     @include font(500, 12px, 18px);
     margin-bottom: 4px;
+    transition: color 0.3s ease-in;
   }
 
   &__product-code {
@@ -54,11 +56,20 @@
     @include base($cardBtnColor, $cardBtnColor);
     text-transform: uppercase;
     text-decoration: none;
-    transition: 0.3s all ease-in;
+    // transition: 0.3s all ease-in;
+    transition: color, 0.3s ease-in, background-color 0.3s ease-in;
 
     &:hover {
       background-color: $cardMainCol;
       color: $cardBtnColor;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__product-name {
+      color: $specialTxtColor;
     }
   }
 }
