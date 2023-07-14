@@ -17,7 +17,7 @@
   }
 }
 
-.card {
+.cards__card {
   width: $width-card;
   height: $height-card;
   border-radius: 5px;
@@ -26,15 +26,15 @@
   background: $color-white;
   transition: transform 0.3s, color 0.3s;
 
-  &__img {
+  &-img {
     width: 160px;
     height: 134px;
     margin: 32px auto 40px;
   }
 
-  &__title {
+  &-title {
     width: 166px;
-    font-size: 12px;
+    font-size: $font-size-small;
     font-style: normal;
     font-weight: 500;
     color: $color-dark-blue;
@@ -43,17 +43,17 @@
     line-height: 18px;
   }
 
-  &__code {
+  &-code {
     width: 98px;
     height: 14px;
     color: $color-gray;
-    font-size: 10px;
+    font-size: $font-size-very-small;
     font-style: normal;
     font-weight: 400;
     padding: 0 84px 16px 16px;
   }
 
-  &__mark {
+  &-rating {
     margin: 0 auto 24px;
     display: flex;
     align-items: center;
@@ -66,45 +66,44 @@
 
     &-reviews {
       text-align: right;
-      font-size: 10px;
+      font-size: $font-size-very-small;
       font-style: normal;
       font-weight: 400;
       line-height: 14px;
       color: $color-dark-blue;
     }
-  }
 
-  &__price {
-    width: 166px;
-    height: 18px;
-    margin: 0 auto 16px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    &-price {
+      width: 166px;
+      height: 18px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
 
-    &-text {
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 18px;
-      color: $color-gray;
+      &-text {
+        font-size: $font-size-small;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: $color-gray;
+      }
+
+      &-amount {
+        text-align: right;
+        font-size: $font-size-large;
+        font-style: normal;
+        font-weight: 700;
+        color: $color-dark-blue;
+      }
     }
-
-    &-amount {
-      text-align: right;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      color: $color-dark-blue;
-    }
   }
-
-  &__buy {
+  &-buy {
     width: 166px;
     height: 40px;
     border-radius: 5px;
     background-color: $color-blue;
-    font-size: 14px;
+    font-size: $font-size-medium;
     font-weight: 700;
     line-height: 16px;
     text-decoration: none;
@@ -130,28 +129,5 @@
 
   &:hover .card__title {
     color: $color-gray2;
-  }
-}
-
-.stars {
-  background-color: $color-white;
-  display: flex;
-  justify-content: flex-start;
-
-  &__star {
-    width: 16px;
-    height: 16px;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    margin-right: 4px;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
-  &--active > .stars__star:not(:nth-child(n+5)) {
-    background-image: url(../images/star-active.svg);
   }
 }
