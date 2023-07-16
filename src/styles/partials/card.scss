@@ -2,10 +2,24 @@
   max-width: 200px;
   display: flex;
   flex-direction: column;
-  color: $mainTxtColor;
+  color: $color-main-accent;
   padding: 32px $gap $gap;
-  @include base($cardMainCol, $cardBorder);
+  @include base($color-main-bg, $color-main-shadow);
   transition: transform 0.3s ease-in;
+
+  &__product-name {
+    @include font(500, 12px, 18px);
+    margin-bottom: 4px;
+    transition: color 0.3s ease-in;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__product-name {
+      color: $color-accent-navy;
+    }
+  }
 
   &__product-preview {
     display: block;
@@ -14,14 +28,8 @@
     margin: 0 auto 40px;
   }
 
-  &__product-name {
-    @include font(500, 12px, 18px);
-    margin-bottom: 4px;
-    transition: color 0.3s ease-in;
-  }
-
   &__product-code {
-    color: $secondaryTxtColor;
+    color: $color-secondary;
     margin-bottom: $gap;
   }
 
@@ -38,7 +46,7 @@
 
     &-text {
       @include font(400, 12px, 18px);
-      color: $secondaryTxtColor;
+      color: $color-secondary;
     }
 
     &-amount {
@@ -51,25 +59,16 @@
     align-items: center;
     justify-content: center;
     height: 40px;
-    color: $cardMainCol;
+    color: $color-main-bg;
     @include font(700, 14px);
-    @include base($cardBtnColor, $cardBtnColor);
+    @include base($color-accent-blue, $color-accent-blue);
     text-transform: uppercase;
     text-decoration: none;
-    // transition: 0.3s all ease-in;
     transition: color, 0.3s ease-in, background-color 0.3s ease-in;
 
     &:hover {
-      background-color: $cardMainCol;
-      color: $cardBtnColor;
-    }
-  }
-
-  &:hover {
-    transform: scale(1.2);
-
-    .card__product-name {
-      color: $specialTxtColor;
+      background-color: $color-main-bg;
+      color: $color-accent-blue;
     }
   }
 }
