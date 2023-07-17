@@ -1,7 +1,12 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
+<<<<<<< HEAD
 - [DEMO LINK](https://kabaktech.github.io/layout_catalog/)
 - [TEST REPORT LINK](https://kabaktech.github.io/layout_catalog/report/html_report/)
+=======
+- [DEMO LINK](https://kabakTech.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://kabakTech.github.io/layout_catalog/report/html_report/)
+>>>>>>> a91b2564c93f53e7cf15b0646eba92eddc785f88
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
