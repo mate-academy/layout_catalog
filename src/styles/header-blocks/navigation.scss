@@ -1,0 +1,52 @@
+@import "../variables.scss";
+
+.nav {
+  &__list {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    list-style: none;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin-left: 20px;
+    position: relative;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 60px;
+    color: $color-main-accent;
+    cursor: pointer;
+  }
+
+  &__link:hover {
+    color: $color-accent-blue;
+  }
+
+  &__item .is-active {
+    color: $color-accent-blue;
+  }
+}
+
+.is-active::after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background-color: $color-accent-blue;
+  position: absolute;
+}
