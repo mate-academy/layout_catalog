@@ -1,5 +1,5 @@
 .header {
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: $font-family;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,52 +12,48 @@
     width: 40px;
     display: block;
   }
-}
 
-.nav-list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  & :not(:last-child) {
-    margin-right: 20px;
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  &__item {
+  &__nav-item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
 
-    &-link {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $main;
-      font-size: 12px;
-      height: $nav-link-height;
-      display: flex;
-      align-items: center;
-      font-weight: 500;
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-main-accent;
+    font-size: $font-size-navLink;
+    height: $nav-link-height;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
 
-      &:hover {
-        color: $blue;
-        position: relative;
-      }
-
-      &--is-active {
-        color: $blue;
-        position: relative;
-
-        &::after {
-          content: "";
-          display: block;
-          background-color: $blue;
-          height: 4px;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-          border-radius: 8px;
-        }
-      }
+    &:hover {
+      color: $color-accent-blue;
+      position: relative;
     }
 
+    &--active {
+      color: $color-accent-blue;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        background-color: $color-accent-blue;
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        border-radius: 8px;
+      }
+    }
   }
-
 }
