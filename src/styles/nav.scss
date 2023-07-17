@@ -1,0 +1,79 @@
+@import "../utils/variables.scss";
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+:root {
+  --color: $buttonAndActivesLinksColor;
+}
+
+.container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.headerList {
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+  font-style: normal;
+  padding: 0;
+}
+
+.headerList_link {
+  text-decoration: none;
+  color: #000;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.link {
+  display: block;
+  color: $main-text-color;
+  text-decoration: none;
+  padding: 23px 0;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $buttonAndActivesLinksColor;
+  }
+}
+
+.is-active {
+  color: $buttonAndActivesLinksColor;
+  display: flex;
+  text-decoration: none;
+  padding: 23px 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $buttonAndActivesLinksColor;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,110 @@
+@import "../utils/variables.scss";
+
+.cardContainer {
+  --column-count: 4;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  row-gap: 46px;
+  column-gap: 48px;
+  padding: 50px 40px;
+  justify-content: center;
+}
+
+.card {
+  width: $card-width;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding: 32px 16px 16px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    @include cardIncrease;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    font-size: 10px;
+    line-height: 14px;
+    color: $grey-text-color;
+  }
+
+  &__review {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__review-info {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    height: 18px;
+  }
+
+  &__price-value {
+    font-size: 12px;
+    line-height: 18px;
+    color: $grey-text-color;
+  }
+
+  &__price-amount {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    background: $buttonAndActivesLinksColor;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    height: 40px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      background: #fff;
+      border: 1px solid;
+      color: $buttonAndActivesLinksColor;
+      text-transform: scale(120%);
+    }
+  }
+}
