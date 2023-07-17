@@ -1,31 +1,15 @@
 @import "variables";
 
-.products {
-
-  &__list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(4, $cardWidth);
-    row-gap: 46px;
-    column-gap: 48px;
-    justify-content: center;
-    padding: 50px 40px 128px;
-  }
-
-  &__item {
-    display: flex;
-  }
-}
-
 .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: $cardWidth;
+  width: $card-width;
   padding: 32px 16px 16px;
   background: #fff;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
+  grid-area: row;
 
   &__img {
     width: 160px;
@@ -41,7 +25,7 @@
   }
 
   &__code {
-    color: $secondaryColor;
+    color: $secondary-color;
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
@@ -76,7 +60,7 @@
   &__price-text {
     font-size: 12px;
     line-height: 18px;
-    color: $secondaryColor;
+    color: $secondary-color;
   }
 
   &__button {
@@ -90,39 +74,15 @@
     font-size: 14px;
     line-height: 16px;
     text-transform: uppercase;
-    border: 1px solid $blueColor ;
+    border: 1px solid $blue-color-accent;
     border-radius: 5px;
-    background-color: $blueColor;
+    background-color: $blue-color-accent;
     color: #fff;
 
     &:hover {
-      color: $blueColor;
+      transition: all 0.2s;
+      color: $blue-color-accent;
       background-color: #fff;
-    }
-  }
-}
-
-.stars {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  &__item {
-    width: 16px;
-    height: 16px;
-    background-image: url("../images/star.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-
-    &:not(:last-child) {
-      margin-right: 4px;
-    }
-  }
-
-  @for $i from 1 through 5 {
-    &--#{$i} > :nth-child(-n+#{$i}) {
-      background-image: url("../images/star-active.svg");
     }
   }
 }

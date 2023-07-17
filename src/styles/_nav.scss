@@ -1,0 +1,48 @@
+@import "variables";
+
+.nav {
+  justify-content: space-around;
+  margin-right: 50px; // i can't remove it due to tests....
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+  }
+
+  &__link {
+    font-weight: 500;
+    min-height: 60px;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-color;
+    font-size: 12px;
+    margin-left: 20px;
+
+    &.is-active {
+      color: $blue-color-accent;
+      position: relative;
+      margin-left: 0;
+
+      &::after {
+        content: "";
+        display: block;
+        background-color: $blue-color-accent;
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__link:hover {
+    color: $blue-color-accent;
+  }
+
+}
