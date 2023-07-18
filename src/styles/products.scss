@@ -1,0 +1,18 @@
+.products {
+  display: grid;
+
+  grid-template-columns: repeat(4, $column-width);
+  column-gap: 48px;
+  row-gap: 46px;
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @each $screen-width, $count in $column-count {
+    @media (max-width: #{$screen-width}) {
+      & {
+        grid-template-columns: repeat(#{$count}, $column-width);
+      }
+    }
+  }
+}
