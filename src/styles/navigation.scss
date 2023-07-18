@@ -1,3 +1,4 @@
+@import "variables";
 
 .navigation {
   display: flex;
@@ -5,10 +6,10 @@
   align-items: center;
   position: relative;
   padding: 0 50px;
-  background-color: #fff;
+  background-color: $background-color;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 
-  &__logo-link {
+  &-logo {
     width: 40px;
     height: 40px;
   }
@@ -21,8 +22,8 @@
     color: black;
     line-height: 60px;
     font-size: 12px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-family: $main-font;
+    font-weight: $normal;
     text-transform: uppercase;
     list-style: none;
     transition: color 0.3s;
@@ -35,34 +36,31 @@
   &__item:first-child {
     margin-left: 0;
   }
-
-  &__item-link:link,
-  &__item-link:visited {
+  &__item-link {
     text-decoration: none;
-    font-weight: 500;
+    font-weight: $normal;
     display: flex;
     align-items: center;
-    transition: all 0.3s;
     height: 60px;
-  }
-
-  &__item-link:hover {
+    transition: all 0.3s;
     cursor: pointer;
-    color: #00acdc;
-  }
 
-  &__item-link--active {
-    color: #00acdc;
-  }
+    &:hover {
+      color: $button-background;
+    }
 
-  &__item--active::after {
-    content: "";
-    display: block;
-    height: 4px;
-    width: 37px;
-    border-radius: 8px;
-    background-color: #00acdc;
-    position: absolute;
-    bottom: 0;
+    &--active {
+      color: $button-background;
+      &::after {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 37px;
+        border-radius: 8px;
+        background-color: $button-background;
+        position: absolute;
+        bottom: 0;
+      }
+    }
   }
 }
