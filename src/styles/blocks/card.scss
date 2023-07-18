@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: $card-width;
-  border: 1px solid $color-white-accent;
+  border: 1px solid $color-grey-accent;
   border-radius: 5px;
   padding: 32px 16px 16px;
 
@@ -22,6 +22,12 @@
   &__description-title {
     @extend %description-title-style;
     color: $color-main;
+  }
+
+  &__description-title:hover {
+    @extend %description-title-style;
+    color: $color-hover-text;
+    transition: color 0.5s;
   }
 
   &__description-code {
@@ -83,6 +89,22 @@
     transition: background-color 0.5s, color 0.5s;
   }
 
+  &__button-link:hover {
+    align-items: center;
+    display: flex;
+    color: $color-blue-accent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 38px;
+    text-transform: uppercase;
+    background-color: $color-white-accent;
+    border-radius: 5px;
+    padding: 0 70px;
+    border: 1px solid $color-blue-accent;
+    text-decoration: none;
+    transition: background-color 0.5s, color 0.5s;
+  }
+
   &--position {
     margin-right: $gap;
   }
@@ -94,4 +116,9 @@
   &--position:nth-child(4n) {
     margin-right: 0;
   }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s;
 }
