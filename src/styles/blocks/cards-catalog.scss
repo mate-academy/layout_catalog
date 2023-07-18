@@ -1,0 +1,118 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 16px;
+  border: 1px solid $border-card-color;
+  border-radius: 5px;
+
+  &:not(:nth-child(4n+1)) {
+    margin-left: 48px;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 72px;
+    margin-top: 46px;
+  }
+
+  &:nth-child(-n+4) {
+    margin-top: 50px;
+  }
+
+  &__image {
+    margin: 16px 3px 0;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__description {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 4px;
+    @extend %normal-text;
+    line-height: 18px;
+    color: $color-dark-blue;
+  }
+
+  &__product-code {
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-grey;
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &-reviews {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: $color-dark-blue;
+    }
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-grey;
+  }
+
+  &__price-amount {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-dark-blue;
+  }
+
+  &__button {
+    padding: 0;
+    max-width: 100%;
+    height: 40px;
+    background: $color-blue;
+    border: none;
+    border-radius: 5px;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &__button:hover {
+    background-color: $color-white;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+  }
+
+  &__link:hover {
+    color: $color-blue;
+    border-color: $color-blue;
+  }
+}
