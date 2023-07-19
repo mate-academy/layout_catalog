@@ -1,9 +1,6 @@
-@import "../utils/variebles";
-
 .header {
   display: flex;
   align-content: center;
-  background: $color-white;
   background-color: $color-white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 0 50px;
@@ -11,7 +8,7 @@
   line-height: 14px;
   font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 50px;
+  font-family: $roboto_font;
 
   &__logo {
     height: $size-logo;
@@ -22,37 +19,37 @@
   .nav {
     display: flex;
 
-    &_item:nth-child(4) {
-      flex-shrink: 0;
-    }
-
     &__list {
       display: flex;
+      padding: 0;
       margin: 0;
       list-style-type: none;
-      padding: 0;
     }
 
     &__item {
       margin-right: 20px;
-    }
 
-    &__link {
-      display: block;
-      position: relative;
-      padding-top: 23px;
-      padding-bottom: 23px;
-      text-decoration: none;
-      margin: auto;
-      color: $color-main-accent;
+      .nav__link {
+        display: block;
+        position: relative;
+        padding-top: 23px;
+        padding-bottom: 23px;
+        text-decoration: none;
+        margin: auto;
+        color: $color-main-accent;
 
-      &:hover {
-        color: $color-blue-accent;
+        &:hover {
+          color: $color-blue-accent;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
 
-    &__item:last-child {
-      margin-right: 0;
+    &__item:nth-child(4) {
+      flex-shrink: 0;
     }
 
     .is-active {
@@ -68,6 +65,7 @@
       width: 100%;
       height: 4px;
       background-color: $color-blue-accent;
+      color: $color-blue-accent;
     }
   }
 }
