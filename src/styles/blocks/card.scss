@@ -4,7 +4,13 @@
   width: $card-width;
   border: 1px solid $color-grey-accent;
   border-radius: 5px;
-  padding: 32px 16px 16px;
+  padding: 32px 16px 32px;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s;
+  }
 
   &__image {
     display: flex;
@@ -22,6 +28,7 @@
   &__description-title {
     @extend %description-title-style;
     color: $color-main;
+    transition: transform 0.5s;
   }
 
   &__description-title:hover {
@@ -37,7 +44,6 @@
   &__review {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     margin-top: 16px;
   }
@@ -87,6 +93,7 @@
     border: 1px solid $color-blue-accent;
     text-decoration: none;
     transition: background-color 0.5s, color 0.5s;
+
   }
 
   &__button-link:hover {
@@ -116,9 +123,4 @@
   &--position:nth-child(4n) {
     margin-right: 0;
   }
-}
-
-.card:hover {
-  transform: scale(1.2);
-  transition: transform 0.5s;
 }
