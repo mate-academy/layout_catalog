@@ -13,15 +13,15 @@
     <title>Catalog</title>
   </head>
 
-  <body>
+  <body class="page">
     <header class="header">
-      <div class="container">
-        <a href="#home" class="container__logo">
+      <div class="header__container container">
+        <a href="#home" class="logo">
           <img src="./images/logo.png" alt="MOYO logo">
         </a>
       </div>
       <nav class="nav">
-        <ul class="nav__list">
+        <ul class="nav__list nav__list--hidden">
           <li class="nav__item">
             <a class="nav__item-link is-active" href="#apple">Apple</a>
           </li>
@@ -47,8 +47,53 @@
             <a class="nav__item-link" href="#video">Video</a>
           </li>
         </ul>
+        <div class="menu-btn1">
+          <img
+            class="menu-btn"
+            src="./images/icon-close.svg"
+            alt="close-open"
+          >
+        </div>
       </nav>
     </header>
+
+    <aside class="mob-menu">
+      <div class="menu mob-menu__container">
+        <div class="container container--mob">
+          <a href="#home" class="container__logo">
+            <img src="./images/logo.png" alt="MOYO logo">
+          </a>
+        </div>
+        <nav class="nav nav--mobile">
+          <ul class="nav__list nav__list--mobile">
+            <li class="nav__item nav__item--mob">
+              <a class="nav__item-link is-active" href="#apple">Apple</a>
+            </li>
+            <li class="nav__item nav__item--mob">
+              <a class="nav__item-link" href="#samsung">Samsung</a>
+            </li>
+            <li class="nav__item nav__item--mob">
+              <a class="nav__item-link" href="#smartphones">Smartphones</a>
+            </li>
+            <li class="nav__item nav__item--mob" data-qa="nav-hover">
+              <a class="nav__item-link " href="#Laptops&Computers">Laptops & Computers</a>
+            </li>
+            <li class="nav__item nav__item--mob">
+              <a class="nav__item-link" href="#gadgets">Gadgets</a>
+            </li>
+            <li class="nav__item nav__item--mob">
+              <a class="nav__item-link" href="#tablets">Tablets</a>
+            </li>
+            <li class="nav__item nav__item--mob">
+              <a class="nav__item-link" href="#photo">Photo</a>
+            </li>
+            <li class="nav__item nav__item--mob">
+              <a class="nav__item-link" href="#video">Video</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
 
     <main class="main">
       <section class="catalog">
@@ -320,5 +365,18 @@
     </main>
 
   </body>
+
+  <script>
+    let menuBtn = document.querySelector('.menu-btn');
+    let menu = document.querySelector('.menu');
+    menuBtn.addEventListener('click', function(){
+      menu.classList.toggle('active');
+    })
+
+    let page = document.querySelector('.page');
+    menuBtn.addEventListener('click', function(){
+      page.classList.toggle('page--open-menu');
+    })
+  </script>
 
 </html>

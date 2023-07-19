@@ -1,4 +1,5 @@
 @import "../utils/variables";
+@import "../utils/mixin";
 
 .header {
   display: flex;
@@ -11,9 +12,17 @@
   align-items: center;
   margin-left: $headerMargin;
 
-  &__logo {
-    display: flex;
-    align-items: center;
+  &--mob {
+    padding: 10px 0 10px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -23,7 +32,13 @@
   &__list {
     display: flex;
     height: 100%;
+
+    &--hidden {
+      @include onPhone {
+        display: none;
+      }
   }
+}
 
   &__item {
     position: relative;
@@ -49,19 +64,70 @@
     &:last-child {
       margin-right: 0;
     }
-  }
-}
 
-.is-active::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  height: 4px;
-  width: 100%;
-  border-radius: 5px;
-  background-color: $main-color;
+    &--mob {
+      width: fit-content;
+    }
+  }
 }
 
 .is-active {
   color: $main-color;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $main-color;
+  }
+}
+
+
+
+.menu-btn {
+  display: none;
+  width: 30px;
+  height: 60px;
+  position: relative;
+  z-index:2;
+  overflow: hidden;
+
+  @include onPhone {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFEFBA;
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.active {
+  transform: translateX(0);
+}
+
+.nav__list--mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px 0;
+}
+
+.page--open-menu {
+  @include onPhone {
+    overflow: hidden;
+  }
 }
