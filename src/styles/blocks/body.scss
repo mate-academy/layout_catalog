@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $roboto_font;
+}
+
+.main {
+  display: grid;
+  padding-top: 50px;
+  grid-template-columns: repeat($grid-columns, 200px);
+  grid-gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: $onLaptop) and (max-width: $onDesktop) {
+  .main {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 46px 48px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: $onMobile) and (max-width: $onLaptop) {
+  .main {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-gap: 46px 48px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: $onMobile) {
+  .main {
+    display: grid;
+    grid-template-columns: 200px;
+    justify-content: center;
+    align-content: center;
+  }
+}
