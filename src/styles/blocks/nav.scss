@@ -1,0 +1,50 @@
+.nav {
+
+  &__list {
+    display: flex;
+    align-items: stretch;
+    list-style-type: none;
+    padding: 0;
+  }
+
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+// if it work
+    & .is-active {
+      color: var(--header-color);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: Roboto , sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s;
+    padding: 23px 0;
+
+    &--is-active::after {
+      content: "";
+      height: 4px;
+      width: 37px;
+      background: var(--header-color);
+      border-radius: 8px;
+      position: absolute;
+      top: 56px ;
+    }
+
+    &:hover {
+    color: var(--header-color);
+    }
+  }
+}
