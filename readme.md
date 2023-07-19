@@ -37,3 +37,7 @@ and SCSS
 ---
 ### Tips & Hints
 Don't use flex `gap` property, it's not yet supported by tests.
+
+
+
+checked with the mentor at Q&A, the mentor said everything is OK, submit the tasks as they are.
