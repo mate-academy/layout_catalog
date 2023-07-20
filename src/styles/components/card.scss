@@ -1,0 +1,104 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  row-gap: 46px;
+  column-gap: 48px;
+  justify-content: center;
+  padding: 200px 0 72px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+    padding: 120px 0 72px;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+    padding: 50px 0 72px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  $root: &;
+
+  display: grid;
+  padding: 32px 16px 16px;
+  max-width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  background-color: $white-color;
+  @include transition(all, 0.3s);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__content {
+    margin-top: 40px;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    @include transition(all, 0.3s);
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__description {
+    color: $secondary-color;
+    margin: 4px 0 16px;
+  }
+
+  &__stars-container {
+    @include grid-col-center;
+  }
+
+  &__price {
+    @include grid-col-center;
+    margin: 24px 0 16px;
+    &-text {
+      color: $secondary-color;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-num {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__btn {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 0;
+    text-align: center;
+    background-color: $hover-color;
+    color: $white-color;
+    border-radius: 5px;
+    text-decoration: none;
+    line-height: 16px;
+    @include transition(all, 0.3s);
+    &:hover {
+      background-color: $white-color;
+      color: $hover-color;
+      border: 1px solid $hover-color;
+    }
+  }
+}
