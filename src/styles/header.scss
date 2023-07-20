@@ -1,3 +1,7 @@
+$main-color: #00acdc;
+$text-accent-color: #060b35;
+$text-secondary-color: #616070;
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -7,69 +11,64 @@
 
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
 
-.logo {
-  display: block;
-  height: 40px;
-  width: 40px;
-}
+  .logo {
+    display: block;
+    height: 40px;
+    width: 40px;
 
-.logo__image {
-  height: 100%;
-  width: 100%;
-}
+    &__image {
+      height: 100%;
+      width: 100%;
+    }
+  }
 
-.nav__list {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
+  .nav__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
-.nav__item {
-  margin-left: 20px;
-}
+    .nav__item {
+      margin-left: 20px;
 
-.nav__item:first-child {
-  margin-left: 0;
-}
+      &:first-child {
+        margin-left: 0;
+      }
 
-.nav__link {
-  position: relative;
+      .nav__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $text-accent-color;
+        transition: color 0.3s;
 
-  display: flex;
-  align-items: center;
+        &:hover {
+          color: $main-color;
+        }
 
-  height: 60px;
+        &.is-active {
+          color: $main-color;
 
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  white-space: nowrap;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: var(--text-accent-color);
-
-  transition: color 0.3s;
-}
-
-.nav__link:hover {
-  color: var(--main-color);
-}
-
-.nav__link.is-active {
-  color: var(--main-color);
-}
-
-.nav__link.is-active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--main-color);
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 2px;
+            background-color: $main-color;
+          }
+        }
+      }
+    }
+  }
 }
