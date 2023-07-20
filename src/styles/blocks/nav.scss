@@ -11,12 +11,16 @@
   &__item {
     margin-left: 20px;
 
+    @include onTablet {
+      margin-left: 5px;
+    }
+
     &:first-child {
       margin-left: 0;
     }
 
     &.is-active {
-      color: $header-color;
+      color: $color-blue-accent;
     }
   }
 
@@ -29,22 +33,23 @@
     font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
-    color: $main-accent;
-    transition: color 0.3s;
+    color: $color-main-accent;
     padding: 23px 0;
 
     &--is-active::after {
       content: "";
       height: 4px;
       width: 37px;
-      background: $header-color;
+      background: $color-blue-accent;
       border-radius: 8px;
       position: absolute;
       top: 56px ;
     }
 
     &:hover {
-      color: $header-color;
+      color: $color-blue-accent;
+
+    @include tran-trans-during ;
     }
   }
 }
