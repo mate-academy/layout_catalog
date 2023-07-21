@@ -1,9 +1,11 @@
 .nav {
-  min-width: 635.54px;
 
   &__list {
-    @include flex-centering(space-between);
-    width: 100%;
+    @include flex-align(space-between);
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
   }
 
   &__link {
@@ -16,7 +18,7 @@
     text-align: center;
 
     &:hover {
-      color: $blue;
+      color: $button-background;
     }
 
     &::after {
@@ -31,17 +33,17 @@
     }
 
     &::before {
-      background-color: $blue;
+      background-color: $button-background;
       width: 100%;
     }
 
     &.is-active {
-      color: $blue;
+      color: $button-background;
     }
 
     &.is-active::after {
       width: 100%;
-      background-color: $blue;
+      background-color: $button-background;
     }
   }
 }
