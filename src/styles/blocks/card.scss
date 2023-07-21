@@ -1,0 +1,119 @@
+.catalog {
+  display: grid;
+  gap: 48px;
+  justify-content: center;
+  padding: 50px 40px 72px;
+  grid-template-columns: repeat(1, $default__card-width);
+
+  @include twoColumn {
+    grid-template-columns: repeat(2, $default__card-width);
+  }
+
+  @include threeColumn {
+    grid-template-columns: repeat(3, $default__card-width);
+  }
+
+  @include fourColumn {
+    grid-template-columns: repeat(4, $default__card-width);
+  }
+}
+
+.card {
+  width: $default__card-width;
+  height: $default__card-height;
+  padding: 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: transform;
+  @include animHover;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__photo {
+    width: 160px;
+    height: 134px;
+    margin: 16px 3px 36px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: $dark-blue-color;
+
+    &:hover {
+      color: $middle-blue-color;
+    }
+  }
+
+  &__code {
+    color: $gray-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    &-review {
+      font-size: 10px;
+      line-height: 14px;
+      margin-top: 0;
+      margin-bottom: 0;
+      color: $dark-blue-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 18px;
+    margin-bottom: 0;
+
+    &-text {
+      font-size: 12px;
+      color: $gray-color;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      color: $dark-blue-color;
+      align-items: end;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+    background-color: $blue-color;
+    border: 1px solid $blue-color;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: $blue-color;
+    }
+  }
+}
