@@ -1,6 +1,6 @@
 # Catalog using grid layout
 Implement the layout using `grid`
-- Gap between cards should be `48px`
+- Gap between cards should be: horizontal - `48px`, vertical - 46px
 - Blocks should start from the left
 - Media queries:
   - There should be four columns starting at `1024px`
