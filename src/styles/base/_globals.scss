@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  display: flex;
+}
+
+// ---- PAGE GRID ---- //
+
+.container {
+  display: grid;
+  grid-gap: $grid-gap;
+  margin: 5rem auto 7.2rem;
+  width: fit-content;
+  justify-content: center;
+
+  @include respond-above(md) {
+    grid-template-columns: repeat(4, $card-w);
+  }
+
+  @include respond-between(sm, md) {
+    grid-template-columns: repeat(3, $card-w);
+  }
+
+  @include respond-between(xs, sm) {
+    grid-template-columns: repeat(2, $card-w);
+  }
+
+  @include respond-below(xs) {
+    grid-template-columns: repeat(1, $card-w);
+  }
+}
