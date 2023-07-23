@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 944px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.card {
+  margin: 0;
+  padding: 32px 16px 16px;
+  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__image {
+    margin-bottom: 40px;
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__title {
+    color: #{$color-secondary};
+    margin: 0 0 4px;
+    font-size: #{$fs-s};
+    line-height: 18px;
+    font-weight: #{$fw-medium};
+  }
+  
+  &__description {
+    color: #{$color-secondary-light};
+    margin: 0 0 16px;
+    line-height: 14px;
+    font-weight: #{$fw-regular};
+    text-align: left;
+  }
+  
+  &__reviews {
+    margin: 0 0 24px;
+  }
+
+  &__price {
+    margin: 0 0 16px;
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &:not(:nth-last-child(-n + 4)) {
+    margin-bottom: 46px;
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__count {
+    color: #{$color-secondary};
+    margin: 0;
+    line-height: 14px;
+    font-weight: #{$fw-regular};
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url(../images/star.svg) center no-repeat;
+  }
+  
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background: url(../images/star-active.svg) center no-repeat;
+    }
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__name {
+    color: #{$color-secondary-light};
+    margin: 0;
+    font-size: #{$fs-s};
+    line-height: 18px;
+    font-weight: #{$fw-regular};
+  }
+  
+  &__value {
+    color: #{$color-secondary};
+    margin: 0;
+    font-size: #{$fs-l};
+    line-height: 18px;
+    font-weight: #{$fw-bold};
+  }
+}
+
+.button {
+  color: white;
+  width: 166px;
+  box-sizing: border-box;
+  font-size: #{$fs-m};
+  line-height: 16px;
+  font-weight: #{$fw-bold};
+  text-align: center;
+  padding: 11px 0;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #{$color-primary};
+  border: 1px solid #{$color-primary};
+
+  &:hover {
+    color: #{$color-primary};
+    background-color: white;
+  }
+}
