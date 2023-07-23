@@ -1,0 +1,23 @@
+.stars {
+  width: $stars-width;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__star {
+    display: flex;
+    height: 16px;
+    width: 16px;
+    background-image: $not-active-star-image;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@for $star from 1 through 5 {
+  .stars--#{$star} & :nth-of-type(-n + #{$star}) {
+    background-image: $active-star-image;
+  }
+}
