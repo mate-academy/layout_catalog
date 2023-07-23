@@ -1,0 +1,122 @@
+.cards {
+  padding: 50px 39px;
+  display: grid;
+  grid-template-columns: repeat(4, 198px);
+  justify-content: space-between;
+  width: 942px;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 166px;
+  background: var(--background-color);
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  margin-bottom: 46px;
+  transition: transform 300ms;
+
+  &__imac-image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__name-product {
+    color: var(--main-accent-color);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__code-product {
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__price-p {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--secondary-color);
+  }
+
+  &__price-sum {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--main-accent-color);
+  }
+
+  &__button-buy {
+    color: var(--background-color);
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--blue-accent-color);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    padding: 12px 70px;
+  }
+
+  &__button-buy:hover {
+    color: var(--blue-accent-color);
+    border: 1px solid var(--blue-accent-color);
+    background: var(--background-color);
+    padding: 11px 69px;
+  }
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__name-product {
+      color: var(--blue-hover-color);
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__star {
+    background-image: url("../images/star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  &--4 .stars__star:last-child {
+    margin-right: 0;
+  }
+
+  &--4 .stars__star:nth-child(-n + 4) {
+    background-image: url("../images/star-active.svg");
+  }
+
+  &__reviews {
+    color: var(--main-accent-color);
+    margin: 0;
+    text-align: end;
+  }
+}
