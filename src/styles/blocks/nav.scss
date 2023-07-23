@@ -1,0 +1,39 @@
+.nav {
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .is-active {
+      position: relative;
+      color: $accent-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        display: block;
+        border-radius: 2px;
+        background-color: $accent-color;
+      }
+    }
+  }
+
+  &__link {
+    padding: 23px 0;
+    color: inherit;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
