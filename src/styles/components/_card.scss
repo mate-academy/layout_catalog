@@ -1,0 +1,95 @@
+.card {
+  $root: &;
+
+  padding: 32px 16px 16px;
+  display: flex;
+  width: $cardWidth;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  background: #fff;
+  line-height: 14px;
+  transition: $transitionEffect;
+
+  @include fontParams(10px, 400);
+
+  &:hover {
+    transform: scale(1.2);
+
+    #{$root}__title {
+      color: #34568b;
+    }
+  }
+
+  &__image {
+    margin: 0 0 40px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    line-height: 18px;
+
+    @include fontParams(12px, 500);
+  }
+
+  &__subtitle {
+    margin: 0 0 16px;
+    align-self: start;
+    color: $secondaryFontColor;
+  }
+
+  &__stars {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: flex-end;
+  }
+
+  &__info-review {
+    text-align: right;
+  }
+
+  &__price-block {
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 18px;
+  }
+
+  &__info-price {
+    color: $secondaryFontColor;
+    font-size: 12px;
+  }
+
+  &__info-amount {
+    @include fontParams(16px, 700);
+  }
+
+  &__link {
+    width: 166px;
+    border-radius: 5px;
+    border: 1px solid $linkColor1;
+    display: flex;
+    box-sizing: border-box;
+    background-color: $linkColor1;
+    justify-content: center;
+    color: $linkColor2;
+    transition: $transitionEffect;
+    line-height: 38px;
+
+    @include fontParams(14px, 700);
+
+    &:hover {
+      @include linkHoverEffects();
+    }
+  }
+}

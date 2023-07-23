@@ -1,0 +1,48 @@
+@mixin fontParams($fontSize, $fontWeight) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin onTablet() {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin onBigPhone() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin onSmallPhone() {
+  @media (max-width: 487px) {
+    @content;
+  }
+}
+
+@function getCatalogWidth($row-Count, $cell-Size, $gap-Param) {
+  @return $row-Count * $cell-Size + ($row-Count - 1) * $gap-Param;
+}
+
+@mixin catalogWidth() {
+  width: getCatalogWidth(4, $cardWidth, $catalogRowGap);
+
+  @include onTablet {
+    width: getCatalogWidth(3, $cardWidth, $catalogRowGap);
+  }
+
+  @include onBigPhone {
+    width: getCatalogWidth(2, $cardWidth, $catalogRowGap);
+  }
+
+  @include onSmallPhone {
+    width: getCatalogWidth(1, $cardWidth, $catalogRowGap);
+  }
+}
+
+@mixin linkHoverEffects {
+  background-color: $linkColor2;
+  cursor: pointer;
+  color: $linkColor1;
+}
