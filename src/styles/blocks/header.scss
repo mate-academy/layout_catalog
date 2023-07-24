@@ -1,0 +1,43 @@
+.header {
+  @include flex-alignment;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 800px;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: block;
+  }
+
+  &__menu {
+    text-transform: uppercase;
+  }
+
+  &__list {
+    @include flex-alignment;
+
+    padding: 0;
+    margin: $header-link-clearance 0;
+
+    &-item {
+      display: inline;
+      line-height: 14px;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      &-link {
+        padding: $header-link-clearance 0;
+        font-weight: 500;
+        transition: 300ms;
+
+        &:hover {
+          color: $active-link-and-button-color;
+        }
+      }
+    }
+  }
+}

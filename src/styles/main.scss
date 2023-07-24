@@ -1,3 +1,33 @@
-body {
+@import "./utils/reset";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./blocks/header";
+@import "./blocks/is-active";
+@import "./blocks/card";
+
+html {
+  font-family: $font-type;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: 18px;
+  color: $font-main-color;
+}
+
+.page {
   margin: 0;
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  box-sizing: border-box;
+  padding: 50px 40px 72px;
+
+  @each $limit-width, $columns-number in $column-count {
+    @media (max-width: $limit-width) {
+      grid-template-columns: repeat($columns-number, 200px);
+    }
+  }
 }
