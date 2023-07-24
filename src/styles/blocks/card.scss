@@ -1,0 +1,132 @@
+.catalog__cards {
+  --column-count: 1;
+
+  margin-bottom: 73px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  row-gap: $row-gap-width;
+  column-gap: $colunm-gap-width;
+  justify-content: center;
+  padding-top: 50px;
+
+  @media (max-width: 487px) {
+    --column-count: 1;
+  }
+
+  @media (min-width: 488px) {
+    --column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-count: 4;
+  }
+}
+
+.card {
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  background: #fff;
+  width: $card-width;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 16px 16px;
+  transition: scale 300ms;
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 0 0 4px;
+    color: $main-accent-color;
+  }
+
+  &:hover {
+    scale: 1.2;
+
+    & .card__title {
+      color: $card-title-hover;
+    }
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+    box-sizing: border-box;
+  }
+
+  &__code {
+    color: $secondary-color;
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 21px;
+
+    &-text {
+      color: $main-accent-color;
+      text-align: right;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      padding-bottom: 2px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-title {
+      color: $secondary-color;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    &-value {
+      color: $main-accent-color;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  &__buy:link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $bg-button-color;
+    font-weight: 700;
+    line-height: 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    background: $main-page-color;
+    padding: 11px 0;
+    border: 1px solid $main-page-color;
+    box-sizing: border-box;
+  }
+
+  &__buy:visited {
+    color: $bg-button-color;
+  }
+
+  &__buy:hover {
+    background: $bg-button-color;
+    color: $main-page-color;
+  }
+}
