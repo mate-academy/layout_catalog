@@ -1,3 +1,43 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/reset";
+
+* {
+  box-sizing: border-box;
 }
+
+.page__content {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $main-color;
+}
+
+.page__card-container {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  width: $card-width * $row-count + $card-right-margin * ($row-count - 1);
+  justify-content: start;
+  align-items: center;
+  margin: auto;
+  padding: 50px 40px;
+}
+
+@import "./blocks/header";
+
+.page__card {
+  width: $card-width;
+  margin-right: $card-right-margin;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-child(n + 5) {
+    margin-top: $card-top-margin;
+  }
+}
+
+@import "./blocks/card";
+@import "./blocks/stars";
