@@ -1,0 +1,48 @@
+.nav {
+  &__list {
+    @include flex-align(space-between);
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease 0s;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    text-align: center;
+
+    &:hover {
+      color: $button-background;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 0;
+      border-radius: 8px;
+      transition: background-color 0.3s ease 0s, width 0.3s ease 0s;
+    }
+
+    &::before {
+      background-color: $button-background;
+      width: 100%;
+    }
+
+    &.is-active {
+      color: $button-background;
+    }
+
+    &.is-active::after {
+      width: 100%;
+      background-color: $button-background;
+    }
+  }
+}
