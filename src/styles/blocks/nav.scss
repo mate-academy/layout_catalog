@@ -1,5 +1,4 @@
 .nav {
-
   &__list {
     display: flex;
     align-items: stretch;
@@ -15,9 +14,6 @@
       margin-left: 0;
     }
 
-    &.is-active {
-      color: $color-blue-accent;
-    }
   }
 
   &__link {
@@ -28,23 +24,27 @@
     font-size: 12px;
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-main-accent;
     padding: 23px 0;
+    color: $color-main-accent;
 
     @include transitionDuration;
-
-    &--is-active::after {
-      content: "";
-      height: 4px;
-      width: 37px;
-      background: $color-blue-accent;
-      border-radius: 8px;
-      position: absolute;
-      top: 56px ;
-    }
 
     @include hover {
       color: $color-blue-accent;
     }
+  }
+}
+
+.is-active {
+  color: $color-blue-accent;
+
+  &::after {
+    content: "";
+    height: 4px;
+    width: 37px;
+    background: $color-blue-accent;
+    border-radius: 8px;
+    position: absolute;
+    top: 56px ;
   }
 }
