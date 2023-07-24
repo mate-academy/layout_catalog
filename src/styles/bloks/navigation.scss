@@ -1,0 +1,58 @@
+@use "../utils/extends";
+@use "../utils/variables" as *;
+
+.nav {
+  margin: 0;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    position: relative;
+    padding: 23px 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    @extend %dark-font;
+    line-height: 14px;
+    padding: 23px 0;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &:focus {
+      padding: 19px 0;
+      border-bottom: 4px solid $blue-color;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-color;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    @extend %bgc-blue;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    color: $blue-color;
+  }
+}

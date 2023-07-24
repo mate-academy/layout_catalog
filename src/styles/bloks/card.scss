@@ -1,0 +1,105 @@
+@use "../utils/extends";
+@use "../utils/variables" as *;
+
+:root {
+  --borderColor: #f3f3f3;
+  --white: #fff;
+  --blue: #00f;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  border: 1px solid var(--borderColor);
+  border-radius: 5px;
+  padding: 16px;
+  flex-shrink: 0;
+
+  &__image {
+    display: flex;
+    align-self: center;
+    height: 134px;
+    width: 160px;
+    margin: 16px 0 40px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  &__name {
+    @extend %medium-text;
+    @extend %dark-font;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    @extend %small-text;
+    @extend %grey-font;
+    line-height: 14px;
+  }
+
+  &__review-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    display: flex;
+    @extend %small-text;
+    @extend %dark-font;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+
+  &__price-line {
+    display: flex;
+    font-size: 12px;
+    font-weight: 400;
+    @extend %grey-font;
+  }
+
+  &__price-value {
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    @extend %dark-font;
+  }
+
+  &__button {
+    display: flex;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--white);
+    @extend %bgc-blue;
+
+    &:hover {
+      color: var(--blue);
+      background-color: var(--white);
+    }
+  }
+}
