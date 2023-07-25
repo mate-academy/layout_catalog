@@ -8,24 +8,24 @@
   padding: 32px 16px 16px;
   transition: 300ms;
 
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  &__image {
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 40px;
-  }
-
   &__title {
     font-weight: 500;
     margin-bottom: 4px;
     transition: 300ms;
   }
 
-  &:hover &__title {
-    color: $card-title-on-hover;
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__title {
+      color: $card-title-on-hover-color;
+    }
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
   }
 
   &__code {
@@ -36,8 +36,6 @@
   }
 
   &__stars-container {
-    @include flex-alignment;
-
     margin-bottom: 24px;
   }
 
@@ -64,8 +62,6 @@
   }
 
   &__price {
-    @include flex-alignment;
-
     margin-bottom: 16px;
 
     &-word {
