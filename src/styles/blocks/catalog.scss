@@ -1,0 +1,38 @@
+.catalog {
+  --catalog-columns: 1;
+
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--catalog-columns), $card-width);
+  grid-column-gap: 48px;
+  grid-row-gap: 46px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    --catalog-columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    --catalog-columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --catalog-columns: 4;
+  }
+
+  &__card {
+    @include transition(transform);
+
+    & .card__title {
+      @include transition(color);
+    }
+
+    &:hover {
+      transform: scale(1.2);
+
+      & .card__title {
+        color: #34568b;
+      }
+    }
+  }
+}
