@@ -1,0 +1,129 @@
+.card {
+  border: 1px solid $border-color;
+  width: 200px;
+  height: 408px;
+  display: flex;
+  flex-direction: column;
+  background-color: $white-color;
+  border-radius: 5px;
+  justify-content: space-between;
+
+  @include transition (transform, 300ms);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    margin: 32px 19px 19px;
+    display: block;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__product-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 21px 16px 0;
+    color: $black-color;
+    @include transition (transform color, 300ms);
+  }
+
+  &:hover &__product-name {
+    color: $title-color;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    margin: 16px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    color: $gray-color;
+  }
+
+  &__stars {
+    margin: 0;
+    padding: 0;
+    height: 16px;
+    border-radius: 0.5px;
+    align-content: center;
+
+    &-img {
+      height: 16px;
+      width: 16px;
+      background: url(images/star.svg) center no-repeat;
+      display: inline-block;
+    }
+  }
+  
+  &__feedback {
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $black-color;
+  }
+
+  &__price {
+    color: $black-color;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+
+    &-label {
+      color: $gray-color;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      align-items: center;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    margin: 16px;
+    width: 166px;
+    height: 40px;
+    background-color: $blue-color;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white-color;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    @include transition (color background-color, 300ms);
+
+    &:hover {
+      background-color: $white-color;
+      border: 1px solid $blue-color;
+      color: $blue-color;
+    }
+  }
+
+  @for $starCount from 1 through 4 {
+    .card__stars:nth-child(-n + #{$starCount}) .card__stars-img--#{$starCount} {
+      background-image: url(images/star-active.svg);
+    }
+  }
+}
