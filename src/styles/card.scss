@@ -9,6 +9,7 @@
   padding-bottom: 16px;
 
   background-color: #fff;
+  transition-duration: $animationTransitionDuration;
 
   &__top {
     &-image {
@@ -26,6 +27,7 @@
       font-weight: 500;
       line-height: 18px;
       color: $titleTextColor;
+      transition-duration: $animationTransitionDuration;
     }
 
     &-product-code {
@@ -73,31 +75,37 @@
     }
   }
 
-  &__button {
+  &__button-buy {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    width: $blockWidth;
+    height: 40px;
+    border-radius: $borderRadius;
+    margin-top: 16px;
 
-    &-buy {
-      display: flex;
-      box-sizing: border-box;
-      justify-content: center;
-      align-items: center;
-      width: $blockWidth;
-      height: 40px;
-      border-radius: $borderRadius;
-      margin-top: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #fff;
+    text-decoration: none;
+    background-color: $secondaryColor;
+    transition-duration: $animationTransitionDuration;
 
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 16px;
-      color: #fff;
-      text-decoration: none;
-      background-color: $secondaryColor;
+    &:hover {
+      border: 1px solid $secondaryColor;
 
-      &:hover {
-        border: 1px solid $secondaryColor;
+      background: #fff;
+      color: $secondaryColor;
+    }
+  }
 
-        background: #fff;
-        color: $secondaryColor;
-      }
+  &:hover {
+    transform: scale(1.2);
+
+    .card__top-title {
+      color: #34568b;
     }
   }
 }
