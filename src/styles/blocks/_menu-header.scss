@@ -1,0 +1,44 @@
+.menu-header {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: block;
+    padding-bottom: 22.5px;
+    padding-top: 22.5px;
+    line-height: 125%;
+    position: relative;
+    transition: all $transition;
+
+    &--is-active {
+      color: $hover-color;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $hover-color;
+        border-radius: 8px;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
