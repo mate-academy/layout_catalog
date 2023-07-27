@@ -1,0 +1,12 @@
+.main {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+
+  @each $width, $columns in $column-amount {
+    @media (min-width: $width) {
+      grid-template-columns: repeat($columns, 200px);
+    }
+  }
+}
