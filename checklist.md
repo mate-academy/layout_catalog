@@ -7,15 +7,15 @@ But don't add empty lines between parent and child elements
 GOOD example:
 ```html
 <ul>
-  <li class="nav__item">
+  <li class="nav__list-item">
     <a href="#home">Home</a>
   </li>
 
-  <li class="nav__item">
+  <li class="nav__list-item">
     <a href="#shop">Shop</a>
   </li>
 
-  <li class="nav__item">
+  <li class="nav__list-item">
     <a href="#contacts">Contacts</a>
   </li>
 </ul>
@@ -24,13 +24,13 @@ BAD example:
 ```html
 <ul>
 
-  <li class="nav__item">
+  <li class="nav__list-item">
     <a href="#home">Home</a>
   </li>
-  <li class="nav__item">
+  <li class="nav__list-item">
     <a href="#shop">Shop</a>
   </li>
-  <li class="nav__item">
+  <li class="nav__list-item">
     <a href="#contacts">Contacts</a>
   </li>
 
