@@ -10,10 +10,9 @@
 
   &__item {
     position: relative;
-    margin-left: 20px;
 
-    &:first-child {
-      margin-left: 0;
+    &:not(:last-child) {
+      margin-right: 20px;
     }
 
   }
@@ -28,20 +27,20 @@
       color: $link-color;
     }
   }
-}
 
-.nav__link.is-active {
-  color: $link-color;
-  cursor: pointer;
-}
+  &__link.is-active {
+    color: $link-color;
+    cursor: pointer;
+  }
 
-.is-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  width: 100%;
-  border-radius: 8px;
-  background-color: $link-color;
+  .is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $link-color;
+  }
 }
