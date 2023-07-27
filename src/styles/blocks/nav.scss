@@ -1,0 +1,38 @@
+.nav {
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    padding: 23px 0;
+    color: inherit;
+    @include transition(color);
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $accent-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    background-color: $accent-color;
+  }
+}
