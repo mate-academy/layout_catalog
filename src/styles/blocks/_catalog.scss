@@ -7,21 +7,16 @@
   }
 
   &__list {
-    --columns-counter: 4;
     display: grid;
-    grid-template-columns: repeat(var(--columns-counter), 200px);
+    grid-template-columns: repeat(4, 200px);
     justify-content: center;
     column-gap: 48px;
     row-gap: 46px;
 
-    @media (max-width: 1023.98px) {
-      --columns-counter: 3;
-    }
-    @media (max-width: 767.98px) {
-      --columns-counter: 2;
-    }
-    @media (max-width: 479.98px) {
-      --columns-counter: 1;
+    @each $width, $column in $column-count {
+      @media (max-width: $width) {
+        grid-template-columns: repeat($column, 200px);
+      }
     }
   }
 }
