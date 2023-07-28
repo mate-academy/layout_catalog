@@ -1,0 +1,46 @@
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    text-decoration: none;
+    color: $link-color;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color $transition-time;
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+}
+
+.is-active {
+  color: $active-color;
+
+  &::after {
+    display: block;
+    content: "";
+    height: 4px;
+    width: 100%;
+    background: $active-color;
+    position: absolute;
+    border-radius: 8px;
+    bottom: 0;
+  }
+}
