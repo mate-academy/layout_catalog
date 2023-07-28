@@ -1,0 +1,93 @@
+.card {
+  display: flex;
+  width: $cardWidth;
+  box-sizing: border-box;
+  padding: 16px;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  background: $white;
+  transition: transform 300ms;
+
+  &__image {
+    margin-top: 16px;
+    align-self: center;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__header {
+    margin-top: 40px;
+    color: $mainColor;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color 300ms;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__header {
+      color: $cardHeader;
+    }
+  }
+
+  &__code-info {
+    margin-top: 4px;
+    color: $secondaryColor;
+    @include defaultTextPreset;
+  }
+
+  &__reviews-container {
+    @include flexBetween;
+    margin-top: 16px;
+  }
+
+  &__review-number {
+    color: $mainColor;
+    @include defaultTextPreset;
+  }
+
+  &__price-container {
+    @include flexBetween;
+    margin-top: 24px;
+  }
+
+  &__price {
+    color: $secondaryColor;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+
+    &-amount {
+      color: $mainColor;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    margin-top: 16px;
+    width: 166;
+    height: 40px;
+    background-color: $hoverColor;
+    border-radius: 5px;
+    @include flexCenter;
+    text-decoration: none;
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    transition: background-color, color, 300ms;
+
+    &:hover {
+      background-color: $white;
+      border: 1px solid $hoverColor;
+      color: $hoverColor;
+    }
+  }
+}
