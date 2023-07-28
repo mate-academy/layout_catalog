@@ -1,20 +1,19 @@
 .card {
-  width: 200px;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  box-sizing: border-box;
   display: flex;
-
   flex-direction: column;
   align-items: flex-start;
+  width: 200px;
   padding: 32px 16px 16px;
-  transition: transform 0.3s;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  @include transition(transform);
 
   &__image {
+    align-self: center;
     width: 160px;
     height: 134px;
     margin-bottom: 40px;
-    align-self: center;
   }
 
   &__name {
@@ -24,7 +23,7 @@
     font-weight: 500;
     line-height: 18px;
 
-    transition: color 0.3s;
+    @include transition(color);
   }
 
   &__code {
@@ -36,11 +35,11 @@
   }
 
   &__price {
-    width: 100%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     margin-bottom: 16px;
-    display: flex;
   }
 
   &__title {
@@ -58,12 +57,12 @@
   }
 
   &__item {
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 40px;
+
     border-radius: 5px;
     background-color: $link-color;
     text-transform: uppercase;
@@ -71,22 +70,24 @@
     color: #fff;
     font-size: 14px;
     font-weight: 700;
-    transition: background-color 0.3s, color 0.3s;
     border: 1px solid transparent;
 
+    @include transition(background-color);
+    @include transition(color);
+
     &:hover {
-      background-color: #fff;
       border-color: $link-color;
       color: $link-color;
+      background-color: #fff;
     }
   }
 
   &__stars {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     margin-bottom: 24px;
   }
 
@@ -99,9 +100,9 @@
 
   &:hover {
     transform: scale(1.2);
-  }
 
-  &:hover &__name {
-    color: #34568b;
+    .card__name {
+      color: #34568b;
+    }
   }
 }
