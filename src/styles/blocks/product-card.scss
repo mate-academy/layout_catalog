@@ -1,5 +1,5 @@
 .product-card {
-  width: 200px;
+  width: $product-card-width;
   padding: 32px 16px 16px;
   box-sizing: border-box;
   display: flex;
@@ -7,6 +7,11 @@
   align-items: center;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
     height: 134px;
@@ -20,6 +25,11 @@
     font-weight: 500;
     margin-bottom: 4px;
     color: $main-color;
+    transition: color $transition-duration;
+  }
+
+  &:hover &__name {
+    color: #34568b;
   }
 
   &__code {
@@ -54,18 +64,18 @@
     margin-bottom: 16px;
   }
 
-  &__price-title {
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #616070;
-  }
-
   &__price {
     font-size: 16px;
     line-height: 18px;
     font-weight: 700;
     color: $main-color;
+
+    &-title {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      color: #616070;
+    }
   }
 
   &__buy-link {
@@ -82,6 +92,9 @@
     color: #fff;
     border-radius: 5px;
     border: 1px solid transparent;
+    transition: background-color $transition-duration,
+      color $transition-duration,
+      border-color $transition-duration;
 
     &:hover {
       background-color: #fff;

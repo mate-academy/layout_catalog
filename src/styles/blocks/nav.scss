@@ -27,9 +27,26 @@
     display: block;
     color: #060b35;
     text-decoration: none;
+    transition: color $transition-duration;
 
     &:hover {
       color: $accent-color;
+    }
+
+    &:active {
+      position: relative;
+      color: $accent-color;
+
+      &::after {
+        display: block;
+        position: absolute;
+        height: 4px;
+        bottom: 0;
+        content: "";
+        width: 100%;
+        background: $accent-color;
+        border-radius: 8px;
+      }
     }
   }
 }
