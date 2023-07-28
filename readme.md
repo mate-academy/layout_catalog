@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://polinavafik.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://polinavafik.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -11,15 +11,12 @@ ___
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_catalog/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
 ## The task
-Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
+Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/dgIqELUmfYKLxLy014ARVT/Moyo-%2F-Catalog-(ENG)-(Copy)?node-id=0%3A1&mode=dev).
 
 ## Requirements:
 - use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
 and SCSS
 - Nav links color is not `black` any more
-- **flex layout**: there should always be 4 cards in a row (not 2, 3 or 5)
-  - use `:nth-child(4n)` to select every 4th element in `flex` container
-  - use `:nth-last-child(-n + 4)` to select 4 last elements `flex` container
 - ❗️❗️❗️ **MANDATORY if you're familiar with the `grid`**
   - use `grid` instead of `flex`
   - implement the [Grid Layout instead](./grid.md)
