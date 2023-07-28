@@ -1,5 +1,4 @@
 .nav {
-
   &__list {
     list-style: none;
     display: flex;
@@ -8,17 +7,9 @@
     padding: 0;
   }
 
-  &__item {
-    margin: 0 10px;
+  &__item:not(:last-child) {
+    margin-right: 20px;
     position: relative;
-  }
-
-  &__item:last-child {
-    margin-right: 0;
-  }
-
-  &__item:first-child {
-    margin-left: 0;
   }
 
   &__link {
@@ -38,22 +29,21 @@
     &:hover {
       color: $primary-button-buy-color;
     }
-
   }
 }
 
 .is-active {
   color: $primary-button-buy-color;
-}
 
-.is-active::after {
-  content: "";
+  &::after {
+    content: "";
 
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  width: 100%;
-  border-radius: 8px;
-  background-color: $primary-button-buy-color;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $primary-button-buy-color;
+  }
 }
