@@ -1,14 +1,14 @@
 .nav {
-  // hide navbar for properly view for catalog with grid
-  @media (max-width: 800px) {
-    display: none;
-  }
-
   &__list {
     display: flex;
     @include zero-margin;
     padding: 0;
     list-style: none;
+
+    // add style for properly view with grid
+    @media (max-width: 800px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -35,5 +35,20 @@
     &:hover {
       color: $button-color;
     }
+  }
+}
+
+.is-active {
+  color: $button-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $button-color;
+    height: 4px;
+    border-radius: 8px;
   }
 }
