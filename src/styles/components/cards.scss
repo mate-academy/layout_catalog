@@ -5,10 +5,6 @@
   border: 1px solid #f3f3f3;
   transition: transform 0.3s;
 
-  &:hover {
-    transform: scale(1.2);
-  }
-
   &__image {
     width: 160px;
     height: 134px;
@@ -23,10 +19,6 @@
     line-height: 18px;
     margin-top: 40px;
     transition: color 0.3s;
-  }
-
-  &:hover &__name {
-    color: #34568b;
   }
 
   &__code {
@@ -79,7 +71,6 @@
   }
 
   &__button {
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,8 +90,14 @@
     @extend %buttonTransitions;
   }
 
+  &:hover {
+    transform: scale(1.2);
+    .card__name {
+      color: #34568b;
+    }
+  }
+
   &__button:hover {
-    border-radius: 5px;
     border-color: #00acdc;
     background: #fff;
     color: #00acdc;
