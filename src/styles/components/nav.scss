@@ -1,33 +1,20 @@
 .nav {
+  font-size: 12px;
   text-transform: uppercase;
 
   &__list {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-auto-flow: column;
-    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
-
-    @media (min-width: 488px) {
-      gap: 10px;
-      grid-template-rows: repeat(2, 1fr);
-    }
-
-    @media (min-width: 800px) {
-      grid-template-rows: repeat(1, 1fr);
-      font-size: 12px;
-      gap: 20px;
-    }
   }
 
   &__item {
     position: relative;
-    display: grid;
-    align-items: center;
-    justify-content: center;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 
   &__link {
@@ -37,25 +24,10 @@
     color: $main-color;
     text-decoration: none;
     line-height: 60px;
-    @include transition(all, 0.3s);
+    transition: color 0.3s;
 
     &:hover {
       color: $hover-color;
     }
   }
-}
-
-.is-active {
-  color: $hover-color;
-}
-
-.is-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  width: 100%;
-  border-radius: 8px;
-  background-color: $hover-color;
 }

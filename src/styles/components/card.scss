@@ -1,42 +1,18 @@
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(1, 200px);
-  row-gap: 46px;
-  column-gap: 48px;
-  justify-content: center;
-  padding: 200px 0 72px;
-
-  @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 200px);
-    padding: 120px 0 72px;
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 200px);
-    padding: 50px 0 72px;
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
-  }
-}
-
 .card {
-  $root: &;
-
-  display: grid;
+  @include flex-column;
   padding: 32px 16px 16px;
   max-width: 200px;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   background-color: $white-color;
-  @include transition(all, 0.3s);
+  transition: transform 0.3s;
 
   &:hover {
     transform: scale(1.2);
   }
 
   &__content {
+    @include flex-column;
     margin-top: 40px;
   }
 
@@ -51,7 +27,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    @include transition(all, 0.3s);
+    transition: color 0.3s;
   }
 
   &:hover &__title {
@@ -64,11 +40,11 @@
   }
 
   &__stars-container {
-    @include grid-col-center;
+    @include flex-center-between;
   }
 
   &__price {
-    @include grid-col-center;
+    @include flex-center-between;
     margin: 24px 0 16px;
 
     &-text {
@@ -95,7 +71,9 @@
     border-radius: 5px;
     text-decoration: none;
     border: 1px solid transparent;
-    @include transition(all, 0.3s);
+    transition: background-color 0.3s,
+      color 0.3s,
+      border-color 0.3s;
 
     &:hover {
       background-color: $white-color;
