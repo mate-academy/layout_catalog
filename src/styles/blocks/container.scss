@@ -5,4 +5,10 @@
   row-gap: 46px;
   column-gap: 48px;
   padding: 50px 40px 72px;
+
+  @each $width-limit, $column-numer in $column__count {
+    @media (max-width: $width-limit) {
+      grid-template-columns: repeat($column-numer, 200px);
+    }
+  }
 }

@@ -5,13 +5,14 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   transition: transform 0.3s;
+  padding: 32px 0 16px;
 
   &__title {
-    margin: 40px 16px 0;
+    margin: 0 16px 4px;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    color: $--text-color;
+    color: $card__text-color;
   }
 
   &:hover {
@@ -25,28 +26,28 @@
   &__img {
     width: 160px;
     height: 134px;
-    margin: 32px 19px 0;
+    margin: 0 auto 40px;
   }
 
   &__code {
-    margin: 4px 84px 0 16px;
+    margin: 0 84px 16px 16px;
     line-height: 14px;
     font-size: 10px;
     font-weight: 400;
-    color: $--code-color;
+    color: $card__code-color;
   }
 
   &__price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 24px 16px 0;
+    margin: 0 16px 16px;
 
     &-text {
       margin: 0;
       line-height: 18px;
       font-size: 12px;
-      color: $--code-color;
+      color: $card__code-color;
     }
 
     &-amount {
@@ -54,27 +55,25 @@
       line-height: 18px;
       font-weight: 700;
       font-size: 16px;
-      color: $--text-color;
+      color: $card__text-color;
     }
   }
 
   &__review {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-size: 10px;
-    font-weight: 400;
     line-height: 14px;
+    margin: 0 16px 24px;
 
     &-count {
-      margin: 16px 16px 0 0;
+      margin: 0;
     }
   }
 
   &__stars {
     display: flex;
     padding: 0;
-    margin: 16px 0 0 16px;
 
     &-star {
       padding-right: 4px;
@@ -85,31 +84,31 @@
     }
   }
 
-  &__stars--is-active > :nth-child(-n + 4) {
-    background-image: url(../images/star-active.svg);
-  }
-
   &__button {
-    display: flex;
-    justify-content: center;
-    width: 166px;
-    height: 40px;
-    margin: 16px;
+    text-align: center;
+    margin: 0 16px;
+    padding: 12px 0;
     align-items: center;
     font-weight: 700;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 14px;
     border-radius: 5px;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: $--button-color;
-    color: $--main-color;
-    transition: background-color 300ms, color 300ms;
+    border: 1px solid $card__button-color;
+    background-color: $card__button-color;
+    color: $card__main-color;
+    transition: background-color $animation_duration, color $animation_duration;
 
     &:hover {
-      background-color: $--main-color;
-      border: 1px solid $--button-color;
-      color: $--button-color;
+      background-color: $card__main-color;
+      color: $card__button-color;
     }
+  }
+}
+
+@for $s from 1 through 5 {
+  .card__stars--#{$s}> :nth-child(-n + #{$s}) {
+    background-image: url(../images/star-active.svg);
   }
 }
