@@ -7,7 +7,7 @@ But don't add empty lines between parent and child elements
 GOOD example:
 ```html
 <ul>
-  <li class="nav__list-item">
+  <li class="nav__item">
     <a href="#home">Home</a>
   </li>
 
