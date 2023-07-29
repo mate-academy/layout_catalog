@@ -1,0 +1,44 @@
+.nav {
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list-item {
+    margin-left: 20px;
+    position: relative;
+    transition: $transitionEffect;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      @include linkHoverEffects();
+    }
+  }
+
+  &__link {
+    height: 60px;
+    display: flex;
+    color: inherit;
+    text-align: center;
+  }
+}
+
+.is-active {
+  color: $linkColor1;
+
+  &:after {
+    content: "";
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    background-color: $linkColor1;
+  }
+}
