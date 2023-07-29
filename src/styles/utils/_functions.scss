@@ -1,0 +1,12 @@
+@function columnsCount($columns-count) {
+  @return $columns-count;
+}
+
+@function grid-template-columns($columns, $width) {
+  $columns-count: columnsCount($columns);
+  $columns-width: $width;
+
+  $grid-template-columns: repeat($columns-count, $columns-width);
+
+  @return $grid-template-columns;
+}
