@@ -1,0 +1,134 @@
+@import "../utils/variables.scss";
+
+.catalog {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(1, $width-card);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 46px 48px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $width-card);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $width-card);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $width-card);
+  }
+}
+
+.card {
+  width: $width-card;
+  height: $heigth-card;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    margin-left: 3px;
+    width: 160px;
+    height: 134px;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-top: 36px;
+    font-weight: 500;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 18px;
+    color: $color-main-accent;
+    transition: color 300ms;
+
+    &:hover {
+      color: $color-hover-text;
+    }
+  }
+
+  &__product-code {
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+  }
+
+  &__rating {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-main-accent;
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-secondary;
+
+    &-value {
+      text-align: right;
+      font-size: 16px;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 18px;
+      color: $color-main-accent;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    border: 1px solid $color-accent-blue;
+    border-radius: 5px;
+    background-color: $color-accent-blue;
+
+    width: $width-button;
+    height: $heigth-button;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover {
+      border-radius: 5px;
+      border: 1px solid  $color-accent-blue;
+      background: $color-white;
+
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $color-accent-blue;
+    }
+  }
+}
