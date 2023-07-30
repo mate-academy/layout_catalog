@@ -4,15 +4,13 @@
   width: $card-width;
   border: 1px solid $color-grey-accent;
   border-radius: 5px;
-  padding-top: 32px;
-  padding-right: 16px;
-  padding-bottom: 32px;
-  transform: scale(1.2);
+  padding: 32px 16px 32px;
   transition: transform 0.5s;
-  color: $color-hover-text;
-  transition: color 0.5s;
-  background-color: $color-white-accent;
-  transition: background-color 0.5s, color 0.5s;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s;
+  }
 
   &__image {
     display: flex;
@@ -30,7 +28,12 @@
   &__description-title {
     @extend %description-title-style;
     color: $color-main;
-    transition: transform 0.5s;
+    transition: color 0.5s;
+  }
+
+  &__description-title:hover {
+    color: $color-hover-text;
+    transition: color 0.5s;
   }
 
   &__description-code {
@@ -79,31 +82,22 @@
     align-items: center;
     display: flex;
     color: $color-white-accent;
+    background-color: $color-blue-accent;
     font-weight: 700;
     font-size: 14px;
     line-height: 38px;
     text-transform: uppercase;
-    background-color: $color-blue-accent;
     border-radius: 5px;
     padding: 0 70px;
     border: 1px solid $color-blue-accent;
     text-decoration: none;
     transition: background-color 0.5s, color 0.5s;
-
   }
 
   &__button-link:hover {
-    align-items: center;
-    display: flex;
     color: $color-blue-accent;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 38px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    padding: 0 70px;
-    border: 1px solid $color-blue-accent;
-    text-decoration: none;
+    background-color: $color-white-accent;
+    transition: background-color 0.5s, color 0.5s;
   }
 
   &--position {
