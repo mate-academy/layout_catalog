@@ -1,3 +1,44 @@
 body {
   margin: 0;
+  padding: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 15px;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.all {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  margin-bottom: 72px;
+  row-gap: 46px;
+  column-gap: 48px;
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 408px);
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(4, 408px);
+  }
+
+  @media (max-width: 487px) {
+    grid-template-columns: 200px;
+    grid-template-rows: repeat(8, 408px);
+  }
+}
+
+@import "./blocks/variables.scss";
+@import "./blocks/header.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/card.scss";
