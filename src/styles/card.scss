@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  width: 200px;
+  width: $cardWidth;
   border: 1px solid #f3f3f3;
   border-radius: $borderRadius;
   padding-bottom: 16px;
@@ -81,6 +81,7 @@
     justify-content: center;
     align-items: center;
     width: $blockWidth;
+    border: 1px solid $secondaryColor;
     height: 40px;
     border-radius: $borderRadius;
     margin-top: 16px;
@@ -94,8 +95,6 @@
     transition-duration: $animationTransitionDuration;
 
     &:hover {
-      border: 1px solid $secondaryColor;
-
       background: #fff;
       color: $secondaryColor;
     }
@@ -106,26 +105,6 @@
 
     .card__top-title {
       color: #34568b;
-    }
-  }
-}
-
-.stars {
-  display: flex;
-  margin-left: 4px;
-
-  &__star {
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
-    background: url(../images/star.svg);
-    background-repeat: no-repeat;
-  }
-
-  @for $i from 1 through 5 {
-    &--#{$i} &__star:nth-child(-n + #{$i}) {
-      background: url(../images/star-active.svg);
-      background-repeat: no-repeat;
     }
   }
 }
