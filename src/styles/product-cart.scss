@@ -1,14 +1,5 @@
 @import "./variables.scss";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-body {
-  font-family: Roboto, Helvetica, sans-serif;
-}
-
 .card {
   width: 200px;
   display: flex;
@@ -18,10 +9,10 @@ body {
   background-color: #fff;
   padding: 32px 16px 16px;
   transition: transform 300ms ease;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
-    cursor: pointer;
   }
 
   &__image {
@@ -109,32 +100,5 @@ body {
   &:hover &__link {
     background-color: #fff;
     color: $color-accent-blue;
-  }
-}
-
-.stars {
-  display: flex;
-  align-items: center;
-
-  &__star {
-    height: 16px;
-    width: 16px;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 4px;
-    list-style: none;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  @for $ch from 0 through 5 {
-    &--#{$ch} {
-      :nth-child(-n + #{$ch}) {
-        background-image: url(../images/star-active.svg);
-      }
-    }
   }
 }
