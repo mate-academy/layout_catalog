@@ -1,0 +1,51 @@
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__block {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    height: 60px;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    color: inherit;
+
+    &:hover {
+      color: $button-color;
+    }
+
+    &.is-active {
+      color: $button-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $button-color;
+      }
+    }
+  }
+}
