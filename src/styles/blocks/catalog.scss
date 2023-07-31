@@ -1,0 +1,25 @@
+@import "../utils/mixin";
+@import "../utils/variables";
+
+.main {
+  padding: 50px 0 72px;
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, $width-card);
+  gap: 46px 48px;
+
+  @include onTablet {
+    grid-template-columns: repeat(3, $width-card);
+  }
+
+  @include onPhone {
+    grid-template-columns: repeat(2, $width-card);
+  }
+
+  @include onOldPhone {
+    grid-template-columns: repeat(1, $width-card);
+  }
+}

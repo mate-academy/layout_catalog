@@ -1,0 +1,41 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-left: $header-margin;
+
+  &--mob {
+    padding: 10px 0;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.is-active {
+  color: $color-main;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $color-main;
+  }
+}
