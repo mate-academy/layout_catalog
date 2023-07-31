@@ -1,0 +1,35 @@
+@function columnsInLayout($numberOfColumns) {
+  @return repeat(#{$numberOfColumns}, #{$card-width});
+}
+
+.main-content {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-template-columns: columnsInLayout(1);
+  // grid-template-columns: repeat(4, #{$card-width});
+  row-gap: 46px;
+  column-gap: 48px;
+
+  &__card {
+    padding: 32px 16px 16px;
+  }
+}
+
+@media (min-width: 488px) {
+  .main-content {
+    grid-template-columns: columnsInLayout(2);
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    grid-template-columns: columnsInLayout(3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    grid-template-columns: columnsInLayout(4);
+  }
+}

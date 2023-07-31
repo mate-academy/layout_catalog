@@ -1,0 +1,117 @@
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border: 1px solid $grayElements;
+  border-radius: 5px;
+
+  &__image {
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 160px;
+    height: 134px;
+
+    //scale image and add border to it on hover
+    transition: transform 0.4s, width 0.4s;
+
+    &:hover {
+      transform: scale(1.2);
+      border: 3px solid $grayElements;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $mainAccent;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-top: 40px;
+    margin-bottom: 4px;
+
+    transition: color 0.3s;
+  }
+
+  &__info-text {
+    font-weight: 400;
+    margin: 0;
+
+    &--product-code {
+      color: $secondary;
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    &--reviews {
+      color: $mainAccent;
+      display: flex;
+      width: 53px;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: right;
+      flex-shrink: 0;
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    &--price--title {
+      color: $secondary;
+      font-size: 12px;
+    }
+
+    &--price--number {
+      color: $mainAccent;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  &__review {
+    @include flex-with-space-between();
+
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    @include flex-with-space-between();
+    line-height: 18px;
+  }
+
+  &__button {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid $blueAccent;
+    border-radius: 5px;
+    background-color: $blueAccent;
+    color: white;
+
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+
+    padding: 11px 0;
+    margin-top: 16px;
+
+    transition: color 0.3s, background-color 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: $blueAccent;
+    }
+  }
+
+  //scale card and change title color on hover
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__title {
+      color: #34568b;
+    }
+  }
+}
