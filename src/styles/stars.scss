@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+.stars {
+  display: flex;
+  align-items: center;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+    list-style: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @for $ch from 0 through 5 {
+    &--#{$ch} {
+      :nth-child(-n + #{$ch}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+}
