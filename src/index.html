@@ -85,7 +85,7 @@
         <div>
           <img
             class="menu-btn"
-            src="./images/icon-close.svg"
+            src="./images/burger.svg"
             alt="Menu toggle button"
           >
         </div>
@@ -470,14 +470,21 @@
   <script>
     let menuBtn = document.querySelector('.menu-btn');
     let menu = document.querySelector('.menu');
-    menuBtn.addEventListener('click', function(){
-      menu.classList.toggle('active');
-    })
-
     let page = document.querySelector('.page');
-    menuBtn.addEventListener('click', function(){
-      page.classList.toggle('page--open-menu');
-    })
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', function() {
+      menuOpen = !menuOpen;
+      menu.classList.toggle('active', menuOpen);
+      page.classList.toggle('page--open-menu', menuOpen);
+
+      if (menuOpen) {
+        menuBtn.src = './images/icon-close.svg';
+      } else {
+        menuBtn.src = './images/burger.svg';
+        console.log("Button clicked")
+      }
+    });
   </script>
 
 </html>

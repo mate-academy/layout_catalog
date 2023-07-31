@@ -57,7 +57,7 @@
         </ul>
 
         <div>
-          <img class="menu-btn" src="/icon-close.1add023a.svg" alt="Menu toggle button">
+          <img class="menu-btn" src="/burger.fd086f28.svg" alt="Menu toggle button">
         </div>
       </nav>
     </header>
@@ -359,12 +359,19 @@
 
   <script>var menuBtn = document.querySelector('.menu-btn');
 var menu = document.querySelector('.menu');
-menuBtn.addEventListener('click', function () {
-  menu.classList.toggle('active');
-});
 var page = document.querySelector('.page');
+var menuOpen = false;
 menuBtn.addEventListener('click', function () {
-  page.classList.toggle('page--open-menu');
+  menuOpen = !menuOpen;
+  menu.classList.toggle('active', menuOpen);
+  page.classList.toggle('page--open-menu', menuOpen);
+
+  if (menuOpen) {
+    menuBtn.src = './images/icon-close.svg';
+  } else {
+    menuBtn.src = './images/burger.svg';
+    console.log("Button clicked");
+  }
 });</script>
 
 </html>
