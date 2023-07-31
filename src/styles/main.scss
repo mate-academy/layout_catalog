@@ -1,3 +1,46 @@
+@import "variables";
+@import "stars";
+@import "header";
+@import "nav";
+@import "card";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: $family-roboto;
+  color: #060b35;
   margin: 0;
+}
+
+.main {
+  padding: 50px 0;
+  margin: 0 auto;
+}
+
+.catalog {
+  width: 944px;
+  margin: 0 auto;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (max-width: 767px) and (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (max-width: 487px) {
+  .catalog {
+    grid-template-columns: repeat(1, 200px);
+  }
 }
