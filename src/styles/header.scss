@@ -4,6 +4,17 @@
   align-items: center;
   padding: 0 50px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 1023px) {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 0;
+  }
 }
 
 .logo {
@@ -14,50 +25,5 @@
   &__img {
     height: 100%;
     width: 100%;
-  }
-}
-
-.nav {
-  &__list {
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  &__list-item {
-    position: relative;
-    align-items: center;
-    height: 60px;
-    display: flex;
-    cursor: pointer;
-    font-size: 12px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color 300ms;
-
-    & :hover {
-      color: $accent-color;
-    }
-
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-}
-
-.is-active {
-  color: $accent-color;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    height: 4px;
-    width: 100%;
-    background: $accent-color;
-    border-radius: 8px;
-    bottom: 0;
   }
 }
