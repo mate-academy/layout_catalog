@@ -1,25 +1,33 @@
-@mixin _488 {
-  @media (min-width: 488px) {
+@mixin flexProperty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin navOnMobile {
+  @media (max-width: $nav-on-mobile-width) {
     @content;
   }
 }
 
-@mixin _768 {
-  @media (min-width: 768px) {
+@mixin onMobile {
+  @media (max-width: $mobile-width) {
     @content;
   }
 }
 
-@mixin _1024 {
-  @media (min-width: 1024px) {
+@mixin onTablet {
+  @media (min-width: $mobile-width) {
     @content;
   }
 }
-
-@mixin hover($property, $toValue) {
-  transition: #{$property} 0.3s;
-  &:hover {
-    #{$property}: $toValue;
-    cursor: pointer;
+@mixin onDesktop {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+@mixin onBigDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
   }
 }
