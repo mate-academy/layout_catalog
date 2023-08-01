@@ -1,3 +1,220 @@
+@import "./vars.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap");
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding-top: 0;
+  font-family: "Roboto", sans-serif;
+  padding-left: 50px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  &__logo {
+    align-self: center;
+    padding-top: 8% ;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+  height: 62px;
+  line-height: 38px;
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 0;
+  }
+  &__link {
+    padding-top: 23px;
+    padding-bottom: 21px;
+    text-decoration: none;
+    color: $main-accent;
+
+    transition: color 0.33s;
+  }
+  :hover {
+    color: $blue-accent;
+  }
+  :last-of-type {
+    margin-right: 0;
+  }
+  &__item {
+    margin-right: 20px;
+  }
+}
+
+.is-active {
+  color: $blue-accent;
+  padding-bottom: 19px;
+  border-bottom: 4px solid $blue-accent;
+  border-radius: 2px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 406px);
+  grid-auto-flow: row;
+  justify-content: center;
+  gap: 0 48px;
+  row-gap: 48px;
+  padding: 50px 0 72px;
+
+}
+
+.card {
+  border-radius: 5px;
+  border: 1px solid $card-accent;
+  width: 200px;
+  font-family: Roboto, sans-serif;
+  color: $main-accent;
+  font-style: normal;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+    margin-left: 3px;
+    padding-top: 32px;
+  }
+
+  &__prod {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px; /* 150% */
+    margin-bottom: 4px;
+    margin-top: 0;
+  }
+
+  &__code {
+    color: $secondary-accent;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px; /* 140% */
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  &__review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 16px;
+    margin-bottom: 24px;
+    &-rev {
+      align-self: flex-end;
+      text-align: right;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px; /* 140% */
+      margin: 0;
+    }
+  }
+
+  &__price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    text-align: right;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 112.5% */
+  }
+
+  &__price-tag {
+    text-align: left;
+    color: $secondary-accent;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+    margin: 0;
+  }
+
+  &__price {
+    margin: 0;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    border: 1px solid $blue-accent;
+    border-radius: 5px;
+    background: $blue-accent;
+    height: 38px;
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px; /* 114.286% */
+    text-transform: uppercase;
+    text-align: center;
+    transition: color 0.3s , background 0.3s;
+  }
+  :hover {
+    color: $blue-accent;
+    background: $white;
+  }
+}
+
+.card:hover {
+  transform: scale(120%);
+  .card__prod {
+    color: $card-title-hover;
+  }
+  .nav__link {
+    color: $blue-accent;
+  }
+  .card__button {
+    background: $button-bcg-hover;
+    color: $blue-accent;
+  }
+}
+
+.stars {
+  display: flexbox;
+  flex-direction: row;
+  width: 96px;
+  justify-content: space-between;
+  margin: 0;
+
+  &__star {
+    background-image: url("../../src/images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+  }
+  :last-child {
+    margin-right: 0;
+  }
+  :hover {
+    background-image: url("../../src/images/star-active.svg");
+  }
+}
+
+@each $star in $starnum {
+  .star-#{$star} {
+    background-image: url("../../src/images/star-active.svg");
+  }
 }
