@@ -1,0 +1,57 @@
+@import "../styles";
+
+@mixin logo_size($size) {
+  height: $size;
+  width: $size;
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  font-weight: 500;
+  padding: 0 $header-horizontal-padding;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    @include logo_size(40px);
+  }
+}
+
+.nav {
+  text-transform: uppercase;
+
+  & *:not(:link),
+  .is-active:after {
+    display: flex;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__item .is-active:after {
+    content: "";
+    border-bottom: 4px solid $hover-color;
+    border-radius: 8px;
+    transform: translateY(19px);
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    padding-top: 23px;
+    padding-bottom: 19px;
+  }
+
+  &__item .is-active,
+  &__link:hover {
+    color: $hover-color;
+  }
+}
