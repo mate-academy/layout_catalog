@@ -1,0 +1,23 @@
+.catalog {
+  padding: 50px 0;
+
+  &__conatiner {
+    max-width: 974px;
+    padding-inline: 15px;
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    justify-content: center;
+    column-gap: 48px;
+    row-gap: 46px;
+
+    @each $width, $column in $column-count {
+      @media (max-width: $width) {
+        grid-template-columns: repeat($column, 200px);
+      }
+    }
+  }
+}
