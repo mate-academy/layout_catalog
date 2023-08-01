@@ -1,8 +1,20 @@
 .catalog {
   display: grid;
-  grid-template-columns: repeat(4, $card-width);
+  grid-template-columns: $card-width;
   padding-top: 50px;
   padding-bottom: 72px;
   gap: 46px 48px;
   justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
