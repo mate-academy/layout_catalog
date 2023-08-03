@@ -3,11 +3,7 @@
   border: 1px solid #f3f3f3;
   width: $card-width;
   padding: 32px 16px 16px;
-  transition: all 300ms;
-
-  &:hover {
-    transform: scale(1.2);
-  }
+  transition: transform 300ms;
 
   &__image {
     display: block;
@@ -15,17 +11,21 @@
     width: 160px;
     height: 134px;
   }
-  
+
   &__name {
     color: $main-accent;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
+    transition: color 300ms;
   }
   
-  &:hover &__name {
-    transition: color 300ms;
-    color: #34568b;
+  &:hover {
+    transform: scale(1.2);
+
+    .product-card__name {
+      color: #34568b;
+    }
   }
 
   &__code {
@@ -72,19 +72,19 @@
     font-size: 14px;
     font-weight: 700;
     margin-top: 16px;
-    height: 40px;
-    line-height: 40px;
+    padding: 11px 0;
+    line-height: 16px;
     text-transform: uppercase;
     text-decoration: none;
     background-color: $blue-accent;
-    color: white;
+    color: #fff;
     text-align: center;
     border-radius: 5px;
     border: 1px solid $blue-accent;
+    transition: color 300ms, background-color 300ms;
 
     &:hover {
-      transition: color 300ms, background-color 300ms;
-      background-color: white;
+      background-color: #fff;
       color: $blue-accent;
     }
   }
