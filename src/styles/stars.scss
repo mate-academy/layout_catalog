@@ -1,12 +1,10 @@
 .stars {
   display: flex;
 
-  &--1 :nth-child(1),
-  &--5 :not(:nth-child(n + 6)),
-  &--4 :not(:nth-child(n + 5)),
-  &--3 :not(:nth-child(n + 4)),
-  &--2 :not(:nth-child(n + 3)) {
-    background-image: url(../images/star-active.svg);
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} :nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 
   &__star {

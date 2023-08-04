@@ -1,23 +1,12 @@
 .card {
-  width: $card-width;
+  width: 200px;
   border-radius: 5px;
-  border: 1px solid $card-border-color;
-  background: $card-background-color;
+  border: 1px solid #f3f3f3;
+  background: #fff;
   box-sizing: border-box;
   padding-inline: 16px;
   padding-bottom: 16px;
   transition: transform 300ms;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  &__img {
-    margin-top: 32px;
-    margin-inline: 3px;
-    width: $card-img-width;
-    height: $card-img-height;
-  }
 
   &__title {
     font-size: 12px;
@@ -25,10 +14,21 @@
     margin-top: 40px;
     color: $card-title-color;
     font-weight: 500;
+    transition: color 300ms linear;
   }
 
-  &:hover &__title {
-    color: $card-title-hover-color;
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: #34568b;
+    }
+  }
+
+  &__img {
+    margin-top: 32px;
+    margin-inline: 3px;
+    width: 160px;
+    height: 134px;
   }
 
   &__subtitle {
@@ -81,7 +81,7 @@
     text-decoration: none;
     color: $card-link-color;
     width: 100%;
-    height: $card-button-height;
+    height: 40px;
     border-radius: 5px;
     background-color: $card-button-color;
     margin-top: 16px;
@@ -89,6 +89,8 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    border: 1px solid $card-button-color;
+    transition: background-color 300ms linear;
 
     &:hover {
       color: $card-button-color;
