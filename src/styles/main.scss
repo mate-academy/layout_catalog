@@ -1,3 +1,40 @@
-body {
+@import "./blocks/header.scss";
+@import "./blocks/card.scss";
+@import "../utils/_variables.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/price.scss";
+@import "./blocks/button.scss";
+$container-size: 200px;
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  border: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, $container-size);
+  justify-content: center;
+  gap: 46px 48px;
+  padding-bottom: 72px;
+  padding-top: 50px;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    grid-template-columns: repeat(3, $container-size);
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: repeat(2, $container-size);
+  }
+}
+
+@media (max-width: 487px) {
+  .container {
+    grid-template-columns: repeat(1, $container-size);
+  }
 }
