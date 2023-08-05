@@ -1,4 +1,5 @@
 .card {
+  display: relative;
   display: flex;
   flex-direction: column;
 
@@ -13,10 +14,34 @@
   transition-duration: 300ms;
 
   &__img {
-    padding: 0 3px;
+    position: relative;
 
     width: 166px;
     height: 134px;
+
+    padding: 0 3px;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color:  3px solid  $border-grey;
+      // margin: -15px;
+      // z-index: -1;
+      // transition: transform 0.6s linear;
+      transform: scale(0.97, 0.93);
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    transition-duration: 400ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__article-title {
