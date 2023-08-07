@@ -20,23 +20,25 @@
     text-transform: uppercase;
     color: $main-text-color;
     cursor: pointer;
+    transition: all 300ms;
+
+    &:hover {
+      color: $button-color;
+    }
   }
 
   .is-active {
     color: $button-color;
-  }
+    transition: all 300ms;
 
-  .is-active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: $button-color;
-    height: 4px;
-  }
-
-  &__link:hover {
-    color: $button-color;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: $button-color;
+      height: 4px;
+    }
   }
 
   &__item:not(:last-child) &__link {
