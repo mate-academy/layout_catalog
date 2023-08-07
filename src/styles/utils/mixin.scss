@@ -1,0 +1,28 @@
+@mixin transition($property, $duration) {
+  transition: $property $duration ;
+}
+
+@mixin onMobile {
+  @media (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin hover {
+  transition: transform 0.3s, color 0.3s;
+  &:hover {
+    @content;
+  }
+}
