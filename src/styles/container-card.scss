@@ -1,0 +1,36 @@
+.container-card {
+  --column-count: $column-count;
+  padding-top: 50px;
+  padding-bottom: 72px;
+  display: grid;
+  row-gap: 46px;
+  column-gap: 48px;
+  grid-template-columns: repeat($column-count, 200px);
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  @media (max-width: 488px) {
+    & {
+      --column-count: 1;
+    }
+  }
+
+  @media (min-width: 488px) {
+    & {
+      --column-count: 2 ;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      --column-count: 3;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      --column-count: 4;
+    }
+  }
+}
