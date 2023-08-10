@@ -1,0 +1,21 @@
+.stars {
+  display: flex;
+
+  &__star {
+    background: center no-repeat url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+}
+
+@for $starCount from 1 through 5 {
+  .stars--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
