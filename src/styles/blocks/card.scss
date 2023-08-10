@@ -1,0 +1,107 @@
+$card-width: 200px;
+$num-cards: 4;
+$margin-between-cards: 48px;
+
+.container {
+  display: flex;
+  max-width: 1024px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  padding: 50px 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 0 16px;
+  margin-right: $margin-between-cards;
+  margin-bottom: $margin-between-cards;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+  
+  &:nth-last-child(- n + 4) {
+    margin-bottom: 0;
+  }
+  
+  &__image {
+    margin: 32px auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+  
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-main-accent;
+    margin-bottom: 4px;
+  }
+  
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    color: $color-secondary;
+    margin-bottom: 16px;
+  }
+  
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &-quantity {
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+      color: $color-main-accent;
+    }
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-text {
+      font-size: 12px;
+      font-weight: 400;
+      color: $color-secondary;
+    }
+    
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      color: $color-main-accent;
+    }
+  }
+  
+  &__button {
+    margin: 16px auto;
+    width: 166px;
+    height: 40px;
+    padding: 12px 70px;
+    background: $color-accent-blue;
+    border: 1px solid $color-accent-blue;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-accent-blue;
+    }
+  }
+}
