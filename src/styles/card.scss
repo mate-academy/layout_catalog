@@ -1,0 +1,118 @@
+
+.card {
+  width: $card-width;
+  box-sizing: border-box;
+  padding-inline: ($card-width - $card-img-width) / 2 - 4px;
+  border: $card-border;
+  border-radius: 5px;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  color: $main-accent-color;
+  transition: transform 0.3s;
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-accent-color;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__name {
+      color: $card-title-color;
+    }
+  }
+
+  &__img {
+    display: flex;
+    width: $card-img-width;
+    margin: auto;
+    height: 134px;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    color: $secondary-text-color;
+    margin-top: 5px;
+    margin-bottom: 9px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    margin: 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 23px;
+    margin-bottom: 16px;
+    color: $secondary-text-color;
+  }
+
+  &__amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: $main-accent-color;
+  }
+
+  &__button {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $blue-accent;
+    box-sizing: border-box;
+
+    &:hover {
+      color: $blue-accent;
+      background-color: #fff;
+      border: 1px solid $blue-accent;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.stars--1 .stars__star:nth-child(-n+1),
+.stars--2 .stars__star:nth-child(-n+2),
+.stars--3 .stars__star:nth-child(-n+3),
+.stars--4 .stars__star:nth-child(-n+4),
+.stars--5 .stars__star:nth-child(-n+5) {
+  background-image: url(../images/star-active.svg);
+}
