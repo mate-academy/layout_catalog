@@ -24,12 +24,10 @@
     transition: color $header-transition-duration;
 
     /* LoVeHAte */
-    &.is-active,
     &:hover {
       color: $header-link-text-hover-color;
     }
 
-    &.is-active::after,
     &:active::after {
       position: absolute;
       content: "";
@@ -39,6 +37,21 @@
       width: 100%;
       background-color: $header-link-text-active-color;
       border-radius: 8px;
+    }
+
+    &.is-active {
+      color: $header-link-text-hover-color;
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: $header-link-text-active-color;
+        border-radius: 8px;
+      }
     }
   }
 }
