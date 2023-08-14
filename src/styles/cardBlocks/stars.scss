@@ -16,15 +16,12 @@
     margin-right: 4px;
     background-image: url(../images/star.svg);
   }
-}
 
-.card__stars--0 .card__stars-star:nth-child(-n+0),
-.card__stars--1 .card__stars-star:nth-child(-n+1),
-.card__stars--2 .card__stars-star:nth-child(-n+2),
-.card__stars--3 .card__stars-star:nth-child(-n+3),
-.card__stars--4 .card__stars-star:nth-child(-n+4),
-.card__stars--5 .card__stars-star:nth-child(-n+5) {
-  background-image: url(../images/star-active.svg);
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .card__stars-star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
 
 .card__stars-reviews {
