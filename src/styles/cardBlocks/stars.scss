@@ -1,0 +1,32 @@
+.card__rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.card__stars {
+  display: flex;
+
+  &-star {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .card__stars-star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
+
+.card__stars-reviews {
+  font-size: 10px;
+  line-height: 14px;
+  margin-left: 18px;
+  font-weight: 400;
+}
