@@ -1,9 +1,27 @@
 .catalog {
   padding: 50px 40px;
 
+  --column-count: 1;
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(var(--column-count), 200px);
   gap: 48px 46px;
 
   justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+@media (min-width: 1024px) {
+  .catalog {
+    --column-count: 4;
+  }
 }
