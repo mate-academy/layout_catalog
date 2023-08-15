@@ -4,13 +4,16 @@
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   display: flex;
-  box-sizing: border-box;
   flex-direction: column;
   flex-wrap: wrap;
   transition-duration: 300ms;
 
   &:hover {
     transform: scale(120%);
+
+    & .card__product-title {
+      color: #34568b;
+    }
   }
 
   &__picture {
@@ -19,21 +22,26 @@
     margin: 0 auto 40px;
   }
 
-  &__product-title {
-    font-size: $mainElementsSize;
-    font-weight: 500;
-    line-height: $mainLineHeight;
+  &__product {
 
-    margin-bottom: 4px;
+    &-title {
+      font-size: $mainElementsSize;
+      font-weight: 500;
+      line-height: $mainLineHeight;
+
+      margin-bottom: 4px;
+    }
+
+    &-code {
+      font-size: $secondaryElementsSize;
+      line-height: $secondaryLineHeight;
+      color: $secondaryColour;
+
+      margin-bottom: 16px;
+    }
   }
 
-  &__product-code {
-    font-size: $secondaryElementsSize;
-    line-height: $secondaryLineHeight;
-    color: $secondaryColour;
 
-    margin-bottom: 16px;
-  }
 
   &__rating {
     @include space-between-content;
@@ -74,7 +82,6 @@
     background-color: $buttonColour;
     border-radius: 5px;
     height: 40px;
-    box-sizing: border-box;
     font-size: 14px;
     font-weight: $boldFontWeight;
     text-transform: uppercase;
@@ -88,8 +95,4 @@
       background-color: #fff;
     }
   }
-}
-
-.card:hover .card__product-title {
-  color: #34568b;
 }
