@@ -9,12 +9,14 @@
     background-repeat: no-repeat;
     margin-right: 4px;
   }
+
+  & :last-child {
+    margin-right: 0;
+  }
 }
 
-.stars--0 .stars__star:nth-child(n+1),
-.stars--1 .stars__star:nth-child(n+2),
-.stars--2 .stars__star:nth-child(n+3),
-.stars--3 .stars__star:nth-child(n+4),
-.stars--4 .stars__star:nth-child(n+5) {
-  background-image: url(../images/star.svg);
+@for $quantity from 0 through 4 {
+  .stars--#{$quantity} :nth-child(n + #{$quantity + 1}) {
+    background-image: url(../images/star.svg);
+  }
 }
