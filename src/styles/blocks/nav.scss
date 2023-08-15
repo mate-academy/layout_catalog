@@ -1,0 +1,57 @@
+.nav {
+  height: auto;
+  display: flex;
+
+  &__list {
+    display: flex;
+    background-color: #fff;
+    list-style-type: none;
+    height: 100%;
+    flex-wrap: wrap;
+
+    & > :not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    position: relative;
+
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: $--link-color;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    transition: color 300ms;
+
+    &:hover {
+      color: $--link-active-color;
+    }
+  }
+}
+
+.is-active {
+  color: $--link-active-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $--link-active-color;
+    width: 100%;
+  }
+}
