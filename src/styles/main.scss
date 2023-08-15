@@ -1,3 +1,42 @@
-body {
-  margin: 0;
+@import "./reset.scss";
+@import "./normalize.scss";
+@import "./utils/variables.scss";
+@import "./utils/extends";
+@import "./blocks/header.scss";
+@import "./blocks/navigation.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.page {
+  &__catalog {
+    margin: 0 auto;
+  }
+}
+
+$paddingX: 40px;
+$paddingY: 50px;
+$cardWidth: 200px;
+$gapX:48px;
+$gapY:46px;
+$cardCountInRow:4;
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: $paddingY $paddingX;
+  width: $cardCountInRow * $cardWidth +
+    ($cardCountInRow - 1) * $gapX + 2 * $paddingX;
+
+  &__item {
+    width: $cardWidth;
+
+    &:not(:nth-child(#{$cardCountInRow}n)) {
+      margin-right: $gapX;
+    }
+
+    &:not(:nth-child(-n + #{$cardCountInRow})) {
+      margin-top: $gapY;
+    }
+  }
 }
