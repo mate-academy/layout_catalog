@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  grid-template-rows: auto;
+  gap: 46px 48px;
+  padding: 50px 40px 72px;
+  justify-content: center;
+
+  @mixin responsive-grid($column-count, $screen-width) {
+    @media (min-width: $screen-width) {
+      & {
+        grid-template-columns: repeat($column-count, $card-width);
+      }
+    }
+  }
+
+  @include responsive-grid(2, 488px);
+  @include responsive-grid(3, 768px);
+  @include responsive-grid(4, 1024px);
+}
