@@ -1,15 +1,15 @@
 // #region variables
 $brand-font-color: #00acdc;
-$default-font: 'Roboto', sans-serif;
-$default-font-color: #060B35;
+$default-font: "Roboto", sans-serif;
+$default-font-color: #060b35;
 $default-font-weight: 400;
-$default-button-color: #00ACDC;
+$default-button-color: #00acdc;
 $default-star-size: 16px;
 $default-card-width: 200px;
 $default-picture-width: 160px;
 $default-picture-height: 134px;
-$default-star-image: url('../images/star.svg');
-$active-star-image: url('../images/star-active.svg');
+$default-star-image: url("../images/star.svg");
+$active-star-image: url("../images/star-active.svg");
 // #endregion
 
 //#region mixins
@@ -46,7 +46,8 @@ body {
   align-items: center;
   font-size: 12px;
   font-weight: 500;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0525);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  // margin-bottom: 50px;
 
   &__logo-img {
     margin: 7px 0;
@@ -55,13 +56,13 @@ body {
     height: 40px;
   }
 
-  &__nav {
+  .nav {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 50px;
 
-    &-list {
+    &__list {
       display: flex;
       list-style: none;
       padding: 0;
@@ -69,19 +70,20 @@ body {
 
       &-item {
         padding: 0 10px;
-      }
 
-      &-last {
-        padding-right: 0;
-      }
+        &--last {
+          padding-right: 0;
+        }
 
-      &-first {
-        padding-left: 0;
+        &--first {
+          padding-left: 0;
+        }
       }
 
       &-link {
         text-decoration: none;
-        color: #000;
+        color: rgba(6, 11, 53, 1);
+        font-weight: 500;
         padding: 23px 0;
         text-transform: uppercase;
         text-align: center;
@@ -116,13 +118,14 @@ body {
 
 //#region grid
 .grid {
-  margin: 50px 40px;
   display: grid;
   grid-template-columns: repeat(4, 200px);
   grid-template-rows: repeat(2, 1fr);
   column-gap: 48px;
   row-gap: 46px;
   justify-content: center;
+  align-items: center;
+  padding: 50px 0;
 }
 //#endregion
 
@@ -131,8 +134,8 @@ body {
   display: flex;
   flex-direction: column;
   width: $default-card-width;
-  padding: 32px 16px 16px 16px;
-  border: 1px solid #F3F3F3;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
   border-radius: 5px;
 
   &--centered {
@@ -150,6 +153,7 @@ body {
   &__title {
     margin: 0;
     font-weight: 500;
+    color: rgba(6, 11, 53, 1);
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 4px;
@@ -167,7 +171,7 @@ body {
   &__reviews {
     display: flex;
     justify-content: space-between;
-    align-items:flex-end;
+    align-items: flex-end;
     margin-bottom: 24px;
 
     &-count {
@@ -230,7 +234,7 @@ body {
   &__star {
     background: $default-star-image no-repeat center;
     width: $default-star-size;
-    height:  $default-star-size;
+    height: $default-star-size;
     margin-right: 4px;
   }
 
