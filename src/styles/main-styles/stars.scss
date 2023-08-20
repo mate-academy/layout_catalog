@@ -13,11 +13,10 @@
     }
   }
 
-  &--1 :nth-child(1),
-  &--2 :nth-child(-n + 2),
-  &--3 :nth-child(-n + 3),
-  &--4 :nth-child(-n + 4),
-  &--5 :nth-child(-n + 5) {
-    background-image: url("../images/star-active.svg");
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
+
 }
