@@ -12,12 +12,10 @@
       margin-right: 4px;
     }
   }
-}
 
-@for $n from 1 through 5 {
-  .stars--#{$n} {
-    @for $i from 1 through $n {
-      .stars__star:nth-child(#{$i}) {
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
         background-image: url("../images/star-active.svg");
       }
     }
