@@ -1,0 +1,136 @@
+@import "./values.scss";
+
+.main {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 48px;
+  row-gap: 46px;
+  padding-top: 50px;
+
+  @media (max-width: 1023px) {
+    & {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+
+  @media (max-width: 488px) {
+    & {
+      grid-template-columns: repeat(1, 200px);
+    }
+  }
+}
+
+.card {
+  background-color: $color-white;
+  display: flex;
+  border: 1px solid #f3f3f3;
+  width: 200px;
+  border-radius: $border-radius;
+  padding: 32px 16px 16px;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: transform 0.3s, color 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__product {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    color: $color-black;
+    margin: 0 0 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: $line-height-18;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__description {
+    color: $color-silver;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: $line-height-14;
+    margin: 0 0 16px;
+  }
+
+  &__price {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin: 0 0 16px;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-silver;
+    font-size: 12px;
+    line-height: $line-height-18;
+  }
+
+  &__sum {
+    margin: 0;
+    margin-left: auto;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: $line-height-18;
+  }
+
+  &__button {
+    display: flex;
+    width: 166px;
+    height: 40px;
+    border-radius: $border-radius;
+    background-color: $color-blue;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    color: $color-white;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-blue;
+    box-sizing: border-box;
+    transition: color 0.3s, background-color 0.3s;
+
+    &:hover {
+      color: $color-blue;
+      background-color: $color-white;
+    }
+  }
+
+  &__block-stars {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 24px;
+  }
+
+  &__reviews {
+    margin: 0;
+    color: $color-black;
+    display: flex;
+    font-size: 10px;
+    line-height: $line-height-14;
+  }
+}

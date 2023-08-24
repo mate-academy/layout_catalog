@@ -1,0 +1,67 @@
+@import "./values.scss";
+
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 50px;
+
+  &__href {
+    padding: 10px 0;
+  }
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__navList {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__navItem {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__navLink {
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: none;
+    color: $color-black;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  .is-active {
+    color: $color-blue;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $color-blue;
+    }
+  }
+}

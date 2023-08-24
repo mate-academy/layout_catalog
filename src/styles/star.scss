@@ -1,0 +1,23 @@
+@import "./values.scss";
+
+.stars {
+  display: flex;
+
+  &__star {
+    background-repeat: no-repeat;
+    background-image: url(../images/star.svg);
+    height: 16px;
+    width: 16px;
+    background-position: center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  @for $star from 1 through 5 {
+    .stars--#{$star} &__star:nth-child(-n + #{$star}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
