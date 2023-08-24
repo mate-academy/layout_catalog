@@ -1,0 +1,29 @@
+.stars {
+  @include common-flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    @include upper-margins;
+  }
+
+  &__star:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} &__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__rewiew {
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-color;
+    @include upper-margins;
+  }
+}
