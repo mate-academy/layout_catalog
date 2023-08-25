@@ -7,4 +7,3 @@ Implement the layout using `grid`
   - There should be three columns starting at `768px`
   - There should be two columns starting at `488px`
   - There should be one column below `488px`
-

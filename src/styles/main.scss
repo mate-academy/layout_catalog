@@ -1,3 +1,38 @@
-body {
-  margin: 0;
+@import "utils/variables";
+@import "utils/mixins";
+
+@import "blocks/page";
+@import "blocks/header";
+@import "blocks/nav";
+@import "blocks/product-cards";
+@import "blocks/stars";
+
+* {
+  box-sizing: border-box;
+}
+
+.is-active {
+  margin-left: 0;
+  color: $navitems-color;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  width: 100%;
+  border: solid $navitems-color 1px;
+  border-radius: 2px;
+  background-color: $navitems-color;
+}
+
+.main {
+  display: grid;
+  @include mainColumnsCount;
+  gap: 48px 46px;
+  justify-content: center;
+
+  padding: 50px 0 72px;
 }
