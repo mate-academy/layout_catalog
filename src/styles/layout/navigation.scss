@@ -1,0 +1,41 @@
+.navigation {
+  &__list {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    color: $color-main-accent;
+    font-size: $font-main-size;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &.is-active {
+      color: #00acdc;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 37px;
+        height: 4px;
+        background-color: #00acdc;
+        border-radius: 8px;
+      }
+    }
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
+}
