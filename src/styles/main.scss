@@ -1,3 +1,39 @@
-body {
-  margin: 0;
+@import "../styles/Stylepack/_reset.scss";
+@import "../styles/Stylepack/_fuynct.scss";
+@import "../styles/Stylepack/_paints.scss";
+@import "../styles/elements/nav.scss";
+@import "../styles/elements/header.scss";
+@import "../styles/elements/card.scss";
+@import "../styles/elements/stars.scss";
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  width: scale($cards-number);
+  padding: 50px 40px 0;
+  margin: auto;
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+
+    &:nth-child(#{$cards-number}n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.is-active {
+  color: $giganiga-blue-color;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: $giganiga-blue-color;
+    border-radius: 8px;
+    bottom: 0;
+    left: 0;
+  }
 }
