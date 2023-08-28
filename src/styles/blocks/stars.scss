@@ -1,0 +1,28 @@
+.rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/star.svg);
+    margin-right: 4px;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
