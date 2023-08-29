@@ -1,29 +1,21 @@
 .stars {
-  @include common-flex;
+  display: flex;
 
   &__star {
     width: 16px;
     height: 16px;
-    background-image: url(../images/star.svg);
-    background-position: center;
     background-repeat: no-repeat;
-    margin-top: $common-margin;
-  }
+    background-position: center;
+    background-image: url(../images/star.svg);
 
-  &__star:not(:first-child) {
-    margin-left: 4px;
-  }
-
-  @for $starCount from 1 through 5 {
-    &--#{$starCount} &__star:nth-child(-n + #{$starCount}) {
-      background-image: url(../images/star-active.svg);
+    &:not(:last-child) {
+      margin-right: 4px;
     }
   }
 
-  &__rewiew {
-    font-size: 10px;
-    line-height: 14px;
-    color: $main-color;
-    margin-top: $common-margin;
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
