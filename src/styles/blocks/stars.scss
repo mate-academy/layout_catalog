@@ -1,0 +1,22 @@
+.stars {
+  display: flex;
+
+  &__star {
+    background: $default-star-image no-repeat center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  @each $mark in $feedback-marks {
+    &--#{$mark} {
+      & :nth-child(-n + #{$mark}) {
+        background-image: $active-star-image;
+      }
+    }
+  }
+
+  & :last-child {
+    margin-right: 0;
+  }
+}
