@@ -1,0 +1,11 @@
+.assortment-of-devices {
+  display: grid;
+  row-gap: 46px;
+  column-gap: 48px;
+
+  @each $size, $column-count in $column-number {
+    @media (min-width: $size) {
+      grid-template-columns: repeat($column-count, $width--product-cards);
+    }
+  }
+}
