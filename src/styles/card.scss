@@ -1,0 +1,85 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $cardWidth;
+  border: 1px solid $cardBorderColor;
+  border-radius: 5px;
+  transition: transform $transitionTime;
+
+  &:hover {
+    transform: scale(1.2) ;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 0;
+  }
+
+  &__textContainer {
+    margin: 40px 16px 16px;
+  }
+
+  &__deviceName {
+    @include textProperties (12px, 500, $textColorMainAccent);
+    line-height: 18px;
+    transition: color $transitionTime;
+  }
+
+  &:hover .card__deviceName {
+    color: $hoverDeviceNameColor;
+  }
+
+  &__productCode {
+    @include textProperties (10px, 400, $textColorSecondary);
+    margin-top: 4px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    align-items: center;
+
+    &-reviews {
+      @include textProperties (10px, 400, $textColorMainAccent);
+    }
+  }
+
+  &__priceBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    &-text {
+      @include textProperties (12px, 400, $textColorSecondary);
+    }
+
+    &-number {
+      @include textProperties (16px, 700, $textColorMainAccent);
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include textProperties (14px, 700, $buttonHoverColor);
+    background-color: $buttonColor;
+    border-radius: 5px;
+    margin-top: 16px;
+    transition: color $transitionTime,
+      background-color $transitionTime,
+      border $transitionTime;
+
+    &:hover {
+      color: $buttonColor;
+      background-color: $buttonHoverColor;
+      border: 1px solid $buttonColor;
+    }
+  }
+}
