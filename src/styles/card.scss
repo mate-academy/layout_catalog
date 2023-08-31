@@ -4,6 +4,11 @@
   width: $cardWidth;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
+  transition: transform $transitionTime;
+
+  &:hover {
+    transform: scale(1.2) ;
+  }
 
   &__img {
     width: 160px;
@@ -18,6 +23,11 @@
   &__deviceName {
     @include textProperties (12px, 500, $textColorMainAccent);
     line-height: 18px;
+    transition: color $transitionTime;
+  }
+
+  &:hover .card__deviceName {
+    color: $hoverDeviceNameColor;
   }
 
   &__productCode {
@@ -62,6 +72,9 @@
     background-color: $buttonColor;
     border-radius: 5px;
     margin-top: 16px;
+    transition: color $transitionTime,
+      background-color $transitionTime,
+      border $transitionTime;
 
     &:hover {
       color: $buttonColor;
