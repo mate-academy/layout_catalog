@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+body {
+  margin: 0;
+}
+
+$link-color: #00acdc;
+$text-color: #060b35;
+$gray-color: #616070;
+$text-hover-color: #34568b;
+
+/* #region header */
+
+.header__container {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+
+  .logo {
+    margin: 10px 0;
+  }
+
+  .nav {
+
+    &__list-items {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__items,
+    &__link,
+    &__list-items {
+      position: relative;
+    }
+
+    &__items {
+      margin-right: 20px;
+    }
+
+    &__items:last-child {
+      margin-right: 0;
+    }
+
+    &__link {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $text-color;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .is-active,
+  .nav__link:hover {
+    color: $link-color;
+  }
+
+  .is-active::after {
+    content: "";
+    display: block;
+    border-bottom: 4px solid $link-color;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+/* #endregion */
+
+/* #region main */
+
+p,
+h1 {
+  margin: 0;
+}
+
+.main {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 408px);
+  gap: 46px 48px;
+  margin-top: 50px;
+
+  .card {
+    padding: 32px 16px 16px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    transition: transform 0.3s;
+
+    &__img {
+      padding: 0 3px;
+      width: 166px;
+      height: 134px;
+    }
+
+    &__title {
+      color: $text-color;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 40px;
+    }
+
+    &__code {
+      color: $gray-color;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-top: 24px;
+
+      .card__text {
+        font-weight: 400;
+        color: $gray-color;
+      }
+
+      .card__count {
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 700;
+        color: $text-color;
+      }
+    }
+
+    &__buy {
+      margin-top: 16px;
+      padding: 12px 70px;
+      background-color: #00acdc;
+      border-radius: 5px;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:hover,
+    &__title:hover {
+      color: $text-hover-color;
+    }
+
+    &__buy:hover {
+      background-color: #fff;
+      border: solid $link-color 1px;
+      color: $link-color;
+    }
+  }
+}
+
+/* #endregion */
