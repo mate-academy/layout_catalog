@@ -1,0 +1,101 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 32px 16px 16px;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: color 300ms, transform 300ms;
+
+  &__image {
+    display: inline-block;
+    width: 160px;
+    height: 134px;
+    margin-left: 3px;
+  }
+
+  &__title {
+    margin: 40px 0 4px;
+
+    @include text(500, 12px, 18px);
+    color: $main-color;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+
+    @include text(400, 10px, 14px);
+    color: $additional-color;
+  }
+
+  &__rate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    margin: 0;
+
+    @include text(400, 10px, 14px);
+    color: $main-color;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    margin: 0;
+
+    @include text(400, 12px, 18px);
+    color: $additional-color;
+  }
+
+  &__total {
+    @include text(700, 16px, 18px);
+    color: $main-color;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+
+    @include text(700, 14px, 16px);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $button-color-second;
+    cursor: pointer;
+
+    background-color: $button-color;
+    border: 1px solid $button-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+      color: $button-color;
+      background-color: $button-color-second;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+}

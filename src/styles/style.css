@@ -1,0 +1,260 @@
+html {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  height: 40px;
+  width: 40px;
+  padding: 10px 0;
+}
+
+.header__button {
+  display: none;
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/icon.svg);
+  background-size: cover;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .header__button {
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .header__navigation {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    max-width: 924px;
+  }
+}
+
+.navigation {
+  padding: 11px 0;
+}
+
+.navigation__list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+
+.navigation__link {
+  padding: 23px 0;
+  line-height: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #060b35;
+  cursor: pointer;
+  transition: color 300ms;
+}
+
+.navigation__link:hover {
+  color: #00acdc;
+}
+
+.navigation__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.is-active {
+  position: relative;
+  color: #00acdc;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: #00acdc;
+  border-radius: 8px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  justify-content: center;
+  column-gap: 48px;
+  row-gap: 46px;
+  padding: 50px 128px;
+}
+
+@media (max-width: 991px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+    padding: 40px 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (max-width: 487px) {
+  .main {
+    grid-template-columns: 200px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: color 300ms, transform 300ms;
+}
+
+.card__image {
+  display: inline-block;
+  width: 160px;
+  height: 134px;
+  margin-left: 3px;
+}
+
+.card__title {
+  margin: 40px 0 4px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #060b35;
+}
+
+.card__code {
+  margin: 0 0 16px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #616070;
+}
+
+.card__rate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card__reviews {
+  margin: 0;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #060b35;
+}
+
+.card__price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card__text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #616070;
+}
+
+.card__total {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #060b35;
+}
+
+.card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 166px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  background-color: #00acdc;
+  border: 1px solid #00acdc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: background-color 300ms, color 300ms;
+}
+
+.card__button:hover {
+  color: #00acdc;
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  width: 96px;
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stars__star:not(:last-child) {
+  margin-right: 4px;
+}
+
+.stars--1 .stars__star:nth-child(-n+1),
+.stars--2 .stars__star:nth-child(-n+2),
+.stars--3 .stars__star:nth-child(-n+3),
+.stars--4 .stars__star:nth-child(-n+4),
+.stars--5 .stars__star:nth-child(-n+5) {
+  background-image: url(../images/star-active.svg);
+}
+
+/*# sourceMappingURL=style.css.map */
