@@ -1,3 +1,30 @@
-body {
-  margin: 0;
+@import "./utils/reset";
+@import "./utils/variables";
+@import "./utils/functions";
+
+@import "./blocks/header.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/card.scss";
+@import "./blocks/stars.scss";
+
+.main__content {
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.content {
+  width: getWidth($card-width, $card-gap, $cards-index);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__card {
+    width: $card-width;
+    margin-right: $card-gap;
+    margin-bottom: 46px;
+  }
+
+  &__card:nth-child(4n) {
+    margin-right: 0;
+  }
 }
