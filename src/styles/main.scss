@@ -1,3 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --main-color: #00acdc;
+  --text-accent-color: #060b35;
+  --text-secondary-color: #616070;
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+}
+
 body {
+  margin: 0;
+  min-width: 1024px;
+}
+
+.header {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  &__logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    align-items: center;
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    position: relative;
+    padding: 0;
+  }
+
+  &__link {
+    margin-left: 20px;
+
+    &:first-child {
+      margin: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: #00acdc;
+        height: 4px;
+        width: 36.61px;
+        border-radius: 4px;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    text-decoration: none;
+    color: var(--text-accent-color);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 100%;
+    transition: color 0.3s;
+    line-height: 60px;
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
+}
+
+.nav__item.is-active {
+  color: #00acdc;
+}
+
+.main {
+  &__content {
+    padding: 50px 40px;
+
+    display: grid;
+    grid-template: 408px 408px/ 200px 200px 200px 200px;
+    justify-content: center;
+    gap: 46px 48px;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 408px;
+  border-radius: 5px;
+  border: 1px solid var(--gray-elements, #f3f3f3);
+  background: var(--white, #fff);
+  padding: 32px 16px 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__product-img {
+    width: 160px;
+    height: 134px;
+    margin: 0 3px;
+  }
+
+  &__product-link {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__product-title {
+    color: var(--main-accent, #060b35);
+    width: 166px;
+    margin-top: 40px;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 150% */
+    text-decoration: none;
+  }
+
+  &__product-code {
+    color: var(--secondary, #616070);
+    margin: 0;
+    margin-top: 4px;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px; /* 140% */
+  }
+
+  &__review {
+    width: 166px;
+    margin-top: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    height: 18px;
+    margin-top: 24px;
+  }
+
+  &__buy {
+    width: 166px;
+    height: 40px;
+    margin-top: 16px;
+    border-radius: 5px;
+    border-color: var(--blue-accent, #00acdc);
+    background: var(--blue-accent, #00acdc);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--white, #fff);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 114.286% */
+    text-transform: uppercase;
+  }
+
+  &__price-text {
+    color: var(--secondary, #616070);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+    margin: 0;
+  }
+
+  &__price-value {
+    color: var(--main-accent, #060b35);
+    text-align: right;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 112.5% */
+    margin: 0;
+  }
+}
+
+.card__stars {
+  height: 16px;
+  width: 96px;
+  line-height: 16px; /* 140% */
+
+}
+
+.star {
+  flex-direction: row;
+  width: calc(96px / 5);
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/star.svg);
+
+}
+
+.stars {
+  display: flex;
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
+
+.card_reviwe-text {
+  height: 16px;
+  color: var(--main-accent, #060b35);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 140% */
   margin: 0;
 }
