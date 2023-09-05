@@ -1,3 +1,40 @@
+$blue: #00acdc;
+$Main-accent: #060b35;
+$Secondary-accent: #616070;
+$Blue-accent:#00acdc;
+$White-accent:#fff;
+
+@import "./utils.scss";
+@import "./header";
+@import "./nav";
+@import "./card";
+@import "./stars";
+
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 72px;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  column-gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+  padding: 50px 40px;
+
+  @media (max-width:488px) {
+    grid-template-columns: repeat(1, 200px);
+  }
+
+  @include gridTemplate(488px, 2);
+  @include gridTemplate(768px, 3);
+  @include gridTemplate(1024px, 4);
+
 }

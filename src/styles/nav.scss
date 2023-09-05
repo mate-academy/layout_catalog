@@ -1,0 +1,52 @@
+.nav {
+  display: block;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    height: 60px;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 23px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $Main-accent;
+    font-size: 12px;
+    font-weight: 500;
+
+    &:hover {
+      color: $blue;
+      transition: 300ms;
+    }
+  }
+}
+
+.is-active {
+  color: $blue;
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 4px;
+    background-color: $blue;
+  }
+}
