@@ -6,6 +6,8 @@ html {
   --main-color: #00acdc;
   --text-accent-color: #060b35;
   --text-secondary-color: #616070;
+  --gray-elements: #f3f3f3;
+  --white: #fff;
   font-family: Roboto, sans-serif;
   font-size: 10px;
   line-height: 14px;
@@ -39,36 +41,18 @@ body {
     display: flex;
     flex-direction: row;
     margin: 0;
-    position: relative;
     padding: 0;
   }
 
   &__link {
     margin-left: 20px;
-
-    &:first-child {
-      margin: 0;
-
-      &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        background-color: #00acdc;
-        height: 4px;
-        width: 36.61px;
-        border-radius: 4px;
-        left: 0;
-        bottom: 0;
-      }
-    }
   }
 
   &__item {
     display: flex;
     text-decoration: none;
-    color: var(--text-accent-color);
+    color: var(--text-accent-color, #060b35);
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
     text-transform: uppercase;
     height: 100%;
@@ -82,7 +66,20 @@ body {
 }
 
 .nav__item.is-active {
-  color: #00acdc;
+  color: var(--main-color);
+  margin: 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: var(--main-color);
+    height: 4px;
+    width: 36.61px;
+    border-radius: 4px;
+    bottom: 0;
+  }
 }
 
 .main {
@@ -101,15 +98,15 @@ body {
   width: 200px;
   height: 408px;
   border-radius: 5px;
-  border: 1px solid var(--gray-elements, #f3f3f3);
-  background: var(--white, #fff);
+  border: 1px solid var(--gray-elements);
+  background: var(--white);
   padding: 32px 16px 16px;
 
   display: flex;
   flex-direction: column;
 
   &__product-img {
-    width: 160px;
+    width: 100%;
     height: 134px;
     margin: 0 3px;
   }
@@ -120,29 +117,27 @@ body {
   }
 
   &__product-title {
-    color: var(--main-accent, #060b35);
-    width: 166px;
+    color: var(--text-accent-color);
+    width: 100%;
     margin-top: 40px;
 
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
     line-height: 18px; /* 150% */
     text-decoration: none;
   }
 
   &__product-code {
-    color: var(--secondary, #616070);
+    color: var(--text-secondary-color);
     margin: 0;
     margin-top: 4px;
     font-size: 10px;
-    font-style: normal;
     font-weight: 400;
     line-height: 14px; /* 140% */
   }
 
   &__review {
-    width: 166px;
+    width: 100%;
     margin-top: 16px;
 
     display: flex;
@@ -154,45 +149,42 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 166px;
+    width: 100%;
     height: 18px;
     margin-top: 24px;
   }
 
   &__buy {
-    width: 166px;
+    width: 100%;
     height: 40px;
     margin-top: 16px;
     border-radius: 5px;
-    border-color: var(--blue-accent, #00acdc);
-    background: var(--blue-accent, #00acdc);
+    border-color: var(--main-color);
+    background: var(--main-color);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: var(--white, #fff);
+    color: var(--white);
     font-size: 14px;
-    font-style: normal;
     font-weight: 700;
     line-height: 16px; /* 114.286% */
     text-transform: uppercase;
   }
 
   &__price-text {
-    color: var(--secondary, #616070);
+    color: var(--text-secondary-color);
     font-size: 12px;
-    font-style: normal;
     font-weight: 400;
     line-height: 18px; /* 150% */
     margin: 0;
   }
 
   &__price-value {
-    color: var(--main-accent, #060b35);
+    color: var(--text-accent-color);
     text-align: right;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
     line-height: 18px; /* 112.5% */
     margin: 0;
@@ -203,7 +195,6 @@ body {
   height: 16px;
   width: 96px;
   line-height: 16px; /* 140% */
-
 }
 
 .star {
@@ -228,9 +219,8 @@ body {
 
 .card_reviwe-text {
   height: 16px;
-  color: var(--main-accent, #060b35);
+  color: var(--text-accent-color);
   font-size: 10px;
-  font-style: normal;
   font-weight: 400;
   line-height: 16px; /* 140% */
   margin: 0;
