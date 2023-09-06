@@ -1,9 +1,13 @@
 .card {
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  background: #fff;
+  background: $color-white;
   width: $card-width;
   padding: 32px 16px 16px;
+  transition: all 0.3s linear;
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__img {
     display: flex;
@@ -17,7 +21,6 @@
     margin-top: 0;
     margin-bottom: 4px;
     font-family: inherit;
-    font-style: normal;
     font-size: 12px;
     line-height: 18px;
     font-weight: 500;
@@ -26,7 +29,6 @@
 
   &__code {
     margin: 0 0 16px;
-    font-style: normal;
     color: $secondary-color;
   }
 
@@ -40,8 +42,7 @@
       text-align: right;
       font-size: 10px;
       line-height: 14px;
-      font-weight: 400;
-      font-style: normal;
+
       color: $main-text-color;
     }
   }
@@ -57,8 +58,6 @@
       font-size: 12px;
       font-family: inherit;
       line-height: 18px;
-      font-weight: 400;
-      font-style: normal;
       color: $secondary-color;
     }
 
@@ -68,8 +67,6 @@
       line-height: 18px;
       font-family: inherit;
       font-weight: 700;
-      font-style: normal;
-      text-align: right;
       color: $main-text-color;
     }
   }
@@ -87,14 +84,17 @@
     font-size: 14px;
     line-height: 16px;
     font-weight: 700;
-    font-style: normal;
     text-transform: uppercase;
-    color: #fff;
+    color: $color-white;
     cursor: pointer;
 
     &:hover {
       color: $main-blue;
-      background: #fff;
+      background: $color-white;
     }
   }
+}
+
+.card:hover .card__title {
+  color: $hover-color;
 }
