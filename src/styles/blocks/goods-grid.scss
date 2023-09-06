@@ -1,0 +1,11 @@
+.grid-of-goods {
+  display: grid;
+  column-gap: 48px;
+  row-gap: 46px;
+
+  @each $column-count, $size-column in $grid-template-columns-data {
+    @media (min-width: $size-column) {
+      grid-template-columns: repeat($column-count, $width-grid-column);
+    }
+  }
+}
