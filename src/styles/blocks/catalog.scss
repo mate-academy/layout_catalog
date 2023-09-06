@@ -1,0 +1,106 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-width);
+  gap: 46px 48px;
+  align-items: center;
+  justify-items: left;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 72px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  &__name {
+    @include primaryText;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  &__card {
+    width: $card-width;
+    border-radius: 5px;
+    border: 1px solid #f3f3f3;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+
+      .catalog__name {
+        color: #34568b;
+      }
+    }
+  }
+
+  &__image-block {
+    padding: 32px 19px 36px;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 16px 16px;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    color: $secondary-color;
+    @include secondaryText;
+  }
+
+  &__reviews-block {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__reviews {
+    @include secondaryText;
+  }
+
+  &__price-block {
+    margin-bottom: 16px;
+    @include contentPosition;
+  }
+
+  &__price {
+    color: $secondary-color;
+    @include primaryText;
+  }
+
+  &__cost {
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__button {
+    font-family: inherit;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    border: 0;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    background-color: $blue-accent;
+    border-radius: 5px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      border: 1px solid $blue-accent;
+      color: $blue-accent;
+    }
+  }
+}
