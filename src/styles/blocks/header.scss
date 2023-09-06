@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__logo-block {
+    width: $image-size;
+    height: $image-size;
+    margin: 10px 0 10px 50px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    position: relative;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &__nav-item {
+    cursor: pointer;
+
+    a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: $main-color;
+      padding: 23px 0;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $highlighted-text;
+      }
+    }
+
+    .is-active {
+      margin: 0;
+      color: $highlighted-text;
+
+      &::after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        content: "";
+        width: 37px;
+        height: 4px;
+        border-radius: 15px;
+        background-color: $highlighted-text;
+      }
+    }
+  }
+}
