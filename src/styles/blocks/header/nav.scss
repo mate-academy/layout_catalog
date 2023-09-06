@@ -1,0 +1,65 @@
+.header__logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+    display: inline-block;
+  }
+
+  &__item:last-child {
+    margin: 0;
+  }
+
+  &__link {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    padding: 23px 0;
+    display: flex;
+
+    &::after {
+      opacity: 0;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background-color: $blue-accent;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 8px;
+    }
+
+    &:link {
+      color: $main-accent;
+    }
+
+    &:visited {
+      color: $main-accent;
+    }
+
+    &:hover {
+      color: $blue-accent;
+    }
+
+    &:active,
+    &.is-active {
+      color: $blue-accent;
+    }
+
+    &:active::after,
+    &.is-active::after {
+      opacity: 1;
+    }
+  }
+}
