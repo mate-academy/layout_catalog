@@ -1,3 +1,43 @@
+@import "./blocks/variables";
+@import "./blocks/mixin";
+@import "./blocks/nav";
+@import "./blocks/card";
+@import "./blocks/stars";
+@import "./blocks/header";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", "Helvetica", sans-serif;
+}
+
+.main {
+  --column-count: 1;
+  margin: 50px 40px 72px;
+
+  display: grid;
+  gap: 46px 48px;
+  justify-content: center;
+  grid-template-columns: repeat(var(--column-count), minmax(200px, 200px));
+}
+
+@media (min-width: 488px) {
+  .main {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --column-count: 4;
+  }
 }
