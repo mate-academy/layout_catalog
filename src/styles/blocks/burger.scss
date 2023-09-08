@@ -1,0 +1,33 @@
+.burger {
+  display: none;
+  cursor: pointer;
+
+  &--active > :nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  &--active > :nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  &--active > :nth-child(2) {
+    opacity: 0;
+  }
+
+  @include onTablet {
+    display: block;
+  }
+
+  &__dash {
+    display: block;
+    border-radius: 8px;
+
+    height: 4px;
+    width: 25px;
+
+    @include resetMargin(margin, 5px 0);
+
+    background-color: $card-link-color;
+    @include transition(all);
+  }
+}
