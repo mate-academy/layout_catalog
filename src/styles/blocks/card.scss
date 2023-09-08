@@ -1,0 +1,91 @@
+.card {
+  @include displayFlex(column, center);
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border-radius: 5px;
+  border: 1px solid $White-accent;
+  box-sizing: border-box;
+  @include transition(300ms);
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    padding-bottom: 40px;
+    align-self: center;
+  }
+
+  &__logo {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5em;
+    padding-bottom: 4px;
+    color: $Main-accent;
+    @include transition(300ms);
+  }
+
+  &__code {
+    color: $Secondary;
+    font-size: 10px;
+    line-height: 1.4em;
+    padding-bottom: 16px;
+  }
+
+  &__review {
+    @include displayFlex(row, space-between);
+    align-items: center;
+    padding-bottom: 24px;
+
+    &-text {
+      font-size: 10px;
+      line-height: 16px;
+    }
+  }
+
+  &__price {
+    @include displayFlex(row, space-between);
+    align-items: center;
+    padding-bottom: 16px;
+
+    &-text {
+      color: $Secondary;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-number {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__buy {
+    padding: 11px 0;
+    background-color: $Blue-accent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $White-accent;
+    @include transition(300ms);
+
+    &:hover {
+      background: transparent;
+      border-radius: 5px;
+      border-color: $Blue-accent;
+      color: $Blue-accent;
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__logo {
+    color: $Blue-accent-active;
+  }
+}
