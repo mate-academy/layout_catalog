@@ -1,0 +1,83 @@
+@import "header/variables.scss";
+
+// html {
+//   margin: 0;
+// }
+
+// body {
+//   padding: 0;
+//   margin: 0;
+// }
+
+.logo {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  height: $main-height;
+  background-color: $background-color;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+
+.nav {
+  align-self: stretch;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: $main-height;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;
+    position: relative;
+    height: $main-height;
+    color: #060b35;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &__item {
+    margin: 0 20px 0 0;
+    line-height: $main-height;
+    list-style: none;
+    position: relative;
+  }
+
+  &__item:last-child {
+    margin: 0;
+  }
+}
+
+.is-active {
+  color: $main-color;
+
+  &::after {
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: $main-color;
+    border-radius: 8px;
+    display: block;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+}
