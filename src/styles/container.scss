@@ -1,11 +1,15 @@
 .container {
+
   display: grid;
   padding: $pd-block-con $pd-inline-con;
   margin: 0 auto;
-  grid-template-columns: repeat(4, $card-width);
+  // grid-template-columns: repeat(4, $card-width);
   column-gap: $gap-col-con;
   row-gap: $gap-row-con;
-  max-width: ($card-width * $card-count)
-    + $gap-col-con * ($card-count - 1)
-    + $pd-inline-con * 2;
+
+  @include cards-count;
+
+  // max-width: ($card-width * $card-count)
+  //   + $gap-col-con * ($card-count - 1)
+  //   + $pd-inline-con * 2;
 }
