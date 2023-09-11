@@ -1,12 +1,18 @@
 .main {
   display: grid;
-  grid-template-columns: repeat(var(--column-number), 200px);
+  grid-template-columns: repeat(var(--column-number), $card-width);
   --column-number: 1;
   padding-top: 50px;
   padding-bottom: 72px;
+  max-width: calc-width(var(--column-number), $card-width, $gap-column);
+  list-style: none;
   align-self: center;
-  row-gap: 46px;
-  column-gap: 48px;
+  row-gap: $gap-row;
+  column-gap: $gap-column;
+
+  @function calc-width($columns, $card, $gap) {
+    @return $columns * $card + $gap * ($columns - 1);
+  }
 
   @media (min-width: 488px) {
     --column-number: 2;
