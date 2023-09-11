@@ -1,0 +1,26 @@
+@mixin columCount {
+  --count: 1;
+  grid-template-columns: repeat(var(--count), $card-wifth);
+
+  @media (min-width: 488px) {
+    --count: 2;
+    grid-template-columns: repeat(var(--count), $card-wifth);
+  }
+
+  @media (min-width: 768px) {
+    --count: 3;
+    grid-template-columns: repeat(var(--count), $card-wifth);
+  }
+
+  @media (min-width: 1024px) {
+    --count: 4;
+    grid-template-columns: repeat(var(--count), $card-wifth);
+  }
+}
+
+@mixin  hoverDuration {
+  transition-duration: 300ms;
+  &:hover {
+    @content;
+  }
+}
