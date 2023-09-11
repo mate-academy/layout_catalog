@@ -1,24 +1,24 @@
+@function width($card, $gap) {
+  @return ($card * 4) + ($gap * 3);
+}
+
 .cards {
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  column-gap: $column-gap;
+  row-gap: $row-gap;
 
-  &__row {
-    display: grid;
-    grid-template-columns: repeat(4, $card-width);
-    column-gap: 48px;
-    row-gap: 46px;
+  max-width: width($card-width, $column-gap);
 
-    justify-content: center;
+  @include mediaquery1024 {
+    grid-template-columns: repeat(3, $card-width);
+  }
 
-    @include mediaquery1024 {
-      grid-template-columns: repeat(3, $card-width);
+  @include mediaquery768 {
+    grid-template-columns: repeat(2, $card-width);
+  }
 
-    }
-
-    @include mediaquery768 {
-      grid-template-columns: repeat(2, $card-width);
-    }
-
-    @include mediaquery488 {
-      grid-template-columns: $card-width;
-    }
+  @include mediaquery488 {
+    grid-template-columns: $card-width;
   }
 }
