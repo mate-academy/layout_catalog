@@ -1,0 +1,114 @@
+.cards {
+  display: grid;
+  justify-content: center;
+
+  padding: 50px 48px 72px;
+  margin: 0 auto;
+
+  @include collumns;
+  @include calculateWidth($card-width, 48px, 4);
+
+  grid-column-gap: $grid-horizontal-gap;
+  grid-row-gap: $grid-vertical-gap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 32px 16px 16px;
+  width: $card-width;
+
+  border-radius: 5px;
+  border: 1px solid $color-card-border;
+
+  background: $color-card-bg;
+
+  &__picture {
+    align-self: center;
+
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 4px;
+
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500;
+
+    color: $color-card-blue;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $color-card-gray;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 23px;
+
+    &-text {
+      margin: 0;
+      font-size: 10px;
+      font-weight: 400;
+      color: $color-card-blue;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-card-bg;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $color-card-button;
+
+    height: 40px;
+
+    &:hover {
+      border-color: $color-card-button;
+      background: $color-card-bg;
+      color: $color-card-button;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    &-text {
+      margin: 0;
+      color: $color-card-gray;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    &-value {
+      margin: 0;
+      color: $color-card-blue;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
