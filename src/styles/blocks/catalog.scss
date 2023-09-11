@@ -1,29 +1,34 @@
 .catalog-container {
-  --column-count: 1;
   display: grid;
+  margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 72px;
-  grid-template-columns: repeat(var(--column-count), 200px);
   row-gap: 46px;
-  column-gap: 48px;
-
+  column-gap: $gap;
   justify-content: center;
+
+  grid-template-columns: repeat(var(--card-count), 200px);
+  max-width: $card-width;
+  --card-count: 1;
 }
 
 @media (min-width:488px) {
   .catalog-container {
-    --column-count: 2;
+    --card-count: 2;
+    max-width: max-width(2, $card-width, $gap);
   }
 }
 
 @media (min-width:768px) {
   .catalog-container {
-    --column-count: 3;
+    --card-count: 3;
+    max-width: max-width(3, $card-width, $gap);
   }
 }
 
 @media (min-width:1024px) {
   .catalog-container {
-    --column-count: 4;
+    --card-count: 4;
+    max-width: max-width(4, $card-width, $gap);
   }
 }
