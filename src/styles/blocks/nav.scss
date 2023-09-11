@@ -1,0 +1,83 @@
+.nav {
+  &--fixed {
+    @include onTablet {
+      position: fixed;
+      top: 60px;
+      left: -100%;
+
+      height: 100vh;
+      width: 100%;
+
+      border-top: 1px solid $card-link-color;
+      overflow-y: auto;
+      background-color: #fff;
+
+      @include transition(left);
+    }
+  }
+
+  &--active {
+    left: 0;
+  }
+
+  &__list {
+    display: flex;
+
+    @include resetMargin(margin, 0);
+    padding: 0;
+
+    list-style: none;
+
+    @include onTablet {
+      flex-direction: column;
+      padding-left: 50px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+    width: fit-content;
+
+    font-size: $nav-link-font-size;
+    line-height: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-text-color;
+
+    @include transition(color);
+
+    &:hover {
+      color: $card-link-color;
+    }
+  }
+
+  .is-active {
+    color: $card-link-color;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+
+      display: block;
+
+      border-radius: 8px;
+
+      height: 4px;
+      width: 100%;
+
+      background-color: $card-link-color;
+    }
+  }
+}
