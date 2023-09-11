@@ -1,0 +1,33 @@
+.cards {
+  --columns-count: 1;
+  display: grid;
+  column-gap: 48px;
+  row-gap: 46px;
+  grid-template-columns: repeat(var(--columns-count), 200px);
+  justify-items: center;
+  justify-content: center;
+
+  max-width: max-width(--columns-count, 200px, 48px);
+
+  @function max-width ($cards-amount, $card-width, $gap-width) {
+    $result: (($card-width * $cards-amount)
+    + ($gap-width * ($cards-amount - 1)));
+
+    @return $result;
+  }
+
+  padding-top: 50px;
+  padding-bottom: 72px;
+
+  @media (min-width: 488px) {
+    --columns-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --columns-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --columns-count: 4;
+  }
+}
