@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+
+    & > :not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+}
+
+.is-active {
+  color: $active-color;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: $active-color;
+  bottom: 0;
+  color: $active-color;
+  border-radius: 8px;
+}
