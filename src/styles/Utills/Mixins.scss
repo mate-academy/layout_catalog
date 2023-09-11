@@ -1,0 +1,32 @@
+@mixin nav-hover-is-active-color {
+  &--is-active {
+    color: #00acdc;
+  }
+
+  &::after {
+    background-color: #00acdc;
+    @content;
+  }
+
+  &__link:hover {
+    color: #00acdc;
+  }
+}
+
+@mixin grid {
+  @media (max-width:$xsmall) {
+    grid-template-columns: repeat(1,200px);
+  }
+
+  @media (min-width:$small) {
+    grid-template-columns: repeat(2,200px);
+  }
+
+  @media (min-width:$medium) {
+    grid-template-columns: repeat(3,200px);
+  }
+
+  @media (min-width:$large) {
+    grid-template-columns: repeat(4,200px);
+  }
+}
