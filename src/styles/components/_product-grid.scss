@@ -1,0 +1,43 @@
+.product-grid {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  &__container {
+    display: grid;
+    --columns-count: 1;
+    grid-template-columns: repeat(var(--columns-count), max-content);
+
+    & > :nth-child(n) {
+      margin-right: 48px;
+      margin-bottom: 46px;
+    }
+
+    @media (max-width: 488px) {
+      --columns-count: 1;
+      & > :nth-child(n) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 488px) and (max-width: 767px) {
+      --columns-count: 2;
+      & > :nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      --columns-count: 3;
+      & > :nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      --columns-count: 4;
+      & > :nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
