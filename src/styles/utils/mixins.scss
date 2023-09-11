@@ -1,0 +1,28 @@
+@mixin smooth-hover {
+  transition: 0.3s;
+
+  &:hover {
+    @content;
+  }
+}
+
+@mixin adaptiveCatalog {
+  --columns: 1;
+  grid-template-columns: repeat(var(--columns), $card-width);
+  max-width: calcMaxWidth(1, $card-width, $column-gap);
+
+  @media (min-width: 488px) {
+    --columns: 2;
+    max-width: calcMaxWidth(2, $card-width, $column-gap);
+  }
+
+  @media (min-width: 768px) {
+    --columns: 3;
+    max-width: calcMaxWidth(3, $card-width, $column-gap);
+  }
+
+  @media (min-width: 1024px) {
+    --columns: 4;
+    max-width: calcMaxWidth(4, $card-width, $column-gap);
+  }
+}

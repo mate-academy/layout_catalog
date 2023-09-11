@@ -1,0 +1,11 @@
+@function calcMaxWidth($columnAmount, $columnSize, $columnGap) {
+  @if $columnAmount == 1 {
+    @return $columnAmount * $columnSize;
+  }
+
+  @return $columnAmount * $columnSize + $columnGap * ($columnAmount - 1);
+
+  @if $columnAmount > 4 {
+    @return 4 * $columnSize;
+  }
+}
