@@ -3,15 +3,7 @@
   padding: 32px 16px 16px;
   border: 1px solid $card-border;
   border-radius: 5px;
-  transition: color, transform $transition-duration $transition-property;
-
-  &:hover.card__title {
-    color: $color-card-title-hover;
-  }
-
-  &:hover {
-    transform: scale(1.2);
-  }
+  transition: transform $transition-duration $transition-property;
 
   &__image {
     display: block;
@@ -29,6 +21,15 @@
     font-weight: 500;
     line-height: 18px;
     color: $color-black;
+    transition: color $transition-duration $transition-property;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-card-title-hover;
+    }
   }
 
   &__code {
@@ -95,8 +96,9 @@
     border-radius: 5px;
     background-color: $color-blue;
     border: 1px solid transparent;
-    transition: color,
-      background-color $transition-duration $transition-property;
+    transition-property: color, background-color;
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-property;
   }
 
   &__link:hover {
