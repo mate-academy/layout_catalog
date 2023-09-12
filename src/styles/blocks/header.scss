@@ -1,0 +1,70 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1200px;
+  padding: 0 50px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  align-self: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    height: 60px;
+    line-height: 14px;
+    text-align: center;
+    color: $main-text-color-1;
+    align-items: center;
+
+    &:hover {
+      color: $main-button-color-1;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $main-button-color-1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $main-button-color-1;
+    border-radius: 8px;
+  }
+}
