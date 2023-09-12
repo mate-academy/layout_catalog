@@ -1,27 +1,17 @@
 @import "./product-card-styles/variables.scss";
 
-html {
-  font-family: Roboto, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .header {
   padding: 0 50px;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include displayFlex;
 
   background-color: #fff;
 }
 
 .nav {
+
+  justify-content: center;
+  box-shadow: 1px;
 
   &__list {
     display: flex;
@@ -54,20 +44,20 @@ html {
 
 .is-active {
   color: $active-color;
+
+  &::after {
+    background-color: $active-color;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 4px;
+  }
 }
 
-.is-active::after {
-  background-color: $active-color;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  border-radius: 4px;
-}
-
-.logo_img {
+.logo__img {
   width: 40px;
   height: 40px;
 }

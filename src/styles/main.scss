@@ -2,6 +2,18 @@
 @import "./header.scss";
 @import "./product-card-styles/index.scss";
 
+@mixin onTablet ($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+html {
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -19,19 +31,19 @@
   row-gap: 46px;
   justify-items: start;
 
-  @media (min-width: 488px) {
+  @include onTablet(488px) {
     --columns-count: 2;
   }
 
-  @media (min-width: 768px) {
+  @include onTablet(768px) {
     --columns-count: 3;
   }
 
-  @media (min-width: 1024px) {
+  @include onTablet(1024px) {
     --columns-count: 4;
   }
 
-  @media (min-width: 1200px) {
+  @include onTablet(1200px) {
     padding: 50px 128px;
   }
 }
