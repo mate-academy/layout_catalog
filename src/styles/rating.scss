@@ -1,0 +1,34 @@
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  font-size: $secondary-font-size;
+  font-weight: $secondary-font-weight;
+  line-height: $secondary-line-height;
+
+  &::after {
+    content: "Reviews: 5";
+  }
+}
+
+.stars {
+  display: flex;
+  list-style-type: none;
+  padding: initial;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  @for $count from 1 to 5 {
+    &--#{$count} &__star:nth-child(-n + #{$count}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
