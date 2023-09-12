@@ -1,5 +1,7 @@
 .product-card {
-  width: 100%;
+  width: $height-product-card;
+  height: 100%;
+
   background-color: $color-white;
   border: 1px solid $main-border;
   border-radius: 5px;
@@ -22,32 +24,43 @@
   }
 
   &__image {
-    width: 100%;
+    width: 160px;
+    height: 134px;
     margin: auto 3px;
   }
 
   &__code {
-    font-weight: $secondary-font-weight;
-    font-size: $secondary-font-size;
-    line-height: $secondary-line-height;
-    color: $secondary-color;
-
+    @include secondary-styles;
     margin-bottom: 16px;
   }
-}
 
-.price {
-  display: flex;
-  justify-content: space-between;
-  padding: 24px 0 16px;
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
-  &__name {
-    font-weight: $secondary-font-weight;
-    color: $secondary-color;
+    @include secondary-styles;
+
+    &::after {
+      content: "Reviews: 5";
+    }
   }
 
-  &__amount {
-    font-weight: 700;
-    font-size: 16px;
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0 16px;
+
+    &-title {
+      @include secondary-styles;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-price {
+      line-height: 18px;
+      font-weight: 700;
+      font-size: 16px;
+    }
   }
 }
