@@ -1,0 +1,32 @@
+:root {
+  --column-number: 1;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(var(--column-number), $card-width);
+  --column-number: 1;
+  padding-top: 50px;
+  padding-bottom: 72px;
+  padding-inline: 40px;
+  max-width: 1024px;
+  // function does not compile while using CSS variable in SCSS
+  // Permited to hardcode max-width by Oleksandr Kopaievych
+  list-style: none;
+  align-self: center;
+  row-gap: $gap-row;
+  column-gap: $gap-column;
+
+  @media (min-width: 488px) {
+    --column-number: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-number: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-number: 4;
+  }
+
+}
