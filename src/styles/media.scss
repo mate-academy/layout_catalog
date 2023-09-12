@@ -1,0 +1,27 @@
+@function size($width) {
+  @return calc((#{$card-width} * var(--cards-count)) +
+  #{$gap-col-con} * (var(--cards-count) - 1) +
+  #{$pd-inline-con} * 2);
+}
+
+@mixin cards-count {
+  --cards-count: 1;
+  grid-template-columns: repeat(var(--cards-count), $card-width);
+
+  @media (min-width: 468px) {
+    --cards-count: 2;
+    grid-template-columns: repeat(var(--cards-count), $card-width);
+  }
+
+  @media (min-width: 768px) {
+    --cards-count: 3;
+    grid-template-columns: repeat(var(--cards-count), $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    --cards-count: 4;
+    grid-template-columns: repeat(var(--cards-count), $card-width);
+  }
+
+  max-width: size(var(--cards-count));
+}
