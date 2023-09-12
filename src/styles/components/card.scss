@@ -1,0 +1,93 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  width: 200px;
+  @include transition(transform);
+
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: $titleHoverColor;
+    }
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $mainColor;
+  }
+
+  &__description {
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondaryColor;
+  }
+
+  &__rating {
+    @include flex-center-between;
+    margin-top: 16px;
+  }
+
+  &__review {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $mainColor;
+  }
+
+  &__cost {
+    @include flex-center-between;
+    margin-top: 24px;
+  }
+
+  &__price {
+    margin: 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondaryColor;
+  }
+
+  &__sum {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $mainColor;
+  }
+
+  &__button {
+    display: block;
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $buttonColor;
+    background-color: $accentColor;
+    border-radius: 5px;
+
+    &:hover {
+      color: $accentColor;
+      background-color: $buttonColor;
+      border: 1px solid $accentColor;
+      @include transition(all)
+    }
+  }
+}
