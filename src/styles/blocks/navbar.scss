@@ -1,0 +1,47 @@
+.navbar {
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    list-style: none;
+    margin-right: 20px;
+  }
+
+  &__item:last-child {
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 23.5px 0;
+    color: $color--main--accent;
+    line-height: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__link:focus,
+  &__link:active {
+    outline: none;
+  }
+}
+
+.is-active,
+.navbar__link:hover {
+  color: $color--blue--accent;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  background-color: $color--blue--accent;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+  bottom: -1px;
+  left: 0;
+}
