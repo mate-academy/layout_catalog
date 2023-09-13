@@ -1,10 +1,30 @@
+.cards {
+  margin: 0 auto;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  column-gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 488px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .card {
-  width: 200px;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   background: $White;
   padding: 32px 16px 16px;
-  font-family: Roboto, Helvetica, sans-serif;
 
   &:hover {
     transform: scale(120%);
@@ -23,7 +43,6 @@
     color: $Main-accent;
     padding-top: 40px;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
     line-height: 18px;
   }
@@ -45,7 +64,6 @@
   &__review {
     display: flex;
     justify-content: space-between;
-    // align-items: center;
 
     &-count {
       color: $Main-accent;
@@ -63,7 +81,6 @@
 
     &-title {
       margin: 0;
-      font-weight: 400;
       color: $Secondary;
       font-size: 12px;
     }
