@@ -18,32 +18,38 @@ html {
   box-sizing: border-box;
 }
 
-.products-list {
-  --columns-count: 1;
+.products {
+  display: flex;
+  justify-content: center;
 
-  padding: 50px 40px;
+  &__list {
+    --columns-count: 1;
 
-  box-sizing: border-box;
+    padding: 50px 40px;
 
-  display: grid;
-  grid-template-columns: repeat(var(--columns-count), 200px);
-  column-gap: 48px;
-  row-gap: 46px;
-  justify-items: start;
+    box-sizing: border-box;
 
-  @include onTablet(488px) {
-    --columns-count: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--columns-count), 200px);
+    column-gap: 48px;
+    row-gap: 46px;
+    justify-items: start;
+
+    @include onTablet(488px) {
+      --columns-count: 2;
+    }
+
+    @include onTablet(768px) {
+      --columns-count: 3;
+    }
+
+    @include onTablet(1024px) {
+      --columns-count: 4;
+    }
+
+    @include onTablet(1200px) {
+      padding: 50px 128px;
+    }
   }
 
-  @include onTablet(768px) {
-    --columns-count: 3;
-  }
-
-  @include onTablet(1024px) {
-    --columns-count: 4;
-  }
-
-  @include onTablet(1200px) {
-    padding: 50px 128px;
-  }
 }
