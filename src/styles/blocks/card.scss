@@ -1,6 +1,5 @@
-
-
 .card {
+
   box-sizing: border-box;
   width: 200px;
   border-radius: 5px;
@@ -8,6 +7,28 @@
   background: #FFF;
 
   padding: 32px 16px 16px;
+
+  &:hover {
+    transition: all .3s;
+    transform: scale(1.2);
+  }
+  &:not(:hover) {
+    transition: all .3s;
+    transform: scale(1);
+  }
+  &:hover &__title {
+    animation: card-title-coloring 0.3s;
+    color: $blueAccent;
+  }
+
+  @keyframes card-title-coloring {
+    from {
+      color: $mainAccent
+    }
+    to {
+    color: $blueAccent;
+    }
+  }
 
   &__photo {
     display: block;
@@ -81,6 +102,7 @@
   }
 
   &__buy-button {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +128,18 @@
 
       color: $blueAccent;
       background-color: #fff;
+      animation: buy-button-color-switch 0.3s;
+    }
+
+    @keyframes buy-button-color-switch {
+      from {
+        background-color: $blueAccent;
+        color:#FFF
+      }
+      to {
+        background-color: #fff;
+        color: $blueAccent;
+      }
     }
   }
 }
