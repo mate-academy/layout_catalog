@@ -11,19 +11,17 @@
     color: $main-text-color-1;
   }
 
-  &__stars {
+  .stars {
     display: flex;
 
-    &--1 :nth-child(1),
-    &--2 :nth-child(-n+2),
-    &--3 :nth-child(-n+3),
-    &--4 :nth-child(-n+4),
-    &--5 :nth-child(1n) {
-      background-image: url(../images/star-active.svg);
+    @for $starCount from 1 through 5 {
+      &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+        background-image: url(../images/star-active.svg);
+      }
     }
   }
 
-  &__star {
+  .stars__star {
     background: url(../images/star.svg) no-repeat center;
     width: 16px;
     height: 16px;
