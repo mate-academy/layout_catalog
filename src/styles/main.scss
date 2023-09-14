@@ -1,3 +1,35 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./utils/reset.scss";
+@import "./utils/functions";
+@import "./utils/extends";
+
+@import "./blocks/nav.scss";
+@import "./blocks/header.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/card.scss";
+
+html {
+  @extend %font-main-style;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.cards-catalog {
+  display: flex;
+  max-width: calcCatalogWidth($card-max-width,
+  $catalog-items-gap,
+  $cards-count);
+  flex-wrap: wrap;
+
+  & > :not(:nth-child(#{$cards-count}n)) {
+    margin-right: $catalog-items-gap;
+  }
+
+  & > :not(:nth-last-child(-n + 4)) {
+    margin-bottom: $catalog-items-vertical-gap;
+  }
 }
