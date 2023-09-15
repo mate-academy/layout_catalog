@@ -1,0 +1,28 @@
+.card-container {
+  display: grid;
+  max-width: maxWidth($card-size, $column-gap-size);
+  --amount-column: 1;
+  grid-template-columns: repeat(var(--amount-column), $card-size);
+  column-gap: $column-gap-size;
+  row-gap: $row-gap-size;
+  padding: 50px 40px;
+  justify-content: center;
+  @include width-488 {
+    --amount-column: 2;
+    grid-template-columns: repeat(var(--amount-column), $card-size);
+  }
+
+  @include width-768 {
+    --amount-column: 3;
+    grid-template-columns: repeat(var(--amount-column), $card-size);
+  }
+
+  @include width-1024 {
+    --amount-column: 4;
+    grid-template-columns: repeat(var(--amount-column), $card-size);
+  }
+
+  @function maxWidth($card-size, $column-gap-size, $main-var, $part-of-func) {
+    @return $card-size * $main-var + $column-gap-size * $part-var + 80;
+  }
+}
