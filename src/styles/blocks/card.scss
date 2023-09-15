@@ -1,0 +1,98 @@
+.main {
+  @include numberOfColumns (488px, 2);
+  @include numberOfColumns (768px, 3);
+  @include numberOfColumns (1024px, 4);
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 0 70px;
+}
+
+.card {
+  @include hoverScaleEffect;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $boarder-color;
+  border-radius: 5px;
+  width: 200px;
+  height: 408px;
+  padding: 32px 16px 16px;
+  background-color: $color-white;
+
+  &__image {
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $main-text-color;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: $second-text-color;
+  }
+
+  &__rating {
+    @include flexSpaceCenter;
+    margin-bottom: 24px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: $main-text-color;
+  }
+
+  &__price {
+    @include flexSpaceCenter;
+    line-height: 18px;
+
+    &-text {
+      font-size: 12px;
+      font-weight: 400;
+      font-style: normal;
+      color: $second-text-color;
+    }
+
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      font-style: normal;
+    }
+  }
+
+  &__buy-bottom {
+    @include flexCenterCenter;
+    margin-top: 16px;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    width: 166px;
+    height: 40px;
+    background-color: $color-blue;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue;
+    }
+  }
+
+  &:hover &__name {
+    color: $hoverTextColor;
+  }
+}
