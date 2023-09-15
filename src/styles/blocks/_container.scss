@@ -1,0 +1,27 @@
+@function getWidth($width, $indentation, $index) {
+  @return $width * $index + $indentation * ($index - 1);
+}
+
+.main__cards-container {
+  margin: auto;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  width: getWidth($product-width, $product-indentation, 4);
+
+  &__product {
+    margin-right: $product-indentation;
+    margin-bottom: 46px;
+  }
+}
+
+.cards-container__product:nth-child(4n) {
+  margin-right: 0;
+}
+
+.cards-container__product:nth-last-child(-n + 4) {
+  margin-bottom: 0;
+}

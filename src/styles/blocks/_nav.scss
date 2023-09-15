@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    list-style-type: none;
+    text-transform: uppercase;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    font-size: $font-size-medium;
+    font-weight: 500;
+    color: $color-black;
+    text-decoration: none;
+
+    &:hover,
+    &--is-active {
+      color: $color-light-blue;
+    }
+
+    &--is-active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: $color-light-blue;
+      border-radius: 2px;
+    }
+  }
+}
