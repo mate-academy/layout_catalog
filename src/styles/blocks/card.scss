@@ -1,7 +1,8 @@
 $button-color: #00acdc;
-$bg-color: white;
+$white-color: white;
 $smalltext-color: #616070;
 $maintext-color: #060b35;
+$border-color: #f3f3f3;
 
 .card {
   padding: 32px 16px 16px;
@@ -10,19 +11,17 @@ $maintext-color: #060b35;
   display: grid;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
+  border: 1px solid $border-color;
 
   &__img {
+    display: block;
+    margin: 0 auto 40px;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    display: block;
-    background-size: cover;
-    margin-bottom: 0;
-    overflow: hidden;
   }
 
   &__title {
-    margin-top: 40px;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
@@ -42,13 +41,14 @@ $maintext-color: #060b35;
   .reviews {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-top: 16px;
 
     &__text {
       margin-left: 17px;
       font-size: 10px;
+      font-weight: 400;
       line-height: 14px;
-      text-align: left;
       color: $maintext-color;
     }
   }
@@ -104,11 +104,13 @@ $maintext-color: #060b35;
     border: 1px solid $button-color;
     cursor: pointer;
     height: 40px;
-    font-family: Roboto;
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
-    
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+
     &:hover {
       color: $button-color;
       background-color: $bg-color;
