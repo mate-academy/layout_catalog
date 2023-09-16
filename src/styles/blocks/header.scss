@@ -1,23 +1,18 @@
 $active-color: #00acdc;
 $background-color: #fff;
 
-body {
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  line-height: 14.6px;
-  background-color: $background-color;
-  margin: 0;
-  padding: 0;
-}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $background-color;
   min-width: 1024px;
   padding: 0 50px;
-  
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  line-height: 14.6px;
+  background-color: $background-color;
+
   .logo_img {
     width: 40px;
     height: 40px;
@@ -54,18 +49,6 @@ body {
         line-height: 60px;
         text-transform: uppercase;
 
-        &.is-active::after {
-          content: "";
-          display: block;
-          position: absolute;
-          left: 0;
-          border-radius: 8px;
-          height: 4px;
-          bottom: 0;
-          background-color: $active-color;
-          width: 100%;
-        }
-
         &:hover {
           color: $active-color;
         }
@@ -73,6 +56,18 @@ body {
         &.is-active {
           color: $active-color;
         }
+      }
+      
+      .nav__link.is-active::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        border-radius: 8px;
+        height: 4px;
+        bottom: 0;
+        background-color: $active-color;
+        width: 100%;
       }
     }
   }
