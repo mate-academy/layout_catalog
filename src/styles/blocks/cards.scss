@@ -1,0 +1,32 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: getContainerWidth(
+    $cards-in-a-row,
+    $card-right-margin,
+    $card-width,
+    40px);
+  padding: 50px 40px;
+
+  @media (min-width: 1200px) {
+    width: getContainerWidth(
+      $cards-in-a-row,
+      $card-right-margin,
+      $card-width,
+      128px);
+    padding: 50px 128px;
+  }
+
+  &__card {
+    margin-right: $card-right-margin;
+
+    &:nth-child(#{$cards-in-a-row}n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(n + #{$cards-in-a-row + 1}) {
+      margin-top: 44px;
+    }
+  }
+}
