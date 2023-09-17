@@ -1,9 +1,9 @@
 .card {
-  transition: transform 300ms;
+  transition: all $default-transition-duration;
   border: 1px solid $card-border-color;
   border-radius: 5px;
   box-sizing: border-box;
-  width: 200px;
+  width: $card-width;
   font-size: 12px;
 
   &:hover {
@@ -66,12 +66,25 @@
     margin-bottom: 16px;
   }
 
+  &__price-title {
+    line-height: 18px;
+    color: $secondary-text-color;
+  }
+
+  &__price-amount {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $main-text-color;
+  }
+
   &__buy {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 300ms;
+    transition: $default-transition-duration;
     margin-bottom: 16px;
+    border: 1px solid transparent;
     border-radius: 5px;
     height: 40px;
     background-color: $links-color;
@@ -83,8 +96,7 @@
 
     &:hover {
       background-color: $links-default-color;
-      border: 1px solid $links-color;
-      box-sizing: border-box;
+      border-color: $links-color;
       color: $links-color;
     }
   }
