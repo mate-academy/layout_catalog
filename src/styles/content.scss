@@ -1,0 +1,43 @@
+@mixin columnCards($count) {
+  .products-list {
+    grid-template-columns: repeat($count, 200px);
+  }
+}
+
+.products-list {
+  display: grid;
+  row-gap: 46px;
+  column-gap: 48px;
+  justify-content: center;
+
+  width: 100%;
+
+  margin: auto;
+  padding: 50px 0 70px;
+
+  @include columnCards(1);
+
+  list-style-type: none;
+  transition: transform $time-changes;
+
+  &__item {
+    transition: transform $time-changes;
+  }
+
+  &__item:hover {
+    transform: scale(1.2);
+  }
+
+}
+
+@media (min-width: 488px) {
+  @include columnCards(2);
+}
+
+@media (min-width: 768px) {
+  @include columnCards(3);
+}
+
+@media (min-width: 1024px) {
+  @include columnCards(4);
+}
