@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  --active-color: #00acdc;
 }
 
 .header {
@@ -24,7 +23,7 @@ body {
   }
 
   &__link {
-    color: #060b35;
+    color: var(--dark-gray);
     text-decoration: none;
     height: 60px;
     line-height: 60px;
@@ -34,24 +33,8 @@ body {
     text-transform: uppercase;
 
     &:hover {
-      color: var(--active-color);
+      color: var(--light-blue);
     }
-  }
-
-  .is-active {
-    color: var(--active-color);
-    position: relative;
-  }
-
-  .is-active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    border-radius: 8px;
-    background-color: var(--active-color);
   }
 
   &__item {
@@ -62,6 +45,22 @@ body {
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  .is-active {
+    color: var(--light-blue);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 100%;
+      border-radius: 8px;
+      background-color: var(--light-blue);
     }
   }
 }
