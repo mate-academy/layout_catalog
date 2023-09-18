@@ -1,0 +1,51 @@
+@import "../utils/variables";
+
+.nav {
+  flex-grow: 1;
+  font-weight: 500;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    padding: 0 10px;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    color: $color-main-accent;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 300ms linear;
+
+    &:hover {
+      color: $color-blue-accent;
+    }
+
+    &--is-active {
+      position: relative;
+      color: $color-blue-accent;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        display: flex;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $color-blue-accent;
+      }
+    }
+  }
+}
