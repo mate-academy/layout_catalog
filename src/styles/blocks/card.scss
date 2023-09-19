@@ -1,22 +1,17 @@
-@import "/styles/utils/variables.scss";
 .card {
-  padding-top: 32px;
-  padding-bottom: 16px;
-  border: 1px solid hsl(0, 0%, 95%);
-  box-sizing: border-box;
   display: flex;
+  width: 200px;
   flex-direction: column;
-
-  &--width {
-    width: 200px;
-  }
-  
-  &__img-container {
-    display: flex;
-    justify-content: center;
-  }
+  border-radius: 5px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  transition: transform 500ms, color 500ms;
 
   &__img {
+    margin-top: 32px;
     width: 160px;
     height: 134px;
     margin-bottom: 40px;
@@ -33,11 +28,26 @@
     margin-bottom: 4px;
   }
 
+  &:hover {
+    transition-property: transform;
+    transition-duration: 500ms;
+    transform: scale(1.2);
+  }
+
   &__product-code {
     color: $grey;
     font-size: 10px;
     font-weight: 400;
     margin-bottom: 16px;
+  }
+
+  &:hover &__description {
+    color: #34568b;
+    transition: color 500ms;
+  }
+
+  &:not(:hover) {
+    transition-duration: 500ms;
   }
 
   &__review {
@@ -72,11 +82,16 @@
     font-size: 16px;
   }
 
+  &__button {
+    margin-bottom: 16px;
+  }
+
   &__link {
+    width: 166px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
     text-transform: uppercase;
     line-height: 16px;
     text-decoration: none;
@@ -84,12 +99,12 @@
     border: 1px solid $blue;
     color: #fff;
     background-color: $blue;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     box-sizing: border-box;
   }
 
-  &__link:hover {
+  &:hover &__link {
     color: $blue;
     background-color: $hover_color;
   }
