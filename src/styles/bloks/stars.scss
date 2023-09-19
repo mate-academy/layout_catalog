@@ -1,0 +1,20 @@
+.stars {
+  @include flexProperties ($flexDirection: row);
+  width: 96px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+
+    background-image: $starRegular;
+    background-repeat: no-repeat;
+    background-size: 13px 12px;
+    background-position: center;
+  }
+
+  @for $starCount from 1 through 5 {
+    &--#{$starCount} .stars__star:nth-child(-n + #{$starCount}) {
+      background-image: $starActive;
+    }
+  }
+}

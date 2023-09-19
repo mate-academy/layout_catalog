@@ -1,0 +1,14 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 48px;
+  row-gap: 46px;
+
+  @each $name, $query in $brakepoint {
+    & {
+      @include media-query-rules ($name, $query) {
+        grid-template-columns: repeat(get-column-count($name), 1fr);
+      }
+    }
+  }
+}
