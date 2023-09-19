@@ -16,23 +16,19 @@
   font-weight: 700;
 }
 
-@mixin flexProperties($alignItems: center, $justifyContent: space-between, $flexDirection: column) {
+@mixin flexProperties (
+  $alignItems: center,
+  $justifyContent: space-between,
+  $flexDirection: column
+) {
   display: flex;
   align-items: $alignItems;
   justify-content: $justifyContent;
   flex-direction: $flexDirection;
 }
 
-@mixin starRegular {
-  background-image: $starRegular;
-  background-repeat: no-repeat;
-  background-size: 13px 12px;
-  // background-position: center;
-}
-
-@mixin starActive {
-  background-image: $starActive;
-  background-repeat: no-repeat;
-  background-size: 13px 12px;
-  // background-position: center;
+@mixin media-query-rules($name, $query) {
+  @media #{$query} {
+   @content;
+  }
 }

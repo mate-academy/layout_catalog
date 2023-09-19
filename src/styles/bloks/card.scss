@@ -1,8 +1,7 @@
 .card {
   @include flexProperties ($justifyContent: none);
 
-  box-sizing: border-box;
-  margin: 0;
+  // margin: 0;
   width: 200px;
   height: 408px;
   background-color: #fff;
@@ -39,31 +38,16 @@
     @include regularTex();
   }
 
-  &__stars {
+  &__raiting {
+    @include flexProperties($flexDirection: row);
+
     margin-top: 16px;
     width: 166px;
     height: 16px;
-
-    @include flexProperties($justifyContent: space-between, $flexDirection: row);
   }
 
-
-  &__star {
-    @include starRegular;
-
-    width: 16px;
-    height: 16px;
-    background-position: center;
-  }
-
-  @for $starCount from 1 through 5 {
-    &__stars--#{$starCount} &__star:nth-child(-n + #{$starCount}) {
-      @include starActive;
-    }
-  }
-
-  &__text {
-    padding-left: 16px;
+  &__raiting-text {
+    width: 53px;
     margin: 0;
     color: $color-main-accent;
 
@@ -90,8 +74,8 @@
 
   &__button {
     margin-top: 16px;
-    width: 164px;
-    height: 38px;
+    width: 166px;
+    height: 40px;
     border-radius: 5px;
     background-color: $color-accent-blue;
     border: 1px solid $color-accent-blue;
