@@ -1,0 +1,66 @@
+.header {
+  color: $main-accent;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+
+  @include flex($align: center, $justify: space-between);
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  background-color: $bg-color;
+
+  @include desktop {
+    max-width: 1200px;
+  }
+
+  &__logo {
+    width: 100%;
+    height: auto;
+  }
+
+  &__nav {
+    height: 100%;
+    @include flex($align: center, $justify: center);
+  }
+
+  &__list {
+    list-style: none;
+    @include flex($align: center);
+  }
+
+  &__link {
+    @include flex($align: center, $justify: center);
+    margin-left: 20px;
+    text-align: center;
+    padding: 23px 0;
+    text-decoration: none;
+    color: $main-accent;
+    transition: $during;
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+}
+
+.is-active {
+  margin: 0;
+  position: relative;
+  color: $active-color;
+
+  &::after {
+    background-color: $active-color;
+    border-radius: 8px;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+  }
+}
