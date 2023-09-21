@@ -1,5 +1,4 @@
 .card {
-
   box-sizing: border-box;
   width: 200px;
   border-radius: 5px;
@@ -7,26 +6,22 @@
   background: #FFF;
 
   padding: 32px 16px 16px;
-
+  transition: all .3s;
   &:hover {
-    transition: all .3s;
     transform: scale(1.2);
   }
-  &:not(:hover) {
-    transition: all .3s;
-    transform: scale(1);
-  }
+
   &:hover &__title {
-    animation: card-title-coloring 0.3s;
-    color: $blueAccent;
+    transition: card-title-coloring 0.3s;
+    color: $color-blue-accent;
   }
 
   @keyframes card-title-coloring {
     from {
-      color: $mainAccent
+      color: $color-main-accent;
     }
     to {
-    color: $blueAccent;
+    color: $color-blue-accent;
     }
   }
 
@@ -40,7 +35,7 @@
 
   &__title {
     margin: 0 0 4px;
-    color:  #060B35;
+    color: $color-main-accent;
 
     font-size: 12px;
     font-weight: 500;
@@ -49,7 +44,7 @@
 
   &__code {
     margin: 0 0 16px;
-    color: $secondary;
+    color: $color-secondary;
     font-size: 10px;
     font-weight: 400;
     line-height: 140%;
@@ -85,7 +80,7 @@
   }
 
   &__label {
-    color: $secondary;
+    color: $color-secondary;
     font-size: 12px;
     display: flex;
     justify-content: left;
@@ -111,9 +106,9 @@
     padding: 0 70px;
 
     background: #FFF;
-    background-color: $blueAccent;
+    background-color: $color-blue-accent;
     border-radius: 5px;
-    border: 1px solid none;
+    border: 1px solid transparent;
 
     text-decoration: none;
     text-transform: uppercase;
@@ -123,22 +118,22 @@
     line-height: 16px;
 
     &:hover {
-      border: 1px solid $blueAccent;
+      border-color: $color-blue-accent;
       border-radius: 5px;
 
-      color: $blueAccent;
+      color: $color-blue-accent;
       background-color: #fff;
-      animation: buy-button-color-switch 0.3s;
+      transition: buy-button-color-switch 0.3s;
     }
 
     @keyframes buy-button-color-switch {
       from {
-        background-color: $blueAccent;
+        background-color: $color-blue-accent;
         color:#FFF
       }
       to {
         background-color: #fff;
-        color: $blueAccent;
+        color: $color-blue-accent;
       }
     }
   }
