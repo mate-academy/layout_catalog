@@ -1,0 +1,140 @@
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #F3F3F3;
+  background: #FFF;
+
+  padding: 32px 16px 16px;
+  transition: all .3s;
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__title {
+    transition: card-title-coloring 0.3s;
+    color: $color-blue-accent;
+  }
+
+  @keyframes card-title-coloring {
+    from {
+      color: $color-main-accent;
+    }
+    to {
+    color: $color-blue-accent;
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 160px;
+    height: 134px;
+
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    color: $color-main-accent;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    color: $color-secondary;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  &__rating {
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 24px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+
+    margin: 0 0 16px;
+  }
+
+  &__label {
+    color: $color-secondary;
+    font-size: 12px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  &__value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: right;
+  }
+
+  &__buy-button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    padding: 0 70px;
+
+    background: #FFF;
+    background-color: $color-blue-accent;
+    border-radius: 5px;
+    border: 1px solid transparent;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+
+    &:hover {
+      border-color: $color-blue-accent;
+      border-radius: 5px;
+
+      color: $color-blue-accent;
+      background-color: #fff;
+      transition: buy-button-color-switch 0.3s;
+    }
+
+    @keyframes buy-button-color-switch {
+      from {
+        background-color: $color-blue-accent;
+        color:#FFF
+      }
+      to {
+        background-color: #fff;
+        color: $color-blue-accent;
+      }
+    }
+  }
+}
