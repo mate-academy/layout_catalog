@@ -1,7 +1,7 @@
 # Frontend practice with catalog page
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://boytrend0108.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://boytrend0108.github.io/layout_catalog/report/html_report/)
 
 > Follow [this instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -23,7 +23,7 @@ and SCSS
 - ❗️❗️❗️ **MANDATORY if you're familiar with the `grid`**
   - use `grid` instead of `flex`
   - implement the [Grid Layout instead](./grid.md)
-- the distance between cards on the design includes borders (zoom in to see it);
+- the distance between cards on the design includes borders (zoom in to see it); ????
 - cards should have fixed width and fixed distances between them
 - cards container should have fixed paddings (see 1024px example), bottom the same as top
 - use semantic tags. `<header>`, `<nav>`, `<main>`

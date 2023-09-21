@@ -1,0 +1,53 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    & :first-child {
+      transition: $animation-transition;
+    }
+
+    &:hover :first-child {
+      color: $color-active;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-main;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+
+    &--active {
+      color: $color-active;
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        background-color: $color-active;
+        border-radius: 8px;
+        height: 4px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}
