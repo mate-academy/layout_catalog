@@ -1,0 +1,41 @@
+.navigation {
+  &__list {
+    display: flex;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 23px 0;
+
+    color: $main-text-color;
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &:active::after {
+      @include activeLinkUnderline;
+    }
+  }
+}
+
+.is-active {
+  color: $accent-color;
+
+  &::after {
+    @include activeLinkUnderline;
+  }
+}
