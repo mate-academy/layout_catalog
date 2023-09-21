@@ -1,0 +1,88 @@
+.header {
+  display: flex;
+  padding: 0 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: block;
+  padding: 10px 0;
+  height: 40px;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__items {
+    display: block;
+  }
+
+  &__link {
+    display: block;
+    margin: 0 0 0 20px;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: $blackColor;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 300ms;
+
+    &:hover {
+      color: $blueColor;
+      text-decoration-color: $blueColor;
+    }
+
+    &:active {
+      color: $blueColor;
+      text-decoration-color: $blueColor;
+    }
+
+    &:after {
+      display: block;
+      position: relative;
+      border: 2px solid $blueColor;
+      border-radius: 8px;
+      background-color: $blueColor;
+      bottom: 4px;
+      z-index: 1;
+    }
+
+    &:active::after {
+      content: "";
+      width: inherit;
+    }
+  }
+}
+
+.is-active {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  color: $blueColor;
+  text-decoration-color: $blueColor;
+}
+
+.is-active::after {
+  display: block;
+  position: relative;
+  border: 2px solid $blueColor;
+  border-radius: 8px;
+  background-color: $blueColor;
+  bottom: 4px;
+  z-index: 1;
+  content: "";
+  width: inherit;
+}
