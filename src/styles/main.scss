@@ -64,10 +64,10 @@ p {
   position: relative;
   display: block;
   padding: 23px 0;
-}
 
-.nav__link:hover {
-  color: #00acdc;
+  &:hover {
+    color: #00acdc;
+  }
 }
 
 .is-active {
@@ -87,7 +87,7 @@ p {
   border-radius: 8px;
 }
 
-.container {
+main {
   --column-count: 1;
   display: grid;
   grid-template-columns: repeat(var(--column-count, 1), minmax(200px, 1fr));
@@ -95,29 +95,31 @@ p {
   column-gap: 48px;
   justify-content: center;
   width: 100%;
-  max-width: 1025px;
+  max-width: 1024px;
   margin: 0 auto;
+  padding-top: 50px;
 }
 
-@media (min-width: 150px) {
-  .container {
+@media (max-width: 488px) {
+  main {
     --column-count: 1;
   }
 }
+
 @media (min-width: 488px) {
-  .container {
+  main {
     --column-count: 2;
   }
 }
 
 @media (min-width: 768px) {
-  .container {
+  main {
     --column-count: 3;
   }
 }
 
 @media (min-width: 1024px) {
-  .container {
+  main {
     --column-count: 4;
   }
 }
@@ -130,6 +132,11 @@ p {
   display: flex;
   flex-direction: column;
   background-color: $background-color;
+  transition: transform 0.3s, color 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__photo {
     margin: 0 auto;
@@ -144,6 +151,10 @@ p {
     line-height: 18px;
     margin-top: 40px;
     color: $main-text-color;
+
+    &:hover {
+      color: #34568b;
+    }
   }
 
   &__code {
