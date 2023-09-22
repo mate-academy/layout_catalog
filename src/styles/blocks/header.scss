@@ -1,17 +1,20 @@
 .header {
   display: flex;
   padding: 0 50px;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: white;
-  width: 100%;
-  box-sizing: border-box;
+
+  * {
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
-.logo {
+.logo img {
   display: block;
   padding: 10px 0;
-  height: 40px;
+  height: 60px;
+  width: 40px;
 }
 
 .nav {
@@ -23,12 +26,11 @@
   }
 
   &__items {
-    display: block;
+    width: initial;
   }
 
   &__link {
     display: block;
-    margin: 0 0 0 20px;
     height: 60px;
     line-height: 60px;
     text-transform: uppercase;
@@ -59,7 +61,6 @@
 
     &:active::after {
       content: "";
-      width: inherit;
     }
   }
 }
@@ -84,5 +85,8 @@
   bottom: 4px;
   z-index: 1;
   content: "";
-  width: inherit;
+}
+
+.nav__list .nav__items:nth-child(n+2) {
+  padding-left: 20px;
 }
