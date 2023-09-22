@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./star.scss";
 
 body {
   margin: 0;
@@ -34,7 +35,6 @@ p {
   flex-shrink: 0;
   text-transform: uppercase;
   cursor: pointer;
-  font-style: normal;
   height: 100%;
 }
 
@@ -66,7 +66,7 @@ p {
   padding: 23px 0;
 
   &:hover {
-    color: #00acdc;
+    color: $blue-color;
   }
 }
 
@@ -221,28 +221,4 @@ main {
   }
 }
 
-.stars {
-  display: flex;
-
-  &__star {
-    margin-right: 4px;
-    width: 16px;
-    height: 16px;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &--0 :nth-child(-n + 0),
-  &--1 :nth-child(-n + 1),
-  &--2 :nth-child(-n + 2),
-  &--3 :nth-child(-n + 3),
-  &--4 :nth-child(-n + 4),
-  &--5 :nth-child(-n + 5) {
-    background-image: url(../images/star-active.svg);
-  }
-}
+@include stars-code;
