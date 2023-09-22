@@ -6,7 +6,8 @@ body {
   margin: 0;
   font-size: 10px;
   line-height: 14px;
-  color: var($text--color--two);
+  color: $text--color--two;
+  transition: 300ms;
 }
 
 html {
@@ -188,13 +189,21 @@ html {
   margin: 50px;
 }
 
-.stars--4 .stars__star:nth-child(5) {
-  background: url(../images/star.svg) center no-repeat;
-  margin-right: 0;
+.stars {
+  display: flex;
+
+  &__star {
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 4px;  /* Adjust as needed */
+  }
 }
 
-.stars__star:last-child {
-  margin-right: 0;
+.stars--4 .stars__star:nth-child(4) {
+  background-image: url(../images/star-active.svg);
 }
 
 .stars--1 .stars__star:nth-child(-n+1),
