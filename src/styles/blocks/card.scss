@@ -1,0 +1,113 @@
+
+.card {
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  background: #fff;
+  padding: 32px 16px 16px;
+
+  transition: transform 300ms;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $mainTextcolor;
+    margin: 0 0 4px;
+  }
+
+  &__name:hover {
+    color: #34568b;
+  }
+
+  &__code {
+    color: $secondaryTextcolor;
+    margin-bottom: 16px;
+    font-size: 10px;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 24px;
+  }
+
+  &__review-number {
+    color: $mainTextcolor;
+    font-size: 10px;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondaryTextcolor;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $mainTextcolor;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: $blueContentcolor;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__buy:hover {
+    background-color: #fff;
+    color: $blueContentcolor;
+    border: 1px solid $blueContentcolor;
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.stars {
+  display: flex;
+}
+
+.stars-star {
+  height: 16px;
+  width: 16px;
+  background-image: url(/images/star.svg);
+  background-repeat: no-repeat;
+  margin-right: 4px;
+  background-position: center;
+}
+
+@for $starCount from 1 through 4 {
+  .stars-star:nth-child(-n + #{$starCount}) {
+    background-image: url(/images/star-active.svg);
+  }
+}
