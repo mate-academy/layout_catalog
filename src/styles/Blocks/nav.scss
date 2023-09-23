@@ -1,0 +1,38 @@
+.nav {
+  @include nav-hover-is-active-color;
+
+  &__list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+
+  }
+
+  &__link {
+    line-height: 60px;
+    height: 60px;
+    display: block;
+    text-decoration: none;
+    color: #060b35;
+    white-space: nowrap;
+    text-transform: uppercase;
+    @include nav-hover-is-active-color;
+    &--is-active {
+      position: relative;
+      @include nav-hover-is-active-color {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+}
