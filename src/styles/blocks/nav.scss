@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+
+    &--last-link {
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &:hover {
+    color: $task-color;
+  }
+}
+
+.is-active {
+  color: $task-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    height: 4px;
+    border-radius: 8px;
+    background-color: $task-color;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
+}
