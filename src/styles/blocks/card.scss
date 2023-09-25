@@ -1,49 +1,28 @@
-.catalog {
-  --columns-count: 1;
-  display: grid;
-  grid-template-columns: repeat(var(--columns-count), 1fr);
-  gap: 46px 48px;
-
-  margin: 0 auto;
-  padding-top: 50px;
-  max-width: 1200px;
-}
-
-@media (min-width: 488px) {
-  .catalog {
-    --columns-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .catalog {
-    --columns-count: 3;
-  }
-}
-
-@media (min-width: 1024px) {
-  .catalog {
-    --columns-count: 4;
-  }
-}
-
 .card {
-  width: 200px;
-  height: 408px;
-  padding-top: 32px;
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   background: #fff;
-  
+  padding: 32px 16px 16px;
+  width: 200px;
+  transition: transform 300ms;
+  font-style: normal;
+
+  &__title {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    width: 166px;
+  }
+
   &:hover {
     transform: scale(1.2);
-    transition-duration: 300ms;
-    .card__title {
+    & .card__title {
       color: #34568b;
     }
   }
-
   &__photo {
     display: block;
     width: 160px;
@@ -51,21 +30,12 @@
     margin: 0 auto 40px;
   }
 
-  &__title {
-    margin: 0 0 4px;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 18px;
-
-  }
-
   &__code {
-    margin: 0 0 16px;
     color: #616070;
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
-
+    margin: 0 0 16px;
   }
 
   &__rating {
@@ -74,6 +44,7 @@
   }
 
   &__reviews {
+    margin-top: 2px;
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
@@ -84,7 +55,9 @@
     justify-content: space-between;
     align-items: center;
     line-height: 18px;
-    margin: 0 0 16px;
+    margin-bottom: 16px;
+    margin-top: 10px;
+
   }
 
   &__label {
@@ -99,13 +72,12 @@
   }
 
   &__buy-button {
-    height: 40px;
+    height: 38px;
     border-radius: 5px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 
     font-size: 14px;
     font-weight: 700;
@@ -115,12 +87,13 @@
 
     color: #fff;
     background: #00acdc;
+    border: 1px solid #00acdc;
+
+    transition: color 300ms, background-color 300ms;
 
     &:hover {
-      border: 1px solid #f3f3f3;
       color: #00acdc;
-      background: #fff;
+      background-color: #fff;
     }
   }
 }
-
