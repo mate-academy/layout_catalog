@@ -1,0 +1,51 @@
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: block;
+    color: $Main-accent;
+    text-decoration: none;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 23px 0;
+    height: $link-height;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+
+  &__item {
+    height: var($link-height);
+
+    &:not(:first-of-type) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.is-active {
+  margin-left: 0;
+  position: relative;
+  color: $text-color;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid $text-color;
+    border-radius: 8px;
+  }
+}
