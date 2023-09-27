@@ -1,0 +1,62 @@
+.card {
+  @extend %adjust-flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  padding: $card-base-gap * 8 $card-base-gap * 4 $card-base-gap * 4;
+  @include border (rgba(243, 243, 243, 1));
+
+  &__img {
+    align-self: center;
+    height: 134px;
+    width: 160px;
+    margin-bottom: $card-base-gap * 10;
+  }
+
+  &__name {
+    text-align: left;
+    margin-bottom: $card-base-gap;
+    @extend %medium-text;
+  }
+
+  &__code {
+    align-self: start;
+    margin-bottom: $card-base-gap * 4;
+    color: $secondary-gray-color;
+  }
+
+  &__rate {
+    @extend %adjust-flex;
+    align-items: center;
+    margin-bottom: $card-base-gap * 6;
+  }
+
+  &__price {
+    @extend %adjust-flex;
+    margin-bottom: $card-base-gap * 4;
+  }
+
+  &__price-declaration {
+    @extend %medium-text;
+    font-weight: 400;
+    color: $secondary-gray-color;
+  }
+
+  &__price-value {
+    @extend %large-text;
+  }
+
+  &__button {
+    padding: $card-base-gap * 3;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    @include border ($blue-accent-color, $blue-accent-color);
+    @extend %link-style;
+
+    &:hover {
+      color: $blue-accent-color;
+      @include border ($blue-accent-color);
+    }
+  }
+}

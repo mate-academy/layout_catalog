@@ -1,0 +1,36 @@
+.nav {
+  &__list {
+    @extend %adjust-flex;
+    list-style-type: none;
+
+    & :first-child :first-child {
+      color: $blue-accent-color;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 4px;
+        margin-top: $nav-link-area - 4px;
+        @include border(transparent, $blue-accent-color, 2px, 0);
+      }
+    }
+  }
+
+  &__item {
+    padding-top: $nav-link-area;
+
+    &:not(:first-child) {
+      padding-left: 20px;
+    }
+  }
+
+  &__link {
+    padding: $nav-link-area 0;
+    color: $main-accent-color;
+    @extend %link-style;
+
+    &:hover {
+      color: $blue-accent-color;
+    }
+  }
+}
