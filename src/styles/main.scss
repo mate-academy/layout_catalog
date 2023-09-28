@@ -1,18 +1,13 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 html {
   font-family: Roboto, sans-serif;
-  font-style: normal;
   line-height: 14px;
-}
-
-body,
-h2,
-p,
-ul {
-  margin: 0;
 }
 
 .logo {
@@ -20,14 +15,20 @@ ul {
   height: 40px;
 }
 
-@import "./header.scss";
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@import "./header_nav.scss";
 @import "./nav.scss";
 @import "./card.scss";
 @import "./stars.scss";
+@import "./variables.scss";
 
 .main {
   display: grid;
-  grid-template-columns: repeat(1,200px);
+  grid-template-columns: repeat(1,$card-width);
   row-gap: 46px;
   column-gap: 48px;
   justify-content: center;
@@ -36,18 +37,18 @@ ul {
 
 @media (min-width: 488px) {
   .main {
-    grid-template-columns: repeat(2,200px);
+    grid-template-columns: repeat(2,$card-width);
   }
 }
 
 @media (min-width: 768px) {
   .main {
-    grid-template-columns: repeat(3,200px);
+    grid-template-columns: repeat(3,$card-width);
   }
 }
 
 @media (min-width: 1024px) {
   .main {
-    grid-template-columns: repeat(4,200px);
+    grid-template-columns: repeat(4,$card-width);
   }
 }
