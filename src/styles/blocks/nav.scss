@@ -1,0 +1,38 @@
+.nav {
+
+  &__height {
+    display: flex;
+    height: 100%;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-weight: $medium-font-weight;
+    font-size: $small-font-size;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-light-black;
+  }
+
+  &__link:not(:first-of-type) {
+    margin-left: 20px;
+  }
+
+  .is-active,
+  &__link:hover {
+    color: $color-accent-blue;
+  }
+
+  .is-active::after {
+    content: "";
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    position: absolute;
+    background-color: $color-accent-blue;
+    border-radius: 8px;
+  }
+}
