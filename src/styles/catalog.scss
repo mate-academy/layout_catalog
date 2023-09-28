@@ -1,0 +1,22 @@
+@mixin catalog-grid($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+.catalog {
+  padding: 50px 0 74px;
+
+  @media (min-width: 488px) {
+    @include catalog-grid(2);
+  }
+
+  @media (min-width: 768px) {
+    @include catalog-grid(3);
+  }
+
+  @media (min-width: 1024px) {
+    @include catalog-grid(4);
+  }
+}
