@@ -6,6 +6,7 @@ $text--color--two: #616070;
 $header--bcg--color: #fff;
 $nav__item--color: #000;
 $card__hover: #34568b;
+$border--cllor: #f3f3f3;
 
 body {
   margin: 0;
@@ -100,13 +101,23 @@ html {
   display: block;
 }
 
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  row-gap: 50px;
+  column-gap: 48px;
+  justify-content: center;
+  margin: 50px;
+  transition: 1s;
+}
+
 .card {
   width: 200px;
   height: 406px;
   flex-shrink: 0;
   border-radius: 5px;
-  border: 1px solid #f3f3f3;
-  background: #fff;
+  border: 1px solid $border--cllor;
+  background: $header--bcg--color;
   box-sizing: border-box;
   transition-duration: 300ms;
 
@@ -186,24 +197,14 @@ html {
       transition: 300ms;
     }
   }
-}
 
-.main {
-  display: grid;
-  grid-template-columns: repeat(4, 200px);
-  row-gap: 50px;
-  column-gap: 48px;
-  justify-content: center;
-  margin: 50px;
-  transition: 1s;
-}
+  &__price-lable {
+    font-size: 12px;
+    line-height: 18px;
+    color: $text--color--two;
+  }
 
-.card:hover .card__title {
-  color: $card__hover;
-}
-
-.card__price-lable {
-  font-size: 12px;
-  line-height: 18px;
-  color: $text--color--two;
+  &:hover .card__title {
+    color: $card__hover;
+  }
 }
