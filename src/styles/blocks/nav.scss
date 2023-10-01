@@ -1,0 +1,51 @@
+.nav {
+  margin-right: 50px;
+  margin-block: 0;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin-block: 0;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    height: $header-height;
+    line-height: $header-height;
+    font-size: 12px;
+    text-decoration: none;
+    color: $main-accent;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    transition: color 300ms;
+
+    &.is-active {
+      color: $link-color;
+
+      &::after {
+        content: "";
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        right: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 8px;
+        background: $link-color;
+      }
+    }
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
