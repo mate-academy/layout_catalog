@@ -8,6 +8,11 @@ $header--bcg--color: #fff;
 $nav__item--color: #000;
 $card__hover: #34568b;
 $border--cllor: #f3f3f3;
+$column-count: 1;
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -26,14 +31,34 @@ html {
   row-gap: 50px;
   column-gap: 48px;
   justify-content: center;
-  margin: 50px;
+  padding: 50px;
   transition: 1s;
+
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    .main {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .main {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .main {
+      grid-template-columns: repeat(4, 200px);
+    }
+}
 }
 
 .card {
   width: 200px;
-  height: 406px;
-  flex-shrink: 0;
+  padding: 32px 16px 16px;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 5px;
   border: 1px solid $border--cllor;
   background: $header--bcg--color;
@@ -43,7 +68,7 @@ html {
   &__img {
     width: 160px;
     height: 134px;
-    margin: 32px 19px;
+    margin: 0 auto 40px;
     display: block;
   }
 
@@ -54,10 +79,9 @@ html {
   &__info {
     color: $text--color--one;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
     line-height: 18px;
-    margin: 40px 16px 4px;
+    margin: auto 0 4px;
 
     &:hover {
       color: $card__hover;
@@ -65,8 +89,9 @@ html {
   }
 
   &__code {
+    font-size: 14px;
     line-height: 14px;
-    margin: 0 16px 6px;
+    margin: auto 0 16px;
     color: $text--color--two;
   }
 
@@ -74,12 +99,12 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
-    margin-right: 18px;
-    margin-left: 18px;
+    margin-bottom: 24px;
 
     &-count {
       line-height: 14px;
+      margin: 0;
+      font-size: 10px;
     }
   }
 
@@ -87,12 +112,13 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 16px;
+    margin: auto 0 16px;
 
     &-how {
+      margin: 0;
       font-size: 16px;
+      font-weight: 700;
       line-height: 18px;
-      font-weight: bold;
       color: $text--color--one;
     }
   }
@@ -101,21 +127,17 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    box-sizing: border-box;
-    height: 40px;
-    border: 1px solid $buy--color;
-    border-radius: 5px;
-
-    line-height: 16px;
-    font-size: 14px;
-    color: $header--bcg--color;
-    font-weight: 700;
+    padding: 11px 0;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    border-radius: 5px;
+    border: 1px solid $buy--color;
+    color: $header--bcg--color;
     background-color: $buy--color;
-    width: 166px;
-    margin: 16px;
 
     &:hover {
       color: $buy--color;
@@ -128,6 +150,7 @@ html {
     font-size: 12px;
     line-height: 18px;
     color: $text--color--two;
+    margin: 0;
   }
 
   &:hover .card__title {
