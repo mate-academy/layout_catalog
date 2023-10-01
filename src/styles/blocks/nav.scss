@@ -1,0 +1,54 @@
+@import "./../utils/variables";
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    font-family: $main-font;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    color: $main_accent;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color $transition-time;
+
+    &:hover {
+      color: $secondary-background-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $secondary-background-color;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: $secondary-background-color;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2px;
+    height: 4px;
+  }
+}

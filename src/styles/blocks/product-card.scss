@@ -1,0 +1,108 @@
+@import "./../utils/variables";
+@import "./../utils/mixins";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $card-width;
+  padding: 16px;
+  padding-top: 32px;
+  border: 1px solid $base-border-color;
+  border-radius: 5px;
+  transition: transform $transition-time;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 12px;
+    color: $main-accent;
+    line-height: 18px;
+    margin-bottom: 4px;
+    transition: color $transition-time;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 12px;
+    color: $main-accent;
+    line-height: 18px;
+
+    &--small {
+      @include small-text;
+    }
+
+    &--small-light {
+      @include small-text;
+      color: $secondary-accent;
+    }
+
+    &--big {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    &--to-left {
+      align-self: flex-start;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__rating {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    background: $link-color;
+    color: $base-color;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 18px;
+    font-weight: 700;
+    font-family: $main-font;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color $transition-time, background-color $transition-time;
+
+    &:hover {
+      background: $base-color;
+      color: $link-color;
+      border: 1px solid $link-color;
+    }
+  }
+}
