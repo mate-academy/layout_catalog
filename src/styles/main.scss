@@ -1,3 +1,224 @@
+@import "./variables.scss";
+@import "./star.scss";
+
 body {
   margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 50px;
+  min-width: 1024px;
+  max-width: 1200px;
+  font-size: 12px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 100%;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  padding: 0;
+}
+
+.nav__list li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__item {
+  height: 100%;
+  display: block;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $main-text-color;
+  cursor: pointer;
+  height: 60px;
+  position: relative;
+  display: block;
+  padding: 23px 0;
+
+  &:hover {
+    color: $blue-color;
+  }
+}
+
+.is-active {
+  color: $blue-color;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  background-color: $blue-color;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+main {
+  --column-count: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count, 1), minmax(200px, 1fr));
+  row-gap: 46px;
+  column-gap: 48px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+@media (max-width: 488px) {
+  main {
+    --column-count: 1;
+  }
+}
+
+@media (min-width: 488px) {
+  main {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    --column-count: 4;
+  }
+}
+
+.card {
+  padding: 32px 16px 16px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+  transition: transform 0.3s, color 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__photo {
+    margin: 0 auto;
+    width: 160px;
+    height: 134px;
+    display: block;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 40px;
+    color: $main-text-color;
+
+    &:hover {
+      color: #34568b;
+    }
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $just-text-color;
+  }
+
+  &__quality {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__review {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $main-text-color;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    font-weight: 400;
+  }
+
+  &__pword {
+    font-size: 12px;
+    line-height: 18px;
+    color: $just-text-color;
+  }
+
+  &__pcost {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &__button {
+    margin: 0 auto;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 38px;
+    color: $background-color;
+    background-color: $blue-color;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 16px;
+    padding: 0 70px;
+    text-transform: uppercase;
+    border: 1px solid $blue-color;
+
+    &:hover {
+      color: $blue-color;
+      background-color: $background-color;
+    }
+  }
+}
+
+@include stars-code;
