@@ -1,3 +1,63 @@
-body {
+html {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--main-text-color);
+}
+
+ul {
+  all: unset;
+  list-style-type: none;
+}
+
+body,
+p,
+h2 {
   margin: 0;
+}
+
+@import url("./variables.scss");
+@import url("./card.scss");
+@import url("./price.scss");
+@import url("./rating.scss");
+@import url("./stars.scss");
+@import url("./header.scss");
+@import url("./nav.scss");
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 944px;
+  height: 100%;
+  margin: 50px auto 72px;
+
+  gap: 46px 48px;
+
+  justify-items: center;
+}
+
+@media (max-width: 1023px) {
+  .content-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .content-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 487px) {
+  .content-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
