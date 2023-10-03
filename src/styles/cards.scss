@@ -1,0 +1,136 @@
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 406px;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: all 300ms ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #060b35;
+
+    &--y {
+      margin: 40px 0 4px;
+    }
+  }
+
+  &:hover &__text {
+    color: #34568b;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+
+    color: $minor-text-color;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+
+    &--y {
+      margin-bottom: 16px;
+    }
+
+    &-title {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: $minor-text-color;
+    }
+
+    &-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--y {
+    margin: 16px 0 24px;
+  }
+  &__wrap {
+    display: flex;
+  }
+
+  &__star {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(./../images/star.svg) no-repeat center center;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:nth-child(-n+4) {
+      background-image: url(./../images/star-active.svg);
+    }
+  }
+
+  &__number {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.btn {
+  display: block;
+  width: 166px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $btn-bg-color;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 40px;
+
+  font-weight: 700;
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid $btn-bg-color;
+    color: $btn-bg-color;
+  }
+}
+
+.cards {
+  $column-count: auto-fit;
+  padding: 50px 40px 72px;
+  display: grid;
+  grid-template-columns: repeat($column-count, 200px);
+  column-gap: 48px;
+  row-gap: 48px;
+  justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  $column-count: 4;
+}
