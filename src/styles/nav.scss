@@ -1,0 +1,47 @@
+@import "./variables.scss";
+
+.nav {
+  margin: 0;
+
+  &__list {
+    display: flex;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    margin-left: 20px;
+    line-height: 60px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    color: $dark-color;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $border-col;
+    }
+  }
+}
+
+.is-active {
+  color: $border-col;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $border-col;
+  }
+}
