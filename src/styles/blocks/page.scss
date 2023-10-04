@@ -24,13 +24,20 @@ h2 {
   margin: 0;
 }
 
-.page__main {
-  display: flex;
-  width: mainsize($margin-between-card, $card-width);
-  flex-wrap: wrap;
-  margin: 0 auto 23px;
-  padding: $padding-main;
-  box-sizing: content-box;
+.page{
+  &__main {
+    padding: $padding-main;
+    display: flex;
+  }
+
+  &__container {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, $card-width);
+    column-gap: 48px;
+    row-gap: 46px;
+    box-sizing: content-box;
+  }
 
   @media (min-width: 1024px) {
     $padding-main: 40px;
@@ -41,4 +48,5 @@ h2 {
     $padding-main: 128px;
     padding: 50px $padding-main;
   }
+
 }
