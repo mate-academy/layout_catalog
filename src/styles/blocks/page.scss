@@ -1,0 +1,52 @@
+@import "./utils/function";
+@import "../utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+p,
+a,
+h2 {
+  margin: 0;
+}
+
+.page{
+  &__main {
+    padding: $padding-main;
+    display: flex;
+  }
+
+  &__container {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, $card-width);
+    column-gap: 48px;
+    row-gap: 46px;
+    box-sizing: content-box;
+  }
+
+  @media (min-width: 1024px) {
+    $padding-main: 40px;
+    padding: 50px $padding-main;
+  }
+
+  @media (min-width: 1200px) {
+    $padding-main: 128px;
+    padding: 50px $padding-main;
+  }
+
+}
