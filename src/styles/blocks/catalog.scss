@@ -1,0 +1,35 @@
+.catalog {
+  display: grid;
+  --column-count: 1;
+  box-sizing: border-box;
+  justify-content: center;
+
+  margin: 50px 40px;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  column-gap: 48px;
+  row-gap: 46px;
+
+  @media (min-width: 1024px) {
+    & {
+      --column-count: 4;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    & {
+      --column-count: 3;
+    }
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    & {
+      --column-count: 2;
+    }
+  }
+
+  @media (max-width: 487px) {
+    & {
+      --column-count: 1;
+    }
+  }
+}
