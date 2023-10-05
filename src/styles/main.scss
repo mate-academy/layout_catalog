@@ -1,3 +1,47 @@
-body {
-  margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import "./card.scss";
+@import "./stars.scss";
+@import "../utils/variables";
+@import "../styles/header.scss";
+@import "../styles/navigation.scss";
+@import "../styles/reset.scss";
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: repeat(2, 408px);
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 72px;
+  min-width: 1024px;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: #00acdc;
+}
+
+.is-active {
+  color: #00acdc;
 }
