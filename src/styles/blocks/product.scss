@@ -1,0 +1,128 @@
+.product {
+  &--catalog {
+    padding-inline: 40px;
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: repeat(1, 200px);
+    row-gap: 46px;
+    column-gap: 48px;
+    justify-content: center;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+
+  &__card {
+    padding: 32px 16px 16px;
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid $whiteColor;
+    border-radius: 5px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__fonts {
+    &--code {
+      margin-top: 4px;
+      font-size: 10px;
+      line-height: 14px;
+      text-align: left;
+      color: $grayColor;
+    }
+
+    &--reviews {
+      font-size: 10px;
+      line-height: 15px;
+      color: $blackColor;
+    }
+
+    &--price {
+      font-size: 12px;
+      line-height: 18px;
+      color: $grayColor;
+    }
+
+    &--calculation-price {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $blackColor;
+    }
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    display: flex;
+    margin-top: 16px;
+    background-color: $blueColor;
+    padding: 11px;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $blueColor;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: color 300ms;
+
+    &:hover {
+      background-color: #fff;
+      color: $blueColor;
+    }
+  }
+
+  &__stars {
+    margin-top: 16px;
+    display: flex;
+    height: 16px;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    text-align: left;
+    color: $blackColor;
+  }
+
+  &__card:nth-child(-n+4) {
+    margin-top: 50px;
+  }
+
+  &__card:hover .product__title {
+    color: #34568b;
+  }
+}
