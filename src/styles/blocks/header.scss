@@ -1,18 +1,13 @@
 .header {
   display: flex;
   padding: 0 50px;
-
-  * {
-    justify-content: space-between;
-    background-color: white;
-    width: 100%;
-    box-sizing: border-box;
-  }
+  justify-content: space-between;
+  width: 100%;
 }
 
-.logo img {
-  padding: 10px 0 6.8px;
-  width: 40px;
+.logo {
+  display: flex;
+  padding: 10px 0 ;
 }
 
 .nav {
@@ -21,11 +16,14 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    align-items: center;
   }
 
   &__items {
     width: initial;
+
+    &:not(:first-child) {
+      padding-left: 20px;
+    }
   }
 
   &__link {
@@ -33,48 +31,31 @@
     padding-top: 23px;
     height: 12px;
     line-height: 14.06px;
+    font-weight: 500;
     text-transform: uppercase;
     color: $blackColor;
-    text-align: center;
     text-decoration: none;
     cursor: pointer;
-    transition: 300ms;
+    transition: color 300ms;
 
     &:hover {
-      transition-property: color;
-    }
-
-    &:hover,
-    &:active {
       color: $blueColor;
-      text-decoration-color: $blueColor;
     }
 
-    &:after {
-      display: block;
+    &.is-active {
+      color: $blueColor;
       position: relative;
-      border: 2px solid $blueColor;
-      border-radius: 8px;
-      background-color: $blueColor;
-      top: 18.5px;
-      z-index: 1;
-    }
 
-    &:active::after {
-      content: "";
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $blueColor;
+        bottom: -36.5px;
+      }
     }
   }
-}
-
-.is-active {
-  color: $blueColor;
-  text-decoration-color: $blueColor;
-}
-
-.is-active::after {
-  content: "";
-}
-
-.nav__list .nav__items:nth-child(n+2) {
-  padding-left: 20px;
 }
