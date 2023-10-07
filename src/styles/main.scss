@@ -4,11 +4,6 @@
   padding: 0;
 }
 
-@font-face {
-  font-family: "Roboto";
-  src: url(../fonts/Roboto/Roboto-Medium.ttf);
-}
-
 html,
 body {
   font-family: "Roboto", Helvetica, sans-serif;
@@ -17,9 +12,10 @@ body {
 .container {
   display: grid;
   padding: 50px 40px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 200px);
   row-gap: 46px;
   column-gap: 48px;
+  justify-content: center;
 }
 
 .header {
@@ -28,8 +24,7 @@ body {
   align-items: center;
   padding: 0 50px;
   background: #fff;
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  // height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-size: 12px;
   font-weight: 500;
 }
@@ -40,17 +35,15 @@ body {
   width: 40px;
 }
 
-.nav {
-  padding: 23px 0;
-}
-
 .nav__list {
   display: flex;
   list-style: none;
 }
 
 .nav__item {
-  display: inline-block;
+  height: 60px;
+  display: flex;
+  align-items: center;
 
   &:not(:last-child) {
     margin-right: 20px;
@@ -62,15 +55,16 @@ body {
 }
 
 .nav__link {
-  line-height: normal;
+  height: 60px;
+  display: flex;
+  align-items: center;
   position: relative;
-  // height: 60px;
   font-size: 12px;
+  font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
-  color: #000;
+  color: #060b37;
   transition: color 0.3s;
-  padding: 23px 0;
 
   &:hover {
     color: #00acdc;
@@ -91,12 +85,6 @@ body {
       background-color: #00acdc;
     }
   }
-}
-
-.card__reviews-count {
-  color: var(--Main-accent, #060b35);
-  font-size: 10px;
-  line-height: 14px;
 }
 
 .card {
@@ -126,9 +114,9 @@ body {
   }
 
   &__product-code {
-    color: var(--Secondary, #616070);
+    color: #616071;
     font-size: 10px;
-    line-height: 140%;
+    line-height: 14px;
   }
 
   &__review-container {
@@ -136,21 +124,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &-reviews-count {
+      color: #060b37;
+      font-size: 10px;
+    }
   }
 
-  &__price-container {
+  &__price {
     margin-top: 24px;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: flex-end;
 
-    &__price-label {
+    &-label {
       font-size: 12px;
       line-height: 18px;
+      color: #616071;
     }
 
-    &__price {
+    &-price {
       font-size: 16px;
       line-height: 18px;
       font-weight: 700;
