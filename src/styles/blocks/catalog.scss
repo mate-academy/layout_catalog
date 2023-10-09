@@ -1,0 +1,29 @@
+.catalog-container {
+  display: grid;
+  grid-template-columns: repeat($card-count, 200px);
+  row-gap: 46px;
+  column-gap: $gap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: $card-width;
+  padding-top: 50px;
+  padding-bottom: 72px;
+}
+
+@media (min-width:488px) {
+  .catalog-container {
+    @include change-columns($card-count: 2);
+  }
+}
+
+@media (min-width:768px) {
+  .catalog-container {
+    @include change-columns($card-count: 3);
+  }
+}
+
+@media (min-width:1024px) {
+  .catalog-container {
+    @include change-columns($card-count: 4);
+  }
+}
