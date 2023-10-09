@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: initial;
+}
+
+.body {
+  @include basic-styles;
+}
+
+.product-catalog {
+  width: 100%;
+  padding: 50px 0 72px;
+
+  &__container {
+    display: grid;
+    row-gap: 46px;
+    column-gap: 48px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, $height-product-card);
+
+    @media (max-width: 950px) {
+      grid-template-columns: repeat(auto-fit, $height-product-card);
+    }
+  }
+}
