@@ -1,0 +1,116 @@
+.card {
+  display: flex;
+  width: 200px;
+  padding: 32px 16px 16px;
+  flex-direction: column;
+
+  border: 1px solid $gray-elements-color;
+  border-radius: $cardsBorderRadius;
+
+  transition: transform, 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    margin-bottom: 40px;
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__title {
+    @include zero-margins-paddings;
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: $letter-spacing;
+    text-align: left;
+
+    color: $main-accent-color;
+
+    transition: color, 0.3s;
+
+    &:hover {
+      color: #34548b;
+    }
+  }
+
+  &__product-code {
+    @include zero-margins-paddings;
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: $letter-spacing;
+    text-align: left;
+
+    color: $secondary-color;
+  }
+
+  &__rate {
+    margin-bottom: 24px;
+    @include flex-spacebetween-center;
+  }
+
+  &__reviews {
+    @include zero-margins-paddings;
+
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: $letter-spacing;
+
+    color: $main-accent-color;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    @include flex-spacebetween-center;
+    letter-spacing: $letter-spacing;
+
+    &-text {
+      @include zero-margins-paddings;
+
+      line-height: 18px;
+      color: $secondary-color;
+    }
+
+    &-value {
+      @include zero-margins-paddings;
+
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+
+      color: $main-accent-color;
+    }
+  }
+
+  &__button {
+    height: 40px;
+    border-radius: $cardsBorderRadius;
+
+    @include with-centered-content;
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $white-color;
+    background: $blue-accent-color;
+
+    transition: color, background-color 0.3s;
+
+    &:hover {
+      border: 1px solid $blue-accent-color;
+      color: $blue-accent-color;
+      background: $white-color;
+    }
+  }
+}

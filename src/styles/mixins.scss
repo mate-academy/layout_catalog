@@ -1,0 +1,56 @@
+@mixin zero-margins-paddings {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flex-spacebetween-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin with-centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin onLaptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onMobileLarge {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin gridTemplateColumns {
+  grid-template-columns: repeat(auto-fit, 200px);
+
+  @include onLaptop {
+    .container {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+
+  @include onTablet {
+    .container {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @include onMobileLarge {
+    .container {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+}
