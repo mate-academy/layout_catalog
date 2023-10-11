@@ -1,0 +1,60 @@
+$mainColor: #060b35;
+$buttonColor: #00acdc;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+    list-style: none;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .is-active {
+      color: $buttonColor;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background: $buttonColor;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: $buttonColor;
+    }
+  }
+}
