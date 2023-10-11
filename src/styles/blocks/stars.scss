@@ -7,16 +7,15 @@
     width: 16px;
     margin-left: 4px;
   }
+
+  & > :first-child {
+    margin-left: 0;
+  }
 }
 
-.stars > :first-child {
-  margin-left: 0;
+@for $i from 1 through 5 {
+  .stars--#{$i} :nth-child(-n + #{$i}) {
+    background-image: url("../images/star-active.svg");
+  }
 }
 
-.stars--1 :nth-child(-n + 1),
-.stars--2 :nth-child(-n + 2),
-.stars--3 :nth-child(-n + 3),
-.stars--4 :nth-child(-n + 4),
-.stars--5 :nth-child(-n + 5) {
-  background-image: url("../images/star-active.svg");
-}
