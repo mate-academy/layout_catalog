@@ -7,15 +7,15 @@
   row-gap: 46px;
   grid-template-columns: repeat(4, $card-width);
 
-  @include forPC {
+  @include onPC {
     grid-template-columns: repeat(3, $card-width);
   }
 
-  @include forTablet {
+  @include onTablet {
     grid-template-columns: repeat(2, $card-width);
   }
 
-  @include forPhone {
+  @include onPhone {
     grid-template-columns: repeat(1, $card-width);
   }
 }
@@ -52,7 +52,6 @@
   &__code {
     margin-bottom: 16px;
 
-    font-weight: normal;
     font-size: 10px;
     line-height: 14px;
     color: $second-cards-color;
@@ -74,7 +73,6 @@
   &__reviews {
     display: block;
 
-    font-weight: normal;
     font-size: 10px;
     line-height: 14px;
     color: $second-cards-color;
@@ -88,14 +86,13 @@
     margin-bottom: 16px;
 
     &_text {
-      font-weight: normal;
       font-size: 12px;
       line-height: 18px;
       color: $second-cards-color;
     }
 
     &_price {
-      font-weight: bold;
+      font-weight: 700;
       line-height: 18px;
       font-size: 16px;
       color: $main-text-color;
@@ -111,7 +108,7 @@
 
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 14px;
     line-height: 16px;
     color: $white-c;
@@ -124,13 +121,12 @@
 
       background-color: $white-c;
       border: 1px $hover-text-color solid;
-
     }
   }
 
   &:hover {
     transform: scale(120%);
-    transition-duration: 0.3s;
+    transition: transform $transition-duration;
   }
 
   &:hover .card__title {
