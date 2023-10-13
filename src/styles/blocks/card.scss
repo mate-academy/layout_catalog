@@ -1,0 +1,114 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  border: 1px solid $color-grey-accent;
+  border-radius: 5px;
+  padding: 32px 16px 32px;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s;
+  }
+
+  &__image {
+    display: flex;
+    align-self: center;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  &__description-title {
+    @extend %description-title-style;
+    color: $color-main;
+    transition: color 0.5s;
+  }
+
+  &__description-title:hover {
+    color: $color-hover-text;
+    transition: color 0.5s;
+  }
+
+  &__description-code {
+    @extend %description-code-style;
+  }
+
+  &__review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &__review-amount {
+    align-self: center;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-main;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__price-cost {
+    @extend %price-cost-style;
+    color: $color-main;
+  }
+
+  &__price-name {
+    @extend %price-name-style;
+    color: $color-secondary;
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    margin-top: 16px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &__button-link {
+    align-items: center;
+    display: flex;
+    color: $color-white-accent;
+    background-color: $color-blue-accent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 38px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 0 70px;
+    border: 1px solid $color-blue-accent;
+    text-decoration: none;
+    transition: background-color 0.5s, color 0.5s;
+  }
+
+  &__button-link:hover {
+    color: $color-blue-accent;
+    background-color: $color-white-accent;
+    transition: background-color 0.5s, color 0.5s;
+  }
+
+  &--position {
+    margin-right: $gap;
+  }
+
+  &--position:nth-child(-n+4) {
+    margin-bottom: 46px;
+  }
+
+  &--position:nth-child(4n) {
+    margin-right: 0;
+  }
+}
