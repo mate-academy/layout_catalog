@@ -1,0 +1,98 @@
+
+.cards {
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 248px) 200px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  padding-top: 32px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  margin-bottom: 46px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  &:not(:nth-child(4n)) {
+    margin-right: 48px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    font-weight: 500;
+    line-height: 18px;
+    transition: color 0.2s ease;
+  }
+
+  &:hover .card__title {
+    color: $hover-color;
+  }
+
+  &__code {
+    color: $secondary-color;
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__rate {
+    @include flex;
+
+    margin-top: 16px;
+  }
+
+  &__rate-title {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    @include flex;
+
+    margin-top: 24px;
+    line-height: 18px;
+  }
+
+  &__price-text {
+    color: $secondary-color;
+  }
+
+  &__price-amount {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__button {
+    padding: 12px;
+    margin-top: 16px;
+    background-color: $primary-color;
+    color: $button-color;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: $primary-color;
+    }
+  }
+}
