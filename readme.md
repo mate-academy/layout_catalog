@@ -2,25 +2,20 @@
 
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
 
-- Write styles in `src/styles/main.scss` instead of `src/style.css`
-- use `Card` and `Header` blocks from previous tasks but rewrite them using BEM
-and SCSS
-- Nav links color is not `black` any more
-- **flex layout**: there should always be 4 cards in a row (not 2, 3 or 5)
-  - use `:nth-child(4n)` to select every 4th element in `flex` container
-  - use `:nth-last-child(-n + 4)` to select 4 last elements `flex` container
-- ❗️❗️❗️ **MANDATORY if you're familiar with the `grid`**
-  - use `grid` instead of `flex`
-  - implement the [Grid Layout instead](./grid.md)
-- the distance between cards on the design includes borders (zoom in to see it);
-- cards should have fixed width and fixed distances between them
-- cards container should have fixed paddings (see 1024px example), bottom the same as top
-- use semantic tags. `<header>`, `<nav>`, `<main>`
-- add class `is-active` to the first link (`Apple`) in navigation
+- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
+- Nav links color is not `black` any more
+- add class `is-active` to the first link (`Apple`) in navigation
+- Use grid for cards with different number of columns:
+  - 4 starting from `1024px`
+  - 3 starting from `768px`
+  - 2 starting at `488px`
+  - 1 for the smaller screens
+- cards have fixed width and gap between them (`48px` vertically and `46px` horyzontally)
+- cards container have fixed paddings (`50px` vertically and `40px` horyzontally)
 
 Make all the changes smooth on hover (during 300ms):
 - increase the card by 20 percent (neighboring cards **should not be** affected)
@@ -40,7 +35,9 @@ Make all the changes smooth on hover (during 300ms):
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] Container's max-width calculated dynamically
-- [ ] There are 4 cards in the row regardless of the window size
-- [ ] All `Typical Mistakes` from `BEM` lesson theory are checked.
+- [ ] All component follow BEM and use SCSS
+- [ ] repaeted sizes and special colors are put to variables
+- [ ] Grid is used for the columns
+- [ ] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
+- [ ] All changes on `:hover` are smooth
 - [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
