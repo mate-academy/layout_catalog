@@ -22,6 +22,12 @@ and SCSS
 - add `data-qa="card"` to the first card
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 
+Make all the changes smooth on hover (during 300ms):
+- increase the card by 20 percent (neighboring cards **should not be** affected)
+- change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
+- change navigation link text color to `#00acdc`
+- change the button background to `#fff` and text color to `#00acdc` on hover
+
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
 ![screenshot](./reference.png)
@@ -36,8 +42,5 @@ and SCSS
 
 - [ ] Container's max-width calculated dynamically
 - [ ] There are 4 cards in the row regardless of the window size
-- [ ] SASS loop used to implement stars block
-- [ ] Changing stars modifier in the code element reflects in
-changing amount of active stars
 - [ ] All `Typical Mistakes` from `BEM` lesson theory are checked.
 - [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
