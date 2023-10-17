@@ -1,3 +1,247 @@
+@import "_variables";
+
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
+
+/* #region nav */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.logo {
+  margin-top: 10px;
+  height: $logo-size;
+  width: $logo-size;
+}
+
+@keyframes hovered-link {
+  100% {
+    color: $blue-accent;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  &__list {
+    text-transform: uppercase;
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+    margin: 0;
+  }
+  &__item {
+    margin-right: 20px;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-nav-link;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 23px 0;
+    display: block;
+    font-family: "Roboto", sans-serif;
+    &:hover {
+      animation: hovered-link 300ms forwards;
+    }
+    &:active {
+      color: $blue-accent;
+    }
+    &.is-active {
+      color: $blue-accent;
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        background-color: $blue-accent;
+        position: absolute;
+      }
+    }
+  }
+}
+
+/* #endregion */
+
+/* #region catalog */
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+@media screen and (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  height: 406px;
+  width: min-content;
+  border: 1px solid $gray-element;
+  border-radius: 5px;
+  background-color: $white;
+  font-family: "Roboto", sans-serif;
+  transition: all 300ms;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &__rectangle {
+    width: 10rem;
+    padding: 2rem 19px 0;
+    margin-bottom: 36px;
+    height: 134px;
+  }
+  &__product-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-accent;
+    padding: 0 1rem;
+    margin-bottom: 0.25rem;
+    transition: all 300ms;
+  }
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+  &__review {
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+  &__button {
+    padding: 0 1rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  &__price {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.card:hover .card__product-name {
+  color: $dark-blue;
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  &__stars {
+    width: 96px;
+  }
+  &__text {
+    color: $main-accent;
+    text-align: right;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+  &__price {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $secondary;
+  }
+  &__value {
+    font-weight: 700;
+    line-height: 18px;
+    color: $main-accent;
+  }
+}
+
+.button {
+  text-decoration: none;
+  display: inline-block;
+  background-color: $blue-accent;
+  color: $white;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid $blue-accent;
+  border-radius: 5px;
+  width: 166px;
+  height: 2.5rem;
+  transition: all 300ms;
+  &:hover {
+    background-color: #fff;
+    color: #00acdc;
+    border: 1px solid $blue-accent;
+    border-radius: 5px;
+  }
+}
+
+/* #endregion */
+
+/* #region stars */
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  &__star {
+    background-image: url(..\images\star.svg);
+    height: $star-size;
+    width: $star-size;
+    background-position: center;
+    object-fit: cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+  }
+  &--5 .stars__star {
+    background-image: url(\images\star-active.svg);
+  }
+}
+
+@for $index from 1 through 4 {
+  .stars--#{$index} .stars__star:nth-child(-n + #{$index}) {
+    background-image: url(..\images\star-active.svg);
+  }
+}
+
+/* #endregion */
