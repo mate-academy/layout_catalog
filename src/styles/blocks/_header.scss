@@ -1,0 +1,138 @@
+// Header
+.header {
+  background-color: $color-white;
+  box-shadow: $box-shadow;
+
+  &__container {
+    margin: 0 $dim-main-margin;
+    padding: $dim-main-padding;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo-link {
+    @extend %flex-center;
+  }
+
+  &__logo-img {
+    @extend %pointer;
+    width: #{$dim-logo-size};
+    height: #{$dim-logo-size};
+    margin-right: $dim-nav-gap;
+  }
+}
+
+// Navigation
+.nav {
+  display: flex;
+
+  &__burger-label {
+    @extend %flex-center;
+    @extend %pointer;
+    transform: rotate(90deg);
+    font-size: $dim-fontsize-big;
+    line-height: $dim-fontsize-big;
+    font-weight: bold;
+    z-index: 3;
+  }
+
+  &__burger-checkbox {
+    display: none;
+  }
+
+  &__burger-checkbox:checked ~ .nav__burger-label {
+    position: fixed;
+    right: $dim-main-margin + $dim-main-padding;
+    top: $dim-main-padding + 4px;
+  }
+
+  &__burger-checkbox:checked ~ .nav__list {
+    display: flex;
+  }
+
+  &__list {
+    display: none;
+    @extend %flex-center;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    gap: $dim-nav-gap;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &__link {
+    position: relative;
+    max-width: 150px;
+    color: $color-main-accent;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s;
+    
+    &:hover,
+    &.is-active {
+      color: $color-moyo-blue;
+    }
+
+    &::after, 
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: -$dim-main-padding;
+      display: block;
+      height: $dim-menu-underscore;
+      width: 100%;
+      border-radius: $dim-menu-underscore;
+      background-color: $color-moyo-blue;
+      opacity: 0;
+      transition: all .3s;
+    }
+
+    &:hover::after, 
+    &.is-active::after {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+
+    // placeholders for media
+    %flex-center1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    %flex-align-stretch1 {
+      display: flex;
+      align-items: stretch;
+    }
+
+    // media 
+    &__burger-label {
+      display: none;
+    }
+
+    &__list {
+      @extend %flex-align-stretch1;
+      flex-direction: row;
+      position: static;
+      width: auto;
+      min-height: auto;
+
+      & li {
+        @extend %flex-align-stretch1;
+      }
+    }
+
+    &__link {
+      @extend %flex-center1;
+      font-size: $dim-fontsize-small;
+      text-align: center;
+    }
+  }
+}
