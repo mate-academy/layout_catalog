@@ -1,0 +1,21 @@
+@use "../utils/placeholders";
+@use "../utils/variables" as *;
+
+.stars {
+  @extend %center;
+  height: 16px;
+  width: 96px;
+  gap: 7px;
+
+  &__star {
+    width: $star-size;
+    height: $star-size;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../images/star.svg");
+  }
+
+  &--4 .stars__star:nth-child(-n+4) {
+    background-image: url("../images/star-active.svg");
+  }
+}

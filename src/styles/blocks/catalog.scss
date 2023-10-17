@@ -1,0 +1,14 @@
+@use "../utils/variables" as *;
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+
+  @each $column, $width in $catalog-width {
+    @media screen and (min-width: #{$width}) {
+      grid-template-columns: repeat($column, auto);
+    }
+  }
+}
