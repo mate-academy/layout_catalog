@@ -1,28 +1,23 @@
 .container {
-  --columns-count: 1;
+  --column-count: 1;
+
+  @media (min-width: 488px) {
+    --column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-count: 4;
+  }
+
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(var(--columns-count), 200px);
+  grid-template-columns: repeat(var(--column-count), 200px);
   padding: 50px 40px;
   gap: 46px 48px;
-}
-
-@media (min-width: 488px) {
-  .container {
-    --columns-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    --columns-count: 3;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    --columns-count: 4;
-  }
 }
 
 .card {
@@ -58,7 +53,7 @@
 
   &__code {
     color: $secondary-accent-color;
-    margin-bottom: 0;
+    margin: 0;
     margin-top: 4px;
   }
 
@@ -66,10 +61,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0;
     margin-top: 16px;
 
     &-reviews {
       color: $main-accent-color;
+      margin: 0;
     }
   }
 
@@ -102,8 +99,8 @@
     background-color: $blue-accent-color;
     border: 1px solid $blue-accent-color;
     border-radius: 5px;
-    height: 40px;
     margin-top: 16px;
+    padding: 11px;
 
     color: $white;
     text-transform: uppercase;
