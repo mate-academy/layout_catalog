@@ -1,0 +1,112 @@
+.prod_card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid hsl(0, 0%, 95%);
+  border-radius: 5px;
+  perspective: 400px;
+
+  &:hover {
+    transition-property: transform;
+    transition-duration: 500ms;
+    transform: scale(1.1);
+  }
+
+  &:not(:hover) {
+    transition-duration: 500ms;
+  }
+
+  &-img {
+    @include width-height(160px, 134px);
+    margin-bottom: 40px;
+  }
+
+  &-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: $dark-blue;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &-code {
+    width: 100%;
+    font-size: 10px;
+    color: $light-gray;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  &-review {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+
+    & div:first-child {
+      display: flex;
+
+      & div {
+        @include width-height(16px, 16px);
+        background-image: url(../images/star.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 24px auto 16px;
+  }
+
+  &-buy {
+    @include width-height(166px, 40px);
+    border: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    background: $for-button;
+
+    &:hover {
+      border: 1px solid $for-button;
+      color: $for-button;
+      background: none;
+    }
+  }
+}
+
+.review {
+  @include width-height(53px, 16px);
+  display: flex;
+  align-items: center;
+  text-align: right;
+  justify-content: flex-end;
+  font-size: 10px;
+  color: $dark-blue;
+}
+
+.text {
+  font-size: 12px;
+  color: $light-gray;
+  line-height: 18px;
+}
+
+.cost {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  color: $dark-blue;
+}
