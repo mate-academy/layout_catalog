@@ -1,3 +1,203 @@
-body {
+@import "./blocks/stars.scss";
+@import "./blocks/variables.scss";
+
+html {
+  font-family: "Roboto", sans-serif;
+  line-height: 14px;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+p {
   margin: 0;
+  padding: 0;
+}
+
+main {
+  display: block;
+}
+
+body {
+  display: block;
+  margin: 0;
+}
+
+.header {
+  padding: 0 50px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: flex;
+    padding: 10px 0;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0;
+    margin-left: 20px;
+    font-weight: 500;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    color: $accent;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 23px 0;
+
+    &:hover {
+      color: $link;
+    }
+
+  }
+}
+
+.is-active {
+  color: $link;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: flex;
+    bottom: 0%;
+    width: 100%;
+    height: 2px;
+    border: 1px solid #00acdc;
+    background-color: #00acdc;
+    border-radius: 8px;
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 50px 40px;
+  width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  row-gap: 46px;
+  column-gap: 48px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+  width: 200px;
+  border: 1px solid $cardborder;
+  border-radius: 5px;
+  background: $cardbgd;
+
+  &__picture {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__text {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: $accent;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    color: $text;
+  }
+
+  &__review-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    color: $accent;
+  }
+
+  &__price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__pricelabel {
+    font-size: 12px;
+    line-height: 18px;
+    color: $text;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $accent;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid $link;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $cardbgd;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $link;
+
+    &:hover {
+      color: $link;
+      background-color: $cardbgd;
+    }
+  }
 }
