@@ -14,9 +14,8 @@
   }
 
   &__logo-img {
-    @extend %pointer;
-    width: #{$dim-logo-size};
-    height: #{$dim-logo-size};
+    width: $dim-logo-size;
+    height: $dim-logo-size;
     margin: $dim-main-padding $dim-nav-gap $dim-main-padding 0;
   }
 }
@@ -27,7 +26,6 @@
 
   &__burger-label {
     @extend %flex-center;
-    @extend %pointer;
     transform: rotate(90deg);
     font-size: $dim-fontsize-big;
     line-height: $dim-fontsize-big;
@@ -70,14 +68,13 @@
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: color 0.3s;
     
     &:hover,
     &.is-active {
       color: $color-moyo-blue;
     }
 
-    &::after,
     &.is-active::after {
       content: "";
       position: absolute;
@@ -87,26 +84,19 @@
       width: 100%;
       border-radius: $dim-menu-underscore;
       background-color: $color-moyo-blue;
-      opacity: 0;
-      transition: all 0.3s;
-    }
-
-    &:hover::after,
-    &.is-active::after {
-      opacity: 1;
     }
   }
 
   @media screen and (min-width: 768px) {
 
     // placeholders for media
-    %flex-center1 {
+    %media-flex-center {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    %flex-align-stretch1 {
+    %media-flex-align-stretch1 {
       display: flex;
       align-items: stretch;
     }
@@ -117,7 +107,7 @@
     }
 
     &__list {
-      @extend %flex-align-stretch1;
+      @extend %media-flex-align-stretch1;
       gap: 0;
       flex-direction: row;
       position: static;
@@ -125,7 +115,7 @@
       min-height: auto;
 
       & li {
-        @extend %flex-align-stretch1;
+        @extend %media-flex-align-stretch1;
         margin-left: 20px;
       }
 
@@ -135,7 +125,7 @@
     }
 
     &__link {
-      @extend %flex-center1;
+      @extend %media-flex-center;
       font-size: $dim-fontsize-small;
       text-align: center;
     }
