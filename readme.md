@@ -2,12 +2,12 @@
 
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
 
-- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
+<!-- _- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS_ -->
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
-- Nav links color is not `black` any more ****
+- Nav links color is not `black` any more
 - add class `is-active` to the first link (`Apple`) in navigation
 - Use grid for cards with different number of columns:
   - 4 starting from `1024px`
