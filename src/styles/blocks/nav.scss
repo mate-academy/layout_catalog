@@ -1,0 +1,58 @@
+@import "../partials/variables.scss";
+
+@keyframes hovered-link {
+  100% {
+    color: $nav-background-color;
+  }
+}
+
+.header {
+  background-color: white;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  font-weight: 500px;
+  &__logo {
+    height: $logo-size;
+    width: $logo-size;
+    &-img {
+      height: $logo-size;
+      width: $logo-size;
+      display: flex;
+      align-self: center;
+    }
+  }
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  &-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $nav-color;
+    font-size: 12px;
+    display: block;
+    position: relative;
+    margin-left: 20px;
+    &:hover {
+      animation: hovered-link 300ms forwards;
+      color: $nav-background-color;
+    }
+    &.is-active {
+      color: $nav-background-color;
+      &::after {
+        content: "";
+        display: block;
+        background-color: $nav-background-color;
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        bottom: -23px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
