@@ -3,26 +3,17 @@
   box-sizing: border-box;
   width: 100vw;
   display: grid;
-  grid-template-columns: repeat(4, $card-space + $card-width);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: auto;
   justify-content: center;
   justify-items: center;
 
-  @media screen and (max-width: 1023px) {
-    grid-template-columns: repeat(3, $card-space + $card-width);
-    justify-content: center;
-    justify-items: center;
-  }
-
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 488px) {
     grid-template-columns: repeat(2, $card-space + $card-width);
-    justify-content: center;
-    justify-items: center;
   }
-
-  @media screen and (max-width: 487px) {
-    grid-template-columns: auto;
-    justify-content: center;
-    justify-items: center;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-space + $card-width);
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-space + $card-width);
   }
 }
