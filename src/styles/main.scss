@@ -11,54 +11,54 @@
 }
 
 body {
-  --color-secondary: #00acdc;
   --header-height: 60px;
+}
+
+.is-active {
+  color: $blue-color;
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    background: $blue-color;
+  }
 }
 
 main {
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: repeat(4, 198px);
-  gap: 48px 46px;
+  grid-template-columns: repeat(4, $column-width);
+  gap: 46px 48px;
   justify-content: center;
+  align-items: center;
   padding: 50px 40px;
-}
-
-.is-active:before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 4px;
-  bottom: 0;
-  left: 0;
-  border-radius: 2px;
-  background: var(--color-secondary);
-}
-
-.is-active {
-  color: var(--color-secondary);
 }
 
 @media (max-width: 488px) {
   main {
-    grid-template-columns: repeat(1, 198px);
+    grid-template-columns: repeat(1, $column-width);
   }
 }
 
 @media (min-width: 488px) and (max-width: 768px) {
   main {
-    grid-template-columns: repeat(2, 198px);
+    grid-template-columns: repeat(2, $column-width);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   main {
-    grid-template-columns: repeat(3, 198px);
+    grid-template-columns: repeat(3, $column-width);
   }
 }
 
 @media (min-width: 1024px) {
   main {
-    grid-template-columns: repeat(4, 198px);
+    grid-template-columns: repeat(4, 200px);
   }
 }
