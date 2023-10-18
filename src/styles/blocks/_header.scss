@@ -1,0 +1,133 @@
+// Header
+.header {
+  background-color: $color-white;
+  box-shadow: $box-shadow;
+
+  &__container {
+    margin: 0 $dim-main-margin;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo-link {
+    @extend %flex-center;
+  }
+
+  &__logo-img {
+    width: $dim-logo-size;
+    height: $dim-logo-size;
+    margin: $dim-main-padding $dim-nav-gap $dim-main-padding 0;
+  }
+}
+
+// Navigation
+.nav {
+  display: flex;
+
+  &__burger-label {
+    @extend %flex-center;
+    transform: rotate(90deg);
+    font-size: $dim-fontsize-big;
+    line-height: $dim-fontsize-big;
+    font-weight: bold;
+    z-index: 3;
+  }
+
+  &__burger-checkbox {
+    display: none;
+  }
+
+  &__burger-checkbox:checked ~ .nav__burger-label {
+    position: fixed;
+    right: $dim-main-margin + $dim-main-padding;
+    top: $dim-main-padding + 4px;
+  }
+
+  &__list {
+    display: none;
+    @extend %flex-center;
+    gap: $dim-nav-gap;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &__burger-checkbox:checked ~ .nav__list {
+    display: flex;
+  }
+
+  &__link {
+    position: relative;
+    max-width: 150px;
+    color: $color-main-accent;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+    
+    &:hover,
+    &.is-active {
+      color: $color-moyo-blue;
+    }
+
+    &.is-active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      display: block;
+      height: $dim-menu-underscore;
+      width: 100%;
+      border-radius: $dim-menu-underscore;
+      background-color: $color-moyo-blue;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+
+    // placeholders for media
+    %media-flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    %media-flex-align-stretch1 {
+      display: flex;
+      align-items: stretch;
+    }
+
+    // media 
+    &__burger-label {
+      display: none;
+    }
+
+    &__list {
+      @extend %media-flex-align-stretch1;
+      gap: 0;
+      flex-direction: row;
+      position: static;
+      width: auto;
+      min-height: auto;
+
+      & li {
+        @extend %media-flex-align-stretch1;
+        margin-left: 20px;
+      }
+
+      & li:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__link {
+      @extend %media-flex-center;
+      font-size: $dim-fontsize-small;
+      text-align: center;
+    }
+  }
+}
