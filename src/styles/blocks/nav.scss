@@ -1,0 +1,46 @@
+.nav {
+  padding: 23px 0;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    padding: 23px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-text-color;
+    line-height: normal;
+    position: relative;
+
+    &:hover {
+      color: $button-main-color;
+    }
+  }
+
+  .is-active {
+    color: $button-main-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: flex;
+      width: 100%;
+      bottom: 0;
+      height: 4px;
+      background-color: $button-main-color;
+      border-radius: 8px;
+    }
+  }
+}
