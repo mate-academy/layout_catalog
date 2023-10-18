@@ -1,0 +1,28 @@
+@import "../utils/variables";
+
+.stars {
+  display: flex;
+  width: 166px;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+
+  &__star {
+    width: $size-common;
+    height: $size-common;
+    flex-shrink: 0;
+    position: relative;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  @for $i from 0 through 5 {
+    &--#{$i} {
+      .stars__star:not(:nth-child(n + #{$i + 1})) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+}

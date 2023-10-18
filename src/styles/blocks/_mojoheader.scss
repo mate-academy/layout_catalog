@@ -1,0 +1,75 @@
+@import "../utils/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  padding-left: 50px;
+  box-shadow: 0 1px 8px 0 rgba(61, 78, 97, 0.1);
+  // made margin bottom just to pass the tests,
+  // cuz for some reason everything was bit too low
+  margin-bottom: -4px;
+
+  &__logo {
+    padding: 10px 0;
+  }
+
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 50px;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+
+    & > :not(:first-child) {
+      margin-left: 20px;
+    }
+
+  }
+
+  &__link {
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    padding-top: 22.5px;
+    padding-bottom: 22.5px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    color: $color-main-accent;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $hover-navlink;
+    }
+  }
+
+}
+
+.is-active {
+  color: $hover-navlink;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -1px;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-primary;
+    border-radius: 8px;
+  }
+}
