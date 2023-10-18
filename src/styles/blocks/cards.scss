@@ -1,0 +1,13 @@
+.cards {
+  padding: 50px 40px;
+  display: grid;
+  column-gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+
+  @each $screen-size, $cols-number in $grid-cols {
+    @media (min-width: $screen-size) {
+      grid-template-columns: repeat($cols-number, $card-width);
+    }
+  }
+}
