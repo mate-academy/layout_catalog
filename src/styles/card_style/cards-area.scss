@@ -1,9 +1,34 @@
 .commodity_cards {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: repeat(4, 200px);
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, $column-width);
   row-gap: 46px;
   column-gap: 48px;
   justify-content: center;
+  align-items: center;
   padding: 50px 40px;
+}
+
+@media (max-width: 488px) {
+  .commodity_cards {
+    grid-template-columns: repeat(1, $column-width);
+  }
+}
+
+@media (min-width: 488px) and (max-width: 768px) {
+  .commodity_cards {
+    grid-template-columns: repeat(2, $column-width);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .commodity_cards {
+    grid-template-columns: repeat(3, $column-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .commodity_cards {
+    grid-template-columns: repeat(4, 200px);
+  }
 }

@@ -51,3 +51,6 @@ Make all the changes smooth on hover (during 300ms):
 - change the button background to `#fff` and text color to `#00acdc` on hover
 
 ![screenshot](./references/catalog-example.png)
+
+
+[def]: https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github
