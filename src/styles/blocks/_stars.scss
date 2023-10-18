@@ -18,14 +18,11 @@
     margin-right: 4px;
   }
 
-  // Sorry, i dont get it.
-  // You mant the selector "nth-child" to be inside of modifier, not next to?
-  // (did that)
-  // Or you want it to strictly be named N, not 4?
-  &--4 {
-    .stars__star:not(:nth-child(n+5)) {
-      background-image: url(../images/star-active.svg);
+  @for $i from 0 through 5 {
+    &--#{$i} {
+      .stars__star:not(:nth-child(n + #{$i + 1})) {
+        background-image: url(../images/star-active.svg);
+      }
     }
   }
-
 }
