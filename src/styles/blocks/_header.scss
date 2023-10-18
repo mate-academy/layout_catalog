@@ -5,7 +5,6 @@
 
   &__container {
     margin: 0 $dim-main-margin;
-    padding: $dim-main-padding;
     display: flex;
     justify-content: space-between;
   }
@@ -18,7 +17,7 @@
     @extend %pointer;
     width: #{$dim-logo-size};
     height: #{$dim-logo-size};
-    margin-right: $dim-nav-gap;
+    margin: $dim-main-padding $dim-nav-gap $dim-main-padding 0;
   }
 }
 
@@ -46,22 +45,22 @@
     top: $dim-main-padding + 4px;
   }
 
-  &__burger-checkbox:checked ~ .nav__list {
-    display: flex;
-  }
-
   &__list {
     display: none;
     @extend %flex-center;
+    gap: $dim-nav-gap;
     position: fixed;
     width: 100%;
     min-height: 100vh;
     top: 0;
     left: 0;
     flex-direction: column;
-    gap: $dim-nav-gap;
     list-style: none;
     background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &__burger-checkbox:checked ~ .nav__list {
+    display: flex;
   }
 
   &__link {
@@ -71,28 +70,28 @@
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
-    transition: all .3s;
+    transition: all 0.3s;
     
     &:hover,
     &.is-active {
       color: $color-moyo-blue;
     }
 
-    &::after, 
+    &::after,
     &.is-active::after {
-      content: '';
+      content: "";
       position: absolute;
-      bottom: -$dim-main-padding;
+      bottom: 0;
       display: block;
       height: $dim-menu-underscore;
       width: 100%;
       border-radius: $dim-menu-underscore;
       background-color: $color-moyo-blue;
       opacity: 0;
-      transition: all .3s;
+      transition: all 0.3s;
     }
 
-    &:hover::after, 
+    &:hover::after,
     &.is-active::after {
       opacity: 1;
     }
@@ -119,6 +118,7 @@
 
     &__list {
       @extend %flex-align-stretch1;
+      gap: 0;
       flex-direction: row;
       position: static;
       width: auto;
@@ -126,6 +126,11 @@
 
       & li {
         @extend %flex-align-stretch1;
+        margin-left: 20px;
+      }
+
+      & li:first-child {
+        margin-left: 0;
       }
     }
 
