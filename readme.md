@@ -2,12 +2,12 @@
 
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
 
-!!! - use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
+X- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
 X- remove old `data-qa` attributes
 X- add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 X- add `data-qa="card"` to the first card
 X- add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
-- Nav links color is not `black` any more
+X- Nav links color is not `black` any more
 X- add class `is-active` to the first link (`Apple`) in navigation
 X- Use grid for cards with different number of columns:
   x- 4 starting from `1024px`
@@ -18,10 +18,10 @@ X- cards have fixed width and gap between them (`48px` vertically and `46px` hor
 X- cards container have fixed paddings (`50px` vertically and `40px` horyzontally)
 
 Make all the changes smooth on hover (during 300ms):
-- increase the card by 20 percent (neighboring cards **should not be** affected)
-- change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
-- change navigation link text color to `#00acdc`
-- change the button background to `#fff` and text color to `#00acdc` on hover
+X- increase the card by 20 percent (neighboring cards **should not be** affected)
+X- change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
+???- change navigation link text color to `#00acdc`
+???- change the button background to `#fff` and text color to `#00acdc` on hover
 
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
@@ -35,9 +35,9 @@ Make all the changes smooth on hover (during 300ms):
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] All component follow BEM and use SCSS
-- [ ] repaeted sizes and special colors are put to variables
-- [ ] Grid is used for the columns
-- [ ] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
-- [ ] All changes on `:hover` are smooth
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [X] All component follow BEM and use SCSS
+- [X] repaeted sizes and special colors are put to variables
+- [X] Grid is used for the columns
+- [X] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
+- [X] All changes on `:hover` are smooth
+- [X] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
