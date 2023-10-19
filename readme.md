@@ -2,7 +2,7 @@
 
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
 
-- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
+<!-- _- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS_ -->
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
@@ -29,15 +29,15 @@ Make all the changes smooth on hover (during 300ms):
 
 ## Checklist
 
-❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+❗️ Replace `DanyloSemenov` with your Github username and copy the links to `Pull Request` description:
+- [DEMO LINK](https://DanyloSemenov.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://DanyloSemenov.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] All component follow BEM and use SCSS
-- [ ] repaeted sizes and special colors are put to variables
-- [ ] Grid is used for the columns
-- [ ] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
-- [ ] All changes on `:hover` are smooth
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [x] All component follow BEM and use SCSS
+- [x] repaeted sizes and special colors are put to variables
+- [x] Grid is used for the columns
+- [x] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
+- [x] All changes on `:hover` are smooth
+- [x] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
