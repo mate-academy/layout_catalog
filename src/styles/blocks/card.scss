@@ -3,9 +3,10 @@
 .card {
   max-width: 198px;
   min-height: 406px;
-  transition: all 300ms;
+  transition: transform 300ms;
   &:hover {
     transform: scale(1.2);
+    transition: transform 300ms ease;
   }
   &__content {
     width: $card__content-width;
@@ -32,9 +33,10 @@
     text-align: left;
     display: flex;
     padding-right: 20px;
-    transition: all 300ms;
+    transition: color 300ms;
     &:hover {
       color: #34568b;
+      transition: color 300ms;
     }
   }
 
@@ -107,7 +109,7 @@
     border: 1px solid $card__buy-color;
     border-radius: 5px;
     background-color: $card__buy-color;
-    transition: all 300ms;
+    transition: background-color 300ms color 300ms;
 
     //font
     font-size: 13px;
@@ -118,8 +120,10 @@
 
     //on hover color change
     &:hover {
+      transition: background-color 300ms ease color 300ms ease;
       color: #00acdc;
       background-color: #fff;
+      cursor: pointer;
     }
   }
 }
