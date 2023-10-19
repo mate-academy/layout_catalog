@@ -1,31 +1,27 @@
 @import "../abstracts/_variables.scss";
 @import "../base/base";
 
-@media only screen and (max-width: 488px) {
-  .cards {
-    grid-template-columns: repeat(1, 1fr);
-    max-width: calc(1 * #{$card-width});
-  }
-}
-
-@media only screen and (min-width: 488px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: calc(2 * #{$card-width} + 1 * #{$horizontal-gap});
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: calc(3 * #{$card-width} + 2 * #{$horizontal-gap});
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   .cards {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: calc(4 * #{$card-width} + 3 * #{$horizontal-gap});
+    grid-template-columns: repeat(4, minmax(200px, 200px));
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(200px, 200px));
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(200px, 200px));
+  }
+}
+
+@media only screen and (max-width: 487px) {
+  .cards {
+    grid-template-columns: repeat(1, minmax(200px, 200px));
   }
 }
 
@@ -33,17 +29,17 @@
   display: grid;
   padding: $cards-padding;
   gap: $vertical-gap $horizontal-gap;
-  margin: 0 auto;
+  justify-content: center;
 }
 
 .card {
-  //width: $card-width;
+  width: $card-width;
   padding: $card-padding;
   border: 1px solid $border-color;
   border-radius: 5px;
   box-sizing: border-box;
   z-index: 1;
-  transition: transform 300ms ease;
+  transition: transform 0.3s ease;
 
   &__description {
     width: 166px;
@@ -122,12 +118,12 @@
     text-transform: uppercase;
     box-sizing: border-box;
     border: 1px solid $blue-accent;
+    transition: background, color 0.3s;
   }
 
   &__button--active:hover {
     background: $white;
     color: $blue-accent;
     cursor: pointer;
-    transition: background, color 0.3s;
   }
 }
