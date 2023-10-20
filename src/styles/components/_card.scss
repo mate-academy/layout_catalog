@@ -1,0 +1,130 @@
+@import "../abstracts/_variables.scss";
+@import "../base/base";
+
+@media only screen and (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, minmax(200px, 200px));
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(200px, 200px));
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(200px, 200px));
+  }
+}
+
+@media only screen and (max-width: 487px) {
+  .cards {
+    grid-template-columns: repeat(1, minmax(200px, 200px));
+  }
+}
+
+.cards {
+  display: grid;
+  padding: $cards-padding;
+  gap: $vertical-gap $horizontal-gap;
+  justify-content: center;
+}
+
+.card {
+  width: $card-width;
+  padding: $card-padding;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  box-sizing: border-box;
+  z-index: 1;
+  transition: transform 0.3s ease;
+
+  &__description {
+    width: 166px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $main-accent;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    z-index: 2;
+    transform: scale(1.2);
+  }
+
+  &:hover &__description {
+    color: $description-hover-color;
+  }
+
+  &__picture {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__product-code {
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review-text {
+    color: $main-accent;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    color: $secondary;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price-amount {
+    color: $main-accent;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    padding-bottom: 16px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $button-height;
+    border-radius: 5px;
+    background: $blue-accent;
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border: 1px solid $blue-accent;
+    transition: background, color 0.3s;
+  }
+
+  &__button--active:hover {
+    background: $white;
+    color: $blue-accent;
+    cursor: pointer;
+  }
+}
