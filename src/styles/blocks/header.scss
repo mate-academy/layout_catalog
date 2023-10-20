@@ -1,19 +1,22 @@
-html {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  --header-link-color: #060b35;
-  --header-hover-color: #00acdc;
-}
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+  --header-link-color: #060b35;
+  --header-hover-color: #00acdc;
+  flex-wrap: wrap;
   &__logo {
     align-items: center;
     display: flex;
   }
 
+  @media (max-width:800px) {
+    &__logo {
+      display: none;
+    }
+  }
   &__navigation {
     height: 100%;
     display: flex;
@@ -28,6 +31,7 @@ html {
     align-items: center;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
   }
 
   &__list-item {
@@ -39,7 +43,6 @@ html {
   &__list-item-link {
     text-decoration: none;
     color: var(--header-link-color);
-    font-family: "Roboto", sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -79,5 +82,3 @@ html {
     margin-right: 0;
   }
 }
-
-
