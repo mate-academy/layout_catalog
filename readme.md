@@ -25,8 +25,6 @@ Make all the changes smooth on hover (during 300ms):
 
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
-![screenshot](./reference.png)
-
 ## Checklist
 
 ❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
