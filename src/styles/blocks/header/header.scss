@@ -1,0 +1,66 @@
+.header {
+  box-shadow: $main-shadow;
+
+  &__content {
+    @include flex-justify-align(space-between, center);
+    margin: 0 auto;
+    padding: 10px;
+
+    @include md {
+      padding: 0 50px;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+}
+
+.nav {
+  display: none;
+
+  @include md {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    @include font($roboto, 12px, 500, $main-color);
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.is-active {
+  color: $accent-color;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background: $accent-color;
+    position: absolute;
+    bottom: 0;
+  }
+}
