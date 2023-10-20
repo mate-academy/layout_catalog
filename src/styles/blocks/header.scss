@@ -1,0 +1,50 @@
+.header {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-right: 50px;
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text-color;
+  }
+  
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  &__item:hover,
+  .is-active {
+    color: $main-color;
+  }
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: $main-color;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: auto 50px;
+}
