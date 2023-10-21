@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: $header-width;
+}
+
+.container-logo {
+  height: $containter-logo-height;
+  display: flex;
+  padding-left: 50px;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.nav {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: center;
+  width: 1110px;
+}
+
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  text-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-family: $font-family;
+  text-decoration: none;
+  color: $color-main;
+  height: $link-height;
+}
+
+.nav__item {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.nav__item:last-child {
+  margin-right: 50px;
+}
+
+.nav__item:first-child {
+  margin-left: 419px;
+}
+
+.is-active {
+  cursor: pointer;
+  position: relative;
+  content: '"';
+  color: $color-active;
+}
+
+.is-active::after {
+  content: "";
+  background-color: $color-active;
+  position: absolute;
+  width: 100%;
+  height: $border-height;
+  border-radius: $border-radius;
+  bottom: 0;
+}
+
+.nav__link:hover {
+  position: relative;
+  color: $color-active;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    width: 1024px;
+  }
+  .nav__item:first-child {
+    margin-left: 243px;
+  }
+}
