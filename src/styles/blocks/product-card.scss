@@ -1,0 +1,150 @@
+$base-margin: 0;
+$text-color: #616070;
+$blue-color: #00acdc;
+$new-text-color: #060b35;
+$transition-duration: 0.3s;
+
+.card-container {
+  display: grid;
+  row-gap: 46px;
+  column-gap: 48px;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (max-width: 487px) {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+.card {
+  flex-direction: column;
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  padding: 0 16px;
+  max-width: 200px;
+  transition: transform $transition-duration;
+
+  &__image {
+    padding-top: 32px;
+    width: 160px;
+    height: 134px;
+    margin: 0 3px;
+  }
+
+  &__title {
+    margin: $base-margin;
+    padding-top: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $new-text-color;
+    transition: color $transition-duration;;
+  }
+
+  &__product-code {
+    margin: $base-margin;
+    padding-top: 5px;
+    font-size: 10px;
+    color: $text-color;
+  }
+
+  &__reviews {
+    display: flex;
+    margin: 0;
+    padding-top: 18px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews-text {
+    margin: $base-margin;
+    font-size: 10px;
+    color: $new-text-color;
+  }
+
+  &__price-amount {
+    margin: $base-margin;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__price-title {
+    margin: $base-margin;
+    font-size: 12px;
+    color: $text-color;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: $base-margin;
+    padding-top: 23px;
+  }
+
+  &__buy-link {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 40px;
+    width: 166px;
+    line-height: 40px;
+    margin: 16px 0 15px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: $blue-color;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color $transition-duration
+      color $transition-duration;
+  }
+
+  &__buy-link:hover {
+    border: 1px solid $blue-color;
+    background-color: #fff;
+    color: $blue-color;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(../../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+  &__star:nth-child(-n + 4) {
+    background-image: url(../../images/star-active.svg);
+  }
+  &__star:last-child {
+    margin-right: 0;
+  }
+}
