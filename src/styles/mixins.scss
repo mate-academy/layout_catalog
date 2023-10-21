@@ -1,26 +1,3 @@
-@mixin hover ($property, $toValue) {
-  transition: #{$property} $effect-duration;
-  &:hover {
-    #{$property}: #{$toValue};
-  }
-}
-
-@mixin colorHover ($property, $toValue) {
-  transition: #{$property} $effect-duration;
-  &:hover {
-    #{$property}: #{$toValue};
-  }
-}
-
-@mixin largeAndChangeColorOnHover {
-  &:hover {
-    transform: scale(1.2);
-    z-index: 1;
-    transition: transform $effect-duration,
-      color $effect-duration;
-  }
-}
-
 @mixin onDesctop {
   @media (min-width: $desctop-min-width) {
     @content;
@@ -43,36 +20,23 @@
   --columns: 1;
   display: grid;
   grid-template-columns: repeat(var(--columns),$card-width);
+  column-gap: $column-gap;
+  row-gap: $row-gap;
 
   @include onPhone {
     --columns: 2;
-    column-gap: $column-gap;
-    row-gap: $row-gap;
   }
 
   @include onTablet {
     --columns: 3;
-    column-gap: $column-gap;
-    row-gap: $row-gap;
   }
 
   @include onDesctop {
     --columns: 4;
-    column-gap: $column-gap;
-    row-gap: $row-gap;
   }
 }
 
-@mixin secondary {
+@mixin secondary-text {
   font-size: $secondary-font-size;
   line-height: $secondary-line-height;
-}
-
-@mixin card-title {
-  font-family: inherit;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
-  color: $main-text-color;
 }
