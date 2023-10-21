@@ -1,0 +1,42 @@
+@mixin onDesctop {
+  @media (min-width: $desctop-min-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onPhone {
+  @media (min-width: $phone-min-width) {
+    @content;
+  }
+}
+
+@mixin grid {
+  --columns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--columns),$card-width);
+  column-gap: $column-gap;
+  row-gap: $row-gap;
+
+  @include onPhone {
+    --columns: 2;
+  }
+
+  @include onTablet {
+    --columns: 3;
+  }
+
+  @include onDesctop {
+    --columns: 4;
+  }
+}
+
+@mixin secondary-text {
+  font-size: $secondary-font-size;
+  line-height: $secondary-line-height;
+}
