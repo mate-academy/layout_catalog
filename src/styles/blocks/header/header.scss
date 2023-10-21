@@ -1,0 +1,85 @@
+.header {
+  @include flex;
+
+  padding: 0 50px;
+  background-color: $main-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin: auto 0;
+
+    &-image {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      margin-left: 20px;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+
+      text-transform: uppercase;
+      height: 60px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:link,
+      &:visited {
+        color: $main-text-color;
+      }
+
+      &:hover {
+        color: $blue-color;
+      }
+
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+
+  &:link,
+  &:visited,
+  &:hover {
+    color: $blue-color;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+    background-color: $blue-color;
+    border-radius: 8px;
+  }
+}
