@@ -1,7 +1,7 @@
 $base-margin: 0;
-$base-font: roboto, helvetica, sans-serif;
 $text-color: #616070;
 $blue-color: #00acdc;
+$new-text-color: #060b35;
 $transition-duration: 0.3s;
 
 .card-container {
@@ -35,6 +35,7 @@ $transition-duration: 0.3s;
   border: 1px solid #f3f3f3;
   padding: 0 16px;
   max-width: 200px;
+  transition: transform $transition-duration;
 
   &__image {
     padding-top: 32px;
@@ -46,19 +47,17 @@ $transition-duration: 0.3s;
   &__title {
     margin: $base-margin;
     padding-top: 40px;
-    font-family: $base-font;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    color: #060b35;
+    color: $new-text-color;
+    transition: color $transition-duration;;
   }
 
   &__product-code {
     margin: $base-margin;
     padding-top: 5px;
-    font-family: $base-font;
     font-size: 10px;
-    font-weight: 400;
     color: $text-color;
   }
 
@@ -72,22 +71,18 @@ $transition-duration: 0.3s;
 
   &__reviews-text {
     margin: $base-margin;
-    font-family: $base-font;
     font-size: 10px;
-    font-weight: 400;
-    color: #060b35;
+    color: $new-text-color;
   }
 
   &__price-amount {
     margin: $base-margin;
-    font-family: $base-font;
     font-size: 16px;
     font-weight: 700;
   }
 
   &__price-title {
     margin: $base-margin;
-    font-family: $base-font;
     font-size: 12px;
     color: $text-color;
   }
@@ -111,29 +106,26 @@ $transition-duration: 0.3s;
     border: 1px solid transparent;
     background-color: $blue-color;
     color: white;
-    font-family: $base-font;
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
     text-align: center;
+    transition: background-color $transition-duration
+      color $transition-duration;
   }
 
   &__buy-link:hover {
     border: 1px solid $blue-color;
     background-color: #fff;
     color: $blue-color;
-    transition: background-color $transition-duration 
-      color $transition-duration;
   }
 
   &:hover {
     transform: scale(1.2);
-    transition: transform $transition-duration;
   }
 
   &:hover &__title {
     color: #34568b;
-    transition: color $transition-duration;
   }
 }
 
