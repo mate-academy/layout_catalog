@@ -1,0 +1,129 @@
+.card {
+  width: $card-with;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  border: 1px solid $c-card-border;
+
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    height: $image-heigh;
+    width: $image-with;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+
+    color: $c-title-color;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  &__code {
+    color: $c-product-code-color;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__rewiew-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__rewiews {
+    color: $c-title-color;
+    text-align: right;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-title {
+    color: $c-product-code-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    color: $c-title-color;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    border-radius: 5px;
+    border: 1px solid $c-blue-accent;
+    background-color: $c-blue-accent;
+
+    color: $c-background-main;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    transition: background-color 300ms;
+
+    &:hover {
+      background-color: $c-background-main;
+      color: $c-blue-accent;
+    }
+  }
+}
+
+.card-holder {
+  --column-count: 1;
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-with);
+  gap: $cards-gap;
+  justify-content: center;
+
+}
+
+@media (min-width: 488px) {
+  .card-holder {
+    padding: 50px 20px;
+    --column-count: 2;
+  }
+}
+@media (min-width: 768px) {
+  .card-holder {
+    --column-count: 3;
+    padding: 50px 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .card-holder {
+    --column-count: 4;
+    padding: 50px 40px;
+  }
+}
