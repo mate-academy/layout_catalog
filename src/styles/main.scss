@@ -5,21 +5,22 @@
 @import "blocks/card";
 
 .catalog {
+  --columns: 1;
   display: grid;
-  grid-template-columns: repeat(1, 200px);
+  grid-template-columns: repeat(var(--columns), 200px);
   gap: 46px 48px;
   justify-content: center;
   padding: 50px 40px;
 
   @include sm {
-    grid-template-columns: repeat(2, 200px);
+    --columns: 2;
   }
 
   @include md {
-    grid-template-columns: repeat(3, 200px);
+    --columns: 3;
   }
 
   @include lg {
-    grid-template-columns: repeat(4, 200px);
+    --columns: 4;
   }
 }
