@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-
-body {
-  margin: 0;
+.container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  padding: 0 50px;
 }
 
 .logo__link {
@@ -10,51 +12,54 @@ body {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  background: url("#home");
 }
 
 .nav {
   display: flex;
-  background-color: #fff;
+  background-color: $background;
   text-transform: uppercase;
   justify-content: center;
   align-items: center;
-}
 
-.nav__item a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  text-decoration: none;
-  color: black;
-  position: relative;
-  margin-left: 20px;
-}
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
 
-.nav__list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-}
+  &__item {
+    box-sizing: border-box;
+    font-size: 12px;
+    align-items: center;
+    list-style-type: none;
+    position: relative;
+  }
 
-.nav__item {
-  box-sizing: border-box;
-  font-size: 12px;
-  align-items: center;
-  list-style-type: none;
-  position: relative;
-}
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    position: relative;
+    margin-left: 20px;
+    color: $colorBlack;
+  }
 
-.nav__item:first-child a {
-  margin-left: 0;
-}
+  &__item:first-child a {
+    margin-left: 0;
+  }
 
-.nav__item a:hover {
-  color: var(--color-blue);
-  margin-bottom: 0;
-  cursor: pointer;
+  &__item a:hover {
+    color: $colorBlue;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  &__link.is-active {
+    color: $colorBlue;
+  }
 }
 
 .is-active::after {
@@ -66,17 +71,5 @@ body {
   bottom: 0;
   left: 0;
   border-radius: 8px;
-  background-color: var(--color-blue);
-}
-
-a.is-active {
-  color: var(--color-blue);
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  align-items: center;
-  padding: 0 50px;
+  background-color: $colorBlue;
 }
