@@ -1,4 +1,4 @@
-@import "../partials/variables.scss";
+@import "../partials/_variables.scss";
 
 .stars {
   display: flex;
@@ -6,7 +6,7 @@
   &__star {
     background: url(../images/star.svg) no-repeat center;
     display: inline-block;
-    margin: 0 4px 0 0;
+    margin-right: 4px;
     width: $stars__star-size;
     height: $stars__star-size;
     &:last-child {
@@ -15,11 +15,8 @@
   }
 }
 
-//to change the star rating use one of the classes below
-.stars--1 .stars__star:nth-child(-n + 1),
-.stars--2 .stars__star:nth-child(-n + 2),
-.stars--3 .stars__star:nth-child(-n + 3),
-.stars--4 .stars__star:nth-child(-n + 4),
-.stars--5 .stars__star:nth-child(-n + 5) {
-  background: url(../images/star-active.svg) no-repeat center;
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n + #{$i}) {
+    background: url(../images/star-active.svg) no-repeat center;
+  }
 }

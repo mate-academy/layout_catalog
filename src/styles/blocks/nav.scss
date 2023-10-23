@@ -1,4 +1,4 @@
-@import "../partials/variables.scss";
+@import "../partials/_variables.scss";
 
 @keyframes hovered-link {
   100% {
@@ -7,7 +7,7 @@
 }
 
 .header {
-  background-color: white;
+  background-color: $card-white;
   padding: 10px 50px;
   display: flex;
   justify-content: space-between;
@@ -29,29 +29,30 @@
 .nav__list {
   list-style: none;
   display: flex;
-  &-link {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $nav-color;
-    font-size: 12px;
-    display: block;
-    position: relative;
-    margin-left: 20px;
-    &:hover {
-      animation: hovered-link 300ms ease forwards;
-    }
-    &.is-active {
-      color: $nav-background-color;
-      &::after {
-        content: "";
-        display: block;
-        background-color: $nav-background-color;
-        height: 4px;
-        width: 100%;
-        position: absolute;
-        bottom: -23px;
-        border-radius: 4px;
-      }
+}
+
+.nav__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $nav-color;
+  font-size: 12px;
+  display: block;
+  position: relative;
+  margin-left: 20px;
+  &:hover {
+    animation: hovered-link 300ms ease forwards;
+  }
+  &.is-active {
+    color: $nav-background-color;
+    &::after {
+      content: "";
+      display: block;
+      background-color: $nav-background-color;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      bottom: -23px;
+      border-radius: 4px;
     }
   }
 }
