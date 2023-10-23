@@ -1,0 +1,124 @@
+.cards {
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  column-gap: 48px;
+  row-gap: 46px;
+  grid-template-columns: repeat(4, $card-width);
+
+  @include onDesktop {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include onPhone {
+    grid-template-columns: repeat(1, $card-width);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 16px 16px;
+  max-width: $card-width;
+  border: 1px solid $main-border-color;
+  border-radius: 5px;
+
+  &__img {
+    display: block;
+    max-width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 40px 0 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    font-size: 10px;
+    line-height: 14px;
+    color: $second-cards-color;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__stars {
+    display: flex;
+    align-content: center;
+  }
+
+  &__reviews {
+    display: block;
+    font-size: 10px;
+    line-height: 14px;
+    color: $second-cards-color;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &_text {
+      font-size: 12px;
+      line-height: 18px;
+      color: $second-cards-color;
+    }
+
+    &_price {
+      font-weight: 700;
+      line-height: 18px;
+      font-size: 16px;
+      color: $main-text-color;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $white-color;
+
+    background-color: $hover-text-color;
+    border-radius: 5px;
+
+    &:hover {
+      color: $hover-text-color;
+      background-color: $white-color;
+      border: 1px $hover-text-color solid;
+    }
+  }
+
+  &:hover {
+    transform: scale(120%);
+    transition: transform $transition-duration;
+  }
+
+  &:hover .card__title {
+    color: $card-title-hover-color;
+  }
+}
