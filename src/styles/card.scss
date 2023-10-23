@@ -1,47 +1,38 @@
 .card-container {
+  --columnsCount: 1;
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--columnsCount), 1fr);
   justify-content: center;
   justify-items: center;
   gap: 46px 48px;
 
   padding: 50px 40px;
-}
 
-@media (min-width: 1024px) {
-  .card-container {
-    grid-template-columns: repeat(4, 200px);
+  @media (min-width: 488px) {
+    --columnsCount: 2;
   }
-}
 
-@media (max-width: 1023px) {
-  .card-container {
-    grid-template-columns: repeat(3, 200px);
+  @media (min-width: 768px) {
+    --columnsCount: 3;
   }
-}
 
-@media (max-width: 768px) {
-  .card__container {
-    grid-template-columns: repeat(2, 200px);
-  }
-}
-
-@media (max-width: 488px) {
-  .card__container {
-    grid-template-columns: repeat(1, 200px);
+  @media (min-width: 1024px) {
+    --columnsCount: 4;
   }
 }
 
 .card {
-  border: 1px solid #f3f3f3;
-  width: 200px;
+  border: $cardBorderProperties;
+  width: $cardWidth;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 32px 16px 16px;
   border-radius: 5px;
 
-  transition: all 0.3s ease;
+  transition: transform ease;
+  transition-duration: $transitionDuration;
 
   &__img {
     width: 160px;
@@ -103,7 +94,7 @@
     width: 166px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 14.55px;
+    line-height: 14px;
     text-align: center;
     color: $whiteColor;
     background-color: $blueAccent;
@@ -111,7 +102,8 @@
     text-transform: uppercase;
     border-radius: 5px;
     border: 1px solid $blueAccent;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color ease;
+    transition-duration: $transitionDuration;
 
     &:hover {
       color: $blueAccent;
