@@ -1,0 +1,78 @@
+.product-card {
+  width: $card-width;
+  border: 1px solid $gray;
+  border-radius: $card-border-radius;
+  padding: 32px 16px 16px;
+  transition: transform 0.3s ease-in-out;
+
+  &__img-wrapp {
+    width: $card-img-width;
+    height: $card-img-height;
+    margin: 0 auto 40px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__headline {
+    margin-bottom: $card-text-indent;
+  }
+
+  &__title {
+    @include font($font-size-main, 500, $main-color, $line-height-large);
+    margin-bottom: 4px;
+    transition: color 0.3s linear;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    .product-card__title {
+      color: $hover-text-color;
+    }
+  }
+
+  &__subtitle {
+    @include font($font-size-ordinary, 400, $sec-color, $line-height-main);
+  }
+
+  &__review-wrapp {
+    @include flex-justify-align(space-between, flex-end);
+    margin-bottom: $card-text-indent-lg;
+  }
+
+  &__review-content {
+    @include font($font-size-ordinary, 400, $main-color, $line-height-main);
+  }
+
+  &__price-wrapp {
+    @include flex-justify-align(space-between, center);
+    margin-bottom: $card-text-indent;
+  }
+
+  &__price-txt {
+    @include font($font-size-main, 400, $sec-color, $line-height-large);
+  }
+
+  &__price {
+    @include font($font-size-accent, 700, $main-color, $line-height-large);
+  }
+
+  &__cta {
+    @include flex-justify-align(center, center);
+    @include font($font-size-large, 700, $white);
+    background-color: $accent-color;
+    border-radius: $card-border-radius;
+    border: 1px solid $accent-color;
+    height: 40px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $white;
+      color: $accent-color;
+    }
+  }
+}
