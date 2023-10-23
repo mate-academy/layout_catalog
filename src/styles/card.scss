@@ -1,0 +1,139 @@
+@import "src/styles/stars";
+@import "src/styles/utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, $card-column-width);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $card-background-color;
+  width: $card-column-width;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid $card-border-color;
+  padding: 0 16px;
+
+  transition: transform 300ms;
+
+  &__monoblock-img {
+    background-size: cover;
+    width: 160px;
+    height: 134px;
+    margin: 32px 0 40px;
+  }
+
+  &__title-product {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 0 0 4px;
+    color: $card-main-accent;
+  }
+
+  &__product-code {
+    color: $card-secondary;
+    font-size: 10px;
+    line-height: 14px;
+    align-self: self-start;
+    margin: 0;
+  }
+
+  &__stars-and-reviews {
+    display: flex;
+    justify-content: space-between;
+    width: 166px;
+    white-space: nowrap;
+    align-items: center;
+    margin: 16px 0 0;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-style: normal;
+    line-height: 14px;
+    width: 53px;
+    margin: 0;
+    text-align: right;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 16px;
+    width: 166px;
+
+    &-price {
+      font-size: 12px;
+      line-height: 18px;
+      color: $card-secondary;
+      margin: 0;
+    }
+
+    &-value {
+      color: $card-main-accent;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      margin: 0;
+    }
+  }
+
+  &__buy-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $card-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $card-blue-accent;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+
+    &:hover {
+      color: $card-blue-accent;
+      background: $card-white;
+      border: 1px solid $card-blue-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale(120%);
+  }
+  &__title-product:hover {
+    color: $card-title-product-hover-color;
+  }
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $card-column-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $card-column-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $card-column-width);
+  }
+}
