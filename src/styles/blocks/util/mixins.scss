@@ -1,0 +1,33 @@
+@mixin phone {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin font($size, $weight, $color, $line-height: false) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+
+  @if ($line-height) {
+    line-height: $line-height;
+  }
+}
+
+@mixin flex-justify-align($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
