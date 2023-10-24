@@ -1,3 +1,31 @@
-body {
+@import "./header/style.scss";
+@import "./card/index.scss";
+
+html {
   margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+
+  &__catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 46px 48px;
+    padding: 50px 40px;
+  }
+
+  @media (max-width: 768px) {
+    &__catalog {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @media (max-width: 488px) {
+    &__catalog {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
 }
