@@ -1,0 +1,121 @@
+@use "../utils/placeholders" as *;
+@use "../utils/variables" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  @extend %general-transition;
+
+  .logo {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+    background-image: url("../images/imac.jpeg");
+  }
+
+  &__title {
+    color: $primary-dark;
+    font-size: $card-title-font-size;
+    font-weight: 500;
+    line-height: 18px;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    @extend %general-transition;
+
+    &--style {
+      margin-top: 40px;
+    }
+  }
+  &__code {
+    color: $primary-gray;
+    font-size: $card-side-font-size;
+    line-height: $card-title-line-height;
+
+    &--style {
+      margin: 4px 0 0;
+    }
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &--style {
+      margin-top: $card-basic-margin;
+    }
+
+    .review {
+      color: $primary-dark;
+      text-align: right;
+      font-size: $card-side-font-size;
+      line-height: $card-title-line-height;
+      margin: 0;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+
+    &--style {
+      margin-top: 24px;
+    }
+
+    &-text {
+      color: $primary-gray;
+      font-size: $card-title-font-size;
+      line-height: $card-side-line-height;
+    }
+
+    &-cost {
+      color: $primary-dark;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: $card-side-line-height;
+    }
+  }
+  &__link {
+    width: 100%;
+    height: 40px;
+
+    &--style {
+      margin-top: $card-basic-margin;
+    }
+
+    .link {
+      width: 100%;
+      height: 100%;
+      @extend %center;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: $primary-light;
+      border-radius: 5px;
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16px;
+      text-transform: uppercase;
+      background-color: $primary-blue;
+      @extend %general-transition;
+
+      &:hover {
+        color: $primary-blue;
+        border: 1px solid $primary-blue;
+        background-color: $primary-light;
+      }
+    }
+  }
+
+  &:hover {
+    width: calc($card-width * 120 / 100);
+    .card__title {
+      color: #34568b;
+    }
+  }
+}

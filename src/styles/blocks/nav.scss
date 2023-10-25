@@ -1,0 +1,52 @@
+@use "../utils/variables" as *;
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.nav__item {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 7px 0;
+
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $primary-dark;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 23px 0;
+
+    &:hover {
+      color: $primary-blue;
+    }
+
+    &.is-active {
+      color: $primary-blue;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: flex;
+        border-bottom: 4px solid $primary-blue;
+        border-radius: 2px;
+        padding-bottom: 19px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  [data-qa="nav-hover"]:hover {
+    color: $primary-blue;
+  }
+}
