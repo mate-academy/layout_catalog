@@ -5,13 +5,28 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
   }
 
   &__item {
     margin-left: 20px;
+    transition: transform $transform_time;
 
     &--first {
       margin-left: 0;
+    }
+
+    @media (max-width: 700px) {
+      margin: 0;
+
+      &:hover {
+        background-color: rgb(215, 235, 255);
+        border-radius: 3px;
+        transform: scale(1.02);
+      }
     }
   }
 
@@ -27,13 +42,13 @@
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
-    transition: color 0.3s;
+    transition: color $transform_time;
 
-    &:hover {
-      color: $blue_accent;
+    @media (max-width: 700px) {
+      height: 30px;
     }
 
-    &--first {
+    &:hover {
       color: $blue_accent;
     }
 
@@ -49,4 +64,8 @@
       border-radius: 8px;
     }
   }
+}
+
+.is-active {
+  color: $blue_accent;
 }
