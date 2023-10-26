@@ -1,0 +1,22 @@
+@import "../partials/_variables.scss";
+
+.stars {
+  display: flex;
+  width: 96px;
+  &__star {
+    background: url(../images/star.svg) no-repeat center;
+    display: inline-block;
+    margin-right: 4px;
+    width: $stars__star-size;
+    height: $stars__star-size;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n + #{$i}) {
+    background: url(../images/star-active.svg) no-repeat center;
+  }
+}
