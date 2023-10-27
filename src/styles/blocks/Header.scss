@@ -1,0 +1,66 @@
+@import "./utils/_variables.scss";
+
+.nav {
+  height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0 auto;
+  padding: 0 50px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $quaternary_color;
+  font-weight: 500;
+  font-family: $text;
+
+  &__logo {
+    margin-left: 0;
+    display: block;
+    height: 40px;
+  }
+
+  &__list-part {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  &__list-part:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    line-height: $header-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $primary_color;
+    transition: color 0.3s;
+  }
+  &__link:hover {
+    cursor: pointer;
+    color: $quinary_color;
+  }
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+}
+
+.is-active:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  background: $quinary_color;
+}
+
+.is-active {
+  color: $quinary_color;
+}

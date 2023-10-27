@@ -1,3 +1,46 @@
+@import "./blocks/Header.scss";
+@import "./utils/_variables.scss";
+@import "./blocks/stars.scss";
+@import "./blocks/Card.scss";
+
 body {
   margin: 0;
+}
+
+.cards {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  align-items: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+* {
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, $card-size);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards {
+    grid-template-columns: repeat(3, $card-size);
+  }
+}
+
+@media (min-width: 488px) and (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, $card-size);
+  }
+}
+
+@media (max-width: 488px) {
+  .cards {
+    grid-template-columns: repeat(1, $card-size);
+  }
 }
