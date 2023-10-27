@@ -1,35 +1,10 @@
-* {
-  font-family: $font-family;
-}
-
-body {
-  margin: 0;
-}
-
-.content__reviews-text {
-  color: $color_darkblue;
-  font-size: 10px;
-  font-weight: 400;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 16px;
-}
 
 .card {
   display: flex;
   padding: 32px 19px 19px;
   flex-direction: column;
-  width: 198px;
-  height: 406px;
+  width: 200px;
+  height: 408px;
   flex-shrink: 0;
   border: 1px solid rgba(243,243,243,1);
   border-radius: 5px;
@@ -41,39 +16,50 @@ body {
   }
 
   &__price-amount {
+    display: flex;
     font-size: 16px;
     font-weight: 700;
     color: $color_darkblue;
+    margin-left: auto;
+    width: 50px;
+    height: 18px;
+    text-align: right;
     line-height: 18px;
   }
 
   &__price-value {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     line-height: 18px;
     font-size: 12px;
-    color: $color_secondary;
   }
 
   &__apple {
     font-size: 12px;
     line-height: 18px;
-    padding-left: 16px 16px;
+    margin: 40px auto 0;
     width: 166px;
     height: 36px;
     font-weight: 500;
     color: $color_darkblue;
+    &:hover {
+      color: $color_hover;
+      transition: color 0.3s;
+    }
   }
-
   &__code {
     font-weight: 400px;
     font-size: 10px;
     line-height: 14px;
     margin-top: 4px;
+    margin-bottom: 16px;
     color: $color_secondary;
   }
 
   &__reviews-text {
-    width: 53px;
-    height: 16px;
+    // width: 53px;
+    // height: 16px;
     line-height: 14px;
     color: $color_darkblue;
     font-size: 10px;
@@ -84,38 +70,10 @@ body {
   &__price {
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
     justify-content: space-between;
-    margin-top: 24px;
+    width: 100%;
+    margin: 0 auto 16px;
   }
-}
-
-.card__button {
-  width: 100%;
-  display: flex;
-  height: 40px;
-  margin-top: 16px;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  border-radius: 5px;
-  border: none;
-  background-color: $light-blue;
-  color: $color_white;
-  font-weight: 700;
-  font-size: 14px;
-  transition: color 300ms, background-color 300ms, border 300ms, height 300ms,;
-  &:hover {
-    border: 1px solid $light-blue;
-    background-color: $color_white;
-    color: $light-blue;
-    height: 40px;
-  }
-}
-
-.card__apple:hover {
-  color: $color_secondary;
-  transition: color 300ms;
 }
 
 .card__img {
@@ -123,27 +81,26 @@ body {
   height: 134px;
 }
 
-.stars {
+.card__button {
+  width: 166px;
+  box-sizing: border-box;
   display: flex;
-  align-self: space-between;
-  width: 96px;
-  text-align: left;
-  height: 16px;
+  height: 40px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $light-blue;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: $light-blue;
+  color: $color_white;
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 14px;
 
-  &_star {
-    display: flex;
-    background: url("../images/star.svg") no-repeat;
-    background-position: center;
-    vertical-align: bottom;
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
+  &:hover {
+    background-color: $color_white;
+    color: $light-blue;
+    height: 40px;
   }
-}
-
-.stars--1 .stars_star:nth-child(-n+1),
-.stars--2 .stars_star:nth-child(-n+2),
-.stars--3 .stars_star:nth-child(-n+3),
-.stars--4 .stars_star:nth-child(-n+4) {
-  background-image: url(../images/star-active.svg);
 }
