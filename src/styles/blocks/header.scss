@@ -1,71 +1,71 @@
-.nav {
+.header {
   display: flex;
-  font-family: "Roboto", sans-serif;
-  line-height: $line-height-m-xl;
-  font-size: $font-size-m;
-  font-weight: $font-weight-medium;
-  justify-content: space-between;
-  align-items: center;
+  background: $theme-bgd;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   padding: 0 50px;
-  height: 60px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  
+  justify-content: space-between;
+
   &__logo {
     height: 40px;
     width: 40px;
+    flex-shrink: 0;
+    margin: 10px 0;
   }
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  
+.nav {
   &__list {
     display: flex;
+    text-transform: uppercase;
     list-style: none;
-    height: 60px;
-    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: 22.8px 0;
+    color: $theme-content-main;
+
+    &:hover {
+      color: $theme-accent;
+    }
   }
 
   &__item {
-    margin-left: 20px;
-    height: 60px;
+    font-weight: 500;
+    font-size: 12px;
     text-transform: uppercase;
-  
-  }
-
-  &__item:first-child {
-    margin-left: 0;
-    height: 60px;
-  }
-  
-  &__link {
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    text-decoration: none;
-    color: $theme-content-main;
-    line-height: 60px;
-  }
-
-  .is-active {
-    color: $theme-accent;
-    position: relative;
-   
-    &:after {
-      position: absolute;
-      display: block;
-      content: "";
-      left: 0;
-      top: 56px;
-      height: 4px;
-      width: 100%;
-      background-color: $theme-accent;
-      border-radius: 8px;
+    gap: 20px;
+    &:not(:first-child) {
+      margin-left: 20px;
     }
   }
-  
-  &__link:hover {
-    color: $theme-accent;
+}
+
+.is-active.nav__link {
+  position: relative;
+  color: $theme-accent;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+    bottom: 0;
+    left: 0;
+    background-color: $theme-accent;
   }
 }

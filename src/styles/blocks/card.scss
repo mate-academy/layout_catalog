@@ -1,54 +1,51 @@
 .card {
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  flex-shrink: 1;
   width: 200px;
-  margin-bottom: 46px;
-  margin-right: 48px;
   height: auto;
-  font-family: "Roboto", sans-serif;
-  border: 1px solid #f3f3ff;
+  border: 1px solid $theme-border;
   border-radius: 5px;
   padding: 32px 16px 16px;
+  cursor: pointer;
+  transition: all 300ms;
 
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
-  
-  &:nth-last-child(-n + 4) {
-    margin-bottom: 0;
-  }
-  
   &__image {
-    width: 160px;
-    height: 134px;
-    margin-left: 3px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    &-pic {
+      width: 160px;
+      height: 134px;
+    }
   }
-  
+
   &__content {
     font-weight: $font-weight-medium;
-    width: 166px;
-    height: 36px;
     font-size: $font-size-m;
     line-height: $line-height-m-xl;
     color: $theme-content-main;
-    margin-top: 40px;
+    margin: 0 0 4px;
   }
 
-  &__ID {
-    font-style: normal;
+  &:hover {
+    transform: scale(1.2);
+
+    .card__content {
+      color: #34568b;
+    }
+  }
+
+  &__id {
     font-weight: $font-weight-regular;
     font-size: $font-size-s;
     line-height: $line-height-s;
     color: $theme-content-secondary;
-    margin-top: 4px;
+    margin-bottom: 16px;
   }
-  
+
   &__rating {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-bottom: 24px;
   }
 
   &__stars {
@@ -56,51 +53,30 @@
     flex-direction: row;
   }
 
-  &__star {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-    background-image: url(../images/star.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  &__star:last-child {
-    margin-right: 0;
-  }
-
-  &__stars--5 &__star,
-  &__stars--4 &__star:nth-child(-n+4),
-  &__stars--3 &__star:nth-child(-n+3),
-  &__stars--2 &__star:nth-child(-n+2),
-  &__stars--1 &__star:nth-child(-n+1) {
-    background-image: url(../images/star-active.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
   &__feedbacks {
     display: flex;
     align-items: flex-end;
-    font-weight: $font-weight-regular;
-    font-size: $font-size-s;
-    line-height: $line-height-s;
-    color: $theme-content-main;
+    &-text {
+      font-weight: $font-weight-regular;
+      font-size: $font-size-s;
+      line-height: $line-height-s;
+      color: $theme-content-main;
+    }
   }
-  
+
   &__price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
-    
+    margin-bottom: 16px;
+
     &-text {
       font-weight: $font-weight-regular;
       font-size: $font-size-m;
       line-height: $line-height-m-xl;
       color: $theme-content-secondary;
     }
-    
+
     &-cost {
       font-weight: $font-weight-bold;
       font-size: $font-size-xl;
@@ -108,7 +84,7 @@
       color: $theme-content-main;
     }
   }
-  
+
   &__buy {
     text-decoration: none;
     display: flex;
@@ -123,9 +99,8 @@
     width: 166px;
     height: 40px;
     color: $theme-bgd;
-    margin-top: 16px;
   }
-  
+
   &__buy:hover {
     box-sizing: border-box;
     background-color: $theme-bgd;
