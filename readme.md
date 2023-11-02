@@ -27,9 +27,9 @@ Make all the changes smooth on hover (during 300ms):
 
 ## Checklist
 
-❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description: 
+- [DEMO LINK](https://RVDotsenko.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://RVDotsenko.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
