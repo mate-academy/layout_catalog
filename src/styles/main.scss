@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  background-color: #fff;
 }
 
 html {
@@ -8,26 +7,22 @@ html {
 }
 
 body {
-  background-color: #e5e5e5;
   margin: 0;
-  width: 1024px;
-  height: 60px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.head {
-  bottom: 50px;
 }
 
 .header {
-  min-width: 1024px;
   display: flex;
   padding: 0 50px;
   align-items: center;
   justify-content: space-between;
   background: #fff;
   width: 100%;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo__img {
@@ -49,7 +44,7 @@ body {
 }
 
 .nav__link {
-  color: #000;
+  color: #060b35;
   position: relative;
   display: block;
   padding: 23px 0;
@@ -60,7 +55,7 @@ body {
   text-decoration: none;
 }
 
-.nav__link[data-qa="nav-hover"] {
+.nav__link[data-qa="nav-hover"]:hover {
   color: #00acdc;
 }
 
@@ -87,30 +82,22 @@ h3 {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 48px 46px;
-  max-width: 1200px;
+  grid-template-columns: repeat(1, 200px);
+  row-gap: 46px;
+  column-gap: 48px;
   margin: 0 auto;
-  padding: 48px;
-  top: 50px;
-  bottom: 72px;
-}
+  padding: 50px 40px;
 
-@media (max-width: 1023px) {
-  .card-container {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 468px) {
+    grid-template-columns: repeat(2, 200px);
   }
-}
 
-@media (max-width: 767px) {
-  .card-container {
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
   }
-}
 
-@media (max-width: 487px) {
-  .card-container {
-    grid-template-columns: 1fr;
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
   }
 }
 
