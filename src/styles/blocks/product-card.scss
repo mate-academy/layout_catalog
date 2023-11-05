@@ -1,16 +1,10 @@
 .product-card {
   box-sizing: border-box;
-  width: 200px;
+  width: $product-card-width;
   padding: 32px 16px 16px;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
-
-  &__img {
-    display: block;
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 40px;
-  }
+  transition: $transition-params;
 
   &__title {
     display: block;
@@ -20,6 +14,20 @@
     line-height: 150%;
     color: $main-color;
     text-decoration: none;
+  }
+
+  &:hover {
+    scale: 1.2;
+    .product-card__title {
+      color: #34568b;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
   }
 
   &__code {
@@ -55,17 +63,17 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
-    color: #fff;
-    background: #00acdc;
+    color: $white-color;
+    background: $blue-color;
     border: 1px solid transparent;
     border-radius: 5px;
     cursor: pointer;
-    transition: all linear 0.3s;
+    transition: $transition-params;
 
     &:hover {
-      color: #00acdc;
-      border: 1px solid #00acdc;
-      background: #fff;
+      border: 1px solid $blue-color;
+      background: $white-color;
+      color: $blue-color;
     }
   }
 }
