@@ -1,0 +1,128 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+@import "../utils/reset";
+
+.cards {
+  font-family: inherit;
+  &__block {
+    display: flex;
+    flex-direction: column;
+    border: $border-width solid #f3f3f3;
+    border-radius: 5px;
+    background: $color-white;
+    width: $card-width;
+    margin-bottom: 46px;
+  }
+
+  &__block:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__block:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+    
+  &__img {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    padding: 32px 19px 40px;
+  }
+
+  &__name-item {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    padding: 0 16px 4px;
+    color: $color-first;
+  }
+
+  &__name-article {
+    color: $color-second;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    text-align: left;
+    padding: 0 16px 16px;
+  }
+
+  &__card-rate {
+    display: flex;
+    padding-left: 16px;
+    padding-right: 16px;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  .stars-star {
+    background-image: url(/images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    @include icon ($size);
+    padding-left: 4px;
+  }
+
+  &__stars :not(:last-child) {
+    background-image: url(/images/star-active.svg);
+  }
+
+  &__rate-reviews {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $color-first;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    padding: 24px 16px 16px;
+    justify-content: space-between;
+  }
+
+  &__price :first-of-type {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-second;
+  }
+
+  &__price :last-child {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $color-first;
+  }
+
+  &__button {
+    padding: 0 16px 16px;
+  }
+
+  &__button-buy {
+    width: 166px;
+    height: 40px;
+    background-color: $color-blue;
+    border-radius: 5px;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  &__block:hover &__button-buy {
+    background-color: $color-white;
+    border: 1px solid $color-blue;
+    color: $color-blue;
+    box-sizing: border-box;
+  }
+}
