@@ -1,3 +1,35 @@
-body {
-  margin: 0;
+@import "./blocks/variables";
+@import "./blocks/header";
+@import "./blocks/card";
+@import "./blocks/stars";
+@import "./blocks/logo";
+@import "./blocks/reset";
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, $size-template);
+  column-gap: 48px;
+  row-gap: 46px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $size-template);
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $size-template);
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $size-template);
+  }
 }
