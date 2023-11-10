@@ -1,0 +1,112 @@
+@import "stars";
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  gap: 46px 48px;
+  margin: 0 auto;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  @media (max-width: 1023px) and (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (max-width: 767px) and (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (max-width: 487px) {
+    grid-template-columns: 1;
+  }
+
+  &__cart {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px 16px;
+    border-radius: 5px;
+    border: 1px solid #{$borderWhite};
+    background-color: #{$white};
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &_image {
+      width: 160px;
+      height: 134px;
+      margin: auto;
+    }
+
+    &_name {
+      margin-top: 40px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      color: #{$deepBlue};
+    }
+
+    &_code {
+      font-size: 10px;
+      color: #{$grey};
+      margin-top: 4px;
+    }
+
+    &_review {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+
+      &-number {
+        font-size: 10px;
+        color: #{$deepBlue};
+      }
+    }
+
+    &_price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+
+      &-label {
+        font-size: 12px;
+        color: #{$grey};
+      }
+
+      &-val {
+        font-size: 16px;
+        font-weight: 700;
+        color: #{$deepBlue};
+      }
+    }
+
+    &-buy {
+      background-color: #{$blue};
+      border-radius: 5px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #{$white};
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 16px;
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: #{$white};
+        color: #{$blue};
+        border-radius: 5px;
+        border: 1px solid #{$blue};
+      }
+    }
+  }
+}
