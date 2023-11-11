@@ -1,5 +1,5 @@
 .container {
-  margin: 50px auto 72px;
+  padding: 50px 40px;
   display: grid;
   grid-template-columns: repeat(1, $card-width);
   row-gap: 46px;
@@ -13,6 +13,18 @@
   }
 }
 
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
 .card {
   box-sizing: border-box;
   width: $card-width;
@@ -20,6 +32,7 @@
   border: 1px solid $card-border;
   background: $white;
   padding: 32px 16px 16px;
+  transition: all 0.3s ease;
 
   &__content {
     display: flex;
@@ -34,12 +47,13 @@
     margin-bottom: 40px;
   }
 
-  &__description {
+  &__title {
     color: $main-accent;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
     margin-bottom: 4px;
+    transition: all 0.3s ease;
   }
 
   &__product-code {
@@ -81,6 +95,13 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: $title-hover-color;
+    }
   }
 }
 
