@@ -1,27 +1,21 @@
 .container {
-  --column-count: 1;
+  --column-count: 4;
   padding: 50px 40px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  row-gap: 48px;
-  column-gap: 46px;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  row-gap: 46px;
+  column-gap: 48px;
   justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    --column-count: 4;
-  }
-}
-
-@media (min-width: 768px) {
+@media (max-width: 1023px) {
   .container {
     --column-count: 3;
   }
 }
 
-@media (min-width: 488px) {
+@media (max-width: 767px) {
   .container {
     --column-count: 2;
   }
