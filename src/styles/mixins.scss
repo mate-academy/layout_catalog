@@ -1,0 +1,48 @@
+/* #region screen settings */
+
+@mixin onLargeDisplay {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onMiddleDisplay {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin onSmallDisplay {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onMiniDisplay {
+  @media (max-width: 488px) {
+    @content;
+  }
+}
+
+/* #endregion */
+
+/* #region columnsCard */
+
+@mixin quantityColumns {
+  @include onLargeDisplay() {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  @include onMiddleDisplay {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @include onSmallDisplay {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @include onMiniDisplay {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+/* #endregion */
