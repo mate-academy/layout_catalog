@@ -4,17 +4,14 @@
   @include quantityColumns;
   grid-column-gap: 48px;
   grid-row-gap: 46px;
-  box-sizing: border-box;
   justify-content: center;
   padding-top: 50px;
 }
 
 .card {
   width: $base-with;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   align-self: center;
   align-items: center;
   border-radius: 5px;
@@ -23,11 +20,11 @@
   color: $main-color;
   font-family: "Roboto", sans-serif;
   padding: 32px 16px 16px;
-  transition: all 300ms ease-in-out;
+  @include transition;
 
   &:hover {
     transform: scale(1.2);
-    transition: all 300ms ease-in-out;
+    @include transition;
   }
 
   &__img {
@@ -46,17 +43,18 @@
     font-weight: 500;
     line-height: 18px;
     color: $main-color;
+    @include transition;
   }
 
   &:hover &__name {
-    color: #34568b;
+    color: rgb(51, 84, 138);
+    @include transition;
   }
 
   &__id {
     width: $main-with;
     margin-top: 4px;
     font-size: 10px;
-    font-weight: 400;
     line-height: 14px;
     color: $second-color;
   }
@@ -70,11 +68,7 @@
     height: 16px;
 
     &-statistic {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
       font-size: 10px;
-      font-weight: 400;
       line-height: 14px;
       color: $main-color;
     }
@@ -90,27 +84,61 @@
 
     &-price {
       font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
       line-height: 18px;
       color: $second-color;
     }
 
     &-value {
-      text-align: right;
+      margin-right: 0;
       font-size: 16px;
       font-weight: 700;
       line-height: 18px;
       color: $main-color;
     }
   }
+  // &__rate {
+  //   width: $main-with;
+  //   margin-top: 16px;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   height: 16px;
+
+  //   &-statistic {
+  //     font-size: 10px;
+  //     line-height: 14px;
+  //     color: $main-color;
+  //   }
+  // }
+
+  // &__prices {
+  //   width: $main-with;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   margin-top: 24px;
+
+  //   &-price {
+  //     font-size: 12px;
+  //     line-height: 18px;
+  //     color: $second-color;
+  //   }
+
+  //   &-value {
+  //     margin-right: 0;
+  //     font-size: 16px;
+  //     font-weight: 700;
+  //     line-height: 18px;
+  //     color: $main-color;
+  //   }
+  // }
 
   &__button {
     width: $main-with;
     height: 40px;
     line-height: 38px;
     display: block;
-    box-sizing: border-box;
     text-align: center;
     margin-top: 16px;
     border-radius: 5px;
@@ -121,19 +149,12 @@
     background-color: $blue-color;
     text-decoration: none;
     text-transform: uppercase;
-
-    transition: 300ms ease;
-    -moz-transition: 300ms ease;
-    -webkit-transition: 300ms ease;
+    @include transition;
 
     &:hover {
-      box-sizing: border-box;
       background-color: inherit;
       color: $blue-color;
-
-      transition: 300ms ease;
-      -moz-transition: 300ms ease;
-      -webkit-transition: 300ms ease;
+      @include transition;
     }
   }
 }
