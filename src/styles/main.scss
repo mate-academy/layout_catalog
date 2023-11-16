@@ -1,3 +1,13 @@
+@import "./block/varribles";
+@import "./block/nav";
+@import "./block/header";
+@import "./block/cards";
+@import "./block/stars";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,16 +19,26 @@ body {
 
 .catalog {
   display: grid;
+
+  &__card {
+    transition: transform $transition-duration;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .catalog__content {
-  padding: 50px 40px 72px;
+  padding: 50px 0 72px;
   display: grid;
   row-gap: 48px;
   column-gap: 46px;
+  justify-content: center;
 }
 
-@media (min-width: 300px) {
+@media (min-width: 320px) {
   .catalog__content {
     grid-template-columns: repeat(1, 200px);
     grid-template-rows: repeat(2, 408px);
@@ -51,13 +71,6 @@ button {
   padding: 0;
 }
 
-h2,
-p {
+h2, p, ul, li {
   margin: 0;
 }
-
-@import "./block/varribles";
-@import "./block/nav";
-@import "./block/header";
-@import "./block/cards";
-@import "./block/stars";
