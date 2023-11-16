@@ -5,7 +5,12 @@
   align-items: center;
   padding: 32px 0 16px;
   border-radius: 5px;
-  border: 1px solid $cardBorderColor;
+  border: 1px solid $card-border-color;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__product-image {
     width: 160px;
@@ -26,6 +31,11 @@
     font-weight: 500;
     line-height: 150%;
     margin: 0 0 4px;
+    transition: color 0.3s;
+  }
+
+  &:hover &__product-name {
+    color: $title-text-hover;
   }
 
   &__product-code {
@@ -88,11 +98,13 @@
     border: 1px solid $highlight-text-color;
     border-radius: 5px;
     color: $buy-text-color;
-    background: $blueAccent;
+    background: $highlight-text-color;
     text-decoration: none;
 
+    transition: color 0.3s, background-color 0.3s;
+
     &:hover {
-      background: $buy-text-color;
+      background-color: $buy-text-color;
       color: $highlight-text-color;
     }
   }
