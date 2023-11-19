@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 1024px;
+  padding: 50px 40px;
+  row-gap: 46px;
+  column-gap: 48px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  background-color: #fff;
+
+  transition: transform 300ms;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__name {
+    display: block;
+    margin: 0 0 4px;
+    width: 166px;
+
+    color: $main-accent;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    transition: color 300ms;
+  }
+
+  &__code {
+    width: 166px;
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 16px;
+    color: $secondary;
+  }
+
+  &__price {
+    display: flex;
+    width: 166px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary;
+    }
+
+    &-count {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $main-accent;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 166px;
+    height: 40px;
+    border: 1px solid $blue-accent;
+    border-radius: 5px;
+    background-color: $blue-accent;
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 300ms, color 300ms;
+
+    &:hover {
+      background-color: $white;
+      color: $blue-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale(120%);
+  }
+
+  &:hover &__name {
+    color: #34568b;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 488px) and (max-width: 767px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 487px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+}
