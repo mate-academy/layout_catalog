@@ -1,0 +1,82 @@
+.catalog {
+  --colomn--count: 1;
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--colomn--count), 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    --colomn--count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --colomn--count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    --colomn--count: 4;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.Moyo_img {
+  display: block;
+  margin-left: 50px;
+}
+
+.nav {
+  margin-right: 50px;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: $main-color;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: left;
+    line-height: 60px;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    color: $button-color;
+  }
+}
+
+.is-active::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  content: "";
+  background-color: $button-color;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px;
+}
+
+a.is-active {
+  color: $button-color;
+  margin-left: 0;
+}
