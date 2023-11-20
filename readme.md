@@ -34,6 +34,7 @@ Make all the changes smooth on hover (during 300ms):
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
+
 - [x] All component follow BEM and use SCSS
 - [x] repaeted sizes and special colors are put to variables
 - [x] Grid is used for the columns
