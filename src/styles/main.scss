@@ -1,3 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+@import "header.scss";
+@import "card.scss";
+@import "variables.scss";
+@import "stars.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(200px, 1fr));
+  padding: 50px 40px;
+  row-gap: 46px;
+  column-gap: 48px;
+  justify-content: center;
+
+}
+
+@media (min-width: 488px) {
+  .container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --column-count: auto-fill;
+  }
+
+  .card {
+    padding: 33px 17px 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    --column-count: auto-fill;
+    padding: 50px 128px;
+  }
 }
