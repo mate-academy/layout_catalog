@@ -1,4 +1,5 @@
 # Frontend practice with catalog page
+
 Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
 
 - use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
