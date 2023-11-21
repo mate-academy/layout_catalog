@@ -1,0 +1,17 @@
+.main-content {
+  display: grid;
+  grid-template-columns: $main-card-width;
+  gap: 48px 46px;
+  padding: 50px 40px 72px;
+  justify-content: center;
+}
+
+$width-size: 488px 2, 768px 3, 1024px 4;
+
+@each $width, $count in $width-size {
+  @media (min-width: #{$width}) {
+    .main-content {
+      grid-template-columns: repeat(#{$count}, $main-card-width);
+    }
+  }
+}
