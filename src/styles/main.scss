@@ -1,3 +1,43 @@
-body {
+@import "./variables.scss";
+@import "./header.scss";
+@import "./nav.scss";
+@import "./card.scss";
+@import "./stars.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+body,
+h2,
+p {
   margin: 0;
+  display: block;
+}
+
+.main {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, $card-size);
+  column-gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-size);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-size);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-size);
+  }
 }
