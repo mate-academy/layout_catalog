@@ -1,0 +1,60 @@
+@include header-max-width(1024px);
+@include header-max-width(1200px);
+
+.header {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.05);
+  overflow-x: hidden;
+  
+  &__logo {
+    &-img {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+  &__nav {
+    &-item {
+      position: relative;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+
+    &-list {
+      display: flex;
+    }
+
+    &-link {
+      display: inline-flex;
+      padding: 23px 0;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: #060b35;
+      text-decoration: none;
+      font-weight: 500;
+
+      &.is-active,
+      &:hover {
+        color: $headerColor;
+      }
+
+      &.is-active::after {
+        content: "";
+        bottom: 0;
+        position: absolute;
+        display: block;
+        border-radius: 8px;
+        background-color: $headerColor;
+        height: 4px;
+        width: 100%;
+      }
+    }
+  }
+}
