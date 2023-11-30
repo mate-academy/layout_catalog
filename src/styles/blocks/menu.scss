@@ -1,0 +1,64 @@
+.menu {
+  box-sizing: border-box;
+  margin-right: 50px;
+
+  &__list {
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    & .menu__item:last-child .menu__link {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    display: inline-block;
+
+    text-decoration: none;
+    color: $main-accent;
+    line-height: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    margin-right: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include hover(color, $blue-accent);
+
+    &--is-active {
+      color: $blue-accent;
+      height: 60px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        background-color: $blue-accent;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 2px;
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
