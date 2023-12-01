@@ -1,0 +1,61 @@
+@import "../utilit/veriables";
+@import "../utilit/mixin";
+
+.header {
+  @include flex-space-center;
+
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 $header-box-shadow;
+
+  &__logo {
+  height: 40px;
+  width: 40px;
+  display: block;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__link {
+      @include flex-center;
+
+      padding: 23px 0;
+      line-height: normal;
+      text-decoration: none;
+      color:$header-nav-text;
+      text-transform: uppercase;
+      font-weight: $font-weight;
+      font-size: $font-size;
+    }
+
+    &__link:hover,
+    &__link.is-active {
+      color: $header-nav-text-ative;
+      position: relative;
+    }
+
+    .is-active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 4px;
+      left: 0;
+      right: 0;
+      background-color: $header-nav-text-ative;
+      border-radius: 8px;
+    }
+  }
+}
