@@ -1,0 +1,16 @@
+.stars__star {
+  background: url(../images/star.svg) no-repeat center;
+  width: 16px;
+  height: 16px;
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @each $stars in $active-stars {
+    .stars--#{$stars} &:nth-child(-n + #{$stars}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
+
+
