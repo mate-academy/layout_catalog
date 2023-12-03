@@ -5,10 +5,12 @@
   &:not(:last-child) {
     margin-right: 4px;
   }
-}
 
-@each $stars in $active-stars {
-  .stars--#{$stars} .stars__star:nth-child(-n + #{$stars}) {
-    background-image: url(../images/star-active.svg);
+  @each $stars in $active-stars {
+    .stars--#{$stars} &:nth-child(-n + #{$stars}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
+
+
