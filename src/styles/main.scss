@@ -1,3 +1,42 @@
-body {
+@import 'variables';
+@import 'blocks/card';
+@import 'blocks/stars';
+@import 'blocks/header';
+
+* {
+  box-sizing: border-box;
+}
+
+body,h2, p {
   margin: 0;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 46px 48px;
+
+  max-width: 1200px;
+
+  padding: 50px 40px;
+
+  perspective: 100px;
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
 }
