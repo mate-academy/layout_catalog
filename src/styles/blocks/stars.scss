@@ -1,16 +1,22 @@
 .stars {
   display: flex;
-  max-height: fit-content;
 
   &__star {
     width: 16px;
     height: 16px;
-    background: url(../images/star.svg) 50% no-repeat ;
-  }
-}
 
-@for $index from 1 through 5 {
-  .stars--#{$index} :nth-child(-n + #{$index}) {
-    background: url(../images/star-active.svg) 50% no-repeat;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  @for $count from 1 through 5 {
+    &--#{$count} &__star:nth-child(-n+#{$count}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
