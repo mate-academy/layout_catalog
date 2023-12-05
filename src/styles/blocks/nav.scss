@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+
+    text-transform: uppercase;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $color-main;
+
+    @include transition-hover(color, $color-blue);
+
+    &.is-active {
+      color: $color-blue;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        height: 4px;
+
+        border-radius: 4px;
+        background-color: $color-blue;
+      }
+    }
+  }
+}
+

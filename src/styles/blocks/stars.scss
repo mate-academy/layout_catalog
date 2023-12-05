@@ -1,6 +1,7 @@
 .stars {
   display: flex;
   align-items: center;
+  gap: 4px;
 
   &__star {
     width: 16px;
@@ -9,16 +10,13 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    &:not(:first-child) {
-      margin-left: 4px;
-    }
+
   }
 
   @for $star-quantity from 1 through 5 {
-    &--#{$star-quantity} {
-      .stars__star:nth-child(-n + #{$star-quantity}) {
+    &--#{$star-quantity} &__star:nth-child(-n + #{$star-quantity}) {
         background-image: url(../images/star-active.svg);
-      }
+
     }
   }
 }
