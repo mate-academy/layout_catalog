@@ -1,6 +1,8 @@
 .cards-container{
+  --columns: 1;
+
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(var(--columns), 1fr);
   gap: 46px 48px;
 
 
@@ -8,21 +10,15 @@
   margin: 0 auto 72px;
   padding: 50px 40px;
 
-
   @media (min-width: 488px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 1fr);
+    --columns: 2;
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    padding-inline: 40px;
+    --columns: 3;
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
+    --columns: 4;
   }
 }
