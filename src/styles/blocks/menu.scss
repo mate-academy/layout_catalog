@@ -1,0 +1,56 @@
+.menu {
+  margin-right: 50px;
+
+  &__link {
+    display: inline-block;
+    margin-right: 20px;
+
+    text-decoration: none;
+    color: $main-accent;
+    line-height: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include hover(color, $blue-accent);
+
+    &--is-active {
+      position: relative;
+
+      height: 60px;
+
+      color: $blue-accent;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        height: 4px;
+        width: 100%;
+
+        background-color: $blue-accent;
+        border-radius: 2px;
+      }
+
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    & .menu__item:last-child .menu__link {
+      margin-right: 0;
+    }
+  }
+}
