@@ -1,0 +1,137 @@
+.catalog {
+  padding: 50px 40px;
+  gap: 46px 48px;
+  display: grid;
+  grid-template-columns: repeat(1, $card-size);
+  grid-auto-flow: row;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-size);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-size);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-size);
+  }
+
+}
+
+.card {
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+
+  &__image {
+    margin: 0 auto;
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 4px;
+    color: $text-main-color;
+  }
+
+  &__code{
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $text-other-color;
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    display: flex;
+    width: 166px;
+    height: 16px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__count-review {
+    display: flex;
+    line-height: 14px;
+    font-weight: 400;
+    height: 16px;
+    font-size: 10px;
+    color: $text-main-color;
+    align-items: center;
+  }
+
+  &__price-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-other-color;
+  }
+
+  &__price-count {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    justify-content: flex-end;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: $text-main-color;
+  }
+
+  &:hover {
+    transition-delay: 300ms;
+    transform: scale(1.2);
+  }
+
+  &:hover &__name {
+    transition-delay: 300ms;
+    color: #34568b;
+  }
+
+  &__buy-button {
+    transition-duration: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 164px;
+    height: 38px;
+    border: 1px solid $button-bg-color;
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+    color: $button-color;
+    background-color: $button-bg-color;
+
+    &:hover {
+      transition-delay: 300ms;
+      background-color: $button-color;
+      color: $button-bg-color;
+    }
+
+    &:hover &__buy-button {
+      transition-delay: 300ms;
+      color: #00acdc;
+      background: #fff;
+    }
+  }
+}
+
