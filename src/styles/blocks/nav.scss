@@ -1,0 +1,41 @@
+.nav {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    color: $main-color;
+    transition: color $card-transition-duration;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+
+.is-active {
+    color: $blue-color;
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+
+      background-color: $blue-color;
+      border-radius: 8px;
+    }
+  }
+}
