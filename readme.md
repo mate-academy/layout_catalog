@@ -14,7 +14,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
   - 3 starting from `768px`
   - 2 starting at `488px`
   - 1 for the smaller screens
-- cards have fixed width and gap between them (`48px` vertically and `46px` horyzontally)
+- cards have fixed width and gap between them (`46px` vertically and `48px` horyzontally)
 - cards container have fixed paddings (`50px` vertically and `40px` horyzontally)
 
 Make all the changes smooth on hover (during 300ms):
