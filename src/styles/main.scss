@@ -1,3 +1,249 @@
+$color-main: #060B35;
+$color-second: #616070;
+$color-blue: #00ACDC;
+$star: 4;
+
+.stars {
+  display: flex;
+
+  &__star {
+    background: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+}
+
+@for $star from 1 through 4 {
+  .stars--#{$star} {
+    :nth-child(-n + #{$star}) {
+      background-image: url('../images/star-active.svg');
+    }
+  }
+}
+
+
+
 body {
+  font-family: Roboto, "Times New Roman", sans-serif;
   margin: 0;
+  padding: 0;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  padding: 0 50px;
+
+  box-shadow: 0 2px 4px 0 #0000000d;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.nav {
+
+  &__list {
+    display: flex;
+
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #060B35;
+    text-decoration: none;
+    height: 60px;
+
+    transition: 0.3s;
+  }
+
+  &__link:hover {
+    color: $color-blue;
+  }
+
+}
+
+.is-active {
+  color: $color-blue;
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  display: block;
+
+  position: absolute;
+  bottom: 0;
+
+  border-radius: 8px;
+  background-color: $color-blue;
+  width: 100%;
+  height: 4px;
+}
+
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  max-width: 940px;
+  margin: 0 auto;
+  gap: 48px 46px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.card {
+  box-sizing: border-box;
+  padding: 32px 16.5px 17px;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  font-size: 10px;
+  &__image {
+    display: block;
+
+    width: 160px;
+    min-height: 134px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    margin-bottom: 4px;
+
+    color: $color-main;
+
+    transition: color 0.3s;
+  }
+
+  &__title:hover {
+    color: #34568b;
+  }
+
+  &__subtitle {
+    line-height: 14px;
+
+    margin-bottom: 16px;
+
+    color: $color-second;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+  }
+
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+
+    color: $color-main;
+  }
+
+  &__info-price {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+
+    color: $color-second;
+  }
+
+  &__price-number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+
+    color: $color-main;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 40px;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    color: #fff;
+    background-color: $color-blue;
+
+    transition: 0.3s;
+    &:hover {
+      color: $color-blue;
+      background-color: #fff;
+    }
+  }
 }
