@@ -9,13 +9,15 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 - Nav links color is not `black` any more
 - add class `is-active` to the first link (`Apple`) in navigation
+- use `<main>` for cards container 
 - Use grid for cards with different number of columns:
   - 4 starting from `1024px`
   - 3 starting from `768px`
   - 2 starting at `488px`
   - 1 for the smaller screens
-- cards have fixed width and gap between them (`48px` vertically and `46px` horyzontally)
+- cards have fixed width and gap between them (`46px` vertically and `48px` horyzontally)
 - cards container have fixed paddings (`50px` vertically and `40px` horyzontally)
+- By default nav links should be `#060b35`
 
 Make all the changes smooth on hover (during 300ms):
 - increase the card by 20 percent (neighboring cards **should not be** affected)
