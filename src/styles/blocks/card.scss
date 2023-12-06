@@ -1,0 +1,99 @@
+.card {
+  width: 200px;
+  padding: 32px 16px 16px;
+  border-radius: 5px;
+  border: 1px solid $catalog-border-card;
+  perspective: 100px;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__product-name {
+    color: $catalog-text-one;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: 18px;
+
+    margin-bottom: 4px;
+  }
+
+  &:hover &__product-name {
+    color: $catalog-card-name-hover;
+  }
+
+  &__product-info {
+    color: $catalog-text-two;
+    font-size: $font-size - 2px;
+    font-weight: $font-weight - 100;
+    line-height: 14px;
+
+    margin-bottom: 16px;
+  }
+
+  &__stars {
+    @include flex-space-center;
+
+    margin-bottom: 24px;
+
+    .card__reviews {
+      color: $catalog-text-one;
+      font-size: $font-size - 2px;
+      font-weight: $font-weight - 100;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    margin-bottom: 16px;
+
+    .card__price-text {
+      color: $catalog-text-two;
+      font-size: $font-size;
+      font-weight: $font-weight - 100;
+      line-height: 18px;
+    }
+
+    .card__price-dollar{
+      text-align: right;
+      color: $catalog-text-one;
+      font-size: $font-size + 4px;
+      font-weight: $font-weight + 200;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    @include flex-center;
+
+    justify-content: center;
+    padding: 11px;
+    width: 100%;
+    color: $catalog-button-two;
+    background: $catalog-button-one;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+
+    font-size: $font-size + 2px;
+    font-weight: $font-weight + 200;
+    line-height: 16px;
+    border: 1px solid $catalog-button-one;
+  }
+
+  &__button:hover {
+    color: $catalog-button-one;
+    background-color: $catalog-button-two;
+  }
+}
