@@ -1,0 +1,126 @@
+.products {
+  --count-products: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--count-products), $size-card);
+  gap: 46px 48px;
+  justify-content: center;
+
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    --count-products: 2;
+  }
+
+  @media (min-width: 768px) {
+    --count-products: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --count-products: 4;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: $size-card;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+
+  padding: 32px 16px 16px;
+
+  transition: transform $transition-duration;
+
+  &__photo {
+    display: block;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__name {
+    color: $main-accent;
+    font-size: 12px;
+    line-height: 18px;
+
+    padding-top: 40px;
+  }
+
+  &__code {
+    color: $secondary-color;
+    line-height: 14px;
+
+    padding-top: 4px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 16px;
+  }
+
+  &__reviews {
+    color: $main-accent;
+    text-align: right;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+
+    .price__title {
+      color: $secondary-color;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .price__num {
+      color: $main-accent;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 40px;
+
+    border-radius: 5px;
+    background-color: $blue-accent;
+
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    margin-top: 16px;
+  }
+
+  &__button:hover {
+    transition-duration: $transition-duration;
+    background-color: $white;
+    color: $blue-accent;
+    border: 1px solid $blue-accent;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__name {
+      color: $color-card-hover;
+    }
+  }
+}
