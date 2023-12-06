@@ -1,26 +1,17 @@
 .card {
-  align-items: center;
+  @include transition-hover(transform, scale(1.2));
+
   width: $card-width;
   height: 408px;
   padding: 32px 16px 16px;
-  box-sizing: border-box;
 
   background-color: $color-background;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $color-card-border;
   border-radius: 5px;
   cursor: pointer;
 
-  @include transition-hover(transform, scale(1.2));
-
-  transform: color, $transition-time;
-
-  &:hover &__title {
-      color: #34568b;
-  }
-
   &__image {
     display: block;
-    box-sizing: border-box;
     margin: 0 auto;
     width: 160px;
     height: 134px;
@@ -32,13 +23,15 @@
 
     font-weight: 500;
     font-size: 12px;
+  }
 
+  &:hover &__title {
+    color: $color-title-hover;
   }
 
   &__code {
     margin-top: 4px;
 
-    text-align: left;
     line-height: 14px;
     color: $color-secondary;
   }
@@ -72,7 +65,6 @@
 
   &__link {
     display: block;
-    box-sizing: border-box;
     margin-top: 16px;
     padding: 11px 69px;
 
