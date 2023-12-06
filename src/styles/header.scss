@@ -1,0 +1,68 @@
+@import '../styles/card-block/variables';
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  margin: 0;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  height: 60px;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .nav__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .nav__link {
+    position: relative;
+    text-decoration: none;
+    color: $main-color;
+    line-height: 60px;
+    height: 60px;
+    display: block;
+
+    &:hover {
+      color: $active-color;
+    }
+
+    &.is-active {
+      color: $active-color;
+
+      &::after {
+        color: $active-color;
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #00ACDC;
+        border-radius: 2px;
+      }
+    }
+  }
+}
