@@ -1,0 +1,26 @@
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s ease-in;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin hoverButton($property-1, $property-2, $toValue-1, $toValue-2) {
+  transition: #{$property-1} 0.3s ease-in, #{$property-2} 0.3s ease-in;
+
+  &:hover {
+    #{$property-1}: $toValue-1;
+    #{$property-2}: $toValue-2;
+  }
+}
+
+@mixin hoverTitle($property, $toValue) {
+  & &__title {
+    transition: #{$property} 0.3s ease-in;
+  }
+
+  &:hover &__title {
+    #{$property}: $toValue;
+  }
+}
