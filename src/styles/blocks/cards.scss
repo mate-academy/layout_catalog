@@ -1,0 +1,127 @@
+@import "stars";
+@import "../variables";
+
+h2, p {
+  margin: 0
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: repeat(1, $width-cards);
+  gap: 46px 48px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $width-cards);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $width-cards);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $width-cards);
+  }
+
+  padding: 50px 40px 72px;
+
+  &__image {
+    padding: 0 3px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__wrap {
+    padding: 32px 16px 16px;
+    border-radius: 5px;
+    border: 1px solid $color-border-cards;
+    max-width: 200px;
+
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+  }
+
+  &__model {
+    padding-top: 36px;
+    color: $main-accent;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  &__code {
+    color: $second-color;
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+
+    .reviews {
+      color: $main-accent;
+      text-align: right;
+      font-size: 10px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    .price-text {
+      color: $second-color;
+      font-size: 12px;
+      line-height: 18px;
+      margin: 0;
+    }
+
+    .price-number {
+      text-align: right;
+      color: $main-accent;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid $button-text-color;
+    background: $button-text-color;
+    color: $white;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    margin-top: 16px;
+    transition: 0.3s linear;
+    &:hover {
+      background-color: $white;
+      border: 1px solid $button-text-color;
+      color: $button-text-color;
+    }
+  }
+}
+
+.product-card__wrap:hover .product-card__model {
+  color: $hover-color-card-title;
+}
+
