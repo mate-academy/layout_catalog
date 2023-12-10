@@ -1,8 +1,7 @@
 .stars {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
-  padding: 0 16px;
+  padding: 0 16px 24px;
 
   &__container {
     display: flex;
@@ -14,8 +13,12 @@
     margin-right: 4px;
     height: 16px;
     width: 16px;
+  }
+}
 
-    &:nth-child(-n+4) {
+@for $i from 0 through 5 {
+  .stars__container--active-#{$i} {
+    .stars__star:nth-child(-n + #{$i}) {
       background: $active-star;
     }
   }
