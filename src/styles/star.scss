@@ -1,0 +1,25 @@
+.stars {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 24px;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__star {
+    background: $star;
+    margin-right: 4px;
+    height: 16px;
+    width: 16px;
+  }
+}
+
+@for $i from 0 through 5 {
+  .stars__container--active-#{$i} {
+    .stars__star:nth-child(-n + #{$i}) {
+      background: $active-star;
+    }
+  }
+}
