@@ -14,7 +14,7 @@ html {
 
 body {
   margin: 0;
-  //width: 100%;
+  padding: 0;
 }
  
 .header {
@@ -25,11 +25,10 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 50px;//!!!!!!!!!!!!!!!!!!!!!!
 
   &__logo {
     display: inline-block;
-    margin-right: 243px;
+    margin: 10px 0;
     @include square($size);
   }
 }
@@ -91,26 +90,26 @@ body {
   border-radius: 8px;
 }
 
-.main {
-  margin: 0 auto;
-  box-sizing: border-box;
-  max-width: 944px;
-  //min-width: $width;
-}
-
 .main__container {
-  display: flex;
-  flex-wrap: wrap;
-  //gap: 48px;
-  //min-width: $width;
-  //max-width: 944px;
-  margin-bottom: 25px;
-  justify-content: space-between;
-  //margin-top: 50px;
-  //gap: 48px;
-  //padding-top: $padding-vertical;
-  //padding: 50px 41px 73px;
-  //padding: 50px 46px auto 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  //grid-template-rows: 408px 408px;
+  //row-gap: 48px;
+  //column-gap: 46px;
+  //grid-auto-flow: column;
+  //place-content: center;
+  //justify-content: center;
+  //justify-items: stretch;
+  //align-items: stretch;
+  //align-content: center;
+  padding: 50px 40px;
+  @include desktop;
+  @include tablet;
+  @include laptop;
+  @include mobile;
 }
 
 .card {
@@ -126,16 +125,15 @@ body {
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
+  //height: 408px;
+  flex-shrink: 0;
   color: #060b35;
-  margin-bottom: 48px;
-  //margin: $card-margin-right;
-  //height: 300px; //????????????
 
   &__img {
     width: 160px;
     height: 134px;
     display: block;
-    margin: 16px 3px 40px; //top or btm
+    margin: 16px 3px 40px; 
   }
 
   &__title {
@@ -145,6 +143,7 @@ body {
     color: #{$color-dark};
     margin-bottom: 4px;
     margin-top: 0;
+    width: 166px;
   }
   
   &__type {
@@ -154,6 +153,7 @@ body {
     font-style: normal;
     margin-bottom: 16px;
     margin-top: 0;
+    width: 100%; //?????????/
   }
 
   &__review-container {
@@ -171,6 +171,7 @@ body {
   &__price {
     display: flex;
     justify-content: space-between;
+    width: 100%; //???????
     // align-items: center;
   }
   
@@ -218,9 +219,9 @@ body {
   }
 }
 
-.card--cards-position:not(:nth-child(4n)) {
+/*.card--cards-position:not(:nth-child(4n)) {
   margin-right: $card-margin-right;
-}
+}*/
  
 .stars {
   display: flex;
