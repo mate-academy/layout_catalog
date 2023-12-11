@@ -1,0 +1,47 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    font-size: 12px;
+
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #{$color-text-secondary};
+    display: flex;
+    align-items: center;
+    height: #{$height-header};
+    position: relative;
+    transition: all 0.3s;
+
+    &.is-active {
+      color: #{$accent-color};
+
+      &::after {
+        content: "";
+        background-color: #{$accent-color};
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 8px;
+      }
+    }
+
+    &:hover {
+      color: #{$accent-color};
+    }
+  }
+}
