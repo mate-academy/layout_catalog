@@ -1,18 +1,15 @@
-
 * {
   box-sizing: border-box;
 }
 
 :root {
   --hover-color: #00acdc;
-  --background-color: #fff;
-  --header-background-color: #fff;
-  --text-color: #060B35;
   --main-accent: #060B35;
   --secondary: #616070;
-  --blue-accent: #00ACDC;
   --white: #FFF;
+  --border: #F3F3F3;
   --card-text-hover-color: #34568b;
+  --shadow-color: rgba(0, 0, 0, 0.05);
 
   font-family: Roboto, sans-serif;
 }
@@ -24,18 +21,18 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--white);
   width: 100%;
 }
 
 .header {
   display: flex;
   flex-direction: row;
-  background-color: var(--header-background-color);
+  background-color: var(--white);
   height: 60px;
   justify-content: space-between;
   padding: 0 50px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px 0 var(--shadow-color);
 
 
   &__logo {
@@ -61,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--text-color);
+    color: var(--main-accent);
     font-family: inherit;
     font-size: 12px;
     font-weight: 500;
@@ -109,11 +106,12 @@ body {
   margin: 0;
   width: 200px;
   padding: 32px 16px 16px;
+  transition: transform 300ms;
 
   flex-shrink: 0;
   border-radius: 5px;
-  border: 1px solid #F3F3F3;
-  background-color: #fff;
+  border: 1px solid var(--border);
+  background-color: var(--white);
 
   &__image {
     display: block;
@@ -211,8 +209,7 @@ body {
   }
 
   &:hover {
-    width: 100%;
-    height: 100%;
+    transform: scale(1.2);
 
   .card__text {
     transition-duration: 300ms;
@@ -226,15 +223,6 @@ body {
   display: flex;
   flex-direction: row;
 
-  &__star_active {
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 16px;
-    height: 16px;
-    background-image: url(../images/star-active.svg);
-    margin-right: 4px;
-  }
-
   &__star {
     background-repeat: no-repeat;
     background-position: center;
@@ -242,6 +230,10 @@ body {
     height: 16px;
     background-image: url(../images/star.svg);
     margin-right: 4px;
+  }
+
+  &__star:nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
   }
 }
 
