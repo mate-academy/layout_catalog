@@ -1,0 +1,144 @@
+.shop {
+
+  &__cards {
+    display: grid;
+    justify-content: center;
+    padding: 50px 40px;
+    gap: 46px 48px;
+
+    @media(min-width: $phone-width) {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @media(min-width: $tablet-width) {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @media(min-width: $pc-width) {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+
+  &__card {
+
+    &:nth-child(n+4) {
+      margin-right: 0;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  cursor: pointer;
+
+  border-radius: 5px;
+  border: 1px solid #F3F3F3;
+  background: #FFF;
+  transition: all 0.3s;
+
+  &__image {
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__name {
+    color: $main-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    transition: 0.3s;
+  }
+
+  &__code {
+    color: $secondary-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  &__reiting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+
+    &--1 :nth-child(-n+1),
+    &--2 :nth-child(-n+2),
+    &--3 :nth-child(-n+3),
+    &--4 :nth-child(-n+4),
+    &--5 :nth-child(-n+5) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__star {
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__reviews {
+    color: $main-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    color: $secondary-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &__price-range {
+    color: $main-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.13;
+  }
+
+  &__button {
+    transition: all 0.5s ease-in;
+    border: 1px solid $main-accent-blue;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__button {
+      background-color: #fff;
+      color: $main-accent-blue;
+    }
+
+    .card__name {
+      color: $main-accent-blue;
+    }
+  }
+}
