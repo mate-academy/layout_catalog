@@ -1,0 +1,60 @@
+.header {
+  @include content-centering;
+
+  padding: 0 50px;
+  background: $bg-color;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-left: 20px;
+    position: relative;
+  }
+
+  &__item:first-child {
+    margin: 0;
+  }
+
+  &__link {
+    font-size: 12px;
+    display: inline-block;
+    padding: 23px 0;
+    color: $text-main-color;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    @include smooth-changes;
+
+    color: $accent-color;
+  }
+
+  &__link.is-active {
+    color: $accent-color;
+  }
+
+  &__link.is-active::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: $accent-color;
+    border-radius: 8px;
+  }
+}
