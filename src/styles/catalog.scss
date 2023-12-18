@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, $size-card-item);
+  justify-content: center;
+  align-items: center;
+  gap: 46px 48px;
+  padding: 50px 48px;
+
+  &__title {
+    color: $cost-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    margin: 40px 16px 0;
+  }
+
+  &__img {
+    object-fit: fill;
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 0;
+  }
+
+  &__product-code {
+    color:  $price-color;
+    font-size: 10px;
+    line-height: 14px;
+    display: block;
+
+    margin: 0;
+    padding-left: 16px;
+    padding-top: 4px;
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $size-card-item);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $size-card-item);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $size-card-item);
+  }
+
+  &__item {
+    width: $size-card-item;
+    display: block;
+    margin: 0 auto;
+    background-color: $background-color-main;
+    border-radius: 5px;
+    border: 1px solid #F3F3F3;
+    padding-bottom: 16px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+
+      & .card__title {
+        color: #34568b;
+      }
+    }
+  }
+
+  &__rang {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 0;
+  }
+
+  &__reviews {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    color: $cost-color;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__expense {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 16px 16px;
+
+    &-price {
+      color: $price-color;
+      margin: 0;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-cost {
+      color:  $cost-color;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    color: $background-color-main;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    margin: 0 auto;
+    display: block;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $button-color;
+    border: 1px solid $button-color;
+    transition: transform 0.3s;
+
+    &:hover {
+      color: $button-color;
+      background-color: $background-color-main;
+    }
+  }
+}
+
