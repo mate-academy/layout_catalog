@@ -1,0 +1,126 @@
+.main {
+  padding: 50px 40px;
+
+  @include big-screen {
+    padding-inline: 128px;
+  }
+
+  display: grid;
+  gap: 46px 48px;
+
+  grid-template-columns: repeat(1, 1fr);
+
+  @include on-phone {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include on-laptop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product-card {
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  background: $bg-color;
+
+  @include smooth-changes;
+  @include content-inline-padding;
+
+  padding-block: 32px 16px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__product-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__product-code {
+    color: $text-secondary-color;
+    font-size: $text-secondary-size;
+    font-weight: $secondary-text-weight;
+    margin-bottom: 16px;
+  }
+
+  &__reviews {
+    @include content-centering;
+
+    margin-bottom: 24px;
+  }
+
+  &__review-qty {
+    color: $text-main-color;
+    font-size: $text-secondary-size;
+    font-weight: $secondary-text-weight;
+  }
+
+  &__price-info {
+    @include content-centering;
+
+    margin-bottom: 16px;
+  }
+
+  &__price-title {
+    color: $text-secondary-color;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: $secondary-text-weight;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+
+    padding: 12px 70px;
+    border-radius: 5px;
+    background: $accent-color;
+
+    @include smooth-changes;
+
+    &:hover {
+      border: 1px solid $accent-color;
+      color: $accent-color;
+      background: $bg-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__product-name {
+    color: #34568b;
+  }
+}
