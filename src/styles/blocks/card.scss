@@ -1,0 +1,107 @@
+.card {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  display: grid;
+
+  @include columns-count(1);
+
+  gap: 46px 48px;
+  justify-content: center;
+  justify-items: center;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: $background-color-white;
+    border: 1px solid $border-color;
+    border-radius: 5%;
+
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+
+    }
+  }
+
+  &__photo {
+    padding: 32px 19px 0;
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    display: flex;
+  }
+
+  &__info {
+    @include padding-inline;
+
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+
+    &:hover {
+      color: $hover-title-color;
+    }
+  }
+
+  &__code {
+    color: $secondary-text-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin: 0 0 16px;
+  }
+
+  &__stars {
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__value {
+    color: $secondary-text-color;
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__sum {
+    color: $main-text-color;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 488px) {
+  .card {
+  @include columns-count(2);
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+  @include columns-count(3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+  @include columns-count(4);
+  }
+}
