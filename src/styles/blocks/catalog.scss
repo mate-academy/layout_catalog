@@ -1,0 +1,30 @@
+.catalog {
+  --columns-count: 1;
+
+  padding: 50px 40px;
+
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(var(--columns-count), $product-width);
+  grid-template-rows: repeat(2, $product-height);
+  gap: 46px 48px;
+  place-content: space-between center;
+
+  @media (min-width: 488px) {
+    & {
+      --columns-count: 2;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      --columns-count: 3;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      --columns-count: 4;
+    }
+  }
+}
