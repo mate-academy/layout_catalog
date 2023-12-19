@@ -1,18 +1,24 @@
 .product {
   width: $product-width;
   height: $product-height;
-  box-sizing: border-box;
 
   @include content-inline-padding;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   background: $white-color;
   border: 1px solid $gray-color;
   border-radius: 5px;
 
   @include smooth-hover;
+
+  &:hover {
+    transform: scale($product-hover-transform);
+    cursor: pointer;
+    z-index: 1;
+  }
 
   &__image-container {
     display: flex;
@@ -27,14 +33,6 @@
     background-position: center;
   }
 
-  &__description-container {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    margin-bottom: 16px;
-  }
-
   &__title {
     text-decoration: none;
     color: inherit;
@@ -42,6 +40,8 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
+
+    margin-bottom: 4px;
   }
 
   &__title:hover {
@@ -51,8 +51,9 @@
   &__code {
     color: $secondary-color;
     font-size: 10px;
-    font-weight: 400;
     line-height: 14px;
+    font-weight: 400;
+    margin-bottom: 16px;
   }
 
   &__reviews-container {
@@ -63,11 +64,10 @@
   }
 
   &__reviews-count {
-    display: block;
     color: $main-color;
     font-size: 10px;
-    font-weight: 400;
     line-height: 14px;
+    font-weight: 400;
   }
 
   &__price-container {
@@ -80,8 +80,8 @@
   &__price-label {
     color: $secondary-color;
     font-size: 12px;
-    font-weight: 400;
     line-height: 18px;
+    font-weight: 400;
   }
 
   &__price {
@@ -89,14 +89,15 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
+
+    align-self: flex-start;
   }
 
   &__buy {
-    box-sizing: border-box;
+    box-sizing: inherit;
     margin-bottom: 16px;
     background: $blue-color;
-    width: 166px;
-    height: 40px;
+    padding: 12px 70px;
     border-radius: 5px;
     color: $white-color;
   }
@@ -105,6 +106,7 @@
     background: $white-color;
     color: $blue-color;
     border: 1px solid $blue-color;
+    padding: 12px 69px;
 
     @include smooth-hover;
   }
@@ -123,12 +125,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  &:hover {
-    transform: scale($product-hover-transform);
-    cursor: pointer;
-    z-index: 1;
   }
 
   &:hover &__title {
