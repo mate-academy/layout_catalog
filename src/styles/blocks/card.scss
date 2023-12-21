@@ -1,29 +1,16 @@
 .card {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 50px 40px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: $background-color-white;
+  border: 1px solid $border-color;
+  border-radius: 5%;
+  margin-bottom: 16px;
 
-  @include columns-count(1);
+  transition: transform 300ms;
 
-  gap: 46px 48px;
-  justify-content: center;
-  justify-items: center;
-
-  &__card {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    background-color: $background-color-white;
-    border: 1px solid $border-color;
-    border-radius: 5%;
-
-    transition: transform 300ms;
-
-    &:hover {
-      transform: scale(1.2);
-
-    }
+  &:hover {
+    transform: scale(1.2);
   }
 
   &__photo {
@@ -44,7 +31,7 @@
   }
 
   &__title {
-    margin: 0 0 4px;
+    margin-bottom: 4px;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
@@ -59,11 +46,22 @@
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
-    margin: 0 0 16px;
+    margin-bottom: 16px;
   }
 
   &__stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 24px;
+  }
+
+  &__reviews {
+    color: $main-text-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin: 0;
   }
 
   &__price {
@@ -86,22 +84,8 @@
     line-height: 18px;
     margin: 0;
   }
-}
 
-@media (min-width: 488px) {
-  .card {
-  @include columns-count(2);
-  }
-}
-
-@media (min-width: 768px) {
-  .card {
-  @include columns-count(3);
-  }
-}
-
-@media (min-width: 1024px) {
-  .card {
-  @include columns-count(4);
+  &__button{
+    @include padding-inline;
   }
 }
