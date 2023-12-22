@@ -1,0 +1,126 @@
+.block-card {
+  width: $card-width;
+  border: $border-color 1px solid;
+  border-radius: 5px;
+  flex-shrink: 0;
+  flex-direction: column;
+  transition: transform, all 300ms;
+  padding: 32px 16px 16px;
+  display: flex;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image-product {
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__name-product {
+    width: 166px;
+    padding: 40px 0 4px;
+  }
+
+  &__name-text {
+    font-size: 12px;
+    font-weight: $weight-nav;
+    line-height: 18px;
+    margin: 0;
+    color: $nav-color;
+    transition: color 300ms;
+  }
+
+  &__name-text:hover {
+    color: $card-color-hover;
+  }
+
+  &__product-text {
+    font-size: 10px;
+    color: $text-color;
+    margin: 0;
+    font-weight: $weight-text;
+    line-height: 14px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 24px;
+    align-items: center;
+  }
+
+  &__reviews-stars {
+    display: flex;
+  }
+
+  &__reviews-star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    display: flex;
+
+    @for $star from 1 through 5 {
+      &:nth-child(-n + 4) {
+        background-image: url(/images/star-active.svg);
+      }
+    }
+  }
+
+  &__reviews-text {
+    margin: 0;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: $weight-text;
+    line-height: 14px;
+    color: $nav-color;
+  }
+
+  &__price-product {
+    padding: 0 0 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-text {
+    margin: 0;
+    font-size: 12px;
+    color: $text-color;
+    font-weight: $weight-text;
+    line-height: 18px;
+  }
+
+  &__price-number {
+    margin: 0;
+    font-size: 16px;
+    font-weight: $weight-price;
+    line-height: 18px;
+  }
+
+  &__button {
+    color:$button-color;
+    background: $blue-color-hover;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: $weight-price;
+    line-height: 16px;
+    text-decoration: none;
+    display: flex;
+  }
+
+  &__button:hover {
+    background-color:$button-color;
+    color: $blue-color-hover;
+    border: 1px solid $blue-color-hover;
+    border-radius: 5px;
+  }
+}
