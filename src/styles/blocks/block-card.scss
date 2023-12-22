@@ -5,24 +5,22 @@
   flex-shrink: 0;
   flex-direction: column;
   transition: transform, all 300ms;
+  padding: 32px 16px 16px;
+  display: flex;
 
   &:hover {
     transform: scale(1.2);
   }
 
-  &__image {
-    padding: 32px 19px 36px;
-  }
-
   &__image-product {
     width: 160px;
     height: 134px;
+    align-self: center;
   }
 
   &__name-product {
     width: 166px;
-    height: 36px;
-    margin: 0 16px 4px;
+    padding: 40px 0 4px;
   }
 
   &__name-text {
@@ -38,10 +36,6 @@
     color: $card-color-hover;
   }
 
-  &__product-code {
-    margin: 0 84px 16px 16px;
-  }
-
   &__product-text {
     font-size: 10px;
     color: $text-color;
@@ -53,7 +47,7 @@
   &__reviews {
     display: flex;
     justify-content: space-between;
-    margin: 0 16px 24px;
+    padding: 16px 0 24px;
     align-items: center;
   }
 
@@ -69,10 +63,12 @@
     height: 16px;
     margin-right: 4px;
     display: flex;
-  }
 
-  &__reviews-star:nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
+    @for $star from 1 through 5 {
+      &:nth-child(-n + 4) {
+        background-image: url(/images/star-active.svg);
+      }
+    }
   }
 
   &__reviews-text {
@@ -81,10 +77,11 @@
     font-style: normal;
     font-weight: $weight-text;
     line-height: 14px;
+    color: $nav-color;
   }
 
   &__price-product {
-    margin: 0 16px 16px;
+    padding: 0 0 16px;
     display: flex;
     justify-content: space-between;
   }
@@ -105,21 +102,14 @@
   }
 
   &__button {
-    color: #fff;
+    color:$button-color;
     background: $blue-color-hover;
     border-radius: 5px;
-    width: 166px;
+    width: 100%;
     height: 40px;
-    margin: 0 16px 16px;
-  }
-
-  &__button-card {
-    color: inherit;
     text-transform: uppercase;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     font-size: 14px;
     font-weight: $weight-price;
     line-height: 16px;
@@ -127,8 +117,8 @@
     display: flex;
   }
 
-  &__button-card:hover {
-    background-color: #fff;
+  &__button:hover {
+    background-color:$button-color;
     color: $blue-color-hover;
     border: 1px solid $blue-color-hover;
     border-radius: 5px;
