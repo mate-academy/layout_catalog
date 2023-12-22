@@ -1,3 +1,51 @@
-body {
+@import "./utilities/variables";
+@import "./blocks/header";
+@import "./blocks/nav";
+@import "./utilities/is-active";
+@import "./blocks/stars";
+@import "./blocks/card";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+body, h2, p {
   margin: 0;
+}
+
+.main {
+  padding: 50px 40px;
+  display: grid;
+  gap: 46px 48px;
+  margin: 0 auto;
+
+  @media(min-width: 488px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    & {
+      max-width: 528px;
+    }
+  }
+
+  @media(min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+
+    & {
+      max-width: 776px;
+    }
+  }
+
+  @media(min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+
+    & {
+      max-width: 1024px;
+    }
+  }
+
+
 }
