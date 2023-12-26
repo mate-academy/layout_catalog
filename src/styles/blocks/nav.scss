@@ -1,0 +1,43 @@
+nav {
+  ul {
+    padding: 0;
+  }
+}
+
+.nav__list {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link {
+  display: block;
+  padding: 23px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: $main-text-color;
+
+  @include hover(color, $blue-color);
+}
+
+.nav__link.is-active {
+  color: $blue-color;
+  position: relative;
+}
+
+.nav__link.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background-color: $blue-color;
+  border-radius: 8px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
