@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  &__logo-link {
+    text-align: center;
+  }
+
+  &__logo {
+    margin: 10px 0;
+    display: block;
+  }
+}
+
+
+.menu {
+  &__items {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item{
+    display: block;
+    margin-right: 20px;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: $main-text-color;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1.25;
+    padding: 22.5px 0;
+    transition: all .3s;
+
+    &:hover {
+      color: $button-color;
+    }
+  }
+}
+
+.is-active {
+  color: $button-color;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+    background-color: $button-color;
+  }
+}
