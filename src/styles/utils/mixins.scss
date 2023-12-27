@@ -1,7 +1,12 @@
 @mixin media-query($breakpoint, $columns) {
   @media (min-width: $breakpoint) {
     .cards {
-      grid-template-columns: repeat($columns, 200px);
+      grid-template-columns: repeat($columns, $card-width);
     }
   }
 }
+
+@include media-query(0, 1);
+@include media-query(488px, 2);
+@include media-query(768px, 3);
+@include media-query(1024px, 4);
