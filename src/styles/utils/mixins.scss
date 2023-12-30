@@ -1,0 +1,11 @@
+@mixin media-query($breakpoints) {
+  @each $breakpoint, $columns in $breakpoints {
+    @media (min-width: $breakpoint) {
+      .cards {
+        grid-template-columns: repeat($columns, $card-width);
+      }
+    }
+  }
+}
+
+@include media-query($breakpoints);
