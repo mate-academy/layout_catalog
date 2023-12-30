@@ -1,0 +1,40 @@
+@mixin centered-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@mixin large-screen {
+  @media (min-width: $largeScreen) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media (min-width: $mediumScreen) {
+    @content;
+  }
+}
+
+@mixin small-screen {
+  @media (min-width: $smallScreen) {
+    @content;
+  }
+}
+
+@mixin grid-columns {
+  grid-template-columns: repeat(1, $cardWidth);
+
+  @include small-screen {
+    grid-template-columns: repeat(2, $cardWidth);
+  }
+
+  @include medium-screen {
+    grid-template-columns: repeat(3, $cardWidth);
+  }
+
+  @include large-screen {
+    grid-template-columns: repeat(4, $cardWidth);
+  }
+}
