@@ -1,0 +1,31 @@
+.page {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h2, p {
+  margin: 0;
+  font-family: $ff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  align-items: center;
+
+
+  @each $width, $value in $grid-var {
+    @media (min-width: $width) {
+      grid-template-columns: repeat($value, $base-width);
+    }
+  }
+}
+
+
+
+
+
