@@ -1,3 +1,104 @@
+@import 'variables';
+@import 'card';
+@import 'stars';
+
+
+/* #region header */
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+
 }
+
+.header {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__image {
+    display: flex;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    color: #060B35;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 60px;
+    font-size: 12px;
+    transition: $trans-speed;
+
+    &--is-active{
+      display: flex;
+      position: relative;
+      color: $need-color;
+
+      &::after {
+        content: "";
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        height: 4px;
+        background-color: $need-color;
+    }
+  }
+
+    &:hover {
+      color: $need-color;
+    }
+  }
+
+  &__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+}
+
+/* #endregion */
+
+/* #region main */
+
+.main {
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+
+  padding: 50px 48px;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    /* I tried to change 1,2,3,4 to a created variable only changing in @media blocks but no result for some reason */
+
+    /* please do the comment why it happened to fail and how I can do that better. Thank you */
+
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+/* #endregion */
