@@ -1,3 +1,25 @@
-body {
-  margin: 0;
+@import './header';
+@import './stars';
+@import './card';
+
+
+$screens: (
+  488 2,
+  768 3,
+  1024 4
+);
+
+.content {
+  display: grid;
+  gap: 48px 46px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@each $screen, $column in $screens {
+  @media (min-width: #{$screen}) {
+    .content {
+      grid-template-columns: repeat(#{$column}, 200px);
+    }
+  }
 }
