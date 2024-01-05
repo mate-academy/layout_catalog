@@ -1,45 +1,45 @@
-.main__products {
+.products {
+  position: relative;
   display: grid;
   justify-content: center;
-  grid-gap: 46px 48px;
-  padding: 40px 50px;
+  gap: 46px 48px;
+  padding: 50px 40px;
 
   @include on-md-mobile {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 200px);
   }
 
   @include on-tablet {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 200px);
   }
 
   @include on-desktop {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 200px);
   }
+
+  @include hover(transform, scale(1.1));
 }
 
 .product {
-  width: 200px;
-  height: 408px;
-  padding: 32px 16px;
+  // width: 200px;
+  padding: 32px 16px 16px;
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   background: #fff;
 
-  @include hover(transform, scale(1.2));
-
   &__img {
-    width: 100%;
+    width: 160px;
     height: 134px;
     margin: 0 auto 35px;
-    object-fit: contain;
+    padding-inline: 3px;
   }
 
   &__description {
     margin-bottom: 16px;
   }
 
-  &__title {
+  &__name {
     font-weight: 500;
     font-size: 12px;
     margin-bottom: 4px;
@@ -54,7 +54,7 @@
   &__reviews {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     margin-bottom: 24px;
   }
 
@@ -76,6 +76,10 @@
 
   &__star:nth-child(-n+4) {
     background: url("../images/star-active.svg") no-repeat center;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 
   &__price {
@@ -114,13 +118,8 @@
     text-decoration: none;
 
     &:hover {
-      transition-duration: $effect-duration;
       color: $blue-accent;
-      background: #fff;
+      background: none;
     }
-  }
-
-  &:hover &__title {
-    color: #34568b;
   }
 }
