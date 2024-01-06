@@ -1,0 +1,37 @@
+@mixin max-width {
+  @media (max-width: $max-width-hidden) {
+    @content;
+  }
+}
+
+@mixin min-width {
+  @media (min-width: $min-width-hidden) {
+    @content;
+  }
+}
+
+@mixin on-md-mobile {
+  @media (min-width: $md-mobile-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effect-duration;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
