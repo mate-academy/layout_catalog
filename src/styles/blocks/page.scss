@@ -1,0 +1,32 @@
+html, body, h1, h2, div, img, p, nav, header, li, a, ul {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 50px 40px;
+  display: grid;
+  gap: 46px 48px;
+  justify-items: center;
+
+  --colums: 1;
+
+  grid-template-columns:  repeat(var(--colums), minmax(200px, 1fr));
+
+  @media (min-width: $mobile-min-width) {
+    --colums: 2;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    --colums: 3;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    --colums: 4;
+
+    max-width: 944px;
+    margin: 0 auto;
+  }
+}
