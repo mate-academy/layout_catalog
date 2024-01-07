@@ -1,20 +1,3 @@
-body {
-  margin: 0;
-}
-
-:root {
-  --accent-color: #00ACDC;
-}
-
-html {
-  font-family: Roboto, sans-serif;
-}
-
-body, header, nav, li, a, img, ul {
-  margin: 0;
-  padding: 0;
-}
-
 .header {
   width: 100%;
   display: flex;
@@ -25,8 +8,9 @@ body, header, nav, li, a, img, ul {
 }
 
 .logo-link {
+  width: 40px;
+  height: 40px;
   display: block;
-  margin-top: 5px;
 }
 
 .nav {
@@ -39,7 +23,7 @@ body, header, nav, li, a, img, ul {
     text-align: center;
     list-style-type: none;
     text-transform: uppercase;
-    color: #060b35;
+    color:$main-font-color;
     margin: 0 10px;
 
     &:last-child {
@@ -62,21 +46,19 @@ body, header, nav, li, a, img, ul {
     padding-top: 23px;
     box-sizing: border-box;
   }
-
 }
 
-
-
 .is-active,
-[data-qa="hover"]:hover,
+[data-qa="nav-hover"],
+[data-qa="nav-hover"]:hover,
 .nav-link:hover {
-  color:var(--accent-color);
+  color: $accent-color;
 }
 
 .is-active::after {
   width: 100%;
   content: attr(data-qa);
-  border-bottom: 4px solid var(--accent-color);
+  border-bottom: 4px solid $accent-color;
   display: block;
   position: relative;
   top: 19px;

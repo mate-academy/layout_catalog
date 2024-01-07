@@ -1,9 +1,7 @@
-html, h1, h2, div, img, p {
+html, body, h1, h2, div, img, p, nav, header, li, a, ul {
   margin: 0;
   padding: 0;
-}
-
-body {
+  font-family: Roboto, sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -15,7 +13,7 @@ body {
 
   --colums: 1;
 
-  grid-template-columns:  repeat(var(--colums), 1fr);
+  grid-template-columns:  repeat(var(--colums), minmax(200px, 1fr));
 
   @media (min-width: $mobile-min-width) {
     --colums: 2;
@@ -27,5 +25,8 @@ body {
 
   @media (min-width: $desktop-min-width) {
     --colums: 4;
+
+    max-width: 944px;
+    margin: 0 auto;
   }
 }
