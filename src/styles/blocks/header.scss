@@ -1,0 +1,56 @@
+@import '/src/styles/utils/variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF;
+  padding: 0 50px;
+  transition: $transition;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link {
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $nav-link-color;
+  height: $nav-height;
+  line-height: $nav-height;
+
+  &:hover {
+    color: $head-active-color;
+  }
+}
+
+.is-active {
+  color: $head-active-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: $head-active-color;
+    border-radius: 8px;
+    width: 100%;
+    height: 4px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+}
