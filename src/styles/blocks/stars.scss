@@ -1,6 +1,5 @@
 .stars {
   display: flex;
-  align-items: center;
 
   &__star {
     background-image: url(../images/star.svg);
@@ -12,8 +11,10 @@
     &:not(:last-child) {
       margin-right: 4px;
     }
+  }
 
-    &:nth-child(-n + 4) {
+  @for $star from 1 through 5 {
+    &--#{$star} :nth-child(-n + #{$star}) {
       background-image: url(../images/star-active.svg);
     }
   }
