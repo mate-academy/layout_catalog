@@ -3,18 +3,24 @@
 .card {
   box-sizing: border-box;
   padding: 32px 16px 16px;
-
   width: 200px;
+  margin: 0;
   height: 406px;
   border-radius: 5px;
   border: 1px solid #F3F3F3;
   background: #FFF;
+  transition: transform 0.3 ease;
+
+&:hover {
+  transform: scale(1.2);
+}
 
 &__image {
   width: 160px;
   height: 134px;
-  padding: 0 3px;
-  margin-bottom: 0;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 40px;
 }
 
 &__title {
@@ -24,7 +30,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  margin: 35.5px 0 4px;
+  margin: 35.5px 0 4.4px;
+}
+
+&:hover &__title {
+  color: $card-title-color-on-hover;
 }
 
 &__product-code {
@@ -33,6 +43,7 @@
   font-size: 10px;
   line-height: 14px;
   text-align: start;
+  font-weight: 300;
 }
 
 &_review-container {
@@ -45,9 +56,12 @@
 
 &_review-count {
   font-size: 10px;
+  color: $main-accent;
   font-family: inherit;
   color: $main-accent;
   line-height: 14px;
+  font-weight: 300;
+  margin-bottom: 1px;
 }
 
 &__price {
@@ -85,7 +99,7 @@
   text-align: center;
   font-family: inherit;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 16px;
   text-transform: uppercase;
 

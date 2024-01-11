@@ -1,7 +1,6 @@
 @import '../utils/variables';
 
 .nav {
-
 &__list {
   display: flex;
   align-items: center;
@@ -18,18 +17,21 @@
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  color: #000;
+  color: #060b35;
   position: relative;
-  line-height: 60px;
+  line-height: $nav-height;
   text-transform: uppercase;
 
-  &:hover,
-  &-is-active {
-  color: $blue-accent;
-  text-decoration: none;
+  &:hover{
+    color: $blue-accent;
+  }
+}
 }
 
-&-is-active::after {
+.is-active {
+  color: $blue-accent;
+
+&::after {
   content: '';
   position: absolute;
   left: 0;
@@ -38,6 +40,4 @@
   height: 4px;
   background-color: $blue-accent;
 }
-}
-
 }
