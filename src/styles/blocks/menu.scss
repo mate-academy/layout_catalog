@@ -1,0 +1,65 @@
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 500;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    &--left {
+      margin-left: 0;
+    }
+
+    &--is-active {
+      display: flex;
+      flex-direction: column;
+
+      &::after {
+        content: "";
+        background-color: $blueAccentColor;
+        display: block;
+        width: 37px;
+        border-radius: 8px;
+        margin-top: 19.5px;
+        padding-top: 4px;
+      }
+
+      &:link {
+        color: $blueAccentColor;
+      }
+    }
+  }
+
+  &__item-link {
+    height: 15px;
+    font-size: 12px;
+    text-align: end;
+    text-transform: uppercase;
+    padding-top: 22.5px;
+    padding-bottom: 22.5px;
+    cursor: pointer;
+
+    &:link {
+      text-decoration: none;
+      color: $mainAccentFontColor;
+    }
+
+    &:visited {
+      text-decoration: none;
+      color: $mainAccentFontColor;
+    }
+
+    @include hover(color, $blueAccentColor);
+
+    &:active {
+      text-decoration: none;
+      color: $blueAccentColor;
+    }
+  }
+
+  .is-active {
+    color: $blueAccentColor;
+  }
+}
