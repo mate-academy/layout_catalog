@@ -5,16 +5,15 @@
   justify-content: space-between;
 
   &__star {
-    background-color: $white;
-    background-image: url(../images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: center no-repeat url(../images/star.svg) $white;
     width: 16px;
     height: 16px;
     border-radius: 0.5px;
   }
 
-  &--4 :nth-child(-n+4) {
-    background-image: url(../images/star-active.svg);
+  @for $numberOfStars from 1 through 5 {
+    &--#{$numberOfStars} :nth-child(-n+#{$numberOfStars}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
