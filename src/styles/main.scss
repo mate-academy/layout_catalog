@@ -1,3 +1,45 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/card";
+@import "blocks/stars";
+
 body {
   margin: 0;
+  background-color: $white;
+  font-family: "Roboto", "Helvetica", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.grid {
+  --column-count: 1;
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .grid {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    --column-count: 4;
+  }
 }
