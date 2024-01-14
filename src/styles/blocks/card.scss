@@ -1,0 +1,121 @@
+.cards {
+  display: grid;
+  grid-template-columns: 200px;
+  gap: 46px 48px;
+  justify-content: center;
+
+  margin-bottom: 72px;
+  padding: 50px 40px 0;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.product-card {
+  width: 200px;
+  padding: 32px 16px 0;
+  border-radius: 5px;
+  border: 1px solid #F3F3F3;
+
+  transition: all 300ms ease-in;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  &__img {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    margin-bottom: 4px;
+    color: $card-main-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  &:hover > &__title {
+    color: $card-title-hover;
+  }
+
+  &__code {
+    margin-bottom: 18px;
+    color: $card-second-color;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    color: $card-main-color;
+    text-align: right;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    color: $card-second-color;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__amount {
+    color: $card-main-color;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__btn {
+    margin-bottom: 16px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: $card-btn-color;
+    font-family: Roboto, sans-serif;
+    color: $card-white-color;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $card-btn-color;
+      color: $card-btn-color;
+      background-color: $card-white-color;
+    }
+  }
+}
