@@ -1,11 +1,12 @@
 .card {
   box-sizing: border-box;
   width: $card-width;
-  height: 408px;
+  height: $card-height;
   padding: 32px 0 16px;
   border-radius: 5px;
   border: 1px solid #F3F3F3;
   background: #FFF;
+  transition: $transition-smooth-time;
 
   &__image {
     padding-inline: 19px;
@@ -60,12 +61,20 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
+    transition: $transition-smooth-time;
   }
 
-  &__link[data-qa="hover"]:hover {
+  &__link[data-qa="card-hover"]:hover {
     border: 1px solid $blue-accent;
     background: #FFF;
     color: $blue-accent;
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  .card__title {
+    color: #34568b;
   }
 }
 
