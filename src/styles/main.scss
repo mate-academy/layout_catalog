@@ -1,3 +1,60 @@
+@import "./block/varribles";
+@import "./block/nav";
+@import "./block/header";
+@import "./block/reset";
+@import "./block/cards";
+@import "./block/stars";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
+.catalog {
+  display: grid;
+
+  &__card {
+    transition: transform $transition-duration;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.catalog__content {
+  padding: 50px 0 72px;
+  display: grid;
+  row-gap: 46px;
+  column-gap: 48px;
+  justify-content: center;
+
+  @media (min-width: 320px) {
+    grid-template-columns: repeat(1, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
 }
