@@ -1,0 +1,38 @@
+@mixin on-phone {
+  @media (min-width: $phone-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid{
+  --colums: 1;
+  justify-items: center;
+
+  display: grid;
+  column-gap: 48px;
+  row-gap: 46px;
+  grid-template-columns: repeat(var(--colums), 200px);
+
+  @include on-phone {
+    --colums: 2;
+  }
+  @include on-tablet {
+    --colums: 3;
+  }
+
+  @include on-desktop {
+    --colums: 4;
+  }
+}

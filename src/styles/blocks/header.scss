@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+    float: left;
+    cursor: pointer;
+
+    &-img {
+      display: flex;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__nav {
+    height: 100%;
+    text-transform: uppercase;
+
+
+    &-link {
+      font-family: Roboto, sans-serif;
+      color: $main-accent;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      height: 60px;
+
+      cursor: pointer;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      float: right;
+      list-style: none;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 0;
+
+      & > li {
+        margin-left: 20px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+
+      &:hover > a{
+        color: $blue-accent;
+        transition: all $effect-duration;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $blue-accent;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background: $blue-accent;
+    height: 4px;
+    border-radius: 8px;
+    width: 100%;
+    bottom: 0;
+  }
+}
