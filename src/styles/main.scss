@@ -1,3 +1,46 @@
+@import './utils/variables';
+@import './blocks/header';
+@import './blocks/product';
+@import './blocks/stars';
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+main {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+
+  padding: 50px 40px;
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  main {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    --column-count: 4;
+  }
 }
