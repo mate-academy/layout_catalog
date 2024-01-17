@@ -9,7 +9,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 - Nav links color is not `black` any more
 - add class `is-active` to the first link (`Apple`) in navigation
-- use `<main>` for cards container 
+- use `<main>` for cards container
 - Use grid for cards with different number of columns:
   - 4 starting from `1024px`
   - 3 starting from `768px`
@@ -25,13 +25,13 @@ Make all the changes smooth on hover (during 300ms):
 - change navigation link text color to `#00acdc`
 - change the button background to `#fff` and text color to `#00acdc` on hover
 
-> Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
+> Here are the [Layout Tasks Instructions](https://cmate-academy.github.io/layout_task-guideline)
 
 ## Checklist
 
 ❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://alexmotalex.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://alexmotalex.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 

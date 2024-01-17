@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+p,
+h2,
+ul {
+  margin: 0;
+}
+
+.catalog {
+  scroll-behavior: smooth;
+  font-family: Roboto, sans-serif;
+  height: 100%;
+
+  &__body {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__cards-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, $card-width);
+    padding: 50px 40px;
+    gap: 46px 48px;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
