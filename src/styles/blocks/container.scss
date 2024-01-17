@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat($column-count, $base-card-width);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  align-items: center;
+
+  @each $width, $column-count in $grid-var {
+    @media (min-width: $width) {
+      grid-template-columns: repeat($column-count, $base-card-width);
+    }
+  }
+}
