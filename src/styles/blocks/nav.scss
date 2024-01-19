@@ -1,0 +1,41 @@
+.nav {
+  display: none;
+
+  @include on-tablet {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 11px;
+    color: $nav-link-color;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include smooth-transition;
+
+    &:hover {
+      color: $nav-link-hover-color;
+    }
+
+    @include on-desktop {
+      font-size: 12px;
+    }
+  }
+}
