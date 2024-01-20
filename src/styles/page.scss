@@ -1,0 +1,44 @@
+@import './value';
+
+.page {
+  --column-count: 1;
+
+  font-family: Roboto, sans-serif;
+
+  color: $main-accent;
+  font-size: 12px;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__main {
+    padding: 50px 40px;
+    display: grid;
+    gap: 46px 48px;
+    grid-template-columns: repeat(var(--column-count), 200px);
+    justify-content: center;
+  }
+
+  @media (min-width: 488px) {
+    &__main {
+      --column-count: 2;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__main {
+      --column-count: 3;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__main {
+      --column-count: 4;
+    }
+  }
+}
+
+.p {
+  margin: 0;
+}
