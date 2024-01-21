@@ -1,0 +1,133 @@
+@use "../utils/variables" as *;
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 32px 16px 16px;
+  width: 200px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  border-radius: $border-radius;
+
+  transition-duration: 0.5s;
+
+  &__image {
+    margin-bottom: 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: $blocks-width;
+
+    &-name {
+      margin-bottom: 4px;
+
+      font-family: $font-family-medium;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+
+      color: rgba(6, 11, 53, 1);
+    }
+
+    &-code {
+      margin-bottom: 16px;
+      height: 14px;
+
+      color: rgba(97, 96, 112, 1);
+      font-family: $font-family;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: $small-line-height;
+
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__item-name {
+      color: #34568b;
+    }
+  }
+
+
+  &__review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    gap: 19px;
+    margin-bottom: 24px;
+
+    width: $blocks-width;
+    height: $block-height;
+
+    &-value {
+      align-items: center;
+      justify-content: center;
+      height: $block-height;
+
+      font-family: $font-family;
+      font-size: 10px;
+      line-height: $small-line-height;
+      text-align: right;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 16px;
+    width: $blocks-width;
+
+    &-text {
+      font-family: $font-family;
+      font-size: 12px;
+      line-height: $large-line-height;
+    }
+
+    &-value {
+      font-family: $font-family;
+      font-size: 16px;
+      line-height: $large-line-height;
+      text-align: right;
+    }
+  }
+
+  &__buy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 0;
+    width: $blocks-width;
+    height: 40px;
+    border: 1px solid $button-color;
+    border-radius: $border-radius;
+    background: $button-color;
+
+    color: $color-white;
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: $large-font;
+    line-height: $medium-line-height;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $button-color;
+      background: $color-white;
+      border: 1px solid $button-color;
+    }
+  }
+}
