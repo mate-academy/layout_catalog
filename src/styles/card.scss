@@ -1,0 +1,96 @@
+@import "./utils/variables";
+@import "./stars";
+
+.card {
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: $border-radius;
+  width: $card-width;
+  height: $card-hight;
+  padding: 32px $basic-offset $basic-offset;
+  background-color: $primary-bg-color;
+  margin-bottom: 46px;
+
+  @extend %hover-transition;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: $font-medium;
+    line-height: $line-height-large;
+    color: $primary-text-color;
+    margin-bottom: 4px;
+
+    @extend %hover-transition;
+
+  }
+  &__code {
+    @extend %small-text;
+
+    color: $secondary-text-color;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    @extend %line-two-el;
+
+    margin-bottom: 24px;
+
+    .card__reviews {
+      @extend %small-text;
+
+      line-height: 16px;
+    }
+  }
+  &__price {
+    @extend %line-two-el;
+
+    margin-bottom: 16px;
+
+    .card__note {
+      font-size: 12px;
+      font-weight: $font-normal;
+      line-height: $line-height-large;
+      color: $secondary-text-color;
+    }
+    .card__count {
+      font-size: $font-large;
+      line-height: $line-height-large;
+      font-weight: $font-bold;
+      color: $primary-text-color;
+    }
+  }
+
+  &__button {
+    @extend %button-link;
+
+    font-size: 14px;
+    font-weight: $font-bold;
+    border: 1px solid transparent;
+    border-radius: $border-radius;
+    background-color: $secondary-btn-color;
+    color: $primary-btn-color;
+    
+    @extend %hover-transition;
+
+    &:hover {
+      border: 1px solid $secondary-btn-color;
+      background-color: $primary-bg-color;
+      color: $secondary-btn-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__name {
+      color: #34568b;
+    }
+  }
+}

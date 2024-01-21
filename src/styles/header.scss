@@ -1,0 +1,67 @@
+@import "./utils/variables";
+
+header {
+  box-sizing: border-box;
+  width: $header-min-width;
+  margin: 0 auto;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+  
+  @extend %line-two-el;
+
+  .header__logo {
+    display: block;
+    height: 100%;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      list-style: none;
+    }
+
+    &__item {
+      position: relative;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__link {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: $header-height;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $primary-text-color;
+
+      @extend %hover-transition;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+
+  .is-active {
+    color: $hover-color;
+  }
+
+  .is-active::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    background: $hover-color;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: $header-max-width;
+  }
+}
