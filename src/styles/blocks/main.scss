@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+
+  &-container {
+    @include page-grid;
+
+    padding: 50px 40px;
+  }
+}
+
+.card {
+  grid-column: span 1;
+
+  padding-inline: 16px;
+  padding-block: 32px 16px;
+  border-radius: 5px;
+  border: 1px solid #F3F3F3;
+
+  &-container {
+    max-width: 200px;
+    margin: 0;
+    width: 200px;
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all $effect-duration;
+    }
+  }
+
+  &__imac {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    &-img {
+      background-image: url(../images/imac.jpeg);
+
+      width: 160px;
+      height: 134px;
+      background-size: 100% 100%;
+    }
+  }
+
+  &__title {
+    margin-block: 40px 0;
+    color: $main-accent;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+
+    & .card-container:hover {
+      color: #34568b;
+    }
+  }
+
+  &__product-code {
+    margin-block: 4px 16px;
+    color: $secondary;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+
+    &-text {
+      align-items: center;
+      color: $secondary;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-sum {
+      color: $main-accent;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 40px;
+    color: $white-accent;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background: $blue-accent;
+    &:hover {
+      color: $blue-accent;
+      background: $white-accent;
+      border: 1px solid $blue-accent;
+      transition: all $effect-duration;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 16px;
+
+  &__star {
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.stars--0 .stars__star:nth-child(n+1),
+.stars--1 .stars__star:nth-child(n+2),
+.stars--2 .stars__star:nth-child(n+3),
+.stars--3 .stars__star:nth-child(n+4),
+.stars--4 .stars__star:nth-child(n+5) {
+background-image: url(../images/star.svg);
+}
