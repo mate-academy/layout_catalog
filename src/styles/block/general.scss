@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $body-font;
+}
+
+.container {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-stars {
+    margin-top: 16px;
+
+    @include position-content;
+  }
+
+  &-price {
+    margin-top: 24px;
+
+    @include position-content;
+  }
+}
+
+.main {
+  padding: 50px 48px;
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 48px 46px;
+  justify-content: center;
+  justify-items: center;
+
+  @include on-mobile {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
