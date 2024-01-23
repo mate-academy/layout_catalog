@@ -1,0 +1,17 @@
+@use '../utils/variables' as *;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@each $screen-width, $amount-of-cards in $cards-in-row {
+  @media (min-width: $screen-width) {
+    .container{
+      grid-template-columns: repeat($amount-of-cards, $card-width);
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: $background-color;
+  box-shadow: 0 2px 4px rgba($color: black, $alpha: 0.05);
+
+  &__moyo-link {
+    cursor: pointer;
+    height: 40px;
+    margin: 0 5px 0 0;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    gap: 20px;
+    padding-inline-start: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: inline-block;
+    height: $link-height;
+    line-height: $link-height;
+    text-wrap: nowrap;
+    text-transform: uppercase;
+    color: $main-accent;
+
+    @include hover-transition;
+
+    &.is-active {
+      color: $blue-accent;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 4px;
+        width: auto;
+        border-radius: 8px;
+        background-color: $blue-accent;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $blue-accent;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
