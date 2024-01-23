@@ -10,11 +10,14 @@
     background-position: center;
   }
 
-  &__star:not(:last-child) {
-    background-image: url(../images/star-active.svg);
-  }
-
-  &--4 &__star:last-child {
-    background-image: url(../images/star.svg);
+  @for $stars from 1 through 5 {
+    &--#{$stars} {
+      .stars__star:nth-child(#{$stars + 1}) {
+        background-image: url(../images/star.svg);
+      }
+      .stars__star:nth-child(-n + #{$stars}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
   }
 }
