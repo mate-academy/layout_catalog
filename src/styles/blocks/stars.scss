@@ -10,13 +10,13 @@
     background-position: center;
   }
 
-  @for $stars from 1 through 5 {
+  @for $stars from 0 through 5 {
     &--#{$stars} {
-      .stars__star:nth-child(#{$stars + 1}) {
-        background-image: url(../images/star.svg);
-      }
       .stars__star:nth-child(-n + #{$stars}) {
         background-image: url(../images/star-active.svg);
+      }
+      .stars__star:nth-child(n + #{$stars + 1}) {
+        background-image: url(../images/star.svg);
       }
     }
   }
