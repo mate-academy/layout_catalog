@@ -1,3 +1,30 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&family=Roboto:wght@400;500;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+@import "./variables";
+@import "./header";
+@import "./product-card";
+@import "./stars";
+
 body {
   margin: 0;
 }
+
+.main {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@mixin column-count($min-width, $colums-count) {
+  @media (min-width: $min-width) {
+    .main {
+      grid-template-columns: repeat($colums-count, 200px);
+    }
+  }
+}
+
+@include column-count(488px, 2);
+@include column-count(768px, 3);
+@include column-count(1024px, 4);
