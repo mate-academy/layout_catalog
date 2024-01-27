@@ -1,3 +1,32 @@
+@import './variables';
+@import './header';
+@import './product-card';
+@import './stars';
+
 body {
   margin: 0;
+
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  grid-gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
 }
