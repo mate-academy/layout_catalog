@@ -1,3 +1,48 @@
 body {
-  margin: 0;
+  margin: 0 auto;
+  font-family: $font-family-default;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-xs;
+  color: $color-accent;
+  background-color: $color-white;
+}
+
+.product-page {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat($column-count, 1fr);
+  grid-template-rows: repeat(2, auto);
+  margin: 0 auto;
+
+  gap: 50px;
+  width: 950px;
+  padding: 50px 40px;
+}
+
+@media (max-width: 480px) {
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
