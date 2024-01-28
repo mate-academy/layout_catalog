@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
 
-  color: $color-accent;
   font-weight: $font-weight-medium;
   padding: 0 50px;
   width: 100%;
@@ -52,30 +51,27 @@
   height: 60px;
   line-height: 60px;
   text-decoration: none;
+  color: $color-accent;
+
+  transition: color $animation-duration ease-in-out;
 
   &:link {
     color: $color-accent;
   }
 
-  &:visited,
   &:hover {
     color: $color-blue-accent;
   }
-
-  //  {
-  //   color: $color-blue-accent;
-  // }
 }
 
 .is-active,
-.nav__link:visited,
-// .nav__link:hover,
+.nav__link:hover,
 .nav__link.is-active,
 .is-active:visited {
   color: $color-blue-accent;
 }
 
-.is-active:link {
+.nav__link.is-active {
   position: relative;
 
   &::after {
@@ -89,5 +85,6 @@
     height: 4px;
     border-radius: 8px;
     background-color: $color-blue-accent;
+    transition: color $animation-duration ease-in-out;
   }
 }
