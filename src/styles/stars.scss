@@ -12,13 +12,26 @@ $colors-stars: 1 url("./../images/star-active.svg"),
   width: 96px;
   align-items: center;
 
-  @each $row, $color in $colors-stars {
-    & :nth-child(#{$row}) {
-      background-image: $color;
+  @for $row-star from 1 through 6 {
+    & :nth-child(n + #{ $row-star}) {
+      background-image: url("./../images/star-active.svg");
       background-repeat: no-repeat;
       background-position: center;
       width: 16px;
       height: 16px;
     }
   }
+
+  @for $row-star from 1 through 6 {
+    &--#{$row-star} {
+      & :nth-child(n + #{ $row-star + 1}) {
+        background-image: url("./../images/star.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
 }
