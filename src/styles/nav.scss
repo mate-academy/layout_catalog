@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    padding: 0;
+    margin: 0;
+    height: 60px;
+
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(1)::after {
+      content: attr(div);
+      background-color: $high-light-color;
+      height: 4px;
+      border-radius: 8px;
+    }
+  }
+
+  &__linkl {
+    text-decoration: none;
+    color: $main-accent;
+    text-transform: uppercase;
+    font-family: $font;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 22.5px 0 19.5px;
+
+    &:hover {
+      @include active;
+    }
+  }
+
+  .is-active {
+    @include active;
+  }
+}
