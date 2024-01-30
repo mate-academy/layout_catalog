@@ -1,0 +1,42 @@
+@use '../utils/variables' as *;
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    width: 96px;
+    justify-content: space-around;
+  }
+
+  &__star {
+    background-image: url(./images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+  }
+
+  @for $star from 1 through 5 {
+    &__stars--#{$star}
+    &__star:nth-child(-n + #{$star}) {
+      background-image: url(./images/star-active.svg);
+    }
+  }
+
+  &__text {
+    color: $primary-color;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__card-text {
+    margin: 0;
+    line-height: 14px;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../utils/variables' as *;
+
+.card-container {
+  font-weight: 400;
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  grid-template-rows: repeat(2, 408px);
+  gap: 46px;
+  column-gap: 48px;
+  padding: 50px 40px;
+
+  @media (max-width: 487px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(1, $card-width);
+      grid-template-rows: repeat(8, 408px);
+    }
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(2, $card-width);
+      grid-template-rows: repeat(4, 408px);
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(3, $card-width);
+      grid-template-rows: repeat(3, 408px);
+    }
+  }
+}
