@@ -1,0 +1,122 @@
+.main {
+  display: grid;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  border: 1px solid #F3F3F3;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  width: 200px;
+  transition: $hover-transition;
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    color: $main-text-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 4px;
+    text-decoration: none;
+  }
+
+  &:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  &:hover &__name {
+    color: $hover-text-color;
+    transition: $hover-transition;
+  }
+
+  &__code {
+    color: $secondary-text-color;
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 16px;
+    font-weight: inherit;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review {
+    text-decoration: none;
+    color: $main-text-color;
+    font-size: 10px;
+    line-height: 14px;
+    display: inline-block;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &-title {
+      color: $secondary-text-color;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-amount {
+      color: $main-text-color;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    background-color: $accent-color;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: $border-radius;
+    padding: 12px;
+    text-align: center;
+
+    &:hover {
+      background-color: #FFF;
+      border: 1px solid $accent-color;
+      color: $accent-color;
+      transition: $hover-transition;
+    }
+  }
+
+}
+
