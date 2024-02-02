@@ -7,6 +7,18 @@
   border-radius: 5px;
   background: $main-white;
 
+
+  @include transition(transform);
+  // will-change: transform; (does not work in tests, but helps with text-flickering issue in chrome)
+
+  &:hover {
+    transform: scale(120%);
+
+    .card__title-name {
+      color: $card-hover-text-color;
+    }
+  }
+
   &__image {
     margin-bottom: 40px;
     text-align: center;
@@ -26,6 +38,8 @@
       color: $accent-text-color;
       font-weight: 500;
       line-height: 18px;
+
+      @include transition(color);
     }
 
     &-product-code {
@@ -35,7 +49,7 @@
   }
 
   &__review {
-    @include with-two-blocks-content;
+    @include two-blocks-container;
 
     margin-bottom: 24px;
 
@@ -47,7 +61,7 @@
   }
 
   &__price {
-    @include with-two-blocks-content;
+    @include two-blocks-container;
 
     margin-bottom: 16px;
 
