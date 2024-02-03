@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  &__body {
+    margin: 0;
+  }
+
+  &__main {
+    --column-count: 1;
+
+    padding: 50px 40px;
+
+    display: grid;
+    justify-content: center;
+    gap: 46px 48px;
+    grid-template-columns: repeat(var(--column-count), $card-width);
+
+    @include screen-488 {
+      --column-count: 2;
+    }
+
+    @include screen-768 {
+      --column-count: 3;
+    }
+
+    @include screen-1024 {
+      --column-count: 4;
+    }
+  }
+}
