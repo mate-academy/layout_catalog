@@ -1,0 +1,50 @@
+.nav {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    height: 100%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    color: $darkblue;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    text-transform: uppercase;
+    transition: color .3s linear;
+
+    &:hover {
+      color: $light-blue;
+    }
+  }
+}
+
+.is-active {
+  color:  $light-blue;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $light-blue;
+    border-radius: 8px;
+  }
+}
