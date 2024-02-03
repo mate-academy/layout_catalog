@@ -1,0 +1,137 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 46px 48px;
+  padding: 50px 40px;
+
+  @include number-of-grid-template-columns;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: $card-width;
+  padding: 32px 16px 16px;
+
+  font-family: inherit;
+
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+
+  box-sizing: border-box;
+
+  transition-duration: $transition;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    height: 134px;
+    width: 160px;
+  }
+
+  &__title {
+    margin: 40px 0 0;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    color: $text-color;
+  }
+
+  &__code {
+    margin: 4px 0 0;
+
+    font-size: 10px;
+    font-style: normal;
+    line-height: 14px;
+    color: $grey-color;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 16px;
+    margin-top: 16px;
+
+    .reviews {
+      justify-content: flex-end;
+      margin: 0;
+
+      font-size: 10px;
+      font-weight: 400;
+      text-align: right;
+      line-height: 14px;
+      color: $text-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__button {
+    margin-top: 16px;
+    height: 40px;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 16px;
+    color: $white-color;
+
+    background: $blue-color;
+    border: 1px solid $blue-color;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: all $transition;
+
+    &:hover {
+      color: $blue-color;
+      background-color: $white-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transition-duration: $transition;
+  }
+
+  &:hover &__title {
+    color: $blue-color;
+    transition-duration: $transition;
+  }
+}
+
+.price {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-style: normal;
+  line-height: 18px;
+
+  &--text {
+    font-size: 12px;
+    font-weight: 400;
+    color: $grey-color;
+  }
+
+  &--number {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    color: $text-color;
+  }
+}

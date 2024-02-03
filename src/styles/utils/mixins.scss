@@ -1,0 +1,34 @@
+@mixin on-phone {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+
+@mixin number-of-grid-template-columns {
+  grid-template-columns: repeat(1, $card-width);
+
+  @include on-phone {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
