@@ -1,15 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: (repeat(1, 200px));
+  justify-content: center;
+  gap: 46px 48px;
+
+  margin: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: (repeat(2, 200px));
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: (repeat(3, 200px));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: (repeat(4, 200px));
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+
   width: 200px;
   padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $card-border-color;
   border-radius: 5px;
 
-  font-family: Roboto, sans-serif;
-  background-color: #fff;
-  color: #000;
+  background-color: $elements-bg-color;
+  color: $main-text-color;
+
+  transition: $transition-time;
 
   &__img {
     object-fit: contain;
@@ -33,39 +56,46 @@
     color: $secondary-text-color;
   }
 
-  &__reviews-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 24px;
-  }
-
   &__reviews {
-    font-weight: 400;
     font-size: 10px;
     line-height: 14px;
     color: $main-text-color;
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 24px;
+    }
   }
 
-  &__price-wrapper {
+  &__price {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 16px;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary-text-color;
+    }
+
+    &-value {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: bold;
+      color: $main-text-color;
+    }
   }
 
-  &__price-text {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    color: $secondary-text-color;
-  }
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
 
-  &__price-value {
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: bold;
-    color: $main-text-color;
+    .card__name {
+      color: $hover-text-color;
+    }
   }
 
   &__button {
@@ -88,11 +118,12 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
+    transition: $transition-time;
 
     &:hover {
       border-color: $main-accent-color;
       color: $main-accent-color;
-      background-color: #fff;
+      background-color: $elements-bg-color;
     }
   }
 }
