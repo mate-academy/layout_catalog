@@ -1,0 +1,137 @@
+.cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 200px);
+  gap: 44px 46px;
+  margin: 50px 40px;
+
+  @media (max-width: 1023.98px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (max-width: 767.98px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (max-width: 487.98px) {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+.product {
+  position: relative;
+  max-width: 200px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 32px 16px 16px;
+  border: 1px solid $borfer-color;
+  border-radius: 5px;
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img-img {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    margin: 0 0 4px;
+    font-weight: 500;
+    color: $main-color;
+  }
+
+  &__name,
+  &__price-title {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  &__description {
+    margin: 0 0 16px;
+    color: $second-color;
+  }
+
+  &__info {
+    margin-bottom: 24px;
+    align-items: end;
+  }
+
+  &__description,
+  &__info-review {
+    font-size: 10px;
+    line-height: 140%;
+  }
+
+  &__info-review {
+    color: $main-color;
+  }
+
+  &__info,
+  &__price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info-rate {
+    display: flex;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+
+    &-title {
+      color: $second-color;
+    }
+
+    &-count {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 112.5%;
+
+      color: $main-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+
+    .product__name {
+      color: $card-hover-color;
+    }
+  }
+}
+
+.button {
+  height: 40px;
+
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $fourth-color;
+
+  background: $third-color;
+  border: 1px solid $third-color;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: $third-color;
+    background-color: $fourth-color;
+  }
+}
