@@ -1,3 +1,38 @@
+$main-accent: #060B35;
+$secondary: #616070;
+$blue-accent: #00ACDC;
+$white: #FFF;
+$font-family: Roboto, sans-serif;
+$card-width: 200px;
+
+@import './Blocks/product';
+@import './Blocks/Header';
+@import './Blocks/nav';
+
+html {
+  font-family: $font-family;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  display: grid;
+  padding: 50px 40px;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+      grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+      grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $card-width);
+  }
 }
