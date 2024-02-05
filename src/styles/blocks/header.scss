@@ -1,36 +1,37 @@
 .header {
-  display: flex;
-  width: 100%;
   justify-content: space-between;
-  background-color: #fff;
+  display: flex;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-}
+  width: 100%;
+  background-color: $main-background-color;
 
-.header__logo {
-  width: 40px;
-  margin-left: 50px;
-  height: 40px;
-  align-self: center;
+  &__logo {
+    align-self: center;
+    margin-left: 50px;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .nav {
   display: flex;
-  height: $header-height;
   margin-right: 50px;
+  height: $header-height;
 
   &__list {
-    display: flex;
     align-items: center;
+    display: flex;
     padding-left: 0;
   }
 
   &__item {
-    display: flex;
-    align-items: center;
     position: relative;
+
     justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 20px;
     list-style: none;
-    margin: 0 0 0 20px;
 
     &:first-child {
       margin-left: 0;
@@ -38,16 +39,18 @@
   }
 
   &__link {
-    display: flex;
-    text-decoration: none;
     align-items: center;
-    text-transform: uppercase;
-    color: #060b35;
-    font-size: 12px;
-    height: $header-height;
-    font-weight: 500;
-    transition: transform 0.3s;
+    display: flex;
+
+    transition: transform $transition-duration;
     transition-property: color;
+
+    height: $header-height;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-accent;
 
     &:hover {
       color: $button-color;
@@ -61,10 +64,11 @@
   &::after {
     content: '';
     position: absolute;
-    height: 4px;
-    width: 100%;
-    border-radius: 8px;
-    background: $button-color;
     bottom: 0;
+
+    border-radius: 8px;
+    width: 100%;
+    height: 4px;
+    background: $button-color;
   }
 }
