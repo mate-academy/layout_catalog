@@ -1,3 +1,263 @@
-body {
-  margin: 0;
+@import "../styles/utils/variables";
+@import "../styles/utils/mixin";
+@import "../styles/stars-block/stars";
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__nav {
+    margin-right: 50px;
+  }
+}
+
+.logo {
+  margin: 10px 0 10px 50px;
+}
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    height: 60px;
+    position: relative;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    color: $main-color-text;
+    text-transform: uppercase;
+    line-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s;
+  }
+
+  &__link:hover {
+    color: $main-color;
+  }
+}
+
+.is-active {
+  color: $main-color;
+}
+
+.is-active::after {
+  content: "";
+  text-transform: uppercase;
+  position: absolute;
+  border-bottom: 4px solid $main-color;
+  border-radius: 8px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: $main-color;
+}
+
+@include on-tablet-menu {
+  .body.active {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header__logo-link {
+    z-index: 3;
+  }
+
+  .nav__list {
+    position: fixed;
+    padding-top: 50px;
+    left: -200%;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    background-color: $secondary-text-color;
+    transition: all 0.6s;
+  }
+
+  .nav__item:not(:last-child) {
+    margin: 0;
+  }
+
+  .nav__link {
+    color: $main-color;
+    display: inline-block;
+    padding: 0 20px;
+  }
+
+  .nav__link:hover {
+    color: $white-color;
+  }
+
+  .nav__list.active {
+    left: 0;
+  }
+
+  .is-active::after {
+    content: "";
+    display: none;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.main {
+  font-size: 12px;
+  line-height: 18px;
+  color: $main-color-text;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @include on-phone {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+.card {
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 16px 16px;
+  transition:
+    transform 0.3s,
+    color 0.3s;
+
+  &__img {
+    margin: 0 auto 40px;
+    max-width: 160px;
+    width: 100%;
+    height: 134px;
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.3s ease-in-out;
+  }
+
+  &__title:hover {
+    text-decoration-color: $card-hover-color;
+  }
+
+  &__desc-text {
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 15px;
+    color: $secondary-text-color;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__text-price {
+    font-size: 12px;
+    color: $secondary-text-color;
+  }
+
+  &__text-value {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card:hover .card__title {
+  color: $card-hover-color;
+}
+
+.button {
+  width: 100%;
+  background-color: $main-color;
+  color: $white-color;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 10px 0;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border 0.3s;
+}
+
+.button:hover {
+  background-color: $white-color;
+  color: $main-color;
+  border-color: $main-color;
+}
+
+.button-link {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
 }
