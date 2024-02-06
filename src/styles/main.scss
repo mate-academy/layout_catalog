@@ -1,38 +1,45 @@
-$main-accent: #060B35;
-$secondary: #616070;
-$blue-accent: #00ACDC;
-$white: #FFF;
-$font-family: Roboto, sans-serif;
-$card-width: 200px;
-
+@import 'variables';
 @import './Blocks/product';
 @import './Blocks/Header';
 @import './Blocks/nav';
 
-html {
-  font-family: $font-family;
+*{
+  box-sizing: border-box;
 }
 
-body {
+html {
+  color: $main-accent;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+body, p, h2 {
   margin: 0;
 }
 
 .main {
+  --column-count: 1;
+
   display: grid;
-  padding: 50px 40px;
-  grid-template-columns: repeat(1, $card-width);
-  gap: 46px 48px;
   justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  grid-template-columns: repeat(var(--column-count), $card-width);
+
 
   @media (min-width: 488px) {
-      grid-template-columns: repeat(2, $card-width);
+    --column-count: 2;
   }
 
   @media (min-width: 768px) {
-      grid-template-columns: repeat(3, $card-width);
+    --column-count: 3;
   }
 
   @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, $card-width);
+    --column-count: 4;
   }
 }

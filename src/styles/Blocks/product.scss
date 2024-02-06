@@ -1,12 +1,9 @@
 .product {
-  display: flex;
+  display: block;
   margin: 0;
   width: $card-width;
   padding: 32px 16px 16px;
 
-  justify-content: space-between;
-  flex-direction: column;
-  box-sizing: border-box;
 
   border: 1px solid #f3f3f3;
   border-radius: 5px;
@@ -14,58 +11,41 @@
   transition: all 300ms;
 
   &__photo {
+    display: block;
+    margin: 0 auto;
+    width: 160px;
     height: 134px;
-    margin-inline: auto;
     margin-bottom: 40px;
   }
 
   &__title {
-    width: 166px;
     margin-bottom: 4px;
     line-height: 18px;
-
-    font-family: $font-family;
     font-size: 12px;
     font-weight: 500;
-    color: $main-accent;
   }
 
   &__code {
-    line-height: 14px;
-
     color: $secondary;
-    font-family: $font-family;
-    font-size: 10px;
-    font-weight: 400;
     margin-bottom: 16px;
   }
 
   &__price {
     display: flex;
-    width: 166px;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 16px;
 
-    justify-content: space-between;
-    align-items: flex-end;
 
     &-title {
       line-height: 18px;
-
-      font-family: $font-family;
       font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
       color: $secondary;
     }
 
     &-cost {
       line-height: 18px;
-
-      font-weight: 700;
-      text-align: right;
-      font-family: $font-family;
       font-size: 16px;
-      font-style: normal;
       color: $main-accent;
     }
   }
@@ -76,16 +56,15 @@
 
     &-active {
       width: 166px;
-      height: 40px;
+      height: 38px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
-      text-transform: uppercase;
       color: $white;
 
       background: $blue-accent;
@@ -95,7 +74,6 @@
       transition: background-color 300ms;
 
       cursor: pointer;
-      outline: none;
     }
 
     &-active:hover {
@@ -115,23 +93,19 @@
 
   &__stars-reviews {
     display: flex;
+
     margin-bottom: 24px;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 
       .stars {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        gap: 4px;
 
         &__star {
           width: 16px;
           height: 16px;
-          margin-right: 4px;
-
-          background-image: url(../images/star.svg);
-          background-repeat: no-repeat;
-          background-position: 50%;
+          background: url(../images/star.svg) no-repeat center;
         }
 
         &__star:nth-child(-n + 4) {
@@ -141,13 +115,7 @@
     }
 
   &__reviews {
-    margin: 0;
-    flex-direction: column;
-    align-self: flex-end;
-
     font-size: 10px;
-    font-weight: 400;
-    text-align: right;
     color: $main-accent;
   }
 }
