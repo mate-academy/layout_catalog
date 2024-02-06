@@ -1,32 +1,39 @@
 .card {
-  box-sizing: border-box;
-
   width: 200px;
-  height: 408px;
-
   display: flex;
   flex-direction: column;
+  padding: 32px 16px 16px;
 
   border-radius: 5px;
   background-color: $primary-bg-color;
   border: 1px solid $primary-bg-color;
 
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  &__image-block {
+    display: flex;
+    justify-content: center;
+  }
+
   &__image {
-    padding: 32px 20px 0;
+    margin-bottom: 40px;
     height: 134px;
     width: 160px;
 
     object-fit: contain;
     object-position: center;
-    align-self: center;
   }
 
   &__product {
-
     &-name {
-      padding: 40px 16px 4px;
-      height: 36px;
+      margin-bottom: 4px;
 
+      text-align: start;
       line-height: 18px;
       font-weight: 500px;
       font-size: 12px;
@@ -36,40 +43,33 @@
     }
 
     &-code {
-      height: 14px;
-      margin: 0 16px;
+      margin-bottom: 16px;
       display: flex;
       justify-content: start;
+
       color: $secondary-text-color;
       font-size: 10px;
       line-height: 14px;
-    }
-  }
-
-  &__review {
-    height: 16px;
-    margin: 16px 16px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    &-count {
-      font-size: 10px;
-      line-height: 14px;
-    }
-
-    &-text {
-      color: $main-text-color;
       font-weight: 400;
     }
   }
 
-  &__price {
-    height: 18px;
-    margin: 24px 16px 0;
+  &__review {
+    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
+
+    &-count {
+      text-align: center;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &-text {
       color:$secondary-text-color;
@@ -79,43 +79,40 @@
     }
 
     &-tag {
-      color: $main-text-color;
       font-size: 16px;
       font-weight: 700;
       line-height: 18px;
-      align-self:flex-start;
     }
   }
 
   &__button {
+    padding: 0;
     height: 40px;
-    width: 166px;
-    margin: 16px;
+    width: 100%;
+    margin-top: 16px;
 
     font-size: 14px;
     line-height: 16px;
     color: $primary-bg-color;
     text-transform: uppercase;
     font-weight: 700;
-    text-align: center;
 
-    border: none;
+    border: 1px solid $button-main-color;
     border-radius: 5px;
     background-color: $button-main-color;
 
-    transition-duration: $transition-duration;
+    transition: color $transition-duration, background-color $transition-duration;
+
+    &:hover {
+      color: $button-main-color;
+
+      background-color: $primary-bg-color;
+      cursor: pointer;
+    }
   }
 
   &:hover &__product-name {
     color: $title-hover-color;
-    cursor: pointer;
-  }
-
-  &__button:hover {
-    border: 1px solid $button-main-color;
-    color: $button-main-color;
-
-    background-color: #fff;
     cursor: pointer;
   }
 }
