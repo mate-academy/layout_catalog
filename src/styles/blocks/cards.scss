@@ -1,30 +1,9 @@
-.container {
-  display: grid;
-  grid-template-columns: (repeat(1, 200px));
-  justify-content: center;
-  gap: 46px 48px;
-
-  margin: 50px 40px;
-
-  @media (min-width: 488px) {
-    grid-template-columns: (repeat(2, 200px));
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: (repeat(3, 200px));
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: (repeat(4, 200px));
-  }
-}
-
 .card {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 
-  width: 200px;
+  width: $card-width;
   padding: 32px 16px 16px;
   border: 1px solid $card-border-color;
   border-radius: 5px;
@@ -34,7 +13,17 @@
 
   transition: $transition-time;
 
+      &:hover {
+        transform: scale(1.2);
+        z-index: 1;
+
+        .card__name {
+          color: $hover-text-color;
+        }
+      }
+
   &__img {
+    display: block;
     object-fit: contain;
     height: 134px;
     margin-bottom: 40px;
@@ -72,7 +61,6 @@
   &__price {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     margin-bottom: 16px;
 
     &-text {
@@ -86,15 +74,6 @@
       line-height: 18px;
       font-weight: bold;
       color: $main-text-color;
-    }
-  }
-
-  &:hover {
-    transform: scale(1.2);
-    z-index: 1;
-
-    .card__name {
-      color: $hover-text-color;
     }
   }
 
@@ -112,7 +91,7 @@
 
     text-align: center;
     text-transform: uppercase;
-    color: #fff;
+    color: $elements-bg-color;
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: bold;
