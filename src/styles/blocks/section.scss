@@ -1,0 +1,21 @@
+.section {
+  display: flex;
+  flex-wrap: wrap;
+
+  box-sizing: content-box;
+  width: $cards-in-row*$card-width + ($cards-in-row - 1) * $row-gap;
+  padding: 50px 40px;
+
+  &__card {
+    margin-right: $row-gap;
+    margin-bottom: 46px;
+  }
+
+  &__card:nth-child(#{$cards-in-row}n) {
+    margin-right: 0;
+  }
+
+  &__card:nth-last-child(-n + #{$cards-in-row}) {
+    margin-bottom: 0;
+  }
+}
