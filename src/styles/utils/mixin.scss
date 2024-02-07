@@ -1,0 +1,16 @@
+@import "./resets/resets-default";
+@import "./flexs/flexs";
+@import "./media/media";
+
+@mixin is-hover($property, $toValue, $toNewColor: false) {
+  transition: #{$property} 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    #{$property}: $toValue;
+
+    @if $toNewColor {
+      color: $toNewColor;
+    }
+  }
+}
