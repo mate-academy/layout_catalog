@@ -1,3 +1,96 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./utils/mixin";
+@import "./blocks/header";
+@import "./blocks/card";
+@import "./blocks/stars";
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  color: $main-color-text;
 }
+
+.is-active {
+  color: $main-color;
+}
+
+.is-active::after {
+  content: "";
+  text-transform: uppercase;
+  position: absolute;
+  border-bottom: 4px solid $main-color;
+  border-radius: 8px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+
+  @include on-tablet-menu {
+    display: none;
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+
+  @include on-tablet-menu {
+    display: block;
+  }
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: $main-color;
+}
+
+@include on-tablet-menu {
+  .body.active {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.main {
+  font-size: 12px;
+  line-height: 18px;
+  color: $main-color-text;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @include on-phone {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
