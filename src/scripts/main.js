@@ -2,7 +2,7 @@
 
 const body = document.querySelector('.body');
 const hamburger = document.querySelector('.hamburger');
-const menuList = document.querySelector('.nav__list');
+const menuList = document.querySelector('.header__list');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
