@@ -1,0 +1,44 @@
+.navigation {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    line-height: 60px;
+    position: relative;
+    color: $navigation-link-color;
+    text-decoration: none;
+
+    &:hover {
+    color: $active-color;
+    }
+  }
+}
+
+.is-active {
+  color: $active-color;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    background: $active-color;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 8px;
+  }
+}
