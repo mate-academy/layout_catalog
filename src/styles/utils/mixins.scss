@@ -1,19 +1,30 @@
-@mixin page-grid($columns) {
-  @media (max-width: 1023px) {
+@mixin page-grid {
+  @media (max-width: 487px){
     .main {
-      grid-template-columns: repeat(#{$columns}, 1fr);
+      grid-template-columns: repeat(1, 200px);
+      grid-template-rows: repeat(8, auto);
     }
   }
 
-  @media (max-width: 767px) {
+  @media (min-width: 488px) and (max-width: 767px){
     .main {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 200px);
+      grid-template-rows: repeat(4, auto);
     }
   }
 
-  @media (max-width: 488px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .main {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 200px);
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .main {
+      grid-template-columns: repeat(4, 200px);
+      grid-template-rows: repeat(2, auto);
     }
   }
 }
+
