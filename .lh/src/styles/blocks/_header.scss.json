@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/styles/blocks/_header.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1707378721371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707378782493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,82 @@\n+:root {\n+  --maincolor: #00acdc;\n+}\n+\n+* {\n+  box-sizing: border-box;\n+}\n+\n+body {\n+  font-family: Roboto, Arial, sans-serif;\n+  margin: 0;\n+}\n+\n+.header {\n+  display: flex;\n+  width: 100%;\n+  justify-content: space-between;\n+  align-items: center;\n+  font-size: 12px;\n+  font-weight: 500;\n+  padding: 0 50px;\n+  &__logo-link {\n+    width: 40px;\n+    height: 40px;\n+  }\n+}\n+\n+.nav {\n+  &__list {\n+  display: flex;\n+  list-style: none;\n+  text-transform: uppercase;\n+  padding: 0;\n+  margin: 0;\n+\n+  /* margin: 0 50px; */\n+\n+  /* musi być opcja druga, poniewaz dodaje 12px marginu na gorze i na dole */\n+  }\n+  &__item {\n+  position: relative;\n+  display: flex;\n+  align-items: center;\n+  margin: 0 10px;\n+  height: 60px;\n+    &:nth-child(1) {\n+    margin-left: 0;\n+    }\n+    &:nth-last-child(1) {\n+    margin-right: 0;\n+    }\n+  }\n+  &__link {\n+    display: flex;\n+    align-items: center;\n+    color: $main-color;\n+    text-decoration: none;\n+    text-align: center;\n+    height: 60px;\n+    &:hover {\n+      color: var(--maincolor);\n+    }\n+  }\n+}\n+\n+a.is-active {\n+  color: var(--maincolor);\n+  position: relative;\n+}\n+\n+a.is-active::after {\n+  position: absolute;\n+  display: block;\n+  content: '';\n+  bottom: 0;\n+  left: 0;\n+  width: 100%;\n+  color: var(--maincolor);\n+  border-bottom: 4px solid var(--maincolor);\n+  border-radius: 8px;\n+}\n+\n"
+                },
+                {
+                    "date": 1707378797571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,86 +79,4 @@\n   border-bottom: 4px solid var(--maincolor);\n   border-radius: 8px;\n }\n \n-:root {\n-  --maincolor: #00acdc;\n-}\n-\n-* {\n-  box-sizing: border-box;\n-}\n-\n-body {\n-  font-family: Roboto, Arial, sans-serif;\n-  margin: 0;\n-}\n-\n-.header {\n-  display: flex;\n-  width: 100%;\n-  justify-content: space-between;\n-  align-items: center;\n-  font-size: 12px;\n-  font-weight: 500;\n-  padding: 0 50px;\n-  &__logo-link {\n-    width: 40px;\n-    height: 40px;\n-  }\n-}\n-\n-.nav {\n-  &__list {\n-  display: flex;\n-  list-style: none;\n-  text-transform: uppercase;\n-  padding: 0;\n-  margin: 0;\n-\n-  /* margin: 0 50px; */\n-\n-  /* musi być opcja druga, poniewaz dodaje 12px marginu na gorze i na dole */\n-  }\n-  &__item {\n-  position: relative;\n-  display: flex;\n-  align-items: center;\n-  margin: 0 10px;\n-  height: 60px;\n-    &:nth-child(1) {\n-    margin-left: 0;\n-    }\n-    &:nth-last-child(1) {\n-    margin-right: 0;\n-    }\n-  }\n-  &__link {\n-    display: flex;\n-    align-items: center;\n-    color: #060b35;\n-    text-decoration: none;\n-    text-align: center;\n-    height: 60px;\n-    &:hover {\n-      color: var(--maincolor);\n-    }\n-  }\n-}\n-\n-a.is-active {\n-  color: var(--maincolor);\n-  position: relative;\n-}\n-\n-a.is-active::after {\n-  position: absolute;\n-  display: block;\n-  content: '';\n-  bottom: 0;\n-  left: 0;\n-  width: 100%;\n-  color: var(--maincolor);\n-  border-bottom: 4px solid var(--maincolor);\n-  border-radius: 8px;\n-}\n-\n"
+                },
+                {
+                    "date": 1707378873124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n-:root {\n-  --maincolor: #00acdc;\n-}\n+@import '../variables/variables';\n \n+\n * {\n   box-sizing: border-box;\n }\n \n"
+                },
+                {
+                    "date": 1707378884825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     text-decoration: none;\n     text-align: center;\n     height: 60px;\n     &:hover {\n-      color: var(--maincolor);\n+      color: $blue;\n     }\n   }\n }\n \n"
+                },
+                {
+                    "date": 1707378904191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n-@import '../variables/variables';\n+:root {\n+  --maincolor: #00acdc;\n+}\n \n-\n * {\n   box-sizing: border-box;\n }\n \n@@ -51,14 +52,14 @@\n   }\n   &__link {\n     display: flex;\n     align-items: center;\n-    color: $main-color;\n+    color: #060b35;\n     text-decoration: none;\n     text-align: center;\n     height: 60px;\n     &:hover {\n-      color: $blue;\n+      color: var(--maincolor);\n     }\n   }\n }\n \n"
+                },
+                {
+                    "date": 1707378914671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n   }\n   &__link {\n     display: flex;\n     align-items: center;\n-    color: #060b35;\n+    color: $main-color;\n     text-decoration: none;\n     text-align: center;\n     height: 60px;\n     &:hover {\n"
+                },
+                {
+                    "date": 1707378924171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n   }\n }\n \n a.is-active {\n-  color: var(--maincolor);\n+  color: $blue;\n   position: relative;\n }\n \n a.is-active::after {\n"
+                },
+                {
+                    "date": 1707378930376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     text-decoration: none;\n     text-align: center;\n     height: 60px;\n     &:hover {\n-      color: var(--maincolor);\n+      color: $blue;\n     }\n   }\n }\n \n@@ -74,9 +74,9 @@\n   content: '';\n   bottom: 0;\n   left: 0;\n   width: 100%;\n-  color: var(--maincolor);\n+  color: $blue;\n   border-bottom: 4px solid var(--maincolor);\n   border-radius: 8px;\n }\n \n"
+                },
+                {
+                    "date": 1707378935578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,8 +75,8 @@\n   bottom: 0;\n   left: 0;\n   width: 100%;\n   color: $blue;\n-  border-bottom: 4px solid var(--maincolor);\n+  border-bottom: 4px solid $blue;\n   border-radius: 8px;\n }\n \n"
+                },
+                {
+                    "date": 1707378945000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n-:root {\n-  --maincolor: #00acdc;\n-}\n+@import \n \n * {\n   box-sizing: border-box;\n }\n"
+                },
+                {
+                    "date": 1707378951184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-@import \n+@import '../variables/variables'\n \n * {\n   box-sizing: border-box;\n }\n"
+                }
+            ],
+            "date": 1707378721371,
+            "name": "Commit-0",
+            "content": ":root {\n  --maincolor: #00acdc;\n}\n\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: Roboto, Arial, sans-serif;\n  margin: 0;\n}\n\n.header {\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 12px;\n  font-weight: 500;\n  padding: 0 50px;\n  &__logo-link {\n    width: 40px;\n    height: 40px;\n  }\n}\n\n.nav {\n  &__list {\n  display: flex;\n  list-style: none;\n  text-transform: uppercase;\n  padding: 0;\n  margin: 0;\n\n  /* margin: 0 50px; */\n\n  /* musi być opcja druga, poniewaz dodaje 12px marginu na gorze i na dole */\n  }\n  &__item {\n  position: relative;\n  display: flex;\n  align-items: center;\n  margin: 0 10px;\n  height: 60px;\n    &:nth-child(1) {\n    margin-left: 0;\n    }\n    &:nth-last-child(1) {\n    margin-right: 0;\n    }\n  }\n  &__link {\n    display: flex;\n    align-items: center;\n    color: #060b35;\n    text-decoration: none;\n    text-align: center;\n    height: 60px;\n    &:hover {\n      color: var(--maincolor);\n    }\n  }\n}\n\na.is-active {\n  color: var(--maincolor);\n  position: relative;\n}\n\na.is-active::after {\n  position: absolute;\n  display: block;\n  content: '';\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  color: var(--maincolor);\n  border-bottom: 4px solid var(--maincolor);\n  border-radius: 8px;\n}\n\n"
+        }
+    ]
+}
