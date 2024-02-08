@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1707377575336,
@@ -36,6 +36,30 @@
                 {
                     "date": 1707394306974,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n   align-items: center;\n   width: 200px;\n   padding: 32px 16px 16px;\n   border: 1px solid #F3F3F3;\n+  border-radius: 5px;\n   &__image {\n     height: 134px;\n     width: 160px;\n     margin-bottom: 40px;\n"
+                },
+                {
+                    "date": 1707394433453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,9 @@\n     display: flex;\n     align-items: center;\n     justify-content: center;\n     text-decoration: none;\n+    \n     &:hover {\n       background-color: white;\n       color: $blue;\n       border: 1px solid $blue;\n"
+                },
+                {
+                    "date": 1707394438801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,82 @@\n+@import '../variables/variables';\n+\n+* {\n+  box-sizing: border-box;\n+}\n+\n+.card {\n+  display: flex;\n+  flex-direction: column;\n+  align-items: center;\n+  width: 200px;\n+  padding: 32px 16px 16px;\n+  border: 1px solid #F3F3F3;\n+  border-radius: 5px;\n+  &__image {\n+    height: 134px;\n+    width: 160px;\n+    margin-bottom: 40px;\n+    background-size: contain;\n+  }\n+\n+  &__item {\n+    &-name {\n+      color: $main-color;\n+      font-weight: 500;\n+      font-size: 12px;\n+      line-height: 18px;\n+    }\n+    &-product-code{\n+      font-size: 10px;\n+      align-self: flex-start;\n+      color: $secondary-color;\n+      line-height: 14px;\n+      margin-top: 4px;\n+    }\n+  }\n+\n+  &__price {\n+    display: flex;\n+    align-items: center;\n+    justify-content: space-between;\n+    width: 100%;\n+    margin-bottom: 16px;\n+    &-text {\n+      font-size: 12px;\n+      color: $secondary-color;\n+      line-height: 18px;\n+    }\n+    &-amount {\n+      color: $main-color;\n+      font-size: 16px;\n+      font-weight: 700;\n+      line-height: 18px;\n+    }\n+  }\n+\n+  &__button {\n+    box-sizing: border-box;\n+    height: 40px;\n+    text-transform: uppercase;\n+    border-radius: 5px;\n+    width: 166px;\n+    background-color: $blue;\n+    color: white;\n+    font-weight: 700;\n+    font-size: 14px;\n+    line-height: 16px;\n+    border: 1px solid $blue;\n+    display: flex;\n+    align-items: center;\n+    justify-content: center;\n+    text-decoration: none;\n+    transition: 0.3s lie\n+    &:hover {\n+      background-color: white;\n+      color: $blue;\n+      border: 1px solid $blue;\n+      cursor: pointer;\n+    }\n+  }\n+}\n+\n"
+                },
+                {
+                    "date": 1707394492264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n     display: flex;\n     align-items: center;\n     justify-content: center;\n     text-decoration: none;\n-    transition: 0.3s lie\n+    transition: 0.3s linear;\n     &:hover {\n       background-color: white;\n       color: $blue;\n       border: 1px solid $blue;\n@@ -79,86 +79,4 @@\n     }\n   }\n }\n \n-@import '../variables/variables';\n-\n-* {\n-  box-sizing: border-box;\n-}\n-\n-.card {\n-  display: flex;\n-  flex-direction: column;\n-  align-items: center;\n-  width: 200px;\n-  padding: 32px 16px 16px;\n-  border: 1px solid #F3F3F3;\n-  border-radius: 5px;\n-  &__image {\n-    height: 134px;\n-    width: 160px;\n-    margin-bottom: 40px;\n-    background-size: contain;\n-  }\n-\n-  &__item {\n-    &-name {\n-      color: $main-color;\n-      font-weight: 500;\n-      font-size: 12px;\n-      line-height: 18px;\n-    }\n-    &-product-code{\n-      font-size: 10px;\n-      align-self: flex-start;\n-      color: $secondary-color;\n-      line-height: 14px;\n-      margin-top: 4px;\n-    }\n-  }\n-\n-  &__price {\n-    display: flex;\n-    align-items: center;\n-    justify-content: space-between;\n-    width: 100%;\n-    margin-bottom: 16px;\n-    &-text {\n-      font-size: 12px;\n-      color: $secondary-color;\n-      line-height: 18px;\n-    }\n-    &-amount {\n-      color: $main-color;\n-      font-size: 16px;\n-      font-weight: 700;\n-      line-height: 18px;\n-    }\n-  }\n-\n-  &__button {\n-    box-sizing: border-box;\n-    height: 40px;\n-    text-transform: uppercase;\n-    border-radius: 5px;\n-    width: 166px;\n-    background-color: $blue;\n-    color: white;\n-    font-weight: 700;\n-    font-size: 14px;\n-    line-height: 16px;\n-    border: 1px solid $blue;\n-    display: flex;\n-    align-items: center;\n-    justify-content: center;\n-    text-decoration: none;\n-    \n-    &:hover {\n-      background-color: white;\n-      color: $blue;\n-      border: 1px solid $blue;\n-      cursor: pointer;\n-    }\n-  }\n-}\n-\n"
+                },
+                {
+                    "date": 1707394511043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n     display: flex;\n     align-items: center;\n     justify-content: center;\n     text-decoration: none;\n-    transition: 0.3s linear;\n+    transition: 0.2s linear;\n     &:hover {\n       background-color: white;\n       color: $blue;\n       border: 1px solid $blue;\n"
+                },
+                {
+                    "date": 1707394516344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n     display: flex;\n     align-items: center;\n     justify-content: center;\n     text-decoration: none;\n-    transition: 0.2s linear;\n+    transition: 0.1s linear;\n     &:hover {\n       background-color: white;\n       color: $blue;\n       border: 1px solid $blue;\n"
+                },
+                {
+                    "date": 1707394521383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n     display: flex;\n     align-items: center;\n     justify-content: center;\n     text-decoration: none;\n-    transition: 0.1s linear;\n+    transition: 0.15s linear;\n     &:hover {\n       background-color: white;\n       color: $blue;\n       border: 1px solid $blue;\n"
                 }
             ],
             "date": 1707377575336,
