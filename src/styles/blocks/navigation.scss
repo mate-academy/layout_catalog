@@ -1,0 +1,64 @@
+@use '../variables.scss' as *;
+
+/* #region NAVIGATION */
+
+.nav {
+  display: flex;
+  margin-right: #{$nav-margin};
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: #{$nav-item-margin};
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: #{$nav-font-size};
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #060b35;
+    height: #{$nav-link-size};
+    transition: color 300ms;
+
+  }
+
+  &__link:hover {
+    color: #{$nav-link-color};
+  }
+}
+
+.is-active {
+  color: #{$header-font-color};
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  background-color: #{$header-font-color};
+  height: #{$nav-stripe-height};
+  border-radius: 8px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* #endregion */
