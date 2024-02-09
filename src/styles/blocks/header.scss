@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  max-height: 60px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin-right: 0;
+  padding: 0 50px;
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+
+  &__logo-image {
+    display: block;
+    margin: 10px 0;
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-item {
+    position: relative;
+    margin-left: 20px;
+  }
+
+
+
+  &__nav-item:first-child {
+    margin-left: 0;
+  }
+
+
+  &__nav-link {
+    text-decoration: none;
+    height: 60px;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__nav-link:hover {
+    color: $color-touch;
+  }
+
+  &__nav-item::after {
+    content: "";
+    display: block;
+    width: 0;
+    background-color: $color-touch;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__nav-item:hover::after {
+    width: 100%;
+  }
+}
+
+.is-active,
+.header___nav-link:hover {
+  color: $color-touch;
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $color-touch;
+  display: block;
+  width: 100%;
+}
