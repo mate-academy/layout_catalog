@@ -1,0 +1,142 @@
+@use "../utils/variables.scss" as *;
+
+.catalog {
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  padding: 50px 40px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 46px 48px;
+
+    .card {
+      box-sizing: border-box;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid $light-color;
+      border-radius: 5px;
+      padding: 32px 16px 16px;
+      transition: transform 300ms ease, color 300ms ease;
+
+      &__photo {
+        margin-bottom: 40px;
+        width: 160px;
+        height: 134px;
+      }
+
+      &__name {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        color: $dark-color;
+        margin-bottom: 4px;
+      }
+
+      &__code {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 14px;
+        color: $gray-color;
+        margin-bottom: 16px;
+        align-self: flex-start;
+      }
+
+      &__review {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+      }
+
+      &__reviews {
+        font-size: 10px;
+        font-weight: 400;
+        color: $dark-color;
+        display: flex;
+        align-items: center;
+        line-height: 14px;
+      }
+
+      &__cost {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      &__price {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        color: $gray-color;
+      }
+
+      &__amount {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 18px;
+        color: $dark-color;
+      }
+
+      &__button {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $white-color;
+        background-color: $blue-color;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 166px;
+        transition: background-color 300ms ease, color 300ms ease;
+        padding: 12px;
+        box-sizing: border-box;
+
+        &:hover {
+          background-color: $white-color;
+          color: $blue-color;
+          border: 1px solid $blue-color;
+        }
+      }
+
+      &:hover {
+        transform: scale(120%);
+      }
+
+      &:hover .card__name {
+        color: $cobalt-color;
+      }
+    }
+
+    @for $i from 1 through 8 {
+      &card:nth-child(#{$i}) {
+        content: card;
+      }
+    }
+
+    @media screen and (max-width: 487px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media screen and (min-width: 488px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

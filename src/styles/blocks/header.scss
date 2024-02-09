@@ -1,0 +1,78 @@
+@use "../utils/variables.scss" as *;
+
+.header {
+  margin: 0 auto;
+  background-color: $white-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+  }
+
+  .nav {
+    display: flex;
+    margin-right: 50px;
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+
+    &__item {
+      margin: auto 10px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: color 300ms ease;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      & a:hover {
+        color: $blue-color;
+      }
+    }
+
+    &__link {
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      color: $dark-color;
+      height: 60px;
+      line-height: 60px;
+      text-transform: uppercase;
+    }
+
+    .is-active {
+      color: $blue-color;
+      font-size: 12px;
+    }
+
+    .is-active::after {
+      content: "";
+      width: 37px;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $blue-color;
+      display: block;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
