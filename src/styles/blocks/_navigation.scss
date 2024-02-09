@@ -32,23 +32,39 @@
     line-height: 14px;
 
     &.is-active {
-    color: #00ACDC;
-    margin: 0;
+      color: $link-color;
+      margin: 0;
     }
 
     &.is-active::after {
-    content: '';
-    position: absolute;
-    width: 37px;
-    height: 4px;
-    border-radius: 8px;
-    margin-top: 56px;
-    background-color: #00ACDC;
-    color: #00ACDC;
-}
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: $height-line;
+      border-radius: $border-radius-line;
+      margin-top: $margin-top-line;
+      background-color: $link-color;
+      color: $link-color;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: $height-line;
+      border-radius: $border-radius-line;
+      margin-top: $margin-top-line;
+      background-color: $link-color;
+      color: $link-color;
+      transform: scaleX(0);
+    }
 
     &:hover {
-      color: #00acdc;
+      color: $link-color;
+
+      &::before {
+        transform: scaleX(1);
+      }
     }
   }
 }
