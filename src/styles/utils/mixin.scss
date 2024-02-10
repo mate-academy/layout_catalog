@@ -1,0 +1,27 @@
+@import "./media";
+
+@mixin is-hover($property, $toValue, $toNewColor: false) {
+  transition: #{$property} $animation-during;
+  cursor: pointer;
+
+  &:hover {
+    #{$property}: $toValue;
+
+    @if $toNewColor {
+      color: $toNewColor;
+      border: 1px solid $toNewColor;
+    }
+  }
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

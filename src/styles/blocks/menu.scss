@@ -1,0 +1,41 @@
+.menu {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &--active {
+      &::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 4px;
+        border-radius: 8px;
+        position: absolute;
+        bottom: 0;
+        background: $blue-color;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    color: $general-color;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include is-hover(color, $blue-color);
+
+    &--special {
+      color: $blue-color;
+    }
+  }
+}
