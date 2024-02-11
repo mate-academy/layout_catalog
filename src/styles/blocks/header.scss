@@ -1,10 +1,4 @@
-@import '../variables';
-
 .header {
-  font-family: Roboto, serif;
-  font-weight: 500;
-  font-size: 12px;
-
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -19,55 +13,63 @@
   }
 
   &__tab-container {
-    display:flex;
+    display: flex;
     flex: row;
-    height:100%;
+    height: 100%;
   }
 
   &__tab {
-    position:relative;
-    height:100%;
-    margin-left: 20px;
-    display:flex;
-    align-items:center;
+    position: relative;
+
+    display: flex;
+    align-items: center;
     justify-content: space-around;
+    height: 100%;
+    margin-left: 20px;
 
     &:first-child {
-      margin:0;
+      margin: 0;
     }
   }
 
   &__nav-link {
-    font-family: Roboto, sans-serif;
     display: flex;
-    height: 100%;
     align-items: center;
-    color: $main-accent;
+    height: 100%;
+
     text-decoration: none;
+    color: $main-accent-color;
+
     transition: $animation-time;
 
     &:visited {
-      color: $main-accent;
+      color: $main-accent-color;
     }
 
     &:hover {
-      color: $blue-accent
+      color: $blue-accent-color
     }
   }
 }
 
-.is-active,
-.is-active:visited {
-  color: $blue-accent
-}
+.is-active {
+  color: $blue-accent-color;
 
-.is-active::after {
-  content: "";
-  position: absolute;
-  height: 4px;
-  width:100%;
-  top: $header-heigth - 4px;
-  left: -1px;
-  background-color: $blue-accent;
-  border-radius: 8px;
+  &:visited {
+    color: $blue-accent-color;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: $header-heigth - 4px;
+    left: -1px;
+
+    height: 4px;
+    width:100%;
+
+    background-color: $blue-accent-color;
+    border-radius: 8px;
+  }
 }
