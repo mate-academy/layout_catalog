@@ -1,0 +1,38 @@
+@mixin two-columns {
+  @media (min-width: $two-columns-min-width) {
+    @content;
+  }
+}
+
+@mixin three-columns {
+  @media (min-width: $three-columns-min-width) {
+    @content;
+  }
+}
+
+@mixin four-columns {
+  @media (min-width: $four-columns-min-width) {
+    @content;
+  }
+}
+
+@mixin card-grid {
+  --columns: 1;
+
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px ;
+  grid-template-columns: repeat(var(--columns), 200px);
+
+  @include two-columns {
+    --columns: 2;
+  }
+
+  @include three-columns {
+    --columns: 3;
+  }
+
+  @include four-columns {
+    --columns: 4;
+  }
+}
