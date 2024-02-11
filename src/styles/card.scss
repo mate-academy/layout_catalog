@@ -1,0 +1,105 @@
+@import 'variables';
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+  gap: 46px 48px;
+
+  padding-top: 50px;
+  padding-bottom: 40px;
+
+  @media (min-width: $phone-min-width) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: $tablet-min-width) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: $desktop-min-with) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  &__card {
+    box-sizing: border-box;
+    padding: 32px 16px 0;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #F3F3F3;
+    background: #FFF;
+
+    &-title {
+      margin: 0 0 4px;
+      color: $main-accent;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px; /* 150% */
+    }
+    &-btn {
+      box-sizing: border-box;
+      display: block;
+      margin: 0 auto 16px;
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      background-color: $bnt-bg;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 40px; /* 114.286% */
+
+      &:hover {
+        border: 1px solid $bnt-bg;
+        background-color: #fff;
+        color: $bnt-bg;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 300ms;
+      .catalog__card-title {
+        color: #34568b;
+      }
+      .catalog__card-btn {
+        background-color: #fff;
+        color: #00acdc;
+      }
+    }
+    &-img {
+      display: block;
+      margin: 0 auto 40px;
+      width: 160px;
+      height: 134px;
+    }
+    &-product-code {
+      margin: 0 0 16px;
+      color: $secondary;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px; /* 140% */
+    }
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    &-price-text {
+      margin: 0;
+      color: $secondary;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px; /* 150% */
+    }
+    &-price-digit {
+      margin: 0;
+      color: $main-accent;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px; /* 112.5% */
+    }
+  }
+}
