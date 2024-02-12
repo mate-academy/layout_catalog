@@ -1,3 +1,38 @@
+@import './blocks/variables';
+@import './blocks/header';
+@import './blocks/card';
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: $font;
+}
+
+.main {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, $card-size);
+  justify-content: center;
+  gap: 46px 48px;
+}
+
+@include small-screen {
+  .main {
+    grid-template-columns: repeat(2, $card-size);
+  }
+}
+
+@include tablet-screen {
+  .main {
+    grid-template-columns: repeat(3, $card-size);
+  }
+}
+
+@include pc-screen {
+  .main {
+    grid-template-columns: repeat(4, $card-size);
+  }
 }
