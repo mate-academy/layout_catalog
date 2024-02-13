@@ -1,3 +1,44 @@
-body {
+@import 'variables';
+@import 'mixin';
+@import 'fonts';
+@import 'header';
+@import 'stars';
+@import 'card';
+
+* {
   margin: 0;
+  padding: 0;
+  transition: all 300ms;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: $main-color;
+}
+
+main {
+  padding-inline: 40px;
+  padding-block: 50px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 200px;
+  grid-template-rows: repeat(8, 408px);
+  gap: 46px 48px;
+
+  @include on-normal {
+    grid-template-columns: 200px 200px;
+    grid-template-rows: repeat(4, 408px);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 408px);
+  }
+
+  @include on-laptop {
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: 408px 408px;
+  }
 }
