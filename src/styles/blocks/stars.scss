@@ -1,3 +1,5 @@
+$stars-amount: 5;
+
 .stars {
   display: flex;
 
@@ -11,6 +13,13 @@
 
   &__star:not(:last-child) {
     margin-right: 4px;
-    background-image: url(../images/star-active.svg);
+  }
+}
+
+@for $i from 1 through $stars-amount {
+  .stars.stars--#{$i} {
+    .stars__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
