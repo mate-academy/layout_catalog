@@ -1,0 +1,55 @@
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__li {
+    list-style: none;
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 23px 0;
+    line-height: 60px;
+    text-transform: uppercase;
+    height: 60px;
+
+    &.is-active {
+      color: $border;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $border;
+      }
+    }
+
+    &:hover {
+      color: $border;
+    }
+  }
+}
