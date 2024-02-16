@@ -1,3 +1,136 @@
-body {
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'header';
+@import 'stars';
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap';
+
+body{
   margin: 0;
+}
+
+* {
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat($columns-count, 200px);
+  grid-template-rows: repeat(2, 408px);
+  gap:46px 48px;
+  justify-content: center;
+
+  padding: 50px 40px;
+
+  @include media-488px {
+    $columns-count: 2;
+
+    grid-template-columns: repeat($columns-count, 200px);
+  }
+
+  @include media-768px {
+    $columns-count: 3;
+
+    grid-template-columns: repeat($columns-count, 200px);
+  }
+
+  @include media-1024px {
+    $columns-count: 4;
+
+    grid-template-columns: repeat($columns-count, 200px);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 200px;
+    border-radius: 5px;
+    padding: 32px 19px;
+
+    @include border;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &-image {
+      width: 160px;
+      height: 134px;
+    }
+
+    &-name {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &:hover &--name {
+      color: #34568b;
+    }
+
+    &-code {
+      color: $main-text-color;
+      line-height: 14px;
+    }
+
+    &-grade {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-reviews {
+      text-align: center;
+    }
+
+    &-price {
+      display: flex;
+      justify-content: space-between;
+
+      &-text {
+        color: $main-text-color;
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      &-amount {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+
+    &-buy-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      padding: 10px;
+
+      border: none;
+      border-radius: 5px;
+      background-color: rgba(0, 172, 220, 1);
+
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #FFF;
+      cursor: pointer;
+
+      &:hover {
+        color: rgba(0, 172, 220, 1);
+        border: 1px solid rgba(0, 172, 220, 1);
+        background-color: #fff;
+      }
+    }
+  }
 }
