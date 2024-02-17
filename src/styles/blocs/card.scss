@@ -1,6 +1,5 @@
 .catalog__card {
-  box-sizing: border-box;
-  width: 200px;
+  width: $card-width;
   border: 1px solid #F3F3F3;
   border-radius: 5px;
   display: flex;
@@ -8,6 +7,7 @@
   padding-inline: 16px;
   padding-top: 32px;
   padding-bottom: 16px;
+  transition: color, transform 300ms ease;
 
   &-img {
     height: 134px;
@@ -21,7 +21,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
-    color:#060B35;
+    color: $main-color;
     margin: 0;
     margin-bottom: 4px;
   }
@@ -42,7 +42,6 @@
   }
 
   &-reviews {
-    font-weight: 400;
     height: 16px;
     font-size: 10px;
     line-height: 14px;
@@ -60,7 +59,6 @@
 
     &-name {
       font-size: 12px;
-      font-weight: 400;
       line-height: 18px;
       color: $secondary;
     }
@@ -70,19 +68,15 @@
       font-weight: 700;
       line-height: 18px;
       color: $main-color;
-      display: flex;
-      justify-content: right;
     }
   }
 
   &:hover {
     transform: scale(1.2);
-    transition: all 300ms ease;
   }
 
   &:hover .catalog__card-title {
-    transition: all 300ms;
-    color: #34568b;
+    color: $hover-title-color;
   }
 
   &-button {
@@ -99,10 +93,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+    transition: border, color, background-color 300ms ease;
 
     &:hover {
-      transition: all 300ms;
       border: 1px solid $blue-accent;
       color: $blue-accent;
       background-color: $white;
