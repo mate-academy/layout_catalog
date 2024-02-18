@@ -1,0 +1,110 @@
+.card {
+  width: 200px;
+  height: 408px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-text-secondary;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+
+  @include hover-animation(transform);
+
+  @for $i from 1 through 8 {
+    &:hover {
+      transform: scale(1.2);
+      .card__descr {
+        color:#34568b;
+      }
+    }
+
+  }
+
+   &__img {
+     width: 160px;
+     height: 134px;
+     display: block;
+     margin: 0 auto 40px;
+     background-image: url('../images/imac.jpeg');
+     background-size: cover;
+   }
+
+  &__descr {
+    color: $color-text-main;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__prodcode {
+    margin-top: 4px;
+    line-height: 14px;
+    font-size: 10px;
+    color: #616070;
+    margin-bottom: 0;
+  }
+
+  &__reviews {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__label {
+    padding-left: 17px;
+    font-size: 10px;
+    color: $color-text-main;
+    line-height: 14px;
+    margin: 0;
+  }
+
+
+    &__buy {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    &__price {
+      font-size: 12px;
+      line-height: 18px;
+      color: #616070;
+      padding-right: 85px;
+    }
+
+    &__tag {
+      color: $color-text-main;
+      font-size: 16px;
+      text-align: right;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 18px;
+    }
+
+
+    &__button {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 166px;
+      height: 40px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      border: 1px solid $blue-color;
+      color:$color-text-secondary;
+      background-color: $blue-color;
+
+      @include hover-animation (all);
+
+  &:hover {
+    @include button-anim-hover;
+  }
+}
+
+}
