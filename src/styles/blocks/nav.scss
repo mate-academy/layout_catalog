@@ -1,0 +1,55 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.nav {
+  &__link{
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    color: $main-accent;
+    text-transform: uppercase;
+
+    margin: 0 10px;
+    height: 60px;
+
+    @include flex-center;
+
+    &:hover {
+      color: $blue-accent;
+      cursor: pointer;
+    }
+
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    &:first-child > * {
+      margin-left: 0;
+    }
+
+    &:last-child >  * {
+      margin-right: 0;;
+    }
+  }
+
+}
+
+.is-active {
+  color: $blue-accent;
+   &::after {
+    content: '';
+    height: 4px;
+    background-color: $blue-accent;
+
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+   }
+}
