@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding: 0 50px;
+  height: 60px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    font-size: 0;
+    height: 40px;
+  }
+
+  &__logo-img {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.nav {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+
+    &-item {
+      font-size: 12px;
+      font-weight: 500;
+      margin-left: 20px;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+}
+
+  &__link {
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    color: $main-accent;
+    display: flex;
+    height: 60px;
+    align-items: center;
+
+    @include hover(color, $active-color);
+  }
+}
+
+.is-active {
+  color: $active-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background-color: $active-color;
+    width: 100%;
+    height: 4px;
+  }
+}
