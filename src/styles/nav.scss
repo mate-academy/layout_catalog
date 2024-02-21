@@ -1,0 +1,48 @@
+nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    & :not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    padding: 23px 0;
+    font-weight: 500;
+    font-size: 12px;
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
+    color: var(--cardfont-color);
+
+    &:hover {
+      color: var(--card-button-color);
+      text-transform: uppercase;
+    }
+  }
+
+  &__active {
+    position: relative;
+    color: var(--card-button-color);
+  }
+}
+
+.is-active::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 37px;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: var(--card-button-color);
+}
