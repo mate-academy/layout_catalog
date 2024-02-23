@@ -1,0 +1,108 @@
+@import './variables';
+@import './mixins';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+    &__menu {
+        filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(241deg) brightness(100%) contrast(106%);
+        display: flex;
+        align-items: center;
+
+        @include three-columns {
+            display: none;
+        }
+    }
+
+    &>a {
+        height: 40px;
+        margin: 10px 50px;
+    }
+
+    &__nav {
+        margin: 0 50px 0 0;
+        display: none;
+
+        @include three-columns {
+            display: flex;
+        }
+
+        &-list {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: 60px;
+
+
+            .nav-item {
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-size: 12px;
+                margin: 23px 10px;
+                position: relative;
+
+
+                &:first-of-type {
+                    margin: 0 10px 0 0;
+                }
+
+                &:last-of-type {
+                    margin: 0 0 0 10px;
+                }
+
+
+                &>a {
+                    text-decoration: none;
+                    color: #060b35;
+
+                    &[data-qa='nav-hover'] {
+                        padding: 23px 0;
+                        margin: 0;
+                        color: #00ACDC;
+                    }
+
+                    &:hover {
+                        color: $blue-color;
+                        transition: all 300ms;
+                    }
+
+                    &.is-active {
+                        color: $blue-color;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.is-active {
+    color: $blue-color;
+    padding: 23px 0;
+    margin: 0;
+    width: fit-content;
+
+    &::after {
+        color: #00ACDC;
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: $blue-color;
+        border-radius: 8px;
+    }
+}
+

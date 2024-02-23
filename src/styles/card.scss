@@ -1,0 +1,213 @@
+@import './variables';
+@import './mixins';
+
+.container {
+    padding: 50px 40px;
+
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+    gap: 48px 46px;
+    justify-content: center;
+
+    @include two-columns {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @include three-columns {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @include four-columns {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+  
+.card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 198px;
+  border: 1px solid #F3F3F3;
+  border-radius: 5px;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all 300ms;
+      cursor: pointer;
+    }
+    
+
+    &__photo {
+      display: flex;
+      justify-content: center;
+      margin: 28px 0 40px;
+    }
+    
+    &__image {
+      width: 160px;
+      height: 134px;
+    }
+  
+  
+    &__title {
+      color: $main-accent;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: $big-line-height;
+      margin-bottom: 4px;
+
+      &:hover {
+        color: #34568b;
+        transition: all 300ms;
+      }
+
+      & > p {
+        margin: 0 16px;
+      }
+    }
+  
+    &__subtitle {
+      color: $secondary-accent;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: $default-line-height;
+      margin-bottom: $default-margin;
+
+      & > p {
+        margin: 0 16px;
+      }
+    }
+
+    &__feedback {
+      display: flex;
+      align-items: center;
+      margin: 0 16px
+    }
+
+
+    &__btn {
+      [data-qa="card-hover"] {
+        background-color: $white;
+        color: $blue-color;
+      }
+    }
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 16px;
+      width: 166px;
+      height: 40px;
+      color: $white;
+      font-size: 14px;
+      line-height: $default-line-height;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-color: $blue-color;
+      border-radius: 5px;
+      transition: background-color 0.3s linear ,color 0.3s linear;
+      border: 1px solid $blue-color;
+      
+      &:hover {
+        background-color: $white;
+        color: $blue-color;
+      }
+      
+    }
+  
+  }
+
+  .feedback {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  
+  
+    &__review {
+      display: flex;
+      color: $main-accent;
+      font-size: 10px;
+      font-weight: 400;
+      align-self: center;
+
+      & > p {
+        margin: 0;
+      }
+    }
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 16px;
+  
+  
+    &__title {
+      color: $secondary-accent;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: $big-line-height;
+
+      & > p {
+        margin: 0;
+      }
+    }
+  
+    &__amount {
+      color: $main-accent;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+
+      & > p {
+        margin: 0;
+      }
+    }
+    
+  }
+  
+  .stars {
+    display: flex;
+    gap: 4px;
+  
+  
+    &__star {
+      width: 16px;
+      height: 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  
+    &__star:not(:last-child) {
+      background-image: url(../images/star-active.svg);
+    }
+
+    &__stars--0{
+      background-image: url(../images/star.svg);
+    }
+
+    &__stars--1{
+      background-image: url(../images/star.svg);
+    }
+
+    &__stars--2{
+      background-image: url(../images/star.svg);
+    }
+
+    &__stars--3{
+      background-image: url(../images/star.svg);
+    }
+
+    &__stars--4{
+      background-image: url(../images/star.svg);
+    }
+
+    &__stars--5 {
+      background-image: url(../images/star.svg);
+    }
+}
+
+  
