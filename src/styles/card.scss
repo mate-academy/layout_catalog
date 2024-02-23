@@ -1,10 +1,34 @@
 @import './variables';
 @import './mixins';
 
+.container {
+    padding: 50px 40px;
+
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+    gap: 48px 46px;
+    justify-content: center;
+
+    @include two-columns {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @include three-columns {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @include four-columns {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+  
 .card {
-    width: 198px;
-    border: 1px solid #F3F3F3;
-    border-radius: 5px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 198px;
+  border: 1px solid #F3F3F3;
+  border-radius: 5px;
 
     &:hover {
       transform: scale(1.2);
@@ -12,38 +36,11 @@
       cursor: pointer;
     }
     
-    &__container {
-        padding: 50px 40px;
-
-        display: grid;
-        grid-template-columns: repeat(1, 200px);
-        gap: 48px 46px;
-        justify-content: center;
-
-        @include two-columns {
-          grid-template-columns: repeat(2, 200px);
-        }
-
-        @include three-columns {
-          grid-template-columns: repeat(3, 200px);
-        }
-
-        @include four-columns {
-          grid-template-columns: repeat(4, 200px);
-        }
-      }
-
-  
-    &__wrapper {
-        padding: 32px 16px 16px;
-        display: flex;
-        flex-direction: column;
-    }
 
     &__photo {
       display: flex;
       justify-content: center;
-      margin-bottom: 40px;
+      margin: 28px 0 40px;
     }
     
     &__image {
@@ -65,7 +62,7 @@
       }
 
       & > p {
-        margin: 0;
+        margin: 0 16px;
       }
     }
   
@@ -77,13 +74,14 @@
       margin-bottom: $default-margin;
 
       & > p {
-        margin: 0;
+        margin: 0 16px;
       }
     }
 
     &__feedback {
       display: flex;
       align-items: center;
+      margin: 0 16px
     }
 
 
@@ -97,6 +95,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 16px;
+      width: 166px;
       height: 40px;
       color: $white;
       font-size: 14px;
@@ -142,7 +142,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 16px 0 0;
+    margin: 0 16px;
   
   
     &__title {
@@ -153,7 +153,6 @@
 
       & > p {
         margin: 0;
-        margin-bottom: 16px;
       }
     }
   
@@ -165,7 +164,6 @@
 
       & > p {
         margin: 0;
-        margin-bottom: 16px;
       }
     }
     
