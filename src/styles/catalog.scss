@@ -1,0 +1,32 @@
+.catalog {
+  --cards-count: 1;
+
+  display: grid;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(var(--cards-count), $card-width);
+
+  @media (min-width: 488px) {
+    --cards-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --cards-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --cards-count: auto-fill;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    padding-top: 32px;
+    width: $card-width;
+    border: 1px solid #f3f3f3;
+    border-radius: $border-radius;
+    padding-bottom: 16px;
+    padding-left: 16px;
+  }
+}
