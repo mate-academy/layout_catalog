@@ -1,0 +1,66 @@
+@use './variables' as *;
+
+.header {
+  width: 100%;
+  background-color: $header-color;
+  box-shadow: 0 $shadow-bottom $shadow-blur $shadow-color;
+  display: flex;
+  padding-left: $padding-horizontal;
+  padding-right: $padding-horizontal;
+  box-sizing: border-box;
+
+  &__img {
+    width: $img-size;
+    height: $img-size;
+  }
+
+  &__nav {
+    margin-left: auto;
+    justify-content: flex-end;
+
+    &-list {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      & :not(:last-child) {
+        margin-right: $margin-between;
+      }
+
+      &-item {
+        position: relative;
+
+        &-link {
+          height: $link-height;
+          text-transform: uppercase;
+          word-wrap: break-word;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $font-color;
+
+          &:hover {
+            color: $color-active;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $color-active;
+  flex-direction: column;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: $underline-height;
+    border-radius: $underline-radius;
+    background: $color-active;
+    position: absolute;
+    bottom: $underline-bottom;
+  }
+}
