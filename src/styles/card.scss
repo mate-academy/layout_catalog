@@ -1,0 +1,115 @@
+@import './variables';
+@import './mixins';
+
+.container {
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 48px 48px;
+  justify-content: center;
+
+  @include two-columns {
+    grid-template-columns: repeat(auto-fit, 200px);
+  }
+
+  @include three-columns {
+    grid-template-columns: repeat(auto-fit, 200px);
+  }
+
+  @include four-columns {
+    grid-template-columns: repeat(auto-fit, 200px);
+  }
+}
+
+.card {
+  width: 198px;
+  height: 404px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  transition: all 0.3s;
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 0;
+  }
+
+  &__photo--margin {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    color: $main-accent;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: $big-line-height;
+  }
+
+  &__title--margin {
+    margin: 40px 16px 0;
+
+    & > p {
+      margin: 0 0 4px;
+    }
+
+    &:hover {
+      color: #34568b;
+    }
+  }
+
+  &__subtitle--margin {
+    margin: 0 16px;
+
+    & > p {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    color: $secondary-accent;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: $default-line-height;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    width: 164px;
+    height: 38px;
+    color: $white;
+    font-size: 14px;
+    line-height: $default-line-height;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $blue;
+    border-radius: 5px;
+    transition:
+      background-color 0.3s linear,
+      color 0.3s linear;
+    border: 1px solid $blue;
+
+    &:hover {
+      background-color: $white;
+      color: $blue;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+[data-qa='card-hover'] {
+  color: #f3f3f3;
+}
