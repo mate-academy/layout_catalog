@@ -1,0 +1,32 @@
+@mixin phone {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin hover($properties) {
+  // stylelint-disable-next-line
+  transition: map-keys($properties) 300ms;
+  &:hover {
+    @each $property, $value in $properties {
+      #{$property}: #{$value};
+    }
+    @content;
+  }
+}
+
+@mixin grid-columns($columns) {
+  grid-template-columns: repeat($columns, 200px);
+}
