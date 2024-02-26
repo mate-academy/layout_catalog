@@ -1,0 +1,63 @@
+@use '../utils/variables' as *;
+
+.navigation {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+  }
+
+  &__item {
+    list-style-type: none;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    height: 60px;
+    color: $midnight-blue-color;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+
+    &--state_active {
+      position: relative;
+    }
+
+    &--state_active::after {
+      content: '';
+      width: 37px;
+      height: 4px;
+      position: absolute;
+      border-radius: 8px;
+      box-sizing: border-box;
+      bottom: 0;
+      left: 0;
+      border: 2px solid $cyan-blue-color;
+    }
+
+    &--color_blue {
+      color: $cyan-blue-color;
+    }
+
+    &:hover {
+      color: $cyan-blue-color;
+    }
+  }
+}

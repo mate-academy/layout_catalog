@@ -1,0 +1,61 @@
+@use '../utils/variables' as *;
+
+.card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $card-width;
+  height: $card-height;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  perspective: 50cm;
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+
+    .card-description__product-name {
+      color: $classic-blue-color;
+    }
+  }
+
+  &__image {
+    width: $product-image-width;
+    height: $product-image-height;
+    background-position: center center;
+    background-image: url('../images/imac.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  &__card-description {
+    margin-top: 24px;
+  }
+
+  &__buy-link {
+    width: 100%;
+    box-sizing: border-box;
+    height: $buy-link-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background-color: $cyan-blue-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid $cyan-blue-color;
+
+    &:hover {
+      background-color: #fff;
+      color: $cyan-blue-color;
+    }
+  }
+}
