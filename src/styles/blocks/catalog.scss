@@ -1,7 +1,26 @@
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
-  width: $catalogWidth;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  column-gap: 46px;
+  row-gap: 48px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
 
 .card {
@@ -11,15 +30,10 @@
   border-radius: 5px;
   padding: 32px 16px 16px;
   max-width: 200px;
-  margin-right: $cardBetween;
-  margin-bottom: 46px;
+  transition-duration: 300ms;
 
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
-
-  &:nth-last-child(-n + 4) {
-    margin-bottom: 0;
+  &:hover {
+    transform: scale(1.2);
   }
 
   &__img {
@@ -28,28 +42,33 @@
     width: 160px;
     margin-bottom: 40px;
   }
-  
+
   &__title {
     font-size: 12px;
     line-height: 18px;
     font-weight: 500;
     margin-bottom: 4px;
+
+    .card:hover & {
+      transition-duration: 300ms;
+      color: #34568b;
+    }
   }
-  
+
   &__code {
     font-size: 10px;
     line-height: 14px;
     color: #616070;
     margin-bottom: 16px;
   }
-  
+
   &__rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
   }
-  
+
   &__reviews {
     font-size: 10px;
     line-height: 14px;
@@ -61,19 +80,19 @@
     align-items: center;
     margin-bottom: 16px;
   }
-  
+
   &__price-text {
     font-size: 12px;
     line-height: 18px;
     color: #616070;
   }
-  
+
   &__price-sum {
     font-size: 16px;
     line-height: 18px;
     font-weight: 700;
   }
-  
+
   &__button {
     height: 40px;
     font-size: 14px;
@@ -89,8 +108,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-duration: 300ms;
   }
-  
+
   &__button:hover {
     color: $accentBlue;
     background-color: #fff;
