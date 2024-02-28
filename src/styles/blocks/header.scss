@@ -1,0 +1,63 @@
+.header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4 #0000000d;
+  width: auto;
+  margin: auto;
+
+  &__logo {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    width: 1024px;
+  }
+}
+
+.nav {
+  margin-right: 50px;
+  font-weight: $bold-font-weight;
+
+  &__link {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: $main-color;
+    margin-left: 20px;
+    height: $nav-height;
+    line-height: $nav-height;
+
+    &:hover {
+      color: $header-text-color;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.is-active {
+  color: $header-text-color;
+  margin: 0;
+
+  &::after {
+    display: block;
+    position: relative;
+    bottom: 4px;
+    content: '';
+    border-bottom: 4px solid #00acdc;
+    border-radius: 50px;
+  }
+}
+
+[data-qa='hover']:hover {
+  color: #00acdc;
+}
