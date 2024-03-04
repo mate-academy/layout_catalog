@@ -1,3 +1,40 @@
-body {
+@import '../utils/variables';
+@import '../utils/mixins';
+@import '../styles/blocks/header';
+@import '../styles/blocks/card';
+@import '../styles/blocks/stars';
+
+* {
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
 }

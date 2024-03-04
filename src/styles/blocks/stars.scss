@@ -1,0 +1,29 @@
+.stars {
+  display: flex;
+  justify-content: space-between;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__star:nth-child(-n + 4) {
+    margin-right: 4px;
+  }
+
+  &__review {
+    margin-top: 2px;
+
+    @include font-style($title-color, 400, 10px, 14px);
+  }
+
+  @for $i from 1 to 5 {
+    &__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
