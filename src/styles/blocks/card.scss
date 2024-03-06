@@ -1,0 +1,136 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+
+  @include smallScreens {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include tabletScreens {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include desktopScreens {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: $card-border-style;
+
+  padding: $card-padding;
+  width: $card-width;
+
+  border-radius: $card-br;
+  background-color: $color-white-accent;
+  transition: $smooth-hover-changes;
+
+  &:hover {
+    transform: scale(120%);
+
+    .card__title {
+      color: $color-midle-blue-accent;
+    }
+  }
+
+  &__image {
+    width: $card-img-width;
+    height: $card-img-height;
+
+    display: block;
+    background-repeat: no-repeat;
+    background-position: cover;
+
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    align-self: flex-start;
+
+    color: $card-secondary-color;
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+
+    &-info {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      color: $color-main-accent;
+    }
+  }
+
+  &__price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+
+    &-lable {
+      color: $card-secondary-color;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    &-equivalent {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: $card-btn-br;
+    width: $card-btn-width;
+    height: $card-btn-height;
+
+    background-color: $color-light-blue-accent;
+    color: $color-white-accent;
+    text-transform: uppercase;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+
+    &:hover {
+      box-sizing: border-box;
+      border: 1px solid $color-light-blue-accent;
+      background-color: $color-white-accent;
+      color: $color-light-blue-accent;
+      transition: $smooth-hover-changes;
+    }
+  }
+}
