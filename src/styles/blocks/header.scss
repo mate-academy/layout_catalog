@@ -2,14 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
   padding: 0 50px;
 
   box-shadow: 0 2px 4px 0 #0000000d;
   background-color: rgba(255, 255, 255, 1);
   font-size: 12px;
   font-weight: 500;
-  line-height: normal;
   text-transform: uppercase;
 }
 
@@ -29,10 +27,12 @@
 
   &__link {
     display: block;
-    height: 15px;
+    box-sizing: border-box;
+    height: 60px;
     margin-left: 20px;
     text-decoration: none;
     color: $title-color;
+    padding-top: 23px;
 
     &:hover {
       color: $blue-color;
@@ -43,6 +43,7 @@
 .is-active {
   position: relative;
   color: $blue-color;
+  margin-left: 0;
 
   &::after {
     content: '';
@@ -50,7 +51,7 @@
     position: absolute;
     background-color: $blue-color;
     left: 0;
-    top: 34px;
+    bottom: 0;
     width: 100%;
     height: 4px;
     border-radius: 8px;
