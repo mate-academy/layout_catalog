@@ -1,12 +1,18 @@
 .card {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  transition: 0.3s;
   width: 200px;
 
   border-radius: 5px;
   border: 1px solid #f3f3f3;
   background: #fff;
   padding: 16px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__img {
     width: 160px;
@@ -18,23 +24,24 @@
 
   &__button {
     display: block;
-    padding: 12px 0;
+    padding: 11px 0;
     border-radius: 5px;
-    background-color: #00acdc;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
 
+    border: 1px solid $blue-color;
+    background-color: $blue-color;
     color: white;
     text-decoration: none;
     text-align: center;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
     text-transform: uppercase;
+    transition: 0.3s;
   }
 
   &__button:hover {
     background-color: white;
-    color: #00acdc;
-    border: 1px solid #00acdc;
+    color: $blue-color;
   }
 
   &__title-product {
@@ -44,6 +51,10 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
+  }
+
+  &:hover .card__title-product {
+    color: #34568b;
   }
 
   &__product-code {
