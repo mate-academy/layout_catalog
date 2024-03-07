@@ -1,0 +1,135 @@
+.card {
+  width: $card-width;
+  transition: transform $transition-duration;
+
+  &__content,
+  &__rating,
+  &__price {
+    display: flex;
+  }
+
+  &__content,
+  &__information {
+    flex-direction: column;
+  }
+
+  &__rating,
+  &__price {
+    justify-content: space-between;
+  }
+
+  &__content {
+    border-radius: 5px;
+    border: 1px solid $card-border-color;
+    padding-top: 32px;
+    align-items: center;
+    background-color: $card-background-color;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__information {
+    margin: 0 16px;
+    color: $card-main-text-color;
+  }
+
+  &__title,
+  &__code {
+    margin-top: 0;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    transition: color $transition-duration;
+  }
+
+  &__code {
+    color: $card-second-text-color;
+    font-size: 10px;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    align-items: end;
+    font-size: 10px;
+  }
+
+  &__rating,
+  &__code {
+    line-height: 14px;
+  }
+
+  &__title,
+  &__price--amount {
+    line-height: 18px;
+  }
+
+  &__reviews {
+    align-self: center;
+  }
+
+  &__price {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+
+  &__price--name,
+  &__price--amount,
+  &__reviews {
+    margin: 0;
+  }
+
+  &__price--name {
+    color: $card-second-text-color;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  &__price--amount,
+  &__button {
+    font-weight: 700;
+  }
+
+  &__price--amount {
+    font-size: 16px;
+  }
+
+  &__button {
+    justify-content: center;
+    align-items: center;
+    width: 166px;
+    height: 40px;
+    margin-bottom: 16px;
+    font-family: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    color: $card-button-secondary-color;
+    background-color: $card-button-main-color;
+    cursor: pointer;
+    transition-property: background-color, color, border;
+    transition-duration: $transition-duration;
+
+    &:hover {
+      background-color: $card-button-secondary-color;
+      color: $card-button-main-color;
+      border: solid 1px $card-button-main-color;
+    }
+  }
+
+  &:hover {
+    transform: scale($card-hover-transform-scale);
+  }
+
+  &:hover .card__title {
+    color: $card-hover-title-text-color;
+  }
+}
