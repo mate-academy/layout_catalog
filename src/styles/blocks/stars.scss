@@ -1,4 +1,6 @@
 .stars {
+  padding: 0;
+  margin: 0;
   display: flex;
   width: fit-content;
 
@@ -11,7 +13,11 @@
     background-repeat: no-repeat;
   }
 
-  &__star:nth-child(-n + 4) {
-    background-image: url(../images/star-active.svg);
+  @for $i from 0 to 6 {
+    &--#{$i} {
+      & :nth-child(-n + #{$i}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
   }
 }
