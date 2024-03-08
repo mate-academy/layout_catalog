@@ -1,0 +1,112 @@
+.catalog__article {
+  width: 200px;
+  padding: 32px 16px 0;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &-img {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 36px;
+    padding: 0 3px;
+    box-sizing: content-box;
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  &-link {
+    text-decoration: none;
+    color: $main-text-color;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-button {
+    display: block;
+    outline: none;
+    background-color: $active-item-color;
+    border: 1px solid $active-item-color;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 40px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $secondary-button-color;
+    padding: 0;
+
+    &:hover {
+      background-color: $secondary-button-color;
+      color: $active-item-color;
+    }
+  }
+
+  &-rating {
+    @include flex-card-blocks;
+
+    margin-bottom: 24px;
+  }
+
+  &-price {
+    @include flex-card-blocks;
+
+    margin-bottom: 16px;
+  }
+
+  &-reviews {
+    @include secondary-card-text;
+
+    color: $main-text-color;
+    text-align: right;
+    margin: 0;
+  }
+
+  &-text {
+    color: $secondary-text-color;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+  }
+
+  &-pr-price {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: right;
+    margin: 0;
+  }
+
+  &-pr-title {
+    @include card-title;
+
+    margin: 0;
+  }
+
+  &:hover .catalog__article-pr-title {
+    color: $hover-title-color;
+  }
+
+  &-pr-code {
+    @include secondary-card-text;
+
+    color: $secondary-text-color;
+    margin: 4px 0 0;
+  }
+}
