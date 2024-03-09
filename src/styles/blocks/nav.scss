@@ -1,0 +1,52 @@
+.nav {
+  &__list {
+    @include catalog-link;
+
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+    position: relative;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #060b35;
+    padding: 0;
+    height: 60px;
+    display: inline-block;
+    line-height: 60px;
+    font-weight: 500;
+
+    &:hover {
+      color: $active-item-color;
+    }
+  }
+}
+
+.is-active {
+  color: $active-item-color;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: '';
+    background-color: $active-item-color;
+    border-radius: 8px;
+    height: 4px;
+  }
+}
