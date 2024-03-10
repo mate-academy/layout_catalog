@@ -1,0 +1,125 @@
+.catalog {
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 46px 48px;
+  justify-content: center;
+  grid-template-columns: repeat($column-count, 200px);
+  margin: 0 auto;
+  padding: 50px 0;
+
+  @media (max-width: 487px) {
+    grid-template-columns: repeat(1, 200px);
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  &__card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid $primary-bg-color;
+    background-color: $background-card-color;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all 300ms ease;
+    }
+
+    &-image {
+      width: 160px;
+      height: 134px;
+      margin-top: 32px;
+      margin-right: 19px;
+      margin-left: 19px;
+    }
+
+    &-info {
+      margin: 40px 16px 0;
+
+      &-text {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        margin: 0;
+        color: $main-text-color;
+        font-style: normal;
+      }
+    }
+
+    &-text {
+      font-size: 10px;
+      line-height: 14px;
+      margin: 0;
+      margin-top: 4px;
+      color: $secondary-text-color;
+      font-weight: 400;
+    }
+
+    &-price {
+      justify-content: space-between;
+      display: flex;
+      align-items: flex-end;
+      margin-top: 24px;
+      font-weight: 400;
+
+      &-word {
+        color: $secondary-text-color;
+
+        &-text {
+          font-size: 12px;
+          line-height: 18px;
+          margin: 0;
+        }
+      }
+
+      &-text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 18px;
+        margin: 0;
+        color: $main-text-color;
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      height: 40px;
+      width: 100%;
+      padding: 0;
+      text-transform: uppercase;
+      background-color: $button-main-color;
+      color: $background-card-color;
+      border-radius: 5px;
+      border: none;
+
+      &-text {
+        font-weight: 700;
+        line-height: 16px;
+        font-size: 14px;
+      }
+
+      &:hover {
+        border-radius: 5px;
+        border: 1px solid $button-main-color;
+        background-color: $background-card-color;
+        color: $button-main-color;
+      }
+    }
+  }
+}
