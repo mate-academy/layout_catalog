@@ -26,66 +26,70 @@
     display: none;
     margin: 0 50px 0 0;
 
-    @include three-columns {
+    @include on-tablet {
       display: flex;
     }
   }
 
   .nav {
+    .header__nav {
+      display: flex;
+      flex: row;
+    }
+
     &__list {
       display: flex;
-      flex: 1;
-      flex-direction: row;
-      justify-content: space-between;
       list-style: none;
       padding: 0;
       margin: 0;
-      height: 60px;
     }
 
     .nav__item {
-      display: flex;
-      align-items: center;
-      margin: 0 10px;
+      padding: 0 10px;
 
-      &:first-of-type {
-        margin: 0 10px 0 0;
+      &:first-child {
+        padding-left: 0;
       }
 
-      &:last-of-type {
-        margin: 0 0 0 10px;
+      &:last-child {
+        padding-right: 0;
       }
 
       .nav__link {
-        text-decoration: none;
+        display: flex;
+        text-align: center;
+        align-items: center;
         color: #060b35;
-        font-weight: 500;
         text-transform: uppercase;
+        text-decoration: none;
         font-size: 12px;
-        margin: 23px 0;
-        position: relative;
+        height: 60px;
+        font-weight: 500;
+        padding: 0;
+
+        &:visited {
+          color: black;
+        }
 
         &:hover {
           color: $blue;
         }
-      }
 
-      .is-active {
-        color: $blue;
-        padding: 23px 0;
-        margin: 0;
-        width: fit-content;
-
-        &::after {
-          content: '';
+        &.is-active {
           color: $blue;
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          height: 4px;
-          background-color: $blue;
-          border-radius: 8px;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: block;
+
+            background-color: $blue;
+            height: 4px;
+            border-radius: 4px;
+          }
         }
       }
     }
@@ -93,6 +97,5 @@
 }
 
 [data-qa='nav-hover'] {
-  padding: 23px 0;
-  margin: 0;
+  color: $blue;
 }
