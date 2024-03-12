@@ -3,13 +3,9 @@
   display: grid;
   grid-gap: 46px 48px;
   justify-content: center;
-  grid-template-columns: repeat($column-count, 200px);
+  grid-template-columns: repeat(1, 200px);
   margin: 0 auto;
   padding: 50px 0;
-
-  @media (max-width: 487px) {
-    grid-template-columns: repeat(1, 200px);
-  }
 
   @media (min-width: 488px) {
     grid-template-columns: repeat(2, 200px);
@@ -31,10 +27,11 @@
     border-radius: 5px;
     border: 1px solid $primary-bg-color;
     background-color: $background-card-color;
+    transition: all 300ms ease;
 
     &:hover {
       transform: scale(1.2);
-      transition: all 300ms ease;
+      color: $hover-color;
     }
 
     &-image {
@@ -55,6 +52,9 @@
         margin: 0;
         color: $main-text-color;
         font-style: normal;
+        &-text:hover {
+          color: $hover-color;
+        }
       }
     }
 
@@ -107,6 +107,7 @@
       color: $background-card-color;
       border-radius: 5px;
       border: none;
+      transition: all 300ms ease;
 
       &-text {
         font-weight: 700;
@@ -119,7 +120,6 @@
         border: 1px solid $button-main-color;
         background-color: $background-card-color;
         color: $button-main-color;
-        transition: all 300ms ease;
       }
     }
   }
