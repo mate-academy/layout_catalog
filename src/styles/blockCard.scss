@@ -1,0 +1,136 @@
+.container {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+  margin: 0;
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.block {
+  width: 200px;
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px #f3f3f3;
+  border-radius: 5px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    background-image: url('../images/imac.jpeg');
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-accent;
+    margin: 0;
+    margin-top: 40px;
+  }
+
+  &__under-text {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+    margin: 0;
+    margin-top: 4px;
+    align-self: flex-start;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    &-stars {
+      display: flex;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: $main-accent;
+      align-self: center;
+      margin: 0;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    &-text {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary;
+      margin: 0;
+    }
+
+    &-number {
+      margin: 0;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $main-accent;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    background-color: $blue-color;
+    border: 1px solid $blue-color;
+    text-transform: uppercase;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-top: 16px;
+
+    &:hover {
+      background-color: #fff;
+      color: $blue-color;
+      border: solid 1px $blue-color;
+    }
+  }
+}
