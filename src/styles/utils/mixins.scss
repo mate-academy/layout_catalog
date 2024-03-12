@@ -1,0 +1,55 @@
+$padding-row: 16px;
+$padding-top: 32px;
+$padding-bottom: 16px;
+
+@mixin regular-font {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin content-padding-inline {
+  padding-inline: $padding-row;
+  padding-block: $padding-top $padding-bottom;
+}
+
+@mixin on-laptop-s {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin on-mobile-l {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin on-mobile-s {
+  @media (max-width: 487px) {
+    @content;
+  }
+}
+
+@mixin main-container {
+  padding-inline: $container-padding-inline-laptop;
+  padding-block: $container-padding-block;
+
+  @include on-laptop-s {
+    padding-inline: $container-padding-inline;
+  }
+
+  @include on-mobile-l {
+    padding-inline: $container-padding-inline / 2;
+  }
+}
+
+.container {
+  @include main-container;
+}
