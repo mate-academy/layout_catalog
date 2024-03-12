@@ -1,0 +1,32 @@
+.stars {
+  display: flex;
+  padding-top: 16px;
+  align-items: end;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $main-text-color;
+    margin-left: auto;
+  }
+
+  &__star:nth-child(5) {
+    margin-right: 0;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
