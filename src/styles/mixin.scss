@@ -1,0 +1,44 @@
+@mixin screen-488px {
+  @media (min-width: $min-width-488px) {
+    @content;
+  }
+}
+
+@mixin screen-768px {
+  @media (min-width: $min-width-768px) {
+    @content;
+  }
+}
+
+@mixin screen-1024px {
+  @media (min-width: $min-width-1024px) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 1;
+
+  display: grid;
+  gap: 46px 48px;
+  grid-template-columns: repeat(var(--columns), 200px);
+
+  @include screen-488px {
+    --columns: 2;
+  }
+
+  @include screen-768px {
+    --columns: 3;
+  }
+
+  @include screen-1024px {
+    --columns: 4;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effect-duratiion;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
