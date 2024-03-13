@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  height: 60px;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__nav .nav__hamburguer:first-child {
+    display: flex;
+    background: url(/src/images/icon-burger-menu.svg) no-repeat 50%;
+    background-size: contain;
+    transition: all 0.3s;
+    width: 32px;
+    height: 32px;
+
+    @media (min-width: 830px) {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: none;
+    list-style: none;
+    text-transform: uppercase;
+
+    @media (min-width: 830px) {
+      display: flex;
+    }
+
+    &:target {
+      display: flex;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+
+    color: #060b35;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 60px;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 4px;
+    background-color: $blue-color;
+    border-radius: 8px;
+  }
+
+}
+
