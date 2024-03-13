@@ -1,8 +1,10 @@
 .cards {
   display: grid;
-  grid-gap: 46px 48px;
+  justify-content: center;
+  gap: 46px 48px;
   padding: 50px $space-40;
 }
+
 
 .card {
   margin-bottom: 0;
@@ -28,7 +30,6 @@
   font-weight: $font-weight-500;
   line-height: $line-height-18;
   color: $main-color;
-  margin: 0;
 
   &:hover {
     color: $title-hover-color;
@@ -37,10 +38,8 @@
 }
 
 .card__details-code {
-  margin: 0;
-  padding-top: 5px;
+  margin-top: 5px;
   font-size: 10px;
-
   line-height: $line-height-14;
   color: $secondary-color;
 }
@@ -53,8 +52,6 @@
 
 .card__price-text {
   font-size: $font-size-12;
-  margin: 0;
-
   line-height: $line-height-18;
   color: $secondary-color;
 }
@@ -64,7 +61,6 @@
   font-weight: $font-weight-700;
   line-height: $line-height-18;
   color: $main-color;
-  margin: 0;
 }
 
 .card__button a {
@@ -83,11 +79,12 @@
 
 .card__button {
   background-color: $color-hover;
-  width: 166px;
-  height: $space-40;
-  border-radius: 5px;
+  max-width: 166px;
+  width: 100%;
+  padding: 10px 20px;
   margin: 16px;
-  display: inline-flex;
+  border-radius: 5px;
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -102,22 +99,29 @@
   }
 }
 
+.card__stars {
+  display: flex;
+  justify-content: space-between;
+  margin: 17px 16px;
+}
+
+.card__stars-review {
+  font-size: 10px;
+  line-height: $line-height-14;
+  color: $main-color;
+}
+
 @media screen and (min-width: 768px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media screen and (min-width: 1024px) {
   .cards {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 200px);
     grid-gap: 46px 48px;
     padding: 50px $space-40;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .cards {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+
