@@ -1,0 +1,36 @@
+.catalog {
+  &__card-stars {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 166px;
+    height: 16px;
+    margin-top: 16px;
+
+    &-list {
+      display: flex;
+
+      @for $index from 1 through 5 {
+        &--#{$index} {
+          .catalog__card-stars-list-star:nth-child(-n + #{$index}) {
+            background: url(../images/star-active.svg) no-repeat center;
+          }
+        }
+      }
+      &-star {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        background: url(../images/star.svg) no-repeat center;
+      }
+    }
+    &-reviews {
+      &-text {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 14px;
+        margin: 0;
+      }
+    }
+  }
+}

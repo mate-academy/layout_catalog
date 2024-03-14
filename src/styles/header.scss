@@ -1,0 +1,87 @@
+.body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 50px;
+    background: $background-card-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    &-logo {
+      display: block;
+      height: 40px;
+      width: 40px;
+
+      &-image {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .nav {
+    height: inherit;
+    margin: 0;
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      height: inherit;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    &__text {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      list-style: none;
+      text-transform: uppercase;
+      color: $main-text-color;
+      transition: color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: $button-main-color;
+      }
+
+      &.is-active {
+        color: $button-main-color;
+        position: relative;
+        &::after {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          content: '';
+          height: 4px;
+          width: 100%;
+          background-color: $button-main-color;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
