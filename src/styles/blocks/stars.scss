@@ -13,12 +13,10 @@
   &__star:not(:last-child) {
     margin-right: 4px;
   }
-}
 
-.stars--1 :nth-child(-n + 1),
-.stars--2 :nth-child(-n + 2),
-.stars--3 :nth-child(-n + 3),
-.stars--4 :nth-child(-n + 4),
-.stars--5 :nth-child(-n + 5) {
-  background-image: url(/src/images/star-active.svg);
+  @for $stars-number from 1 through 5 {
+    &--#{$stars-number} :nth-child(-n + #{$stars-number}) {
+      background-image: url(/src/images/star-active.svg);
+    }
+  }
 }
