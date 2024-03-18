@@ -2,31 +2,30 @@
 @import '../styles/variables';
 
 .catalog {
+  --row-grid-card: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   transition: all 0.3s;
   &__list {
     display: grid;
-    grid-template-columns: repeat(1, 200px);
+    grid-template-columns: repeat(var(--row-grid-card), 200px);
     gap: 46px 48px;
     justify-content: center;
     padding: 50px 40px;
-  }
-}
 
-@media (min-width: 487px) {
-  .catalog__list {
-    grid-template-columns: repeat(2, 200px);
-  }
-}
+    @media (min-width: 487px) {
+      --row-grid-card: 2;
+    }
 
-@media (min-width: 767px) {
-  .catalog__list {
-    grid-template-columns: repeat(3, 200px);
-  }
-}
+    @media (min-width: 767px) {
+      --row-grid-card: 3;
+    }
 
-@media (min-width: 1023px) {
-  .catalog__list {
-    grid-template-columns: repeat(4, 200px);
+    @media (min-width: 1023px) {
+      --row-grid-card: 4;
+    }
   }
 }
