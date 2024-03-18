@@ -1,0 +1,120 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, $card-size);
+  justify-content: center;
+  place-items: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-size);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-size);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-size);
+  }
+}
+
+.card {
+  padding: 32px 16px 16px;
+  width: $card-size;
+  border: 1px solid #f3f3f3;
+  transition: $transition-time;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__product-title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-txt;
+    transition: $transition-time;
+  }
+
+  &:hover &__product-title {
+    color: #34568b;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+    margin-top: 4px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $element-width;
+    margin-top: 16px;
+  }
+
+  &__review {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-txt;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $color-txt;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    width: 100%;
+    margin-top: 16px;
+
+    background-color: $color-main;
+    border-radius: 5px;
+    border: 1px solid $color-main;
+
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    transition: $transition-time;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-main;
+      border: 1px solid $color-main;
+    }
+  }
+}
