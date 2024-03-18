@@ -1,3 +1,49 @@
-body {
+@import './basic-properties-page';
+@import './styles-header';
+@import './styles-cards';
+@import './cards-animation';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family;
+  font-size: $font-size-cards;
+  line-height: $line-height;
+}
+
+body,
+ul,
+li {
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(1, $width-card);
+  padding: 50px 40px;
+  gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $width-card);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $width-card);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $width-card);
+  }
 }
