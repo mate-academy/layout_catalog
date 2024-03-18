@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-  background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-weight: 500;
 
@@ -21,62 +20,62 @@
       display: block;
     }
   }
+}
 
-  &-nav {
-    &__list {
-      display: flex;
-      align-items: center;
-      margin: 0;
-      list-style: none;
-      padding-left: 0;
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__item {
+    display: list-item;
+    margin-right: 20px;
+    align-items: center;
+    padding: 0;
+
+    &:last-of-type {
+      margin-right: 0;
     }
 
-    &__item {
-      display: list-item;
-      margin-right: 20px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &-link {
       align-items: center;
-      padding: 0;
+      color: #060b35;
+      cursor: pointer;
+      display: flex;
+      font-size: 12px;
+      height: 60px;
+      list-style-image: none;
+      list-style-position: outside;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-transform: uppercase;
+      white-space: nowrap;
 
-      &:last-of-type {
-        margin-right: 0;
+      @include hovered(color, $blueColor);
+
+      &.is-active {
+        color: $blueColor;
       }
 
-      &:first-of-type {
-        margin-left: 0;
-      }
-
-      &-link {
-        align-items: center;
-        color: #060b35;
-        cursor: auto;
-        display: flex;
-        font-size: 12px;
-        height: 60px;
-        list-style-image: none;
-        list-style-position: outside;
-        position: relative;
-        text-align: left;
-        text-decoration: none;
-        text-decoration-line: none;
-        text-transform: uppercase;
-        white-space: nowrap;
-
-        @include hovered(color, $blueColor);
-
-        &.is-active {
-          color: $blueColor;
-        }
-
-        &.is-active::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          border-radius: 2px;
-          background-color: $blueColor;
-        }
+      &.is-active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $blueColor;
       }
     }
   }
