@@ -1,24 +1,22 @@
 .main {
+  --columns: 1;
+
   padding: 50px 40px;
 
   display: grid;
-  grid-template-columns: repeat($column_grid_count, $card_width);
+  grid-template-columns: repeat(var(--columns), $card_width);
   gap: 46px 48px;
   justify-content: center;
 
-  @media (max-width: 1023px) {
-    grid-template-columns: repeat(3, $card_width);
+  @media (min-width: 488px) {
+    --columns: 2;
   }
 
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(2, $card_width);
+  @media (min-width: 768px) {
+    --columns: 3;
   }
 
-  @media (max-width: 487px) {
-    grid-template-columns: repeat(1, $card_width);
-  }
-
-  @media (max-width: 319px) {
-    grid-template-columns: repeat(1, $card_width);
+  @media (min-width: 1024px) {
+    --columns: 4;
   }
 }
