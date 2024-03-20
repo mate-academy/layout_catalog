@@ -1,3 +1,204 @@
+@import 'mixins';
+@import 'main';
+@import 'stars';
+
+$theme-color: #00acdc;
+$text-color: #060b35;
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__link {
+    margin-left: 50px;
+
+    @include flex-center;
+  }
+}
+
+.navigation {
+  height: 100%;
+  margin-right: 50px;
+  align-items: stretch;
+
+  &__tabs {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__tab {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  &__tabs &__tab:first-child {
+    margin-left: 0;
+  }
+
+  &__tabs &__tab:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: $text-color;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include flex-center;
+
+    &:hover {
+      color: $theme-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.card {
+  width: 200px;
+  height: 408px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../images/imac.jpeg) center 32px/160px 134px no-repeat;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__label {
+    margin-top: 206px;
+    width: 166px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-color;
+  }
+
+  &:hover &__label {
+    color: #34568b;
+  }
+
+  &__code {
+    width: 166px;
+    font-size: 10px;
+    color: #616070;
+    line-height: 14px;
+    margin-top: 4px;
+  }
+
+  &__rating {
+    height: 16px;
+    width: 166px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 16px;
+
+    &-reviews {
+      font-size: 10px;
+      color: $text-color;
+    }
+  }
+
+  &__price {
+    height: 18px;
+    width: 166px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    &-name {
+      font-size: 12px;
+      line-height: 18px;
+      color: #616070;
+    }
+
+    &-number {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 18px;
+      color: $text-color;
+    }
+  }
+
+  &__button {
+    @include flex-center;
+
+    flex-direction: column;
+    height: 40px;
+    width: 166px;
+    background-color: $theme-color;
+    border: 1px solid $theme-color;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 16px;
+
+    &:hover {
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    &-link {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    &:hover &-link {
+      color: $theme-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $theme-color;
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: $theme-color;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
+  }
 }
