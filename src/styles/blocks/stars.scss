@@ -19,11 +19,8 @@ $star-active: '../images/star-active.svg';
   }
 }
 
-.stars--0 .stars__star:nth-child(n + 1):nth-child(-n + 0),
-.stars--1 .stars__star:nth-child(n + 1):nth-child(-n + 1),
-.stars--2 .stars__star:nth-child(n + 1):nth-child(-n + 2),
-.stars--3 .stars__star:nth-child(n + 1):nth-child(-n + 3),
-.stars--4 .stars__star:nth-child(n + 1):nth-child(-n + 4),
-.stars--5 .stars__star:nth-child(n + 1):nth-child(-n + 5) {
-  background-image: url($star-active);
+@for $i from 0 through 5 {
+  .stars--#{$i} .stars__star:nth-child(n + 1):nth-child(-n + #{$i}) {
+    background-image: url($star-active);
+  }
 }
