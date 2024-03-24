@@ -41,25 +41,28 @@
     text-decoration: none;
     display: inline-block;
     position: relative;
+    transition: color 0.5s;
 
-    &--is-active {
+    &:hover {
       color: $border-color;
-      position: relative;
-
-      &::after {
-        content: '';
-        background: $border-color;
-        border-radius: 8px;
-        width: 100%;
-        height: 4px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
     }
-  }
 
-  &__link:hover {
-    color: $border-color;
+    &::after {
+      content: '';
+      background: $border-color;
+      border-radius: 8px;
+      width: 0;
+      height: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      transition: width 0.5s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
