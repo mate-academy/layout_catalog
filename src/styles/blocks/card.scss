@@ -1,9 +1,15 @@
 @use '../utils/variables' as *;
 
+@keyframes bigger-size {
+  to {
+    transform: scale(120%);
+  }
+}
+
 .card {
   box-sizing: border-box;
-  width: 200px;
-  height: 408px;
+  width: $width-card;
+  height: $height-card;
   background: url(../images/imac.jpeg) no-repeat;
   background-size: 160px 134px;
   background-position: center top 32px;
@@ -58,6 +64,7 @@
       font-size: 12px;
       line-height: 18px;
       color: $code-price-color;
+      margin: 0;
     }
 
     &-amount {
@@ -67,6 +74,7 @@
       line-height: 18px;
       text-align: right;
       color: $link-color;
+      margin: 0;
     }
   }
 
@@ -93,6 +101,15 @@
         border: solid 1px $button-border-color-hover;
         border-radius: 5px;
       }
+    }
+  }
+
+  &:hover {
+    animation: bigger-size 0.2s linear 0.1s 1 normal forwards;
+
+    & .card__name {
+      cursor: pointer;
+      color: $blue-color-navigation;
     }
   }
 }
