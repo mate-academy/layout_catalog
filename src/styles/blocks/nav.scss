@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    height: 60px;
+    text-decoration: none;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: $main-color;
+    cursor: pointer;
+    transition: $hover-transition;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &--is-active {
+      color: $blue-color;
+    }
+
+    &--is-active::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $blue-color;
+    }
+  }
+}
