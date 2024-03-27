@@ -1,0 +1,38 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    color: $main-text-color;
+    text-decoration: none;
+    align-items: center;
+    height: $header-height;
+    transition-duration: $duration;
+
+    &:hover {
+      color: $moyo-color;
+    }
+  }
+}
+
+.is-active {
+  color: $moyo-color;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: $moyo-color;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+}
