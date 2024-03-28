@@ -1,0 +1,57 @@
+@import '../variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $color-main;
+    text-decoration: none;
+    height: 60px;
+    line-height: 60px;
+    align-items: center;
+    font-weight: 500;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $color-blue;
+}
+
+.is-active::after {
+  content: url(../images/rect.png);
+  position: absolute;
+  height: 14px;
+  top: 26;
+}
