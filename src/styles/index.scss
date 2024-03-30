@@ -1,3 +1,205 @@
+@import './utils/variables';
+
+:root {
+  font-family: Roboto, sans-serif;
+  color: $main-text-color;
+  font-size: 12px;
+  margin: 0;
+}
+
+.card,
+.card__title,
+.nav__link,
+.card__button-buy {
+  transition: all 0.3s ease;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.nav__link {
+  padding: 23px 0;
+  text-align: center;
+  line-height: 60px;
+  color: $main-text-color;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.is-active {
+  color: $color-primary;
+  position: relative;
+
+  &::after {
+    content: '';
+    background-color: $color-primary;
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  border: 1px solid $card-border-color;
+  padding: 16px;
+  border-radius: 5px;
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $secondary-text-color;
+    }
+
+    &-number {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &__logo {
+    width: 160px;
+    height: 134px;
+    background: white url('../images/imac.jpeg') no-repeat center / 100% 100%;
+    margin: 16px 3px 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    margin: 4px 0;
+  }
+
+  &__code {
+    font-size: 10px;
+    margin-top: 4px;
+    line-height: 14px;
+    color: $secondary-text-color;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+
+    &-text {
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    align-items: center;
+    margin-top: 16px;
+
+    &-buy {
+      background-color: $color-primary;
+      width: 166px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid $color-primary;
+      color: $bg-color;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16px;
+
+      &:hover {
+        background-color: $bg-color;
+        color: $color-primary;
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $card-hover-color;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &--4 .stars__star:nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  grid-gap: 46px 48px;
+  grid-template-columns: $block-width;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 488px) {
+    grid-template-columns: repeat(2, $block-width);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, $block-width);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(4, $block-width);
+  }
 }
