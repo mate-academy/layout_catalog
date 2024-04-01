@@ -1,3 +1,65 @@
+@import './utils/variables';
+@import './utils/card';
+@import './utils/stars';
+@import './utils/catalog';
+
+:root {
+  font-family: Roboto, sans-serif;
+  color: $main-text-color;
+  font-size: 12px;
+  margin: 0;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.nav__link {
+  padding: 23px 0;
+  text-align: center;
+  line-height: 60px;
+  color: $main-text-color;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.is-active {
+  color: $color-primary;
+  position: relative;
+
+  &::after {
+    content: '';
+    background-color: $color-primary;
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
