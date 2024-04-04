@@ -1,8 +1,7 @@
 .rating {
   display: flex;
   justify-content: space-between;
-  height: 16px;
-  width: 166px;
+  width: 83%;
   margin: 16px 0 8px 16px;
 
   .stars {
@@ -14,16 +13,18 @@
     width: 96px;
 
     .stars__star {
-      height: 16px;
-      width: 16px;
+      height: 100%;
+      width: 100%;
       background-repeat: no-repeat;
       background-position: center;
-      background-image: url(../images/star-active.svg);
+      background-image: url(../images/star.svg);
     }
   }
 
-  .stars--4 :nth-child(5) {
-    background-image: url(../images/star.svg);
+  @for $i from 1 through 4 {
+    .stars--#{$i} :nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 
   .reviews5 {
