@@ -7,25 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @keyframes scale {
-    100% {
-      transform: scale(1.2);
-    }
-  }
-
-  @keyframes title-color {
-    100% {
-      color: #34568b;
-    }
-  }
-
-  @keyframes button-change {
-    100% {
-      background-color: #fff;
-      color: $button-color;
-    }
-  }
+  transition: transform 300ms linear;
 
   &__image {
     width: 100%;
@@ -45,10 +27,10 @@
   }
 
   &:hover {
-    animation: scale 300ms linear forwards;
+    transform: scale(1.2);
 
     .card__name-panel {
-      animation: title-color 300ms linear forwards;
+      color: #34568b;
     }
   }
 
@@ -112,9 +94,11 @@
     text-align: center;
     color: #fff;
     text-transform: uppercase;
+    transition: background-color 300ms linear;
 
     &:hover {
-      animation: button-change 300ms linear forwards;
+      background-color: #fff;
+      color: $button-color;
     }
   }
 }
