@@ -21,7 +21,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 
 Make all the changes smooth on hover (during 300ms):
 - increase the card by 20 percent (neighboring cards **should not be** affected)
-- change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
+- change the card name text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
 - change navigation link text color to `#00acdc`
 - change the button background to `#fff` and text color to `#00acdc` on hover
 
