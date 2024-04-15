@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: $color-text-black;
+  }
+}
+
+.is-active,
+.nav__link:hover {
+  color: $color-blue;
+}
+
+.is-active {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    margin-top: -4px;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $color-blue;
+  }
+}
