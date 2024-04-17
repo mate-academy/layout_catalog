@@ -1,0 +1,133 @@
+p {
+  margin: 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $width;
+  border-radius: $border-radius;
+  border: $border;
+  font-family: Roboto, sans-serif;
+  transition: all 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+
+    &__product-name {
+      color: #34568b;
+    }
+  }
+
+  &__container {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  &__product-photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__buy-button {
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #00acdc;
+    border-radius: $border-radius;
+    border-style: none;
+    margin-bottom: 16px;
+    transition: all 300ms;
+  }
+
+  &__buy-button:hover {
+    background-color: #fff;
+    color: #00acdc;
+    border: 1px #00acdc solid;
+  }
+
+  &__cost {
+    color: #060b35;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__img {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-title {
+    color: #616070;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__product-code {
+    margin-bottom: 16px;
+    color: #616070;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__product-name {
+    margin: 0;
+    margin-bottom: 4px;
+    color: #060b35;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: all 300ms;
+  }
+
+  &__review {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .reviews {
+      font-family: Roboto, sans-serif;
+      color: #060b35;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+    }
+  }
+}
