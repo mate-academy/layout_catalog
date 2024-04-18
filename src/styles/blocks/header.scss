@@ -1,0 +1,62 @@
+.header {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  &__logo {
+    align-self: center;
+    height: 40px;
+  }
+  &__nav {
+    align-self: center;
+    &-list {
+      margin: 0;
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      margin: 0 10px;
+      height: 60px;
+
+      text-transform: uppercase;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    &-link {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      color: $main-accent;
+      text-decoration: none;
+      transition-duration: 0.3s;
+      &:hover {
+        color: $accecent-color;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $accecent-color;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 4px solid $accecent-color;
+  border-radius: 8px;
+}
