@@ -9,7 +9,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 - nav links color is not `black` any more (nav links should have `#060b35` color)
 - add class `is-active` to the first link (`Apple`) in navigation
-- use `<main>` tag for cards container 
+- use `<main>` tag for cards container
 - use grid for cards with different number of columns:
   - 1 for the smaller screens
   - 2 starting at `488px`
@@ -30,14 +30,14 @@ Make all the changes smooth on hover (during 300ms):
 ## Checklist
 
 ❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://santana1337.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://santana1337.github.io/layout_catalog/report/html_report/)
 
-❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
+❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after ysantana1337
 
-- [ ] All component follow BEM and use SCSS
-- [ ] repaeted sizes and special colors are put to variables
-- [ ] Grid is used for the columns
-- [ ] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
-- [ ] All changes on `:hover` are smooth
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [x] All component follow BEM and use SCSS
+- [x] repaeted sizes and special colors are put to variables
+- [x] Grid is used for the columns
+- [x] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
+- [x] All changes on `:hover` are smooth
+- [x] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
