@@ -1,3 +1,258 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap';
+
+$font-family: Roboto, sans-serif;
+$text-color: #060b35;
+$btn__color-white: #fff;
+$btn__coor-blue: #00acdc;
+$code-price__color: #616070;
+$grid-temp-col: 200px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-family;
+}
+
 body {
   margin: 0;
 }
+
+// #region header //
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #060b35;
+}
+
+.logo {
+  display: block;
+  height: 40px;
+  width: 40px;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  &__item {
+    list-style: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+
+  &__item:hover {
+    color: #00acdc;
+  }
+
+  &__item:first-child {
+    color: #00acdc;
+    margin-left: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+  }
+}
+
+.is-active::after {
+  content: '';
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #00acdc;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// #endregion //
+
+// #region card //
+.card {
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image-img {
+    margin: 32px 3px 40px;
+    height: 134px;
+  }
+
+  &__product-name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $text-color;
+    margin-bottom: 4px;
+
+    .card:hover & {
+      color: #34568b;
+      transition: color 0.3s;
+    }
+  }
+
+  &__code {
+    margin: 0;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $code-price__color;
+  }
+  &__stars-reviews {
+    margin: 0;
+    display: flex;
+    align-items: end;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $text-color;
+  }
+
+  &__price {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-name {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: $code-price__color;
+    }
+
+    &-price {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: $text-color;
+    }
+  }
+
+  &__buy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-family: $font-family;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 40px;
+    background-color: $btn__coor-blue;
+    color: $btn__color-white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      border: 1px solid $btn__coor-blue;
+      color: $btn__coor-blue;
+      background-color: $btn__color-white;
+    }
+  }
+}
+
+.card__stars {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    gap: 4px;
+  }
+
+  &--1 > &__star:nth-child(-n + 1),
+  &--2 > &__star:nth-child(-n + 2),
+  &--3 > &__star:nth-child(-n + 3),
+  &--4 > &__star:nth-child(-n + 4),
+  &--5 > &__star:nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+// #endregion //
+
+// #region main_container //
+.main {
+  &__container {
+    display: grid;
+    gap: 46px 48px;
+    grid-template-columns: repeat(1, $grid-temp-col);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 40px;
+
+    @media (min-width: 488px) {
+      & {
+        grid-template-columns: repeat(2, $grid-temp-col);
+      }
+    }
+
+    @media (min-width: 768px) {
+      & {
+        grid-template-columns: repeat(3, $grid-temp-col);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      & {
+        grid-template-columns: repeat(4, 200px);
+      }
+    }
+  }
+}
+
+// #endregion //
