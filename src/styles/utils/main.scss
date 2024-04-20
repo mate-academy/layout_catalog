@@ -2,9 +2,28 @@
 
 .cards_container {
   display: grid;
-  grid-template-columns: repeat(4, $card-width);
+  grid-template-columns: repeat(4, 200px);
   gap: 48px;
   row-gap: 46px;
   justify-content: center;
   padding: 50px 40px;
+
+  // media querys for cards block with different number of columns for  different width sreens
+  @media (max-width: 487px) {
+    & {
+      grid-template-columns: repeat(1, 200px);
+    }
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    & {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    & {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
 }
