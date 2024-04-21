@@ -1,0 +1,75 @@
+.nav {
+  width: auto;
+
+  //  ✖  _nav.scss Unexpected empty block  block-no-empty -- FIXING THIS ERROR WITH RULE width: auto; I know its useless but cannot go through stylelint check
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+
+    :last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__menu {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    display: none;
+
+    @include on-mobile {
+      display: block;
+    }
+  }
+
+  &__link {
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    color: $text-color;
+    text-transform: uppercase;
+    transition: $transition-property;
+
+    @include on-tablet {
+      font-size: 10px;
+    }
+
+
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.is-active {
+  color: $accent-color;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $accent-color;
+    border-radius: 8px;
+  }
+}
