@@ -1,0 +1,59 @@
+$nav-link-color: #060b35;
+$button-hover-color: #00acdc;
+$card-hover-title-color: #34568b;
+$grid-gap: 46px;
+$grid-vertical-gap: 48px;
+
+.nav__link {
+  color: $nav-link-color;
+
+  &:hover,
+  &.is-active {
+    color: $button-hover-color;
+    transition: color 300ms ease;
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $grid-vertical-gap $grid-gap;
+  padding: 50px 40px;
+
+  @media screen and (min-width: 488px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product-card {
+  width: 200px;
+  transition: transform 300ms ease;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+
+    &__title {
+      color: $card-hover-title-color;
+      transition: color 300ms ease;
+    }
+  }
+}
+
+.product-card__button {
+  &:hover {
+    background-color: #fff;
+    color: $button-hover-color;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+  }
+}
