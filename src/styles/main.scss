@@ -2,84 +2,82 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 60px;
   box-sizing: border-box;
-  padding: 0 50px;
+  height: 60px;
+
+  @include padding-nuv;
 
   &__logo {
     height: 40px;
     width: 40px;
     display: block;
     text-decoration: none;
-    background-image: url(../images/logo.png);
   }
 
-  &__nav {
+  .nav {
     align-content: center;
 
-    &-list {
+    &_list {
       list-style: none;
       display: flex;
-      align-items: center;
-      gap: 20px;
+    }
 
-      &-item {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: black;
-        line-height: 60px;
+    &_item {
+      margin-left: 20px;
 
-        &:nth-of-type(4):hover {
+      &:first-of-type {
+        color: $link-color;
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: '';
           color: $link-color;
+          background-color: $link-color;
+          display: block;
+          height: 4px;
+          width: 100%;
+          border-radius: 8px;
+          bottom: 0;
+          left: 0;
         }
       }
     }
 
-    .is-active {
-      color: $link-color;
-      position: relative;
-    }
+    &_link {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: inherit;
+      line-height: 60px;
+      align-items: center;
 
-    .is-active::after {
-      position: absolute;
-      content: '';
-      color: $link-color;
-      background-color: $link-color;
-      display: block;
-      height: 4px;
-      width: 100%;
-      border-radius: 8px;
-      bottom: 0;
-      left: 0;
+      &:hover {
+        color: $link-color;
+      }
     }
+  }
+
+  .is-active {
+    background-color: inherit;
   }
 }
 
 .main {
   box-sizing: border-box;
-  margin: 32px 40px 72px;
+
+  @include padding-main;
+
   display: grid;
-  grid-template-columns: repeat(1, $width-column);
-  gap: 48px 46px;
+
+  @include grid-count;
+
+  gap: 46px 48px;
   align-items: center;
   justify-content: center;
 
-  @media screen and (min-width: 488px) {
-    grid-template-columns: repeat(2, $width-column);
-  }
-
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, $width-column);
-  }
-
-  @media screen and (min-width: 1024px) {
-    grid-template-columns: repeat(4, $width-column);
-  }
-
   .card {
     box-sizing: border-box;
-    padding: 0 16px 16px;
+    padding: 32px 16px 16px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -90,19 +88,17 @@
       transform: scale(1.2);
     }
 
-    &__picture {
-      margin: 32px auto 40px;
+    &__img {
+      margin: 0 auto 40px;
+      display: block;
       height: 134px;
       width: 160px;
-      background-image: url(../images/imac.jpeg);
-      background-position: center;
-      background-size: contain;
     }
 
     &__title {
       font-size: 12px;
       line-height: 18px;
-      font-weight: 300;
+      font-weight: inherit;
       margin: 0;
     }
 
@@ -112,6 +108,7 @@
       color: #616070;
       align-self: start;
       margin: 4px 0 0;
+      font-weight: 400;
     }
 
     &__rating {
@@ -157,11 +154,14 @@
       &-title {
         font-weight: 400;
         font-size: 12px;
+        line-height: 18px;
+        color: #616070;
       }
 
       &-tag {
         font-weight: 700;
         font-size: 16px;
+        line-height: 18px;
       }
     }
 
@@ -171,13 +171,13 @@
       border-radius: 5px;
       font-weight: 700;
       font-size: 14px;
+      margin-top: 16px;
       color: #fff;
       text-transform: uppercase;
-      text-align: center;
-      line-height: 16px;
       width: 100%;
-      margin-top: 16px;
       border-style: none;
+      display: inline-block;
+      vertical-align: middle;
 
       &:hover {
         background-color: #fff;
