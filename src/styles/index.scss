@@ -1,3 +1,46 @@
+@import '../units/mixins';
+@import './header/header';
+
+// @import './product-card/card';
+// @import './stars/stars';
+
 body {
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(1, $columnWidth);
+  gap: 48px;
+  row-gap: 46px;
+
+  @import './product-card/card';
+
+  :hover .card__profuctName {
+    color: $cardTitleColor;
+  }
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $columnWidth);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $columnWidth);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $columnWidth);
+  }
 }
