@@ -1,0 +1,159 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: Roboto-medium;
+  src: url(../fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Light.ttf);
+}
+
+@import '../../units/mixins';
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: $columnWidth;
+  height: 408px;
+  background-color: $button_color_hover;
+  border: 1px solid $border_color;
+  border-radius: 5px;
+  transition: $transitionTime;
+
+  &:hover {
+    border: 1px solid $border_color;
+    transform: scale(1.2);
+  }
+
+  &__image {
+    margin: 0;
+    padding: 0;
+    margin-top: 32px;
+    display: block;
+    width: 160px;
+    height: 134px;
+    border: none;
+  }
+
+  &__profuctName {
+    margin: 0;
+    padding: 0;
+    height: 36px;
+    display: block;
+    margin-top: 40px;
+    width: $cardContentWidth;
+    font-family: Roboto-medium, sans-serif;
+    font-weight: 500;
+    line-height: 18px;
+    font-size: 12px;
+    color: $main_text_color;
+  }
+
+  &__productCode {
+    margin: 4px 0 0;
+    width: $cardContentWidth;
+    font-family: Roboto-Regular, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $second_color;
+  }
+
+  &__stars {
+    display: flex;
+    width: $cardContentWidth;
+    margin-top: 16px;
+    justify-content: space-between;
+    line-height: 16px;
+
+    @import '../stars/stars';
+  }
+
+  &__reviews {
+    font-family: Roboto-Regular, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: right;
+    color: $main_text_color;
+    float: right;
+
+    p {
+      text-align: right;
+      float: right;
+    }
+  }
+
+  &__price {
+    width: $cardContentWidth;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
+    font-family: Roboto-Regular, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: $second_color;
+  }
+
+  &__money {
+    font-family: Roboto-Bold, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $main_text_color;
+  }
+
+  &__buy {
+    width: $cardContentWidth;
+    height: 40px;
+    margin: 16px;
+
+    // margin-bottom: 15px;
+    background-color: $button_color;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid $button_color;
+    color: $button_color_hover;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: $transitionTime;
+
+    &:hover {
+      background-color: $button_color_hover;
+      border: 1px solid $button_color;
+      color: $button_color;
+    }
+  }
+}
