@@ -1,0 +1,41 @@
+@import 'variable';
+
+body {
+  margin: 0;
+}
+
+.header {
+  @include header;
+
+  &__image {
+    @include header-image;
+  }
+
+  &__list {
+    @include header-list;
+  }
+
+  &__item {
+    @include header-item;
+
+    &:not(:first-of-type) {
+      @include header-no-first-item;
+    }
+  }
+
+  &__link {
+    @include header-link;
+
+    &:hover {
+      @include header-link-hover;
+    }
+  }
+}
+
+.is-active {
+  @include header-is-active;
+
+  &::after {
+    @include header-link-underline;
+  }
+}

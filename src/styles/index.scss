@@ -1,3 +1,33 @@
-body {
-  margin: 0;
+@import 'variable';
+
+.catalog {
+  padding: $catalog-padding;
+  display: grid;
+  gap: $catalog-gap;
+  grid-template-columns: repeat(4, $card-width);
+  justify-content: center;
+}
+
+@media (max-width: 487px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 488px) and (max-width: 767px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
