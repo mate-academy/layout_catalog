@@ -1,0 +1,56 @@
+.header {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    transition-duration: 300ms;
+    display: flex;
+    line-height: 60px;
+    height: 60px;
+    font-size: 12px;
+    margin-right: 20px;
+    color: $main-color;
+
+    &--last {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $active-color;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-color: $active-color;
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+  }
+}
