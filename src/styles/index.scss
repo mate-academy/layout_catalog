@@ -1,3 +1,53 @@
+@import './blocks/variables';
+@import './blocks/stars';
+@import './blocks/card';
+@import './blocks/header';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: $primary_text_color;
+
+  margin: 0;
+}
+
 body {
   margin: 0;
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card_width);
+  gap: 46px 48px;
+  justify-content: center;
+
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card_width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card_width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card_width);
+  }
 }
