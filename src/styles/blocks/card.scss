@@ -1,0 +1,112 @@
+.main-container {
+  padding: 50px 40px;
+  display: grid;
+  gap: 48px 46px;
+  justify-content: center;
+
+  @media (min-width: 300px) {
+    grid-template-columns: repeat($column-count, 200px);
+  }
+
+  @media (min-width: 488px) {
+    $column-count: 2;
+
+    grid-template-columns: repeat($column-count, 200px);
+  }
+
+  @media (min-width: 768px) {
+    $column-count: 3;
+
+    grid-template-columns: repeat($column-count, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    $column-count: 4;
+
+    grid-template-columns: repeat($column-count, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding: 32px 16px 16px;
+  transition-duration: 500ms;
+
+  &__picture {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-text-color;
+    margin: 0;
+
+    &hover {
+      color: #34568b;
+    }
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    white-space: nowrap;
+    color: $secondary-text-color;
+    margin: 4px 84px 16px 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-block: 24px 16px;
+    line-height: 18px;
+    color: $secondary-text-color;
+
+    &_price {
+      font-size: 12px;
+      font-weight: 400;
+      color: $secondary-text-color;
+    }
+
+    &_numbers {
+      text-align: right;
+      font-size: 16px;
+      font-weight: 700;
+      color: $main-text-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.button_buy {
+  background-color: $main-color;
+  width: 100%;
+  height: 40px;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+  border-color: $main-color;
+  vertical-align: middle;
+  align-items: center;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $form-color;
+
+  &:hover {
+    background-color: $form-color;
+    color: $main-color;
+  }
+}
