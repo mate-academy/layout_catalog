@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'mixin';
 
 .catalog {
   padding: $catalog-padding;
@@ -8,30 +9,8 @@
   justify-content: center;
 }
 
-@media (max-width: 487px) {
-  .catalog {
-    grid-template-columns: repeat(1, $card-width);
-  justify-content: center;
-
-  }
-}
-
-@media (min-width: 488px) and (max-width: 767px) {
-  .catalog {
-    grid-template-columns: repeat(2, $card-width);
-  justify-content: center;
-
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .catalog {
-    grid-template-columns: repeat(3, $card-width);
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1200px) {
-  .catalog {
-    grid-template-columns: repeat(4, $card-width);
+@each $breakpoint-count, $breakpoint in $media-query {
+  @media (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2)) {
+    @include media-rule($breakpoint-count);
   }
 }
