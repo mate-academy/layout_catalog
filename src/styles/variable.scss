@@ -1,20 +1,69 @@
+$duration: 300ms;
 $blockWidth: 166px;
-$star-size: 16px;
 $main-font: Roboto, sans-serif;
+$blue-color: #00acdc;
 $card-first-color: #060b35;
 $card-second-color: #616070;
-$blue-color: #00acdc;
-$catalog-padding: 50px 40px;
-$catalog-gap: 46px 48px;
 $card-width: 200px;
 $card-border: solid 1px #f3f3f3;
 $card-border-radius: 5px;
-$duration: 300ms;
 $card-hover-title-color: #34568b;
+$card-padding: 16px;
+$card-text-rating-font-size: 10px;
+$card-text-rating-margin-block: 0;
+$card-text-rating-line-height: 14px;
+$card-price-margin-top: 24px;
+$card-text-price-margin-block: 0;
+$card-text-price-font-size: 12px;
+$card-text-price-line-height: 18px;
+$card-count-margin-block: 0;
+$card-count-font-weight: 700;
+$card-count-font-size: 16px;
+$card-count-line-height: 18px;
+$catalog-padding: 50px 40px;
+$catalog-gap: 46px 48px;
 $small-screen: 488px;
 $medium-screen: 768px;
 $large-screen: 1024px;
 $zero-lint: 0;
+$star-size: 16px;
+$title-font-weight: 500;
+$title-font-size: 12px;
+$title-line-height: 18px;
+$margin-title: 40px 0 0;
+$subtitle-font-size: 10px;
+$subtitle-line-height: 14px;
+$subtitle-margin: 4px auto 0 0;
+$logo-height: 134px;
+$logo-width: 160px;
+$logo-margin-top: 16px;
+$rating-margin-top: 16px;
+$rating-line-height: 0;
+$button-font-weight: 700;
+$button-font-size: 14px;
+$button-line-height: 16px;
+$button-height: 40px;
+$button-border-radius: 5px;
+$button-margin-top: 16px;
+$button-border: solid 1px transparent;
+$button-color: white;
+$button-hover-border: solid 1px $blue-color;
+$nav-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+$nav-padding: 0 50px;
+$nav-image-margin: 10px 0;
+$nav-no-first-item-margin: 20px;
+$nav-line-height: 14px;
+$nav-link-font-weight: 500;
+$nav-link-font-size: 12px;
+$nav-link-color: #060b35;
+$nav-link-margin: 22px 0 23px;
+$nav-is-active-line-height: 14px;
+$nav-is-active-font-weight: 500;
+$nav-is-active-font-size: 12px;
+$nav-is-active-padding: 22.5px 0;
+$nav-link-underline-margin-top: 19px;
+$nav-link-underline-border-radius: 8px;
+$nav-link-underline-height: 4px;
 $media-query: (
   1: (
     $zero-lint,
@@ -33,173 +82,3 @@ $media-query: (
     1200px,
   ),
 );
-
-@mixin media-rule($column-emount) {
-  .catalog {
-    grid-template-columns: repeat($column-emount, $card-width);
-    justify-content: center;
-  }
-}
-
-@mixin card {
-  width: $card-width;
-  border: $card-border;
-  border-radius: $card-border-radius;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  transition-duration: $duration;
-  padding: 16px;
-}
-
-@mixin card-logo {
-  height: 134px;
-  width: 160px;
-  margin-top: 16px;
-}
-
-@mixin card-title {
-  width: $blockWidth;
-  font-family: $main-font;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  margin: 40px 0 0;
-  transition-duration: 300ms;
-}
-
-@mixin card-subtitle {
-  font-family: $main-font;
-  font-size: 10px;
-  line-height: 14px;
-  color: $card-second-color;
-  margin: 4px auto 0 0;
-}
-
-@mixin card-rating {
-  width: $blockWidth;
-  display: flex;
-  margin-top: 16px;
-  line-height: 0;
-  align-items: end;
-}
-
-@mixin card-text-rating {
-  font-family: $main-font;
-  font-size: 10px;
-  margin-block: 0;
-  color: $card-first-color;
-  margin-left: auto;
-  line-height: 14px;
-}
-
-@mixin card-price {
-  width: $blockWidth;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 24px;
-}
-
-@mixin card-text-price {
-  margin-block: 0;
-  font-family: $main-font;
-  font-size: 12px;
-  line-height: 18px;
-  color: $card-second-color;
-}
-
-@mixin card-count {
-  margin-block: 0;
-  font-family: $main-font;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
-  color: $card-first-color;
-}
-
-@mixin card-button {
-  font-family: $main-font;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  width: $blockWidth;
-  height: 40px;
-  border-radius: 5px;
-  background-color: $blue-color;
-  margin-top: 16px;
-  border: solid 1px transparent;
-  color: white;
-  text-transform: uppercase;
-  transition-duration: 300ms;
-}
-
-@mixin button-hover {
-  border: solid 1px $blue-color;
-  background-color: #fff;
-  color: $blue-color;
-}
-
-@mixin header {
-  font-family: $main-font;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-  padding: 0 50px;
-  justify-content: space-between;
-}
-
-@mixin header-image {
-  margin: 10px 0;
-}
-
-@mixin header-list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@mixin header-item {
-  text-transform: uppercase;
-  position: relative;
-}
-
-@mixin header-no-first-item {
-  margin-left: 20px;
-}
-
-@mixin header-link {
-  line-height: 14px;
-  font-weight: 500;
-  font-size: 12px;
-  text-decoration: none;
-  color: #060b35;
-  display: block;
-  transition-duration: 300ms;
-  margin: 22px 0 23px;
-}
-
-@mixin header-link-hover {
-  color: $blue-color;
-}
-
-@mixin header-is-active {
-  color: $blue-color;
-  line-height: 14px;
-  font-weight: 500;
-  font-size: 12px;
-  text-decoration: none;
-  padding: 22.5px 0;
-  display: block;
-}
-
-@mixin header-link-underline {
-  content: '';
-  background-color: $blue-color;
-  width: 100%;
-  height: 4px;
-  display: block;
-  position: absolute;
-  margin-top: 19px;
-  border-radius: 8px;
-}

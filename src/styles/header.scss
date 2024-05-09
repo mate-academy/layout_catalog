@@ -2,39 +2,68 @@
 @import 'mixin';
 
 .header {
-  @include header;
+  font-family: $main-font;
+  display: flex;
+  align-items: center;
+  box-shadow: $nav-box-shadow;
+  padding: $nav-padding;
+  justify-content: space-between;
 
   &__image {
-    @include header-image;
+    margin: $nav-image-margin;
   }
 }
 
 .nav {
   &__list {
-    @include header-list;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   &__item {
-    @include header-item;
+    text-transform: uppercase;
+    position: relative;
 
     &:not(:first-of-type) {
-      @include header-no-first-item;
+      margin-left: $nav-no-first-item-margin;
     }
   }
 
   &__link {
-    @include header-link;
+    line-height: $nav-line-height;
+    font-weight: $nav-link-font-weight;
+    font-size: $nav-link-font-size;
+    text-decoration: none;
+    color: $nav-link-color;
+    display: block;
+    transition-duration: $duration;
+    margin: $nav-link-margin;
 
     &:hover {
-      @include header-link-hover;
+      color: $blue-color;
     }
   }
 }
 
 .is-active {
-  @include header-is-active;
+  color: $blue-color;
+  line-height: $nav-is-active-line-height;
+  font-weight: $nav-is-active-font-weight;
+  font-size: $nav-is-active-font-size;
+  text-decoration: none;
+  padding: $nav-is-active-padding;
+  display: block;
 
   &::after {
-    @include header-link-underline;
+    content: '';
+    background-color: $blue-color;
+    width: 100%;
+    height: $nav-link-underline-height;
+    display: block;
+    position: absolute;
+    margin-top: $nav-link-underline-margin-top;
+    border-radius: $nav-link-underline-border-radius;
   }
 }
