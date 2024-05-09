@@ -1,3 +1,44 @@
+@import './variables';
+@import './header';
+@import './card';
+@import './stars';
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: $font;
+  color: $main-FontColor;
+  font-weight: 400;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat($columnCount, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+  align-items: start;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  $columnCount: 2;
+  .catalog {
+    grid-template-columns: repeat($columnCount, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  $columnCount: 3;
+  .catalog {
+    grid-template-columns: repeat($columnCount, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  $columnCount: 4;
+  .catalog {
+    grid-template-columns: repeat($columnCount, $card-width);
+  }
 }
