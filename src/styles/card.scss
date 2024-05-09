@@ -2,38 +2,35 @@
   display: grid;
   grid-template-columns: repeat(4, 200px);
   gap: 46px 48px;
-  grid-auto-flow: row;
   place-content: center;
   padding: 50px 40px;
 
-  &__card:nth-child(4n) {
-    margin-right: 0;
-  }
-
-  &__card:nth-last-child(-n + 4) {
-    margin-bottom: 0;
+  @media (max-width: 487px) {
+    grid-template-columns: repeat(1, 200px);
   }
 
   @media (min-width: 488px) {
-    .cards {
-      grid-template-columns: repeat(2, 200px);
-    }
+    grid-template-columns: repeat(2, 200px);
   }
 
   @media (min-width: 768px) {
-    .cards {
-      grid-template-columns: repeat(3, 200px);
-    }
+    grid-template-columns: repeat(3, 200px);
   }
 
   @media (min-width: 1024px) {
-    .cards {
-      grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, 200px);
+
+    &__card:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &__card:nth-last-child(-n + 4) {
+      margin-bottom: 0;
     }
   }
 
   .card {
-    width: 200px;
+    // width: 200px;
     box-sizing: border-box;
     border: 1px solid $border-color;
     background-color: $bg-primary-color;
