@@ -1,0 +1,69 @@
+@import './utils/variables';
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+
+
+.navigation {
+  &__wraper {
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    align-self: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.6px;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: #060b35;
+    height: 60px;
+  }
+
+  &__link:hover {
+    color: $color-active;
+  }
+
+  &__link:active {
+    color: $color-active;
+    box-shadow: 0 4px 0 $color-active;
+  }
+
+  .is-active {
+    position: relative;
+    color: $color-active;
+  }
+
+  .is-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-active;
+    border-radius: 8px;
+  }
+}
