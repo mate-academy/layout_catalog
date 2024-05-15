@@ -1,0 +1,145 @@
+@import 'variables';
+
+.card {
+  height: $card-height;
+  display: flex;
+  flex-direction: column;
+  padding: 0 17px;
+  align-items: center;
+  box-sizing: border-box;
+  width: $card-width;
+
+  border: 1px solid $border-color;
+  border-radius: 5px;
+
+  background-color: $card-color;
+  transition: transform 0.3s ease-in-out;
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    height: 134px;
+    width: 160px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    margin-top: 33px;
+  }
+
+  &__title {
+    margin-top: 40px;
+    line-height: 18px;
+    margin-bottom: 0;
+
+    font-size: 12px;
+    font-weight: 500;
+    color: $main-text-color;
+
+    &:hover {
+      color: $hover-card-title-color;
+    }
+  }
+
+  &__code {
+    line-height: 14px;
+    margin-top: 4px;
+    text-align: left;
+    width: 100%;
+
+    color: $secondary-text-color;
+    font-size: 10px;
+    font-weight: 400;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 166px;
+    height: 16px;
+    line-height: 14px;
+    margin-top: 7px;
+
+    &-p {
+      font-size: 10px;
+      color: $main-text-color;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    width: 96px;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &-star {
+      background-image: url('../images/star.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+
+      width: 16px;
+      height: 16px;
+
+      &:nth-child(-n + 1),
+      &:nth-child(-n + 2),
+      &:nth-child(-n + 3),
+      &:nth-child(-n + 4) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 166px;
+
+    &-title {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+
+      color: $secondary-text-color;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 13px;
+
+    width: 166px;
+    height: 40px;
+    border: 1px solid $button-blue-color;
+    background-color: $button-blue-color;
+    border-radius: 5px;
+
+    text-decoration: none;
+    color: $card-color;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:hover {
+      background-color: $card-color;
+      color: $button-blue-color;
+      border: 1px solid $button-blue-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
