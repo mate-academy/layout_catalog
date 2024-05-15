@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -16,24 +20,6 @@ html {
   grid-template-columns: repeat(var(--column-count), 200px);
 }
 
-@media (min-width: 488px) {
-  .catalog {
-    --column-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .catalog {
-    --column-count: 3;
-  }
-}
-
-@media (min-width: 1024px) {
-  .catalog {
-    --column-count: 4;
-  }
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -42,7 +28,6 @@ html {
   border: 1px solid $gray-elements;
   border-radius: 5px;
   position: relative;
-  box-sizing: border-box;
   padding: 0 16px;
   transition: all 300ms ease;
   transform-origin: center;
@@ -81,19 +66,15 @@ html {
   &__reviews {
     font-size: 10px;
     color: $main-accent;
-    margin-left: auto;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 0 0 auto;
   }
 
   &__price {
-    margin: 24px 0;
-    height: 17px;
+    margin: 10px 0 2px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 5px;
 
     &-word {
       color: $secondary;
@@ -112,7 +93,7 @@ html {
     height: 40px;
     background-color: $blue-accent;
     border-radius: 5px;
-    margin: 12px 0 16px;
+    margin-bottom: 16px;
     line-height: 16px;
     display: flex;
     color: $white;
