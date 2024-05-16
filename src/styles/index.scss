@@ -4,7 +4,6 @@
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
-  box-sizing: border-box;
 }
 
 * {
@@ -73,6 +72,11 @@ body {
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
+  transition:
+    background-color $transition-duration,
+    color $transition-duration,
+    border-color $transition-duration,
+    transform $transition-duration;
   &__photo {
     display: block;
 
@@ -92,7 +96,7 @@ body {
       color: #34568b;
     }
   }
-  
+
   &__code {
     margin-bottom: 16px;
 
@@ -154,8 +158,8 @@ body {
     transition:
       background-color $transition-duration,
       color $transition-duration,
-      border-color $transition-duration;
-
+      border-color $transition-duration,
+      transform $transition-duration;
     &:hover {
       background-color: #fff;
       color: $color-blue-accent;
@@ -164,10 +168,16 @@ body {
   }
 }
 
+.card:hover {
+  background-color: #fff;
+  color: $color-blue-accent;
+  border: 1px solid #00acdc;
+  transform: scale(1.2);
+}
+
 .stars {
   display: flex;
   gap: 4px;
-
   &__star {
     width: 16px;
     height: 16px;
