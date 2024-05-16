@@ -18,17 +18,20 @@ body {
 }
  
 .header {
+  position: relative;
   display: flex;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: $head-padding;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  //align-items: center;
+  width: 100%; //???????????????
+  height: 60px; //????????
 
   &__logo {
+    position: absolute;
     display: inline-block;
-    margin: 10px 0;
+    top: 10px;
     @include square($size);
   }
 }
@@ -78,6 +81,11 @@ body {
 .links__link_a:hover {
   color: #00acdc;
 }
+
+.is-active2,
+.links__link_a:hover {
+  color: #00acdc;
+}
   
 .is-active::after {
   content: "";
@@ -92,17 +100,23 @@ body {
 
 .main__container {
   display: grid;
-  grid-template-columns: repeat(1, 200px);
-  gap: 46px 48px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(1, $width-card);
+  row-gap: 48px;
+  column-gap: 46px;
   padding: 50px 40px;
   justify-content: center;
-  @include mobile;
+  justify-items: center; //???????????
+  //align-items: stretch; //?????????
+  //height: 100vh;
+  //@include mobile;
   @include tablet;
   @include laptop;
   @include desktop;
 }
 
 .card {
+  //flex-grow: 1; //???????????????
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -110,20 +124,22 @@ body {
   border: 1px solid #{$color-bck};
   border-radius: 5px;
   background-color: #fff;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
-  height: 408px; //???????
-  flex-shrink: 0;
+  //height: 408px; //???????
+  //flex-shrink: 0;
   color: #060b35;
 
   &__img {
     width: 160px;
     height: 134px;
     display: block;
-    margin: 16px 3px 40px;
+    margin: 16px 4px 40px;
+    //margin-bottom: 40px;
+    //margin-top: 16px; //??????????????
   }
 
   &__title {
@@ -149,20 +165,31 @@ body {
   &__review-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-content: flex-start;
+    width: 166px; //&&&&&&&&&&&&&
+    height: 16px;
   }
 
   &__review {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     font-size: $font-ten;
     line-height: 14px;
-    padding-left: 17px;
+    width: 53px;
+    height: 16px;
+    text-align: right;
+    //padding-left: 17px;
+    //width: 100%;
+    margin: 0;
   }
     
   &__price {
     display: flex;
     justify-content: space-between;
+    //align-items: flex-end;
     width: 100%; //???????
-    // align-items: center;
+    align-items: center;
   }
   
   &__price-label {
@@ -181,11 +208,13 @@ body {
     color: #{$color-dark};
     margin-top: 24px;
     margin-bottom: 0;
+    align-items: flex-end;
   }
   
   &__buy-link {
-    width: 166px;
-    height: 40px;
+    display: flex;
+    width: 100%;
+    height: 39px;
     background-color: #{$color-button};
     border-radius: 5px;
     text-align: center;
@@ -198,9 +227,11 @@ body {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     cursor: pointer;
-    padding: 12px 0;
+    //padding: 12px 0; //??????????????????????????????
     margin-top: 16px;
     border: 1px solid #{$color-button};
+    justify-content: center;
+    align-items: center;
   }
   
   &__buy-link:hover {
