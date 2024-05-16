@@ -1,8 +1,10 @@
+@import './utilites/variables';
+@import './utilites/mixins';
 @import './blocks/product-cards';
-
-$product-card-color: #060b35;
-$grey-text-color: #616070;
-$link-color: #00acdc;
+@import './blocks/stars';
+@import './blocks/main';
+@import './blocks/header';
+@import './blocks/nav';
 
 * {
   box-sizing: border-box;
@@ -16,117 +18,4 @@ body {
 p {
   margin: 0;
   padding: 0;
-}
-
-.header {
-  font-family: Roboto, sans-serif;
-
-  color: $link-color;
-
-  display: flex;
-  justify-content: space-between;
-  background-color: #fff;
-
-  align-items: center;
-  padding: 0 50px;
-}
-
-.logo {
-  display: block;
-  width: 40px;
-  height: 40px;
-
-  &_img {
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.nav {
-  &__list {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    color: $product-card-color;
-    list-style: none;
-  }
-
-  &__item {
-    margin-left: 20px;
-  }
-
-  &__item:first-child {
-    margin-left: 0;
-  }
-
-  &__link {
-    position: relative;
-
-    font-size: 12px;
-    font-weight: 500;
-
-    display: flex;
-    height: 60px;
-
-    white-space: nowrap;
-    color: $product-card-color;
-
-    text-decoration: none;
-    transition: color 0.3s;
-
-    align-items: center;
-    text-transform: uppercase;
-  }
-
-  &__link:hover {
-    color: $link-color;
-  }
-
-  &__link.is-active {
-    color: $link-color;
-  }
-
-  &__link.is-active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    height: 4px;
-    border-radius: 2px;
-    background-color: $link-color;
-  }
-}
-
-.main {
-  --column-count: 1;
-
-  font-family: Roboto, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-
-  display: grid;
-  grid-template-columns: repeat(var(--column-count), 200px);
-  justify-content: center;
-  grid-gap: 46px 48px;
-  padding: 50px 40px;
-}
-
-@media (min-width: 488px) {
-  .main {
-    --column-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .main {
-    --column-count: 3;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main {
-    --column-count: 4;
-  }
 }
