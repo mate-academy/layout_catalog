@@ -1,3 +1,236 @@
+@import '../styles/mixin';
+@import '../styles/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+
+  &_logo {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 10px 0;
+  }
+}
+
+.nav__list {
+  display: flex;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.links {
+  margin-right: 20px;
+  position: relative;
+  list-style: none;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+
+  &__link_a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $font;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    transition-duration: 300ms;
+    padding: 23px 0;
+  }
+}
+
+.links:last-child {
+  margin-right: 0;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: $button;
+  border-radius: 8px;
+}
+
+.is-active,
+.links__link_a:hover {
+  color: $button;
+}
+
+.main__container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(1, $card);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  flex-shrink: 0;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @include tablet;
+  @include laptop;
+  @include desktop;
+}
+
+.card {
+  width: $card;
+  border: 1px solid $bck;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  transition: transform 300ms;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 32px 19px 40px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $font;
+    margin: 0 16px 4px;
+    transition-duration: 300ms;
+  }
+
+  &__type {
+    font-size: 10px;
+    line-height: 14px;
+    color: $small;
+    font-style: normal;
+    margin: 0 84px 16px 16px;
+    font-weight: 400;
+  }
+
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 16px;
+  }
+
+  &__review {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    height: 18px;
+    margin: 24px 16px 0;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: $small;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $font;
+    margin: 0;
+  }
+
+  &__buy-link {
+    width: 166px;
+    height: 40px;
+    background-color: $button;
+    border-radius: 5px;
+    text-align: center;
+    color: $bck;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 0;
+    margin: 16px;
+    border: 1px solid $button;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 300ms;
+  }
+
+  &__buy-link:hover {
+    background-color: $bck;
+    color: $button;
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__star {
+    background-image: url(../../src/images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.stars__star:not(:last-child) {
+  margin-right: 4px;
+}
+
+.stars--1 .stars__star:first-child,
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(../../src/images/star-active.svg);
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card__title:hover {
+  color: #34568b;
 }
