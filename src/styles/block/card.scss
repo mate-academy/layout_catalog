@@ -56,27 +56,28 @@
   margin-left: var(--margin-left);
 }
 
-.reviews_stars {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
+.stars {
+  display: flex;
   width: 96px;
-  height: 16px;
-}
+  flex-direction: row;
+  justify-content: space-around;
 
-.star {
-  display: inline-flex;
-  background: url('../images/star-active.svg');
-  background-repeat: no-repeat;
-  justify-content: center;
-  background-position: center;
-  background-size: auto;
-  height: 16px;
-  width: 16px;
-}
+  &-star {
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
 
-.star:last-child {
-  background-image: url('../images/star.svg');
+    width: 16px;
+    height: 16px;
+
+    &:nth-child(-n + 1),
+    &:nth-child(-n + 2),
+    &:nth-child(-n + 3),
+    &:nth-child(-n + 4) {
+      background-image: url('../images/star-active.svg');
+    }
+  }
 }
 
 .reviews_text {
