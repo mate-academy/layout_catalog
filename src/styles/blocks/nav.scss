@@ -2,20 +2,26 @@
   display: flex;
   position: relative;
   align-items: center;
+
   &__list {
     display: flex;
+
     &-item {
       display: flex;
       align-items: center;
       list-style-type: none;
       margin-right: 20px;
+
       @media (max-width: 615px) {
         margin-right: 10px;
       }
+
       &:last-child {
         margin-right: 0;
       }
+
       &-link {
+        position: relative;
         height: 60px;
         display: flex;
         align-items: center;
@@ -24,13 +30,16 @@
         font-weight: 500;
         font-size: 12px;
         text-transform: uppercase;
-        @include timeAnimation;
+
+        @include time-animation;
         &:hover {
           color: $blue-color;
         }
+
         @media (max-width: 745px) {
           font-size: 9px;
         }
+
         @media (max-width: 615px) {
           font-size: 7px;
         }
@@ -44,17 +53,10 @@
   &::after {
     content: '';
     position: absolute;
-    width: 37px;
+    width: 100%;
     height: 4px;
     background-color: $blue-color;
     bottom: 0;
     border-radius: 8px;
-    @media (max-width: 745px) {
-      width: 31px;
-    }
-    @media (max-width: 615px) {
-      width: 26px;
-      left: -3px;
-    }
   }
 }
