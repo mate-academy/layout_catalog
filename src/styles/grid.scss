@@ -1,0 +1,34 @@
+@mixin set-columns($count) {
+  grid-template-columns: repeat($count, 200px);
+}
+
+.container {
+  $colums-count: 1;
+
+  padding: 50px 40px;
+  display: grid;
+
+  @include set-columns(1);
+
+  justify-content: center;
+
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    @include set-columns(2);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    @include set-columns(3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    @include set-columns(4);
+  }
+}
