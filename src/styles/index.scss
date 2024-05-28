@@ -1,3 +1,233 @@
+$accent-color: #00acdc;
+
 body {
   margin: 0;
+  background-color: #fff;
+  font-family: Roboto, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.catalog__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &-navigation {
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+
+    &-list {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #060b35;
+      padding-top: 23px;
+      padding-bottom: 23px;
+    }
+  }
+
+  .catalog__header-navigation-list:hover {
+    content: attr(data-qa);
+    color: $accent-color;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $accent-color;
+  line-height: 60px;
+}
+
+.is-active::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $accent-color;
+}
+
+.catalog__main {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  padding: 50px 128px 72px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog__main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog__main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog__main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 1);
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  padding: 32px 16px 16px;
+  transition: 300ms;
+
+  &-picture {
+    display: flex;
+    margin: 0 auto;
+    width: 160px;
+    height: 134px;
+    justify-content: center;
+  }
+
+  &-description {
+    margin: 0 auto;
+    padding-top: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+    width: 166px;
+    height: 36px;
+    color: rgba(6, 11, 53, 1);
+  }
+
+  &-code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    width: 98px;
+    height: 14px;
+    margin-top: 4px;
+    margin-right: 68px;
+    margin-bottom: 0;
+    color: rgba(97, 96, 112, 1);
+  }
+
+  &-reviews {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    width: 166px;
+    height: 16px;
+    justify-content: space-between;
+    align-items: center;
+
+    &-stars {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+    }
+
+    &-counting {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      text-align: right;
+      color: rgba(6, 11, 53, 1);
+      margin: 0;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card:hover .card-description {
+  color: #34568b;
+}
+
+.reviews-stars-star {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 4px;
+}
+
+.reviews-stars-star:last-child {
+  margin-right: 0;
+}
+
+.reviews-stars-star:nth-child(-n + 1),
+.reviews-stars-star:nth-child(-n + 2),
+.reviews-stars-star:nth-child(-n + 3),
+.reviews-stars-star:nth-child(-n + 4) {
+  background-image: url(../images/star-active.svg);
+}
+
+.card-price-block {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: center;
+  justify-content: space-between;
+  width: 166px;
+  height: 18px;
+}
+
+.card-price {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: rgba(97, 96, 112, 1);
+}
+
+.card-price-value {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: right;
+  color: rgba(6, 11, 53, 1);
+}
+
+.button {
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 172, 220, 1);
+  background-color: rgba(0, 172, 220, 1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  padding: 0;
+}
+
+.button:hover {
+  color: #00acdc;
+  background-color: #fff;
 }
