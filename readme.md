@@ -1,6 +1,6 @@
 # Frontend practice with catalog page
 
-Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
+Create HTML page with catalog. Develop semantic page structure as shown on [the mockup](<https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354>).
 
 - use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
 - remove old `data-qa` attributes
@@ -20,6 +20,7 @@ Create HTML page with catalog. Develop semantic page structure as shown on [the 
 - cards container(catalog) have fixed paddings (`50px` vertically and `40px` horyzontally)
 
 Make all the changes smooth on hover (during 300ms):
+
 - increase the card by 20 percent (neighboring cards **should not be** affected)
 - change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
 - change navigation link text color to `#00acdc`
@@ -30,6 +31,7 @@ Make all the changes smooth on hover (during 300ms):
 ## Checklist
 
 ❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
+
 - [DEMO LINK](https://Karanelus.github.io/layout_catalog/)
 - [TEST REPORT LINK](https://Karanelus.github.io/layout_catalog/report/html_report/)
 
