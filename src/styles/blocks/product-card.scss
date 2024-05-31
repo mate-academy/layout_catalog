@@ -1,0 +1,148 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, $with-card);
+  row-gap: 48px;
+  column-gap: 46px;
+  justify-content: center;
+  padding-top: 50px;
+  // padding-left: 40px;
+}
+
+@media (max-width: 487px) {
+  .main {
+    grid-template-columns: repeat(1, $with-card);
+  }
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, $with-card);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, $with-card);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, $with-card);
+  }
+}
+
+.card {
+  width: $with-card;
+  height: 408px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: #34568b;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: auto;
+    margin-top: 32px;
+  }
+
+  &__title {
+    margin: 40px #{$card-indent-size} 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &__article {
+    margin: 4px #{$card-indent-size} 0;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #616070;
+  }
+
+  &__assessment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: #{$card-indent-size};
+    box-sizing: border-box;
+  }
+
+  &__stars {
+    margin-left: #{$card-indent-size};
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #060b35;
+    margin-right: #{$card-indent-size};
+    margin-top: 2px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__button {
+    width: $width-content - 2px;
+    height: 40px;
+    background-color: #{$button-color};
+    border: #{$button-color};
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #fff;
+    margin-bottom: 16px;
+
+    &:hover {
+      background-color: #fff;
+      color: #{$button-color};
+      border: 1px solid #{$button-color};
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: $width-content - 2px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #616070;
+  }
+
+  &__price-num {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #060b35;
+  }
+}
