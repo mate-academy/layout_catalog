@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.img-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    display: flex;
+
+    &:nth-child(n + 2) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 23px 0;
+    color: $textPrimaryColor;
+
+    &:hover {
+      color: $activeAccent;
+      transition: 300ms;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $activeAccent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background: $activeAccent;
+      }
+    }
+  }
+}
