@@ -1,0 +1,137 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, $width-card);
+  gap: 46px 48px;
+  justify-content: center;
+  padding-top: 50px;
+
+  @media (max-width: 487px) {
+    grid-template-columns: repeat(1, $width-card);
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $width-card);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $width-card);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $width-card);
+  }
+}
+
+.card {
+  width: $width-card;
+  height: 408px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 300ms;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: auto;
+    margin-top: 32px;
+  }
+
+  &__title {
+    margin: 40px #{$card-indent-size} 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #060b35;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: #34568b;
+  }
+
+  &__article {
+    margin: 4px #{$card-indent-size} 0;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #616070;
+  }
+
+  &__assessment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: #{$card-indent-size};
+    box-sizing: border-box;
+  }
+
+  &__stars {
+    margin-left: #{$card-indent-size};
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #060b35;
+    margin-right: #{$card-indent-size};
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__button {
+    width: $width-content - 2px;
+    height: 40px;
+    background-color: #{$button-color};
+    border: #{$button-color};
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #fff;
+    margin-bottom: 16px;
+
+    &:hover {
+      background-color: #fff;
+      color: #{$button-color};
+      border: 1px solid #{$button-color};
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: $width-content - 2px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #616070;
+  }
+
+  &__price-num {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #060b35;
+  }
+}
