@@ -1,0 +1,57 @@
+@use 'sass:math' as *;
+@use 'sass:list' as *;
+
+$mainfont: 16;
+$blue: #00acdc;
+$white: #fff;
+$main: #060b35;
+$second: #616070;
+$bodyfont: 'Roboto', sans-serif;
+
+@function rem($value) {
+  $remvalue: div($value, $mainfont) + rem;
+
+  @return $remvalue;
+}
+
+@function vw($value) {
+  $vwvalue: calc(#{$value} / #{$maxwidth} * 100vw);
+
+  @return $vwvalue;
+}
+
+@function lineheight($pixels, $fontsize) {
+  $lineheight: $pixels / $fontsize;
+
+  @return $lineheight;
+}
+
+@function summaxwidth($maxwidth, $gapelements) {
+  $summaxwidthvar: calc(#{$maxwidth}px + #{$gapelements}px);
+
+  @return $summaxwidthvar;
+}
+
+@mixin tablet-md {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet-sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-md {
+  @media (max-width: 487px) {
+    @content;
+  }
+}
+
+@mixin mobile-sm {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
