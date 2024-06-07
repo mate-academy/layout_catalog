@@ -1,0 +1,87 @@
+html {
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  align-items: center;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: $bodyColor;
+}
+
+.image-header {
+  width: 40px;
+  height: 40px;
+  padding: 10px 50px;
+}
+
+.nav {
+  margin-right: 50px;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $mainTextColor;
+    margin: auto 10px;
+    height: 60px;
+    transition: color 0.3s ease-in-out;
+
+    &--first {
+      text-decoration: none;
+      text-align: center;
+      color: $mainTextColor;
+      margin: auto 10px auto auto;
+    }
+
+    &--last {
+      text-decoration: none;
+      text-align: center;
+      color: $mainTextColor;
+      margin: auto auto auto 10px;
+    }
+
+    &:hover,
+    &--last:hover {
+      color: $buttonColor;
+      text-decoration: underline $buttonColor 2px;
+    }
+
+    &--first.is-active {
+      color: $buttonColor;
+    }
+  }
+}
+
+[data-qa='nav-hover']:hover {
+  color: $buttonColor;
+  text-decoration: none;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 4px;
+  color: $buttonColor;
+  background-color: $buttonColor;
+  border-radius: 8px;
+  width: 37px;
+  top: 56px;
+}

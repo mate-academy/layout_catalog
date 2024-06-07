@@ -1,0 +1,172 @@
+.container-main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.main {
+  justify-content: center;
+  padding: 50px 40px;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template: 1fr 1fr / 200px;
+  gap: 46px 48px;
+  grid-auto-flow: row;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  height: 408px;
+  border: 1px solid $containerBorderColor;
+  box-sizing: border-box;
+  display: block;
+  background-color: $bodyColor;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.image-main {
+  width: 160px;
+  height: 134px;
+  background-image: url(/src/images/imac.jpeg);
+  background-size: 160px 134px;
+  margin-top: 32px;
+  margin-left: 19px;
+}
+
+.title {
+  width: 84%;
+  height: auto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  color: $mainTextColor;
+  margin-top: 40px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.card:hover .title {
+  color: #34568b;
+}
+
+.product_code {
+  margin-top: 4px;
+  margin-left: 16px;
+  width: fit-content;
+  height: auto;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $secondTextColor;
+}
+
+.button {
+  width: 166px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: $buttonColor;
+  color: $bodyColor;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  margin-left: 16px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $bodyColor;
+    color: $buttonColor;
+  }
+}
+
+.price {
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 16px;
+  margin-right: 16px;
+  line-height: 18px;
+  margin-top: 24px;
+
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
+    color: $secondTextColor;
+  }
+
+  &__amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: $mainTextColor;
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  height: auto;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  align-items: flex-end;
+
+  &__container {
+    display: flex;
+  }
+
+  &__star {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    background-image: url(/src/images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  &__count {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $mainTextColor;
+  }
+
+  @for $i from 0 through 5 {
+    &--count--#{$i} &__star:nth-child(-n + #{$i}) {
+      background-image: url(/src/images/star-active.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
