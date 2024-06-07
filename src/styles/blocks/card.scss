@@ -1,4 +1,6 @@
-
+:root {
+  --s: 1;
+}
 
 body {
   margin: 0;
@@ -8,9 +10,8 @@ body {
 }
 
 .container {
-  --column-count: 1;
   display: grid;
-  grid-template-columns: repeat(1, 200px);
+  grid-template-columns: repeat(var(--s), 200px);
   gap: 46px 48px;
   justify-content: center;
   padding: 50px 40px;
@@ -18,19 +19,19 @@ body {
 
 @media (min-width: 488px) {
   .container {
-    grid-template-columns: repeat(2, 200px);
+    --s: 2;
   }
 }
 
 @media (min-width: 768px) {
   .container {
-    grid-template-columns: repeat(3, 200px);
+    --s: 3;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    grid-template-columns: repeat(4, 200px);
+    --s: 4;
   }
 }
 
@@ -132,11 +133,9 @@ body {
 }
 
 .card:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-    .card__title {
+  cursor: pointer;
+  transform: scale(1.2);
+  .card__title {
     color: #34568b;
-    }
   }
-
-
+}
