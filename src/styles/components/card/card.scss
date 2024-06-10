@@ -1,21 +1,4 @@
-.stars {
-  display: flex;
-
-  &__star {
-    background-image: url(/src/images/star.svg);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    margin-right: 4px;
-    width: 16px;
-    height: 16px;
-  }
-
-  @for $activeStar from 1 through 4 {
-    &__star:nth-child(-n + #{$activeStar}) {
-      background-image: url(/src/images/star-active.svg);
-    }
-  }
-}
+@import 'starts';
 
 .card {
   width: 200px;
@@ -23,6 +6,7 @@
   text-align: center;
   border: 1px solid rgba(243, 243, 243, 1);
   border-radius: 5px;
+  transition: 0.3s;
 
   &__image {
     width: 160px;
@@ -98,13 +82,20 @@
     border-radius: 5px;
     text-transform: uppercase;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.3s;
 
     &:hover {
       height: 38px;
       border: 1px solid $mainColor;
       background-color: $whiteColor;
       color: $mainColor;
+    }
+  }
+
+  &:hover{
+    transform: scale(1.2);
+    &__title{
+      color: $mainDarkColor;
     }
   }
 }
