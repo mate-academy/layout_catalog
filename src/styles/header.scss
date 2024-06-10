@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 50px;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &__logo-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      list-style: none;
+    }
+
+    &-item {
+      margin-left: 20px;
+    }
+
+    &-item:first-child {
+      margin-left: 0;
+    }
+
+    &-link {
+      display: inline-block;
+      text-decoration: none;
+      color: $link-color;
+      height: $header-height;
+      line-height: $header-height;
+    }
+
+    &-link:hover {
+      color: $main-color;
+      transition-duration: $standart-duration;
+    }
+  }
+}
+
+.is-active {
+  color: $main-color;
+  height: 60px;
+}
+
+.is-active::after {
+  position: relative;
+  z-index: 1;
+  display: block;
+  content: '';
+  height: 4px;
+  width: 100%;
+  background-color: $main-color;
+  border-radius: 8px;
+  bottom: 4px;
+}
