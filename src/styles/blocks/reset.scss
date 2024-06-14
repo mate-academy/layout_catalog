@@ -1,0 +1,43 @@
+@use '../utils/variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, arial, sans-serif;
+  margin: 0;
+  font-size: 12px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, $column);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (max-width: 487px) {
+  .main {
+    grid-template-columns: repeat(1, $column);
+  }
+}
+
+@media (min-width: 488px) and (max-width: 767px) {
+  .main {
+    grid-template-columns: repeat(2, $column);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    grid-template-columns: repeat(3, $column);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, $column);
+  }
+}
