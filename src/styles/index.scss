@@ -1,6 +1,6 @@
-$blueColor: #00acdc;
-$whiteColor: white;
-$darkBlueColor: #060b35;
+@import 'variables';
+@import 'media';
+@import 'stars';
 
 * {
   box-sizing: border-box;
@@ -79,30 +79,6 @@ img {
   grid-template-columns: repeat(4, 200px);
   gap: 46px 48px;
   justify-content: center;
-
-  @media (min-width: 1px) {
-    & {
-      grid-template-columns: repeat(1, 200px);
-    }
-  }
-
-  @media (min-width: 488px) {
-    & {
-      grid-template-columns: repeat(2, 200px);
-    }
-  }
-
-  @media (min-width: 768px) {
-    & {
-      grid-template-columns: repeat(3, 200px);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    & {
-      grid-template-columns: repeat(4, 200px);
-    }
-  }
 
   &__card {
     width: 200px;
@@ -191,24 +167,5 @@ img {
       background-color: $whiteColor;
       color: $blueColor;
     }
-  }
-
-  .stars {
-    display: flex;
-
-    &__stars {
-      width: 16px;
-      height: 16px;
-      background-position: center;
-      background-image: url(../images/star.svg);
-      background-repeat: no-repeat;
-
-      &:not(:last-child) {
-        margin-right: 4px;
-      }
-    }
-  }
-  .stars--4 .stars__stars:nth-child(-n + 4) {
-    background-image: url(../images/star-active.svg);
   }
 }
