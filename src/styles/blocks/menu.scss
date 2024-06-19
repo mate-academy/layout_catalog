@@ -1,0 +1,49 @@
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  line-height: 100%;
+
+  &__item {
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $header-link-main-color;
+    display: inline-block;
+    padding: 24px 0;
+    transition: color $card-transition-duration;
+
+    &:hover {
+      color: $header-link-active-color;
+    }
+  }
+}
+
+.is-active {
+  color: $header-link-active-color;
+
+  &::after {
+    content: '';
+    background: $header-link-active-color;
+    border-radius: 8px;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
