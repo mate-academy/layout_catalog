@@ -1,0 +1,15 @@
+@use 'sass:list';
+
+@mixin hover-transition($props...) {
+  $transitions: ();
+
+  @each $property in $props {
+    $transitions: list.append($transitions, $property + ' 300ms', comma);
+  }
+
+  transition: $transitions;
+}
+
+@mixin main-border($color) {
+  border: $main-border-width solid $color;
+}

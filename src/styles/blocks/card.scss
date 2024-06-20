@@ -1,0 +1,108 @@
+.card {
+  margin: 0;
+  box-sizing: border-box;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  background-color: $card-bg;
+  color: $main-text-color;
+  border-radius: $card-radius;
+
+  @include main-border($card-border);
+  @include hover-transition(transform);
+
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__photo {
+    margin-bottom: 40px;
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-size: $main-font-size;
+    line-height: 1.5;
+    font-weight: $middle-font-weight;
+
+    @include hover-transition(color);
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    font-size: $small-font-size;
+    line-height: 1.4;
+    font-weight: $normal-font-weight;
+    color: $secondary-text-color;
+  }
+
+  &__estimate {
+    margin-bottom: 21px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews {
+    font-size: $small-font-size;
+    font-weight: $normal-font-weight;
+  }
+
+  &__price {
+    margin: 0 0 13px;
+    font-size: $main-font-size;
+    line-height: 1.5;
+    font-weight: $normal-font-weight;
+    color: $secondary-text-color;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-amount {
+    font-size: $big-font-size;
+    font-weight: $bold-font-weight;
+    color: $main-text-color;
+  }
+
+  &__buy-button {
+    height: 40px;
+    box-sizing: border-box;
+
+    font-family: inherit;
+    font-size: $middle-font-size;
+    font-weight: $bold-font-weight;
+    line-height: 1.14;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $card-bg;
+    background-color: $accent-color;
+    border-radius: $card-radius;
+
+    @include main-border($accent-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include hover-transition(color, background-color);
+
+    &:hover {
+      background-color: $card-bg;
+      color: $accent-color;
+
+      @include main-border($accent-color);
+    }
+  }
+}
