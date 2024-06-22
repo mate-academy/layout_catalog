@@ -1,3 +1,36 @@
+@import 'variables';
+@import 'card';
+@import 'stars';
+@import 'header';
+
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  color: rgba(6, 11, 53, 1);
+}
+
+.catalog {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: $gap-vertical $gap-horizontal;
+  padding: $padding-vertical $padding-horizontal;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    --column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-count: 4;
+  }
 }
