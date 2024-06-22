@@ -1,0 +1,27 @@
+@import 'variables';
+
+.products {
+  &__wrapper {
+    max-width: max-content;
+    width: 100%;
+
+    padding: 50px 40px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 46px 48px;
+
+    $gridElements:
+      488px 2,
+      768px 3,
+      1024px 4;
+
+    @each $minWidth, $elementsQuantity in $gridElements {
+      @media (min-width: $minWidth) {
+        grid-template-columns: repeat($elementsQuantity, minmax(0, 1fr));
+      }
+    }
+  }
+}
