@@ -1,5 +1,6 @@
 body {
   font-family: Roboto, Arial, sans-serif;
+  margin: 0 auto;
 }
 
 .card {
@@ -13,6 +14,11 @@ body {
   background-color: $background-color;
   padding-bottom: 16px;
   padding-top: 32px;
+  transition: scale() 5s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
     background-image: url(../images/imac.jpeg);
@@ -33,6 +39,10 @@ body {
     padding-top: 40px;
     padding-bottom: 4px;
     padding-inline: $inline-padding;
+
+    &:hover {
+      color: $card-hover-text-color;
+    }
   }
 
   &__text {
@@ -110,11 +120,28 @@ body {
 
   &:hover {
     border: 1px solid $button-color;
-    background-color: transparent;
-    color: $button-color;
+    background-color: $background-color;
+    color: $hover-link-color;
 
     .card-btn__text {
-      color: $button-color;
+      color: $hover-link-color;
+    }
+  }
+}
+
+.cards-container {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 46px 40px;
+  place-items: center;
+  max-width: 944px;
+}
+
+@each $width, $columns in $media-width {
+  @media (min-width: #{$width}) {
+    .cards-container {
+      grid-template-columns: repeat(#{$columns}, 1fr);
     }
   }
 }
