@@ -1,0 +1,20 @@
+@import 'variables';
+
+.container {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: $card-paddings;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, $card-width);
+  gap: 46px 48px;
+}
+
+@each $breakpoint, $columns in $breakpoints {
+  @media (min-width: $breakpoint) {
+    .container {
+      grid-template-columns: repeat(#{$columns}, $card-width);
+    }
+  }
+}
