@@ -1,0 +1,130 @@
+@import '/styles/variables';
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 46px 48px;
+  max-width: 1200px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (max-width: 487px) {
+    grid-template-columns: repeat(1, $card-width);
+  }
+}
+
+.catalog-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; // Задаємо ширину 100% для коректного центрування
+  padding: 50px 40px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: $card-width;
+
+  border: 1px solid $grey-clr;
+  border-radius: 5px;
+  background-color: $white-clr;
+  transition: transform 0.3s ease-in-out;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin-top: 32px;
+    margin-left: 19px;
+  }
+
+  &__main-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  &__product-code {
+    font-size: 10px;
+    margin-left: 19px;
+    margin-bottom: 10px;
+    color: $secondary-clr;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-left: 19px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    margin-left: 5px;
+    color: $main-acent-clr;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+      font-size: 10px;
+      line-height: 15px;
+      margin-left: 19px;
+      color: #616070;
+    }
+
+    &-amount {
+      margin-right: 16px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+
+    width: 166px;
+    height: 40px;
+    margin: 16px;
+    border: solid 1px $blue-acent-clr;
+    border-radius: 5px;
+
+    background-color: $white-clr;
+    color: $blue-acent-clr;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $blue-acent-clr;
+      color: $white-clr;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2); // Збільшення на 20%
+    .card__main-title {
+      color: #34568b; /* Колір тексту заголовка при наведенні на картку */
+    }
+  }
+}
