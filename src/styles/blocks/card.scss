@@ -1,0 +1,136 @@
+.wrapper {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+  row-gap: 46px;
+  column-gap: 48px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    --column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-count: 3;
+
+    @media (min-width: 1024px) {
+      --column-count: 4;
+    }
+  }
+}
+
+.card {
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: $background-color;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 0 16px 16px;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+
+    &__name {
+      color: #34568b;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+
+    &-detail {
+      width: 160px;
+      height: 134px;
+      margin-block: 32px 40px;
+    }
+  }
+
+  &__name {
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-color-text;
+  }
+
+  &__prodcode {
+    color: $secondary-color-text;
+    font-size: 10px;
+    line-height: 14px;
+    padding-top: 4px;
+    margin: 0 0 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-reviews {
+      margin: 0;
+      line-height: 14px;
+      font-size: 10px;
+    }
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  padding-block: 24px 16px;
+
+  &__name {
+    color: $secondary-color-text;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-color-text;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 11px 70px;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: $button-color;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $background-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      background-color: $background-color;
+      border: 1px solid $button-color;
+      color: $button-color;
+    }
+  }
+}
