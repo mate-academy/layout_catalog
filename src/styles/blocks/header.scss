@@ -1,0 +1,70 @@
+@import 'variables';
+
+body {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+}
+
+*,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+  background-color: $background-color;
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-transform: uppercase;
+    gap: 20px;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 23px 0;
+    text-decoration: none;
+    color: $main-text-color;
+  }
+
+  .is-active {
+    color: $blue-color;
+  }
+
+  .is-active::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 8px;
+    background-color: $blue-color;
+  }
+
+  &__link:hover {
+    transition: transform 0.3s ease;
+    color: $blue-color;
+  }
+}
