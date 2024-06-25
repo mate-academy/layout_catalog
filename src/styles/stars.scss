@@ -12,15 +12,9 @@
     background-size: cover;
   }
 
-  @for $i from 1 through 5 {
-    &.stars--#{$i} {
-      .stars__list-item {
-        @if $i <= 4 {
-          &:nth-child(-n + #{$i}) {
-            background-image: url('/images/star-active.svg');
-          }
-        }
-      }
+  @for $star from 1 through 5 {
+    &--#{$star} :nth-child(-n + #{$star}) {
+      background-image: url(../images/star-active.svg);
     }
   }
 }

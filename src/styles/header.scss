@@ -43,10 +43,10 @@ body {
       color: $text-color-main;
       line-height: 60px;
       height: 60px;
-    }
 
-    &-link:hover {
-      color: $text-color-hover;
+      &hover {
+        color: $text-color-hover;
+      }
     }
   }
 
@@ -58,15 +58,16 @@ body {
 
 .is-active {
   color: $text-color-hover;
+
+  &::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: $text-color-hover;
+    border-radius: 8px;
+  }
 }
 
-.is-active::after {
-  content: '';
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  background-color: $text-color-hover;
-  border-radius: 8px;
-}
