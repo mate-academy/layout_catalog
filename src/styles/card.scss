@@ -15,6 +15,7 @@ body {
   padding-bottom: 16px;
   padding-top: 32px;
   transition: scale 300ms;
+  max-width: 200px;
 
   &:hover {
     transform: scale(1.2);
@@ -55,15 +56,18 @@ body {
   }
 
   &__stars {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     gap: 17px;
     padding-bottom: 24px;
     padding-inline: $inline-padding;
   }
 
   &__review {
+    width: 100%;
     display: block;
     font-size: 10px;
     font-weight: 400;
@@ -74,11 +78,13 @@ body {
 }
 
 .card-price {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  gap: 85px;
   padding-bottom: 16px;
   padding-inline: $inline-padding;
+  align-items: center;
+  gap: 85px;
 
   &__text {
     font-size: 12px;
@@ -133,15 +139,17 @@ body {
 .cards-container {
   padding: 50px 40px;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 46px 48px;
+  grid-template-columns: repeat(1, 200px);
   place-items: center;
+  gap: 48px 46px;
+  max-width: 944px;
+  margin: 0 auto;
 }
 
 @each $width, $columns in $media-width {
   @media (min-width: #{$width}) {
     .cards-container {
-      grid-template-columns: repeat(#{$columns}, 1fr);
+      grid-template-columns: repeat(#{$columns}, 200px);
     }
   }
 }
