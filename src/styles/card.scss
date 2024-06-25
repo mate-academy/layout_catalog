@@ -1,0 +1,151 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $card-width;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: $background-color;
+  padding-bottom: 16px;
+  padding-top: 32px;
+  transition: transform 300ms;
+  max-width: 200px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: $image-width;
+    height: $image-height;
+    padding: 0;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    display: block;
+    color: $main-color;
+    padding-top: 40px;
+    padding-bottom: 4px;
+    padding-inline: $inline-padding;
+
+    &:hover {
+      color: $card-hover-text-color;
+    }
+  }
+
+  &__text {
+    padding: 0 84px 16px 16px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $secondary-color;
+    text-align: right;
+  }
+
+  &__stars {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 17px;
+    padding-bottom: 24px;
+    padding-inline: $inline-padding;
+  }
+
+  &__review {
+    width: 100%;
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $main-color;
+    text-align: right;
+  }
+}
+
+.card-price {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+  padding-inline: $inline-padding;
+  align-items: center;
+  gap: 85px;
+
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $secondary-color;
+  }
+
+  &__number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $main-color;
+    padding: 0;
+    text-align: right;
+  }
+}
+
+.card-btn__text {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: $button-text-color;
+  text-transform: uppercase;
+}
+
+.card-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $button-width;
+  height: $button-height;
+  border-radius: 5px;
+  border: none;
+  background-color: $button-color;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $button-color;
+    background-color: $background-color;
+    color: $hover-link-color;
+
+    .card-btn__text {
+      color: $hover-link-color;
+    }
+  }
+}
+
+.cards-container {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  place-items: center;
+  gap: 48px 46px;
+  max-width: 944px;
+  margin: 0 auto;
+}
+
+@each $width, $columns in $media-width {
+  @media (min-width: #{$width}) {
+    .cards-container {
+      grid-template-columns: repeat(#{$columns}, 200px);
+    }
+  }
+}
