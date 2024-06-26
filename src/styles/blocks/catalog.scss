@@ -4,20 +4,10 @@
   grid-template-columns: repeat(1, 200px);
   gap: 46px 48px;
   justify-content: center;
-}
 
-@each $breakpoint, $columns in $breakpoints {
-  @media (min-width: #{$breakpoint}) {
-    .catalog {
+  @each $breakpoint, $columns in $breakpoints {
+    @media (min-width: #{$breakpoint}) {
       grid-template-columns: repeat(#{$columns}, 200px);
     }
   }
-}
-
-.card:hover {
-  transform: scale(1.2);
-}
-
-.card:hover .card__title {
-  color: $hover-text-color;
 }
