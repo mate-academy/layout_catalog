@@ -1,7 +1,6 @@
-$color-text-main: #060b35;
-$color-text-secondary: #616070;
-$color-button: #00acdc;
-$color-title-alt: #34568b;
+@import './blocks/.var';
+@import './blocks/.main';
+@import './blocks/.stars';
 
 * {
   box-sizing: border-box;
@@ -11,7 +10,6 @@ $color-title-alt: #34568b;
 
 body {
   font-family: Roboto, sans-serif;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -76,33 +74,6 @@ body {
 }
 
 // Cards
-.main {
-  --column-count: 1;
-
-  padding-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(var(--column-count), 200px);
-  justify-content: center;
-  gap: 46px 48px;
-}
-
-@media (min-width: 488px) {
-  .main {
-    --column-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .main {
-    --column-count: 3;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main {
-    --column-count: 4;
-  }
-}
 
 .card {
   box-sizing: border-box;
@@ -194,29 +165,5 @@ body {
     .card__title {
       color: $color-title-alt;
     }
-  }
-}
-
-// Stars
-
-.stars {
-  display: flex;
-  justify-content: center;
-
-  &__star {
-    background-image: url('../images/star.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
-  }
-
-  &--1 &__star:nth-child(1),
-  &--2 &__star:nth-child(-n + 2),
-  &--3 &__star:nth-child(-n + 3),
-  &--4 &__star:nth-child(-n + 4),
-  &--5 &__star:nth-child(-n + 5) {
-    background-image: url('../images/star-active.svg');
   }
 }
