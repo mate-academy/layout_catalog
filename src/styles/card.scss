@@ -1,37 +1,10 @@
-.main {
-  --column-count: 1;
-
-  display: grid;
-  grid-template-columns: repeat(var(--column-count), 200px);
-  gap: 46px 48px;
-  padding: 50px 40px;
-  justify-content: center;
-}
-
-@media (min-width: 488px) {
-  .main {
-    --column-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .main {
-    --column-count: 3;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main {
-    --column-count: 4;
-  }
-}
-
 .card {
-  background-color: $white;
+  background-color: $background-color;
   width: 200px;
   padding: 32px 16px 16px;
   border-radius: 5px;
-  border: 1px solid $grey;
+  border: 1px solid;
+  border-color: $additional-color;
 
   &__image {
     display: block;
@@ -45,7 +18,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    color: $black;
+    color: $main-text;
   }
 
   &:hover {
@@ -61,13 +34,13 @@
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
-    color: $dark-grey;
+    color: $secondary-text;
   }
 
   &__reviews {
     font-size: 10px;
     line-height: 14px;
-    color: $black;
+    color: $main-text;
   }
 
   &__stars {
@@ -87,13 +60,13 @@
     &-name {
       font-size: 12px;
       line-height: 18px;
-      color: $dark-grey;
+      color: $secondary-text;
     }
 
     &-value {
       font-weight: 700;
       line-height: 18px;
-      color: $black;
+      color: $main-text;
     }
   }
 
@@ -102,7 +75,7 @@
     margin: 0 auto;
     text-transform: uppercase;
     font-size: 14px;
-    color: $white;
+    color: $background-color;
     font-weight: 700;
     line-height: 16px;
     text-align: center;
@@ -113,13 +86,16 @@
     height: 40px;
     border-radius: 5px;
 
-    background: $blue;
+    background: $primar-color;
+
+    transition:
+      background-color $transition,
+      color $transition;
 
     &:hover {
-      transition: $transition;
-      background-color: $white;
-      color: $blue;
-      border: 1px solid $blue;
+      background-color: $background-color;
+      color: $primar-color;
+      border: 1px solid $primar-color;
       cursor: pointer;
     }
   }
