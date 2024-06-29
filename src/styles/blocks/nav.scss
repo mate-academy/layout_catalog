@@ -1,0 +1,40 @@
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  :nth-child(n + 2) {
+    margin-left: 20px;
+  }
+
+  &-link {
+    display: block;
+    line-height: 60px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-text-color;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+
+  .is-active {
+    position: relative;
+    color: $blue-color;
+
+    &::after {
+      display: block;
+      position: absolute;
+      content: '';
+      height: 4px;
+      width: 100%;
+      border-radius: 8px;
+      background-color: $blue-color;
+      bottom: 0;
+    }
+  }
+}
