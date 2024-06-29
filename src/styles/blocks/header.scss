@@ -1,0 +1,50 @@
+.header {
+  .logo,
+  .logo img {
+    display: block;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+    }
+
+    &__item + .nav__item {
+      margin-left: 20px;
+    }
+
+    &__link {
+      position: relative;
+      display: inline-block;
+      height: 60px;
+      font-family: Roboto, sans-serif;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 60px;
+      color: #060b35;
+
+      @include animation(color, $duration);
+    }
+
+    &__link[data-qa='nav-hover']:hover {
+      color: $blue-color;
+    }
+
+    &__link.is-active {
+      position: relative;
+      color: $blue-color;
+    }
+
+    &__link.is-active::before {
+      content: '';
+      position: absolute;
+      height: 4px;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      border-radius: 8px;
+      background-color: $blue-color;
+    }
+  }
+}
