@@ -1,0 +1,47 @@
+.nav {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  &__list {
+    display: flex;
+    height: 60px;
+    line-height: 60px;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 23px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-text-color;
+
+    @include hover;
+
+    &:hover {
+      color: $card-button-color;
+    }
+  }
+}
+
+.is-active {
+  color: $card-button-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $card-button-color;
+  }
+}
