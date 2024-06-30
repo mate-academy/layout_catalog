@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: $white-color;
+  box-shadow: 2px 3px 5px $card-border-color;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    margin-block: 10px;
+    margin-left: $header-horyzontal-margin;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-right: $header-horyzontal-margin;
+
+    &-link {
+      padding: 23px 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: $main-color;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      transition: color 300ms;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      &:hover {
+        color: $light-blue-color;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $light-blue-color;
+
+  &::after {
+    width: 92%;
+    color: $light-blue-color;
+    content: '';
+    border: 2px solid $light-blue-color;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
