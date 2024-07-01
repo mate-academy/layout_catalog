@@ -11,7 +11,7 @@
   font-family: $font-family;
 
   &:hover {
-    transition-duration: $transition-time;
+    transition-duration: $transition-time ease;
     transform: scale(1.2);
   }
 
@@ -29,11 +29,11 @@
     line-height: 18px;
     font-weight: 500;
     color: $text-accent-color;
-  }
 
-  &:hover &__title {
-    transition-duration: $transition-time;
-    color: #34568b;
+    &:hover {
+      color: #34568b;
+      transition: color $transition-time ease;
+    }
   }
 
   &__code {
@@ -62,21 +62,20 @@
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
-  }
 
-  &__price-label {
-    margin-right: 5px;
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 400;
-    color: $text-secondary-color;
-  }
+    &--label {
+      margin-right: 5px;
+      font-size: 12px;
+      line-height: 18px;
+      color: $text-secondary-color;
+    }
 
-  &__price-value {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
-    color: $text-accent-color;
+    &--value {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: $text-accent-color;
+  }
   }
 
   &__buy-button {
@@ -97,6 +96,7 @@
     color: $background-color;
 
     &:hover {
+      transition: color $transition-time ease;
       border: 1px solid $main-color;
       background-color: $background-color;
       color: $main-color;
