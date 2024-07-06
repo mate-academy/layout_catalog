@@ -1,0 +1,34 @@
+@mixin small {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin grid-columns($value) {
+  grid-template-columns: repeat($value, auto);
+}
+
+@mixin hover($property, $toValue, $child: false) {
+  @if $child {
+    &:hover > #{$child} {
+      #{$property}: $toValue;
+    }
+  } @else {
+    transition: #{$property} 0.3s;
+    &:hover {
+      #{$property}: $toValue;
+    }
+  }
+}
