@@ -1,3 +1,247 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
+}
+
+:root {
+  font-size: $text-size;
+  color: $main-text-color;
+  font-family: Roboto, sans-serif;
+  font-weight: $text-weight;
+  line-height: $text-lineheight;
+}
+
+.header {
+  grid-area: header;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  width: 100%;
+  height: $header-height;
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    &-item {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    &-link {
+      text-decoration: none;
+      display: flex;
+      position: relative;
+      align-items: center;
+      color: #060b35;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      font-weight: 500;
+      height: $header-height;
+      transition-duration: $animation-duration;
+
+      &:hover {
+        color: #00acdc;
+      }
+    }
+
+    .is-active {
+      color: $hover-color;
+
+      &::after {
+        display: flex;
+        position: absolute;
+        border-bottom: 4px $hover-color solid;
+        border-radius: 8px;
+        content: '';
+        width: 100%;
+        bottom: 0;
+      }
+    }
+
+    @media (min-width: 488px) {
+      .header {
+        width: 488px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .header {
+        width: 768px;
+      }
+    }
+
+    @media (width: 1024px) {
+      .header {
+        width: 1024px;
+      }
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  box-sizing: border-box;
+  padding: 50px 40px;
+  grid-template-columns: repeat($columns, $card-size);
+  justify-content: center;
+  gap: 46px 40px;
+
+  @media (min-width: 488px) {
+    $columns: 2;
+
+    grid-template-columns: repeat($columns, $card-size);
+  }
+
+  @media (min-width: 768px) {
+    $columns: 3;
+
+    grid-template-columns: repeat($columns, $card-size);
+  }
+
+  @media (min-width: 1024px) {
+    $columns: 4;
+
+    grid-template-columns: repeat($columns, $card-size);
+  }
+
+  @media (width: 1024px) {
+    width: 1024px;
+    gap: 46px 40px;
+
+    // justify-content: space-around;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    width: 200px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding: $content-padding;
+    background: #fff;
+    transition-duration: $animation-duration;
+
+    &-image {
+      display: block;
+      margin: 0 auto 40px;
+      width: 160px;
+      height: 134px;
+      margin-bottom: 40px;
+    }
+
+    &-title {
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0 0 4px;
+    }
+
+    &-code {
+      margin: 0; // Remove default margins
+      padding: 0;
+      display: flex;
+      color: $secondary-text-color;
+      margin-bottom: $content-margin + 12px;
+      line-height: 14px;
+    }
+
+    &-reviews {
+      line-height: 14px;
+    }
+
+    &-rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: $content-margin + 20px;
+    }
+
+    &-stars {
+      display: flex;
+      margin: 0;
+
+      &-star {
+        height: 16px;
+        width: 16px;
+        background-image: url(../images/star.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 4px;
+
+        &:nth-child(-n + 4) {
+          background-image: url(../images/star-active.svg);
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &-price-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $content-margin + 12px;
+    }
+
+    &-price-label {
+      font-size: 12px;
+      color: $secondary-text-color;
+    }
+
+    &-price-amount {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &-button {
+      height: 40px;
+      background-color: #00acdc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition-duration: $animation-duration;
+
+      &:hover {
+        border: 1px solid #00acdc;
+        color: #00acdc;
+        background-color: #fff;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      .catalog__card-title {
+        color: #34568b;
+      }
+    }
+  }
 }
