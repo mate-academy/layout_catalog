@@ -1,12 +1,9 @@
 @import 'variables';
+@import 'catalog';
 
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  margin: 0;
 }
 
 :root {
@@ -32,213 +29,180 @@ body {
     height: 40px;
     width: 40px;
   }
+}
 
-  &__nav {
-    &-list {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
     }
-    &-item {
-      margin-left: 20px;
+  }
+  &__link {
+    text-decoration: none;
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: #060b35;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    height: $header-height;
+    transition-duration: $animation-duration;
 
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-    &-link {
-      text-decoration: none;
-      display: flex;
-      position: relative;
-      align-items: center;
-      color: #060b35;
-      font-size: 12px;
-      line-height: 15px;
-      text-transform: uppercase;
-      font-weight: 500;
-      height: $header-height;
-      transition-duration: $animation-duration;
-
-      &:hover {
-        color: $main-color;
-      }
-    }
-
-    .is-active {
+    &:hover {
       color: $main-color;
-
-      &::after {
-        display: flex;
-        position: absolute;
-        border-bottom: 4px $main-color solid;
-        border-radius: 8px;
-        content: '';
-        width: 100%;
-        bottom: 0;
-      }
     }
+  }
 
-    @media (min-width: 488px) {
-      .header {
-        width: 488px;
-      }
+  .is-active {
+    color: $main-color;
+
+    &::after {
+      display: flex;
+      position: absolute;
+      border-bottom: 4px $main-color solid;
+      border-radius: 8px;
+      content: '';
+      width: 100%;
+      bottom: 0;
     }
+  }
 
-    @media (min-width: 768px) {
-      .header {
-        width: 768px;
-      }
+  @media (min-width: 488px) {
+    .header {
+      width: 488px;
     }
+  }
 
-    @media (width: 1024px) {
-      .header {
-        width: 1024px;
-      }
+  @media (min-width: 768px) {
+    .header {
+      width: 768px;
+    }
+  }
+
+  @media (width: 1024px) {
+    .header {
+      width: 1024px;
     }
   }
 }
 
-.catalog {
-  display: grid;
+.card {
   box-sizing: border-box;
-  padding: 50px 40px;
-  grid-template-columns: repeat($columns, $card-size);
-  justify-content: center;
-  gap: 46px 48px;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: $content-padding;
+  background: #fff;
+  transition-duration: $animation-duration;
 
-  @media (min-width: 488px) {
-    $columns: 2;
-
-    grid-template-columns: repeat($columns, $card-size);
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
   }
 
-  @media (min-width: 768px) {
-    $columns: 3;
-
-    grid-template-columns: repeat($columns, $card-size);
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 0 4px;
   }
 
-  @media (min-width: 1024px) {
-    $columns: 4;
-
-    grid-template-columns: repeat($columns, $card-size);
+  &__code {
+    display: flex;
+    color: $secondary-text-color;
+    margin-bottom: $content-margin + 12px;
+    line-height: 14px;
   }
 
-  @media (width: 1024px) {
-    width: 1024px;
+  &__reviews {
+    line-height: 14px;
   }
 
-  &__card {
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: $content-margin + 20px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $content-margin + 12px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    color: $secondary-text-color;
+  }
+
+  &__price-amount {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__button {
     box-sizing: border-box;
-    width: 200px;
-    border: 1px solid #f3f3f3;
+    height: 40px;
+    background-color: $main-color;
+    color: #fff;
+    border: 1px solid $main-color;
     border-radius: 5px;
-    padding: $content-padding;
-    background: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
     transition-duration: $animation-duration;
 
-    &-image {
-      display: block;
-      margin: 0 auto 40px;
-      width: 160px;
-      height: 134px;
-      margin-bottom: 40px;
-    }
-
-    &-title {
-      font-size: 12px;
-      font-weight: 500;
-      margin: 0 0 4px;
-    }
-
-    &-code {
-      margin: 0; // Remove default margins
-      padding: 0;
-      display: flex;
-      color: $secondary-text-color;
-      margin-bottom: $content-margin + 12px;
-      line-height: 14px;
-    }
-
-    &-reviews {
-      line-height: 14px;
-    }
-
-    &-rating {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: $content-margin + 20px;
-    }
-
-    &-stars {
-      display: flex;
-      margin: 0;
-
-      &-star {
-        height: 16px;
-        width: 16px;
-        background-image: url(../images/star.svg);
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-right: 4px;
-
-        &:nth-child(-n + 4) {
-          background-image: url(../images/star-active.svg);
-        }
-
-        &:last-child {
-          margin: 0;
-        }
-      }
-    }
-
-    &-price-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: $content-margin + 12px;
-    }
-
-    &-price-label {
-      font-size: 12px;
-      color: $secondary-text-color;
-    }
-
-    &-price-amount {
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    &-button {
-      box-sizing: border-box;
-      height: 40px;
-      background-color: $main-color;
-      color: #fff;
-      border: 1px solid $main-color;
-      border-radius: 5px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 16px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition-duration: $animation-duration;
-
-      &:hover {
-        color: $main-color;
-        background-color: #fff;
-      }
-    }
-
     &:hover {
-      transform: scale(1.2);
-      .catalog__card-title {
-        color: #34568b;
-      }
+      color: $main-color;
+      background-color: #fff;
     }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: #34568b;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  margin: 0;
+}
+
+.stars__star {
+  height: 16px;
+  width: 16px;
+  background-image: url(../images/star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 4px;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n + #{$i}) {
+    background-image: url(../images/star-active.svg);
   }
 }
