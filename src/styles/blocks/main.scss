@@ -2,24 +2,10 @@
   padding: 50px 40px;
   display: grid;
   grid-gap: 46px 48px;
-  grid-template-columns: repeat(1, 200px);
+  grid-template-columns: repeat(1, $card-width);
   justify-content: center;
 }
 
-@media (min-width: 488px) {
-  .main {
-    grid-template-columns: repeat(2, 200px);
-  }
-}
-
-@media (min-width: 768px) {
-  .main {
-    grid-template-columns: repeat(3, 200px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .main {
-    grid-template-columns: repeat(4, 200px);
-  }
-}
+@include responsive-grid($small-display, 2);
+@include responsive-grid($medium-display, 3);
+@include responsive-grid($big-display, 4);
