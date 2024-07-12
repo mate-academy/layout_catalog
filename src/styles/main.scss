@@ -3,27 +3,27 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 48px 46px;
+  grid-template-columns: repeat(1, $column-width);
+  gap: 46px 48px;
   padding: 50px 40px;
   justify-content: center;
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, $column-width);
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, $column-width);
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, $column-width);
   }
 }
 
 .card {
   box-sizing: border-box;
-  width: 200px;
+  width: $column-width;
   border: 1px solid $white;
   border-radius: 5px;
   padding: 32px 16px 16px;
@@ -97,6 +97,7 @@
     transition: 300ms;
 
     &:hover {
+      cursor: pointer;
       border: 1px solid $blue-accent;
       background-color: $white;
       color: $blue-accent;
