@@ -1,0 +1,106 @@
+@import 'variables';
+@import 'stars';
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, $column-width);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $column-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $column-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $column-width);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $column-width;
+  border: 1px solid $white;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  place-self: center;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__photo {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+    margin-inline: auto;
+  }
+
+  &__productname {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-accent;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  &__productcode {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary-accent;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &-word {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary-accent;
+      margin: 0;
+    }
+
+    &-number {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $main-accent;
+      margin: 0;
+    }
+  }
+
+  &__buy-button {
+    display: block;
+    text-decoration: none;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $blue-accent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: $white;
+    transition: 300ms;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $blue-accent;
+      background-color: $white;
+      color: $blue-accent;
+    }
+  }
+}
