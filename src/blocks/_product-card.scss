@@ -1,0 +1,131 @@
+.main {
+  display: grid;
+
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  justify-items: center;
+
+  @include smallest-screen;
+  @include small-screen;
+  @include medium-screen;
+  @include large-screen;
+}
+
+.product-card {
+  width: 200px;
+  padding: 32px 16px 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  background-color: $color-white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  transition:
+    transform,
+    color,
+    300ms linear;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__content {
+    width: $content-width;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: $fw-medium;
+    line-height: $lh-large;
+    color: $color-main-accent;
+
+    margin-top: 40px;
+  }
+
+  &:hover .product-card__title {
+    color: $card-title-color-hover;
+  }
+
+  &__product-code {
+    font-size: 10px;
+    line-height: $lh-small;
+    color: $color-secondary;
+
+    margin-top: 4px;
+  }
+
+  &__review-wrapper {
+    @include space-between;
+
+    align-items: center;
+
+    margin-top: 16px;
+  }
+
+  &__review {
+    font-size: 10px;
+    line-height: $lh-small;
+    color: $color-main-accent;
+  }
+
+  &__price-wrapper {
+    @include space-between;
+
+    margin-top: 24px;
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: $lh-large;
+    color: $color-secondary;
+  }
+
+  &__amount {
+    font-size: 16px;
+    font-weight: $fw-bold;
+    line-height: $lh-large;
+    color: $color-main-accent;
+  }
+
+  &__button {
+    padding: 12px 70px 12px 69px;
+    background-color: $color-blue-accent;
+    border-radius: $border-radius;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: $fw-bold;
+    line-height: $lh-medium;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 16px;
+
+    transition:
+      background-color,
+      color,
+      border,
+      300ms linear;
+
+    &:hover {
+      color: $color-blue-accent;
+      background-color: $color-white;
+      border: 1px solid $color-blue-accent;
+    }
+  }
+}
