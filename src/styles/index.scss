@@ -1,3 +1,31 @@
+@import './utils/mixins';
+@import 'header';
+@import 'card';
+@import 'stars';
+@import 'variables';
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px;
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  @include on-phone {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
