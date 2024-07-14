@@ -1,3 +1,243 @@
+$color-link: #00acdc;
+$size-box: 200px;
+$pad-box: 16px;
+$size-img: calc($size-box - $size-box / 5);
+$size-40: 40px;
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: block;
+  height: #{$size-40};
+  width: #{$size-40};
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #060b35;
+    transition: color 0.3s;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #{$color-link};
+  }
+
+  &__link.is-active,
+  &__link:hover {
+    color: #{$color-link};
+  }
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block: 1em;
+  margin-inline: 0;
+  padding-inline-start: #{$size-40};
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.catalog {
+  margin: #{$size-40} 50px;
+  padding: 10px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  gap: 7.2px;
+  margin-left: 1.3px;
+
+  &__star {
+    width: 12.8px;
+    height: 12.8px;
+    background-size: cover;
+    background-image: url('../images/star.svg');
+  }
+
+  &--active {
+    background-image: url('../images/star-active.svg');
+  }
+}
+
+.card {
+  padding-left: $pad-box;
+  padding-right: $pad-box;
+  display: flex;
+  flex-direction: column;
+  width: $size-box;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &__img {
+    width: $size-img;
+    height: 134px;
+    margin: 32px auto #{$size-40};
+    display: block;
+  }
+
+  &__text1 {
+    color: #060b35;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+
+  &__description {
+    color: #616070;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    margin-top: 4px;
+  }
+
+  &__review {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-text {
+      color: #060b35;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+    }
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+    }
+
+    &-res {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+    }
+  }
+}
+
+.but {
+  border: none;
+  margin-top: $pad-box;
+  margin-bottom: $pad-box;
+  width: 100%;
+  height: #{$size-40};
+  border-radius: 5px;
+  background-color: #{$color-link};
+
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  transition: 0.8s;
+}
+
+.but:hover {
+  transition: 0.8s;
+  border: 1px solid #{$color-link};
+  background-color: #fff;
+  color: #{$color-link};
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+@for $starss from 1 through 5 {
+  .stars--#{$starss} .stars__star:nth-child(-n + #{$starss}) {
+    background-image: url("../images/star-active.svg");
+  }
+}
+/*# sourceMappingURL=index.css.map */
