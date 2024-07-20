@@ -1,6 +1,6 @@
 'use strict';
 
-const container = document.getElementById('container');
+const container = document.getElementById('main');
 
 const cardTemplate = document.getElementById('card-template');
 
