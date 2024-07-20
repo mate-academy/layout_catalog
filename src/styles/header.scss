@@ -1,0 +1,75 @@
+@import './variables';
+
+.header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  align-items: center;
+  height: $header-height;
+  padding: 0 50px;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12;
+
+  &__link {
+    width: 40px;
+    height: 40px;
+    justify-content: flex-end;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  height: $header-height;
+
+  &__list {
+    margin: 0;
+    height: $header-height;
+    line-height: $header-height;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    height: $header-height;
+    line-height: $header-height;
+
+    &:not(:last-child) {
+      margin-right: 17px;
+    }
+  }
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: $navlinkcolor;
+    height: $header-height;
+    line-height: $header-height;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.is-active {
+  color: $blue;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: $blue;
+    height: 4px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}
