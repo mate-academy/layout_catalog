@@ -1,3 +1,43 @@
-body {
+@import 'header';
+@import 'card';
+@import 'stars';
+
+body,
+h1,
+h2 p {
   margin: 0;
+}
+
+.main {
+  font-family: Roboto, sans-serif;
+
+  --text-black: #060b35;
+  --text-grey: #616070;
+  --bgcolor-blue: #00acdc;
+  --colum-count: 1;
+
+  padding: 50px 40px;
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(var(--colum-count), 200px);
+  gap: 40px 48px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    --colum-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    --colum-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --colum-count: 4;
+  }
 }
