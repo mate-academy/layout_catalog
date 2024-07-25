@@ -1,0 +1,46 @@
+.nav {
+  font-size: 12px;
+  font-weight: 500;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    height: 60px;
+
+    text-decoration: none;
+    color: $main-accent;
+    text-transform: uppercase;
+
+    @include hover-effect {
+      color: $secondary-accent;
+    }
+
+    &--active {
+      color: $secondary-accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $secondary-accent;
+      }
+    }
+  }
+}
