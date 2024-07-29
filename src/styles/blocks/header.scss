@@ -1,0 +1,65 @@
+@use '../utils/variables' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo-img {
+    vertical-align: bottom;
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__list li:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__nav {
+    margin-left: 40px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: $secondary-font-size;
+    line-height: $smallest-line-height;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-color;
+    transition: color $transition-duration;
+  }
+
+  &__link:hover {
+    color: $buy-link-color;
+  }
+}
+
+.is-active {
+  color: $buy-link-color;
+}
+
+.is-active::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  width: 100%;
+  height: 4px;
+
+  border-radius: 3px;
+  background-color: $buy-link-color;
+}
