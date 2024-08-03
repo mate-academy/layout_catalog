@@ -1,0 +1,68 @@
+@import './variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  .logo-link {
+    line-height: 0;
+  }
+
+  .nav {
+    display: flex;
+    margin: 0;
+
+    ul {
+      display: flex;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 12px;
+
+      li {
+        list-style-type: none;
+        margin-left: 20px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        & + & {
+          margin-left: 20px;
+        }
+
+        a {
+          display: inline-flex;
+          color: $title-color;
+          text-decoration: none;
+          font-family: Roboto, sans-serif;
+          height: $link-height;
+          align-items: center;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          &.is-active {
+            position: relative;
+            color: $primary-color;
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: calc($link-height - $active-border-height);
+              width: 100%;
+              height: $active-border-height;
+              border-radius: 8px;
+              background-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
