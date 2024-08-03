@@ -1,0 +1,33 @@
+@mixin on-phone {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin number-of-colums() {
+  --column-count: 1;
+
+  @include on-phone {
+    --column-count: 2;
+  }
+
+  @include on-tablet {
+    --column-count: 3;
+  }
+
+  @include on-laptop {
+    --column-count: 4;
+  }
+}
