@@ -1,0 +1,70 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap';
+
+.header {
+  background-color: $background-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  line-height: 60px;
+
+  &__logo {
+    align-items: center;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.nav {
+  text-align: center;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &__item {
+    text-decoration: none;
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    color: $header-font-color;
+    display: inline-block;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 60px;
+    transition: 300ms;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $hover-color;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $hover-color;
+    color: $hover-color;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    border-radius: 8px;
+  }
+}
