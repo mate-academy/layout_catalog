@@ -5,59 +5,61 @@
   align-items: center;
   width: 100%;
   box-shadow: 1px 2px 4px 1px #0000000d;
-}
 
-.nav__list {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
+  .logo-link {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.nav__item {
-  position: relative;
-  text-transform: uppercase;
-}
+  .nav {
+    &__list {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
 
-.nav__link {
-  display: block;
-  padding: 23px 0;
-  height: 100%;
-  text-decoration: none;
-  text-align: center;
-  color: $dark-text-color;
-  transition: color 250ms ease;
-}
+    &__item {
+      position: relative;
+      text-transform: uppercase;
 
-.nav__link.is-active {
-  color: $accent-color;
-  transform: scaleX(1);
-}
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
 
-.is-active::after {
-  content: ' ';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-radius: 8px;
-  width: 100%;
-  height: 4px;
-  background-color: $accent-color;
-}
+    &__link {
+      display: block;
+      padding: 23px 0;
+      height: 100%;
+      text-decoration: none;
+      text-align: center;
+      color: $dark-text-color;
+      transition: color 250ms ease;
 
-.nav__item:hover .nav__link,
-.nav__item:focus .nav__link {
-  color: $accent-color;
-}
+      &.is-active {
+        color: $accent-color;
+        transform: scaleX(1);
 
-.nav__item:not(:last-child) {
-  margin-right: 20px;
-}
+        &::after {
+          content: ' ';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border-radius: 8px;
+          width: 100%;
+          height: 4px;
+          background-color: $accent-color;
+        }
+      }
+    }
+  }
 
-.logo-link {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .nav__item:hover .nav__link,
+  .nav__item:focus .nav__link {
+    color: $accent-color;
+  }
 }
