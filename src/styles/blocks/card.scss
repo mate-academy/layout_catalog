@@ -11,6 +11,8 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   width: 200px;
   background-color: $bg-color;
   border-radius: 5px;
@@ -22,15 +24,10 @@
     cursor: pointer;
   }
 
-  .card__photo {
-    @include d-justify-align-center;
-
-    margin: 0 3.2px 40px;
-  }
-
   .card__img {
     width: 160px;
     height: 134px;
+    margin: 0 3.2px 40px;
   }
 
   .card__main {
@@ -97,33 +94,29 @@
     margin: 0;
   }
 
-  .card__link {
+  .card__a {
     width: 166px;
     height: 40px;
     border-radius: 5px;
     background-color: $btn-gb-color;
     transition: 200ms ease-in-out;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $bg-color;
+    text-transform: uppercase;
 
     @include d-justify-align-center;
 
-    .card__a {
-      transition: 200ms ease-in-out;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 16px;
-      color: $bg-color;
-      text-transform: uppercase;
-    }
-
     &:hover {
       background-color: $bg-color;
+    }
 
-      cursor: pointer;
+    cursor: pointer;
 
-      .card__a {
-        color: $btn-gb-color;
-      }
+    .card__a {
+      color: $btn-gb-color;
     }
 
     .card > .card__title {
