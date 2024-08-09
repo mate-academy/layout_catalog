@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primery-dark-color: #060b35;
+  --primary-light-color: #00acdc;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  width: 1200px;
+  margin-inline: auto;
+
+  @media (max-width: 1024px) {
+    width: 1024px;
+    margin-inline: auto;
+  }
+}
+
+.header__logo-image {
+  display: block;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list-item {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.nav__list-item:first-child {
+  margin-left: 0;
+}
+
+.nav__list-link {
+  display: block;
+  line-height: 60px;
+  color: var(--primery-dark-color);
+  text-decoration: none;
+}
+
+.is-active {
+  position: relative;
+  color: var(--primary-light-color);
+}
+
+.is-active::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: var(--primary-light-color);
+}
+
+.nav__list-link:hover {
+  color: var(--primary-light-color);
+}
+
+a[data-qa='hover']:hover {
+  color: var(--primary-light-color);
+}
