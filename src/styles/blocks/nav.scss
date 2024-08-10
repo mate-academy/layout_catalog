@@ -1,0 +1,46 @@
+.nav {
+  font-family: ' Roboto ', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
+  &__ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    color: $color-nav-link;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-nav-link-hover;
+    }
+  }
+
+  .is-active {
+    color: $color-nav-link-hover;
+    position: relative;
+  }
+
+  .is-active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 4px;
+    border-radius: 8px;
+    width: 100%;
+    background: $color-nav-link-hover;
+    bottom: 0;
+  }
+}
+
+[data-qa='nav-hover']:hover {
+  color: $color-nav-link-hover;
+}
