@@ -4,15 +4,15 @@
   &__star {
     height: 16px;
     width: 16px;
-    background-image: url(../images/star.svg);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url(../images/star.svg) center no-repeat;
 
     &:not(:last-child) {
       margin-right: 4px;
     }
+  }
 
-    &:nth-child(-n + 4) {
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n + #{$i}) {
       background-image: url(../images/star-active.svg);
     }
   }
