@@ -1,3 +1,50 @@
+$main-color: #00acdc;
+$text-accent-color: #060b35;
+$text-secondary-color: #616070;
+
+@import 'stars';
+@import 'header';
+@import 'card';
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-secondary-color;
+}
+
 body {
   margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.catalog {
+  --num-columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-columns), 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    --num-columns: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --num-columns: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    --num-columns: 4;
+  }
 }
