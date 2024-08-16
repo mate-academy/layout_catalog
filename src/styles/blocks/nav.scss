@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
+
+  &__item {
+    list-style: none;
+    display: inline-block;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    color: $main-text-color;
+    transition: color 0.3s;
+  }
+
+  &__link:hover {
+    color: $link-color;
+  }
+
+  &__link.is-active {
+    color: $link-color;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $link-color;
+  }
+}
