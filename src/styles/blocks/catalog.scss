@@ -1,0 +1,16 @@
+.catalog {
+  display: grid;
+  grid: auto-flow / $card-width;
+  justify-content: center;
+  gap: 46px 48px;
+
+  padding: 50px 40px;
+
+  @each $size, $columns in $min-screen-sizes {
+    @media (min-width: $size) {
+      & {
+        grid-template-columns: repeat($columns, $card-width);
+      }
+    }
+  }
+}
