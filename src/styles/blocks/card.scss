@@ -1,0 +1,102 @@
+@import './stars';
+
+.card {
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+
+  @include transition-pref;
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__tittle {
+    font-size: $text-font-size-small;
+    font-weight: $text-font-weight-medium;
+    line-height: $text-line-height-hight;
+    color: $main-text-color;
+  }
+
+  &__product-code {
+    margin: 4px 0;
+    font-size: $text-font-size-smallest;
+    font-weight: $text-font-weight-low;
+    line-height: $text-line-height-small;
+    color: $secondary-text-color;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin: 16px 0 24px;
+
+    &-number {
+      font-size: $text-font-size-smallest;
+      font-weight: $text-font-weight-low;
+      line-height: $text-line-height-small;
+      color: $main-text-color;
+    }
+  }
+
+  &__product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-label {
+      font-size: $text-font-size-small;
+      font-weight: $text-font-weight-low;
+      line-height: $text-line-height-hight;
+      color: $secondary-text-color;
+    }
+
+    &-value {
+      font-size: $text-font-size-big;
+      font-weight: $text-font-weight-high;
+      line-height: $text-line-height-hight;
+      color: $main-text-color;
+    }
+  }
+
+  &__buy-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    border: 1px solid $link-bg-color;
+    border-radius: 5px;
+
+    color: $card-link-text-color;
+    background-color: $card-link-bg-color;
+
+    font-size: $text-font-size-medium;
+    font-weight: $text-font-weight-high;
+    line-height: $text-line-height-medium;
+    text-transform: uppercase;
+
+    @include transition-pref;
+
+    &:hover {
+      color: $link-action-text-color;
+      background-color: $card-link-hovered-bg-color;
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &hover .card__tittle {
+    color: $hover-card-tittle-color;
+  }
+}
