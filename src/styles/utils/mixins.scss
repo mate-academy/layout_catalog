@@ -1,0 +1,31 @@
+@mixin on-phone {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-computer {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin count-cards-in-line() {
+  @include on-phone {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include on-computer {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
