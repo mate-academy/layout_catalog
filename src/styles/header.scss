@@ -1,15 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   font-size: 12px;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
   height: 60px;
+  padding: 0 50px;
 }
 
 .nav {
   text-transform: uppercase;
+
+  &__li {
+    margin-left: 20px;
+  }
+
+  &__li:first-child {
+    margin-left: 0;
+  }
+
+  &__li:last-child {
+    margin-right: 0;
+  }
 
   &__list {
     display: flex;
@@ -19,9 +36,12 @@
   }
 
   &__link {
+    display: block;
+    position: relative;
     line-height: 60px;
     color: $drk-color;
     text-decoration: none;
+    transition: color 300ms ease-in-out;
   }
 
   &__link:hover {
