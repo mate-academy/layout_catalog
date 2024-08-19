@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+
+  background-color: $white-color;
+  font-weight: 500;
+  font-size: 12px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+
+  &__icon {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+  }
+
+  &__nav {
+    display: flex;
+    margin-right: 50px;
+    height: 60px;
+    align-items: center;
+
+    &-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        margin-right: 20px;
+        line-height: 60px;
+
+        &:last-child {
+          margin:0
+        }
+
+        &-link {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $nav-link-color;
+          display: flex;
+
+          &:hover {
+            color: $blue-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $blue-color;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: $blue-color;
+  height: 4px;
+  border-radius: 8px;
+}
