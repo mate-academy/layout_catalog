@@ -1,32 +1,22 @@
-$column-count: 1;
-
 .product-section {
+  --column-count: 1;
+
   display: grid;
   justify-content: center;
 
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat($column-count, 200px);
+  grid-template-columns: repeat(var(--column-count), 200px);
   gap: 46px 48px;
   padding: 50px 40px;
 
   @media (min-width: 488px) {
-    $column-count: 2;
-    & {
-      grid-template-columns: repeat($column-count, 200px);
-    }
+    --column-count: 2;
   }
 
   @media (min-width: 768px) {
-    $column-count: 3;
-    & {
-      grid-template-columns: repeat($column-count, 200px);
-    }
+    --column-count: 3;
   }
 
   @media (min-width: 1024px) {
-    $column-count: 4;
-    & {
-      grid-template-columns: repeat($column-count, 200px);
-    }
+    --column-count: 4;
   }
 }

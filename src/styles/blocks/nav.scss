@@ -1,0 +1,36 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: $header-height;
+    line-height: $header-height;
+    color: $main-text-color;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link:hover,
+  .is-active {
+    color: $main-accent-color;
+  }
+
+  .is-active::after {
+    content: '';
+    display: block;
+    position: relative;
+    bottom: $header-bar-height;
+    height: $header-bar-height;
+    background-color: $main-accent-color;
+    border-radius: 8px;
+  }
+}
