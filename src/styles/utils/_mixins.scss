@@ -1,0 +1,39 @@
+@mixin on-s-screen {
+  @media (min-width: $s-screen) {
+    @content;
+  }
+}
+
+@mixin on-m-screen {
+  @media (min-width: $m-screen) {
+    @content;
+  }
+}
+
+@mixin on-l-screen {
+  @media (min-width: $l-screen) {
+    @content;
+  }
+}
+
+@mixin grid-template {
+  @include on-s-screen {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include on-m-screen {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include on-l-screen {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $animation-duration;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
