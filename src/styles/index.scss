@@ -1,3 +1,253 @@
 body {
   margin: 0;
 }
+
+$bgColorWhite: #fff;
+$bgColorBlue: #00acdc;
+$textColorBlack: #060b35;
+$textColorGrey: #616070;
+
+.page {
+  scroll-behavior: smooth;
+  background: $bgColorWhite;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100vw;
+  background-color: white;
+  padding: 0 50px;
+}
+
+.img_header {
+  height: 40px;
+  width: 40px;
+}
+
+.nav__item {
+  text-transform: uppercase;
+  height: 60px;
+}
+
+.nav__list {
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  margin-left: 20px;
+
+  height: 60px;
+  font-size: 12px;
+  color: #060b35;
+}
+
+.is-active {
+  color: #00acdc;
+}
+
+.is-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+
+  top: 56px;
+  width: 100%;
+
+  height: 4px;
+  border-radius: 8px;
+  background-color: #00acdc;
+}
+
+.nav__link:hover {
+  color: #00acdc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  --column-count: 1;
+
+  padding: 50px 40px;
+  gap: 48px 46px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+}
+
+@media (min-width: 488px) {
+  .container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --column-count: 4;
+  }
+}
+
+.card {
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: 200px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  margin: 32px auto 40px;
+  padding-right: 2px;
+  padding-left: 2px;
+  width: 160px;
+  height: 134px;
+}
+
+.card__name-product {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  width: 100%;
+
+  color: $textColorBlack;
+}
+
+.card__code {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: left;
+  color: $textColorGrey;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.card__grade {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 4px;
+
+  &--1 :first-child,
+  &--2 :nth-child(-n + 2),
+  &--3 :nth-child(-n + 3),
+  &--4 :nth-child(-n + 4),
+  &--5 :nth-child(n + 1) {
+    background-image: url(../images/star-active.svg);
+    color: #ffde6a;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/star.svg);
+  }
+}
+
+.card__reviews {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: right;
+}
+
+.card__price {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 16px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: $textColorGrey;
+}
+
+.number {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: right;
+  color: $textColorBlack;
+}
+
+a {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.card__button {
+  width: 100%;
+  border-radius: 5px;
+  background-color: $bgColorBlue;
+  color: $bgColorWhite;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  &:hover {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $bgColorBlue;
+    background-color: #fff;
+    color: #00acdc;
+  }
+}
+
+.card:hover {
+  transition: all 300ms;
+  transform: scale(1.2);
+}
+
+.card:hover .card__name-product {
+  color: #34568b;
+}
