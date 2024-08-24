@@ -1,0 +1,55 @@
+@use './variables';
+
+.nav__menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  line-height: 60px;
+  padding: 0;
+  margin: 0;
+
+  &-item {
+    margin-right: 20px;
+    height: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-link {
+    color: $nav-link-color;
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    &:link {
+      color: $nav-link-color;
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: $nav-link-color-hover;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $nav-link-color-hover;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: 4px;
+        background-color: $nav-link-color-hover;
+        border-radius: 8px;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}
