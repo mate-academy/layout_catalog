@@ -1,0 +1,104 @@
+@use './variables';
+
+.card {
+  width: 200px;
+  padding: 0 16px 16px;
+  border: 1px solid $border-card-color;
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 300ms ease,
+    background-color 300ms ease;
+
+  &__image {
+    margin: 32px auto 0;
+    width: 160px;
+    height: 134px;
+    display: block;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-medium;
+    color: $color-primary;
+  }
+
+  &__product-code {
+    margin-block: 4px 0;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    color: $text-color-secondary;
+    display: flex;
+    align-items: center;
+  }
+
+  &__ratings {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__review {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    color: $color-primary;
+  }
+
+  &__price {
+    margin: 24px 0 16px;
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      margin-block: 0;
+      text-align: center;
+      font-size: $font-size-medium;
+      line-height: $line-height-medium;
+      color: $text-color-secondary;
+    }
+
+    &-value {
+      margin-block: 0;
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+      line-height: $line-height-medium;
+      color: $color-primary;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-secondary;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid $color-secondary;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    height: 40px;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+    }
+
+    .card__button {
+      background-color: #fff;
+      color: $color-secondary;
+    }
+  }
+}
