@@ -1,0 +1,35 @@
+@mixin flex-center-jc($jc) {
+  display: flex;
+  align-items: center;
+  justify-content: $jc;
+}
+
+@mixin container-padding($padding-block, $padding-inline) {
+  padding: $padding-block $padding-inline;
+}
+
+@mixin grid-template-columns-200($c) {
+  grid-template-columns: repeat($c, 200px);
+}
+
+@mixin main-transition($style, $time: 0.3s, $function: ease-in-out) {
+  transition: $style $time $function;
+}
+
+@mixin on-big-phone() {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin on-tablet() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

@@ -1,0 +1,43 @@
+.nav__list {
+  @include flex-center-jc(space-between);
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link {
+  @include flex-center-jc(center);
+
+  position: relative;
+
+  color: $nav-color;
+  font-weight: 500;
+  font-size: $main-font-size - 4px;
+  line-height: 1.17;
+  text-transform: uppercase;
+
+  min-height: $header-height;
+
+  @include main-transition(color);
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.is-active {
+  color: $accent-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $accent-color;
+  }
+}
