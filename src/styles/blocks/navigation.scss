@@ -1,0 +1,48 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    height: $nav-height;
+    color: $main-text-color;
+    line-height: $nav-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color $duration;
+
+    &:hover {
+      color: $activ-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $activ-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    background-color: $activ-color;
+    border-radius: 8px;
+  }
+}
