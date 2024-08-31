@@ -1,0 +1,49 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    list-style: none;
+
+    & > :last-of-type:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    line-height: 60px;
+    cursor: pointer;
+    color: $main-acent;
+    text-transform: uppercase;
+
+    @include transition-time(color);
+
+    &:hover {
+      color: $nav-link-color;
+    }
+
+    &--active {
+      color: $moyo-color;
+      position: relative;
+
+      &::after {
+        display: block;
+        position: absolute;
+        content: '';
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        background-color: $moyo-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
