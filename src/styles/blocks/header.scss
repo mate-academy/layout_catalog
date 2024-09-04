@@ -1,0 +1,72 @@
+$cardColorPriceProduct: #060b35;
+$cardColorButtonHover: #00acdc;
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.nav-image {
+  display: block;
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $cardColorPriceProduct;
+    line-height: 60px;
+    font-weight: 500;
+  }
+
+  &__item {
+    display: inline-block;
+    text-decoration: none;
+    list-style-type: none;
+    color: $cardColorPriceProduct;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  .is-active {
+    color: $cardColorButtonHover;
+    position: relative;
+  }
+
+  &__link:hover {
+    color: $cardColorButtonHover;
+    transition-duration: 300ms;
+  }
+
+  .is-active::after {
+    content: '';
+    display: block;
+    background-color: $cardColorButtonHover;
+    height: 4px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
