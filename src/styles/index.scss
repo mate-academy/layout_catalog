@@ -1,12 +1,10 @@
+@import 'utils/vars';
+@import 'blocks/header';
+@import 'blocks/nav';
+
+
 * {
   box-sizing: border-box;
-}
-
-:root {
-  --color-menu: #060b35;
-  --color-active: #00acdc;
-  --color-fon: #fff;
-  --color-zag: #000;
 }
 
 html {
@@ -18,71 +16,26 @@ body {
   padding: 0;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 100%;
+.catalog {
+  padding: 50px 40px;
 }
 
-.header-content {
-  margin: 0 50px;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .logo {
   display: flex;
   align-items: center;
+
+  &__image {
+    width: 40px;
+    height: 40px;
+  }
 }
 
-.logo__image {
-  width: 40px;
-  height: 40px;
-}
 
-.nav {
-  display: flex;
-}
-
-.nav__list {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.nav__item {
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav__link {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  text-transform: uppercase;
-  text-decoration: none;
-  position: relative;
-
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14.06px;
-
-  color: var(--color-menu);
-  transition: color 0.3s ease-in-out;
-}
-
-.nav__link:hover {
-  color: var(--color-active);
-}
 
 .is-active::after {
-  background: var(--color-active);
+  background: $color-active;
   width: 100%;
   border-radius: 8px;
   bottom: 0;
@@ -94,21 +47,26 @@ body {
 }
 
 .is-active {
-  color: var(--color-active);
+  color: $color-active;
 }
 
 .card {
-  color: var(--color-menu);
+  color: $color-menu;
   padding: 32px 16px 16px;
   width: 200px;
   border: 1px solid #f3f3f3;
   display: block;
   transition: transform 0.3s;
 
-  &__image {
-    margin: 0 auto 40px;
-    display: block;
+  &__image-container {
+    margin: 0 0 40px;
+    display: flex;
+    justify-content: center;
     height: 134px;
+  }
+
+  &__image {
+    height: 100%;
     width: 160px;
   }
 }
@@ -126,7 +84,7 @@ body {
 }
 
 .card:hover .card__title {
-  color: var(--color-zag);
+  color: $color-zag;
 }
 
 .card__code {
@@ -161,16 +119,16 @@ body {
   line-height: 16px;
 
   border-radius: 5px;
-  color: var(--color-fon);
-  border: 1px solid var(--color-active);
-  background-color: var(--color-active);
+  color: $color-fon;
+  border: 1px solid $color-active;
+  background-color: $color-active;
 
   transition: all 0.3s ease-in-out;
-}
 
-.card__buy:hover {
-  background-color: var(--color-fon);
-  color: var(--color-active);
+  &:hover {
+    background-color: $color-fon;
+    color: $color-active;
+  }
 }
 
 .rating {
@@ -180,7 +138,7 @@ body {
 }
 
 .rating__reviews {
-  color: var(--color-menu);
+  color: $color-menu;
   margin: 0;
   font-size: 10px;
   font-weight: 400;
@@ -235,8 +193,4 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 46px 48px;
-}
-
-main {
-  margin-top: 50px;
 }
