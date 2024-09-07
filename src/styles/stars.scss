@@ -4,15 +4,17 @@
   align-items: center;
 
   &__star {
-    background-image: url(../images/star-active.svg);
+    background-image: url(../images/star.svg);
     width: 16px;
     height: 16px;
     background-size: 14px;
     background-repeat: no-repeat;
     background-position: center center;
   }
+}
 
-  &__star:last-child {
-    background-image: url(../images/star.svg);
+@for $countStars from 0 through 5 {
+  .stars--#{$countStars} :nth-child(-n + #{$countStars}) {
+    background-image: url(../images/star-active.svg);
   }
 }
