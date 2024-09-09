@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 50px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
+.logo-link {
+  width: 40px;
+  height: 40px;
+  line-height: 60px;
+}
+
+.nav {
+  display: inline-block;
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    height: 60px;
+    line-height: 60px;
+    padding: auto 0;
+
+    &.is-active {
+      text-decoration: none;
+      height: 60px;
+      line-height: 60px;
+    }
+
+    &.is-active:link {
+      color: $main-card-color;
+    }
+
+    &.is-active::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      content: '';
+      background-color: $main-card-color;
+      border-radius: 2px;
+    }
+
+    &.is-active:active {
+      color: $main-card-color;
+    }
+
+    &:link {
+      color: $main-text-color;
+    }
+
+    &:visited {
+      color: $main-text-color;
+    }
+
+    @include hover(
+      (
+        color: $main-card-color,
+      )
+    );
+
+    &:active {
+      color: $main-card-color;
+    }
+
+    &:active::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      content: '';
+      background-color: $main-card-color;
+      border-radius: 2px;
+    }
+  }
+}
