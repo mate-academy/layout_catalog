@@ -78,7 +78,6 @@ a {
 
 .navigation,
 .navigation ul,
-.navigation li,
 .navigation a {
   height: 100%;
 }
@@ -97,10 +96,10 @@ a {
 
       &::after {
         content: '';
+        position: absolute;
         border-radius: 8px;
         height: 4px;
         width: 100%;
-        position: absolute;
         left: 0;
         bottom: 0;
         background-color: $accent-btn;
@@ -110,20 +109,20 @@ a {
 }
 
 .button {
-  background-color: $accent-btn;
-  color: white;
-  font-weight: 700;
-  line-height: $line-height_lg;
-  font-size: $font-size_lg;
-  border: 1px solid $accent-btn;
-  border-radius: 5px;
-  text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 11px 0;
   height: 40px;
   width: 100%;
+  border: 1px solid $accent-btn;
+  border-radius: 5px;
+  background-color: $accent-btn;
+  color: white;
+  font-weight: $font-weight-bold;
+  line-height: $line-height_lg;
+  font-size: $font-size_lg;
+  text-transform: uppercase;
   transition: $transition-time;
   text-decoration: none;
 
@@ -155,14 +154,14 @@ a {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 32px 16px 16px;
   border-radius: 5px;
   border: 1px solid $border-accent;
   background-color: white;
   width: $article-width;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   transition: $transition-time;
 
   &__img {
@@ -172,27 +171,27 @@ a {
   }
 
   &__description {
+    margin-bottom: 4px;
+    margin-top: unset;
     line-height: $line-height_xl;
     font-size: $font-size_md;
     font-weight: $font-weight-medium;
     color: $main-accent;
-    margin-bottom: 4px;
-    margin-top: unset;
   }
 
   &__subinfo {
-    color: $secondary-accent;
+    align-self: flex-start;
+    margin-bottom: 16px;
     font-size: $font-size_sm;
     line-height: $line-height_md;
-    margin-bottom: 16px;
-    align-self: flex-start;
+    color: $secondary-accent;
   }
 
   &__rate {
-    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 24px;
     width: 100%;
 
     .rate__stars {
@@ -212,10 +211,10 @@ a {
   }
 
   &__price {
-    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 16px;
     width: 100%;
 
     &_hint {
@@ -227,7 +226,7 @@ a {
     &_amount {
       line-height: $line-height_xl;
       font-size: $font-size_xl;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
       color: $main-accent;
     }
   }
