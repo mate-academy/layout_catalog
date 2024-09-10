@@ -1,0 +1,133 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: $card_size;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: all 300ms;
+
+  &__img {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    padding-inline: 3px;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    color: $card-main-color;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: $card-main-text-weight;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    justify-content: center;
+    height: 36px;
+  }
+
+  &__code {
+    display: flex;
+    flex-direction: column;
+    color: $card-second-color;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: $card-second-text-weight;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &-stars {
+      display: flex;
+      gap: 4px;
+    }
+
+    &-star {
+      background-image: url(../images/star.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+
+      width: 16px;
+      height: 16px;
+
+      &:nth-child(-n + 4) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+
+    &-review {
+      display: flex;
+      margin: 0;
+      line-height: 16px;
+      font-size: 10px;
+      color: $card-main-color;
+      font-weight: 400;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18px;
+    margin-bottom: 16px;
+
+    &-name {
+      color: $card-second-color;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-value {
+      color: $card-main-color;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__buy {
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    background-color: $card-buy-color;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    border-radius: 5px;
+
+    color: #fff;
+
+    &:hover {
+      color: $card-buy-color;
+      background-color: #fff;
+      border: 1px solid $card-buy-color;
+      transition: 300ms;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__description {
+      color: $card-title-hover;
+    }
+  }
+}
