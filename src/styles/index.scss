@@ -12,15 +12,40 @@
 }
 
 .main {
+  --grid-count: 1;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(var(--grid-count), 200px);
 
   grid-gap: 48px 46px;
-
   padding: 50px 40;
 
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 300px) {
+  .main {
+    --grid-count: 1;
+  }
+}
+
+@media (min-width: 488px) {
+  .main {
+    --grid-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    --grid-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --grid-count: 4;
+  }
 }
 
 .card:hover {
