@@ -1,3 +1,43 @@
-body {
-  margin: 0;
+@import 'https://fonts.googleapis.com/css?family=Roboto:500&display=swap';
+@import 'blocks/reset';
+@import 'blocks/card';
+@import 'blocks/header';
+@import 'blocks/stars';
+
+.catalog {
+  display: grid;
+  width: fit-content;
+  margin: 0 auto; /* centers items in catalog */
+  gap: 46px 48px; /* gap between cards should be - 46px horyzontally and 48px vertically */
+  padding: 50px 40px; /* cards container(catalog) have fixed paddings (50px vertically and 40px horyzontally) */
+  grid-template-columns: $card-width; /* grid column === card width */
+}
+
+/* use grid for cards with different number of columns:
+1 for the smaller screens
+2 starting at 488px
+3 starting from 768px
+4 starting from 1024px */
+@media screen and (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    padding: 50px 128px;
+  }
 }
