@@ -1,0 +1,45 @@
+.nav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    color: $link-color;
+    font-weight: 500;
+    font-size: 12px;
+    height: 60px;
+    text-transform: uppercase;
+    position: relative;
+    align-items: center;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+}
+
+.is-active {
+  color: $active-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $active-color;
+  }
+}
