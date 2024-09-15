@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: $nav-hight;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__link {
+    display: flex;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+      line-height: 14.6px;
+      color: $nav-link-color;
+      padding: 0;
+    }
+
+    &-link {
+      display: flex;
+      position: relative;
+      align-items: center;
+      height: $nav-hight;
+
+      text-decoration: none;
+      color: $nav-link-color;
+
+      transition: $main-transition;
+
+      &:hover {
+        color: $nav-color;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $nav-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: $nav-color;
+    border-radius: 8px;
+  }
+}
