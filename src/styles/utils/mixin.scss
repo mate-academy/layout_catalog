@@ -1,0 +1,33 @@
+@mixin on-small {
+  @media (min-width: $small-min-width) {
+    @content;
+  }
+}
+
+@mixin on-medium {
+  @media (min-width: $medium-min-width) {
+    @content;
+  }
+}
+
+@mixin on-large {
+  @media (min-width: $large-min-width) {
+    @content;
+  }
+}
+
+@mixin content-grid-template-columns() {
+  grid-template-columns: repeat(1, 200px);
+
+  @include on-small {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @include on-medium {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @include on-large {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
