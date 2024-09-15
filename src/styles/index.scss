@@ -1,3 +1,45 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap';
+@import '../styles/utils/variables';
+@import '../styles/blocks/stars';
+@import '../styles/blocks/card';
+@import '../styles/blocks/header';
+
+html {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  font-style: normal;
+}
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat($column-count, $card-width);
+  padding: 50px 40px;
+  gap: $grid-gap;
+  justify-content: center;
+  place-items: center;
+}
+
+@media (min-width: $small) {
+  .container {
+    grid-template-columns: repeat($column-count * 2, $card-width);
+  }
+}
+
+@media (min-width: $medium) {
+  .container {
+    grid-template-columns: repeat($column-count * 3, $card-width);
+  }
+}
+
+@media (min-width: $large) {
+  .container {
+    grid-template-columns: repeat($column-count * 4, $card-width);
+  }
 }
