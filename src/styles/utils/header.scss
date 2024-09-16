@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+}
+
+/* logo settings rools */
+
+.logo {
+  align-self: center;
+  width: 40px;
+  height: 40px;
+
+  &-img {
+    display: block;
+  }
+}
+
+/* end of logo settings rools */
+
+/* start of menu  et navigations links rools */
+
+.menu {
+  &-nav {
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-li {
+    text-decoration: none;
+    position: relative;
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    /* #navigation  section and active link
+
+I wrote this section in this way because npm tests don't passe if I put two classes
+at the same time in the attibute <a> (.menu-link and .is-active)
+
+*/
+
+    // #start of header links rools
+
+    & a {
+      text-decoration: none;
+      color: $color-dark-blue;
+      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 60px;
+      height: 60px;
+      text-align: center;
+      display: block;
+      font-size: $small-text;
+
+      &:hover {
+        color: $blue-clear-color;
+      }
+
+      // #end header link rools
+
+      // #start of active link css rools
+
+      &.is-active {
+        color: $blue-clear-color;
+
+        &::after {
+          content: '-';
+          position: absolute;
+          display: block;
+          height: 4px;
+          width: 100%;
+          color: transparent;
+          background: $blue-clear-color;
+          bottom: 0;
+          border-radius: 10px;
+        }
+
+        &:hover {
+          color: $blue-clear-color;
+        }
+      }
+
+      // #end of active link css rools
+    }
+
+    /* end of header link section */
+  }
+}
+
+/* end of menu  et navigations links rools */
