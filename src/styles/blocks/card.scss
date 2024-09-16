@@ -1,0 +1,112 @@
+.card-container {
+  display: grid;
+  padding: 50px 40px;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  margin: 0 auto;
+  justify-items: center;
+  perspective: 100px;
+}
+
+@media (min-width: 488px) {
+  .card-container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  background: $bg-color;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__imac-image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__product-name {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+    color: $text-main-color;
+    margin: 0 0 4px;
+  }
+
+  &:hover .card__product-name {
+    color: $card-title-hovered;
+  }
+
+  &__prod-code {
+    margin-top: 0;
+    margin-bottom: 7px;
+    color: $text-second-color;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+
+  &__price-text {
+    color: $text-second-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+  }
+
+  &__price-value {
+    columns: $text-main-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: right;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $bg-color;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: $main-color;
+
+    &:hover {
+      color: $main-color;
+      background-color: $bg-color;
+    }
+  }
+}
