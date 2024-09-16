@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    @include flexcenter;
+
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+
+  &__link {
+    @include flexcenter;
+
+    justify-content: center;
+    text-transform: uppercase;
+    height: $nav-link-height;
+    color: $main-accent;
+    transition: color $duration;
+    font-weight: 500;
+
+    &:hover {
+      color: $blue-accent;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $blue-accent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: $blue-accent;
+    border-radius: 8px;
+  }
+}
