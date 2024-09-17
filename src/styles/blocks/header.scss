@@ -1,0 +1,98 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-size: 12px;
+  background-color: $buttonTextColor;
+}
+
+p,
+img,
+h2,
+a {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  @include main-font;
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    &-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__menu {
+    display: block;
+    height: 60px;
+
+    &-list {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      margin: 0 10px;
+      display: list-item;
+
+      &-link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $mainColor;
+        font-size: 12px;
+        font-weight: 500;
+        position: relative;
+        display: flex;
+        align-items: center;
+        line-height: normal;
+        height: 60px;
+
+        &:hover {
+          color: $buttonColor;
+        }
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      & a:hover,
+      .is-active {
+        color: $buttonColor;
+      }
+
+      .is-active::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: $buttonColor;
+        border-radius: 8px;
+      }
+    }
+  }
+}
