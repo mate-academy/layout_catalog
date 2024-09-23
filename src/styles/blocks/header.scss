@@ -1,0 +1,86 @@
+@import '../utils/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  padding: 0 50px;
+
+  border-bottom: 1px solid $border-color;
+
+  &-logo {
+    .logo {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+
+// nav>list>list-item>list-item__link
+.nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  &-item {
+    margin: 0;
+    padding: 0;
+
+    &__link {
+      display: flex;
+      align-items: center;
+
+      height: 60px;
+      margin: 0 10px;
+      padding: 0;
+
+      color: $dark-color;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      transition: color 300ms ease;
+
+      &:hover {
+        color: $blue-color;
+      }
+    }
+
+    &:first-child .list-item__link {
+      margin-left: 0;
+    }
+
+    &:last-child .list-item__link {
+      margin-right: 0;
+    }
+  }
+}
+
+.is-active {
+  color: $blue-color;
+
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    border-bottom: 4px solid $blue-color;
+    border-radius: 2px;
+  }
+}

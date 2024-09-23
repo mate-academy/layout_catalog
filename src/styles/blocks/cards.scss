@@ -1,0 +1,84 @@
+@import '../utils/mixins';
+@import '../utils/colors';
+@import '../utils/variables';
+
+.card {
+  @include flex-center;
+
+  width: 200px;
+  padding: 0 16px 16px;
+  background-color: $white-color;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+
+  transition:
+    transform 300ms ease,
+    color 300ms ease;
+
+  &__img {
+    margin-top: 32px;
+    height: 134px;
+    width: 160px;
+  }
+
+  &__title {
+    @include product-title-font;
+
+    margin-top: 40px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $blue-tr-color;
+    }
+  }
+
+  &__product-code {
+    @include product-code-font;
+    @include flex-left;
+
+    align-self: start;
+    margin-top: 4px;
+
+    color: $grey-color;
+  }
+
+  &__product-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  &__price-text {
+    @include product-code;
+  }
+
+  &__price {
+    @include price-font;
+
+    color: $dark-color;
+  }
+
+  &__buy-button {
+    @include buy-button-font;
+
+    margin-top: 16px;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+
+    &:hover {
+      background-color: $white-color;
+      color: $blue-color;
+      border: 1px solid $blue-color;
+
+      transition:
+        background-color 300ms ease,
+        color 300ms ease;
+    }
+  }
+}
