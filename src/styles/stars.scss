@@ -1,25 +1,35 @@
-.stars {
+.card__review-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  &__star {
-    width: 16px;
-    height: 16px;
-    background-image: url(../images/star.svg);
-    margin-right: 4px;
-    background-position: center;
-    background-repeat: no-repeat;
+  .stars {
+    display: flex;
+    align-items: center;
+
+    &--4 {
+      display: flex;
+    }
+
+    &__star {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../images/star.svg); // Inactive star
+
+      // Active stars based on rating
+      &:nth-child(-n + 4) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
   }
 
-  &__star:nth-child(-n + 4) {
-    background-image: url(../images/star-active.svg);
-  }
-
-  &__text {
+  .card__review-text {
     font-family: $font;
     font-size: 10px;
     line-height: 14px;
-    font-weight: $fontWeightStandard;
+    font-weight: $font-weight-standard;
   }
 }
