@@ -1,5 +1,4 @@
 @import '../utils/mixins';
-@import '../utils/colors';
 @import '../utils/variables';
 
 .card {
@@ -11,9 +10,7 @@
   border-radius: 5px;
   border: 1px solid $border-color;
 
-  transition:
-    transform 300ms ease,
-    color 300ms ease;
+  transition: background-color 300ms ease, color 300ms ease, border 300ms ease;
 
   &__img {
     margin-top: 32px;
@@ -36,7 +33,7 @@
   }
 
   &__product-code {
-    @include product-code-font;
+    @include product-code-font-10;
     @include flex-left;
 
     align-self: start;
@@ -53,7 +50,7 @@
   }
 
   &__price-text {
-    @include product-code;
+    @include product-code-font-12;
   }
 
   &__price {
@@ -78,7 +75,8 @@
 
       transition:
         background-color 300ms ease,
-        color 300ms ease;
+        color 300ms ease,
+        border 300ms ease;
     }
   }
 }
