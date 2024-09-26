@@ -1,3 +1,39 @@
+@import './utils/variables';
+@import './utils/mixins';
+@import './header';
+@import './cards';
+@import './stars';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  color: $main-color;
+
+  &__card-container {
+    display: grid;
+    grid-template-columns: 200px;
+    gap: 46px 48px;
+    justify-content: center;
+    padding: 50px 40px;
+
+    @media (min-width: 488px) {
+      grid-template-columns: 200px 200px;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
 }
