@@ -1,3 +1,71 @@
+@import 'variables';
+@import 'stars';
+@import 'common';
+@import 'product-card';
+@import 'navigation';
+
 body {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.main {
+  display: grid;
+  width: 100%;
+  transition: all 0.3s ease;
+  justify-content: center;
+  padding: 50px 128px;
+  row-gap: 46px;
+  column-gap: 48px;
+  max-width: 1200px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(
+      2,
+      minmax(200px, 1fr)
+    ); /* 2 колонки починаючи з 488px */
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(
+      3,
+      minmax(200px, 1fr)
+    ); /* 3 колонки починаючи з 768px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(
+      4,
+      minmax(200px, 1fr)
+    ); /* 4 колонки починаючи з 1024px */
+  }
 }
