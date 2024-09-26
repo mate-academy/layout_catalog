@@ -1,0 +1,15 @@
+.cards-container {
+  display: grid;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+
+  @each $min-width, $count in $columns {
+    @media (min-width: $min-width) {
+      & {
+        grid-template-columns: repeat($count, 200px);
+      }
+    }
+  }
+}
