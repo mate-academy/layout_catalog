@@ -1,3 +1,32 @@
+@import './utils/variables';
+@import './utils/mixins';
+@import 'blocks/header';
+@import 'blocks/card';
+@import 'blocks/stars';
+
 body {
   margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.products {
+  --column-count: 1;
+
+  padding: 50px 40px;
+  display: grid;
+  gap: 46px 48px;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  justify-content: center;
+
+  @include on-mobile {
+    --column-count: 2;
+  }
+
+  @include on-tablet {
+    --column-count: 3;
+  }
+
+  @include on-desktop {
+    --column-count: 4;
+  }
 }
