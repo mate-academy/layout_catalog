@@ -1,0 +1,66 @@
+@use './variables' as *;
+
+.moyo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 50px;
+  overflow: auto;
+
+  &__logotype {
+    width: $logo-header-size;
+    height: $logo-header-size;
+    margin-right: 40px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 20px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    color: $card-text-main-color;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: $main-blue-color;
+    }
+  }
+}
+
+.is-active {
+  color: $main-blue-color;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: $text-underline;
+    border-radius: 8px;
+    background: $main-blue-color;
+    left: 0;
+    top: $underline-margin;
+    pointer-events: none;
+  }
+}
