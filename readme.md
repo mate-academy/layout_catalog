@@ -35,9 +35,9 @@ Make all the changes smooth on hover (during 300ms):
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [X] All component follow BEM and use SCSS
-- [X] repaeted sizes and special colors are put to variables
-- [X] Grid is used for the columns
-- [X] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
-- [ ] All changes on `:hover` are smooth
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [x] All component follow BEM and use SCSS
+- [x] repaeted sizes and special colors are put to variables
+- [x] Grid is used for the columns
+- [x] cards are shown in 1, 2, 3 or 4 columns based on screen resolution
+- [x] All changes on `:hover` are smooth
+- [x] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
