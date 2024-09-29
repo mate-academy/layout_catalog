@@ -1,0 +1,115 @@
+@import 'variable';
+@import 'mixin';
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: $card-width;
+  border: $card-border;
+  border-radius: $card-border-radius;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition-duration: $duration;
+  padding: $card-padding;
+
+  &__title {
+    width: $blockWidth;
+    font-family: $main-font;
+    font-weight: $medium-font-weight;
+    font-size: $title-font-size;
+    line-height: $title-line-height;
+    margin: $margin-title;
+    transition-duration: $duration;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: $card-hover-title-color;
+    }
+  }
+
+  &__logo {
+    height: $logo-height;
+    width: $logo-width;
+    margin-top: $logo-margin-top;
+  }
+
+  &__subtitle {
+    font-family: $main-font;
+    font-size: $subtitle-font-size;
+    line-height: $subtitle-line-height;
+    color: $card-second-color;
+    margin: $subtitle-margin;
+  }
+
+  &__rating {
+    width: $blockWidth;
+    display: flex;
+    margin-top: $rating-margin-top;
+    line-height: $rating-line-height;
+    align-items: end;
+  }
+
+  &__text-rating {
+    font-family: $main-font;
+    font-size: $card-text-rating-font-size;
+    margin-block: $card-text-rating-margin-block;
+    color: $main-first-color;
+    margin-left: auto;
+    line-height: $card-text-rating-line-height;
+  }
+
+  &__price {
+    width: $blockWidth;
+    display: flex;
+    justify-content: space-between;
+    margin-top: $card-price-margin-top;
+  }
+
+  &__text-price {
+    margin-block: $card-text-price-margin-block;
+    font-family: $main-font;
+    font-size: $card-text-price-font-size;
+    line-height: $card-text-price-line-height;
+    color: $card-second-color;
+  }
+
+  &__count {
+    margin-block: $card-count-margin-block;
+    font-family: $main-font;
+    font-weight: $bold-font-weight;
+    font-size: $card-count-font-size;
+    line-height: $card-count-line-height;
+    color: $main-first-color;
+  }
+
+  &__button {
+    font-family: $main-font;
+    font-weight: $bold-font-weight;
+    font-size: $button-font-size;
+    line-height: $button-line-height;
+    width: $blockWidth;
+    height: $button-height;
+    border-radius: $button-border-radius;
+    background-color: $blue-color;
+    margin-top: $button-margin-top;
+    border: $button-border;
+    color: $button-color;
+    text-transform: uppercase;
+    transition-duration: $duration;
+
+    &:hover {
+      border: $button-hover-border;
+      background-color: $button-color;
+      color: $blue-color;
+    }
+  }
+}

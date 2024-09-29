@@ -1,3 +1,16 @@
-body {
-  margin: 0;
+@import 'variable';
+@import 'mixin';
+
+.catalog {
+  padding: $catalog-padding;
+  display: grid;
+  gap: $catalog-gap;
+  grid-template-columns: repeat(4, $card-width);
+  justify-content: center;
+}
+
+@each $breakpoint-count, $breakpoint in $media-query {
+  @media (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2)) {
+    @include media-rule($breakpoint-count);
+  }
 }
