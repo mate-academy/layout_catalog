@@ -1,3 +1,43 @@
+@import './blocks/header';
+@import './blocks/card';
+@import './blocks/stars';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+}
+
 body {
   margin: 0;
+  display: grid;
+}
+
+.main {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, $cardwidth);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, $cardwidth);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, $cardwidth);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, $cardwidth);
+  }
 }
