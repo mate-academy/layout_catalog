@@ -1,0 +1,122 @@
+.cards {
+  padding: 50px 40px 72px;
+  display: grid;
+  gap: 46px 48px;
+  justify-content: center;
+
+  @include set-columns(1);
+
+  @media (min-width: 488px) {
+    @include set-columns(2);
+  }
+
+  @media (min-width: 768px) {
+    @include set-columns(3);
+  }
+
+  @media (min-width: 1024px) {
+    @include set-columns(4);
+  }
+
+  &__card {
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 16px;
+
+    @include smooth-transition;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &-image {
+      width: 160px;
+      height: 134px;
+      margin-bottom: 40px;
+    }
+
+    &-title {
+      color: $black-color-text;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+
+      @include smooth-transition;
+
+      &:hover {
+        color: $title-card-color;
+      }
+    }
+
+    &-info {
+      margin-top: 4px;
+      color: $grey-color-text;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      align-self: flex-start;
+    }
+
+    &-rate {
+      margin: 16px 0 24px;
+      color: $black-color-text;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 16px;
+
+      &-text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $grey-color-text;
+      }
+
+      &-amount {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: $black-color-text;
+      }
+    }
+
+    &-button {
+      width: 100%;
+      height: 40px;
+      background-color: $color-button;
+      color: white;
+      border-radius: 5px;
+      border: 1px solid $color-button;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include smooth-transition;
+
+      &:hover {
+        background-color: #fff;
+        color: $color-button;
+        border: 1px solid $color-button;
+      }
+    }
+  }
+}
