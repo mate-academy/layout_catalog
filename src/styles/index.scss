@@ -1,181 +1,101 @@
-body {
-  margin: 0;
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: uppercase;
-}
-
-/* #region Header Styles */
-
-@font-face {
-  font-family: Roboto;
-  src: url(https://fonts.google.com/specimen/Roboto);
+:root {
+  --accent-color: #00acdc;
+  --main-text-color: #616070;
+  --accent-text-color: #060b35;
+  --white: #fff;
+  --border-color: #f3f3f3;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* #region header */
+
+ul {
+  list-style: none;
 }
 
 .header {
-  background-color: #fff;
-  padding: 15px auto;
-  box-sizing: border-box;
-}
-
-.header-container {
-  position: absolute;
-  width: 1200px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: space-between;
   height: 60px;
-  background: #fff;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
 }
 
-.logo img {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 50px;
-  top: 10px;
+.logo {
+  display: block;
+  align-self: center;
 }
 
-.menu a {
+.nav__list-items {
+  padding: 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__list-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__list-link {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  text-transform: uppercase;
   text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  font-size: 12px;
-  padding: 5px 0;
+  color: var(--accent-text-color);
+  text-align: center;
 }
 
-.menu a.active {
-  color: #00adef;
+.nav__list-link:hover {
+  color: var(--accent-color);
 }
 
-.active {
+.is-active {
+  color: var(--accent-color);
+}
+
+.is-active::after {
+  content: '';
+
   position: absolute;
-  width: 37px;
-  height: 15px;
-  left: 509px;
-  top: 22.5px;
-  color: #00acdc;
-}
-
-li {
-  list-style-type: none;
-}
-
-.samsung {
-  position: absolute;
-  width: 58px;
-  height: 15px;
-  left: 566px;
-  top: 22.5px;
-}
-
-.smartphones {
-  position: absolute;
-  width: 88px;
-  height: 15px;
-  left: 644px;
-  top: 22px;
-}
-
-.laptops {
-  position: absolute;
-  width: 138px;
-  height: 15px;
-  left: 752px;
-  top: 22px;
-}
-
-.gadgets {
-  position: absolute;
-  width: 54px;
-  height: 15px;
-  left: 910px;
-  top: 22px;
-}
-
-.tablets {
-  position: absolute;
-  width: 51px;
-  height: 15px;
-  left: 984px;
-  top: 22px;
-}
-
-.photo {
-  position: absolute;
-  width: 40px;
-  height: 15px;
-  left: 1055px;
-  top: 22px;
-}
-
-.video {
-  position: absolute;
-  width: 35px;
-  height: 15px;
-  left: 1115px;
-  top: 22px;
-}
-
-.retangle {
-  position: absolute;
-  width: 37px;
+  width: 100%;
   height: 4px;
-  left: 509px;
-  top: 56px;
+  background-color: var(--accent-color);
   border-radius: 8px;
+  right: 0;
+  bottom: 0;
 }
 
 /* #endregion */
 
+.main{
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  justify-items: center;
+}
+
 /* #region card Styles */
-:root {
-  --link-color: #00acdc;
-  --color: #616070;
-  --bg-color: #fff;
-  --text-color: #060b35;
-}
-
-.card {
-  width: 200px;
-  box-sizing: border-box;
-  border: 1px solid #f3f3f3;
-  padding: 32px 16px 16px;
-}
-
-.card__image {
-  height: 134px;
-  margin-bottom: 40px;
-}
-
-.card__image img {
-  margin: 0 auto;
-  max-width: 160px;
-  display: block;
-  height: 100%;
-}
-
-.card__text {
-  margin-bottom: 4px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--text-color);
-}
-
-.card__code {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 16px;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  color: var(--color);
-}
 
 .stars {
   display: flex;
@@ -202,6 +122,46 @@ li {
   background-image: url(../images/star-active.svg);
 }
 
+
+.card {
+  width: 200px;
+  border: 1px solid var(--border-color);
+  padding: 32px 16px 16px;
+  font-weight: 400;
+  background-color: var(--white);
+  color: var(--accent-text-color);
+  border-radius: 5px;
+}
+
+.card__image {
+  display: block;
+  margin: 0 auto;
+  height: 134px;
+  width: 160px;
+}
+
+.card__title{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 40px;
+  margin-bottom: 4px;
+}
+
+.card__code {
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.card__rate{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
 .card__review-wrapper {
   display: flex;
   justify-content: space-between;
@@ -225,42 +185,43 @@ li {
   margin-bottom: 16px;
 }
 
-.card__price-label {
-  margin: 0;
-  font-weight: 400;
+.card__price-title {
   font-size: 12px;
-  line-height: 18px;
-  color: var(--color);
+  line-height: 12px;
+  color: var(--main-text-color);
 }
 
-.card__price-amount {
-  margin: 0;
+.card__price-value {
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
-  color: var(--text-color);
 }
 
-.card__button {
-  display: block;
+.card__buy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   width: 100%;
   height: 40px;
+  background-color: var(--accent-color);
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
-  color: var(--bg-color);
-  background-color: var(--link-color);
-  border-radius: 5px;
   border: 1px solid var(--link-color);
-  outline: none;
-  font-family: inherit;
+  border-radius: 5px;
+  line-height: 1.14px;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+  background-color 0.3s,
+  color 0,3s;
 }
 
 .card__button:hover {
-  background-color: var(--bg-color);
-  color: var(--link-color);
-  border: 1px solid var(--link-color);
+  background-color: var(--accent-color);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
   cursor: pointer;
 }
 
