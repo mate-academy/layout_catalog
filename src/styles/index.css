@@ -1,0 +1,256 @@
+:root {
+  --accent-color: #00acdc;
+  --main-text-color: #616070;
+  --accent-text-color: #060b35;
+  --white: #fff;
+  --border-color: #f3f3f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* #region header */
+
+ul {
+  list-style: none;
+}
+
+.header {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+}
+
+.logo {
+  display: block;
+  align-self: center;
+}
+
+.nav__list-items {
+  padding: 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__list-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__list-link {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent-text-color);
+  text-align: center;
+}
+
+.nav__list-link:hover {
+  color: var(--accent-color);
+}
+
+.is-active {
+  color: var(--accent-color);
+}
+
+.is-active::after {
+  content: '';
+
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  right: 0;
+  bottom: 0;
+}
+
+/* #endregion */
+.product_container {
+  box-sizing: border-box;
+  top: 110px;
+  left: 40px;
+  height: 862px;
+
+  width: 200px;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+
+  grid-auto-flow: row;
+  grid-auto-columns: 50px;
+
+  place-content: stretch;
+  place-content: space-evenly;
+}
+
+/* Need a fix */
+
+@media screen and (max-width: 488px) {
+  .product_container {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product_container {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .product_container {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+/* #region card Styles */
+.card {
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  padding: 32px 16px 16px;
+}
+
+.card__image {
+  height: 134px;
+  margin-bottom: 40px;
+}
+
+.card__image img {
+  margin: 0 auto;
+  max-width: 160px;
+  display: block;
+  height: 100%;
+}
+
+.card__text {
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-color);
+}
+
+.card__code {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--color);
+}
+
+.stars {
+  display: flex;
+}
+
+.stars__star {
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stars__star:last-child {
+  margin-right: 0;
+}
+
+.stars--1 .stars__star:first-child,
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(../images/star-active.svg);
+}
+
+.card__review-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card__review {
+  margin: 0;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  margin-top: 2px;
+  color: var(--text-color);
+}
+
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card__price-label {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color);
+}
+
+.card__price-amount {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--text-color);
+}
+
+.card__button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--bg-color);
+  background-color: var(--link-color);
+  border-radius: 5px;
+  border: 1px solid var(--link-color);
+  outline: none;
+  font-family: inherit;
+}
+
+.card__button:hover {
+  background-color: var(--bg-color);
+  color: var(--link-color);
+  border: 1px solid var(--link-color);
+  cursor: pointer;
+}
+
+/* #endregion */
