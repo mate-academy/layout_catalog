@@ -1,3 +1,59 @@
+@import './utils/variables';
+@import 'block/header';
+@import 'block/pruduct-card';
+@import 'block/starts';
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+
+  @media (max-width: 487px) {
+    & {
+      grid-template-columns: repeat(1, 200px);
+    }
+  }
+
+  @media (min-width: 488px) {
+    & {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.reviews__review {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 10px;
+  color: $primary-color;
 }
