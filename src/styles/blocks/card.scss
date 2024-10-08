@@ -1,0 +1,128 @@
+.container {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+
+  transition-duration: 300ms;
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin-top: 16px;
+    display: block;
+  }
+
+  &__info {
+    margin-top: 40px;
+
+    &-name {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+
+    &-product-code {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      color: $secondary-text-color;
+      margin-top: 4px;
+    }
+  }
+
+  &__review {
+    width: 100%;
+    margin-top: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-text {
+      font-size: 10px;
+      font-weight: 400;
+    }
+  }
+
+  &__price {
+    width: 100%;
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-title {
+      color: $secondary-text-color;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    &-count {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+
+    background-color: $active-color;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+
+    transition-duration: 300ms;
+
+    &:hover {
+      border: 1px solid $active-color;
+      background-color: #fff;
+      color: $active-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__info-name {
+      color: #34568b;
+    }
+  }
+}
