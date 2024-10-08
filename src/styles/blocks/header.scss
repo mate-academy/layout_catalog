@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+
+  .logo {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    padding: 10px 0;
+  }
+
+  nav {
+    text-transform: uppercase;
+
+    .nav-list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .nav-item {
+        transition: all ease-in-out 0.15s;
+        color: $nav-link-color;
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+
+        &:hover {
+          color: $hover-color;
+        }
+
+        .nav-link {
+          font-weight: 500;
+          font-size: 12px;
+          display: inline-block;
+          height: $header-height;
+          line-height: $header-height;
+        }
+
+        .is-active {
+          position: relative;
+          color: $hover-color;
+
+          &::after {
+            content: '';
+            position: absolute;
+            height: 4px;
+            background: $hover-color;
+            border-radius: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
