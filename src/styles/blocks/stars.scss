@@ -2,7 +2,7 @@
   display: flex;
 
   &-star {
-    background: center / no-repeat url(../images/star.svg);
+    background: center / cover no-repeat url(../images/star.svg);
     width: 16px;
     height: 16px;
     margin-right: 4px;
@@ -12,11 +12,9 @@
     margin-right: 0;
   }
 
-  &--1 &-star:nth-child(-n + 1),
-  &--2 &-star:nth-child(-n + 2),
-  &--3 &-star:nth-child(-n + 3),
-  &--4 &-star:nth-child(-n + 4),
-  &--5 &-star:nth-child(-n + 5) {
-    background-image: url(../images/star-active.svg);
+  @for $i from 1 through 5 {
+    &--#{$i} &-star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
   }
 }
