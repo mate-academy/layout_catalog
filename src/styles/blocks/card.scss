@@ -1,0 +1,130 @@
+.card {
+  &-container {
+    --column-count: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), $card-width);
+    justify-content: center;
+    row-gap: 46px;
+    column-gap: 48px;
+    padding-top: 50px;
+  }
+
+  background-image: url(../images/imac.jpeg);
+  background-size: 160px 134px;
+  background-repeat: no-repeat;
+  background-position: top 32px left 19px;
+  width: $card-width;
+  box-sizing: border-box;
+  padding-top: 206px;
+  padding-inline: 16px;
+  border: 1px solid #f3f3f3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition-property: transform;
+  transition-duration: $transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__wrap {
+    width: 100%;
+  }
+
+  &__product-title {
+    font-size: 12px;
+    font-weight: $secondary-font-weight;
+    margin-bottom: 4px;
+
+    transition-property: color;
+    transition-duration: $transition-duration;
+  }
+
+  &:hover &__product-title {
+    color: #34568b;
+  }
+
+  &__product-code {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: $main-font-weight;
+    color: $secondary-color;
+    margin-bottom: 16px;
+  }
+
+  &__stars-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review_title {
+    font-weight: $main-font-weight;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-title {
+    font-weight: $main-font-weight;
+    font-size: 12px;
+    color: $secondary-color;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__button {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $white-color;
+    border-radius: 5px;
+    border: none;
+    background-color: $blue-accent-color;
+    width: inherit;
+    height: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 16px;
+
+    transition-property: background-color, color;
+    transition-duration: $transition-duration;
+
+    &:hover {
+      border: 1px solid $blue-accent-color;
+      background-color: $white-color;
+      color: $blue-accent-color;
+    }
+  }
+}
+
+@media (min-width: 488px) {
+  .card-container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    --column-count: 4;
+  }
+}
