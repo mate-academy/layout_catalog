@@ -1,3 +1,227 @@
+@import 'variables';
+
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 }
+
+/* #region HEADER */
+
+@mixin flex-center($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.header {
+  @include flex-center;
+
+  padding: 0 50px;
+}
+
+// Логотип
+.header__logo-link,
+.header__logo-link img {
+  width: $logo-size;
+  height: auto;
+  display: block;
+}
+
+// Навігаційна панель
+.header__nav-list {
+  list-style: none;
+
+  @include flex-center(flex-start);
+}
+
+.header__nav-item {
+  margin-right: $nav-item-margin;
+  font-size: $font-size-small;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// Стилі для посилань
+.header__nav-link {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  line-height: $line-height-nav;
+
+  &:hover,
+  &:active {
+    color: $primary-color;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+// Активна навігація
+.header__nav-link.is-active {
+  position: relative;
+  color: $primary-color;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $primary-color;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/* #endregion HEADER */
+
+/* #region CARD */
+
+@mixin flex-size-center($width, $height) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  height: $height;
+}
+
+@mixin star-position {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Міксин для стилю тексту
+@mixin text-style($font-size, $font-weight, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  width: $card-width;
+  height: $card-height;
+
+  &__content {
+    width: $card-width;
+    height: $card-height;
+    border-radius: 5px;
+  }
+
+  &__image {
+    @include flex-size-center(160px, 134px);
+
+    background-image: url(../images/imac.jpeg);
+    margin-left: 19px;
+    margin-top: 32px;
+  }
+
+  &__title {
+    margin-top: 40px;
+    margin-left: $left-margin;
+    height: 36px;
+    width: 166px;
+
+    &-text {
+      @include text-style($text-size, 500, $text-color);
+
+      line-height: 18px;
+    }
+  }
+
+  &__code {
+    width: 98px;
+    height: 14px;
+    margin-top: 4px;
+    margin-left: $left-margin;
+    line-height: 14px;
+
+    &-text {
+      font-size: 10px;
+      font-weight: 400;
+      color: $subtext-color;
+    }
+  }
+
+  &__rating {
+    @include flex-size-center(166px, 16px);
+
+    margin-left: 17px;
+    margin-top: 16px;
+
+    .rating-star {
+      background-image: url(../images/star.svg);
+
+      @for $i from 1 through $stars-count {
+        &:nth-child(#{$i}) {
+          @if $i <= $active-stars {
+            background-image: url(../images/star-active.svg);
+          }
+
+          @include star-position;
+        }
+      }
+    }
+  }
+
+  &__price {
+    @include flex-size-center(166px, 16px);
+
+    margin-top: 24px;
+    margin-left: $left-margin;
+
+    &-text {
+      @include text-style($text-size, 400, $subtext-color);
+    }
+
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      margin-left: auto;
+      color: $text-color;
+    }
+  }
+
+  &__buy {
+    @include flex-size-center(166px, 40px);
+
+    margin-top: 16px;
+    margin-left: $left-margin;
+    background-color: $button-color;
+    border: 1px solid $button-color;
+    border-radius: $border-radius;
+
+    &-text {
+      @include text-style(
+        $buy-button-font-size,
+        $buy-button-font-weight,
+        white
+      );
+
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+/* #endregion CARD */
