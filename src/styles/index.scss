@@ -18,7 +18,12 @@ body {
 .header {
   @include flex-center;
 
+  height: 60px;
   padding: 0 50px;
+}
+
+.header__nav {
+  padding: 0;
 }
 
 // Логотип
@@ -32,6 +37,8 @@ body {
 // Навігаційна панель
 .header__nav-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 
   @include flex-center(flex-start);
 }
@@ -87,12 +94,25 @@ body {
 /* #region CATALOG */
 .catalog {
   display: grid;
-  width: 944px; // Залишаємо ширину контейнера
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Автоматично заповнює простір
-  gap: 46px 48px; // Задаємо gap для колонок та рядків
-  margin: 50px auto; // Центрування з відступами
+  width: 944px;
+
+  grid-template-columns: repeat(4, 200px); /* 4 колонки по 200px */
+  justify-content: center;
+  gap: 46px 48px;
+  margin: 50px auto;
 }
 
+@media (min-width: 1024px) {
+  .catalog {
+    width: 1024px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    width: 1200px;
+  }
+}
 
 /* #endregion CATALOG */
 
@@ -129,6 +149,7 @@ p {
   display: flex;
   width: $card-width;
   height: $card-height;
+  border: 1px solid #f3f3f3;
 
   &:hover {
     transform: scale(1.2);
