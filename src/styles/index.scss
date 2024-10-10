@@ -20,72 +20,69 @@ body {
 
   height: 60px;
   padding: 0 50px;
-}
 
-.header__nav {
-  padding: 0;
-}
+  &__nav {
+    padding: 0;
+    
+    // Навігаційна панель
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      @include flex-center(flex-start);
+    }
 
-// Логотип
-.header__logo-link,
-.header__logo-link img {
-  width: $logo-size;
-  height: auto;
-  display: block;
-}
+    &-item {
+      margin-right: $nav-item-margin;
+      font-size: $font-size-small;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
 
-// Навігаційна панель
-.header__nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+      &:last-child {
+        margin-right: 0;
+      }
 
-  @include flex-center(flex-start);
-}
+      &__link {
+        color: #060b35;
+        text-decoration: none;
+        display: block;
+        line-height: $line-height-nav;
 
-.header__nav-item {
-  margin-right: $nav-item-margin;
-  font-size: $font-size-small;
-  font-weight: $font-weight-medium;
-  text-transform: uppercase;
+        &:hover,
+        &:active {
+          color: $primary-color;
+        }
 
-  &:last-child {
-    margin-right: 0;
+        &:active {
+          text-decoration: underline;
+        }
+
+        &.is-active {
+          position: relative;
+          color: $primary-color;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: $primary-color;
+            border-radius: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
   }
-}
 
-// Стилі для посилань
-.header__nav-link {
-  color: #060b35;
-  text-decoration: none;
-  display: block;
-  line-height: $line-height-nav;
-
-  &:hover,
-  &:active {
-    color: $primary-color;
-  }
-
-  &:active {
-    text-decoration: underline;
-  }
-}
-
-// Активна навігація
-.header__nav-link.is-active {
-  position: relative;
-  color: $primary-color;
-
-  &::after {
-    content: '';
+  &__logo-link,
+  &__logo-link img {
+    width: $logo-size;
+    height: auto;
     display: block;
-    width: 100%;
-    height: 4px;
-    background-color: $primary-color;
-    border-radius: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
   }
 }
 
@@ -150,6 +147,7 @@ p {
   width: $card-width;
   height: $card-height;
   border: 1px solid #f3f3f3;
+  border-radius: 5px;
 
   &:hover {
     transform: scale(1.2);
