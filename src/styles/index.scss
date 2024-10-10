@@ -1,3 +1,300 @@
+@import 'variables';
+
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 }
+
+/* #region HEADER */
+
+@mixin flex-center($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.header {
+  @include flex-center;
+
+  height: 60px;
+  padding: 0 50px;
+
+  &__nav {
+    padding: 0;
+
+    // Навігаційна панель
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      @include flex-center(flex-start);
+    }
+
+    &-item {
+      margin-right: $nav-item-margin;
+      font-size: $font-size-small;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &__link {
+        color: #060b35;
+        text-decoration: none;
+        display: block;
+        line-height: $line-height-nav;
+
+        &:hover,
+        &:active {
+          color: $primary-color;
+        }
+
+        &:active {
+          text-decoration: underline;
+        }
+
+        &.is-active {
+          position: relative;
+          color: $primary-color;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: $primary-color;
+            border-radius: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__logo-link,
+  &__logo-link img {
+    width: $logo-size;
+    height: auto;
+    display: block;
+  }
+}
+
+/* #endregion HEADER */
+
+/* #region CATALOG */
+.catalog {
+  display: grid;
+  width: 944px;
+
+  grid-template-columns: repeat(4, 200px); /* 4 колонки по 200px */
+  justify-content: center;
+  gap: 46px 48px;
+  margin: 50px auto;
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    width: 1024px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    width: 1200px;
+  }
+}
+
+/* #endregion CATALOG */
+
+/* #region CARD */
+
+@mixin flex-size-center($width, $height) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  height: $height;
+}
+
+@mixin star-position {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Міксин для стилю тексту
+@mixin text-style($font-size, $font-weight, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  width: $card-width;
+  height: $card-height;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 300ms ease;
+  }
+
+  &__content {
+    width: $card-width;
+    height: $card-height;
+    border-radius: 5px;
+  }
+
+  &__image {
+    @include flex-size-center(160px, 134px);
+
+    background-image: url(../images/imac.jpeg);
+    margin-left: 19px;
+    margin-top: 32px;
+    background-size: cover; // або contain, в залежності від вашого бажання
+  }
+
+  &__title {
+    margin-top: 40px;
+    margin-left: $left-margin;
+    height: 36px;
+    width: 166px;
+
+    &-text {
+      @include text-style($text-size, 500, $text-color);
+
+      line-height: 18px;
+
+      &:hover {
+        color: #34568b;
+        transition: color 300ms ease;
+      }
+    }
+  }
+
+  &__code {
+    width: 98px;
+    height: 14px;
+    margin-top: 4px;
+    margin-left: $left-margin;
+    line-height: 14px;
+
+    &-text {
+      font-size: 10px;
+      font-weight: 400;
+      color: $subtext-color;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    width: 166px;
+
+    &-stars {
+      display: flex;
+    }
+
+    // Цикл для стилізації зірок (діти класу &__rating)
+    &-star {
+      background-image: url(../images/star.svg); // Зображення за замовчуванням для всіх зірок
+
+      // Цикл для стилізації активних зірок
+      @for $i from 1 through $stars-count {
+        &:nth-child(#{$i}) {
+          @if $i <= $active-stars {
+            background-image: url(../images/star-active.svg); // Заповнена зірка для активних
+          }
+
+          @include star-position; // Позиціонування зірки
+        }
+      }
+      &:first-child {
+        margin-left: 0; // або просто видалити марджин
+      }
+    }
+
+    &-text {
+      font-size: 10px;
+      line-height: 14px;
+      text-align: right;
+
+      color: $text-color;
+    }
+  }
+
+  &__price {
+    @include flex-size-center(166px, 16px);
+
+    margin-top: 24px;
+    margin-left: $left-margin;
+
+    &-text {
+      @include text-style($text-size, 400, $subtext-color);
+    }
+
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      margin-left: auto;
+      color: $text-color;
+    }
+  }
+
+  &__buy-wrapper {
+    @include flex-size-center(
+      166px,
+      40px
+    ); // Центрування та розмір для обгортки
+
+    margin-top: 16px;
+    margin-left: $left-margin;
+    background-color: $button-color;
+    border: 1px solid $button-color;
+    border-radius: $border-radius;
+
+    a.card__buy {
+      @include text-style(
+        $buy-button-font-size,
+        $buy-button-font-weight,
+        white
+      );
+
+      text-transform: uppercase;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      background-color: white;
+      a.card__buy {
+        color: $button-color; // змінюємо колір тексту при наведенні
+      }
+    }
+  }
+}
+
+/* #endregion CARD */
