@@ -1,3 +1,237 @@
-body {
+.page {
   margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-text-color: #00acdc;
+}
+
+.header {
+  margin: 0;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-inline: 50px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  display: flex;
+}
+
+.logo {
+  display: flex;
+}
+
+.nav__list {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.nav__link {
+  color: #060b35;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-left: 20px;
+  text-decoration: none;
+  display: flex;
+
+  &:hover {
+    color: var(--main-text-color);
+  }
+}
+
+.is-active {
+  color: var(--main-text-color);
+  align-items: center;
+  height: 60px;
+  margin-left: auto;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+
+  &::after {
+    content: '';
+    background-color: var(--main-text-color);
+    border-radius: 8px;
+    width: 100%;
+    height: 4px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.card {
+  width: 200px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(243, 243, 243, 1);
+  border-radius: 5px;
+  transition-duration: 300ms;
+
+  &__img {
+    background-position: center;
+    background-size: cover;
+    margin: 33px 20px 0;
+  }
+
+  &__title {
+    display: block;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 40px 17px 0;
+    color: rgba(6, 11, 53, 1);
+    height: 36px;
+  }
+
+  &__code {
+    display: block;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: rgba(97, 96, 112, 1);
+    margin: 4px 0 0 17px;
+    height: 14px;
+  }
+
+  &__review {
+    display: flex;
+    width: 166px;
+    justify-content: space-between;
+    margin: 17px 17px 0;
+    align-items: center;
+    height: 16px;
+  }
+
+  &__review-amount {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: right;
+    color: rgba(6, 11, 53, 1);
+    margin-left: 16px;
+  }
+
+  &__price {
+    display: flex;
+    margin: 24px 17px 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    height: 18px;
+  }
+
+  &-title {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(97, 96, 112, 1);
+  }
+
+  &-amount {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: rgba(6, 11, 53, 1);
+  }
+
+  &__buy {
+    display: flex;
+    width: 166px;
+    height: 40px;
+    margin: 16px;
+    background-color: rgba(0, 172, 220, 1);
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+  }
+
+  &__buy:hover {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 172, 220, 1);
+    color: rgba(0, 172, 220, 1);
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  .card__title {
+    color: #34568b;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    background-image: url(../images/star-active.svg);
+    height: 16px;
+    width: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__star:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  &__star:nth-child(5) {
+    background-image: url(../images/star.svg);
+  }
+}
+
+.catalog {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(200px, 1fr));
+
+  gap: 48px 46px;
+  padding: 50px 40px;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+
+@media (min-width) {
+  .catalog {
+    --column-count: 4;
+  }
 }
