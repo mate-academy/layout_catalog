@@ -1,0 +1,66 @@
+@mixin reset-margin-padding($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin flex-container(
+  $display,
+  $flex-direction,
+  $justify-content,
+  $align-items
+) {
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin logo-image-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fonts-styles($font-weight, $font-size, $line-height, $color) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin border-style-color($border, $border-radius) {
+  border: $border;
+  border-radius: $border-radius;
+}
+
+@mixin hover($property, $toValue) {
+  transition:
+    #{$property},
+    300ms;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin hover-embed(
+  $property,
+  $value,
+  $embed-class,
+  $embed-class-property,
+  $embed-class-value
+) {
+  transition: #{$property} 300ms;
+
+  &:hover {
+    #{$property}: $value;
+
+    .#{$embed-class} {
+      #{$embed-class-property}: $embed-class-value;
+    }
+  }
+}
