@@ -1,0 +1,105 @@
+.container {
+  display: grid;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  justify-items: center;
+
+  @include grid-columns(1);
+
+  @include small {
+    @include grid-columns(2);
+  }
+
+  @include medium {
+    @include grid-columns(3);
+  }
+
+  @include large {
+    @include grid-columns(4);
+  }
+}
+
+.card {
+  width: 200px;
+  box-sizing: border-box;
+  padding: 19px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  @include hover(transform, scale(1.2));
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  &__title {
+    font: inherit;
+    font-weight: 500;
+    color: $text-color-dark;
+    margin-block: 27px 4px;
+  }
+
+  @include hover(color, #34568b, '&__title');
+
+  &__subtitle {
+    font-size: 10px;
+    line-height: 14px;
+    color: $text-color-light;
+    margin: 0;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $text-color-dark;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    &-label {
+      color: $text-color-light;
+    }
+
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: $text-color-dark;
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin-top: 16px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #fff;
+    background-color: $blue-color;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid $blue-color;
+
+    @include hover(color, $blue-color);
+    @include hover(background-color, #fff);
+  }
+}
