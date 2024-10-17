@@ -1,3 +1,216 @@
+.main {
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  & .nav__link-item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.nav__link {
+  position: relative;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  color: $main-text-color;
+
+  @include hover(color, $accent-color);
+}
+
+.nav__link.is-active {
+  color: $accent-color;
+}
+
+.nav__link.is-active::after {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: $accent-color;
+}
+
+.card {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  background-color: $white-color;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  transition: transform 300ms;
+
+  @include hover(transform, scale(1.2));
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 0;
+  }
+
+  &__title {
+    color: $main-text-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 40px 16px 0;
+
+    @include hover(color, #34568b);
+  }
+
+  &__code {
+    color: $secondary-text-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-top: 4px;
+    margin-left: 16px;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 16px 0 18px;
+  }
+
+  &__review_count {
+    margin: 0;
+    color: $main-text-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: right;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin: 22px 16px 0;
+  }
+
+  &__price_text {
+    margin: 0;
+    color: $secondary-text-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price_count {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $main-text-color;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $white-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 16px;
+
+    @include hover(background-color, $white-color);
+    @include hover(color, $accent-color);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px #f4f4f4;
+}
+
+.logo-link {
+  display: flex;
+}
+
+.stars {
+  display: flex;
+  width: 96px;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  &__star:nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+$white-color: #fff;
+$border-color: #f3f3f3;
+$main-text-color: #060b35;
+$secondary-text-color: #616070;
+$accent-color: #00acdc;
+
 body {
   margin: 0;
+  background-color: $white-color;
+  font-family: Roboto, sans-serif;
 }
