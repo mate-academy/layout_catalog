@@ -1,3 +1,40 @@
-body {
+@import './variables';
+@import './utils/mixins';
+@import './card';
+@import './stars';
+@import './header';
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+.card-container {
+  max-width: 1024px;
+  display: grid;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  place-items: center;
+  position: relative;
+  margin: auto;
+
+  @include set-columns(1);
+
+  @media (min-width: 488px) {
+    @include set-columns(2);
+  }
+
+  @media (min-width: 768px) {
+    @include set-columns(3);
+  }
+
+  @media (min-width: 1024px) {
+    @include set-columns(4);
+  }
 }
