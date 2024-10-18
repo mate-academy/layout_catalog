@@ -1,0 +1,21 @@
+@import 'variables';
+
+.card__rate-stars {
+  display: flex;
+
+  &-star {
+    width: $star-size;
+    height: $star-size;
+
+    background: url(../images/star.svg) no-repeat center;
+    margin-right: $star-margin;
+  }
+}
+
+@for $i from 1 through 5 {
+  .card__rate-stars--#{$i} {
+    .card__rate-stars-star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
