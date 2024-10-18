@@ -1,0 +1,139 @@
+@import 'stars';
+@import 'variables';
+
+.card {
+  width: $card-width;
+  height: $card-height;
+  box-sizing: border-box;
+  border: $card-border solid #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  padding-left: $card-padding;
+
+  &__photo {
+    width: $card-photo-width;
+    height: $card-photo-height;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: $card-photo-top;
+    padding-left: $card-photo-left;
+  }
+
+  &__title {
+    font-weight: $card-title-font-weight;
+    font-size: $card-title-font-size;
+    line-height: $card-title-line-height;
+    color: $card-title-color;
+
+    display: block;
+    width: $card-blocks-width;
+
+    padding-top: $card-title-top;
+    margin: 0;
+  }
+
+  &__code {
+    font-weight: $card-code-font-weight;
+    font-size: $card-code-font-size;
+    line-height: $card-code-line-height;
+    color: $card-code-color;
+    padding-top: $card-code-top;
+    margin: 0;
+
+    display: block;
+    width: $card-code-width;
+  }
+
+  &__rate {
+    display: flex;
+    width: $card-blocks-width;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $card-padding;
+
+    &-text {
+      display: flex;
+      font-weight: $card-code-font-weight;
+      font-size: $card-code-font-size;
+
+      color: $card-title-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $card-price-top;
+    width: $card-blocks-width;
+
+    &-text {
+      font-weight: $card-code-font-weight;
+      font-size: $card-title-font-size;
+      line-height: $card-title-line-height;
+      color: $card-code-color;
+    }
+
+    &-value {
+      font-weight: $card-price-font-weight;
+      font-size: $card-price-font-size;
+      line-height: $card-price-line-height;
+      text-align: right;
+      color: $card-title-color;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $card-blocks-width;
+    height: $card-button-height;
+    margin-top: $card-button-top;
+    box-sizing: border-box;
+
+    background-color: $is-active-color;
+    border-radius: $card-button-radius;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $hover-button-background-color;
+
+    &-text {
+      display: block;
+      font-weight: $card-price-font-weight;
+      font-size: $card-button-font-size;
+      line-height: $card-button-top;
+    }
+
+    &:hover {
+      background-color: $hover-card-color;
+      border: $card-border solid $is-active-color;
+      color: $is-active-color;
+      transition:
+        color $hover-duration linear,
+        background-color $hover-duration linear,
+        border $hover-duration linear;
+    }
+
+    &[data-qa='card-hover']:hover {
+      background-color: $hover-button-background-color;
+      border: $card-border solid $is-active-color;
+      color: $is-active-color;
+      transition:
+        color $hover-duration linear,
+        background-color $hover-duration linear,
+        border $hover-duration linear;
+    }
+  }
+}
+
+.card:hover .card__title {
+  cursor: pointer;
+  color: $hover-card-color;
+  transition: all $hover-duration linear;
+}
+
+.card:hover {
+  transform: scale($hover-transform);
+  transition: transform $hover-duration linear;
+}
