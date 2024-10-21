@@ -1,3 +1,30 @@
-body {
-  margin: 0;
+$column-count: 1;
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat($column-count, $card-width);
+  padding: 50px 48px 0;
+
+  margin-bottom: 72px;
+  grid-row-gap: 46px;
+  column-gap: 48px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
