@@ -1,0 +1,32 @@
+@use '../_variables/variables' as *;
+
+.catalog {
+  margin: 0 auto;
+  padding: 50px 40px;
+  display: grid;
+
+  --column-count: 1;
+
+  grid-template-columns: repeat(var(--column-count), 200px);
+  place-content: center center;
+  justify-items: center;
+  gap: 46px 48px;
+}
+
+@media (min-width: $pov-phone) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: $pov-tablet) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: $pov-desktop) {
+  .catalog {
+    --column-count: 4;
+  }
+}
