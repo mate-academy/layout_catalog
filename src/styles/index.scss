@@ -1,3 +1,48 @@
+@import './header';
+@import './main';
+
 body {
   margin: 0;
+}
+
+.main {
+  margin: 0 auto;
+  display: grid;
+
+  gap: 46px 48px;
+  grid-template-columns: repeat(4, 200px);
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (max-width: 488px) {
+  .main {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card:hover .card__name {
+  color: #34568b;
 }
