@@ -3,12 +3,25 @@ $text-secondary-color: #616070;
 $color-white: #fff;
 $color-gray: #f3f3f3;
 $color-blue-accent: #00acdc;
+$smooth: 300ms;
 
 .product-card {
   border: 1px solid $color-gray;
   border-radius: 5px;
   width: 200px;
   padding: 32px 16px 16px;
+  transition: $smooth;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: $smooth;
+  }
+
+  &__description:hover {
+    cursor:default;
+    transition: $smooth;
+    color: #34568b;
+  }
 
   &__description {
     color: $text-main-color;
@@ -16,6 +29,7 @@ $color-blue-accent: #00acdc;
     font-weight: 500;
     line-height: 18px;
     margin-bottom: 4px;
+    transition: $smooth;
   }
   &__code {
     color: $text-secondary-color;
@@ -68,14 +82,14 @@ $color-blue-accent: #00acdc;
     width: 100%;
     border-radius: 5px;
     font-size: 14px;
-    background-color: #00acdc;
+    background-color: $color-blue-accent;
     color: #fff;
     box-sizing: border-box;
-    border: 1px solid #00acdc;
+    border: 1px solid $color-blue-accent;
 
     &:hover {
       color: $color-blue-accent;
-      background-color: $color-white;
+      background-color: #fff;
       cursor: pointer;
     }
   }
