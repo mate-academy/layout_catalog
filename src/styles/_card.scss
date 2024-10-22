@@ -1,0 +1,123 @@
+@use './variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: variables.$width-card;
+  background-color: variables.$white-color;
+  padding: variables.$padding-card;
+  border: 1px solid variables.$crem-color;
+  margin: variables.$margin-card;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-weight: variables.$title-font-weight;
+    font-size: variables.$title-font-size;
+    color: variables.$main-color;
+    line-height: 18px;
+    margin: 0 0 4px;
+    transition: color 0.3s ease;
+
+    .card:hover & {
+      color: variables.$dark-blue-color;
+    }
+  }
+
+  &__code {
+    font-size: variables.$code-font-size;
+    font-weight: variables.$normal-font-weight;
+    margin: 0 0 16px;
+    color: variables.$grey-colort;
+    line-height: 14px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-amount {
+      font-size: variables.$reviews-font-size;
+      line-height: 14px;
+      color: variables.$main-color;
+      font-weight: variables.$normal-font-weight;
+    }
+  }
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+
+    &-star {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: no-repeat url(/src/images/star.svg);
+      background-position: center;
+    }
+
+    &--active-4 {
+      .card__stars-star:nth-child(-n + 4) {
+        background-image: url(/src/images/star-active.svg);
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18px;
+    margin: 24px 0 16px;
+  }
+
+  &__price-text {
+    font-size: variables.$price-text-font-size;
+    color: variables.$grey-colort;
+    font-weight: variables.$normal-font-weight;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    font-size: variables.$price-value-font-size;
+    font-weight: variables.$bold-font-weight;
+    color: variables.$main-color;
+    line-height: 18px;
+  }
+
+  &__button {
+    padding: 11px 69px;
+    background-color: variables.$blue-color;
+    border: 1px solid variables.$blue-color;
+    text-transform: uppercase;
+    font-weight: variables.$bold-font-weight;
+    color: variables.$white-color;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: variables.$button-font-size;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background-color: variables.$white-color;
+      color: variables.$blue-color;
+      border: 1px solid variables.$blue-color;
+    }
+  }
+}
