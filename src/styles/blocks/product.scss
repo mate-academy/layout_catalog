@@ -1,0 +1,155 @@
+/* Products */
+
+.catalog {
+  --column-count: 1;
+
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+
+  grid-template-rows: 2fr;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: $horizontal-card-gap $vertical-card-gap;
+  padding: 50px 0;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+/* #region Breakpoints */
+
+@media (min-width: 488px) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    --column-count: 4;
+  }
+}
+
+/* #endregion */
+
+.product-card {
+  box-sizing: border-box;
+  width: $product-card-width;
+
+  // border: 1px solid $card-border-color;
+  // border-radius: $card-border-radius;
+
+  @include hover-embed(
+    transform,
+    scale(1.2),
+    product-name,
+    color,
+    $card-text-hover
+  );
+  @include flex-container(flex, column, center, center);
+  @include border-style-color(
+    1px solid $card-border-color,
+    $card-border-radius
+  );
+
+  &__image {
+    background-image: $product-image;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 32px 19px 0;
+    box-sizing: border-box;
+
+    @include size(160px, 134px);
+  }
+
+  &__content {
+    margin: 40px 16px 16px;
+    font-family: $main-fonts, sans-serif;
+  }
+}
+
+.product-name {
+  margin: 0;
+
+  @include fonts-styles(500, 12px, 18px, $main-text-color);
+}
+
+.product-code {
+  margin: 4px 0 0;
+
+  @include fonts-styles(400, 10px, 14px, $second-text-color);
+}
+
+.product-rating {
+  margin: 16px 0 0;
+
+  @include flex-container(flex, row, space-between, center);
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+
+    color: $main-text-color;
+    margin: 0;
+  }
+}
+
+.stars {
+  gap: 4px;
+
+  @include flex-container(flex, row, center, center);
+
+  &__star {
+    background-image: $rating-star-active;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include size(16px, 16px);
+
+    &:last-of-type {
+      background-image: $rating-star;
+    }
+  }
+}
+
+.product-price {
+  margin: 24px 0 0;
+
+  @include flex-container(flex, row, space-between, center);
+
+  &__text {
+    margin: 0;
+
+    @include fonts-styles(400, 12px, 18px, $second-text-color);
+  }
+
+  &__value {
+    margin: 0;
+
+    @include fonts-styles(700, 16px, 18px, $main-text-color);
+  }
+}
+
+.buy-button {
+  box-sizing: border-box;
+  background-color: $main-blue-color;
+  margin: 16px 0 0;
+
+  @include border-style-color(1px solid $main-blue-color, $card-border-radius);
+  @include size(166px, 40px);
+  @include flex-container(flex, row, center, center);
+  @include fonts-styles(700, 14px, 16px, #fff);
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include hover(color, $main-blue-color);
+  @include hover(background-color, #ffff);
+}
