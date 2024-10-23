@@ -1,34 +1,31 @@
 .container {
   box-sizing: border-box;
+  max-width: 100%;
   padding: 50px 40px;
   display: grid;
   place-content: center;
   place-items: center;
-  row-gap: 48px 46px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
+  gap: 48px 46px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
-@media (min-width: 300px) {
-  .container {
+  @media (min-width: 300px) {
     grid-template-columns: repeat(1, 1fr);
   }
-}
 
-@media (min-width: 488px) {
-  .container {
+  @media (min-width: 488px) {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (min-width: 768px) {
-  .container {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 768px) {
+     grid-template-columns: repeat(3, 1fr);
   }
-}
 
-@media (min-width: 1024px) {
-  .container {
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    padding: 50px 128px;
   }
 }
 
@@ -39,7 +36,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 16px;
-  background-color: $white-color;
+  background-color: $main-white-color;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
@@ -74,7 +71,7 @@
     line-height: 14px;
     font-weight: 400;
     margin-top: 4px;
-    margin-bottom: 0;
+    margin-bottom: 16px;
     color: $grey-text-color;
   }
 
@@ -83,6 +80,7 @@
     font-size: 12px;
     line-height: 18px;
     font-weight: 400;
+    margin-top: 24px;
     color: $grey-text-color;
   }
 
@@ -102,8 +100,8 @@
   }
 
   &__button {
-    color: $white-color;
-    background-color: $blue-color;
+    color: $main-white-color;
+    background-color: $main-blue-color;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
@@ -113,18 +111,22 @@
     height: 40px;
     width: 166px;
     border-radius: 5px;
+    border: 1px solid $main-blue-color;
+
+    &:hover {
+      background-color: $main-white-color;
+      color: $blue-color;
+      border: 1px solid $main-blue-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: $title-color;
   }
 }
 
-.card:hover {
-  transform: scale(1.2);
-}
 
-.card:hover .card__title {
-  color: $title-color;
-}
-
-.card__button:hover {
-  background-color: $white-color;
-  color: $blue-color;
-}

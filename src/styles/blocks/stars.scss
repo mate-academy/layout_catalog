@@ -4,9 +4,9 @@
   flex-direction: row;
   padding-inline-start: 0;
   list-style-type: none;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   margin-right: 0;
-  margin-top: 16px;
+  margin-top: 0;
 
   &__star {
     display: inline-block;
@@ -18,25 +18,26 @@
     margin-right: 4px;
 
     &:last-child {
-      position: relative;
       margin-right: 0;
-    }
-
-    &:last-child::after {
-      position: absolute;
-      content: 'Reviews: 5';
-      color: $main-text-color;
-      white-space: nowrap;
-      font-size: 10px;
-      line-height: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-weight: 400;
-      right: -70px;
     }
   }
 }
 
-.stars--4 .stars__star:nth-child(-n + 4) {
-  background-image: url(../images/star-active.svg);
+@for $stars from 1 through 5 {
+  .stars--#{$stars} .stars__star:nth-child(-n + #{$stars}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #060b35;
 }
