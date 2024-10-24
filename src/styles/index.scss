@@ -1,3 +1,266 @@
-body {
-  margin: 0;
+// #region header
+:root {
+  --bg-color: #00acdc;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  justify-content: space-between;
+  height: 60px;
+  padding-right: 50px;
+
+  &__logo-moyo {
+    margin: 10px 50px;
+    height: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 60px;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    padding: 0;
+
+    &-button {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+      height: 100%;
+      line-height: 60px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    &-button:hover,
+    .is-active {
+      color: var(--bg-color);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  opacity: 1;
+}
+
+// #endregion
+// #region main
+.main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    margin-top: 50px;
+    margin-bottom: 72px;
+    height: 944px;
+    width: 862px;
+    background: #000;
+  }
+}
+
+// #endregion
+// #region card mixin
+$primary-color: #00acdc;
+$secondary-color: #616070;
+$triple-color: #060b35;
+$four-color: #fff;
+$font-size-sm: 10px;
+$font-size-md: 12px;
+$font-size-lg: 16px;
+
+// #endregion
+// #region card
+.card {
+  height: 406px;
+  width: 200px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: $four-color;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding-top: 32px;
+
+  transition:all 0.3s;
+
+  &:hover{
+    transform: scale(120%);
+  }
+
+  &__top {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  &__image {
+    background-image: url('../images/imac.jpeg');
+    width: 160px;
+    height: 134px;
+    background-repeat: round;
+    background-size: 100%;
+  }
+
+  &__description {
+    width: 166px;
+    height: 36px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $triple-color;
+
+    &--margin--top {
+      margin-top: 40px;
+    }
+  }
+
+  &__code {
+    width: 98px;
+    height: 14px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary-color;
+
+    &--margin--top {
+      margin-top: 4px;
+    }
+  }
+
+  &__priceBlock {
+    width: 166px;
+    height: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--margin--top {
+      margin-top: 24px;
+    }
+  }
+
+  &__txt {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondary-color;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $triple-color;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 166px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 5px;
+    background-color: $primary-color;
+    text-decoration: none;
+    color: $four-color;
+
+    &:hover {
+      background-color: $four-color;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+    }
+
+    &--margin--top {
+      margin-top: 16px;
+    }
+  }
+}
+
+// #endregion
+// #region card stars
+.card__rating {
+  width: 166px;
+  height: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--margin--top {
+    margin-top: 16px;
+  }
+}
+
+.card__stars-area {
+  padding: 0;
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+
+.card__stars {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/star.svg);
+  background-size: cover;
+
+  &:nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+.card__reviews {
+  height: 16px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #060b35;
+}
+
+// #endregion
