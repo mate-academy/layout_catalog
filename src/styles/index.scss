@@ -1,3 +1,203 @@
-body {
-  margin: 0;
+@import 'variables';
+@import 'main';
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: $white-color;
+
+  .logo-link {
+    display: block;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.style-nav {
+  display: flex;
+  align-items: center;
+
+  .style-link {
+    list-style: none;
+    display: flex;
+
+    li {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: $font-size-small;
+        color: $text-color;
+        line-height: 60px;
+        display: block;
+        text-align: center;
+        position: relative;
+
+        @include transition(color);
+
+        &:hover {
+          color: $main-color;
+        }
+
+        &--active {
+          color: $main-color;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            background-color: $main-color;
+            height: 4px;
+            border-radius: $border-radius;
+            left: 0;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  gap: $gap-vertical $gap-horizontal;
+  justify-content: center;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  width: $card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  padding: $card-padding;
+
+  @include transition(transform, background-color, color);
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-size: $font-size-small;
+    font-weight: 500;
+    line-height: 150%;
+    color: $text-color;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    color: #616070;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-small;
+    margin-bottom: 16px;
+    color: #333;
+
+    &-number {
+      font-weight: 700;
+      font-size: $font-size-large;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: $border-radius;
+    background-color: $main-color;
+    color: $white-color;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+
+    @include transition(background-color, color);
+
+    &:hover {
+      background-color: $white-color;
+      border: 1px solid $main-color;
+      color: $main-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $hover-color;
+    }
+  }
+}
+
+.stars-wrapper {
+  margin-bottom: 24px;
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--0 .stars__star:nth-child(-n + 0),
+  &--1 .stars__star:nth-child(-n + 1),
+  &--2 .stars__star:nth-child(-n + 2),
+  &--3 .stars__star:nth-child(-n + 3),
+  &--4 .stars__star:nth-child(-n + 4),
+  &--5 .stars__star:nth-child(-n + 5) {
+    background-image: url('../images/star-active.svg');
+  }
+}
+
+.stars__reviews-text {
+  padding-left: 17px;
+  font-size: 10px;
+  color: $text-color;
 }
