@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0 50px;
+  box-sizing: border-box;
   align-items: center;
   outline: none;
 }
@@ -35,28 +36,6 @@
     font-weight: 500;
     text-transform: uppercase;
 
-    &--active {
-      position: relative;
-      text-align: center;
-      color: $main-blue-color;
-    }
-
-    &--active::after {
-      position: absolute;
-      content: '';
-      display: block;
-      height: 4px;
-      width: 100%;
-      background-color: $main-blue-color;
-      border-radius: 8px;
-      bottom: 0;
-      left: 0;
-    }
-
-    &--active:hover {
-      color: $main-blue-color;
-    }
-
     &--nowrap {
       white-space: nowrap;
       overflow: hidden;
@@ -76,4 +55,26 @@
     margin: 0;
     padding: 0;
   }
+}
+
+.is-active {
+  position: relative;
+  text-align: center;
+  color: $main-blue-color;
+}
+
+.is-active::after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: $main-blue-color;
+  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+}
+
+.is-active:hover {
+  color: $main-blue-color;
 }
