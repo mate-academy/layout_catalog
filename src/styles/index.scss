@@ -4,9 +4,11 @@
 }
 
 * {
+  font-family: Roboto, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+
+  // box-sizing: border-box;
 }
 
 body {
@@ -24,8 +26,13 @@ body {
   height: 60px;
   padding-right: 50px;
 
+  &__logo {
+    height: 60px;
+  }
+
   &__logo-moyo {
-    margin: 10px 50px;
+    margin-top: 10px;
+    margin-left: 50px;
     height: 40px;
   }
 }
@@ -92,11 +99,12 @@ body {
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 406px);
+    gap: 48px 46px;
     margin-top: 50px;
     margin-bottom: 72px;
-    height: 944px;
-    width: 862px;
-    background: #000;
+    height: fit-content;
+    width: fit-content;
   }
 }
 
@@ -122,11 +130,7 @@ $font-size-lg: 16px;
   border: 1px solid #f3f3f3;
   padding-top: 32px;
 
-  transition:all 0.3s;
-
-  &:hover{
-    transform: scale(120%);
-  }
+  transition: all 0.3s;
 
   &__top {
     padding-left: 3px;
@@ -137,8 +141,8 @@ $font-size-lg: 16px;
     background-image: url('../images/imac.jpeg');
     width: 160px;
     height: 134px;
-    background-repeat: round;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   &__description {
@@ -153,6 +157,14 @@ $font-size-lg: 16px;
     &--margin--top {
       margin-top: 40px;
     }
+  }
+
+  &:hover {
+    .card__description {
+      color: #34568b;
+    }
+
+    transform: scale(120%);
   }
 
   &__code {
@@ -248,7 +260,7 @@ $font-size-lg: 16px;
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/star.svg);
-  background-size: cover;
+  background-size: auto;
 
   &:nth-child(-n + 4) {
     background-image: url(../images/star-active.svg);
