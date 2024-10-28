@@ -1,6 +1,17 @@
+// #region card mixin
+$primary-color: #00acdc;
+$secondary-color: #616070;
+$triple-color: #060b35;
+$four-color: #fff;
+$font-size-sm: 10px;
+$font-size-md: 12px;
+$font-size-lg: 16px;
+
+// #endregion
 // #region header
 :root {
   --bg-color: #00acdc;
+  --count-size-monitor: 1;
 }
 
 * {
@@ -8,7 +19,7 @@
   margin: 0;
   padding: 0;
 
-  // box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -98,25 +109,30 @@ body {
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(2, 406px);
+    grid-template-columns: repeat(var(--count-size-monitor), 200px);
+
+    grid-template-rows: repeat(406px);
+
+    @media (min-width: 488px) {
+      --count-size-monitor: 2;
+    }
+
+    @media (min-width: 768px) {
+      --count-size-monitor: 3;
+    }
+
+    @media (min-width: 1024px) {
+      --count-size-monitor: 4;
+    }
+
     gap: 48px 46px;
     margin-top: 50px;
-    margin-bottom: 72px;
+    margin-left: 40px;
+    margin-right: 40px;
     height: fit-content;
     width: fit-content;
   }
 }
-
-// #endregion
-// #region card mixin
-$primary-color: #00acdc;
-$secondary-color: #616070;
-$triple-color: #060b35;
-$four-color: #fff;
-$font-size-sm: 10px;
-$font-size-md: 12px;
-$font-size-lg: 16px;
 
 // #endregion
 // #region card
