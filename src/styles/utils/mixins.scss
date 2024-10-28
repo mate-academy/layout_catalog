@@ -1,0 +1,22 @@
+@mixin flex-center() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin responsive-columns($min-width, $columns) {
+  @media (min-width: $min-width) {
+    grid-template-columns: repeat($columns, 200px);
+  }
+}
+
+@mixin link-style($color, $hover-color: $blue-accent-color) {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
