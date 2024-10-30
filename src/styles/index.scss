@@ -1,3 +1,40 @@
-body {
-  margin: 0;
+@import './variables';
+@import './main';
+@import './card';
+@import './nav';
+@import './stars';
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: $white-color;
+
+  .logo-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  gap: $gap-vertical $gap-horizontal;
+  justify-content: center;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
