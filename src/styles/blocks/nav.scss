@@ -1,0 +1,36 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 60px;
+    line-height: 60px;
+    color: $main-text-color;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link:hover,
+  .is-active {
+    color: $main-accent-color;
+  }
+
+  .is-active::after {
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 4px;
+    height: 4px;
+    background-color: $main-accent-color;
+    border-radius: 8px;
+  }
+}
