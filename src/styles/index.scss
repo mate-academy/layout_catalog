@@ -1,3 +1,90 @@
+@import '/src/styles/card';
+@import '/src/styles/variables';
+@import '/src/styles/stars';
+@import '/src/styles/mixin';
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  color: #060b35;
+
+  @include max-width;
+  @include min-width;
+}
+
+html {
+  --color: #00acdc;
+}
+
+main {
+  padding: 18px 32px;
+}
+
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  @include grid;
+}
+
+.logo {
+  padding-top: 15px;
+  display: flex;
+  height: 40px;
+  width: 40px;
+}
+
+.logo__image {
+  height: 100%;
+  width: 100%;
+}
+
+.nav__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__item:not(:first-child) {
+  margin-left: 20px;
+}
+
+.nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #060b35;
+  transition: color 0.3s;
+  &:hover,
+  &.active,
+  &.is-active {
+    color: var(--color);
+  }
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--color);
 }
