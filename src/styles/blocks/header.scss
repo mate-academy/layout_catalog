@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #fff;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 50px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    padding-right: 50px;
+    margin-left: 243px;
+
+    @media (min-width: 1200px) {
+      & {
+        margin-left: 419px;
+      }
+    }
+
+    &-link {
+      @include smooth;
+
+      color: #060b35;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      padding: 22.5px 0;
+      margin-right: 20px;
+
+      &:hover {
+        color: #00acdc;
+      }
+
+      &:nth-child(4) {
+        color: #00acdc;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: #00acdc;
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #00acdc;
+    bottom: 0;
+    border-radius: 8px;
+  }
+}
