@@ -1,3 +1,44 @@
+@import '/src/styles/variables';
+@import '/src/styles/header';
+@import '/src/styles/nav';
+@import '/src/styles/card';
+
 body {
   margin: 0;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.catalog {
+  max-width: calc($card_width * 4 + $gap-between-cards * 3);
+  margin: 0 auto;
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 46px 48px;
+}
+
+@media screen and (min-width: 489px) {
+  .catalog {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+button {
+  font-family: inherit;
 }
