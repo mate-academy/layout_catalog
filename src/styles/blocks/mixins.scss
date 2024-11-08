@@ -1,0 +1,33 @@
+@mixin small() {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin content-grid-columns() {
+  grid-template-columns: repeat(1, 200px);
+
+  @include small {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @include medium {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @include large {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
