@@ -1,0 +1,47 @@
+@use 'variables' as varia;
+
+.nav {
+  margin-right: 50px;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 12px;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: varia.$main-text-color;
+    margin-left: 20px;
+    position: relative;
+    line-height: 60px;
+    display: block;
+    transition: color 300ms;
+
+    &:hover {
+      color: varia.$hover-color;
+    }
+  }
+}
+
+.is-active {
+  margin-left: 0;
+  color: varia.$hover-color;
+}
+
+.is-active::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: varia.$hover-color;
+  position: absolute;
+  bottom: 0;
+}
