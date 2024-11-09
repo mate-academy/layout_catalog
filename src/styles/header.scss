@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 #0000000d;
+  &__logo {
+    margin-top: 3px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  &__link {
+    margin-right: 20px;
+    transition: color 300ms ease;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $header-blue-color;
+    }
+  }
+
+  &__item {
+    display: flex;
+    /* stylelint-disable-next-line font-family-name-quotes */
+    font-family: 'Roboto', sans-serif;
+    color: $card-dark-text;
+    height: 60px;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: $header-blue-color;
+    }
+  }
+}
+
+.is-active {
+  color: $header-blue-color;
+  position: relative;
+}
+
+.is-active::after {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $header-blue-color;
+}
