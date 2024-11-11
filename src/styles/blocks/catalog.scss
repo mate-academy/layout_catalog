@@ -5,15 +5,15 @@
   padding: $catalog-padding-vertical $catalog-padding-horizontal;
 
   @media (min-width: 488px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr); // 2 columns starting from 488px
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr); // 3 columns starting from 768px
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr); // 4 columns starting from 1024px
   }
 }
 
@@ -24,11 +24,15 @@
   border-radius: $border-radius;
   padding: 32px 16px 16px;
   position: relative;
-  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
 
   &__image {
     width: 160px;
@@ -44,15 +48,10 @@
     line-height: 18px;
     margin: 0;
     transition: color 0.3s ease;
+  }
 
-    &:hover {
-      transform: scale(1.2);
-      z-index: 10;
-
-      .card__title {
-        color: #34568b;
-      }
-    }
+  &:hover .card__title {
+    color: #34568b;
   }
 
   &__product-code {
@@ -117,8 +116,8 @@
     display: inline-block;
     margin-top: 17px;
     box-sizing: border-box;
-    background-color: transparent;
-    color: $nav-link-color;
+    background: $color-primary;
+    color: $color-bg-white;
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
