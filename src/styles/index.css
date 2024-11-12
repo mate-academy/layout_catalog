@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: #616070;
+}
+
+.header {
+  display: -webkit-box;
+  display: --ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 50px;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.logo__image {
+  height: 100%;
+  width: 100%;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: --ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__item {
+  margin-left: 20px;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
+}
+
+.nav__link {
+  position: relative;
+  display: -webkit-box;
+  display: --ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 60px;
+  /* stylelint-disable-next-line font-family-name-quotes */
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #060b35;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: #00acdc;
+}
+
+.nav__link.is-active {
+  color: #00acdc;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #00acdc;
+}
+
+.stars {
+  display: -webkit-box;
+  display: --ms-flexbox;
+  display: flex;
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stars__star:last-child {
+  margin-right: 0;
+}
+
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(../images/star-active.svg);
+}
+
+.cards {
+  display: --ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 46px 48px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cards__card {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  background: #fff;
+}
+
+.card__image {
+  display: block;
+  margin: 0 auto 40px;
+  width: 160px;
+  height: 134px;
+}
+
+.card__title {
+  margin: 0 0 4px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #060b35;
+}
+
+.card__code {
+  margin-bottom: 16px;
+}
+
+.card__review-container {
+  display: -webkit-box;
+  display: --ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card__review-count {
+  color: #060b35;
+}
+
+.card__price-container {
+  display: -webkit-box;
+  display: --ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card__price-label {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.card__price {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #060b35;
+}
+
+.card__buy {
+  display: -webkit-box;
+  display: --ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid #00acdc;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #00acdc;
+  -webkit-transition:
+    background-color 0.3s,
+    color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.card__buy:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  color: #fff; /* Ensure this contrasts well with the border color */
+}
+/*# sourceMappingURL=index.css.map */
