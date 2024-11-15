@@ -1,79 +1,33 @@
-'use strict';
-// https://github.com/garris/BackstopJS#advanced-scenarios
-
-const backstop = require('@mate-academy/backstop-config');
-const { basicScenario } = backstop;
-
-const basic = {
-  ...basicScenario,
-  label: 'Elementary test',
-  referenceUrl: basicScenario.referenceUrl + '/catalog/',
-};
-
-const config = {
-  ...backstop,
-  fileNameTemplate: '{scenarioLabel}_{viewportLabel}',
-  onBeforeScript: 'puppet/onBefore.js',
-  onReadyScript: 'puppet/onReady.js',
+module.exports = {
+  id: "layout_catalog_test",
   viewports: [
     {
-      name: '1024px',
-      width: 1024,
-      height: 768,
+      label: "desktop",
+      width: 1920,
+      height: 1080,
     },
     {
-      name: '1200px',
-      width: 1200,
-      height: 768,
+      label: "tablet",
+      width: 768,
+      height: 1024,
     },
   ],
   scenarios: [
     {
-      ...basic,
-      label: 'Entire document',
-      selectors: ['document'],
+      label: "Home Page",
+      url: "http://localhost:8080",
+      selectors: ["document"],
+      misMatchThreshold: 0.1,
     },
-    {
-      ...basic,
-      label: 'Header tag',
-      selectors: ['header'],
-      misMatchThreshold: 5
-    },
-    {
-      ...basic,
-      label: 'Nav tag',
-      selectors: ['nav'],
-    },
-    {
-      ...basic,
-      label: 'Link with data-qa_hover',
-      selectors: ['[data-qa="nav-hover"]'],
-      hoverSelector: '[data-qa="nav-hover"]',
-      postInteractionWait: 1000,
-    },
-    {
-      ...basic,
-      label: 'Link with class_is-active',
-      selectors: ['a.is-active'],
-    },
-    {
-      ...basic,
-      label: 'Main tag',
-      selectors: ['main'],
-    },
-    {
-      ...basic,
-      label: 'Card with data-qa_card',
-      selectors: ['[data-qa="card"]'],
-    },
-    // {
-    //   ...basic,
-    //   label: 'Card with data-qa_card-hover',
-    //   selectors: ['[data-qa="card"]'],
-    //   hoverSelector: '[data-qa="card-hover"]',
-    //   postInteractionWait: 1000,
-    // },
   ],
+  paths: {
+    bitmaps_reference: "backstop_data/bitmaps_reference",
+    bitmaps_test: "backstop_data/bitmaps_test",
+    engine_scripts: "backstop_data/engine_scripts",
+    html_report: "backstop_data/html_report",
+    ci_report: "backstop_data/ci_report",
+  },
+  engine: "puppeteer",
+  report: ["browser"],
+  debug: false,
 };
-
-module.exports = config;
