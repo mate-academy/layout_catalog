@@ -37,6 +37,7 @@ const config = {
       ...basic,
       label: 'Header tag',
       selectors: ['header'],
+      misMatchThreshold: 5
     },
     {
       ...basic,
