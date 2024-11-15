@@ -20,11 +20,10 @@
       href="styles/index.css"
     />
   </head>
-
   <body>
     <header class="header">
       <a
-        href="#"
+        href="/"
         class="logo"
       >
         <img
@@ -37,15 +36,15 @@
         <ul class="nav__list">
           <li class="nav__item">
             <a
-              href="#"
-              class="nav__link is-active"
+              href="/apple"
+              class="nav__link"
             >
               Apple
             </a>
           </li>
           <li class="nav__item">
             <a
-              href="#"
+              href="/samsung"
               class="nav__link"
             >
               Samsung
@@ -53,7 +52,7 @@
           </li>
           <li class="nav__item">
             <a
-              href="#"
+              href="/smartphones"
               class="nav__link"
             >
               Smartphones
@@ -61,16 +60,15 @@
           </li>
           <li class="nav__item">
             <a
-              href="#"
+              href="/laptops"
               class="nav__link"
-              data-qa="nav-hover"
             >
               Laptops & Computers
             </a>
           </li>
           <li class="nav__item">
             <a
-              href="#"
+              href="/gadgets"
               class="nav__link"
             >
               Gadgets
@@ -78,7 +76,7 @@
           </li>
           <li class="nav__item">
             <a
-              href="#"
+              href="/tablets"
               class="nav__link"
             >
               Tablets
@@ -86,7 +84,7 @@
           </li>
           <li class="nav__item">
             <a
-              href="#"
+              href="/photo"
               class="nav__link"
             >
               Photo
@@ -94,7 +92,7 @@
           </li>
           <li class="nav__item">
             <a
-              href="#"
+              href="/video"
               class="nav__link"
             >
               Video
@@ -105,51 +103,39 @@
     </header>
 
     <main class="main">
-      <div id="product-container"></div>
+      <div
+        class="card"
+        data-qa="card"
+      >
+        <img
+          src="images/product.jpg"
+          alt="Product Image"
+          class="card__img"
+          onerror="this.src='images/default.jpg';"
+        />
+        <h2 class="card__title">Product Name</h2>
+        <p class="card__text-code">Product code: 195434</p>
+        <div class="card__review">
+          <div
+            class="stars"
+            data-reviews="4"
+          ></div>
+          <p class="card__text-review">Reviews: 5</p>
+        </div>
+        <div class="card__price">
+          <p class="card__text-price">Price:</p>
+          <p class="card__text-value">$2,199</p>
+        </div>
+        <a
+          href="#"
+          class="card__button"
+          data-qa="card-hover"
+        >
+          Buy
+        </a>
+      </div>
     </main>
 
-    <script>
-      const products = [
-        {
-          imgSrc: 'images/imac.jpeg',
-          altText: 'Apple iMac',
-          title: 'APPLE A1419 iMac 27" Retina 5K Monoblock (MNED2UA/A)',
-          code: '195434',
-          reviews: 5,
-          price: '$2,199',
-        },
-      ];
-
-      const productContainer = document.getElementById('product-container');
-
-      products.forEach((product) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.setAttribute('data-qa', 'card');
-
-        card.innerHTML = `
-          <img class="card__img" src="${product.imgSrc}" alt="${product.altText}" />
-          <h2 class="card__title">${product.title}</h2>
-          <p class="card__text-code">Product code: ${product.code}</p>
-          <div class="card__review">
-            <div class="stars">
-              <span class="stars__star"></span>
-              <span class="stars__star"></span>
-              <span class="stars__star"></span>
-              <span class="stars__star"></span>
-              <span class="stars__star"></span>
-            </div>
-            <p class="card__text-review">Reviews: ${product.reviews}</p>
-          </div>
-          <div class="card__price">
-            <p class="card__text-price">Price:</p>
-            <p class="card__text-value">${product.price}</p>
-          </div>
-          <a href="#" class="card__button">Buy</a>
-        `;
-
-        productContainer.appendChild(card);
-      });
-    </script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
