@@ -40,3 +40,4 @@ products.forEach((product) => {
 
   productContainer.appendChild(card);
 });
+
