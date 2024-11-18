@@ -32,7 +32,6 @@
 
   &__code {
     @include roboto-regular-400;
-
     margin-top: 4px;
     font-size: $font-size-small;
     line-height: $line-height-small;
@@ -82,6 +81,7 @@
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.2);
   }
 
   &:hover .card__info {
@@ -90,11 +90,16 @@
 }
 
 .card__buy-button {
+  display: flex; // Enable flexbox
+  justify-content: center; // Horizontally center the content
+  align-items: center; // Vertically center the content
   margin-top: 16px;
   background-color: $color-button-background;
   border: hidden;
-  height: 40px;
+  height: 39px;
   border-radius: 5px;
+  transition-duration: 300ms;
+  text-align: center;
 
   &:hover {
     border: 1px solid $color-button-background;
@@ -107,9 +112,13 @@
   }
 
   &-link {
+    @include roboto-bold-700;
+
+    font-size: $font-size-button;
+    line-height: $line-height-button;
+    margin: auto;
     color: $color-button-text;
     text-transform: uppercase;
     text-decoration: none;
-    font-weight: $font-weight-bold;
   }
 }
