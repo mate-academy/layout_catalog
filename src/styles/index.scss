@@ -1,3 +1,8 @@
+@import './utils/variables';
+@import './utils/mixins';
+@import './blocks/card';
+@import './blocks/stars';
+
 body {
   margin: 0;
   font-family: Roboto, serif;
@@ -5,9 +10,14 @@ body {
   font-style: normal;
 
   --main-color: #00acdc;
+  --col-number: 1;
 }
 
 header {
+  background-color: white;
+  z-index: 1;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +47,7 @@ header {
     text-decoration: none;
     font-size: 12px;
     height: 60px;
+    transition-duration: 300ms;
 
     &:hover {
       color: var(--main-color);
@@ -64,4 +75,26 @@ a.is-active {
   width: 40px;
   height: 40px;
   margin-right: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(var(--col-number), minmax(200px, 200px));
+  gap: 48px 46px;
+  padding-inline: 40px;
+  padding-block: 50px;
+  justify-content: center;
+  justify-items: center;
+
+  @media (min-width: 488px) {
+    --col-number: 2;
+  }
+
+  @media (min-width: 768px) {
+    --col-number: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --col-number: 4;
+  }
 }
