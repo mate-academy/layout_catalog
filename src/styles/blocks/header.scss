@@ -1,0 +1,65 @@
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: block;
+}
+
+.nav {
+  &_list ul {
+    display: flex;
+
+    list-style: none;
+    list-style-type: none;
+  }
+
+  &_list li a {
+    display: block;
+    line-height: 60px;
+  }
+
+  &_list li:not(:first-child) {
+    padding-left: 20px;
+  }
+
+  &_list ul li:nth-child(4) a:hover {
+    color: $navListColor;
+  }
+
+  &_link {
+    color: $mainTextColor;
+    text-decoration: none;
+  }
+
+  &_list .is-active {
+    display: block;
+    position: relative;
+    color: $navListColor;
+    line-height: 60px;
+    text-decoration: none;
+  }
+
+  &_list .is-active::after {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    height: 4px;
+    background-color: $navListColor;
+  }
+}
