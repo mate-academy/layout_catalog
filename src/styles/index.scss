@@ -1,3 +1,256 @@
+$main-color: #00acdc;
+$text-accent-color: #060b35;
+$text-secondary-color: #616070;
+
+.body {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-secondary-color;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header__logo {
+  display: block;
+  height: 40px;
+  width: 40px;
+
+  &-image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.nav__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__item {
+  margin-left: 20px;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
+}
+
+.nav__link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $text-accent-color;
+
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: $main-color;
+}
+
+.nav__link.is-active {
+  color: $main-color;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+  border-radius: 2px;
+  background-color: $main-color;
+}
+
+.cards {
+  grid-template-columns: repeat(1, 200px);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  box-sizing: border-box;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    & {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
+
+.cards__card {
+  margin-right: 48px;
+  margin-bottom: 46px;
+}
+
+.cards__card:nth-child(4n) {
+  margin-right: 0;
+}
+
+.cards__card:nth-last-child(-n + 4) {
+  margin-bottom: 0;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  background: #fff;
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $text-accent-color;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+  }
+}
+
+.card__review-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card__review-count {
+  color: $text-accent-color;
+}
+
+.card__price {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $text-accent-color;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &-label {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.card__buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: $main-color;
+}
+
+.card__buy:hover {
+  color: $main-color;
+  background-color: #fff;
+}
+
+/* Hover effects */
+.card:hover {
+  transform: scale(1.2); /* Scale up the card */
+}
+
+.card:hover .card__title {
+  color: #34568b; /* Change title color on hover */
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+  color: #00acdc; /* Change navigation link color */
+}
+
+.stars {
+  display: flex;
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stars__star:last-child {
+  margin-right: 0;
+}
+
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(../images/star-active.svg);
 }
