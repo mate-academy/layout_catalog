@@ -1,0 +1,20 @@
+@import './variables';
+@import './mixins';
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: $star-size;
+    height: $star-size;
+    background-image: url('./images/star-empty.png');
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.stars--4 &__star:nth-child(-n + 4) {
+      background-image: url('./images/star-active.png');
+    }
+  }
+}
