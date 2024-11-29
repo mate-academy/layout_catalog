@@ -1,3 +1,5 @@
+@use '../utils/mixins' as *;
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -44,10 +46,12 @@
     color: #060b35;
     height: 60px;
     text-decoration: none;
-  }
 
-  &__navigation-link:hover {
-    color: #00acdc;
+    @include transition;
+
+    &:hover {
+      color: #00acdc;
+    }
   }
 
   .is-active {
