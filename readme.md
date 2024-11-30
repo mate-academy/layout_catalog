@@ -38,7 +38,7 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] All components follow BEM and use SCSS
+- [ x] All components follow BEM and use SCSS
 - [ ] Repeated sizes and special colors are put to variables
 - [ ] Grid is used for the columns
 - [ ] Cards are shown in 1, 2, 3, or 4 columns based on screen resolution
