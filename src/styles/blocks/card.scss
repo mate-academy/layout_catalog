@@ -1,0 +1,133 @@
+@import '../utils/variables';
+
+
+.main {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat($column-count, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  $column-count: 2;
+  .main {
+    grid-template-columns: repeat($column-count, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  $column-count: 3;
+  .main {
+    grid-template-columns: repeat($column-count, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  $column-count: 4;
+  .main {
+    grid-template-columns: repeat($column-count, 200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  font-family: Roboto, serif;
+  transition-duration: $transition__duration;
+
+  @include content-padding-in-line;
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    margin-block: 32px 40px;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $card-text-color;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $card-h2-color;
+    margin-bottom: 16px;
+  }
+
+  &__price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $card-h2-color;
+  }
+
+  &__price-number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $card-text-color;
+  }
+
+  &__buy-link {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transition-duration: $transition__duration;
+
+    .card__title {
+      color: #34568b;
+      transition-duration: $transition__duration;
+    }
+  }
+
+  &__button {
+    display: flex;
+    padding-block: 12px;
+    justify-content: center;
+    align-items: center;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #00acdc;
+    margin-bottom: 16px;
+    transition-duration: $transition__duration;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid #00acdc;
+      transition-duration: $transition__duration;
+
+      .card__buy-link {
+        color: #00acdc;
+      }
+    }
+  }
+}
