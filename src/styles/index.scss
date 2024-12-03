@@ -3,23 +3,28 @@ body {
   font-family: Roboto, Arial, sans-serif;
 }
 
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
 .buy {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   padding: 12px 70px;
   color: rgba(255, 255, 255, 1);
-  background-color: $blue-accent;
+  background-color: rgba(0, 172, 220, 1);
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  border-radius: $rounding;
-  transition: $transition-duration;
+  border-radius: 5px;
+  transition: 300ms;
 
   &:hover {
-    background-color: $white;
-    color: $blue-accent;
-    border: $blue-border;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 172, 220, 1);
+    border: 1px solid rgba(0, 172, 220, 1);
   }
 }
 
@@ -36,10 +41,10 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 200px;
-  border: $gray-border;
+  border: 1px solid rgba(243, 243, 243, 1);
   padding: 32px 16px 16px;
-  border-radius: $rounding;
-  transition: $transition-duration;
+  border-radius: 5px;
+  transition: 300ms;
 
   &:hover {
     transform: scale(1.2);
@@ -59,12 +64,12 @@ body {
   }
 
   &:hover .card__title {
-    color: $title-hover;
+    color: #34568b;
   }
 
   &__code {
     font-size: 10px;
-    color: $secondary;
+    color: rgba(97, 96, 112, 1);
     margin-bottom: 16px;
   }
 
@@ -77,29 +82,83 @@ body {
 
   &__review {
     font-size: 10px;
-    color: $main-accent;
+    color: rgba(6, 11, 53, 1);
   }
 
   &__price {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-top: 14px;
   }
 
   &__price-text {
     line-height: 18px;
-    color: $secondary;
+    color: rgba(97, 96, 112, 1);
   }
 
   &__price-number {
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    color: $main-accent;
+    color: rgba(6, 11, 53, 1);
   }
 }
 
 .header {
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo img {
+    display: block;
+  }
+
+  .nav {
+    &__list {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+      display: flex;
+      list-style-type: none;
+      position: relative;
+
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 60px;
+      text-decoration: none;
+
+      .nav__link {
+        color: #000;
+
+        &:hover {
+          color: rgba(0, 172, 220, 1);
+        }
+
+        &-is-active {
+          color: rgba(0, 172, 220, 1);
+        }
+
+        &-is-active::after {
+          content: '';
+          position: absolute;
+          height: 4px;
+          width: 37px;
+          background-color: #00acdc;
+          border-radius: 8px;
+          bottom: 0;
+          left: 0;
+        }
+      }
+
+      &_item:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,15 +166,16 @@ body {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 
   &__logo-link {
-    display: flex;
+    display: block;
   }
-}
 
-.nav {
+} */
+
+/* .links {
   text-transform: uppercase;
   font-weight: 500;
 
-  &__list {
+  &-list {
     display: flex;
     list-style: none;
 
@@ -124,20 +184,20 @@ body {
     }
   }
 
-  &__link {
+  &-link {
     position: relative;
     display: block;
     text-decoration: none;
-    color: $main-accent;
+    color: rgba(6, 11, 53, 1);
     padding-block: 23px;
-    transition: $transition-duration;
+    transition: 300ms;
 
-    &--hover:hover {
-      color: $blue-accent;
+    &:hover {
+      color: rgba(0, 172, 220, 1);
     }
 
-    &--active {
-      color: $blue-accent;
+    &-active {
+      color: rgba(0, 172, 220, 1);
 
       &::before {
         content: '';
@@ -148,11 +208,11 @@ body {
         width: 100%;
         height: 4px;
         border-radius: 8px;
-        background-color: $blue-accent;
+        background-color: rgba(0, 172, 220, 1);
       }
     }
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -165,10 +225,10 @@ body {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  color: $main-accent;
+  color: rgba(6, 11, 53, 1);
 }
 
-.page__body {
+.body {
   margin: 0;
 }
 
@@ -191,14 +251,3 @@ body {
     background-position: center;
   }
 }
-
-$main-accent: rgba(6, 11, 53, 1);
-$secondary: rgba(97, 96, 112, 1);
-$white: rgba(255, 255, 255, 1);
-$blue-accent: rgba(0, 172, 220, 1);
-$gray-elements: rgba(243, 243, 243, 1);
-$transition-duration: 300ms;
-$gray-border: 1px solid $gray-elements;
-$title-hover: #34568b;
-$blue-border: 1px solid $blue-accent;
-$rounding: 5px;
