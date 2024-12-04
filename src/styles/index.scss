@@ -90,38 +90,32 @@ body {
 }
 
 .cards {
-  grid-template-columns: repeat(1, 200px);
-
-  display: flex;
-  flex-wrap: wrap;
-
+  display: grid;
   box-sizing: border-box;
+  flex-wrap: wrap;
   width: 1024px;
   margin: 0 auto;
   padding: 50px 40px;
 
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 49px 40px;
+
+  &__card {
+    margin-right: 48px;
+    margin-bottom: 46px;
+  }
+
   @media (min-width: 488px) {
-    & {
-      grid-template-columns: repeat(2, 200px);
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 768px) {
-    & {
-      grid-template-columns: repeat(3, 200px);
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (min-width: 1024px) {
-    & {
-      grid-template-columns: repeat(4, 200px);
-    }
+    grid-template-columns: repeat(4, 1fr);
   }
-}
-
-.cards__card {
-  margin-right: 48px;
-  margin-bottom: 46px;
 }
 
 .cards__card:nth-child(4n) {
@@ -215,18 +209,17 @@ body {
   background-color: #fff;
 }
 
-/* Hover effects */
 .card:hover {
-  transform: scale(1.2); /* Scale up the card */
+  transform: scale(1.2);
 }
 
 .card:hover .card__title {
-  color: #34568b; /* Change title color on hover */
+  color: #34568b;
 }
 
 .nav__link:hover,
 .nav__link.is-active {
-  color: #00acdc; /* Change navigation link color */
+  color: #00acdc;
 }
 
 .stars {
