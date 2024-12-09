@@ -1,18 +1,21 @@
 .card {
   width: 200px;
-  background-image: url(../images/imac.jpeg);
-  background-repeat: no-repeat;
-  background-position: center 32px;
-  background-size: 160px auto;
-  padding: 206px 16px 16px;
+  padding: 32px 16px 16px;
+  border: 1px solig lightgray;
+  border-radius: 2px;
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
 
+  &__image {
+    width: 160px;
+    margin: auto;
+  }
+
   &:hover {
     transform: scale(120%);
-    transition-duration: 300ms;
+    transition-duration: $effectDuration;
   }
 
   &__title {
@@ -20,6 +23,7 @@
     font-weight: 500;
     line-height: 18px;
     text-align: left;
+    margin-top: 42px;
   }
 
   &:hover &__title {
@@ -32,7 +36,7 @@
     line-height: 14px;
     color: $grey-color;
     text-align: left;
-    padding-top: 8px;
+    margin-top: 4px;
   }
 
   &__reviews {
@@ -66,24 +70,23 @@
 
   &__buy {
     &-button {
-      width: 166px;
+      width: 100%;
       height: 40px;
-      margin: auto;
       border-radius: 5px;
       background: $blue-color;
-      block-size: border-box;
+      box-sizing: border-box;
       border: 1px solid $blue-color;
-
       color: $color-white;
       font-size: 14px;
       font-weight: 700;
+      margin-top: 8px;
       text-transform: uppercase;
     }
 
-    &--button:hover {
-      background-color: #fff;
+    &-button:hover {
+      background-color: $color-white;
       color: $blue-color;
-      transition-duration: 300ms;
+      transition-duration: $effectDuration;
     }
   }
 }
