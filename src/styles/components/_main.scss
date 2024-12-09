@@ -1,0 +1,130 @@
+@use '../base/variables' as var;
+
+.main {
+  background-color: var.$color__white;
+  font-weight: 400;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 40px;
+  &__laptop {
+    width: 200px;
+    background-color: var.$color__white;
+    border-radius: var.$global-radius;
+    border: 1px solid var.$border-color;
+    grid-column: span 1;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+      .cards__laptop-titel {
+        color: #34568b;
+      }
+    }
+
+    &-image {
+      width: 160px;
+      height: 134px;
+      margin: 32px 19px 36px;
+    }
+    &-titel {
+      font-weight: 500;
+      font-size: 12px;
+      margin: 0 16px;
+      line-height: 18px;
+      margin-bottom: 4px;
+    }
+    &-code {
+      font-size: 10px;
+      line-height: 14px;
+      color: var.$color__gray;
+      margin-left: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 16px 24px;
+    height: 16px;
+    &-stars {
+      display: flex;
+      .star {
+        background-image: url(../images/star.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 16px;
+        width: 16px;
+        margin-right: 4px;
+        border-radius: 0.5px;
+        &--active {
+          background-image: url(../images/star-active.svg);
+        }
+      }
+    }
+
+    &-text {
+      font-size: 10px;
+      line-height: 14px;
+      text-align: right;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    line-height: 18px;
+    margin: 0 16px 16px;
+
+    &-text {
+      font-size: 12px;
+      font-weight: 400;
+      color: var.$color__gray;
+    }
+
+    &-sum {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    color: var.$color__white;
+    background-color: var.$color__blue;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    border-radius: var.$global-radius;
+    cursor: pointer;
+    margin: 0 16px 16px;
+
+    &:hover {
+      background-color: var.$color__white;
+      color: var.$color__blue;
+      border: 1px solid var.$color__blue;
+    }
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
