@@ -1,0 +1,58 @@
+@use '../base/variables' as var;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px var.$header__box-shadow;
+
+  &__logo-link {
+    display: flex;
+  }
+}
+
+.nav {
+  &__item {
+    position: relative;
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var.$color__black;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+
+    &.is-active {
+      color: var.$color__blue;
+
+      &::after {
+        position: absolute;
+        content: '';
+        background-color: var.$color__blue;
+        border-radius: 8px;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: var.$color__blue;
+    }
+  }
+}
