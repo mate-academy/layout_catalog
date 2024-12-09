@@ -1,0 +1,26 @@
+$strong-color: #060b35;
+$light-color: #616070;
+$blue-color: #00acdc;
+$white-color: #fff;
+$black-color: #000;
+$transition-time: 300ms;
+
+@mixin text-styling($size, $weight, $line-height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin media-mixin($screenSize, $selector, $prop, $value) {
+  @media (min-width: $screenSize) {
+    .#{$selector} {
+      #{$prop}: $value;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, min-content);
+  }
+}
