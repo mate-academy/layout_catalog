@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  --column-count: 1;
+}
+
+
+
+.main {
+  padding-top: 50px;
+  padding-inline: 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  row-gap: 48px;
+  column-gap: 46px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .main {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --column-count: 4;
+  }
+}
+
+.product {
+  margin-top: 1px;
+  margin-left: 1px;
+  width: $card-width;
+  height: $card-height;
+  border: 1px solid $white_color;
+  border-radius: $border-radius;
+  font-family: $font-family;
+
+  background-image: url(../images/imac.jpeg);
+  background-repeat: no-repeat;
+  background-size: 160px 134px;
+  background-position: center 33px;
+  transition: transform $anim-duration ease;
+
+  &:hover {
+    transform: scale(1.2);
+    .card__name {
+      color: #34568b; 
+    }
+  }
+}
+
+
