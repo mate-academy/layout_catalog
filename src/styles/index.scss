@@ -1,3 +1,77 @@
+@import './mixins';
+@import './variables';
+@import './nav';
+@import './card';
+@import './stars';
+@import './price';
+@import './button';
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+header {
+  font-family: Roboto, serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header {
+  height: 60px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 0 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.is-active {
+  position: relative;
+  color: #00acdc;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #00acdc;
+}
+
+// product card
+main {
+  @include roboto400;
+
+  padding: 50px 40px;
+}
+
+.catalog {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 48px 46px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
