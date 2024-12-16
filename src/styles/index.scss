@@ -1,3 +1,84 @@
+@import './mixins';
+@import './variables';
+@import './nav';
+@import './card';
+@import './stars';
+@import './price';
+@import './button';
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+header {
+  font-family: Roboto, serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header {
+  height: 60px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__link {
+    height: 40px;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: #00acdc;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #00acdc;
+}
+
+main {
+  @include roboto400;
+
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+
+.catalog {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
