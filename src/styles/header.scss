@@ -1,0 +1,72 @@
+@import './var';
+@import './main';
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  &__logo {
+    align-items: center;
+    height: 40px;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000;
+    height: 60px;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__link:hover {
+    color: $headercolor;
+    position: relative;
+  }
+
+  &__link:active {
+    color: $headercolor;
+    box-shadow: 0 4 0 $headercolor;
+  }
+
+  &__nav {
+    margin-right: 50px;
+  }
+}
+
+.is-acive {
+  position: relative;
+  color: $headercolor;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: $headercolor;
+  border-radius: 8px;
+}
