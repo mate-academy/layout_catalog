@@ -7,10 +7,20 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
+<<<<<<< HEAD
 - nav links color is not `black` anymore (nav links should have `#060b35` color)
 - add the class `is-active` to the first link (`Apple`) in the navigation
 - use `<main>` tag for cards container 
 - use the grid for cards with different numbers of columns:
+=======
+- Nav links color is not `black` any more
+- add class `is-active` to the first link (`Apple`) in navigation
+- use `<main>` for cards container
+- Use grid for cards with different number of columns:
+  - 4 starting from `1024px`
+  - 3 starting from `768px`
+  - 2 starting at `488px`
+>>>>>>> 8be889d3aeeb19bae05cbdd4158ac0306b893a0d
   - 1 for the smaller screens
   - 2 starting at `488px`
   - 3 starting from `768px`
@@ -32,9 +42,15 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 
 ## Checklist
 
+<<<<<<< HEAD
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
 - [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
 - [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+=======
+❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
+- [DEMO LINK](https://hatevadym.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://hatevadym.github.io/layout_catalog/report/html_report/)
+>>>>>>> 8be889d3aeeb19bae05cbdd4158ac0306b893a0d
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
