@@ -1,0 +1,92 @@
+@import './variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+
+  background-color: $background-header-color;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &-list {
+      display: flex;
+      list-style: none;
+
+      padding: 0;
+      margin: 0;
+
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    &-item {
+      padding-right: 20px;
+
+      position: relative;
+
+      &-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-decoration: none;
+
+        line-height: 60px;
+
+        font-size: 12px;
+        text-transform: uppercase;
+
+        color: $first-font-color;
+      }
+
+      &-link.is-active::after {
+        opacity: 1;
+      }
+
+      &-link.is-active {
+        color: $font-color-hover;
+      }
+
+      &-link:hover {
+        color: $font-color-hover;
+      }
+
+      &-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 4px;
+
+        background-color: $button-color;
+
+        border-radius: 8px;
+        opacity: 0;
+      }
+
+      &-link:hover::after {
+        opacity: 1;
+      }
+    }
+
+    &-item:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+[data-qa='nav-hover']:hover::after {
+  opacity: 0;
+}
