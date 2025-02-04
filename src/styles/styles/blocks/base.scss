@@ -1,0 +1,61 @@
+@use './variables.scss' as vars;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  display: grid;
+  gap: 46px 48px;
+  grid-template-columns: (1fr);
+  margin: 50px 40px 72px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 46px 48px;
+    margin: 50px 128px;
+  }
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.box {
+  width: 200px;
+  height: 408px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: vars.$second-color;
+
+  transition: transform 0.3s ease;
+
+  .box:hover {
+    transform: scale(1.2);
+  }
+}
