@@ -1,0 +1,88 @@
+.header {
+  height: 60px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Тінь
+  background-color: $color-white;
+  color: $color-text;
+  padding: 0 50px;
+  align-items: center; // Вирівнювання контенту по центру вертикально
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    padding: 0 50px; // Більші відступи для екранів від 768px
+  }
+
+  @media (min-width: 1020px) and (max-width: 1020px) {
+    padding: 0 50px; // Відступи для екранів шириною рівно 1020px
+  }
+
+  &__container {
+    display: flex;
+    max-width: 1200px;
+    min-width: 488px;
+    height: 60px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.navigation {
+  display: flex;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: $color-text;
+    text-decoration: none;
+    font-size: $font-size-medium;
+    line-height: 60px;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &.is-active {
+      color: $color-primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 8px;
+        width: 37px;
+        height: 4px;
+        background-color: $color-primary;
+      }
+    }
+  }
+}
