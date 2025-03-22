@@ -1,0 +1,70 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 60px;
+
+  flex-direction: row;
+
+  padding-left: 40px;
+  padding-right: 30px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &-logo {
+    margin: 10px;
+    margin-top: 11px;
+  }
+
+  &-nav {
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    li {
+      margin-right: 20px;
+    }
+
+    a {
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        @include underline;
+      }
+
+      &:hover {
+        color: $primary-blue;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .is-active {
+    position: relative;
+    color: $primary-blue;
+
+    &::after {
+      @include underline;
+
+      transform: scaleX(1);
+    }
+  }
+  .is-hover {
+    position: relative;
+    color: $primary-blue;
+  }
+}
