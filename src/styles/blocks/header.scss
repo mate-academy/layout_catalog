@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    display: block;
+    width: $logo-size;
+    height: $logo-size;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__list li:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__items-list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 15px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $main-text-color;
+    line-height: 60px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Roboto, sans-serif;
+    position: relative;
+    text-transform: uppercase;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &.is-active {
+      color: $blue-color;
+    }
+
+    &.is-active::after {
+      content: '';
+      display: block;
+      height: 4px;
+      border-radius: 8px;
+      width: 100%;
+      background-color: $blue-color;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
