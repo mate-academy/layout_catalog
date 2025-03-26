@@ -1,0 +1,118 @@
+.card {
+  width: $card-width;
+  box-sizing: border-box;
+  background-color: $white-color;
+  padding: 32px 16px 16px;
+
+  @include display-setting(flex, column, center, center);
+  @include border-radius;
+  @include border-setting(1px, solid, $border-color);
+
+  transition: transform 300ms;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &_title {
+    width: 100%;
+    margin-bottom: 4px;
+    transition: all 300ms;
+
+    @include text-setting(normal, 500, 12px, 18px, $primary-text-color, left);
+  }
+
+  &__product-code {
+    width: 100%;
+    margin-bottom: 16px;
+
+    @include text-setting(normal, 400, 10px, 14px, $secondary-text-color, left);
+  }
+
+  &__rate {
+    width: 100%;
+    margin-bottom: 24px;
+
+    @include display-setting(flex, row, flex-end, space-between);
+
+    &-number-review {
+      height: 100%;
+
+      @include text-setting(
+        normal,
+        400,
+        10px,
+        14px,
+        $primary-text-color,
+        right
+      );
+    }
+  }
+
+  &__price {
+    width: 100%;
+    margin-bottom: 16px;
+
+    @include display-setting(flex, row, end, space-between);
+
+    &-title {
+      @include text-setting(
+        normal,
+        400,
+        12px,
+        18px,
+        $secondary-text-color,
+        left
+      );
+    }
+    &-number {
+      @include text-setting(
+        normal,
+        700,
+        16px,
+        18px,
+        $primary-text-color,
+        right
+      );
+    }
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: $primary-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $white-color;
+    transition: all 300ms;
+
+    @include border-radius;
+    @include text-setting(normal, 700, 14px, 16px, $white-color, center);
+
+    &:hover {
+      background-color: $white-color;
+      color: $primary-color;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      @include border-setting(1px, solid, $primary-color);
+    }
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &:hover {
+    transform: scale(120%);
+  }
+}
