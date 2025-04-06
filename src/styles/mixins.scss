@@ -1,0 +1,29 @@
+@import 'variables';
+
+@mixin transition($property: all) {
+  transition: $property $transition-time ease-in-out;
+}
+
+@mixin button($bg, $hover-bg, $color: #fff, $property: background-color) {
+  background: $bg;
+  color: $color;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+
+  @include transition($property);
+
+  &:hover {
+    background: $button-hover-bg;
+    color: $button-hover-text;
+    border: 1px solid $button-hover-text;
+  }
+}
+
+@mixin grid($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 200px);
+  gap: $card-gap-vertical $card-gap-horizontal;
+  justify-content: center;
+}

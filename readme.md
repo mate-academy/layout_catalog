@@ -2,7 +2,7 @@
 
 Create an HTML page with a catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
 
-- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
+- use `Header`, `Stars` and `Card` blocks  from previous tasks but rewrite them using BEM and SCSS
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
@@ -17,7 +17,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
   - 4 starting from `1024px`
 - cards have fixed width - `200px`
 - the gap between cards should be - `46px` horizontally and `48px` vertically
-- cards container(catalog) have fixed paddings (`50px` vertically and `40px` horizontally)
+- cards container(catalog) have fixed paddings  (`50px` vertically and `40px` horizontally)
 
 Make all the changes smooth on hover (during 300ms):
 - increase the card by 20 percent (neighboring cards **should not be** affected)
@@ -33,14 +33,14 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ## Checklist
 
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://dNaiko.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://dNaiko.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] All components follow BEM and use SCSS
+- [ ] All components follow BEM and use  SCSS
 - [ ] Repeated sizes and special colors are put to variables
 - [ ] Grid is used for the columns
-- [ ] Cards are shown in 1, 2, 3, or 4 columns based on screen resolution
+- [ ] Cards are shown in 1, 2, 3, or 4  columns based on screen resolution
 - [ ] All changes on `:hover` are smooth
 - [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
