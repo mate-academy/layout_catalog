@@ -1,0 +1,36 @@
+@import 'variables';
+
+@mixin onPhone {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin gridTemplateColumns($repeatValue) {
+  .main {
+    grid-template-columns: repeat($repeatValue, $sizeProductCard);
+  }
+}
+
+@mixin active-stars($count) {
+  &--#{$count} &__star:nth-child(-n + #{$count}) {
+    background-image: url('../images/star-active.svg');
+  }
+}
