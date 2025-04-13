@@ -46,14 +46,14 @@ const config = {
     {
       ...basic,
       label: 'Link with data-qa_hover',
-      selectors: ['[data-qa="nav-hover"]'],
-      hoverSelector: '[data-qa="nav-hover"]',
+      selectors: ['[data-qa="nav"]'],
+      hoverSelector: '[data-qa="nav"]',
       postInteractionWait: 1000,
     },
     {
       ...basic,
       label: 'Link with class_is-active',
-      selectors: ['a.is-active'],
+      selectors: ['.is-active'],
     },
     {
       ...basic,
