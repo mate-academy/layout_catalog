@@ -1,11 +1,33 @@
 @import './variables';
 
+.card-catalog {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 47px 48px;
+
+  justify-items: center;
+  padding-block: 50px;
+}
+
+@media (min-width: 1024px) {
+  .card-catalog {
+    padding-inline: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-catalog {
+    padding-inline: 128px;
+  }
+}
+
 .card {
   box-sizing: border-box;
-  width: 200px;
+  width: 100%;
   font-family: Roboto, sans-serif;
   font-weight: $font-weight-medium;
-
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
 
   &__container {
     display: flex;
@@ -16,7 +38,7 @@
   &__image {
     box-sizing: border-box;
     display: block;
-    padding-top: 33px;
+    padding-top: 32px;
     padding-bottom: 41px;
     padding-inline: 20px;
     width: 100%;
@@ -74,7 +96,6 @@
     font-size: $font-size-large;
     color: #060b35;
     margin: 0;
-
   }
 
   &__button {
