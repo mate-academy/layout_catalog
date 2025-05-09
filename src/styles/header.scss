@@ -1,0 +1,84 @@
+@import 'variables';
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.header {
+  width: $header-width;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-main;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  &__img {
+    width: auto;
+    height: 40px;
+  }
+
+  &__nav {
+    margin-left: 350px;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: #000;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    gap: 40px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $link-color;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $main-color;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $main-color;
+      text-transform: uppercase;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -23px;
+        width: 37px;
+        height: 4px;
+        background-color: $main-color;
+        border-radius: 8px;
+      }
+    }
+
+    &[data-qa="nav-hover"] {
+      color: $main-color;
+    }
+  }
+}
