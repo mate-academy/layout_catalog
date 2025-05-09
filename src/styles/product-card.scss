@@ -1,47 +1,15 @@
-@import 'variables';
-@import 'stars';
-
-body {
-  margin: 0;
-  font-family: $font-family-main;
-}
-
-.main {
-  padding: 50px 40px;
-}
-
-.cards {
-  display: grid;
-  gap: 48px 46px;
-  justify-content: center;
-
-  @media (max-width: 487px) {
-    grid-template-columns: repeat(1, 200px);
-  }
-
-  @media (min-width: 488px) and (max-width: 767px) {
-    grid-template-columns: repeat(2, 200px);
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    grid-template-columns: repeat(3, 200px);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
-  }
-}
-
 .product-card {
   position: relative;
-  display: flex;
 
+  display: flex;
   flex-direction: column;
+
   box-sizing: border-box;
   z-index: 2;
-  width: $product-card-width;
 
+  width: $product-card-width;
   height: $product-card-height;
+
   padding: 33px;
 
   transition: transform 300ms;
@@ -49,83 +17,97 @@ body {
   &__image {
     width: $image-width;
     height: $image-height;
+
     margin-bottom: 36px;
   }
 
   &__title {
     width: $title-width;
-    margin-bottom: 0;
-    
-    font-size: $font-size-base;
-    font-weight: $font-weight-medium;
 
     margin-right: 0;
     margin-left: 0;
+    margin-bottom: 0;
+
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
 
     color: $text-color-main;
   }
 
   &__code {
+    margin-bottom: 12px;
+
     font-size: $font-size-small;
     font-weight: $font-weight-regular;
+
     color: $text-color-second;
-    margin-bottom: 12px;
   }
 
   &__stars-and-reviews {
     display: flex;
-    gap: 8px;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
+
     width: 100%;
   }
 
   &__reviews {
     display: flex;
     align-items: center;
+
+    margin-left: auto;
+
     font-size: $font-size-small;
     font-weight: $font-weight-regular;
+
     color: $text-color-main;
     white-space: nowrap;
-    margin-left: auto;
   }
 
   &__price {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     width: 100%;
     margin-top: 20px;
+
     font-size: $font-size-base;
     font-weight: $font-weight-regular;
+
     color: $text-color-second;
   }
 
   &__price-value {
+    margin-left: auto;
+
     font-size: $font-size-value;
     font-weight: $font-weight-bold;
+
     color: $text-color-main;
-    margin-left: auto;
   }
 
   &__button {
     width: $button-width;
     height: $button-height;
+
     font-family: $font-family-main;
     font-size: $font-size-button;
     font-weight: $font-weight-bold;
-    text-transform: uppercase;
-    color: $text-color-button;
 
+    text-transform: uppercase;
+
+    color: $text-color-button;
     background-color: $main-color;
 
     border: 1px solid $main-color;
     border-radius: $button-border-radius;
 
     &:hover {
-      border: 1px solid $main-color;
-      background-color: $button-color-hover;
       color: $button-text-hover;
+      background-color: $button-color-hover;
+      border: 1px solid $main-color;
     }
   }
 
