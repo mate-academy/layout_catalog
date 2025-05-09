@@ -6,15 +6,14 @@ body {
   font-family: $font-family-main;
 }
 
- .main {
-padding: 50px 40px;
- }
+.main {
+  padding: 50px 40px;
+}
 
 .cards {
   display: grid;
   gap: 48px 46px;
   justify-content: center;
-
 
   @media (max-width: 487px) {
     grid-template-columns: repeat(1, 200px);
@@ -33,19 +32,103 @@ padding: 50px 40px;
   }
 }
 
-
-
 .product-card {
   display: flex;
   flex-direction: column;
-  
+
+  position: relative;
+
   box-sizing: border-box;
+
   width: $product-card-width;
   height: $product-card-height;
-  padding: 33px;
-  position: relative;
-  transition: transform 300ms;
   z-index: 2;
+  padding: 33px;
+
+  transition: transform 300ms;
+
+  &__image {
+    width: $image-width;
+    height: $image-height;
+    margin-bottom: 36px;
+  }
+
+  &__title {
+
+    width: $title-width;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    margin-bottom: 0;
+    color: $text-color-main;
+
+    margin-right: 0;
+    margin-left: 0;
+
+  }
+
+  &__code {
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    color: $text-color-second;
+    margin-bottom: 12px;
+  }
+
+  &__stars-and-reviews {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    color: $text-color-main;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $text-color-second;
+  }
+
+  &__price-value {
+    font-size: $font-size-value;
+    font-weight: $font-weight-bold;
+    color: $text-color-main;
+    margin-left: auto;
+  }
+
+  &__button {
+    width: $button-width;
+    height: $button-height;
+    font-family: $font-family-main;
+    font-size: $font-size-button;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: $text-color-button;
+
+    background-color: $main-color;
+    
+    border: 1px solid $main-color;
+    border-radius: $button-border-radius;
+
+    &:hover {
+      background-color: $button-color-hover;
+      color: $button-text-hover;
+      border: 1px solid $main-color;
+    }
+  }
 
   &:hover {
     transform: scale(1.2);
@@ -54,103 +137,4 @@ padding: 50px 40px;
       color: $title-hover-color;
     }
   }
-
-&__image {
-  width:$image-width;
-  height:$image-height;
-  margin-bottom: 36px;
- }
- &__title {
-  font-size: $font-size-base;
-  font-weight:$font-weight-medium;
-  width: $title-width;
-  color: $text-color-main;
-  margin-bottom: 0px;
-  margin-left: 0;
-  margin-right: 0;
-
-
-
-
-
- }
-
- &__code {
- font-size: $font-size-small;
- color:$text-color-second;
- font-weight: $font-weight-regular;
- margin-bottom: 12px;
-
 }
-
-&__stars-and-reviews {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-}
-
- &__reviews {
-
-  display: flex;
-  align-items: center;
-  font-size: $font-size-small;
-  color:$text-color-main;
-  font-weight: $font-weight-regular;
-  white-space: nowrap;
-  margin-left: auto;
- }
-
-  &__price {
-  font-size:$font-size-base;
-  color:$text-color-second;
-  font-weight:$font-weight-regular;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
-  align-items: center;
-
-
-
-
-
-  }
-  &__price-value {
-  font-weight: $font-weight-bold;
-  color: $text-color-main;
-  font-size: $font-size-value;
-  margin-left: auto;
-
-
-
-  }
-
-
-  &__button {
-
-   width: $button-width;
-   height:$button-height;
-   background-color: $main-color;
-   color: $text-color-button;
-   font-size: $font-size-button;
-   border-radius:$button-border-radius;
-   border: 1px solid $main-color;
-   font-family: $font-family-main;
-   font-weight: $font-weight-bold;
-   font-size: $font-size-button;
-   text-transform: uppercase;
-
-
-
-  &:hover {
-    background-color: $button-color-hover;
-    color:$button-text-hover;
-    border: 1px solid $main-color;
-
-    }
-   }
-  }
-
-
