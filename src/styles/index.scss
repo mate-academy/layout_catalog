@@ -1,3 +1,232 @@
+@import './variables';
+@import './stars';
+
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-roboto;
+}
+
+.header {
+  width: 100%;
+  background: $color-white;
+  box-shadow: 0 2px 4px $color-black-50;
+  border-bottom: 1px solid $color-border-light;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-unit * 4;
+    width: $content-width;
+    margin: 0 auto;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-unit * 8;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-secondary;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: $spacing-unit * 2 0;
+    position: relative;
+
+    &:hover,
+    &[data-qa='nav-hover'] {
+      color: $color-primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $color-primary;
+      }
+    }
+
+    &.is-active {
+      color: $color-primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $color-primary;
+      }
+    }
+  }
+}
+
+.products {
+  width: $content-width;
+  margin: $content-top auto 0;
+
+  &__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, $card-width);
+    gap: 48px;
+    justify-content: center;
+  }
+}
+
+.card {
+  position: relative;
+  width: $card-width;
+  height: $card-height;
+
+  &__container {
+    position: absolute;
+    inset: 0.25% 0.5%;
+    background: $color-white;
+    border: 1px solid $color-border-light;
+    border-radius: $card-border-radius;
+  }
+
+  &__image {
+    position: absolute;
+    width: $card-image-width;
+    height: $card-image-height;
+    left: calc(50% - #{$card-image-width}/ 2);
+    top: $card-image-top;
+    object-fit: cover;
+  }
+
+  &__title {
+    position: absolute;
+    width: 166px;
+    height: 36px;
+    left: calc(50% - 166px / 2);
+    bottom: 165px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+    color: $color-secondary;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__description {
+    position: absolute;
+    width: 166px;
+    height: 14px;
+    left: calc(50% - 166px / 2);
+    bottom: 147px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    color: $color-text-light;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__review-section {
+    position: absolute;
+    width: 166px;
+    height: 16px;
+    left: calc(50% - 166px / 2);
+    bottom: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-unit * 2;
+  }
+
+  &__review-text {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    color: $color-text-light;
+  }
+
+  &__price-section {
+    position: absolute;
+    width: 166px;
+    height: 18px;
+    left: calc(50% - 166px / 2);
+    bottom: 73px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-unit * 2;
+  }
+
+  &__price-label {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+    color: $color-text-light;
+  }
+
+  &__price-value {
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-size-lg;
+    line-height: $line-height-md;
+    color: $color-secondary;
+
+    &::before {
+      content: '$';
+    }
+  }
+
+  &__link {
+    position: absolute;
+    width: 166px;
+    height: 40px;
+    left: calc(50% - 166px / 2);
+    bottom: 17px;
+    background: $color-primary;
+    border-radius: $card-border-radius;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $font-size-md;
+    line-height: $line-height-sm;
+    text-align: center;
+    color: $color-white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }
