@@ -1,0 +1,14 @@
+.main {
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px;
+  margin: 50px 40px;
+}
+
+@each $breakpoint, $count in $breakpoints {
+  @media (min-width: #{$breakpoint}) {
+    .main {
+      grid-template-columns: repeat(#{$count}, $card-width);
+    }
+  }
+}
