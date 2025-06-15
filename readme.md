@@ -33,95 +33,14 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ## Checklist
 
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://Mukola-VN.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://Mukola-VN.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] All components follow BEM and use SCSS
-- [ ] Repeated sizes and special colors are put to variables
-- [ ] Grid is used for the columns
-- [ ] Cards are shown in 1, 2, 3, or 4 columns based on screen resolution
-- [ ] All changes on `:hover` are smooth
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
-
-
-
-
-Практика з Frontend — сторінка каталогу
-Створи HTML-сторінку з каталогом. Розроби семантичну структуру сторінки, як показано на макеті.
-
-Вимоги:
-Використай блоки Header, Stars і Card з попередніх завдань, але перепиши їх, використовуючи BEM і SCSS.
-
-Видали старі атрибути data-qa.
-
-Додай data-qa="nav-hover" (саме так, не просто hover) до 4-го пункту меню навігації (Laptops & computers).
-
-Додай data-qa="card" до першої картки.
-
-Додай data-qa="card-hover" (не просто hover) до посилання "Buy" всередині першої картки.
-
-Колір тексту посилань навігації більше не чорний — він має бути #060b35.
-
-Додай клас is-active до першого посилання навігації (Apple).
-
-Для контейнера з картками використай тег <main>.
-
-Використай CSS Grid для карток з різною кількістю колонок:
-
-1 колонка для найменших екранів
-
-2 колонки — починаючи з ширини 488px
-
-3 колонки — з 768px
-
-4 колонки — з 1024px
-
-Картки мають фіксовану ширину — 200px.
-
-Відстані між картками:
-
-Горизонтальна — 46px
-
-Вертикальна — 48px
-
-Внутрішні відступи (padding) для контейнера з картками — 50px зверху і знизу, 40px зліва і справа.
-
-Анімації при наведенні (всі зміни повинні відбуватись плавно протягом 300 мс):
-Збільшуй картку на 20% при наведенні (сусідні картки не повинні змінюватись).
-
-Зміни колір тексту заголовка картки на #34568b, коли наводиш курсор на картку:
-
-scss
-Копіювати
-Редагувати
-.card:hover .card__title
-Зміни колір тексту посилання навігації на #00acdc при наведенні.
-
-Для кнопки "Buy" — при наведенні зроби фон #fff, а текст — #00acdc.
-
-ℹ️ Примітка:
-У цьому завданні дозволено безпосередньо підключати SCSS-файли в HTML за допомогою тега <link href="styles.scss" ...>, оскільки використовується бібліотека Parcel для збірки, яка підтримує SCSS:
-Parcel і SCSS
-
-✅ Чекліст
-❗️ Замініть <your_account> на свій GitHub-акаунт та додайте посилання до опису Pull Request:
-
-DEMO LINK
-
-TEST REPORT LINK
-
-❗️ Скопіюйте цей чекліст в опис PR після посилань і поставте - [x] навпроти кожного пункту, коли він виконаний.
-
- Усі компоненти дотримуються BEM і використовують SCSS
-
- Повторювані розміри й кольори винесені в змінні
-
- Для колонок використовується Grid
-
- Картки показуються у 1, 2, 3 або 4 колонки залежно від ширини екрану
-
- Всі зміни при наведенні є плавними
-
- Код відповідає вимогам до стилю ❗️
+- [X] All components follow BEM and use SCSS
+- [X] Repeated sizes and special colors are put to variables
+- [X] Grid is used for the columns
+- [X] Cards are shown in 1, 2, 3, or 4 columns based on screen resolution
+- [X] All changes on `:hover` are smooth
+- [X] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
