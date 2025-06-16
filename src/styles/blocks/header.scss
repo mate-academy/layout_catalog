@@ -1,0 +1,68 @@
+@use '/src/styles/utils/mixins' as *;
+
+$text-color: #060b35;
+$hover-color: #00acdc;
+$nav-height: 60px;
+$logo-width-height: 40px;
+
+.header {
+  font-weight: 500;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 50px;
+
+  &__logo-link {
+    width: $logo-width-height;
+    height: $logo-width-height;
+  }
+
+  &__nav {
+    display: flex;
+
+    &-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      line-height: $nav-height;
+      height: $nav-height;
+      color: $text-color;
+      font-size: 12px;
+
+      @include transition-300ms(color);
+
+      &:hover {
+        color: $hover-color;
+      }
+
+      &.is-active {
+        position: relative;
+        color: $hover-color;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          height: 4px;
+          width: 100%;
+          background-color: $hover-color;
+        }
+      }
+    }
+  }
+}
