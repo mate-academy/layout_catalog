@@ -1,0 +1,117 @@
+@use "var" as *;
+
+
+.header {
+  padding: 20px $padding-x;
+  background-color: #f8f8f8;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+
+  &__link {
+    text-decoration: none;
+    color: $dark-blue;
+    transition: color $transition;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: $gap-y $gap-x;
+  padding: $padding-y $padding-x;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  width: $card-width;
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: transform $transition;
+  box-sizing: border-box;
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $title-hover;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    transition: color $transition;
+  }
+
+  &__button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: $blue;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color $transition, color $transition;
+
+    &:hover {
+      background-color: #fff;
+      color: $blue;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  margin-bottom: 8px;
+
+  &__star {
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/star.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--1 .stars__star:nth-child(-n + 1),
+  &--2 .stars__star:nth-child(-n + 2),
+  &--3 .stars__star:nth-child(-n + 3),
+  &--4 .stars__star:nth-child(-n + 4),
+  &--5 .stars__star:nth-child(-n + 5) {
+    background-image: url('../images/star-active.svg');
+  }
+}
