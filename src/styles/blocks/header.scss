@@ -1,0 +1,68 @@
+@import '../utils/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 50px;
+  background-color: #fff;
+}
+
+.logo-link img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-list li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav-list a {
+  font-family: $font-family;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  color: $links-color;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+
+.nav-list a.is-active {
+  color: $color-blue;
+}
+
+.nav-list a.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $color-blue;
+  border-radius: 8px;
+}
+
+.nav-list a[data-qa='nav-hover']:hover {
+  color: $color-blue;
+}
