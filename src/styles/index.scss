@@ -1,3 +1,46 @@
-body {
+@import './header';
+@import './variables';
+@import './card';
+@import './stars';
+@import './spacing';
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+// section {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100%;
+// }
+
+.cards-container {
+  padding: 50px 40px;
+  margin: 0 auto;
+
+  max-width: 1024px;
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px 46px;
+  justify-items: center;
+
+  // grid setup
+  @mixin responsive-grid($breakpoint, $columns) {
+    @media (width < #{$breakpoint}) {
+      grid-template-columns: repeat(#{$columns}, 1fr);
+    }
+  }
+
+  @include responsive-grid($breakpoint-lg, 3);
+  @include responsive-grid($breakpoint-md, 2);
+  @include responsive-grid($breakpoint-sm, 1);
 }
