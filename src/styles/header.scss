@@ -1,0 +1,98 @@
+a {
+  text-decoration: none;
+}
+
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+.header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  line-height: 60px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  line-height: 60px;
+  height: 60px;
+}
+
+.nav__links {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav__links > li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+.nav__links > li:first-child {
+  margin-left: 0;
+}
+
+.nav__link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  color: $nav-link-color;
+  height: 60px;
+  &is-active {
+    position: relative;
+    color: $blue-color;
+    height: 60px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0;
+      bottom: 0;
+      border-radius: 8px;
+      background-color: $blue-color;
+    }
+  }
+}
+
+a.is-active {
+  position: relative;
+  color: $blue-color;
+  height: 60px;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: $blue-color;
+}
+
+.logo_link {
+  display: flex;
+  align-items: center;
+}
+
+.logo_link img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+[data-qa='nav-hover']:hover {
+  color: $blue-color;
+}
