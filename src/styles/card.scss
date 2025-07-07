@@ -1,0 +1,147 @@
+@import 'variables';
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $row-gap $column-gap;
+  justify-content: center;
+  padding: $card-container-padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media (min-width: 488px) {
+  .card-container {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  border: $card-border;
+  background-color: $card-bg;
+  border-radius: $card-radius;
+  font-family: $font-main;
+  font-size: 12px;
+  line-height: 18px;
+  padding: $card-padding;
+  display: flex;
+  flex-direction: column;
+  transition: all $transition-duration ease;
+
+  &__image {
+    margin: 0 0 24px;
+    padding: 0 3px;
+
+    img {
+      width: 160px;
+      height: 134px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__body {
+    padding: 16px 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $primary-color;
+    margin: 0 0 4px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card {
+      &__title {
+        color: #34568b;
+      }
+    }
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    color: #616070;
+    margin: 0 0 16px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $primary-color;
+    margin: 2px 0 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 16px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #616070;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $primary-color;
+  }
+
+  &__button {
+    border: 1px solid #00acdc;
+    color: #fff;
+    background: #00acdc;
+    padding: 8px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    transition: all $transition-duration ease;
+
+    &:hover {
+      border: 1px solid #00acdc;
+      color: #00acdc;
+      background: #fff;
+    }
+  }
+}
