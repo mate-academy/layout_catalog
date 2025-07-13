@@ -1,0 +1,86 @@
+@import 'variables';
+
+/* Stretch full width */
+.header {
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &-inner {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1025px) {
+  .header {
+    &-inner {
+      max-width: 1200px;
+    }
+  }
+}
+
+/* Logo image */
+.logo img {
+  display: block;
+  height: 40px;
+}
+
+/* Navigation list */
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: $font-main;
+  font-weight: 500;
+}
+
+.nav__list li {
+  margin: 0 10px;
+}
+
+.nav__list li:first-child {
+  margin-left: 0;
+}
+
+.nav__list li:last-child {
+  margin-right: 0;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: $primary-color;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 100%;
+  transition: all $transition-duration ease;
+}
+
+.nav__list a.is-active,
+.nav__list a:hover {
+  color: $hover-color;
+}
+
+.nav__list a.is-active {
+  position: relative;
+}
+
+.nav__list a.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $hover-color;
+}
