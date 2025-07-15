@@ -1,0 +1,1 @@
+//Mock dependência do sistema de testes;
