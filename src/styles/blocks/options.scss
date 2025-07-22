@@ -1,0 +1,41 @@
+@import 'variables';
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  .options:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.options__link {
+  text-decoration: none;
+  color: $title-color;
+  font-weight: 500;
+  line-height: 60px;
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    color: $secondary-button-color;
+    background-color: #fff;
+  }
+
+  &.is-active {
+    color: $secondary-button-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $secondary-button-color;
+      border-radius: 8px;
+    }
+  }
+}
