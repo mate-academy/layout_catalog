@@ -1,0 +1,81 @@
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+}
+
+header {
+  background-color: #fff;
+  height: 60px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin: 0;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 20px;
+}
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $color-primary;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+  line-height: 60px;
+  padding: 0;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.nav__link.is-active {
+  color: $color-accent;
+  position: relative;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  font-weight: 700;
+  background-color: $color-accent;
+  border-radius: 8px;
+}
+
+.nav__link:hover {
+  color: $color-accent;
+}

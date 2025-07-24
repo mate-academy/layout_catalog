@@ -1,3 +1,34 @@
-body {
+@import './reset';
+@import './variables';
+@import './header';
+@import './stars';
+@import './card';
+
+body,
+html {
   margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: $font-family;
+}
+
+.catalog__container {
+  display: grid;
+  grid-template-columns: 200px;
+  gap: $gap-y $gap-x;
+  padding: $catalog-padding-v $catalog-padding-h;
+  justify-content: center;
+  justify-items: center; // dodane!
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
