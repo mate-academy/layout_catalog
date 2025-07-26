@@ -1,0 +1,119 @@
+@use '../abstracts/variables' as vars;
+
+.product-list {
+  display: grid;
+  padding: 50px 40px; // padding kontenera: 50px pionowo, 40px poziomo
+  gap: 48px 46px;
+  justify-content: center; // wycentrowanie gridu
+
+  // Domyślnie 1 kolumna (np. na bardzo małych ekranach)
+  grid-template-columns: 200px;
+
+  // od 488px — 2 kolumny
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  // od 768px — 3 kolumny
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  // od 1024px — 4 kolumny
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: color 0.3 ease;
+
+    .card:hover & {
+      color: #34568b;
+    }
+  }
+
+  &__code {
+    font-size: 0.6rem;
+    color: #666;
+    margin-bottom: 1rem;
+    text-align: left;
+    letter-spacing: 0.03rem;
+    font-weight: 400;
+  }
+
+  &__price-label {
+    font-size: 0.5rem;
+    font-weight: normal;
+    margin: 0.5rem 0 0;
+  }
+
+  &__price {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    padding: 0 0.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+
+  &__buy {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: vars.$light-blue-color;
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover {
+      background-color: vars.$background-color;
+      color: vars.$light-blue-color;
+      border-color: vars.$background-color;
+    }
+  }
+}
