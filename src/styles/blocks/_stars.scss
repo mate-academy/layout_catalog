@@ -1,0 +1,36 @@
+.stars {
+  position: relative;
+
+  display: inline-block;
+
+  width: 100px; // 5 estrelas de 20px cada
+  height: 20px;
+
+  background-image: url('../images/star.svg');
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: 20px 20px;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0; // será sobrescrito pelos modificadores
+    height: 100%;
+
+    background-image: url('../images/star-active.svg');
+    background-repeat: repeat-x;
+    background-position: left center;
+    background-size: 20px 20px;
+  }
+
+  &--0::before { width: 0%; }
+  &--1::before { width: 20%; }
+  &--2::before { width: 40%; }
+  &--3::before { width: 60%; }
+  &--4::before { width: 80%; }
+  &--5::before { width: 100%; }
+}
