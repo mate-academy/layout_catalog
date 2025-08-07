@@ -1,0 +1,44 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as var;
+
+.nav {
+  &__list {
+    @include mix.flex-layout(space-between, center);
+  }
+
+  &__item {
+    flex-shrink: 0;
+
+    & + & {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    height: 60px;
+    display: inline-block;
+    text-transform: uppercase;
+
+    @include mix.font(12px, 60px, 500);
+    @include mix.hover {
+      color: var.$primary-accent-color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: var.$primary-accent-color;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: var.$primary-accent-color;
+
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+}

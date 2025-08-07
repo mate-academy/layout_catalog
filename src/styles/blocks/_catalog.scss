@@ -1,0 +1,24 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as var;
+
+.catalog {
+  padding: 50px 40px;
+
+  --cols: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 200px);
+  justify-content: center;
+  gap: 46px 48px;
+
+  @include mix.responsive(488px) {
+    --cols: 2;
+  }
+
+  @include mix.responsive(768px) {
+    --cols: 3;
+  }
+
+  @include mix.responsive(1024px) {
+    --cols: 4;
+  }
+}
