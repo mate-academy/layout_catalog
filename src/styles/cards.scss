@@ -1,6 +1,6 @@
 .catalog {
   padding: 50px 40px;
-
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(1, 200px);
   gap: 46px 48px;
@@ -26,8 +26,8 @@
 }
 
 .card {
-  box-sizing: border-box;
   display: flex;
+  box-sizing: border-box;
   width: $card-width;
   border: 1px solid rgba(243, 243, 243, 1);
   border-radius: $border-radius;
@@ -35,10 +35,9 @@
   overflow: hidden;
 
   flex-direction: column;
+  transition: transform 300ms;
 
   &:hover {
-    transition: transform 300ms;
-
     transform: scale(1.2);
   }
 
@@ -64,11 +63,7 @@
     color: #060b35;
     margin: 0;
     line-height: 18px;
-
-    &:hover {
-      cursor: pointer;
-      color: #34568b;
-    }
+    transition: color 300ms;
   }
 
   &__code {
@@ -133,6 +128,9 @@
     padding: 12px;
     border-radius: $border-radius;
     margin-top: 16px;
+    transition:
+      background-color 300ms,
+      color 300ms;
 
     &:hover {
       color: #00acdc;
@@ -140,4 +138,8 @@
       background-color: #fff;
     }
   }
+}
+
+.card:hover .card__title {
+  color: #34568b;
 }
