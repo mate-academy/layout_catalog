@@ -1,0 +1,28 @@
+@use 'variables' as var;
+
+@mixin flex-layout($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font($size, $line-height, $weight: normal, $color: var.$primary-color) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin hover($prop) {
+  transition: $prop 300ms;
+
+  &:hover {
+    @content;
+  }
+}
+
+@mixin responsive($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
