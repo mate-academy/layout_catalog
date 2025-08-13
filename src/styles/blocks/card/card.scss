@@ -4,26 +4,24 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   display: flex;
-  width: 200px;
+  width: $card-width;
   height: 408px;
   flex-direction: column;
   align-items: center;
-  transition: transform 300ms;
+
+  @include smooth(transform, scale(1.2));
 
   &__describe {
     font-weight: 500;
   }
 
   &:hover {
-    transform: scale(1.2);
-
     .card__describe {
       color: #34568b;
     }
   }
 
   &__top {
-    width: 100%;
     padding-inline: 19px;
   }
 
@@ -37,27 +35,21 @@
   &__product-code {
     color: $grey__color;
     font-size: 10px;
-    font-weight: 400;
+    font-weight: $font-weight;
     line-height: 14px;
   }
   &__reviews {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between;
 
     &-text {
-      font-weight: 400;
+      font-weight: $font-weight;
       font-size: 10px;
       line-height: 14px;
       color: $dark-color;
     }
   }
   &__price {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between;
 
     &-text {
       color: $grey__color;
@@ -68,9 +60,8 @@
     }
   }
   &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-jc-center;
+
     width: 166px;
     height: 40px;
     background-color: $blue__color;
@@ -82,6 +73,7 @@
       font-size: 14px;
       font-weight: 700;
       line-height: 16px;
+      transition: all 300ms;
     }
     &:hover {
       background-color: $white__color;
