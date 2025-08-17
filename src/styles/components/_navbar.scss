@@ -5,27 +5,29 @@ header {
   @include flex-center(row, space-between, center);
 }
 
-.menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.navbar {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-  @include flex-center;
-}
-
-.menu-item {
-  position: relative;
-  margin: 0 $menu-item-margin;
-
-  &:first-child {
-    margin-left: 0;
+    @include flex-center;
   }
 
-  &:last-child {
-    margin-right: 0;
+  &__item {
+    position: relative;
+    margin: 0 $menu-item-margin;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  .menu-link {
+  &__link {
     height: $menu-link-height;
     font-size: $menu-link-font-size;
     text-transform: uppercase;
@@ -35,11 +37,11 @@ header {
     @include flex-center(row, center, center);
 
     &:hover,
-    &--active {
+    &.is-active {
       color: $nav-link-hover-color;
     }
 
-    &--active::after {
+    &.is-active::after {
       content: '';
       position: absolute;
       left: 0;
