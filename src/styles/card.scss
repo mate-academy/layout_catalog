@@ -2,6 +2,7 @@
 
 .card {
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   background-color: $white;
   transition: transform 300ms ease;
@@ -43,7 +44,7 @@
     line-height: 18px;
     color: $main-color;
     margin-bottom: 4px;
-    transition: transform 300ms ease;
+    transition: color 300ms ease;
   }
 
   &__description {
@@ -104,6 +105,7 @@
 
   &__button {
     display: flex;
+    box-sizing: border-box;
     height: 40px;
     width: 100%;
     justify-content: center;
@@ -113,7 +115,7 @@
     line-height: 16px;
     text-align: center;
     text-transform: uppercase;
-    border: 0 solid transparent;
+    border: 1px solid transparent;
     border-radius: 5px;
     background-color: $button-color;
     text-decoration: none;
@@ -125,7 +127,10 @@
       background-color: $white;
       border-color: $button-color;
       color: $button-color;
-      transition: transform 300ms ease;
+      transition:
+        background-color 300ms ease,
+        color 300ms ease,
+        border-color 300ms ease;
     }
   }
 }
@@ -135,7 +140,7 @@
   transition: transform 300ms ease;
 }
 
-.card__title:hover {
+.card:hover .card__title {
   color: #34568b;
   transition: transform 300ms ease;
 }
