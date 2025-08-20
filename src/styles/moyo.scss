@@ -1,0 +1,78 @@
+@import 'variables';
+
+.moyo {
+  width: 100%;
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    background-color: $white;
+    padding-right: 50px;
+
+    &__logo img {
+      margin-left: 50px;
+      padding: 0;
+      margin-top: 4px;
+      height: 40px;
+      width: 40px;
+    }
+
+    &__nav {
+      display: flex;
+
+      &-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        color: $main-color;
+        height: 60px;
+        margin-left: 20px;
+        line-height: 100%;
+        font-size: 12px;
+        text-decoration: none;
+        transition: color 300ms;
+      }
+    }
+
+    .moyo-header__nav-link:hover {
+      color: $button-color;
+    }
+
+    .moyo-header__nav-item:first-child .moyo-header__nav-link {
+      margin: 0;
+    }
+
+    .is-active {
+      position: relative;
+      color: $button-color;
+    }
+
+    .is-active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 56px;
+      height: 4px;
+      background-color: $button-color;
+      border-radius: 8px;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+}
