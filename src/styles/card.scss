@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0 16px;
-  transition: transform 300ms ease;
+  transition: transform $transition-duration ease;
 
   &__img {
     width: 160px;
@@ -19,7 +19,7 @@
     margin-top: 32px;
   }
 
-  &__description {
+  &__title {
     width: 100%;
     height: 36px;
     font-family: Roboto, sans-serif;
@@ -28,6 +28,7 @@
     line-height: 18px;
     margin-top: 40px;
     color: $dark-color;
+    transition: color $transition-duration;
   }
 
   &__product-code {
@@ -84,6 +85,9 @@
     align-items: center;
     justify-content: center;
     margin-top: 16px;
+    transition:
+      color $transition-duration,
+      background-color $transition-duration;
 
     &:hover {
       color: $button-background;
@@ -95,17 +99,17 @@
   &:hover {
     transform: scale(1.2);
 
-    .card__description {
-      color: #34568b;
+    .card__title {
+      color: $title-hover;
     }
 
     .card__link {
-      color: #00acdc;
+      color: $button-background;
     }
 
     .card__button {
-      background-color: #fff;
-      color: #00acdc;
+      background-color: $font-color;
+      color: $button-background;
     }
   }
 }
