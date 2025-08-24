@@ -1,0 +1,73 @@
+// Header variables
+$header-height: 60px;
+$header-padding: 0 50px;
+$nav-link-margin: 20px;
+$nav-link-border-radius: 8px;
+$nav-link-border-height: 4px;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $header-padding;
+}
+
+.logo {
+  display: block;
+  height: $spacing-xl;
+
+  &__image {
+    display: block;
+    height: 100%;
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: $spacing-none;
+    padding: $spacing-none;
+  }
+
+  &__link {
+    position: relative;
+    height: $header-height;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-items: center;
+    color: $primary-color;
+    font-size: $font-size-sm;
+    margin-right: $nav-link-margin;
+    line-height: $header-height;
+    display: inline-block;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &.is-active {
+      color: $accent-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: $spacing-none;
+        left: $spacing-none;
+        width: 100%;
+        height: $nav-link-border-height;
+        background-color: $accent-color;
+        border-radius: $nav-link-border-radius;
+      }
+    }
+  }
+
+  &__item {
+    &:last-child {
+      .nav__link {
+        margin-right: $spacing-none;
+      }
+    }
+  }
+}

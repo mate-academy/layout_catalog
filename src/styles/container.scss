@@ -1,0 +1,26 @@
+@import './variables';
+@import './mixins';
+
+// Container variables
+$container-padding: $spacing-xxl $spacing-xl;
+$container-gap-row: 46px;
+$container-gap-column: 48px;
+$container-columns-mobile: 1;
+$container-columns-tablet: 2;
+$container-columns-desktop: 3;
+$container-columns-large: 4;
+
+.container {
+  padding: $container-padding;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  gap: $container-gap-row $container-gap-column;
+
+  @include responsive-grid(
+    $container-columns-mobile,
+    $container-columns-tablet,
+    $container-columns-desktop,
+    $container-columns-large
+  );
+}

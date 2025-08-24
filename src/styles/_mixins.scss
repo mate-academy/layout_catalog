@@ -1,0 +1,45 @@
+// Media query mixins
+@mixin mobile-up {
+  @media (min-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Grid columns mixin
+@mixin grid-columns($columns, $width: $card-width) {
+  grid-template-columns: repeat($columns, $width);
+}
+
+// Responsive grid mixin
+@mixin responsive-grid(
+  $mobile-cols: 1,
+  $tablet-cols: 2,
+  $desktop-cols: 3,
+  $large-cols: 4
+) {
+  grid-template-columns: repeat($mobile-cols, $card-width);
+
+  @include mobile-up {
+    @include grid-columns($tablet-cols);
+  }
+
+  @include tablet-up {
+    @include grid-columns($desktop-cols);
+  }
+
+  @include desktop-up {
+    @include grid-columns($large-cols);
+  }
+}
