@@ -1,14 +1,25 @@
+@import './variables';
+
+$blue: #00acdc;
+$white: #fff;
+$white-other: #f3f3f3;
+$gray: #616070;
+$black: #060b35;
+$blue-black: #34568b;
+
 .card {
-  background-color: #fff;
+  background-color: $white;
   box-sizing: border-box;
   width: 200px;
   height: 408px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $white-other;
   border-radius: 5px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  transition: transform 300ms, color 300ms;
+  transition:
+    transform $transition,
+    color $transition;
 
   &__image {
     width: 160px;
@@ -25,7 +36,7 @@
   &__info {
     &-product-name {
       font-weight: 500;
-      color: #060b35;
+      color: $black;
       margin: 0;
       width: 166px;
       line-height: 18px;
@@ -34,7 +45,7 @@
 
     &-product-id {
       margin: 4px 0 0;
-      color: #616070;
+      color: $gray;
       font-weight: 400;
       font-size: 10px;
       line-height: 14px;
@@ -69,7 +80,7 @@
     }
 
     .reviews {
-      color: #060b35;
+      color: $black;
       width: 53px;
       height: 14px;
       text-align: right;
@@ -89,14 +100,14 @@
     justify-content: space-between;
     height: 18px;
     &-text {
-      color: #616070;
+      color: $gray;
       font-weight: 400;
       font-size: 12px;
       line-height: 18px;
     }
 
     &-value {
-      color: #060b35;
+      color: $black;
       font-weight: 700;
       font-size: 16px;
       line-height: 18px;
@@ -107,11 +118,11 @@
     margin: 16px 0 0;
     width: 164px;
     height: 38px;
-    border: 1px solid #00acdc;
+    border: 1px solid $blue;
     border-radius: 5px;
-    background-color: #00acdc;
+    background-color: $blue;
     font-weight: 700;
-    color: #fff;
+    color: $white;
     font-size: 14px;
     line-height: 16px;
     text-align: center;
@@ -119,12 +130,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color 300ms, background-color 300ms;
+    transition:
+      color $transition,
+      background-color $transition;
   }
 
   &__button:hover {
-    background-color: #fff;
-    color: #00acdc;
+    background-color: $white;
+    color: $blue;
   }
 
   &:hover {
@@ -132,6 +145,6 @@
   }
 
   &:hover .card__info-product-name {
-    color: #34568b;
+    color: $blue-black;
   }
 }
