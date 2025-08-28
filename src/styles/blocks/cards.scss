@@ -2,15 +2,14 @@
   box-sizing: border-box;
   border: 1px solid $color-white-smoke;
   border-radius: 5px;
-  width: 200px;
-  transition-duration: 300ms;
+  width: $card-width;
+  transition: transform 300ms;
+  will-change: transform;
+  transform-origin: center;
   padding: 32px 16px 16px;
 
-  &__img {
-    width: 160px;
-    height: 134px;
-    display: block;
-    margin: 0 auto 40px;
+  &:hover {
+    transform: scale(1.2);
   }
 
   &__title {
@@ -20,11 +19,18 @@
     font-weight: 500;
     line-height: 18px;
     color: $color-vivid-blue;
-    transition-duration: 300ms;
+    transition: color 300ms;
+  }
 
-    &:hover {
-      color: #34568b;
-    }
+  &:hover .card__title {
+    color: #34568b;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 0 auto 40px;
   }
 
   &__product-code {
@@ -75,7 +81,9 @@
     line-height: 16px;
     text-decoration: none;
     display: flex;
-    transition-duration: 300ms;
+    transition:
+      color 300ms,
+      background-color 300ms;
 
     &:hover {
       background-color: $color-white;
