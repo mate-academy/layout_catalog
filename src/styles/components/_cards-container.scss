@@ -1,24 +1,26 @@
 .cards-container {
   display: grid;
+  grid-template-columns: repeat(1, 200px); 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 50px 40px; // базове значення для мобільних і 1024px
   gap: 46px 48px;
-  flex-wrap: wrap;
-  padding: 50px 40px; // top-bottom left-right
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  overflow: visible;
+  justify-items: center;
 
-  place-items: center;
-
-
-   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
   }
 
-    @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
   }
-
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 200px);
+    padding: 50px 40px; // для 1024px і більше
+  }
+
+  @media (min-width: 1200px) {
+    padding: 50px 128px; // для 1200px і більше
   }
 }
