@@ -6,17 +6,17 @@ body {
 }
 
 .card {
+  cursor: pointer;
   box-sizing: border-box;
   border: 1px solid $borderColor;
   border-radius: 5px;
   width: $cardWidth;
-  height: $cardHeight;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  transition: transform $transitionTime;
   &__bottom {
-    margin-inline: $inlineMardin;
+    margin-inline: $inlineMargin;
   }
 
   &__image {
@@ -34,6 +34,7 @@ body {
     font-weight: 500;
     line-height: 18px;
     margin: 0;
+    transition: color $transitionTime;
   }
   &__code {
     color: $secondFontColor;
@@ -70,7 +71,7 @@ body {
   }
   &__button {
     box-sizing: border-box;
-    background-color: $buttonColor;
+    background-color: $mainColor;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,9 +89,9 @@ body {
     text-decoration: none;
 
     &:hover {
-      color: $buttonColor;
+      color: $mainColor;
       background-color: white;
-      border: 1px solid $buttonColor;
+      border: 1px solid $mainColor;
     }
   }
 
@@ -98,5 +99,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:hover .card__title {
+    color: $mainColor;
   }
 }

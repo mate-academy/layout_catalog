@@ -1,7 +1,27 @@
 .container {
-  margin-top: 50px;
+  $cardInColums: 1;
+
+  padding: 50px 40px;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(4, $cardWidth);
-  gap: $rowGap $columnGap;
+  grid-template-columns: repeat(1, $cardWidth);
+  gap: $columnGap $rowGap;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $cardWidth);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $cardWidth);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $cardWidth);
+  }
 }
