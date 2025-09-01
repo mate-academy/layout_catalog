@@ -1,3 +1,37 @@
+@import './utils/variables';
+@import './blocks/header';
+@import './blocks/card';
+@import './blocks/stars';
+
 body {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+}
+
+.main__catalog {
+  box-sizing: border-box;
+  padding: $paddingVertical $paddingHorizontal;
+  display: grid;
+  grid-auto-flow: row;
+  gap: $gapVertical $gapHorizontal;
+  justify-content: center;
+  grid-template-columns: repeat(1, $cardWidth);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $cardWidth);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $cardWidth);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $cardWidth);
+  }
 }
