@@ -1,3 +1,32 @@
+@import './utils/variables';
+@import './blocks/header';
+@import './blocks/card';
+@import './blocks/stars';
+
 body {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+.main {
+  box-sizing: border-box;
+  padding: 50px 40px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 46px 48px;
+  justify-content: center;
+  grid-template-columns: repeat(1, $cardWidth);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $cardWidth);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $cardWidth);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $cardWidth);
+  }
 }
