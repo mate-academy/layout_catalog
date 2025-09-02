@@ -10,10 +10,28 @@ body {
 }
 
 .catalog {
-  padding: 50px;
+  padding: $catalog-padding-y $catalog-padding-x;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: space-between;
-  gap: 46px 48px;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  gap: $grid-gap-row $grid-gap-col;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
