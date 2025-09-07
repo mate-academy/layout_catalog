@@ -14,20 +14,12 @@
 .card {
   font-family: Roboto, Arial, sans-serif;
   color: $white;
-  width: 200px;
+  width: $card-width;
   border: 1px solid $grey-bg;
   border-radius: 8px;
   padding: 32px 16px 16px;
 
   margin: 0;
-
-  // margin-left: auto;
-  // margin-right: auto;
-
-  &:hover {
-    transform: scale(1.2);
-    transition: transform 300ms;
-  }
 
   &__description {
     font-family: Roboto, Arial, sans-serif;
@@ -39,11 +31,19 @@
     white-space: normal;
     margin: 0;
     margin-bottom: 4px;
-
-    &:hover {
-      color: $fon-color;
-    }
   }
+}
+
+.card:hover {
+  @include transition-transform;
+
+  transform: scale(1.2);
+}
+
+.card__description:hover {
+  @include transition-transform;
+
+  color: $fon-color;
 }
 
 .card__code {
@@ -129,5 +129,17 @@
     background-color: $white;
     color: $main-color;
     border: solid 1px $main-color;
+
+    transition:
+      background-color $transition-duration,
+      color $transition-duration,
+      border-color $transition-duration;
   }
 }
+
+// .card__buy:hover {
+//   transition:
+//     background-color $transition-duration,
+//     color $transition-duration,
+//     border-color $transition-duration;
+// }
