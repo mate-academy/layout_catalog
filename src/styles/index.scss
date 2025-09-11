@@ -6,22 +6,26 @@ $catalog-gap-h: 46px;
 $catalog-gap-v: 48px;
 $catalog-padding-v: 50px;
 $catalog-padding-h: 40px;
+$title-hover-color: #34568b;
+$white: #fff;
 $transition-time: 0.3s;
 
-// Header navigation
+// ---------------- Header / Nav ----------------
 .nav__link {
   color: $nav-link-color;
   text-decoration: none;
   transition: color $transition-time;
+
   &.is-active {
     font-weight: 700;
   }
+
   &:hover {
     color: $nav-link-hover;
   }
 }
 
-// Catalog grid
+// ---------------- Catalog grid ----------------
 .catalog {
   display: grid;
   grid-template-columns: repeat(1, $card-width);
@@ -31,30 +35,49 @@ $transition-time: 0.3s;
   @media (min-width: 488px) {
     grid-template-columns: repeat(2, $card-width);
   }
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, $card-width);
   }
+
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, $card-width);
   }
 }
 
-// Card hover
+// ---------------- Card ----------------
 .card {
+  width: $card-width;
   transition: transform $transition-time;
+  will-change: transform;
+
   &:hover {
     transform: scale(1.2);
+
     .card__title {
-      color: #34568b;
+      color: $title-hover-color;
+      transition: color $transition-time;
     }
+  }
+
+  .card__title {
+    transition: color $transition-time;
   }
 }
 
-// Card button hover
+// ---------------- Card Button ----------------
 .card__button {
   transition: background-color $transition-time, color $transition-time;
+
   &:hover {
-    background-color: #fff;
-    color: #00acdc;
+    background-color: $white;
+    color: $nav-link-hover;
+  }
+}
+
+// ---------------- Stars (example) ----------------
+.stars {
+  &--filled {
+    color: gold;
   }
 }
