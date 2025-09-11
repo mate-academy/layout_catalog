@@ -1,3 +1,60 @@
-body {
-  margin: 0;
+// ---------------- Variables ----------------
+$nav-link-color: #060b35;
+$nav-link-hover: #00acdc;
+$card-width: 200px;
+$catalog-gap-h: 46px;
+$catalog-gap-v: 48px;
+$catalog-padding-v: 50px;
+$catalog-padding-h: 40px;
+$transition-time: 0.3s;
+
+// Header navigation
+.nav__link {
+  color: $nav-link-color;
+  text-decoration: none;
+  transition: color $transition-time;
+  &.is-active {
+    font-weight: 700;
+  }
+  &:hover {
+    color: $nav-link-hover;
+  }
+}
+
+// Catalog grid
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $catalog-gap-v $catalog-gap-h;
+  padding: $catalog-padding-v $catalog-padding-h;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+// Card hover
+.card {
+  transition: transform $transition-time;
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: #34568b;
+    }
+  }
+}
+
+// Card button hover
+.card__button {
+  transition: background-color $transition-time, color $transition-time;
+  &:hover {
+    background-color: #fff;
+    color: #00acdc;
+  }
 }
