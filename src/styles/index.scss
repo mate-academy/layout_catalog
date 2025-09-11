@@ -4,6 +4,13 @@ $hover-color: #34568b;
 $background-color: #00acdc;
 $background-white: #fff;
 $grid-line-name2: 200px;
+$catalog-pad-horizontal: 50px;
+$catalog-pad-vertical: 40px;
+$catalog-gap-horizontal: 48px;
+$catalog-gap-vertical: 46px;
+$card-width: 200px;
+$card-radius: 5px;
+$card-color: #616070;
 
 * {
   box-sizing: border-box;
@@ -23,7 +30,7 @@ body {
   justify-content: space-between;
   width: 100%;
   margin: 0;
-  padding: 0 50px;
+  padding: 0 $catalog-pad-horizontal;
   align-items: center;
 }
 
@@ -86,11 +93,11 @@ body {
 }
 
 .catalog {
-  padding: 50px 40px;
+  padding: $catalog-pad-horizontal $catalog-pad-horizontal;
   font-family: Roboto, sans-serif;
   display: grid;
   grid-template-columns: repeat(1, $grid-line-name2);
-  gap: 48px 46px;
+  gap: $catalog-pad-horizontal $catalog-gap-vertical;
   justify-content: center;
 }
 
@@ -113,10 +120,10 @@ body {
 }
 
 .card {
-  width: 200px;
+  width: $card-width;
   background-color: $background-white;
   border: 1px solid #f3f3f3;
-  border-radius: 5px;
+  border-radius: $card-radius;
   box-sizing: border-box;
   padding: 32px 16px 16px;
   transition: transform 0.3s ease;
@@ -154,7 +161,7 @@ body {
     margin-top: 4px;
     line-height: 14px;
     align-self: flex-start;
-    color: #616070;
+    color: $card-color;
   }
 
   &__row {
@@ -190,7 +197,7 @@ body {
       font-size: $font-size;
       font-weight: 400;
       line-height: 18px;
-      color: #616070;
+      color: $card-color;
     }
   }
 
@@ -217,7 +224,7 @@ body {
       text-transform: uppercase;
       letter-spacing: 0%;
       line-height: 16px;
-      border-radius: 5px;
+      border-radius: $card-radius;
       transition: all 0.3s ease;
 
       &:hover {
