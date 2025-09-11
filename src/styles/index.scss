@@ -6,7 +6,7 @@ $catalog-gap-h: 46px;
 $catalog-gap-v: 48px;
 $catalog-padding-v: 50px;
 $catalog-padding-h: 40px;
-$title-hover-color: #34568b;
+$card-title-hover: #34568b;
 $white: #fff;
 $transition-time: 0.3s;
 
@@ -25,7 +25,7 @@ $transition-time: 0.3s;
   }
 }
 
-// ---------------- Catalog grid ----------------
+// ---------------- Catalog Grid ----------------
 .catalog {
   display: grid;
   grid-template-columns: repeat(1, $card-width);
@@ -49,14 +49,15 @@ $transition-time: 0.3s;
 .card {
   width: $card-width;
   transition: transform $transition-time;
+  transform-origin: center;
   will-change: transform;
 
   &:hover {
     transform: scale(1.2);
+    z-index: 1;
 
     .card__title {
-      color: $title-hover-color;
-      transition: color $transition-time;
+      color: $card-title-hover;
     }
   }
 
