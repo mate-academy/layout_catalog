@@ -12,14 +12,14 @@
     display: block;
     margin-inline: 3px;
   }
-  &__name {
+  &__title {
     margin: 40px 0 0;
     font-weight: $font-width-medium;
     font-size: $font-size-sm;
     line-height: $line-hight-m;
     color: $link-color;
     width: 100%;
-    transition: color 0.3s ease;
+    transition: color $transition-duration ease;
   }
 
   &__product-code {
@@ -63,7 +63,7 @@
     margin-left: auto;
   }
   &__button {
-    width: 166px;
+    box-sizing: border-box;
     height: 40px;
     margin-top: 16px;
     border-radius: $border-radius-standart;
@@ -74,7 +74,15 @@
     font-size: $font-size-m;
     line-height: 16px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    transition:
+      background-color $transition-duration ease,
+      color $transition-duration ease,
+      border $transition-duration ease,
+      transform $transition-duration ease;
     &:hover {
       color: $color-accent-blue;
       background-color: $color-white;
@@ -82,13 +90,13 @@
     }
   }
 
-  transition: transform 0.3s ease;
+  transition: transform $transition-duration ease;
 
   &:hover {
     transform: scale(1.2);
     z-index: 1;
 
-    .card__name {
+    .card__title {
       color: $color-title-hover;
     }
   }
