@@ -1,9 +1,11 @@
 .page-body {
   margin: 0;
-  height: 100vh;
+  min-height: calc(100vh - 50px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 50px 40px 0;
+  box-sizing: border-box;
 }
 
 .card {
@@ -13,6 +15,8 @@
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
+  @include hover300ms(transform);
+
   &__image {
     display: block;
     width: 160px;
@@ -21,6 +25,8 @@
     background-size: contain;
     margin-inline: 19px;
     margin-top: 32px;
+
+    @include card-size-img;
   }
 
   &__main-text {
@@ -34,6 +40,8 @@
     margin-top: 40px;
     margin-bottom: 0;
     letter-spacing: 0%;
+
+    @include hover300ms(color);
   }
 
   &__product-code {
@@ -68,9 +76,9 @@
     line-height: 14px;
     color: #060b35;
     letter-spacing: 0%;
+    z-index: 0;
 
     position: relative;
-    top: 1px;
   }
 
   &__price {
@@ -106,14 +114,15 @@
     border: none;
     border-radius: 5px;
     margin: 16px;
-
     font-family: Roboto, sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
     color: #fff;
-
     cursor: pointer;
+
+    @include hover300ms(color);
+    @include hover300ms(background-color);
 
     &:hover {
       border: 1px solid #00acdc;

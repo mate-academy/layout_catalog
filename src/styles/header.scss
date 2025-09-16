@@ -1,5 +1,7 @@
+@import 'utilities/mix';
+
 html {
-  font-family: roboto, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 12px;
 }
 
@@ -24,16 +26,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #fff;
   max-width: 100%;
   margin: 0;
   text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #060b35;
 
   &--container {
-    top: 0;
-    position: sticky;
     background: white;
     padding: 0 50px;
+    box-shadow: 0 2px 4px 0 #0000000d;
   }
 
   &:hover {
@@ -44,9 +49,11 @@ body {
 .nav {
   &__link {
     text-decoration: none;
-    color: black;
+    color: #060b35;
     text-transform: uppercase;
     line-height: 60px;
+
+    @include hover300ms(color);
 
     &--hover:hover {
       color: var(--primary-color);
@@ -55,7 +62,6 @@ body {
     &[data-qa] {
       text-decoration: none;
       position: relative;
-      color: var(--primary-color);
 
       &:hover::after {
         content: '';
@@ -64,7 +70,6 @@ body {
         bottom: 25px;
         width: 100%;
         height: 2px;
-        background-color: var(--primary-color);
       }
     }
   }
@@ -98,7 +103,7 @@ body {
     }
   }
 
-  a.is-active {
+  .is-active {
     position: relative;
     color: var(--primary-color);
 
@@ -110,7 +115,7 @@ body {
       background-color: var(--primary-color);
       position: absolute;
       bottom: 0;
-      border-radius: 15px;
+      border-radius: 8px;
       left: 0;
     }
   }
