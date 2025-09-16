@@ -9,7 +9,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 - nav links color is not `black` anymore (nav links should have `#060b35` color)
 - add the class `is-active` to the first link (`Apple`) in the navigation
-- use `<main>` tag for cards container 
+- use `<main>` tag for cards container
 - use the grid for cards with different numbers of columns:
   - 1 for the smaller screens
   - 2 starting at `488px`
@@ -18,6 +18,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - cards have fixed width - `200px`
 - the gap between cards should be - `46px` horizontally and `48px` vertically
 - cards container(catalog) have fixed paddings (`50px` vertically and `40px` horizontally)
+
 
 Make all the changes smooth on hover (during 300ms):
 - increase the card by 20 percent (neighboring cards **should not be** affected)
@@ -32,9 +33,9 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 
 ## Checklist
 
-❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+❗️ Replace `allakuptsova` with your GitHub username and copy the links to the `Pull Request` description:
+- [DEMO LINK](https://allakuptsova.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://allakuptsova.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
