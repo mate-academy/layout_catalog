@@ -1,0 +1,30 @@
+@import './utils/variables';
+@import './utils/mixins';
+@import 'blocks/header';
+@import 'blocks/product-card';
+@import 'blocks/product-card-stars';
+
+html {
+  font-size: 10px;
+  line-height: 14px;
+  color: $textSecondColor;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.catalog {
+  display: grid;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @each $bp, $cols in $breakpoints {
+    @media (min-width: #{$bp}) {
+      grid-template-columns: repeat(#{$cols}, 200px);
+    }
+  }
+}
