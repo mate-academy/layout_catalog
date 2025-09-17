@@ -17,7 +17,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
   - 4 starting from `1024px`
 - cards have fixed width - `200px`
 - the gap between cards should be - `46px` horizontally and `48px` vertically
-- cards container(catalog) have fixed paddings (`50px` vertically and `40px` horizontally)
+- cards container(catalog) have fixed paddings (`50px` vertically and `40px` horizgit add ./srcontally)
 
 
 Make all the changes smooth on hover (during 300ms):
