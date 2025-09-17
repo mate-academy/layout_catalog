@@ -18,13 +18,14 @@ body {
 
 .catalog {
   display: grid;
-  gap: 48px 46px;
-  padding: 50px 40px;
+  grid-template-columns: repeat(1, $cardWidth);
+  gap: $catalogGapRow $catalogGapCol;
+  padding: $catalogPaddingVertical $catalogPaddingHorizontal;
   justify-content: center;
 
   @each $bp, $cols in $breakpoints {
     @media (min-width: #{$bp}) {
-      grid-template-columns: repeat(#{$cols}, 200px);
+      grid-template-columns: repeat(#{$cols}, $cardWidth);
     }
   }
 }
