@@ -1,3 +1,236 @@
+$blue: #00acdc;
+$main-font: Roboto;
+$main-color: #060b35;
+$width-item: 166px;
+
+@mixin font-style(
+  $font-family,
+  $font-size,
+  $font-weight,
+  $line-height,
+  $text-align,
+  $color
+) {
+  font-family: $main-font;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  text-align: $text-align;
+  color: $color;
+}
+
+* {
+  font-family: $main-font, Inter, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+
+    .item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .item__link {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #060b35;
+      font-size: 12px;
+      text-align: center;
+      height: 48px;
+      line-height: 48px;
+      transition: color 300ms ease;
+    }
+
+    .item__link:hover {
+      color: $blue;
+    }
+
+    .is-active {
+      color: $blue;
+      position: relative; /* Establishes positioning context for ::after */
+    }
+
+    .is-active::after {
+      content: ''; /* Required for pseudo-elements */
+      position: absolute; /* Positions relative to the .is-active link */
+      display: block; /* Allows setting width, height */
+      width: 100%; /* Example styling: full width of the link */
+      height: 2px; /* Example styling: a thin line */
+      background-color: $blue; /* Example styling: color of the line */
+      bottom: -5px; /* Example positioning: 5px below the link */
+      left: 0; /* Example positioning: aligned to the left edge */
+    }
+  }
+}
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+
+  .card {
+    width: 200px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 300ms ease;
+
+    &__picture {
+      width: 166px;
+      height: 134px;
+      background-repeat: no-repeat;
+      background-size: 158px 134px;
+      background-position: center;
+      background-image: url('../images/imac.jpeg');
+      margin-top: 32px;
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      width: $width-item;
+      margin-bottom: 4px;
+      transition: color 300ms ease;
+
+      @include font-style($main-font, 12px, 500, 18px, left, $main-color);
+    }
+
+    .card__title:hover {
+      color: #34568b;
+    }
+
+    &__code {
+      width: $width-item;
+      margin-bottom: 16px;
+
+      @include font-style($main-font, 10px, 400, 14px, left, #616070);
+    }
+
+    &__review {
+      width: $width-item;
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+
+      .card__review-stars {
+        width: $width-item - 53;
+        display: flex;
+
+        .stars-star {
+          width: 16px;
+          height: 16px;
+          background-repeat: no-repeat;
+          background-size: 13px 13px;
+          background-position: center;
+        }
+
+        .stars-star:not(:last-child) {
+          margin-right: 4px;
+        }
+
+        .stars-star:nth-child(-n + 4) {
+          background-image: url('../images/star-active.svg');
+        }
+
+        .stars-star:nth-child(n + 5) {
+          background-image: url('../images/star.svg');
+        }
+      }
+
+      .card__review-amount {
+        width: 166px;
+        display: table-cell;
+        vertical-align: bottom;
+
+        @include font-style($main-font, 10px, 400, 14px, right, $main-color);
+      }
+    }
+
+    .card__price {
+      width: $width-item;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+
+      &-text {
+        @include font-style($main-font, 12px, 400, 18px, left, #616070);
+      }
+
+      &-amount {
+        @include font-style($main-font, 16px, 700, 18px, right, $main-color);
+      }
+    }
+
+    &__button {
+      width: $width-item;
+      height: 40px;
+      margin-bottom: 16px;
+      background-color: $blue;
+      border: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition-property: background-color, color;
+      transition-duration: 300ms;
+
+      @include font-style($main-font, 14px, 700, 16px, center, #fff);
+    }
+
+    &__button:hover {
+      background-color: #fff;
+      color: $blue;
+      border: 1px solid #00acdc;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (max-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(1, 200px);
+  }
 }
