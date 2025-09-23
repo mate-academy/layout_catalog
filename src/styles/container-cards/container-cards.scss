@@ -1,0 +1,33 @@
+@mixin breakpoint($size-screen) {
+  @media (min-width: $size-screen) {
+    @content;
+  }
+}
+
+.container {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@include breakpoint(488px) {
+  .container {
+    --column-count: 2;
+  }
+}
+
+@include breakpoint(768px) {
+  .container {
+    --column-count: 3;
+  }
+}
+
+@include breakpoint(1024px) {
+  .container {
+    --column-count: 4;
+  }
+}

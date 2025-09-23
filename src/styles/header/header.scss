@@ -1,0 +1,64 @@
+@import '/src/styles/card/blocks/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $main-accent;
+    text-align: center;
+    transition: $time-of-changes;
+  }
+
+  &__link:hover {
+    color: $blue-accent;
+  }
+
+  &__link.is-active {
+    position: relative;
+    color: $blue-accent;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $blue-accent;
+      bottom: 0;
+    }
+  }
+}
