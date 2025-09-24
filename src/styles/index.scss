@@ -91,8 +91,8 @@ body {
 .catalog {
   padding: 50px 40px;
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  gap: 46px 48px;
+  grid-template-columns: repeat(1, 200px);
+  gap: 48px 46px;
   justify-content: center;
 
   .card {
@@ -124,8 +124,6 @@ body {
 
       @include font-style($main-font, 12px, 500, 18px, left, $main-color);
     }
-
-
 
     &__code {
       width: $width-item;
@@ -211,27 +209,28 @@ body {
   }
 }
 
-.card:hover  {
+.card:hover {
   transform: scale(1.2);
-  .card__title:hover {
-    color:#34568b;
-  }
 }
 
-@media (max-width: 1024px) {
-  .catalog {
-    grid-template-columns: repeat(3, 200px);
-  }
+.card:hover .card__title {
+  color: #34568b;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 488px) {
   .catalog {
     grid-template-columns: repeat(2, 200px);
   }
 }
 
-@media (max-width: 488px) {
+@media (min-width: 768px) {
   .catalog {
-    grid-template-columns: repeat(1, 200px);
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
   }
 }
