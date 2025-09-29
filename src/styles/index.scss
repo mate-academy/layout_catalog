@@ -1,3 +1,16 @@
+/* ===================== ЗМІННІ ===================== */
+$color-nav: #060b35;
+$color-hover: #00acdc;
+$color-title-hover: #34568b;
+$color-white: #fff;
+$card-width: 200px;
+$gap-row: 48px;
+$gap-col: 46px;
+$pad-vertical: 50px;
+$pad-horizontal: 40px;
+$transition-time: 300ms;
+
+/* ===================== ГЛОБАЛЬНІ СТИЛІ ===================== */
 *,
 *::before,
 *::after {
@@ -11,12 +24,13 @@ body {
   font-weight: 500;
 }
 
+/* ===================== HEADER ===================== */
 .header {
-  background-color: #fff;
+  background-color: $color-white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 $pad-horizontal;
   height: 60px;
   box-shadow: 0 2px 4px #0000000d;
 
@@ -26,6 +40,7 @@ body {
   }
 }
 
+/* ===================== NAV ===================== */
 .nav__list {
   list-style: none;
   display: flex;
@@ -35,9 +50,9 @@ body {
 .nav__link {
   display: block;
   text-decoration: none;
-  color: #060b35;
+  color: $color-nav;
   text-transform: uppercase;
-  transition: color 300ms;
+  transition: color $transition-time;
   height: 60px;
   font-size: 12px;
   line-height: 60px;
@@ -46,12 +61,12 @@ body {
   font-weight: 500;
 
   &:hover {
-    color: #00acdc;
+    color: $color-hover;
   }
 }
 
 .is-active {
-  color: #00acdc;
+  color: $color-hover;
   position: relative;
 
   &::after {
@@ -61,45 +76,47 @@ body {
     left: 0;
     height: 4px;
     width: 100%;
-    background-color: #00acdc;
+    background-color: $color-hover;
     border-radius: 8px;
   }
 }
 
+/* ===================== MAIN GRID ===================== */
 .main {
   display: grid;
   justify-content: center;
   align-items: center;
-  padding: 50px 40px;
-  gap: 48px 46px;
-  grid-template-columns: repeat(1, 200px);
+  padding: $pad-vertical $pad-horizontal;
+  gap: $gap-row $gap-col;
+  grid-template-columns: repeat(1, $card-width);
 }
 
 @media (min-width: 488px) {
   .main {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, $card-width);
   }
 }
 
 @media (min-width: 768px) {
   .main {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, $card-width);
   }
 }
 
 @media (min-width: 1024px) {
   .main {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, $card-width);
   }
 }
 
+/* ===================== PRODUCT CARD ===================== */
 .product-card {
   border: 1px solid #f3f3f3;
   border-radius: 5px;
-  transition: transform 300ms;
+  transition: transform $transition-time;
   padding: 32px 16px 16px;
-  background-color: #fff;
-  width: 200px;
+  background-color: $color-white;
+  width: $card-width;
 
   &:hover {
     transform: scale(1.2);
@@ -120,11 +137,11 @@ body {
     height: 36px;
     font-weight: 500;
     margin: 0 0 4px;
-    transition: color 300ms ease;
+    transition: color $transition-time ease;
   }
 
   &:hover &__title {
-    color: #34568b;
+    color: $color-title-hover;
   }
 
   &__text {
@@ -169,26 +186,27 @@ body {
     align-items: center;
     text-decoration: none;
     height: 40px;
-    color: #fff;
+    color: $color-white;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
-    background-color: #00acdc;
+    background-color: $color-hover;
     border-radius: 5px;
     transition:
-      background-color 300ms,
-      color 300ms,
-      border-color 300ms;
+      background-color $transition-time,
+      color $transition-time,
+      border-color $transition-time;
     margin: 16px;
 
     &:hover {
-      background-color: #fff;
-      border: 1px solid #00acdc;
-      color: #00acdc;
+      background-color: $color-white;
+      border: 1px solid $color-hover;
+      color: $color-hover;
     }
   }
 }
 
+/* ===================== STARS ===================== */
 .stars {
   display: flex;
 
@@ -200,8 +218,8 @@ body {
     height: 16px;
     margin-right: 4px;
   }
-}
 
-.stars--4 .stars__star:nth-child(-n + 4) {
-  background-image: url(../images/star-active.svg);
+  &--4 .stars__star:nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+  }
 }
