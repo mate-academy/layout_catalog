@@ -1,0 +1,137 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(var(--columns-count), 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+  box-sizing: border-box;
+
+  @media (min-width: 488px) {
+    --columns-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --columns-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --columns-count: 4;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  height: 408px;
+  border: 1 solid $white-border;
+  padding: 32px 16px 16px;
+  position: relative;
+  transition: transform 0.3s;
+
+  &__image {
+    width: 160px;
+    align-self: center;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+    display: block;
+    max-width: 100%;
+    align-self: center;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  &__subtitle {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $text;
+    margin-bottom: 16px;
+  }
+
+  &__marks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__review {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    vertical-align: bottom;
+    align-self: flex-end;
+    color: $text-color;
+    margin: 0;
+  }
+  &__button {
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: $blue;
+    color: $white;
+    border-radius: 5px;
+    border: 1px solid $blue;
+    transition: all 0.3s ease;
+    padding: 12px 70px 11px 69px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $white;
+      color: $blue;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: $hover-card-text;
+    }
+  }
+}
+
+.price {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+
+    color: $text;
+    margin: 0;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $text-color;
+    margin: 0;
+  }
+}
