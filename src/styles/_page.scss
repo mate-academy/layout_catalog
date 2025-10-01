@@ -1,5 +1,5 @@
 .catalog {
-  padding: 50px 40px;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
   &__container {
     max-width: 1100px;
     margin: 0 auto;
@@ -11,9 +11,9 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 200px);
     justify-content: center;
-    gap: 48px 46px;
+    gap: $gap-row $gap-col;
 
     @media (min-width: 488px) {
       grid-template-columns: repeat(2, 200px);
@@ -30,17 +30,21 @@
 }
 
 .card {
-  width: 200px;
+  width: $card-width;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 32px 16px 16px;
+  padding: $card-padding-top $card-padding $card-padding;
   border: 1px solid $grey;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transform-origin: center;
+  will-change: transform;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 
   &__image {
-    width: 160px;
+    width: $card-img-width;
     align-self: center;
     &:not(:last-child) {
       margin-bottom: 40px;
@@ -48,11 +52,11 @@
   }
 
   &__img {
-    width: 160px;
+    width: $card-img-width;
     height: 134px;
   }
 
-  &__product-name {
+  &__title {
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
@@ -94,7 +98,7 @@
 
   &:hover {
     transform: scale(1.2);
-    &__product-name {
+    &__title {
       color: $title-color-hover;
     }
   }
