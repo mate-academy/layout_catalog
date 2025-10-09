@@ -1,3 +1,263 @@
+$font-family-base: Roboto, sans-serif;
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+$color-text: #060b35;
+$color-secondary: #616070;
+$color-page: #fff;
+$color-link: #00acdc;
+$card-width: 200px;
+$radius: 5px;
+$star-size: 16px;
+$star-gap: 4px;
+$color-nav: #060b35;
+$vertical-gap: 46px;
+$horizontal-gap: 48px;
+$vertical-padding: 50px;
+$horizontal-padding: 40px;
+$color-title: #34568b;
+
+.stars {
+  display: flex;
+
+  &__star {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+
+  &__star:last-child {
+    margin-right: 0;
+  }
+}
+
+@for $n from 1 through 5 {
+  .stars--#{$n} .stars__star:nth-child(-n + #{$n}) {
+    background-image: url('../images/star-active.svg');
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+
+  color: $color-text;
+  background-color: $color-page;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__list li {
+    margin-left: 20px;
+  }
+
+  &__list li:first-child {
+    margin-left: 0;
+  }
+
+  &__list li:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+    display: inline-block;
+    text-decoration: none;
+    color: $color-nav;
+    text-transform: uppercase;
+    line-height: 14px;
+    text-align: center;
+    padding: 23px 0;
+    transition: color 0.3s;
+  }
+
+  &__link:hover {
+    color: $color-link;
+  }
+
+  &__link.is-active {
+    position: relative;
+    color: $color-link;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    background-color: $color-link;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+  }
+}
+
+.header {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.catalog {
+  padding: $vertical-padding $horizontal-padding;
+
+  &__grid {
+    display: grid;
+    justify-content: center;
+    overflow: visible;
+    grid-template-columns: repeat(1, $card-width);
+    gap: $vertical-gap $horizontal-gap;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
+
+.card {
+  width: $card-width;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: $radius;
+  padding: 32px 16px 16px;
+  transition: transform 0.3s;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-weight: $font-weight-medium;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 auto 4px;
+    transition: color 0.3s;
+  }
+
+  &__code {
+    font-weight: $font-weight-regular;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 auto 24px;
+  }
+
+  &__review-text {
+    font-weight: $font-weight-regular;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 auto 16px;
+  }
+
+  &__price-label {
+    font-weight: $font-weight-regular;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    font-weight: $font-weight-bold;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 40px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-page;
+
+    background-color: $color-link;
+    border-radius: 5px;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+
+    &:hover {
+      box-sizing: border-box;
+      background-color: $color-page;
+      color: $color-link;
+      border: 1px solid $color-link;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: $color-title;
+  }
 }
