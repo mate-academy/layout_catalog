@@ -1,11 +1,13 @@
 .card {
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
+  border: 1px solid $border-light;
+  border-radius: $border-radius;
 
-  max-width: $card-max-width;
-  width: 100%;
+  width: $card-max-width;
   cursor: pointer;
-  transition: transform 0.3s;
+
+  transition: transform $transition-duration;
+  transform-origin: center;
+  will-change: transform;
 
   &:hover {
     transform: scale(1.2);
@@ -17,7 +19,9 @@
   }
 
   &__img {
-    width: $card__img-width;
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   &__content {
@@ -31,7 +35,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    transition: color 0.3s;
+    transition: color $transition-duration;
   }
 
   &:hover &__title {
@@ -87,10 +91,10 @@
     display: block;
     padding: 12px;
     width: 166px;
-    border-radius: 5px;
+    border-radius: $border-radius;
     margin-bottom: 16px;
 
-    color: #fff;
+    color: $color-white;
     border: 1px solid $button-color;
     background-color: $button-color;
     text-align: center;
@@ -99,11 +103,12 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
-    transition: all 0.3s;
+    transition: all $transition-duration;
 
     &:hover {
-      color: $button-color;
-      background-color: #fff;
+      // color: $button-color;
+      color: $hover-accent-color;
+      background-color: $color-white;
     }
   }
 }
