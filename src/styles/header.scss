@@ -33,15 +33,24 @@ ul {
   height: 60px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #060b35;
-  transition: all 300ms;
+  color: $nav-color;
+  transition: all $transition-duration;
 
-  &--active {
-    color: $blue;
-    position: relative;
+
+  &:hover {
+    color: $primary-color;
   }
+}
 
-  &--active::after {
+.is-active {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $primary-color;
+  position: relative;
+  &::after {
     content: '';
     position: absolute;
     left: 0;
@@ -49,13 +58,10 @@ ul {
     bottom: 0;
     height: 4px;
     border-radius: 8px;
-    background: $blue;
-  }
-
-  &:hover {
-    color: #00acdc;
+    background: $primary-color;
   }
 }
+
 
 .logo {
   margin-left: 50px;
