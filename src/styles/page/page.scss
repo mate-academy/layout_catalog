@@ -8,16 +8,19 @@
   }
 
   &__container {
+    box-sizing: border-box;
+
     @include page-block-size($pageMaxWidthBlock);
 
     padding: $indentVertically $indentHorizontally;
 
     display: grid;
-    grid-template-columns: repeat($columnsDefault, minmax(200px, 200px));
+    grid-template-columns: repeat(
+      $columnsDefault,
+      minmax($cardWidth, $cardWidth)
+    );
     gap: $rowGap $columnGap;
     place-content: center;
-
-    box-sizing: border-box;
 
     @include respond(small);
     @include respond(medium);
