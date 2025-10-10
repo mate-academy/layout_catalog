@@ -1,0 +1,21 @@
+@mixin page-block-size($maxWidth) {
+  max-width: $maxWidth;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin respond($screenSize) {
+  @if $screenSize == small {
+    @media screen and (max-width: #{$bp-small - 1}) {
+      grid-template-columns: repeat(1, minmax($cardWidth, $cardWidth));
+    }
+  } @else if $screenSize == medium {
+    @media (min-width: $bp-small) and (max-width: #{$bp-medium - 1}) {
+      grid-template-columns: repeat(2, minmax($cardWidth, $cardWidth));
+    }
+  } @else if $screenSize == large {
+    @media (min-width: #{$bp-medium}) and (max-width: #{$bp-large - 1}) {
+      grid-template-columns: repeat(3, minmax($cardWidth, $cardWidth));
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.page {
+  box-sizing: border-box;
+
+  &__header {
+    @include page-block-size($pageMaxWidthBlock);
+
+    box-sizing: border-box;
+  }
+
+  &__container {
+    @include page-block-size($pageMaxWidthBlock);
+
+    padding: $indentVertically $indentHorizontally;
+
+    display: grid;
+    grid-template-columns: repeat($columnsDefault, minmax(200px, 200px));
+    gap: $rowGap $columnGap;
+    place-content: center;
+
+    box-sizing: border-box;
+
+    @include respond(small);
+    @include respond(medium);
+    @include respond(large);
+  }
+}
