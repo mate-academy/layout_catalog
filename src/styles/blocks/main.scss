@@ -1,13 +1,13 @@
 .main {
   --column-count: 1;
+
   padding: 50px 40px;
-
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  row-gap: 46px;
-  column-gap: 48px;
-
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  row-gap: $gap-horizontal;
+  column-gap: $gap-vertical;
   justify-content: center;
+  overflow: visible;
 }
 
 @media (min-width: 488px) {
@@ -15,11 +15,13 @@
     --column-count: 2;
   }
 }
+
 @media (min-width: 768px) {
   .main {
     --column-count: 3;
   }
 }
+
 @media (min-width: 1024px) {
   .main {
     --column-count: 4;

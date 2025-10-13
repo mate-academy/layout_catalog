@@ -1,18 +1,18 @@
 .card {
   box-sizing: border-box;
-  width: 200px;
-  height: 408px;
-  margin-left: 20px;
+  width: $card-width;
+  height: $card-height;
 
   border: 1px solid #f3f3f3;
-  border-radius: 5px;
+  border-radius: $radius-sm;
   border-width: 1px;
 
   padding: 32px 16px 16px;
   position: relative;
 
   background-color: $color-white;
-  transition: transform 300ms;
+  transition: $transition-fast;
+  will-change: transform;
 
   &__img {
     width: 160px;
@@ -32,7 +32,7 @@
     margin-bottom: 4px;
     color: $main-text-color;
 
-    transition: color 300ms;
+    transition: color 300ms ease;
   }
 
   &__code {
@@ -88,10 +88,17 @@
 
   &:hover {
     transform: scale(1.2);
+    z-index: 2;
   }
 
   &:hover &__title {
-    color: #34568b;
+    color: $card-title-hover-color;
+  }
+
+  &:hover &__button {
+    background-color: #fff;
+    border: 1px solid $color-blue-accent;
+    color: $color-blue-accent;
   }
 
   &__button {
@@ -99,12 +106,12 @@
     justify-content: center;
     align-items: center;
 
-    width: 166px;
-    height: 40px;
+    width: $button-width;
+    height: $button-height;
     right: 16px;
 
     border: none;
-    border-radius: 5px;
+    border-radius: $radius-sm;
 
     background-color: $color-blue-accent;
 
@@ -119,7 +126,7 @@
       color 300ms;
 
     &:hover {
-      background-color: inherit;
+      background-color: #fff;
       border: 1px solid $color-blue-accent;
       color: $color-blue-accent;
     }
