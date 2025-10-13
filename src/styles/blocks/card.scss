@@ -3,7 +3,7 @@
   width: $card-width;
   height: $card-height;
 
-  border: 1px solid #f3f3f3;
+  border: 1px solid $border-color-light;
   border-radius: $radius-sm;
   border-width: 1px;
 
@@ -69,7 +69,7 @@
     margin: 0;
     justify-content: space-between;
     align-items: center;
-    gap: 85px;
+    gap: $price-block-gap;
     margin-bottom: 16px;
   }
 
@@ -85,6 +85,31 @@
     font-size: 16px;
     line-height: 18px;
   }
+  &__button {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: $button-width;
+    height: $button-height;
+    right: 16px;
+    border: none;
+    border-radius: $radius-sm;
+    background-color: $color-blue-accent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $color-white;
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      background-color: $color-white;
+      border: 1px solid $color-blue-accent;
+      color: $color-blue-accent;
+    }
+  }
 
   &:hover {
     transform: scale(1.2);
@@ -96,39 +121,8 @@
   }
 
   &:hover &__button {
-    background-color: #fff;
+    background-color: $color-white;
     border: 1px solid $color-blue-accent;
     color: $color-blue-accent;
-  }
-
-  &__button {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-
-    width: $button-width;
-    height: $button-height;
-    right: 16px;
-
-    border: none;
-    border-radius: $radius-sm;
-
-    background-color: $color-blue-accent;
-
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    text-transform: uppercase;
-
-    color: $color-white;
-    transition:
-      background-color 300ms,
-      color 300ms;
-
-    &:hover {
-      background-color: #fff;
-      border: 1px solid $color-blue-accent;
-      color: $color-blue-accent;
-    }
   }
 }

@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 4px 0 #0000000d;
+  box-shadow: 0 2px 4px 0 $box-shadow-color;
 
   &__content {
     display: flex;
@@ -9,7 +9,7 @@
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 $header-padding-horizontal;
   }
 
   &__logo {
@@ -19,7 +19,7 @@
   }
 
   &__nav-item {
-    margin-right: 20px;
+    margin-right: $nav-item-gap;
 
     &:last-child {
       margin-right: 0;
@@ -43,7 +43,8 @@
     position: relative;
     color: $main-text-color;
     text-transform: uppercase;
-    height: 60px;
+    height: $nav-link-height;
+    transition: color $transition-fast;
 
     &:first-child {
       margin-left: 0;
@@ -68,6 +69,9 @@
       bottom: -8px;
       opacity: 0;
       transform: translateY(6px);
+      transition:
+        opacity $transition-fast,
+        transform $transition-fast;
     }
 
     &.is-active {
