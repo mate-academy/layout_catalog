@@ -1,56 +1,55 @@
-// @import '../styles/blocks/spec';
+@import '../blocks/spec';
 
 .card {
-  // width: 200px;
+  width: $card-width;
   height: 408px;
   padding: 32px 16px 16px;
-  border: 1px solid #616070;
+  border: 1px solid $basic-color;
   border-radius: 5px;
-  transition: transform 300ms;
+  background-color: $card-bg;
   display: inline-block;
+  box-sizing: border-box;
+  transition: transform $transition-duration, background-color $transition-duration, color $transition-duration;
   &:hover {
     transform: scale(1.2);
     position: relative;
-  }
-  &:hover &__text {
-    color: #34568b;
+    background-color: $card-bg-hover;
   }
   &__price {
     width: 166px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
     &-label {
       font-weight: 400;
       font-size: 12px;
-      color: #616070;
+      color: $basic-color;
       margin: 0;
-      align-items: center;
       line-height: 18px;
     }
     &-value {
       margin: 0;
       font-size: 16px;
-      line-height: 18px;
       font-weight: 700;
-      color: #060b35;
+      color: $color-nav-default;
+      line-height: 18px;
     }
   }
   &__buy {
     text-decoration: none;
-    border: 1px solid #00acdc;
+    border: 1px solid $color-accent;
     color: white;
-    background-color: #00acdc;
+    background-color: $color-accent;
     border-radius: 5px;
     width: 100%;
     height: 40px;
     line-height: 38px;
     font-weight: 700;
     font-size: 14px;
+    transition: background-color $transition-duration, color $transition-duration;
     &:hover {
-      color: #00acdc;
+      color: $color-accent;
       background-color: #fff;
     }
   }
@@ -69,14 +68,18 @@
     font-weight: 500;
     line-height: 18px;
     width: 166px;
-    color: #060b35;
+    color: $color-nav-default;
+    transition: color $transition-duration;
+    .card:hover & {
+      color: $color-title-hover;
+    }
   }
   &__info {
     &--code {
       font-size: 10px;
       font-weight: 400;
       margin-bottom: 16px;
-      color: #616070;
+      color: $basic-color;
       line-height: 14px;
     }
     &--button {
