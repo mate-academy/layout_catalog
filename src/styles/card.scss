@@ -1,0 +1,129 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  width: $card-width;
+  box-sizing: border-box;
+  border: 1px solid $color-gray;
+  border-radius: $radius-s;
+  background-color: $color-white;
+
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-s;
+
+  transition:
+    transform 300ms ease-in-out,
+    box-shadow 300ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+
+  &__image {
+    background-image: url('../images/imac.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: $card-image-height;
+    margin-bottom: $spacing-xxl;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 $spacing-s;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-s;
+  }
+
+  &__info-name {
+    display: block;
+    width: 100%;
+
+    @include text-info-name;
+
+    color: $color-main;
+    margin: 0;
+
+    transition: color 300ms ease-in-out;
+
+    .card:hover & {
+      color: $color--title-hover;
+    }
+  }
+
+  &__info-code {
+    @include text-detail-regular;
+
+    color: $color-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $spacing-s;
+    margin-bottom: $spacing-l;
+  }
+
+  &__rating-reviews-value {
+    @include text-detail-regular;
+
+    color: $color-main;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $spacing-s;
+    margin-bottom: $spacing-s;
+  }
+
+  &__price-text {
+    @include text-body-regular;
+
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    @include text-price-value;
+
+    color: $color-main;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    padding: 0 $spacing-s;
+  }
+
+  &__buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-accent;
+
+    @include text-button;
+
+    color: $color-white;
+    border: 0;
+    width: 100%;
+    height: $button-height;
+    border-radius: $radius-s;
+    text-decoration: none;
+    transition:
+      background-color 300ms ease-in-out,
+      color 300ms ease-in-out,
+      border-color 300ms ease-in-out;
+  }
+
+  &__buy-button:hover {
+    background-color: $color-white;
+
+    color: $color-accent;
+    border: 1px solid $color-accent;
+  }
+}
