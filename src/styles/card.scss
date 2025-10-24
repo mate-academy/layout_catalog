@@ -21,10 +21,9 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: $card-image-width;
+    width: 100%;
     height: $card-image-height;
-    margin-bottom: $spacing-xxl;
-    padding-inline: 19px; // це має бути у padding батьківського елемента або тут
+    margin-bottom: $spacing-horizontal;
   }
 
   &__title {
@@ -41,8 +40,9 @@
 
   &:hover {
     transform: scale(1.2);
+    transform-origin: center;
     z-index: 10;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px $card-box-shadow-color;
 
     & .card__title {
       color: $color--title-hover;
@@ -107,9 +107,9 @@
     @include text-button;
 
     color: $color-white;
-    border: 0;
+    border: 1px solid $color-accent;
     width: 100%;
-    height: $button-height;
+    height: $spacing-horizontal;
     border-radius: $radius-s;
     text-decoration: none;
     transition:
