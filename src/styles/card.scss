@@ -8,7 +8,6 @@
   border: 1px solid $color-gray;
   border-radius: $radius-s;
   background-color: $color-white;
-
   padding-top: $spacing-xl;
   padding-bottom: $spacing-s;
 
@@ -16,49 +15,48 @@
     transform 300ms ease-in-out,
     box-shadow 300ms ease-in-out;
 
-  &:hover {
-    transform: scale(1.2);
-    z-index: 10;
-  }
-
   &__image {
+    display: block;
     background-image: url('../images/imac.jpeg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 100%;
+    width: $card-image-width;
     height: $card-image-height;
     margin-bottom: $spacing-xxl;
+    padding-inline: 19px; // це має бути у padding батьківського елемента або тут
   }
 
-  &__info {
-    display: flex;
-    flex-direction: column;
-    padding: 0 $spacing-s;
-    gap: $spacing-xs;
-    margin-bottom: $spacing-s;
-  }
-
-  &__info-name {
-    display: block;
-    width: 100%;
-
+  &__title {
     @include text-info-name;
 
     color: $color-main;
     margin: 0;
 
-    transition: color 300ms ease-in-out;
+    padding: 0 $spacing-s;
+    margin-bottom: $spacing-xs;
 
-    .card:hover & {
+    transition: color 300ms ease-in-out;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    & .card__title {
       color: $color--title-hover;
     }
   }
 
-  &__info-code {
+  &__title-code {
     @include text-detail-regular;
 
     color: $color-secondary;
+
+    padding: 0 $spacing-s;
+    margin-top: 0;
+    margin-bottom: $spacing-s;
   }
 
   &__rating {
