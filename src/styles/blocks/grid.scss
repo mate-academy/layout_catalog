@@ -1,41 +1,42 @@
 .container {
   --column-count: 1;
-  padding: 50px 40px;
+
+  padding: $container-padding-y $container-padding-x;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
-  row-gap: 46px;
-  column-gap: 48px;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: $row-gap $colmun-gap;
   justify-content: center;
   grid-auto-flow: row;
 }
 
-@media (min-width: 488px) {
+@media (min-width: $min-width-1) {
   .container {
     --column-count: 2;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $min-width-2) {
   .container {
     --column-count: 3;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $min-width-3) {
   .container {
     --column-count: 4;
   }
 }
 
 .card {
-  transition: all 300ms;
+  width: $card-w;
+  transition: all $card-transition;
 
   &:hover {
     transform: scale(1.2);
 
     & .card__title {
-      color: #34568b;
+      color: $color-hover;
     }
   }
 }
