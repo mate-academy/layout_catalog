@@ -1,0 +1,250 @@
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.header-img {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+:root {
+  --cor-blue: #00acdc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 40px;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+li {
+  margin: 0 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.nav-item a {
+  color: #000;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-item a:hover {
+  color: var(--cor-blue);
+}
+
+.nav-item a.is-active {
+  color: var(--cor-blue);
+  position: relative;
+}
+
+.nav-item a.is-active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--cor-blue);
+  position: absolute;
+  bottom: -22px;
+  border-radius: 2px;
+  left: 0;
+}
+
+.card {
+  width: 200px; /* $card-width */
+  height: 400px; /* $card-height */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e0e0; /* $color-border */
+}
+
+.card:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+/* ======= ELEMENTOS ======= */
+.card__image {
+  width: 160px;
+  height: 134px;
+  display: block;
+  margin-left: 3px;
+}
+
+.card__title {
+  margin-top: 40px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #060b35; /* $color-text */
+}
+
+.card__title:hover {
+  color: #34568b; /* $color-primary */
+  cursor: pointer;
+}
+
+.card__code {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  margin-top: 4px;
+  color: #616070; /* $color-text-secondary */
+}
+
+.card__price {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  color: #616070; /* $color-text-secondary */
+}
+
+.card__price-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.card__price-number {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  margin-left: auto;
+  margin-right: 16px;
+  color: #000; /* $color-black */
+}
+
+.card__actions {
+  margin-top: 16px;
+  width: 166px;
+}
+
+.card__button {
+  width: 166px;
+  height: 40px;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #00acdc; /* $color-primary */
+  background-color: #00acdc; /* $color-primary */
+  color: #fff; /* $color-white */
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card__button:hover,
+.card__button:focus-visible {
+  background-color: #fff; /* $color-white */
+  color: #00acdc; /* $color-primary */
+}
+
+.stars {
+  width: 166px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ====== ELEMENTOS ====== */
+.stars__container {
+  display: flex;
+  gap: 4px;
+}
+
+.stars__star {
+  background-repeat: no-repeat;
+  background-image: url(images/star-active.svg);
+  width: 16px;
+  height: 16px;
+  background-position: center;
+}
+
+/* ====== ESTRELAS ATIVAS ====== */
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(images/star-active.svg);
+}
+
+/* ====== AVALIAÇÃO TEXTO ====== */
+.stars__review {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #060b35; /* $color-text */
+  margin-left: auto;
+}
+
+.card_container {
+  border: 3px solid '#000';
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 46px 32px;
+  justify-items: center;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .card_container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .card_container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card_container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
