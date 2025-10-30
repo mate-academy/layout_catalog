@@ -1,3 +1,56 @@
+@import './card';
+@import './stars';
+@import './nav.scss';
+
+html {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0%;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba($color: #000, $alpha: 5%);
+
+  .logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.main {
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
