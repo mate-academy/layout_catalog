@@ -1,0 +1,107 @@
+.card {
+  @include box-alignment;
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  height: 408px;
+  border: 1px solid $border-color;
+  border-radius: $border-r5;
+  background-color: $white;
+  transition: $trans ease;
+
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__title {
+      color: $color-title-hover;
+    }
+  }
+
+  &__space-image {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-top: 32px;
+  }
+
+  &__text {
+    width: $width;
+    height: 36px;
+    margin-top: 40px;
+  }
+
+  &__title {
+    color: $dark-blue;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    width: $width;
+    height: 36px;
+    margin: 0;
+    box-sizing: border-box;
+    transition: color $trans;
+  }
+
+  &__product-code, &__product-code-text {
+    width: 98px;
+    height: 14px;
+    color: $grey;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    margin: 4px 84px 0 5px;
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    width: $width;
+    height: 18px;
+    justify-content: space-between;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $grey;
+    width: 31px;
+    margin: 0;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $dark-blue;
+    margin: 0;
+  }
+
+  &__btn {
+    @include box-alignment;
+    display: inline-block;
+    text-decoration: none;
+    background-color: $light-blue;
+    border-radius: $border-r5;
+    color: $white;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 16px 0 0;
+    border: 1px solid $light-blue;
+    padding: 12px 70px 0 69px;
+    line-height: $height-small;
+    width: $width;
+    height: 40px;
+    transition: background $trans, color $trans;
+
+    &:hover {
+      background-color: $white;
+      color: $light-blue;
+    }
+  }
+}
