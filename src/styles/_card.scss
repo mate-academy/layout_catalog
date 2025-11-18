@@ -1,8 +1,8 @@
 .main {
   display: grid;
   grid-template-columns: repeat(1, minmax(198px, 1fr));
-  gap: 46px 48px;
-  padding: 0 50px;
+  gap: 48px 46px;
+  padding: 50 40px;
   place-items: center;
 }
 
@@ -25,12 +25,14 @@
 }
 
 .card {
-  width: 200px;
+  width: $card-width;
   border: 1px solid $border-color;
   border-radius: 5px;
   background-color: $white-color;
   overflow: hidden;
   box-sizing: border-box;
+    transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .card__image {
@@ -53,7 +55,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  color: #060b35;
+  color: $font-color-primary;
   margin-bottom: 4px;
   padding: 0 16px;
 }
@@ -72,14 +74,15 @@
   flex-direction: row;
   padding: 0 16px;
 
-  .card__review-count {
-    margin-top: 2px;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 14px;
-    color: #060b35;
-    margin-left: auto;
-  }
+}
+
+.card__review-count {
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $font-color-primary;
+  margin-left: auto;
 }
 
 .card__price-container {
@@ -89,19 +92,20 @@
   padding: 0 16.5px;
   margin-bottom: 16px;
 
-  .card__price-label {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: $font-color-primary;
-  }
+}
 
-  .card__price {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    color: $font-color-primary;
-  }
+.card__price-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: $font-color-primary;
+}
+
+.card__price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: $font-color-primary;
 }
 
 .card__buy {
@@ -124,8 +128,7 @@
 }
 
 .card:hover {
-  transition-duration: 3s;
-  transition-timing-function: linear;
+
   transform: scale(1.2);
 
   .card__title {
