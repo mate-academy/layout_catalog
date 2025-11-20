@@ -1,5 +1,8 @@
 .card {
-  @include box-alignment;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
   display: flex;
   flex-direction: column;
   width: $card-width;
@@ -8,6 +11,19 @@
   border-radius: $border-r5;
   background-color: $white;
   transition: $trans ease;
+
+  &__title {
+    color: $dark-blue;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    width: $width;
+    height: 36px;
+    margin: 0;
+    box-sizing: border-box;
+    transition: color $trans;
+  }
 
   &:hover {
     transform: scale(1.2);
@@ -35,26 +51,18 @@
     margin-top: 40px;
   }
 
-  &__title {
-    color: $dark-blue;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    width: $width;
-    height: 36px;
+  &__product-code {
     margin: 0;
-    box-sizing: border-box;
-    transition: color $trans;
   }
 
-  &__product-code, &__product-code-text {
+  &__product-code-text {
     width: 98px;
     height: 14px;
     color: $grey;
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
-    margin: 4px 84px 0 5px;
+    margin: 4px 84px 0 16px;
   }
 
   &__price {
@@ -63,6 +71,7 @@
     width: $width;
     height: 18px;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__price-text {
@@ -80,10 +89,13 @@
     line-height: 18px;
     color: $dark-blue;
     margin: 0;
+    justify-content: right;
+    align-items: end;
   }
 
   &__btn {
     @include box-alignment;
+
     display: inline-block;
     text-decoration: none;
     background-color: $light-blue;
@@ -97,7 +109,9 @@
     line-height: $height-small;
     width: $width;
     height: 40px;
-    transition: background $trans, color $trans;
+    transition:
+      background $trans,
+      color $trans;
 
     &:hover {
       background-color: $white;
