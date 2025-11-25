@@ -1,24 +1,29 @@
 .container {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 40px 72px;
+  padding: 50px 40px;
+  box-sizing: border-box;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px 46px;
+
+  grid-template-columns: repeat(1, $card-width);
+
+  gap: 46px 48px;
+
+  justify-content: center;
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, $card-width);
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, $card-width);
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, $card-width);
   }
 }
