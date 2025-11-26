@@ -1,0 +1,35 @@
+@use './variables' as *;
+@use './card';
+@use './stars';
+
+.main {
+  // .main-block__container
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
+  // .main-block__body
+
+  &__body {
+    padding: $catalog-padding-vertical $catalog-padding-horizontal;
+    display: grid;
+    grid-template-columns: repeat(1, $card-width);
+    justify-content: center;
+    gap: $gap-x $gap-y;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
