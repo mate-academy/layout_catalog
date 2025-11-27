@@ -4,7 +4,7 @@
   align-items: center;
 
   box-sizing: border-box;
-  width: 200px;
+  width: $width-card;
   padding: 32px 16px 16px;
   border: 1px solid $border-color;
   border-radius: 5px;
@@ -14,12 +14,13 @@
 
   background-color: $white-color;
 
+  transition-duration: $transition-duration;
+
   &:hover {
     transform: scale(1.2);
-    transition-duration: 300ms;
   }
 
-  &__product-description {
+  &__title {
     margin: 0 0 4px;
 
     font-size: $text-size-secondary;
@@ -28,10 +29,9 @@
     color: $text-accent-color;
   }
 
-  &:hover .card__product-description {
+  &:hover .card__title {
     cursor: pointer;
     color: $text-color-hover;
-    transition-duration: 300ms;
   }
 
   &__img {
@@ -70,14 +70,14 @@
     margin-bottom: 16px;
   }
 
-  .card__price-description {
+  &__price-description {
     font-size: $text-size-secondary;
     font-weight: $font-weight-main;
     line-height: $line-height-size-secondary;
     color: $text-secondary-color;
   }
 
-  .card__price-value {
+  &__price-value {
     font-size: $text-size-largest;
     font-weight: $font-weight-largest;
     line-height: $line-height-size-secondary;
@@ -103,11 +103,11 @@
     text-transform: uppercase;
 
     background-color: $main-color;
+    transition-duration: $transition-duration;
 
     &:hover {
       color: $main-color;
       background-color: $white-color;
-      transition-duration: 300ms;
     }
   }
 }
