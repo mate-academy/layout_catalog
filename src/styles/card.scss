@@ -1,38 +1,38 @@
 .card {
-  padding: 32px 16px 16px;
+  padding: $card-padding;
   font-family: $font-family;
   box-sizing: border-box;
-  width: 200px;
+  width: $card-width;
   border: 1px solid $card-border-color;
-  border-radius: 5px;
+  border-radius: $card-border-radius;
   background-color: $color-white;
   transition: $transition;
 
   &__img {
     background-image: url(../images/imac.jpeg);
-    height: 134px;
-    width: 166px;
+    height: $card-img-height;
+    width: $card-img-width;
     box-sizing: border-box;
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius: 4px;
+    border-radius: $img-border-radius;
     padding: 0;
   }
 
   &__title {
     display: flex;
     justify-content: center;
-    font-size: 12px;
+    font-size: $font-size-title;
     font-weight: 500;
     font-family: $font-family;
     letter-spacing: 0;
-    padding-top: 40px;
+    padding-top: $title-padding-top;
     transition: color $transition;
   }
 
   &__code {
-    padding-top: 4px;
-    font-size: 10px;
+    padding-top: $code-padding-top;
+    font-size: $font-size-code;
     font-weight: 400;
     line-height: 14px;
     color: $text-color-secondary;
@@ -45,7 +45,7 @@
     font-size: 10px;
     font-weight: 400;
     height: 16px;
-    padding-top: 16px;
+    padding-top: $rating-padding-top;
   }
 
   &__price {
@@ -53,20 +53,20 @@
     justify-content: space-between;
     align-items: center;
     height: 18px;
-    padding: 24px 0 16px;
+    padding: $price-padding;
 
     &-label {
       padding: 0;
-      font-size: 12px;
+      font-size: $font-size-price-label;
       font-weight: 400;
       color: $text-color-secondary;
     }
 
     &-value {
       padding: 0;
-      font-size: 16px;
+      font-size: $font-size-price-value;
       font-weight: 700;
-      color: $main-concept;
+      color: $color-main;
     }
   }
 
@@ -76,22 +76,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 166px;
-    height: 38px;
-    border: 1px solid $blue-button;
-    border-radius: 5px;
-    background-color: $blue-button;
+    width: $button-width;
+    height: $button-height;
+    border: 1px solid $color-hover;
+    border-radius: $button-border-radius;
+    background-color: $color-hover;
     font-family: $font-family;
     font-weight: 700;
-    font-size: 14px;
+    font-size: $font-size-button;
     text-align: center;
+    transition:
+      background-color $transition,
+      color $transition;
 
     &--buy {
       color: $color-white;
 
       &:hover {
         background-color: $color-white;
-        color: $blue-button;
+        color: $color-hover;
       }
     }
   }
@@ -100,7 +103,7 @@
     transform: scale(1.2);
 
     .card__title {
-      color: #34568b;
+      color: $card-title-hover-color;
     }
   }
 }
