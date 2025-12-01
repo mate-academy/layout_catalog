@@ -1,3 +1,129 @@
-body {
+@import '../variables/variables';
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  font-family: Inter, sans-serif;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.main__header {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  justify-items: center;
+  gap: 48px 40px;
+  overflow: visible;
+}
+
+@media (min-width: 488px) {
+  .card {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: $card-width;
+  background: $color-white;
+  padding: $card-padding-y $card-padding-x;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__image {
+    width: 100%;
+    height: 120px;
+    background-image: url('../images/imac.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+  }
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-size: $font-size-s;
+    font-weight: $font-weight-bold;
+    line-height: 1.3;
+  }
+
+  &__code {
+    font-size: $font-size-xs;
+    color: $color-text-light;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__reviews {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  &__price-price {
+    font-size: $font-size-s;
+    color: $color-text-secondary;
+  }
+
+  /* change card title color when the card is hovered */
+  &:hover .card__title {
+    color: #34568b;
+  }
+
+  transition:
+    background 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+
+  &:hover {
+    color: $color-action;
+    border-color: $color-action;
+    background: $color-white;
+  }
+
+  &__buy {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    .card:hover {
+      transform: scale(1.2);
+      z-index: 2;
+    }
+
+    background: $color-primary;
+    border-radius: $radius-default;
+    border: 1px solid $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+
+    &:hover {
+      color: $color-primary;
+      border-color: $color-primary;
+      background: $color-primary-hover;
+    }
+  }
 }
