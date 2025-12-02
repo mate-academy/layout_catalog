@@ -1,0 +1,132 @@
+.catalog {
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  grid-template-columns: repeat(1, 200px);
+  overflow: visible;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  background-color: white;
+  width: 200px;
+  height: 408px;
+  border: 1px solid $color-secondary;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+  will-change: transform;
+  position: relative;
+  z-index: 0;
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 32px;
+  }
+
+  &__content {
+    padding: 40px 16px 16px;
+  }
+
+  &__text {
+    color: $color-third;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color 300ms ease;
+  }
+
+  &__code {
+    color: $color-main;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 4px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: 400;
+    color: $color-third;
+    margin: 0;
+  }
+
+  &__price-money {
+    color: $color-third;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__button {
+    background-color: $color-card;
+    border: 1px solid $color-card;
+    color: #fff;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease,
+      border-color 300ms ease;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    .card__text {
+      color: $card__text--color;
+    }
+
+    .card__button {
+      background-color: white;
+      color: $color-card;
+      border-color: $color-card;
+    }
+  }
+}
