@@ -1,0 +1,168 @@
+@use './variables' as vars;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 198px;
+  max-width: 200px;
+  height: 406px;
+  max-height: 408px;
+  border-radius: 5px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  transition: vars.$transition;
+
+  &__image {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 32px;
+    height: 134px;
+    width: 160px;
+    background-image: url(../images/imac.jpeg);
+    background-size: 160px 134px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    width: 166px;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-top: 24px;
+    margin-bottom: -5px;
+    color: rgba(6, 11, 53, 1);
+    transition: vars.$transition;
+
+    &:hover {
+      color: var(--card-name-color);
+    }
+  }
+
+  &__code {
+    display: flex;
+    justify-content: flex-start;
+    width: 98px;
+    height: 14px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-top: -7px;
+    margin-right: 68px;
+    color: rgba(97, 96, 112, 1);
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    width: 166px;
+    height: 16px;
+    margin-top: -1px;
+
+    &-revievs {
+      font-size: 10px;
+      font-weight: 400;
+      height: 16px;
+      line-height: 14px;
+      color: rgba(6, 11, 53, 1);
+      position: relative;
+      top: 2px;
+    }
+
+    &-stars {
+      display: flex;
+    }
+
+    &-star {
+      background-image: url('../images/star.svg');
+      background-repeat: no-repeat;
+      background-size: 13px;
+      background-position: top 2px left 2px;
+      width: 16px;
+      height: 16px;
+      padding-right: 4px;
+
+      &:nth-child(-n + 4) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+
+  &__price {
+    height: 18px;
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    gap: 86px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: 7px;
+    position: relative;
+    top: 1px;
+
+    &-label {
+      width: 31px;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(97, 96, 112, 1);
+    }
+
+    &-value {
+      width: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(6, 11, 53, 1);
+    }
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+    width: 166px;
+    border-radius: 5px;
+    background-color: rgb(0, 172, 220);
+    background-size: 40px 166px;
+    margin-top: 1px;
+    margin-bottom: 16px;
+
+    &:hover {
+      background-color: var(--nav-link-hover-backcolor);
+      height: 38px;
+      width: 164px;
+      border: 1px solid rgb(0, 172, 220);
+      border-radius: 5px;
+      transition: vars.$transition;
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      width: 166px;
+      height: 40px;
+      text-decoration: none;
+      position: relative;
+
+      &:hover {
+        color: rgb(0, 172, 220);
+        position: relative;
+        bottom: 1px;
+        transition: vars.$transition;
+      }
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+    z-index: 5;
+    transition: vars.$transition;
+  }
+}
