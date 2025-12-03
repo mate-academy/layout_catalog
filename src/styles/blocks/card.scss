@@ -8,6 +8,11 @@
   border: 1px solid $color-border;
   border-radius: 5px;
   box-sizing: border-box;
+  transition: transform $transition-duration $transition-timing;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
     width: $image-width;
@@ -24,6 +29,11 @@
     margin-top: 0;
     padding-left: 16px;
     margin-bottom: 4px;
+    transition: color $transition-duration $transition-timing;
+  }
+
+  card:hover &__title {
+    color: $color-title-hover;
   }
 
   &__code {
@@ -42,6 +52,7 @@
     height: $rating-reviews-height;
     padding-left: 16px;
     margin-bottom: 24px;
+    box-sizing: border-box;
   }
 
   &__reviews {
@@ -76,6 +87,7 @@
   }
 
   &__buy-link {
+    box-sizing: border-box;
     background-color: $color-button;
     border-radius: 5px;
     width: $button-width;
@@ -85,16 +97,20 @@
     color: $color-button-text;
     font-weight: $font-weight-buy;
     text-decoration: none;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     margin-left: 16px;
     margin-bottom: 17px;
     transform: translateY(1px);
 
-    &[data-qa='card-hover']:hover {
+    border: 1px solid $color-button;
+    transition:
+      background-color $transition-duration $transition-timing,
+      color $transition-duration $transition-timing;
+
+    &:hover {
       background-color: transparent;
       color: $color-button;
-      border: 1px solid $color-button;
     }
   }
 }
