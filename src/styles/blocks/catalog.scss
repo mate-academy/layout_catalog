@@ -1,0 +1,22 @@
+@import '../variables';
+
+.catalog {
+  display: grid;
+  gap: $card-gap-y $card-gap-x;
+  padding: $catalog-padding-y $catalog-padding-x;
+
+  grid-template-columns: repeat(auto-fit, minmax($card-width, 1fr));
+  justify-content: center;
+
+  @media (min-width: $screen-md) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: $screen-lg) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: $screen-xl) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
