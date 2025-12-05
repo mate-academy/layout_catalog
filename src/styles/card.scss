@@ -1,0 +1,100 @@
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border-radius: 5px;
+  border: 1px solid $color-card-border;
+  background-color: $color-card-bg;
+  padding: 32px 16px 16px;
+  position: relative;
+  transition:
+    transform $transition-duration $transition-timing,
+    box-shadow $transition-duration $transition-timing;
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+
+    @include text(12px, 500, 18px, $color-card-main);
+
+    transition: color $transition-duration $transition-timing;
+  }
+
+  &:hover {
+    transform: scale($scale-factor);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+
+  &__code {
+    margin: 0 0 16px;
+
+    @include text(10px, 400, 14px, $color-card-secondary);
+  }
+
+  &__rating {
+    margin: 0 0 24px;
+
+    @include flex-between;
+  }
+
+  &__reviews {
+    margin: 0;
+
+    @include text(10px, 400, 14px, $color-card-main);
+
+    padding-top: 2px;
+  }
+
+  &__price-row {
+    margin: 0 0 16px;
+
+    @include flex-between;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    color: $color-card-secondary;
+  }
+
+  &__price-value {
+    margin: 0;
+
+    @include text(16px, 700, 18px, $color-card-main);
+  }
+
+  &__button {
+    display: block;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid $color-button-bg;
+    background-color: $color-button-bg;
+
+    @include text(14px, 700, 40px, $color-button-text);
+
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color $transition-duration $transition-timing, color $transition-duration $transition-timing;
+
+    &:hover {
+      background-color: $color-button-text;
+      color: $color-button-bg;
+    }
+  }
+}
