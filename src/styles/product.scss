@@ -6,9 +6,9 @@ a {
   display: block;
 
   box-sizing: border-box;
-  width: 200px;
-  height: 408px;
-  padding: 32.5px 17px 16px;
+  width: $card-width;
+  height: $card-height;
+  padding: $card-padding-top $card-padding-horizontal $card-padding-bootm;
   border: 1px solid $border-color;
   border-radius: 5px;
 
@@ -18,7 +18,7 @@ a {
 
   background-color: $white-color;
 
-  transition: 0.3s linear;
+  transition: $transition-duration;
 
   &__photo {
     display: block;
@@ -29,14 +29,21 @@ a {
 
   &__title {
     margin: 0 0 4px;
+
     font-size: $font-size-sm;
     font-weight: $font-weight-medium;
     line-height: 18px;
+    color: $main-accent-color;
+
+    transition: $transition-duration;
   }
 
   &__link {
-    color: $main-accent-color;
-    transition: 0.3s linear;
+    color: inherit;
+
+    &:hover {
+      color: $blue-color;
+    }
   }
 
   &__code {
@@ -102,7 +109,7 @@ a {
 
     background-color: $blue-color;
 
-    transition: 0.3s linear;
+    transition: $transition-duration;
 
     &:hover {
       color: $blue-color;
@@ -112,13 +119,9 @@ a {
 
   &:hover {
     transform: scale(1.2);
+  }
 
-    .product-card__link {
-      color: #34568b;
-
-      &:hover {
-        color: $blue-color;
-      }
-    }
+  &:hover &__title {
+    color: $title-hover-color;
   }
 }
