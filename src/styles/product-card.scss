@@ -1,0 +1,114 @@
+@use 'variables' as *;
+@use 'mixing' as mixin;
+
+.product-cards {
+  padding: 50px 40px;
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px;
+  grid-template-columns: $card-width;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 32px 16px 16px;
+  width: $card-width;
+  box-sizing: border-box;
+
+  border: $card-border;
+  border-radius: $card-border-radius;
+  background-color: $card-bg-color;
+  line-height: 14px;
+
+  transition: transform $card-transition-time;
+
+  &__image {
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    transition: color $card-transition-time;
+    line-height: 18px;
+
+    @include mixin.font-config(500, 12px, 18px, $main-txt-color);
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    align-self: flex-start;
+
+    @include mixin.font-config(400, 10px, 14px, $second-txt-color);
+  }
+
+  &__review {
+    margin-bottom: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixin.font-config(400, 10px, 14px, $main-txt-color);
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixin.font-config(400, 12px, 18px, $second-txt-color);
+  }
+
+  &__price-value {
+    @include mixin.font-config(700, 16px, 18px, $main-txt-color);
+  }
+
+  &__btn {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $interaction-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border: 1px solid $interaction-color;
+    border-radius: $card-border-radius;
+    transition: all $card-transition-time;
+
+    @include mixin.font-config(700, 14px, 16px, $card-bg-color);
+
+    &:hover {
+      background-color: $card-bg-color;
+      color: $interaction-color;
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .product-card__title {
+      color: $card-hover-title-color;
+    }
+  }
+}

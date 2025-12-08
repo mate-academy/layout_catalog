@@ -1,0 +1,68 @@
+@use 'variables.scss' as *;
+
+.header {
+  background-color: $card-bg-color;
+  padding: 0 50px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+
+  box-shadow: $header-border;
+}
+
+.logo {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-txt-color;
+    transition: color $card-transition-time;
+
+    &.is-active {
+      color: $interaction-color;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $interaction-color;
+        height: 4px;
+        border-radius: 8px;
+      }
+    }
+
+    &:hover {
+      color: $interaction-color;
+    }
+  }
+}
