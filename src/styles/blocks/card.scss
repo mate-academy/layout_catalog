@@ -1,0 +1,119 @@
+.card {
+  box-sizing: border-box;
+  max-width: $card-width;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0 16px;
+
+  @include hover-transition;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+
+    @include content-padding-inline;
+  }
+
+  &__product-name {
+    width: 166px;
+    height: 36px;
+    line-height: 18px;
+    margin: 40px 0 0;
+
+    @include content-padding-inline;
+    @include font-properties(12px, 0, 500, $main-accent);
+  }
+
+  &__product-code {
+    width: 98px;
+    height: 14px;
+    line-height: 14px;
+    margin: 4px 0 0;
+
+    @include content-padding-inline;
+    @include font-properties(10px, 0, 400, $secondary);
+  }
+
+  &__rating {
+    width: 166px;
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 17px;
+    padding-block: 0;
+    margin: 16px 0 0;
+
+    @include content-padding-inline;
+  }
+
+  &__review-text {
+    line-height: 14px;
+
+    @include font-properties(10px, 0, 400, $main-accent);
+  }
+
+  &__price {
+    width: 166px;
+    height: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 85px;
+    margin-top: 24px;
+
+    @include content-padding-inline;
+  }
+
+  &__price-label {
+    line-height: 18px;
+
+    @include font-properties(12px, 0, 400, $secondary);
+  }
+
+  &__price-value {
+    line-height: 18px;
+
+    @include font-properties(16px, 0, 700, $main-accent);
+  }
+
+  &__button {
+    display: block;
+    box-sizing: border-box;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    width: 166px;
+    height: 40px;
+
+    background-color: $main-blue;
+    border: 1px solid $main-blue;
+    border-radius: 5px;
+
+    margin: 16px 16px 0;
+
+    @include hover-transition;
+    @include font-properties(14px, 0, 700, #fff);
+  }
+
+  &__button:hover {
+    color: $main-blue;
+    background-color: #fff;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__product-name {
+    color: #34568b;
+  }
+}
