@@ -1,0 +1,70 @@
+$main-color: #00acdc;
+$text-color-main: #060b35;
+
+.header {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &__logo {
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    display: block;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item + &__item {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    align-items: center;
+    height: 60px;
+    color: $text-color-main;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $main-color;
+    }
+
+    &--is-active {
+      color: $main-color;
+
+      &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        content: '';
+        height: 4px;
+        border-radius: 8px;
+        background-color: $main-color;
+      }
+    }
+  }
+}
