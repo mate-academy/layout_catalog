@@ -1,0 +1,62 @@
+@use 'variables';
+@use 'fonts';
+
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  height: variables.$headerHeight;
+  padding: 0 50px;
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    height: variables.$headerHeight;
+    font-size: 12px;
+  }
+
+  &__link {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    color: variables.$mainColor;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: variables.$headerHeight;
+
+    @include variables.transition;
+
+    &.is-active {
+      position: relative;
+      color: variables.$secondaryColor;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: variables.$secondaryColor;
+        border-radius: 8px;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &:hover {
+      color: variables.$secondaryColor;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use 'variables';
+
+.catalog {
+  padding: 50px 40px;
+  margin: 0;
+
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px;
+
+  @each $width, $columns in variables.$screenWidth {
+    @media screen and (max-width: $width) {
+      grid-template-columns: repeat($columns, 200px);
+    }
+  }
+
+  @media screen and (min-width: 1024) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
