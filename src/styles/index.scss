@@ -1,3 +1,43 @@
+@import 'vars';
+@import 'header';
+@import 'card';
+@import 'stars';
+
+html {
+  box-sizing: border-box;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: $gap;
+
+  padding: $padding-ver $padding-hor;
+}
+
+@media (min-width: $media-small) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: $media-medium) {
+  .catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: $media-big) {
+  .catalog {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 body {
   margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }

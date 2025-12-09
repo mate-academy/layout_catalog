@@ -1,0 +1,35 @@
+@import 'vars';
+
+$max-stars: 5;
+
+.stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: $stars-margin;
+  margin-top: 0;
+
+  @for $i from 1 through $max-stars {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+  &__reviews-count {
+    margin-left: $reviews-margin;
+    font-size: $font-size-code;
+    color: $color-text-dark;
+  }
+  &__star {
+    width: $star-size;
+    height: $star-size;
+    margin-right: $star-margin;
+    background-image: url(../images/star.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
