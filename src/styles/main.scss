@@ -1,0 +1,218 @@
+// ================================
+// Variables
+// ================================
+$color-nav: #060b35;
+$color-nav-hover: #00acdc;
+$color-title-hover: #34568b;
+$color-white: #fff;
+$color-border: #eee;
+$color-bg-catalog: #f7f9fc;
+$color-card-gradient-start: #e6eefb;
+$color-card-gradient-end: #f5f7ff;
+$color-text-main: #111;
+$color-text-footer: #666;
+
+$card-width: 200px;
+$g-gap-x: 46px;
+$g-gap-y: 48px;
+$container-padding-vertical: 50px;
+$container-padding-horizontal: 40px;
+$transition-time: 300ms;
+
+// Stars variables
+$stars-size: 16px;
+$stars-color: #ffd700;
+$stars-color-inactive: #ccc;
+
+// ================================
+// Reset-ish
+// ================================
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: $color-text-main;
+}
+a { text-decoration: none; }
+
+// ================================
+// Header
+// ================================
+.site-header {
+  background: $color-white;
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-weight: 700;
+    color: $color-nav;
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+  }
+
+  &__link {
+    color: $color-nav;
+    font-weight: 600;
+    padding: 6px 4px;
+    display: inline-block;
+    transition: color $transition-time;
+
+    &.is-active { text-decoration: underline; }
+    &:hover { color: $color-nav-hover; }
+  }
+}
+
+// ================================
+// Catalog
+// ================================
+.catalog {
+  background: $color-bg-catalog;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: $container-padding-vertical $container-padding-horizontal;
+  }
+
+  &__title {
+    margin: 0 0 24px 0;
+    font-size: 24px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, $card-width);
+    column-gap: $g-gap-x;
+    row-gap: $g-gap-y;
+    justify-content: center;
+    align-items: start;
+  }
+}
+
+@media (min-width: 488px) {
+  .catalog__grid { grid-template-columns: repeat(2, $card-width); }
+}
+@media (min-width: 768px) {
+  .catalog__grid { grid-template-columns: repeat(3, $card-width); }
+}
+@media (min-width: 1024px) {
+  .catalog__grid { grid-template-columns: repeat(4, $card-width); }
+}
+
+// ================================
+// Card
+// ================================
+.card {
+
+  position: relative;
+  width: $card-width;
+  background: $color-white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(6, 11, 53, 0.06);
+  transition: transform $transition-time ease, box-shadow $transition-time ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform-origin: center center;
+  will-change: transform;
+
+  &__media {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, $color-card-gradient-start, $color-card-gradient-end);
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: $color-text-main;
+    transition: color $transition-time;
+  }
+
+  &__price {
+    margin: 0 0 12px 0;
+    font-weight: 700;
+  }
+
+  &__buy {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: $color-nav-hover;
+    color: $color-white;
+    font-weight: 700;
+    transition: background $transition-time, color $transition-time;
+
+    &:hover {
+      background: $color-white;
+      color: $color-nav-hover;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 14px 36px rgba(6, 11, 53, 0.12);
+    z-index: 2;
+
+    .card__title { color: $color-title-hover; }
+  }
+}
+
+// ================================
+// Stars
+// ================================
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+
+  &__star {
+    width: $stars-size;
+    height: $stars-size;
+    display: inline-block;
+    background-color: $stars-color-inactive;
+    clip-path: polygon(
+      50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    transition: transform $transition-time, background-color $transition-time;
+
+    &--active { background-color: $stars-color; }
+    &:hover { transform: scale(1.2); }
+  }
+}
+
+// ================================
+// Footer
+// ================================
+.site-footer {
+  padding: 20px 40px;
+  text-align: center;
+  color: $color-text-footer;
+}
+
+// ================================
+// Accessibility
+// ================================
+[aria-hidden="true"] { pointer-events: none; }
