@@ -1,0 +1,105 @@
+.card {
+  display: grid;
+  gap: 46px 48px;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__title {
+    display: block;
+    margin: 0 0 4px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-accent;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__item {
+    width: $card-item-width;
+    height: auto;
+
+    box-sizing: border-box;
+    padding: 32px 16px 16px;
+
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background-color: $white;
+    cursor: pointer;
+
+    transition: all 0.3s linear;
+
+    &:hover {
+      transform: scale(1.2);
+
+      .card__title {
+        color: $card-item-text-color-hover;
+      }
+    }
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+
+    background-image: url(../images/imac.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__product {
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-accent;
+  }
+
+  &__info--rating {
+    margin-top: 16px;
+  }
+
+  &__info--price {
+    margin-top: 24px;
+  }
+
+  &__price {
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondary;
+  }
+
+  &__count {
+    font-size: 16px;
+    font-weight: 700;
+    color: $black;
+  }
+}

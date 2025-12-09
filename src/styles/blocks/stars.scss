@@ -1,0 +1,36 @@
+.stars {
+  display: flex;
+  position: relative;
+
+  &__star {
+    width: $star-size;
+    height: $star-size;
+    margin-right: $star-spacing;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &::before {
+    content: '';
+    height: 100%;
+
+    background-image: url(../images/star-active.svg);
+    background-repeat: repeat-x;
+    background-size: $star-active-width $star-active-height;
+
+    position: absolute;
+    top: $star-active-offset-top;
+    left: $star-active-offset-left;
+  }
+
+  @for $count from 1 through 5 {
+    &--#{$count}::before {
+      width: calc($count * $star-active-width - $star-spacing);
+    }
+  }
+}
