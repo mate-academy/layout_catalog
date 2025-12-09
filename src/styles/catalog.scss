@@ -1,0 +1,31 @@
+@import './variables';
+
+.catalog {
+  padding: $catalog-padding-y $catalog-padding-x;
+
+  &__content {
+    display: grid;
+    gap: $catalog-gap-row $catalog-gap-col;
+
+    grid-template-columns: repeat(1, $card-width);
+    justify-content: center;
+  }
+
+  @media (min-width: 488px) {
+    &__content {
+      grid-template-columns: repeat(2, $card-width);
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__content {
+      grid-template-columns: repeat(3, $card-width);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__content {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
