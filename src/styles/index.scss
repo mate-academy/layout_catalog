@@ -1,3 +1,246 @@
+html {
+  font-family: Roboto, sans-serif;
+}
+
 body {
   margin: 0;
+  background-color: #fff;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 50px;
+  height: 60px;
+  line-height: 60px;
+  box-sizing: border-box;
+  background-color: #ffff;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    bottom: 10px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &__list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__item {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #060b35;
+      position: relative;
+      padding: 0;
+      text-transform: uppercase;
+      transition: color 300ms ease;
+
+      &:hover {
+        color: #00acdc;
+      }
+
+      &.is-active {
+        color: #00acdc;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 4px;
+          width: 100%;
+          background-color: #00acdc;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+// Main section cards
+
+.cards-container {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .cards-container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    --column-count: 4;
+  }
+}
+
+.cards {
+  width: 200px;
+  padding: 0 16px 16px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  transition:
+    transform 300ms ease,
+    color 300ms ease;
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+
+  &__image img {
+    display: flex;
+    margin: 0 auto;
+    width: 160px;
+    height: 134px;
+    margin-top: 32px;
+  }
+
+  &__p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #060b35;
+    margin: 40px 0 0;
+  }
+
+  &__opis_p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #616070;
+    margin: 4px 0 0;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 16px;
+    margin: 16px 0 0;
+
+    &_inf {
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+      color: #060b35;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 18px;
+    margin: 24px 0 0;
+
+    &-title {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: #616070;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: #060b35;
+    }
+  }
+}
+
+.buy-button {
+  display: flex;
+  align-items: center;
+  background-color: #00acdc;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  padding: 12px 70px;
+  border: 1px solid #00acdc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 16px 0 0;
+  width: 100%;
+  height: 40px;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+
+  &:hover {
+    border: 1px solid #00acdc;
+    color: #00acdc;
+    background-color: #fff;
+  }
+}
+
+.stars {
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-position: center;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+
+    &--active {
+      background-image: url('../images/star-active.svg');
+    }
+  }
+
+  &--0 {
+    .stars__star {
+      background-image: url('../images/star.svg');
+    }
+  }
 }
