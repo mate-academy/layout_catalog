@@ -1,3 +1,198 @@
-body {
-  margin: 0;
+@import './utils/variables';
+@import './stars';
+@import './header';
+
+@mixin small-text {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.cards-grid {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: $container-py $container-px;
+  justify-content: center;
+  gap: $gap-y $gap-x;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    box-sizing: border-box;
+    width: $card-width;
+    background-color: $white;
+    border: 1px solid $border-light;
+    border-radius: $border-radius-standard;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition:
+      transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    position: relative;
+    padding: 32px 16px 16px;
+
+    &:hover {
+      z-index: 1;
+      transform: scale(1.2);
+      box-shadow: 0 8px 32px rgba(52, 86, 139, 0.12);
+    }
+
+    &__img-wrap {
+      width: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    &__title {
+      width: 100%;
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: $title-color;
+      transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      margin: 40px 0 0;
+      padding: 0;
+    }
+
+    &__code {
+      @include small-text;
+
+      color: $text-color;
+      margin-top: 4px;
+      margin-bottom: 0;
+      width: 100%;
+      letter-spacing: 0.2px;
+      font-family: Roboto, sans-serif;
+      text-align: left;
+    }
+
+    &:hover .card__title {
+      color: $card-title-hover;
+    }
+
+    &__rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    &__rating-reviews {
+      @include small-text;
+
+      color: $title-color;
+      margin: 0;
+      font-weight: $font-width-regular;
+      font-size: $font-size-xs;
+      line-height: $line-hight-s;
+    }
+
+    &__price {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 166px;
+      height: 18px;
+      margin: 24px auto 0;
+      gap: 60px;
+      padding: 0;
+
+      &-item {
+        width: 31px;
+        height: 18px;
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $text-color;
+        display: flex;
+        align-items: flex-end;
+        margin: 0;
+        text-align: left;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+
+      &-cost {
+        width: 50px;
+        height: 18px;
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: $title-color;
+        display: flex;
+        align-items: flex-end;
+        margin: 0;
+        text-align: right;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      }
+    }
+
+    &__button {
+      margin-top: 16px;
+      width: 100%;
+      height: 40px;
+      background-color: $button-color;
+      border-radius: $border-radius-standard;
+      color: $white;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-shrink: 0;
+      padding: 0;
+      border: none;
+      line-height: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition:
+        background 300ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        background-color: $white;
+        color: $brand;
+        border: 1px solid $brand;
+      }
+    }
+  }
 }
