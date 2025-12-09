@@ -1,0 +1,65 @@
+@use '../utilities/variables.scss' as *;
+
+.moyo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__categories-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__categories-item {
+    margin-right: 24px;
+  }
+
+  &__nav-link {
+    font-family: inherit;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+
+    text-decoration: none;
+    color: $color-link-primary;
+    position: relative;
+    white-space: nowrap;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+
+    transition: color 300ms ease-out;
+
+    &.is-active {
+      color: $color-link-secondary;
+    }
+
+    &.is-active::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background-color: $color-link-secondary;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__categories-item:last-child {
+    margin-right: 0;
+  }
+
+  &__nav-link:hover {
+    color: $color-link-secondary;
+  }
+}

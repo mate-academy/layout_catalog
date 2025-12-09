@@ -1,0 +1,138 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 40px;
+  row-gap: 46px;
+  padding: 40px 50px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  width: 200px;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition:
+    transform 300ms ease-out,
+    z-index 0ms 30ms;
+  position: relative;
+
+  &__image {
+    width: 160px;
+    height: auto;
+  }
+
+  &__content-box {
+    padding: 16px;
+  }
+
+  &__title {
+    @include font-settings(
+      $description-font-size,
+      $description-line-height,
+      $font-weight-medium
+    );
+    margin: 0;
+  }
+
+  &__product-code {
+    display: flex;
+    justify-content: left;
+    margin: 0;
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    @include font-settings(
+      $price-font-size,
+      $description-line-height,
+      $font-weight-regular
+    );
+    margin: 0;
+  }
+
+  &__price-value {
+    @include font-settings(
+      $price-value-font-size,
+      $description-line-height,
+      $font-weight-bold
+    );
+    margin: 0;
+  }
+
+  &__buy-link {
+    box-sizing: border-box;
+    color: $bg-primary;
+    background-color: $link-color;
+    text-decoration: none;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 300ms ease-out background-color 300ms ease-out
+      border-color 300ms ease-out;
+    @include font-settings(
+      $price-value-font-size,
+      $link-line-height,
+      $font-weight-bold
+    );
+
+    &:hover {
+      background-color: $bg-primary;
+      color: $link-color;
+      border-color: $link-color;
+      border: 1px solid;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+
+  &:hover &__description {
+    color: #34568b;
+    transition: color 300ms ease-out;
+  }
+}
