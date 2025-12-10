@@ -1,19 +1,41 @@
-// Variáveis CSS para cores (acessíveis globalmente)
 :root {
   --main-color: #00acdc;
   --text-accent-color: #060b35;
   --text-secondary-color: #616070;
 }
 
-// Variáveis SCSS para tamanhos e outros
+$logo-size: 40px;
+$nav-height: 60px;
+$nav-item-margin-left: 20px;
+$header-padding: 50px;
+$cards-max-width: 1024px;
+$cards-padding-vertical: 50px;
+$cards-padding-horizontal: 40px;
 $card-width: 200px;
-$horizontal-gap: 48px;
-$vertical-gap: 46px;
-$container-padding-vertical: 50px;
-$container-padding-horizontal: 40px;
+$card-padding-top: 32px;
+$card-padding-sides: 16px;
+$card-padding-bottom: 16px;
+$image-width: 160px;
+$image-height: 134px;
+$image-margin-bottom: 40px;
+$title-margin-bottom: 4px;
+$code-margin-bottom: 16px;
+$review-margin-bottom: 24px;
+$price-margin-bottom: 16px;
+$buy-height: 40px;
+$star-size: 16px;
+$star-margin-right: 4px;
+$active-bar-height: 4px;
+$active-bar-radius: 2px;
+$card-border-radius: 5px;
+$buy-border-radius: 5px;
 $transition-duration: 0.3s;
 $hover-title-color: #34568b;
 $button-hover-bg: #fff;
+$header-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+$card-border-color: #f3f3f3;
+$horizontal-gap: 48px;
+$vertical-gap: 46px;
 
 html {
   font-family: Roboto, sans-serif;
@@ -26,75 +48,75 @@ body {
   margin: 0;
 }
 
+.logo {
+  display: block;
+  height: $logo-size;
+  width: $logo-size;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: $nav-item-margin-left;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $nav-height;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-accent-color);
+    transition: color $transition-duration ease;
+
+    &:hover {
+      color: var(--main-color);
+    }
+
+    &.is-active {
+      color: var(--main-color);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: $active-bar-height;
+        border-radius: $active-bar-radius;
+        background-color: var(--main-color);
+      }
+    }
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 $container-padding-horizontal * 1.25; // Ajuste para 50px, mas flexível
+  padding: 0 $header-padding;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-
-  .logo {
-    display: block;
-    height: 40px;
-    width: 40px;
-
-    &__image {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  .nav {
-    &__list {
-      display: flex;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    &__item {
-      margin-left: 20px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-
-    &__link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 60px;
-      font-family: Roboto, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      white-space: nowrap;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: var(--text-accent-color);
-      transition: color $transition-duration ease;
-
-      &:hover {
-        color: var(--main-color);
-      }
-
-      &.is-active {
-        color: var(--main-color);
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          border-radius: 2px;
-          background-color: var(--main-color);
-        }
-      }
-    }
-  }
+  box-shadow: $header-box-shadow;
 }
 
 .cards {
@@ -102,11 +124,10 @@ body {
   grid-template-columns: 1fr;
   gap: $vertical-gap $horizontal-gap;
   box-sizing: border-box;
-  max-width: 1024px;
+  max-width: $cards-max-width;
   margin: 0 auto;
-  padding: $container-padding-vertical $container-padding-horizontal;
+  padding: $cards-padding-vertical $cards-padding-horizontal;
 
-  // Responsivo: colunas baseadas em breakpoints
   @media (min-width: 488px) {
     grid-template-columns: repeat(2, $card-width);
   }
@@ -118,58 +139,54 @@ body {
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, $card-width);
   }
-
-  .cards__card {
-    // Sem margins extras, grid cuida do spacing
-  }
 }
 
 .card {
+  position: relative;
+  z-index: 0;
+  display: block;
   box-sizing: border-box;
   width: $card-width;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  padding: 32px 16px 16px;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+  padding: $card-padding-top $card-padding-sides $card-padding-bottom;
   background: #fff;
-  position: relative;
-  transition: transform $transition-duration ease;
-  z-index: 0; // Base para hover
+  transition: transform $transition-duration ease, z-index $transition-duration ease;
 
   &:hover {
     transform: scale(1.2);
-    z-index: 1; // Eleva para não afetar vizinhos no grid
+    z-index: 1;
   }
 
   &__image {
     display: block;
-    margin: 0 auto 40px;
-    width: 160px;
-    height: 134px;
+    margin: 0 auto $image-margin-bottom;
+    width: $image-width;
+    height: $image-height;
   }
 
   &__title {
-    margin: 0 0 4px;
+    margin: 0 0 $title-margin-bottom;
     font-size: 12px;
     line-height: 18px;
     font-weight: 500;
     color: var(--text-accent-color);
     transition: color $transition-duration ease;
 
-    // Hover no card afeta o título
     .card:hover & {
       color: $hover-title-color;
     }
   }
 
   &__code {
-    margin-bottom: 16px;
+    margin-bottom: $code-margin-bottom;
   }
 
   &__review-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: $review-margin-bottom;
   }
 
   &__review-count {
@@ -180,7 +197,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: $price-margin-bottom;
   }
 
   &__price-label {
@@ -200,13 +217,13 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    height: 40px;
+    height: $buy-height;
     border: 1px solid var(--main-color);
-    border-radius: 5px;
+    border-radius: $buy-border-radius;
     font-size: 14px;
     line-height: 16px;
-    color: #fff;
     font-weight: 700;
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     background-color: var(--main-color);
@@ -219,14 +236,13 @@ body {
   }
 }
 
-// Componente Stars (BEM)
 .stars {
   display: flex;
 
   &__star {
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
+    width: $star-size;
+    height: $star-size;
+    margin-right: $star-margin-right;
     background-image: url(../images/star.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -236,12 +252,11 @@ body {
     }
   }
 
-  // Classes modificadoras para estrelas ativas
-  &--1 .stars__star:nth-child(-n + 1),
-  &--2 .stars__star:nth-child(-n + 2),
-  &--3 .stars__star:nth-child(-n + 3),
-  &--4 .stars__star:nth-child(-n + 4),
-  &--5 .stars__star:nth-child(-n + 5) {
+  &--1 .stars__star:nth-child(-n+1),
+  &--2 .stars__star:nth-child(-n+2),
+  &--3 .stars__star:nth-child(-n+3),
+  &--4 .stars__star:nth-child(-n+4),
+  &--5 .stars__star:nth-child(-n+5) {
     background-image: url(../images/star-active.svg);
   }
 }
