@@ -1,0 +1,110 @@
+.catalog {
+  margin: 0 auto;
+  padding: $base-spacing-lg $base-spacing-md;
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $grid-gap-y $grid-gap-x;
+  justify-content: center;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  @media (min-width: $breakpoint-max) {
+    max-width: $breakpoint-max;
+  }
+}
+
+.card {
+  width: $card-width;
+  border: $border-width solid $card-border-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 2;
+  }
+
+  &__image {
+    width: $card-image-width;
+    height: $card-image-height;
+    margin: $additional-spacing-lg $additional-spacing-xs $base-spacing-md;
+  }
+
+  &__content {
+    padding: 0 $base-spacing-sm;
+    margin-bottom: $base-spacing-sm;
+  }
+
+  &__title {
+    font-size: $font-size-md;
+    line-height: $line-height-lg;
+    font-weight: $font-weight-medium;
+    margin-bottom: $base-spacing-xs;
+    color: $text-color;
+    transition: color $transition;
+  }
+
+  &:hover .card__title {
+    color: $hover-title-color;
+  }
+
+  &__code {
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    font-weight: $font-weight-regular;
+    color: $muted-text-color;
+    margin-bottom: $base-spacing-sm;
+  }
+
+  &__stars-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $additional-spacing-md;
+  }
+
+  &__reviews {
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    font-weight: $font-weight-regular;
+    color: $text-color;
+    margin-left: $reviews-spacing;
+    align-self: flex-end;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $base-spacing-sm;
+  }
+
+  &__price-text {
+    font-size: $font-size-md;
+    line-height: $line-height-lg;
+    font-weight: $font-weight-regular;
+    color: $muted-text-color;
+  }
+
+  &__price {
+    font-size: $font-size-xl;
+    line-height: $line-height-lg;
+    font-weight: $font-weight-bold;
+    color: $text-color;
+  }
+}
