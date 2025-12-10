@@ -1,9 +1,13 @@
+// Variáveis CSS para cores (acessíveis globalmente)
 :root {
   --main-color: #00acdc;
   --text-accent-color: #060b35;
   --text-secondary-color: #616070;
 }
 
+// Variáveis SCSS para tamanhos, cores, fontes e valores repetidos/mágicos
+$font-family: 'Roboto, sans-serif';
+$white: #fff;
 $logo-size: 40px;
 $nav-height: 60px;
 $nav-item-margin-left: 20px;
@@ -31,14 +35,14 @@ $card-border-radius: 5px;
 $buy-border-radius: 5px;
 $transition-duration: 0.3s;
 $hover-title-color: #34568b;
-$button-hover-bg: #fff;
+$button-hover-bg: $white;
 $header-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 $card-border-color: #f3f3f3;
 $horizontal-gap: 48px;
 $vertical-gap: 46px;
 
 html {
-  font-family: Roboto, sans-serif;
+  font-family: $font-family;
   font-size: 10px;
   line-height: 14px;
   color: var(--text-secondary-color);
@@ -48,6 +52,7 @@ body {
   margin: 0;
 }
 
+// Bloco logo independente (BEM)
 .logo {
   display: block;
   height: $logo-size;
@@ -59,6 +64,7 @@ body {
   }
 }
 
+// Bloco nav independente (BEM)
 .nav {
   &__list {
     display: flex;
@@ -80,7 +86,7 @@ body {
     display: flex;
     align-items: center;
     height: $nav-height;
-    font-family: Roboto, sans-serif;
+    font-family: $font-family;
     font-size: 12px;
     font-weight: 500;
     white-space: nowrap;
@@ -97,7 +103,7 @@ body {
       color: var(--main-color);
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -110,12 +116,13 @@ body {
   }
 }
 
+// Header usa blocos independentes
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 $header-padding;
-  background: #fff;
+  background: $white;
   box-shadow: $header-box-shadow;
 }
 
@@ -150,12 +157,18 @@ body {
   border: 1px solid $card-border-color;
   border-radius: $card-border-radius;
   padding: $card-padding-top $card-padding-sides $card-padding-bottom;
-  background: #fff;
-  transition: transform $transition-duration ease, z-index $transition-duration ease;
+  background: $white;
+  transition:
+    transform $transition-duration ease,
+    z-index $transition-duration ease;
 
   &:hover {
     transform: scale(1.2);
     z-index: 1;
+
+    &__title {
+      color: $hover-title-color;
+    }
   }
 
   &__image {
@@ -172,10 +185,6 @@ body {
     font-weight: 500;
     color: var(--text-accent-color);
     transition: color $transition-duration ease;
-
-    .card:hover & {
-      color: $hover-title-color;
-    }
   }
 
   &__code {
@@ -223,7 +232,7 @@ body {
     font-size: 14px;
     line-height: 16px;
     font-weight: 700;
-    color: #fff;
+    color: $white;
     text-decoration: none;
     text-transform: uppercase;
     background-color: var(--main-color);
@@ -236,6 +245,7 @@ body {
   }
 }
 
+// Bloco stars independente (BEM)
 .stars {
   display: flex;
 
@@ -252,11 +262,11 @@ body {
     }
   }
 
-  &--1 .stars__star:nth-child(-n+1),
-  &--2 .stars__star:nth-child(-n+2),
-  &--3 .stars__star:nth-child(-n+3),
-  &--4 .stars__star:nth-child(-n+4),
-  &--5 .stars__star:nth-child(-n+5) {
+  &--1 .stars__star:nth-child(-n + 1),
+  &--2 .stars__star:nth-child(-n + 2),
+  &--3 .stars__star:nth-child(-n + 3),
+  &--4 .stars__star:nth-child(-n + 4),
+  &--5 .stars__star:nth-child(-n + 5) {
     background-image: url(../images/star-active.svg);
   }
 }
