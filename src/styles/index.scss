@@ -1,3 +1,43 @@
+@import 'variables';
+
 body {
   margin: 0;
+  font-family: $font-family-main;
+  padding: 0;
+}
+
+h6 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $mainFontColor;
+}
+
+p {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $secondaryFontColor;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-size);
+  justify-content: center;
+  gap: $catalog-gap;
+  padding: $catalog-padding;
+  margin: 0 auto;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-size);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-size);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-size);
+  }
 }
