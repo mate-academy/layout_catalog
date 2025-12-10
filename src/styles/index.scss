@@ -1,3 +1,247 @@
+// Variáveis CSS para cores (acessíveis globalmente)
+:root {
+  --main-color: #00acdc;
+  --text-accent-color: #060b35;
+  --text-secondary-color: #616070;
+}
+
+// Variáveis SCSS para tamanhos e outros
+$card-width: 200px;
+$horizontal-gap: 48px;
+$vertical-gap: 46px;
+$container-padding-vertical: 50px;
+$container-padding-horizontal: 40px;
+$transition-duration: 0.3s;
+$hover-title-color: #34568b;
+$button-hover-bg: #fff;
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--text-secondary-color);
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $container-padding-horizontal * 1.25; // Ajuste para 50px, mas flexível
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .logo {
+    display: block;
+    height: 40px;
+    width: 40px;
+
+    &__image {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    &__item {
+      margin-left: 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--text-accent-color);
+      transition: color $transition-duration ease;
+
+      &:hover {
+        color: var(--main-color);
+      }
+
+      &.is-active {
+        color: var(--main-color);
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          border-radius: 2px;
+          background-color: var(--main-color);
+        }
+      }
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $vertical-gap $horizontal-gap;
+  box-sizing: border-box;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: $container-padding-vertical $container-padding-horizontal;
+
+  // Responsivo: colunas baseadas em breakpoints
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  .cards__card {
+    // Sem margins extras, grid cuida do spacing
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  background: #fff;
+  position: relative;
+  transition: transform $transition-duration ease;
+  z-index: 0; // Base para hover
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1; // Eleva para não afetar vizinhos no grid
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--text-accent-color);
+    transition: color $transition-duration ease;
+
+    // Hover no card afeta o título
+    .card:hover & {
+      color: $hover-title-color;
+    }
+  }
+
+  &__code {
+    margin-bottom: 16px;
+  }
+
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review-count {
+    color: var(--text-accent-color);
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: var(--text-accent-color);
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    transition: all $transition-duration ease;
+
+    &:hover {
+      color: var(--main-color);
+      background-color: $button-hover-bg;
+    }
+  }
+}
+
+// Componente Stars (BEM)
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Classes modificadoras para estrelas ativas
+  &--1 .stars__star:nth-child(-n + 1),
+  &--2 .stars__star:nth-child(-n + 2),
+  &--3 .stars__star:nth-child(-n + 3),
+  &--4 .stars__star:nth-child(-n + 4),
+  &--5 .stars__star:nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
 }
