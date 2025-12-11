@@ -1,0 +1,118 @@
+.card {
+  background-color: $color-card-bg;
+  box-sizing: border-box;
+  width: $card-width;
+  height: $card-height;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 19px 16px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  transition:
+    transform $transition-duration ease,
+    box-shadow $transition-duration ease;
+
+  &__title {
+    color: $color-text-main;
+    text-align: left;
+    font-size: 12px;
+    line-height: 18px;
+    width: $card-inner-width;
+    margin-bottom: 4px;
+    transition: color $transition-duration ease;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    .card__title {
+      color: $color-card-title-hover;
+    }
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__code {
+    width: $card-inner-width;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-text-secondary;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    width: $card-inner-width;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $color-text-main;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: $card-inner-width;
+    margin-bottom: 16px;
+  }
+
+  &__price-name {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-text-secondary;
+  }
+
+  &__price-cost {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-text-main;
+    text-align: right;
+  }
+
+  &__button {
+    display: flex;
+    width: $card-inner-width;
+    height: $button-height;
+    background-color: $color-blue;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+
+    transition:
+      background-color $transition-duration ease,
+      color $transition-duration ease,
+      border-color $transition-duration ease;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-blue;
+      border: 1px solid $color-blue;
+    }
+  }
+}
