@@ -1,0 +1,26 @@
+$bp-sm: 488px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+.catalog {
+  --card-column: 1;
+
+  padding: $padding-v $padding-h;
+  display: grid;
+  grid-template-columns: repeat(var(--card-column), $card-width);
+  gap: $gap-y $gap-x;
+  justify-content: center;
+
+  // Responsividade usando variáveis
+  @media (min-width: $bp-sm) {
+    --card-column: 2;
+  }
+
+  @media (min-width: $bp-md) {
+    --card-column: 3;
+  }
+
+  @media (min-width: $bp-lg) {
+    --card-column: 4;
+  }
+}

@@ -1,0 +1,99 @@
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  padding: $card-padding-top $card-padding-horizontal $card-padding-bottom;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+  color: $main-text-color;
+  font-size: $card-font-size-base;
+  font-weight: 400;
+  line-height: $card-line-height-base; // nova variável
+  transform-origin: center;
+  transition: transform $hover-duration ease;
+
+  @include hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $hover-card-text-color;
+    }
+  }
+
+  &__media {
+    margin-bottom: $card-media-margin-bottom;
+  }
+
+  &__product-photo {
+    display: block;
+    margin: 0 auto;
+    width: $card-product-photo-width;
+    height: $card-product-photo-height;
+    object-fit: contain;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: $card-font-size-title;
+    line-height: $card-line-height-title; // nova variável
+    letter-spacing: 0;
+    margin-bottom: $card-margin-small; // nova variável
+    transition: color $hover-duration ease;
+  }
+
+  &__product-code {
+    color: $second-text-color;
+  }
+
+  &__reviews {
+    margin-top: $card-margin-medium; // nova variável
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__review-text {
+    line-height: $card-line-height-base; // usa variável base
+  }
+
+  &__price {
+    margin-top: $card-margin-large; // nova variável
+    display: flex;
+    justify-content: space-between;
+    line-height: $card-line-height-price; // nova variável
+  }
+
+  &__price-label {
+    font-size: $card-font-size-title;
+    color: $second-text-color;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: $card-font-size-price;
+  }
+
+  &__button-buy {
+    display: block;
+    box-sizing: border-box;
+    height: $card-button-height; // nova variável
+    line-height: $card-button-height; // mesma variável
+    margin-top: $card-margin-medium;
+    text-align: center;
+    text-decoration: none;
+    color: $card-button-text-color; // nova variável
+    background-color: $prime-color;
+    border: 1px solid transparent;
+    border-radius: $card-border-radius;
+    font-size: $card-font-size-button;
+    font-weight: 700;
+    transition:
+      color $hover-duration ease,
+      background-color $hover-duration ease,
+      border $hover-duration ease;
+
+    @include hover {
+      color: $prime-color;
+      background-color: $main-bg-color; // $main-bg-color já é #fff
+      border: 1px solid $prime-color;
+    }
+  }
+}
