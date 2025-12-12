@@ -1,0 +1,68 @@
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Список */
+.nav__item + .nav__item {
+  margin-left: 20px;
+}
+
+/* Лінк */
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  height: 60px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--moyo-black);
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 100%;
+
+  // Border
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 2px;
+    background: var(--moyo-blue);
+    transform: translateY(-100%) scaleX(0);
+    opacity: 0;
+    transition:
+      transform 300ms,
+      opacity 300ms;
+    pointer-events: none;
+    border: 1px solid #f3f3f3;
+  }
+
+  /* Hover / Focus */
+  &:hover,
+  &:focus {
+    color: var(--moyo-blue);
+  }
+
+  &:hover::after {
+    transform: translateY(-100%) scaleX(1);
+    opacity: 1;
+  }
+
+  /* Активний елемент */
+  &.is-active {
+    // position: relative;
+    color: var(--moyo-blue);
+  }
+
+  &.is-active::after {
+    background: var(--moyo-blue);
+    height: 4px;
+    border-radius: 2px;
+    transform: translateY(-100%) scaleX(1);
+    opacity: 1;
+  }
+}
