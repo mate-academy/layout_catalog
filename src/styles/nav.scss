@@ -1,0 +1,55 @@
+.nav {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    text-decoration: none;
+    color: $main-text-color;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0;
+    transition: color $hover-time ease;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &.is-active {
+      color: $blue;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: $blue;
+        position: absolute;
+        bottom: 0;
+        border-radius: 8px;
+      }
+    }
+  }
+}
