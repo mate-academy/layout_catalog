@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  background-color: $color-wite;
+  background-color: $color-white;
 
   &__container {
     display: flex;
@@ -22,12 +22,16 @@
     padding: 0;
     display: flex;
     list-style: none;
+
+    & .header__item:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 
   &__link {
     display: flex;
     align-items: center;
-    color: #060b35;
+    color: $black-text-color;
     font-size: 12px;
     font-weight: 500;
     height: 60px;
@@ -35,8 +39,11 @@
     text-transform: uppercase;
     text-decoration: none;
 
+    transition: all $transform-duration;
+
     &:hover {
       color: $color-primary;
+      transition: all $transform-duration;
     }
 
     &.is-active {
@@ -55,8 +62,4 @@
       }
     }
   }
-}
-
-.header__list .header__item:not(:last-child) {
-  margin-right: 20px;
 }

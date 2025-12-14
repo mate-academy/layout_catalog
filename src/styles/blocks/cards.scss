@@ -1,22 +1,35 @@
 .card {
   box-sizing: border-box;
-  width: 200px;
-  height: 408px;
+  width: $card-width;
+  height: $card-height;
   padding: 16px;
   padding-top: 32px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $card-border-color;
   border-radius: 5px;
 
   font-family: $font-main;
 
-  transition: transform 300ms ease;
+  transition: all $transform-duration;
+
+  &__title {
+    margin: 0;
+    margin-top: 40px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $black-text-color;
+
+    transition: all $transform-duration;
+  }
 
   &:hover {
     transform: scale(1.2);
+    transform: all $transform-duration;
     transform-origin: center;
 
     .card__title {
-      color: #34568b;
+      color: $card-title-hover-color;
     }
   }
 
@@ -29,16 +42,6 @@
       height: 134px;
       object-fit: cover;
     }
-  }
-
-  &__title {
-    margin: 0;
-    margin-top: 40px;
-
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 18px;
-    color: $black-text-color;
   }
 
   &__code {
@@ -97,17 +100,21 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 40px;
-    color: $color-wite;
+    color: $color-white;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 
     background-color: $color-primary;
 
+    transition: all $transform-duration;
+
     &:hover {
       border: 1px solid $color-primary;
       color: $color-primary;
-      background-color: $color-wite;
+      background-color: $color-white;
+
+      transition: all $transform-duration;
     }
   }
 }
