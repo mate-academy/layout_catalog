@@ -1,3 +1,30 @@
-body {
-  margin: 0;
+@use './blocks/globals';
+@use './blocks/variables' as vars;
+@use './blocks/header';
+@use './blocks/card';
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, vars.$card-width);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, vars.$card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, vars.$card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, vars.$card-width);
+  }
 }

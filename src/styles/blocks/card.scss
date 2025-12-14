@@ -1,0 +1,166 @@
+@use './variables' as vars;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: vars.$card-width;
+  height: 408px;
+  max-height: 408px;
+  border-radius: vars.$card-radius;
+  transition: vars.$transition;
+
+  &__image {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 33px;
+    height: vars.$card-img-height;
+    width: vars.$card-img-width;
+    background-image: url(../images/imac.jpeg);
+    background-size: vars.$card-img-width vars.$card-img-height;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    width: vars.$card-inner-width;
+    height: 35px;
+    font-size: vars.$fs-12;
+    font-weight: vars.$fw-500;
+    line-height: 18px;
+    margin-top: 24px;
+    margin-bottom: -5px;
+    color: rgba(6, 11, 53, 1);
+    transition: vars.$transition;
+  }
+
+  &__code {
+    display: flex;
+    justify-content: flex-start;
+    width: 98px;
+    height: 14px;
+    font-size: vars.$fs-10;
+    font-weight: vars.$fw-400;
+    margin-top: -7px;
+    margin-right: 68px;
+    color: rgba(97, 96, 112, 1);
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    width: vars.$card-inner-width;
+    height: 16;
+    margin-top: -1px;
+
+    &-reviews {
+      font-size: vars.$fs-10;
+      font-weight: vars.$fw-400;
+      height: 16px;
+      line-height: 14px;
+      color: rgba(6, 11, 53, 1);
+      position: relative;
+      top: 2px;
+    }
+
+    &-stars {
+      display: flex;
+    }
+
+    &-star {
+      background-image: url('../images/star.svg');
+      background-repeat: no-repeat;
+      background-size: 13px;
+      background-position: top 2px left 2px;
+      width: vars.$fs-16;
+      height: vars.$fs-16;
+      padding-right: 4px;
+
+      &:nth-child(-n + 4) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+
+  &__price {
+    height: 18px;
+    width: vars.$card-inner-width;
+    display: flex;
+    justify-content: space-between;
+    gap: 86px;
+    font-size: vars.$fs-12;
+    font-weight: vars.$fw-400;
+    line-height: 18px;
+    margin-top: 7px;
+    position: relative;
+    top: 1px;
+
+    &-label {
+      width: 31px;
+      font-size: vars.$fs-12;
+      font-weight: vars.$fw-400;
+      color: rgba(97, 96, 112, 1);
+    }
+
+    &-value {
+      width: 50px;
+      font-size: vars.$fs-16;
+      font-weight: vars.$fw-700;
+      color: rgba(6, 11, 53, 1);
+    }
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: flex-end;
+    height: vars.$card-button-height;
+    width: vars.$card-inner-width;
+    border-radius: vars.$card-radius;
+    background-color: vars.$card-blue-color;
+    background-size: vars.$card-button-height vars.$card-inner-width;
+    margin-top: 1px;
+    margin-bottom: 17px;
+    transition: vars.$transition;
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: vars.$fs-14;
+      font-weight: vars.$fw-700;
+      color: vars.$card-buy-white-color;
+      width: vars.$card-inner-width;
+      height: vars.$card-button-height;
+      text-decoration: none;
+      position: relative;
+      transition: vars.$transition;
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+    z-index: 5;
+
+    .card__name {
+      color: vars.$card-name-color;
+    }
+
+    .card__buy {
+      background-color: vars.$card-buy-white-color;
+      height: 38px;
+      width: 164px;
+      border: 1px solid vars.$card-blue-color;
+      border-radius: vars.$card-radius;
+      transition: vars.$transition;
+    }
+
+    .card__buy-link {
+      color: vars.$card-blue-color;
+      position: relative;
+      bottom: 1px;
+      transition: vars.$transition;
+    }
+  }
+}
