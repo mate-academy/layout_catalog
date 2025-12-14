@@ -1,3 +1,59 @@
+@import '../styles/utils/variables';
+@import './blocks/nav';
+@import './blocks/card';
+@import './blocks/stars';
+
 body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
   margin: 0;
+}
+
+.catalogue {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  gap: 46px 48px;
+
+  place-content: center;
+
+  place-items: center;
+}
+
+.card {
+  transition: transform 300ms ease;
+
+  &:hover {
+    transform: scale(1.2);
+    position: relative;
+    z-index: 10;
+
+    & .card__title {
+      color: $main-text-hover;
+    }
+  }
+}
+
+@media (max-width: 487px) {
+  .catalogue {
+    grid-template-columns: repeat(1, $card-width);
+  }
+}
+
+@media (min-width: 488px) {
+  .catalogue {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalogue {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalogue {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
