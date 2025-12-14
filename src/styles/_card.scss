@@ -1,13 +1,30 @@
 .main-content {
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  gap: 36px 48px;
-  margin-top: 40px;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  padding: (50px 40px);
   justify-content: center;
 }
 
+@media (min-width: 488px) {
+  .main-content {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
 .card {
-  margin-top: 10px;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 5px;
   width: $card-width;
@@ -17,6 +34,7 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid rgba(243, 243, 243, 1);
+  transition: all 300ms;
 
   &__container {
     width: 166px;
@@ -113,7 +131,7 @@
     justify-content: space-between;
   }
 
-  &__price h2 {
+  &__price-value {
     color: rgba(6, 11, 53, 1);
     font-size: 16px;
     font-family: $font-family;
@@ -146,6 +164,7 @@
     text-decoration: none;
 
     &:hover {
+      transition: 300ms;
       color: rgba(0, 172, 220, 1);
       background-color: rgba(255, 255, 255, 1);
       border: 1px solid rgba(0, 172, 220, 1);
