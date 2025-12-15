@@ -1,0 +1,25 @@
+@import '../variables';
+
+.nav {
+  display: flex;
+  gap: $nav-gap-x;
+
+  &__link {
+    color: $color-primary;
+    text-decoration: none;
+    font-size: $nav-link-font-size;
+    padding: $nav-link-padding-y $nav-link-padding-x;
+    position: relative;
+    transition: color $transition;
+
+    &.is-active {
+      font-weight: bold;
+      border-bottom: $nav-link-border-width solid $color-accent;
+    }
+
+    &:hover,
+    &[data-qa='nav-hover'] {
+      color: $color-accent;
+    }
+  }
+}
