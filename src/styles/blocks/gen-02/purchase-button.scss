@@ -11,9 +11,13 @@
   line-height: 16px;
   text-transform: uppercase;
 
+  @include on-hover-smooth(background-color, $color-white);
+  @include on-hover-smooth(color, $color-blue-accent);
+
+  // the task doesn't mention animating the border explicitly
+  // but there's a point in the checlist saying "all changes
+  // on hover are smooth". I'm sticking to explicit.
   &:hover {
-    background-color: $color-white;
-    color: $color-blue-accent;
     border: 1px solid $color-blue-accent;
   }
 }

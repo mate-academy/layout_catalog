@@ -8,3 +8,20 @@
   font-size: $font-size-m;
   line-height: 18px;
 }
+
+@mixin on-hover-smooth($prop, $val, $animation-target: null) {
+  // SASS documentation is crap.
+  $transition-duration: 0.3s;
+
+  @if $animation-target {
+    #{$animation-target} {
+      transition: $prop $transition-duration;
+    }
+  } @else {
+    transition: $prop $transition-duration;
+  }
+
+  &:hover #{$animation-target} {
+    #{$prop}: $val;
+  }
+}
