@@ -8,6 +8,7 @@ const basic = {
   ...basicScenario,
   label: 'Elementary test',
   referenceUrl: basicScenario.referenceUrl + '/catalog/',
+  misMatchThreshold: 40,
 };
 
 const config = {

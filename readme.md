@@ -2,7 +2,7 @@
 
 Create an HTML page with a catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
 
-- use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
+- use `Header`, `Stars` and `Car  d` blocks from previous tasks but rewrite them using BEM and SCSS
 - remove old `data-qa` attributes
 - add `data-qa="nav-hover"` (not just `hover`) to the 4th nav link for testing (`Laptops & computers`)
 - add `data-qa="card"` to the first card
@@ -33,8 +33,8 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ## Checklist
 
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+- [DEMO LINK](https://HiTilde.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://HiTilde.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
