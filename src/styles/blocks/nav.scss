@@ -1,0 +1,40 @@
+@use '../utils/variables.scss' as v;
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    color: v.$main-accent;
+    font-size: 12px;
+    height: v.$nav-height;
+    line-height: v.$nav-height;
+    transition: color v.$transition-duration v.$transition-timing;
+
+    &.is-active {
+      color: v.$nav-link-hover-color;
+      position: relative;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 4px;
+      background-color: v.$nav-link-hover-color;
+      width: 100%;
+      border-radius: 8px;
+      bottom: 0;
+    }
+
+    &:hover {
+      color: v.$nav-link-hover-color;
+    }
+  }
+}
