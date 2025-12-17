@@ -1,0 +1,34 @@
+.stars {
+  display: flex;
+  flex-direction: row;
+  width: $stars-width;
+  justify-content: space-between;
+  margin-top: $margin-top;
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__star {
+    background-image: url(../images/star.svg);
+    width: $star-width;
+    height: $star-width;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+  }
+
+  &__star:last-child {
+    margin-right: 0;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} .stars__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__reviews {
+  @include font;
+  }
+}
