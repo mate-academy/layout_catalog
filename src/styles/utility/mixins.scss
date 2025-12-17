@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 @mixin font-s() {
   font-weight: $font-weight-s;
   font-size: $font-size-s;
@@ -9,19 +11,33 @@
   line-height: 18px;
 }
 
-@mixin on-hover-smooth($prop, $val, $animation-target: null) {
-  // SASS documentation is crap.
-  $transition-duration: 0.3s;
+@mixin on-hover-smooth($props-map, $animation-target: null) {
+  // SASS documentation is a load of smelly crap.
+
+  $props: map.keys($props-map);
+  $transition-props: (
+    transition-duration: 0.3s,
+    transition-property: $props,
+  );
 
   @if $animation-target {
     #{$animation-target} {
-      transition: $prop $transition-duration;
+      @include helper-apply-props($transition-props);
     }
   } @else {
-    transition: $prop $transition-duration;
+    @include helper-apply-props($transition-props);
   }
 
   &:hover #{$animation-target} {
+    @each $prop, $val in $props-map {
+      #{$prop}: $val;
+    }
+  }
+}
+
+// helper
+@mixin helper-apply-props($props-map) {
+  @each $prop, $val in $props-map {
     #{$prop}: $val;
   }
 }

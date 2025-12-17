@@ -4,20 +4,32 @@
   background-color: $color-blue-accent;
   color: $color-white;
   border-radius: $card-border-radius;
-  border: none;
+  border: $button-border-width $button-border-style transparent;
 
   font-weight: $font-weight-l;
   font-size: $font-size-l;
   line-height: 16px;
+  text-align: center;
+  align-content: center; // can't do line-height
   text-transform: uppercase;
+  text-decoration: none;
 
-  @include on-hover-smooth(background-color, $color-white);
-  @include on-hover-smooth(color, $color-blue-accent);
+  box-sizing: border-box; // the border should not change the height
 
-  // the task doesn't mention animating the border explicitly
-  // but there's a point in the checlist saying "all changes
-  // on hover are smooth". I'm sticking to explicit.
-  &:hover {
-    border: 1px solid $color-blue-accent;
-  }
+  $animate-on-hover: (
+    background-color: $color-white,
+    color: $color-blue-accent,
+    border: $button-border-width $button-border-style $color-blue-accent,
+  );
+
+  @include on-hover-smooth($animate-on-hover);
+
+  // works
+  // transition-duration: 2s;
+  // transition-property: background-color, color, border;
+  // &:hover {
+  //   background-color: $color-white;
+  //   color: $color-blue-accent;
+  //   border: 1px solid $color-blue-accent;
+  // }
 }
