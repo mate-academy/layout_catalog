@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
 
-  width: 200px;
-  padding: 32px 16px 16px;
-  border: 1px solid $color-border;
+  width: $card-width;
+  padding: $card-greater-padding $card-lesser-padding $card-lesser-padding;
+  border: $primary-border-width solid $color-border;
   box-sizing: border-box;
   border-radius: $card-border-radius;
   background-color: $color-white;
@@ -17,13 +17,15 @@
 
   &__title {
     margin: 0;
-    margin-top: 40px;
+    margin-top: $card-title-push;
 
     font-weight: $font-weight-m;
 
     @include font-m;
 
-    // it's still #000
+    // although logically it is correct,
+    // nothing says to have this as main accent except Luke.
+    color: $color-main-accent;
   }
 
   @include on-hover-smooth(
@@ -35,13 +37,13 @@
 
   &__product-code-section {
     margin: 0;
-    margin-top: 4px;
+    margin-top: $card-product-code-section-push;
 
     color: $color-secondary;
   }
 
   &__review-section {
-    margin-top: 16px;
+    margin-top: $card-review-section-push;
 
     display: flex;
     justify-content: space-between;
@@ -49,7 +51,7 @@
   }
 
   &__price-section {
-    margin-top: 24px;
+    margin-top: $card-price-section-push;
 
     display: flex;
     justify-content: space-between;
@@ -64,17 +66,17 @@
   &__price {
     font-weight: $font-weight-l;
     font-size: $font-size-xl;
-    line-height: 18px;
+    line-height: $line-height-l;
     color: $color-main-accent;
   }
 
   &__button {
-    margin-top: 16px;
+    margin-top: $card-button-push;
   }
 
   @include on-hover-smooth(
     (
-      transform: scale(1.2),
+      transform: scale($magnification),
     )
   );
 }

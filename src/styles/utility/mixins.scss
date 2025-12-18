@@ -1,14 +1,16 @@
 @use 'sass:map';
+@use 'helpers';
 
+// it's an attempt to simulate font style generalization across project
 @mixin font-s() {
   font-weight: $font-weight-s;
   font-size: $font-size-s;
-  line-height: 14px;
+  line-height: $line-height-s;
 }
 
 @mixin font-m() {
   font-size: $font-size-m;
-  line-height: 18px;
+  line-height: $line-height-l;
 }
 
 @mixin on-hover-smooth($props-map, $animation-target: null) {
@@ -16,28 +18,21 @@
 
   $props: map.keys($props-map);
   $transition-props: (
-    transition-duration: 0.3s,
+    transition-duration: $transition-duration,
     transition-property: $props,
   );
 
   @if $animation-target {
     #{$animation-target} {
-      @include helper-apply-props($transition-props);
+      @include helpers.apply-props($transition-props);
     }
   } @else {
-    @include helper-apply-props($transition-props);
+    @include helpers.apply-props($transition-props);
   }
 
   &:hover #{$animation-target} {
     @each $prop, $val in $props-map {
       #{$prop}: $val;
     }
-  }
-}
-
-// helper
-@mixin helper-apply-props($props-map) {
-  @each $prop, $val in $props-map {
-    #{$prop}: $val;
   }
 }
