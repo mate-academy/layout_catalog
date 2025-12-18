@@ -1,0 +1,126 @@
+.catalog {
+  --columns: 1;
+
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px;
+  grid-template-columns: repeat(var(--columns), $card-width);
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    --columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    --columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --columns: 4;
+  }
+}
+
+.card {
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: $card-width;
+  transition: $basic-transition;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &__container {
+    padding: 32px 16px 16px;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin-bottom: 40px;
+      height: 134px;
+      width: 160px;
+    }
+  }
+
+  &__title {
+    color: $nav-link-cards-title-color;
+    line-height: 18px;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__product-code {
+    color: $grey-card-color;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: $font-weight-regular;
+
+    margin: 4px 0 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__rating-reviews {
+    color: $nav-link-cards-title-color;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: $font-weight-regular;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: $font-weight-regular;
+
+    margin: 24px 0 16px;
+    &-label {
+      color: $grey-card-color;
+      line-height: 18px;
+    }
+
+    &-value {
+      color: $nav-link-cards-title-color;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    &-buy {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 166px;
+      height: 40px;
+
+      color: #fff;
+      background-color: $hover-link-button-buy-color;
+      border: none;
+      border-radius: 5px;
+      transition: $basic-transition;
+
+      &:hover {
+        background-color: #fff;
+        border: 1px solid $hover-link-button-buy-color;
+        color: $hover-link-button-buy-color;
+      }
+    }
+  }
+}
