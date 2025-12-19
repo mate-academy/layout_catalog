@@ -3,10 +3,11 @@
 
 .card {
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: $border-radius;
   width: $card-width;
-  padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
+  padding: $spacing-lg $spacing-sm $spacing-sm;
+  border: 1px solid $border-color;
+  transition: transform $transition-duration;
 
   &__photo {
     display: block;
@@ -21,7 +22,7 @@
     line-height: 18px;
     padding-bottom: $spacing-xs;
     margin: 0;
-    color: #060b35;
+    color: $color-dark-blue;
   }
 
   &__code {
@@ -64,6 +65,7 @@
       color: $color-grey;
       padding: 0;
       margin: 0;
+      transition: color $transition-duration;
     }
 
     &-count {
@@ -92,21 +94,18 @@
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
+    transition: background-color $transition-duration, color $transition-duration;
   }
 
   &:hover {
-    width: calc($card-width * 1.2);
-    transition: width 300ms;
-
+    transform: scale(1.2);
     .card__name {
       color: $color-name-hover;
-      transition: color 300ms;
     }
 
     .card__link {
-      background-color: #fff;
-      color: #00acdc;
-      transition: all 300ms;
+      background-color: $color-white;
+      color: $color-accent;
     }
   }
 }
