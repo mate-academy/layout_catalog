@@ -1,0 +1,49 @@
+.card {
+  @include center;
+
+  box-sizing: border-box;
+  width: $card-width;
+  padding: $card-padding;
+  border: 1px solid $color-border;
+  border-radius: $card-radius;
+  flex-direction: column;
+
+  transition: transform $transition-time;
+  will-change: transform;
+
+  &__image {
+    margin-top: $card-padding;
+    width: $card-image-width;
+    height: $card-image-height;
+  }
+
+  &__title {
+    @include roboto500;
+
+    margin-top: $button-height; // 40px, required to be variable
+    font-size: $font-size-m;
+    line-height: $line-height-l;
+    color: $color-text;
+
+    transition: color $transition-time;
+  }
+
+  &__code {
+    @include roboto400;
+
+    margin-top: $space-xs;
+    color: $color-muted;
+    font-size: $font-size-s;
+    line-height: $line-height-s;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1; // ensures neighbors are not "pushed", only overlapped
+  }
+}
+
+/* required by task: .card:hover .card__title */
+.card:hover .card__title {
+  color: $color-title-hover;
+}
