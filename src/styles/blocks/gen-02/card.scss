@@ -1,0 +1,82 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: $card-width;
+  padding: $card-greater-padding $card-lesser-padding $card-lesser-padding;
+  border: $border-width-primary solid $color-border;
+  box-sizing: border-box;
+  border-radius: $card-border-radius;
+  background-color: $color-white;
+
+  @include font-s;
+
+  &__image {
+    align-self: center;
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: $card-title-push;
+
+    font-weight: $font-weight-m;
+
+    @include font-m;
+
+    // although logically it is correct,
+    // nothing says to have this as main accent except Luke.
+    color: $color-main-accent;
+  }
+
+  @include on-hover-smooth(
+    (
+      color: $color-highlight,
+    ),
+    #{&}__title
+  );
+
+  &__product-code-section {
+    margin: 0;
+    margin-top: $card-product-code-section-push;
+
+    color: $color-secondary;
+  }
+
+  &__review-section {
+    margin-top: $card-review-section-push;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-section {
+    margin-top: $card-price-section-push;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-label {
+    @include font-m;
+
+    color: $color-secondary;
+  }
+
+  &__price {
+    font-weight: $font-weight-l;
+    font-size: $font-size-xl;
+    line-height: $line-height-l;
+    color: $color-main-accent;
+  }
+
+  &__button {
+    margin-top: $card-button-push;
+  }
+
+  @include on-hover-smooth(
+    (
+      transform: scale($magnification),
+    )
+  );
+}

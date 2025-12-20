@@ -1,0 +1,30 @@
+.catalog {
+  display: grid;
+  gap: $catalog-gap-vertical $catalog-gap-horizontal;
+
+  padding: $padding-general-1 $catalog-padding-inline;
+
+  --column-count: 1;
+
+  grid-template-columns: repeat(var(--column-count), $card-width);
+
+  justify-content: center;
+}
+
+@media (min-width: $layout-viewport-width-s) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: $layout-viewport-width-m) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: $layout-viewport-width-l) {
+  .catalog {
+    --column-count: 4;
+  }
+}

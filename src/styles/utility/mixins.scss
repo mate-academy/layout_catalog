@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use 'helpers';
+
+// it's an attempt to simulate font style generalization across project
+@mixin font-s() {
+  font-weight: $font-weight-s;
+  font-size: $font-size-s;
+  line-height: $line-height-s;
+}
+
+@mixin font-m() {
+  font-size: $font-size-m;
+  line-height: $line-height-l;
+}
+
+@mixin on-hover-smooth($props-map, $animation-target: null) {
+  // SASS documentation is a load of smelly crap.
+
+  $props: map.keys($props-map);
+  $transition-props: (
+    transition-duration: $transition-duration,
+    transition-property: $props,
+  );
+
+  @if $animation-target {
+    #{$animation-target} {
+      @include helpers.apply-props($transition-props);
+    }
+  } @else {
+    @include helpers.apply-props($transition-props);
+  }
+
+  &:hover #{$animation-target} {
+    @include helpers.apply-props($props-map);
+  }
+}
