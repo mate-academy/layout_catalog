@@ -1,7 +1,7 @@
 .cards {
-  padding: 40px 50px;
+  padding: $card-padding;
   display: grid;
-  gap: 46px 48px;
+  gap: $cards-gap;
   place-content: center;
   grid-template-columns: repeat(1, 200px);
 
@@ -21,7 +21,7 @@
 .card {
   width: $width-wide;
   box-sizing: border-box;
-  transition: transform 300ms;
+  transition: color $transition-duration;
 
   &__image-size {
     width: $width-medium;
@@ -34,6 +34,8 @@
     transform: scale(1.2);
   }
 
+
+
   &__description {
     margin-top: $margin-top-average;
 
@@ -45,10 +47,12 @@
     margin-left: $margin-left-average;
     margin-right: $margin-right-average;
 
-    &:hover {
-      color: #34568b;
-    }
+
   }
+
+  &:hover .card__description {
+  color: $dark-blue-color;
+}
 
   &__code {
     margin-top: $margin-top-small;
@@ -98,6 +102,9 @@
     background-color: $blue-color;
     border-radius: $border-radius-button;
     border: none;
+    transition: background-color $transition-duration,
+    color $transition-duration,
+    border $transition-duration;
 
     &:hover {
       color: $blue-color;
