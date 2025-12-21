@@ -1,0 +1,115 @@
+@use '../utils/variables' as *;
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: $card-margins;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: $white-color;
+  transition: $transition-time;
+  width: $card-width;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__stars {
+    margin-top: $card-margins;
+    width: $def-width;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__reviews {
+    margin: 0;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $dark-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-top: $card-margins;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    width: $def-width;
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $dark-text;
+    transition: $transition-time;
+
+    @at-root .card:hover & {
+      color: $title-color-hover;
+    }
+  }
+
+  &__code {
+    color: $gray-text;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    margin-top: 4px;
+    align-self: self-start;
+  }
+
+  &__price {
+    width: $def-width;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-text {
+      color: $gray-text;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-value {
+      color: $dark-text;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $card-margins;
+    box-sizing: border-box;
+    border: 1px solid $light-blue;
+    border-radius: 5px;
+    width: $def-width;
+    height: 40px;
+    color: $white-color;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: $light-blue;
+    transition: $transition-time;
+
+    &:hover {
+      background-color: $white-color;
+      color: $light-blue;
+    }
+  }
+}
