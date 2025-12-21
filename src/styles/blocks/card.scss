@@ -3,21 +3,21 @@
 .catalog {
   display: grid;
   box-sizing: border-box;
-  gap: 46px 48px;
-  padding: 50px 40px;
+  gap: $catalog-gap-row $catalog-gap-col;
+  padding: $catalog-padding-v $catalog-padding-h;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, $card-width);
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, $card-width);
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, $card-width);
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, $card-width);
   }
 }
 
@@ -27,7 +27,7 @@
   padding: 32px 16px 16px;
 
   box-sizing: border-box;
-  width: 200px;
+  width: $card-width;
   height: 408px;
   border: 1px solid $card-border-color;
   border-radius: 10px;
@@ -58,6 +58,7 @@
     font-weight: $font-weight-medium;
     line-height: 18px;
     color: $title-color;
+    transition: color 300ms;
   }
 
   &__code {
@@ -75,7 +76,7 @@
     margin-bottom: 24px;
     gap: 17px;
 
-    > :last-child {
+    &-count {
       font-size: 10px;
       font-weight: $font-weight-regular;
       line-height: 13px;
@@ -89,13 +90,13 @@
     align-items: center;
     margin-bottom: 16px;
 
-    > :first-child {
+    &-label {
       font-size: 12px;
       font-weight: $font-weight-regular;
       line-height: 18px;
       color: $price-color;
     }
-    > :last-child {
+    &-value {
       font-size: 16px;
       font-weight: $font-weight-bold;
       line-height: 18px;
@@ -121,6 +122,10 @@
     text-align: center;
     color: $button-color;
     background-color: $button-background-color;
+    transition:
+      background-color 300ms,
+      color 300ms,
+      border 300ms;
 
     &:hover {
       background-color: $button-hover-background-color;
