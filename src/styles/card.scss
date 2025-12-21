@@ -1,0 +1,150 @@
+@import './variables';
+
+$blue: #00acdc;
+$white: #fff;
+$white-other: #f3f3f3;
+$gray: #616070;
+$black: #060b35;
+$blue-black: #34568b;
+
+.card {
+  background-color: $white;
+  box-sizing: border-box;
+  width: 200px;
+  height: 408px;
+  border: 1px solid $white-other;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition:
+    transform $transition,
+    color $transition;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 40px;
+
+    &-img {
+      object-fit: fill;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    &-product-name {
+      font-weight: 500;
+      color: $black;
+      margin: 0;
+      width: 166px;
+      line-height: 18px;
+      font-size: 12px;
+    }
+
+    &-product-id {
+      margin: 4px 0 0;
+      color: $gray;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__rating {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .stars {
+      display: flex;
+    }
+
+    .stars__item {
+      height: 16px;
+      width: 16px;
+      background-image: url(../images/star.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: 4px;
+    }
+
+    .stars__item:nth-child(5) {
+      margin: 0;
+    }
+
+    .stars__item:nth-child(-n + 4) {
+      background-image: url(../images/star-active.svg);
+    }
+
+    .reviews {
+      color: $black;
+      width: 53px;
+      height: 14px;
+      text-align: right;
+      margin: 0;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      letter-spacing: 0;
+      vertical-align: bottom;
+    }
+  }
+
+  &__price {
+    margin: 24px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 18px;
+    &-text {
+      color: $gray;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-value {
+      color: $black;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    margin: 16px 0 0;
+    width: 164px;
+    height: 38px;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    background-color: $blue;
+    font-weight: 700;
+    color: $white;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      color $transition,
+      background-color $transition;
+  }
+
+  &__button:hover {
+    background-color: $white;
+    color: $blue;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__info-product-name {
+    color: $blue-black;
+  }
+}

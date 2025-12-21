@@ -1,3 +1,36 @@
+@import './variables';
+
 body {
+  font-family: $font-primary;
   margin: 0;
 }
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalog {
+  display: grid;
+  gap: $catalog-grid-gap;
+  padding: $catalog-padding;
+
+  grid-template-columns: repeat(1, $card-width);
+
+  @media (min-width: $break-for-phone) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: $break-for-tablet) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: $break-for-pc) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+@import './card';
+@import './header';
