@@ -1,3 +1,88 @@
+@import 'variables';
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap';
+@import 'card';
+@import 'stars';
+
+.header,
+.header__logo,
+.header__nav,
+.header__list,
+.header__item {
+  margin: $index-margin;
+  padding: $index-padding;
+  box-sizing: border-box;
+}
+
+:root {
+  color: $blue-color;
+}
+
 body {
-  margin: 0;
+  margin: $index-margin;
+  font-family: Roboto, sans-serif;
+  padding: $index-padding;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: $index-width-percentage;
+  background-color: $white-color;
+  justify-content: space-between;
+  padding-right: $index-padding-right;
+  text-transform: uppercase;
+}
+
+.header__logo {
+  width: $index-width;
+  height: $index-height;
+  margin-left: $index-margin-left;
+}
+
+.header__nav .header__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: $index-padding;
+}
+
+.header__nav .header__item + .header__item {
+  margin-left: $index-margin-left;
+}
+
+.header__link {
+  display: flex;
+  color: $dark-blue-color;
+  text-decoration: none;
+  font-weight: $font-weight-normal;
+  font-size: $font-normal;
+  line-height: $index-line-height;
+  position: relative;
+  transition: color $transition-duration;
+}
+
+.header__link:hover {
+  color: $blue-color;
+}
+
+.header__link.is-active {
+  color: $blue-color;
+}
+
+.header__link::after {
+  content: '';
+  position: absolute;
+  bottom: $index-bottom;
+  left: $index-left;
+  width: $index-width-1;
+  height: $index-height-1;
+  background-color: $blue-color;
+  border-radius: $index-border-radius;
+  transform: translateX(-50%);
+  transition: width $transition-duration ease;
+}
+
+.header__link.is-active::after {
+  width: $index-width-2;
 }
