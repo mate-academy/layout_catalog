@@ -5,11 +5,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 16px;
   border: 1px solid $border-color;
   border-radius: 5px;
   background-color: $white-color;
   transition: $transition-time;
+  width: $card-width;
 
   &:hover {
     transform: scale(1.2);
@@ -24,11 +26,14 @@
   }
 
   &__reviews {
+    margin: 0;
     font-weight: 400;
     font-size: 10px;
     line-height: 14px;
     color: $dark-text;
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__image {
@@ -38,7 +43,7 @@
     margin-bottom: 0;
   }
 
-  &__name {
+  &__title {
     width: $def-width;
     margin-top: 40px;
     font-weight: 500;
@@ -48,7 +53,6 @@
     transition: $transition-time;
 
     @at-root .card:hover & {
-      // @at-root moves this rule to the top level
       color: $title-color-hover;
     }
   }
@@ -81,11 +85,13 @@
       font-weight: 700;
       font-size: 16px;
       line-height: 18px;
-      text-align: bottom;
     }
   }
 
   &__buyButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 16px;
     box-sizing: border-box;
     border: 1px solid $light-blue;
@@ -95,7 +101,6 @@
     color: $white-color;
     text-decoration: none;
     text-align: center;
-    line-height: 40px;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
