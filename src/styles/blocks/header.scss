@@ -1,0 +1,65 @@
+@use '../utils/variables' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: $font-weight-medium;
+  box-sizing: border-box;
+  padding: 0 $header-padding-h;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    height: $header-logo-height;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: $header-nav-gap;
+  }
+
+  &__item {
+    align-content: center;
+    font-size: $font-size-s;
+    position: relative;
+  }
+
+  &__link {
+    display: inline-block;
+    line-height: $header-link-line-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-link;
+    position: relative;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $moyo-blue;
+    }
+
+    &.is-active {
+      color: $moyo-blue;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: block;
+        height: $header-active-bar-height;
+        border-radius: $border-radius-m;
+        background: $moyo-blue;
+      }
+    }
+  }
+}
