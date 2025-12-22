@@ -2,9 +2,8 @@
 
 .catalog {
   display: grid;
-  box-sizing: border-box;
   gap: $catalog-gap-row $catalog-gap-col;
-  padding: $catalog-padding-v $catalog-padding-t $catalog-padding-b;
+  padding: $catalog-padding-v $catalog-padding-h;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, $card-width);
 
@@ -28,11 +27,10 @@
 
   box-sizing: border-box;
   width: $card-width;
-  height: 408px;
   border: 1px solid $card-border-color;
-  border-radius: 10px;
+  border-radius: $border-radius-s;
   position: relative;
-  transition: transform 300ms;
+  transition: transform $transition-duration;
 
   background-color: $card-background-color;
 
@@ -54,18 +52,18 @@
 
   &__title {
     margin-bottom: 4px;
-    font-size: 12px;
+    font-size: $font-size-s;
     font-weight: $font-weight-medium;
-    line-height: 18px;
+    line-height: $line-height-l;
     color: $title-color;
-    transition: color 300ms;
+    transition: color $transition-duration;
   }
 
   &__code {
-    font-size: 10px;
+    font-size: $font-size-xs;
     margin-bottom: 16px;
     font-weight: $font-weight-regular;
-    line-height: 14px;
+    line-height: $line-height-s;
     color: $code-color;
   }
 
@@ -77,9 +75,9 @@
     gap: 17px;
 
     &-count {
-      font-size: 10px;
+      font-size: $font-size-xs;
       font-weight: $font-weight-regular;
-      line-height: 13px;
+      line-height: $line-height-xsm;
       color: $reviews-color;
     }
   }
@@ -91,15 +89,15 @@
     margin-bottom: 16px;
 
     &-label {
-      font-size: 12px;
+      font-size: $font-size-s;
       font-weight: $font-weight-regular;
-      line-height: 18px;
+      line-height: $line-height-l;
       color: $price-color;
     }
     &-value {
-      font-size: 16px;
+      font-size: $font-size-l;
       font-weight: $font-weight-bold;
-      line-height: 18px;
+      line-height: $line-height-l;
       color: $price-discount-color;
     }
   }
@@ -113,19 +111,19 @@
     box-sizing: border-box;
     border: 1px solid $button-background-color;
     height: 40px;
-    border-radius: 5px;
+    border-radius: $border-radius-s;
 
-    font-size: 14px;
+    font-size: $font-size-m;
     font-weight: $font-weight-bold;
-    line-height: 16px;
+    line-height: $line-height-m;
     text-decoration: none;
     text-align: center;
     color: $button-color;
     background-color: $button-background-color;
     transition:
-      background-color 300ms,
-      color 300ms,
-      border 300ms;
+      background-color $transition-duration,
+      color $transition-duration,
+      border $transition-duration;
 
     &:hover {
       background-color: $button-hover-background-color;
