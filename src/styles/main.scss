@@ -1,0 +1,48 @@
+@use 'utils/variables' as *;
+@use 'blocks/header.scss';
+@use 'blocks/card.scss';
+@use 'blocks/stars.scss';
+
+body {
+  margin: 0;
+}
+
+.is-active {
+  color: $blue-link;
+}
+
+.catalog {
+  display: grid;
+  gap: 48px 46px;
+  padding: 50px 40px;
+  place-content: center;
+
+  @media (max-width: 487px) {
+    grid-template-columns: 200px;
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.is-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $blue-link;
+  width: 37px;
+  height: 4px;
+  border-radius: 8px;
+}
