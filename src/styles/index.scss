@@ -1,3 +1,228 @@
+$color-nav: #060b35;
+$color-primary: #00acdc;
+$color-title-hover: #34568b;
+$color-white: #fff;
+$color-border: #f3f3f3;
+$color-text-secondary: #616070;
+$color-star-inactive: #ccc;
+$color-star-active: #ffc107;
+$transition-speed: 300ms;
+$card-width: 200px;
+$font-size-main: 16px;
+$font-size-title: 12px;
+$font-size-small: 10px;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 40px;
+}
+
+.logo {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 12px;
+    color: $color-nav;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color $transition-speed;
+
+    &.is-active,
+    &:hover {
+      color: $color-primary;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 37px;
+      height: 4px;
+      background-color: $color-primary;
+      border-radius: 4px 4px 0 0;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 16px;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  transition: transform $transition-speed;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: auto;
+    margin: 32px auto 40px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-weight: 500;
+    font-size: $font-size-title;
+    line-height: 18px;
+    transition: color $transition-speed;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    font-weight: 400;
+    font-size: $font-size-small;
+    color: $color-text-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: $font-size-small;
+    color: $color-text-secondary;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    color: $color-text-secondary;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__button {
+    display: block;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: $color-white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    border-radius: 5px;
+    transition:
+      background-color $transition-speed,
+      color $transition-speed;
+
+    &:hover {
+      color: $color-primary;
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    z-index: 2;
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+
+  &__star {
+    width: 12px;
+    height: 12px;
+    background-color: $color-star-inactive;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+
+  &--4 .stars__star:nth-child(-n + 4) {
+    background-color: $color-star-active;
+  }
 }
