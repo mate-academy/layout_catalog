@@ -1,0 +1,98 @@
+.header {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 $box-shadow-color;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $header-padding-horizontal;
+  }
+
+  &__logo {
+    display: flex;
+    height: $logo-size;
+    width: $logo-size;
+  }
+
+  &__nav-item {
+    margin-right: $nav-item-gap;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    position: relative;
+    color: $main-text-color;
+    text-transform: uppercase;
+    height: $nav-link-height;
+    transition: color $transition-fast;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $color-blue-accent;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 4px;
+      width: 100%;
+      background-color: $color-blue-accent;
+      border-radius: 8px;
+      left: 0;
+      bottom: -8px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition:
+        opacity $transition-fast,
+        transform $transition-fast;
+    }
+
+    &.is-active {
+      color: $color-blue-accent;
+      transition:
+        opacity $transition-fast,
+        transform $transition-fast;
+    }
+
+    &.is-active::after {
+      content: '';
+      display: block;
+      width: 37px;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $color-blue-accent;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
