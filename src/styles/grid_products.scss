@@ -1,0 +1,32 @@
+@import "variables";
+
+.container {
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  display: grid;
+  gap: $grid-row-gap $grid-column-gap;
+  grid-template-columns: $card-width;
+  grid-template-rows: repeat(8, $card-height);
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $card-width);
+    grid-template-rows: repeat(4, $card-height);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $card-width);
+    grid-template-rows: repeat(3, $card-height);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $card-width);
+    grid-template-rows: repeat(2, $card-height);
+  }
+}
