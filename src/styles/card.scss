@@ -1,0 +1,98 @@
+@import 'variables';
+
+.cards {
+  margin: 50px 40px 72px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 46px 48px;
+  justify-items: center;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  width: 200px;
+  display: flex;
+
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: $card-text-hovered;
+  }
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    background-image: url(../images/imac.jpeg);
+    background-size: cover;
+  }
+  &__header {
+    font-size: 12px;
+    margin-top: 40px;
+    font-weight: 500;
+  }
+  &__code {
+    color: $gray-color;
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  &__price {
+    margin-top: 24px;
+    padding-right: 32px;
+    display: flex;
+    justify-content: space-between;
+    &-name {
+      color: $gray-color;
+      font-size: 12px;
+    }
+    &-amount {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+  &__btn {
+    margin-top: 16px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166px;
+    height: 40px;
+    background-color: $blue-color;
+    border: 1px solid $blue-color;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+
+    &:hover,
+    &--active {
+      background-color: $btn-hover;
+      color: $blue-color;
+    }
+  }
+}
