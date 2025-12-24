@@ -1,0 +1,106 @@
+@import '../variables';
+
+.card {
+  width: $card-width;
+  height: $card-height;
+  padding: $card-padding;
+  border: 1px solid $color-border;
+  border-radius: $radius-small;
+  box-sizing: border-box;
+  transition: transform $transition-duration $transition-ease;
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: $fw-medium;
+    line-height: $line-height-base;
+    margin: 0 0 $gap-xs;
+    transition: color $transition-duration $transition-ease;
+  }
+
+  &:hover {
+    transform: scale($hover-scale);
+
+    .card__title {
+      color: $color-hover-title;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $space-lg;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    font-weight: $fw-regular;
+    font-size: $font-size-small;
+    line-height: $line-height-sm;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    margin: 0 auto 40px;
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  &__code {
+    font-size: $font-size-small;
+    font-weight: $fw-regular;
+    line-height: $line-height-sm;
+    color: $color-text-gray;
+    margin-bottom: $space-md;
+  }
+
+  &__money {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $space-md;
+  }
+
+  &__price {
+    font-weight: $fw-regular;
+    font-size: 12px;
+    line-height: $line-height-base;
+    color: $color-text-gray;
+  }
+
+  &__currency {
+    font-weight: $fw-bold;
+    font-size: 16px;
+    line-height: $line-height-base;
+    color: $color-text-dark;
+  }
+
+  &__buy {
+    display: inline-block;
+    width: 166px;
+    height: $btn-height;
+    line-height: $btn-height;
+    text-align: center;
+    background-color: $color-primary;
+    border-radius: $radius-small;
+    text-decoration: none;
+    color: $color-white;
+    font-size: $font-size-medium;
+    font-weight: $fw-bold;
+    font-family: $font-family;
+    transition: all $transition-duration $transition-ease;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
