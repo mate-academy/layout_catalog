@@ -1,0 +1,125 @@
+.card {
+  box-sizing: border-box;
+  padding: 32px 16px 16px;
+  width: 200px;
+  height: 408px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid $color-card-border;
+  transition-duration: 300ms;
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    margin-inline: auto;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 134px;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__info {
+    @include roboto-medium-500;
+
+    margin-top: 40px;
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
+    color: $color-main;
+  }
+
+  &__code {
+    @include roboto-regular-400;
+
+    margin-top: 4px;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    color: $color-secondary;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    align-items: center;
+
+    &-stars {
+      @include roboto-regular-400;
+
+      font-size: $font-size-small;
+      color: $color-main;
+    }
+
+    &-count {
+      @include roboto-regular-400;
+
+      font-size: $font-size-small;
+      color: $color-main;
+    }
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-title {
+      @include roboto-regular-400;
+
+      font-size: $font-size-medium;
+      color: $color-secondary;
+    }
+
+    &-value {
+      @include roboto-bold-700;
+
+      color: $color-main;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  &:hover .card__info {
+    color: #34568b;
+  }
+}
+
+.card__buy-button {
+  display: flex; // Enable flexbox
+  justify-content: center; // Horizontally center the content
+  align-items: center; // Vertically center the content
+  margin-top: 16px;
+  background-color: $color-button-background;
+  border: hidden;
+  height: 39px;
+  border-radius: 5px;
+  transition-duration: 300ms;
+  text-align: center;
+
+  &:hover {
+    border: 1px solid $color-button-background;
+    background-color: $color-button-background-hoover;
+    color: $color-button-text-hoover;
+  }
+
+  &:hover a {
+    color: $color-button-text-hoover;
+  }
+
+  &-link {
+    @include roboto-bold-700;
+
+    font-size: $font-size-button;
+    line-height: $line-height-button;
+    margin: auto;
+    color: $color-button-text;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
