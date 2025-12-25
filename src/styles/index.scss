@@ -1,3 +1,226 @@
-body {
+@use './blocks/variables.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: variables.$header-height;
+
+  &__logo {
+    margin-left: variables.$logo-margin-left;
+    padding: variables.$logo-image-padding;
+  }
+
+  &__logo-img {
+    height: variables.$logo-image-size;
+    width: variables.$logo-image-size;
+  }
+}
+
+.nav {
+  margin-right: variables.$nav-margin-right;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    color: variables.$header-text-color;
+    height: variables.$header-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-transform: uppercase;
+    transition: color variables.$color-hover-transition;
+
+    &:hover {
+      color: variables.$blue-color;
+    }
+
+    &.is-active {
+      height: variables.$header-height;
+      color: variables.$blue-color;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: variables.$blue-color;
+      }
+    }
+  }
+}
+
+.main {
+  display: grid;
+  justify-content: center;
+}
+
+.product-cards {
+  margin-top: 50px;
+  display: grid;
+  gap: 46px 48px;
+  transition: transform 300ms;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  &__card {
+    padding: variables.$product-cards-padding;
+    width: 200px;
+    transition: transform 300ms;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__content {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+  }
+
+  &__image-link {
+    display: block;
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: variables.$title-color;
+    transition: color 300ms;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+
+  &__id-code {
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: 400;
+    color: variables.$description;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: variables.$product-cards-rating-padding-bottom;
+    margin-top: variables.$product-cards-rating-margin-top;
+  }
+
+  &__reviews-count {
+    line-height: 14px;
+    font-size: 10px;
+    font-weight: normal;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-text {
+    color: variables.$description;
+    font-size: 12px;
+  }
+
+  &__price-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: variables.$title-color;
+  }
+
+  &__button {
+    margin-top: variables.$product-cards-button-margin-top;
+
+    border: none;
+    width: 168px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: variables.$button-color;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    align-items: center;
+    color: variables.$button-background;
+  }
+
+  &__button:hover {
+    background-color: variables.$button-background;
+    color: variables.$button-color;
+    border: 1px solid variables.$button-color;
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: variables.$star-size;
+    height: variables.$star-size;
+    margin-right: variables.$star-gap;
+
+    background-image: url('/src/images/star.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+  }
+
+  &__star--active {
+    background-image: url('/src/images/star-active.svg');
+  }
+  &--1 &__star:nth-child(-n + 1) {
+    background-image: url('/src/images/star-active.svg');
+  }
+  &--2 &__star:nth-child(-n + 2) {
+    background-image: url('/src/images/star-active.svg');
+  }
+  &--3 &__star:nth-child(-n + 3) {
+    background-image: url('/src/images/star-active.svg');
+  }
+  &--4 &__star:nth-child(-n + 4) {
+    background-image: url('/src/images/star-active.svg');
+  }
+  &--5 &__star:nth-child(-n + 5) {
+    background-image: url('/src/images/star-active.svg');
+  }
 }
