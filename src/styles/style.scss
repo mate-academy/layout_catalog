@@ -1,0 +1,94 @@
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &-item {
+      margin-left: 20px;
+      position: relative;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &-link {
+      display: block;
+      align-content: center;
+      box-sizing: border-box;
+      height: 60px;
+      line-height: 60px;
+      font-size: 12px;
+      padding: 0;
+      color: #060b35;
+      text-decoration: none;
+      transition-duration: 300ms;
+
+      &:hover {
+        color: $blue-accent;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $blue-accent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+
+    background-color: $blue-accent;
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  place-content: center;
+  padding-inline: 40px;
+  padding-block: 50px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
