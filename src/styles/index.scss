@@ -1,3 +1,333 @@
+/* variaveis */
+$font-family: 'Roboto', sans-serif;
+$font-size-base: 10px;
+$line-height-base: 14px;
+$color-main: #00acdc;
+$color-text-accent: #060b35;
+$color-text-secondary: #616070;
+$color-white: #fff;
+$color-border: #f3f3f3;
+$color-title-hover: #34568b;
+$shadow-header: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+/* Layout / container */
+$container-max-w: 1024px;
+$container-pad-x: 40px; // padding horizontal do .cards
+$container-pad-y: 50px; // padding vertical do .cards
+
+/* Header / nav */
+$nav-height: 60px;
+$logo-size: 40px;
+$nav-font-size: 12px;
+$nav-font-weight: 500;
+$nav-item-gap: 20px;
+
+/* Grid de cards */
+$grid-gap-x: 46px;
+$grid-gap-y: 48px;
+
+/* Card */
+$card-radius: 5px;
+$card-border-w: 1px;
+$card-code-mb: 16px;
+$card-review-mb: 24px;
+$review-count-fs: 10px;
+$transition: 300ms;
+$card-padding: 32px 16px 16px;
+$card-width: 200px;
+$card-bg: #fff;
+
+/* Imagem do card */
+$card-img-w: 160px;
+$card-img-h: 134px;
+$card-img-mb: 40px;
+
+/* Títulos e textos do card */
+$card-title-fs: 12px;
+$card-title-lh: 18px;
+$card-title-fw: 500;
+$price-fs: 16px;
+$price-lh: 18px;
+$price-fw: 700;
+$label-fs: 12px;
+$label-lh: 18px;
+
+/* Botão "Buy" */
+$buy-h: 40px;
+$buy-radius: 5px;
+$buy-fs: 14px;
+$buy-lh: 16px;
+$buy-fw: 700;
+
+/* Stars */
+$star-size: 16px;
+$star-gap: 4px;
+$star-icon: '../images/star.svg';
+$star-icon-active: '../images/star-active.svg';
+
+/* Breakpoints */
+$bp-2cols: 488px;
+$bp-3cols: 768px;
+$bp-4cols: 1024px;
+
+html {
+  font-family: $font-family;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $container-pad-y;
+  background: $color-white;
+  box-shadow: $shadow-header;
+}
+
+.logo {
+  display: block;
+  width: $logo-size;
+  height: $logo-size;
+}
+
+.logo__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* NAV */
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: $nav-item-gap;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  height: $nav-height;
+  font-family: $font-family;
+  font-size: $nav-font-size;
+  font-weight: $nav-font-weight;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-text-accent;
+  transition: color $transition;
+
+  &:hover {
+    color: $color-main;
+  }
+
+  &.is-active {
+    color: $color-main;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      height: 4px;
+      border-radius: 2px;
+      background-color: $color-main;
+    }
+  }
+}
+
+/* ====== CARDS (GRID RESPONSIVO) ====== */
+.cards {
+  display: grid;
+  box-sizing: border-box;
+
+  max-width: $container-max-w;
+  margin: 0 auto;
+  padding: $container-pad-y $container-pad-x;
+
+  grid-template-columns: repeat(1, $card-width);
+  gap: $grid-gap-x $grid-gap-y;
+}
+
+/* 2 colunas ≥ 488px */
+
+@media (min-width: $bp-2cols) {
+  .cards {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+/* 3 colunas ≥ 768px */
+@media (min-width: $bp-3cols) {
+  .cards {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+/* 4 colunas ≥ 1024px */
+@media (min-width: $bp-4cols) {
+  .cards {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+/* cada card ocupa sua coluna inteira, sem margens manuais */
+.cards__card {
+  margin: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 0;
+  transition: transform $transition;
+  transform-origin: center center;
+  will-change: transform;
+  box-sizing: border-box;
+  width: $card-width;
+  border: $card-border-w solid $color-border;
+  border-radius: $card-radius;
+  padding: $card-padding;
+  background: $card-bg;
+
+   &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+}
+
+.card__image {
+  display: block;
+  margin: 0 auto $card-img-mb;
+  width: $card-img-w;
+  height: $card-img-h;
+  object-fit: contain;
+}
+
+.card__title {
+  margin: 0 0 4px;
+  font-size: $card-title-fs;
+  line-height: $card-title-lh;
+  font-weight: $card-title-fw;
+  color: $color-text-accent;
+  transition: color $transition;
+}
+
+.card:hover .card__title {
+  color: $color-title-hover;
+}
+
+.card__code {
+  margin-bottom: $card-code-mb;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-secondary;
+  transition: color $transition;
+}
+
+.card__review-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $card-review-mb;
+}
+
+.card__review-count {
+  color: $color-text-accent;
+  font-size: $review-count-fs;
+}
+
+.card__price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $card-code-mb;
+}
+
+.card__price-label {
+  font-size: $label-fs;
+  line-height: $label-lh;
+  color: $color-text-secondary;
+}
+
+.card__price {
+  font-size: $price-fs;
+  line-height: $price-lh;
+  font-weight: $price-fw;
+  color: $color-text-accent;
+}
+
+.card__buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: $buy-h;
+  border: 1px solid $color-main;
+  border-radius: $buy-radius;
+
+  font-size: $buy-fs;
+  line-height: $buy-lh;
+  font-weight: $buy-fw;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: $color-white;
+  background-color: $color-main;
+
+  transition:
+    background-color $transition,
+    color $transition,
+    border-color $transition;
+
+  &:hover {
+    color: $color-main;
+    background-color: $color-white;
+  }
+}
+
+/* STARS */
+
+.stars {
+  display: flex;
+}
+
+.stars__star {
+  width: $star-size;
+  height: $star-size;
+  margin-right: $star-gap;
+
+  background-image: url(#{$star-icon});
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+/* Estados de preenchimento (modificadores) */
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(#{$star-icon-active});
 }
