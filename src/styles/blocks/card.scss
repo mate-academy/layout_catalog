@@ -1,0 +1,139 @@
+.catalog {
+  padding: $catalog-padding-y $catalog-padding-x;
+  display: grid;
+  gap: $catalog-gap-row $catalog-gap-column;
+  justify-content: center;
+
+  @media (min-width: $screen-sm) {
+    & {
+      grid-template-columns: repeat(2, $card-width);
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    & {
+      grid-template-columns: repeat(3, $card-width);
+    }
+  }
+
+  @media (min-width: $screen-bg) {
+    & {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
+
+.card {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+
+  width: $card-width;
+  background-color: $card-main-color;
+  border-radius: $card-all-radius;
+  padding-bottom: $card-padding-bottom;
+  border: $card-border solid $card-main-color;
+
+  transition: transform $effect-time ease;
+  z-index: 1;
+
+  &:hover {
+    transform: $card-transform;
+    z-index: $index-global;
+  }
+
+  &__image {
+    padding-top: $card-padding-top;
+    margin-bottom: $img-margin-bottom;
+    padding-inline: $img-padding;
+    width: $img-size-width;
+    height: $img-size-height;
+  }
+
+  &__title {
+    padding-inline: $card-padding-inline;
+    color: $text-main-color;
+    font-weight: $font-w-title;
+    font-size: $font-s-title-label;
+    line-height: $font-lh-bg;
+    margin-bottom: $title-margin-bottom;
+  }
+
+  &:hover &__title {
+    color: $card-title-color;
+  }
+
+  &__product-code {
+    padding-inline: $card-padding-inline;
+    width: $card-all-width;
+    color: $text-less-color;
+    font-size: $font-s-code-reviews;
+    margin-bottom: $space-middle;
+    line-height: $font-lh-sm;
+  }
+
+  &__rating-row {
+    padding-left: $card-padding-inline;
+    width: $card-all-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $space-large;
+  }
+
+  &__reviews {
+    padding-right: $reviews-padding-right;
+    color: $text-main-color;
+    font-size: $font-s-code-reviews;
+    line-height: $font-lh-sm;
+    align-self: flex-end;
+  }
+
+  &__price-row {
+    padding-inline: $card-padding-inline;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: $card-all-width;
+    margin-bottom: $space-middle;
+  }
+
+  &__label {
+    color: $text-less-color;
+    font-size: $font-s-title-label;
+    line-height: $font-lh-bg;
+  }
+
+  &__value {
+    margin-right: $value-margin-right;
+    color: $text-main-color;
+    font-weight: $font-w-bold;
+    font-size: $font-s-price;
+    line-height: $font-lh-bg;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    color: $text-button-color;
+    background-color: $button-main-color;
+    padding: $button-size 0;
+    margin: 0 $space-middle $space-middle;
+    border-radius: $card-all-radius;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: $font-w-bold;
+    font-size: $font-s-button;
+    line-height: $font-lh-md;
+
+    border: $button-border solid transparent;
+    transition: $effect-time ease;
+
+    &:hover {
+      box-sizing: border-box;
+      background-color: $button-hover-color;
+      color: $text-button-hover-color;
+      border: $button-border solid $button-main-color;
+    }
+  }
+}
