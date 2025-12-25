@@ -1,0 +1,22 @@
+@use 'variables';
+
+.main {
+  padding: variables.$padding-space-5 variables.$padding-space-4;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(variables.$block-width, 1fr));
+  justify-items: center;
+  gap: variables.$grid-row-gap variables.$grid-column-gap;
+
+  $nums: (
+    2: 488px,
+    3: 768px,
+    4: 1024px,
+  );
+
+  @each $num, $var-px in $nums {
+    @media screen and (min-width: $var-px) {
+      grid-template-columns: repeat($num, minmax(variables.$block-width, 1fr));
+    }
+  }
+}

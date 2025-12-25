@@ -1,0 +1,64 @@
+@use 'variables';
+
+.nav {
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > :nth-child(n + 2) {
+      margin-left: variables.$margin-left-20;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    line-height: variables.$line-height-59;
+    display: flex;
+    align-items: center;
+    color: variables.$color-text-title;
+    font-family:
+      Roboto,
+      system-ui,
+      -apple-system,
+      'Segoe UI',
+      Arial,
+      sans-serif;
+    font-size: variables.$size-title;
+    font-weight: variables.$font-wight-5;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    transition-duration: variables.$transition-duration;
+
+    &.is-active::after {
+      content: '';
+      display: block;
+      width: variables.$width-is-active;
+      height: variables.$margin-right-4;
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 0;
+      background-color: variables.$color-accent;
+      border-radius: variables.$border-radius-8;
+    }
+
+    &.is-active {
+      color: variables.$color-accent;
+    }
+
+    &:hover {
+      color: variables.$color-accent;
+    }
+  }
+}

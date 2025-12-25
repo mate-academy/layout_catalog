@@ -1,0 +1,40 @@
+@use 'variables';
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: variables.$general-size;
+    height: variables.$general-size;
+    background-repeat: no-repeat;
+    background-size: variables.$general-size;
+  }
+
+  &__star::before {
+    content: url(../images/star-active.svg);
+  }
+
+  &__star:not(:last-child) {
+    margin-right: variables.$margin-right-4;
+  }
+
+  &--0 .stars__star:nth-child(n + 1)::before {
+    content: url(../images/star.svg);
+  }
+
+  &--1 .stars__star:nth-child(n + 2)::before {
+    content: url(../images/star.svg);
+  }
+
+  &--2 .stars__star:nth-child(n + 3)::before {
+    content: url(../images/star.svg);
+  }
+
+  &--3 .stars__star:nth-child(n + 4)::before {
+    content: url(../images/star.svg);
+  }
+
+  &--4 .stars__star:nth-child(n + 5)::before {
+    content: url(../images/star.svg);
+  }
+}
