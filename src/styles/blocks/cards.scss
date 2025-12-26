@@ -1,0 +1,129 @@
+@import 'variables';
+
+.main {
+  padding: 50px 40px;
+  width: 944px;
+
+  @media (min-width: 1200px) {
+    padding-inline: 128px;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+}
+
+// justify-content: center;
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 762px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  border: 1px solid $white-accent;
+  border-radius: 5px;
+
+  padding-block: 32px 16px;
+  padding-inline: 16px;
+  width: 200px;
+  box-sizing: border-box;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 1;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &-img {
+      width: 160px;
+      height: 134px;
+    }
+  }
+
+  &__title {
+    color: $main-accent;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-block: 40px 0;
+    font-style: normal;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+
+  &__product-code {
+    color: $secondary;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    width: 98px;
+    height: 14px;
+    margin-block: 4px 16px;
+  }
+
+  &__price {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+
+    &-text {
+      width: 31px;
+      height: 18px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary;
+      margin: 0;
+    }
+
+    &-sum {
+      color: $main-accent;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: $white-accent;
+    background-color: $blue-accent;
+    border: none;
+    font-weight: 700;
+    margin-top: 16px;
+
+    &:hover {
+      color: $blue-accent;
+      background-color: $white-accent;
+      border: 1px solid $blue-accent;
+    }
+  }
+}
