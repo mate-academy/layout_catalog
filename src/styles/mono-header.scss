@@ -1,0 +1,70 @@
+@import 'variables';
+
+.moyo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &__nav {
+    margin-right: $margin-base;
+  }
+
+  &__brand {
+    height: $brand-size;
+    width: $brand-size;
+    margin-left: $margin-base;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    list-style: none;
+  }
+
+  &__nav &__item + &__item {
+    margin-left: $margin-item;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $link-color;
+    font-weight: $font-weight-medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $header-height;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 300ms; 
+  }
+
+  &__brand a {
+    display: inline-block;
+    align-items: center;
+  }
+
+  &__link:hover {
+    color: $font-color;
+  }
+}
+
+.is-active {
+  color: $font-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    border-radius: $border-radius-base;
+    left: 0;
+    width: 100%;
+    height: $active-indicator-height;
+    background-color: $font-color;
+  }
+}
