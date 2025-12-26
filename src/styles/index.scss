@@ -1,3 +1,39 @@
-body {
+@import 'variables';
+@import 'header';
+@import 'stars';
+@import 'card';
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $page-font;
+}
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat($column-count-default, 200px);
+  gap: 48px 46px;
+  justify-content: center;
+  place-items: center center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat($column-count-488, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat($column-count-768, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat($column-count-1024, 200px);
+  }
 }
