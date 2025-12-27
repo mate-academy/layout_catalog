@@ -1,0 +1,21 @@
+$gap-small: 4px;
+$star-size: 16px;
+
+.stars {
+  display: flex;
+  gap: $gap-small;
+}
+
+.stars__star {
+  width: $star-size;
+  height: $star-size;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n + #{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
