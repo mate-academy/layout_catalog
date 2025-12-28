@@ -1,0 +1,132 @@
+.catalog {
+  display: grid;
+  justify-content: center;
+  gap: $grid--gap;
+  padding: $grid--p;
+  grid-template-columns: repeat(1, $column--h);
+  overflow: visible;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $column--h);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $column--h);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $column--h);
+  }
+}
+
+.card {
+  background-color: $color--white;
+  width: $column--h;
+  height: 408px;
+  border: 1px solid $color-secondary;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition:
+    transform $transform--delay,
+    box-shadow $transform--delay;
+  will-change: transform;
+  position: relative;
+  z-index: 0;
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 32px;
+  }
+
+  &__content {
+    padding: $content--pad;
+  }
+
+  &__title {
+    color: $color-third;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color $transform--delay;
+  }
+
+  &__code {
+    color: $color-main;
+    font-size: 10px;
+    font-weight: $font--weight;
+    margin: 0;
+    padding-top: 4px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: $font--weight;
+    color: $color-third;
+    margin: 0;
+  }
+
+  &__price-money {
+    color: $color-third;
+    font-size: 16px;
+    font-weight: $font--weight--second;
+    margin: 0;
+  }
+
+  &__button {
+    background-color: $color-card;
+    border: 1px solid $color-card;
+    color: $color--white;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: $font--weight--second;
+    text-transform: uppercase;
+    margin-top: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    transition:
+      background-color $transform--delay,
+      color $transform--delay,
+      border-color $transform--delay;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    box-shadow: $box--shad rgba(0, 0, 0, 0.12);
+
+    .card__title {
+      color: $card__title--color;
+    }
+
+    .card__button {
+      background-color: $color--white;
+      color: $color-card;
+      border-color: $color-card;
+    }
+  }
+}
