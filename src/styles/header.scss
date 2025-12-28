@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    display: block;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    list-style-type: none;
+    height: 60px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    margin: 0 10px;
+    color: $MainAccent;
+
+    @include fonts(500, 12px);
+  }
+
+  &__link:hover {
+    color: $BlueAccent;
+  }
+
+  &__link--start {
+    margin: 0 10px 0 0;
+    color: $BlueAccent;
+  }
+
+  &__link--end {
+    margin: 0 0 0 10px;
+  }
+}
+
+.is-active {
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $BlueAccent;
+  border-radius: 8px;
+}
