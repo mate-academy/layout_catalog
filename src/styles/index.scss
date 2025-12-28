@@ -1,3 +1,250 @@
+// === COLORS ===
+$color-blue: #00acdc;
+$color-darkblue: #060b35;
+$color-white: #fff;
+$color-lightwhite: #f3f3f3;
+$color-lightpurple: #616070;
+$color-bluelight: #34568b;
+
+$card-width: 200px;
+$grid-gap-vertical: 48px;
+$grid-gap-horizontal: 46px;
+$container-padding-vertical: 50px;
+$container-padding-horizontal: 40px;
+
+$gap-star: 4px;
+
+// === GLOBAL ===
+* {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   margin: 0;
+  padding: 0;
+}
+
+// === HEADER ===
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item + .nav__item {
+  margin-left: 20px;
+}
+
+.nav__link {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: $color-darkblue;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav__link:hover {
+  color: $color-blue;
+}
+
+.is-active {
+  color: $color-blue;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background: $color-blue;
+    width: 100%;
+    left: 0;
+    border-radius: 8px;
+    bottom: 0;
+  }
+}
+
+// === CARD ===
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: $card-width;
+  padding: 16px;
+  border: 1px solid $color-lightwhite;
+  border-radius: 5px;
+  color: $color-lightpurple;
+  background-color: $color-white;
+  transition: all 300ms ease;
+
+  &__image {
+    position: absolute;
+    top: 32px;
+    width: 160px;
+    height: 134px;
+    background-image: url(/src/images/imac.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__title {
+    margin-top: calc(206px - 16px);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-darkblue;
+  }
+
+  &__code {
+    align-self: flex-start;
+    width: 98px;
+    margin: 4px 0 16px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-bluelight;
+    }
+  }
+}
+
+// === CARD REVIEW ===
+.card__review {
+  display: flex;
+  width: 30%;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  color: $color-darkblue;
+}
+
+// === PRICE & BUTTON ===
+.price {
+  display: flex;
+  gap: 85px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  &__content {
+    font-size: 12px;
+  }
+
+  &__value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $color-darkblue;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 166px;
+  height: 40px;
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: $color-white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $color-blue;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border: 1px solid $color-blue;
+    color: $color-blue;
+    background-color: $color-white; // ✅ исправлено
+  }
+}
+
+// === RATING ===
+.rating {
+  display: flex;
+
+  &__star {
+    background-image: url(/src/images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:not(:last-child) {
+      margin-right: $gap-star;
+    }
+  }
+}
+
+.rating--4 .rating__star:nth-child(-n + 4) {
+  background-image: url(/src/images/star-active.svg);
+}
+
+.card__rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 166px;
+  height: 16px;
+}
+
+// === CONTAINER ===
+.container {
+  --columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), $card-width);
+  gap: $grid-gap-vertical $grid-gap-horizontal;
+  place-content: center;
+  padding: $container-padding-vertical $container-padding-horizontal;
+}
+
+@media (min-width: 488px) {
+  .container {
+    --columns: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --columns: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --columns: 4;
+  }
 }
