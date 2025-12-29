@@ -1,7 +1,7 @@
 $main-color: #00acdc;
 $text-accent-color: #060b35;
 $text-secondary-color: #616070;
-$font-family: Roboto, sans-serif;
+$font-family: Roboto, sans-serif, Arial, 'Inter';
 
 /* Card */
 .card {
@@ -15,6 +15,8 @@ $font-family: Roboto, sans-serif;
   vertical-align: top;
   text-align: center;
   position: relative;
+  height: auto;
+  object-fit: cover;
 
   /* прибрано margin, тепер інтервали через gap */
   transition:
@@ -35,6 +37,7 @@ $font-family: Roboto, sans-serif;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 
     .card__title {
+      text-align: left;
       color: $main-color;
     }
   }
@@ -73,6 +76,8 @@ $font-family: Roboto, sans-serif;
 
   &__code {
     margin-bottom: 16px;
+    font-size: 10px;
+    text-align: left;
     color: $text-secondary-color;
   }
 
@@ -84,6 +89,7 @@ $font-family: Roboto, sans-serif;
   }
 
   &__review-count {
+    font-size: 10px;
     color: $text-accent-color;
   }
 
@@ -156,7 +162,7 @@ ul {
   padding: 0;
 }
 
-.logo-img {
+.logo__img {
   width: 40px;
   height: 40px;
 }
@@ -175,18 +181,18 @@ ul {
     align-items: center;
   }
 
-  .nav-list {
+  .nav__list {
     display: flex;
     padding: 0;
     margin: 0;
     list-style: none;
 
-    .nav-item {
-      & + .nav-item {
+    .nav__item {
+      & + .nav__item {
         margin-left: 20px;
       }
 
-      .nav-link {
+      .nav__link {
         position: relative;
         display: flex;
         align-items: center;
@@ -225,8 +231,7 @@ ul {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-content: center;
-  gap: 48px; /* тепер інтервали через gap */
-  padding: 50px 400px; /* адаптивний відступ */
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+  grid-template-rows: repeat(2, auto); /* 2 рядки */
+  gap: 10px; /* відступи між фото */
 }
