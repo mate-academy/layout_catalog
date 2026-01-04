@@ -1,0 +1,61 @@
+.navbar {
+  margin-right: 50px;
+  height: 60px;
+  align-self: stretch;
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    list-style: none;
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    height: $header-height;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: $nav-color;
+    padding: 0;
+    text-transform: uppercase;
+
+    @extend %df-center;
+
+    &:hover {
+      color: $text-base;
+
+      @extend %smooth-animation;
+    }
+
+    &.is-active {
+      color: $text-base;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    content: '';
+    background-color: $text-base;
+    width: 37px;
+    height: 4px;
+    border-radius: 8px;
+  }
+}
