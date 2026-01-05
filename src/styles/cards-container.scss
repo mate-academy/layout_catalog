@@ -1,0 +1,17 @@
+@import 'variables';
+
+.container {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+
+  @each $screen-width, $column in $columns {
+    @media (min-width: $screen-width) {
+      & {
+        grid-template-columns: repeat($column, $card-width);
+      }
+    }
+  }
+}
