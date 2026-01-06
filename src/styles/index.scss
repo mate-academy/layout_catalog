@@ -1,3 +1,59 @@
+/* Utilities */
+@import './utils/variables';
+
+/* Blocks */
+@import './blocks/card';
+@import './blocks/stars';
+@import './blocks/header';
+
 body {
   margin: 0;
+  font-family: $font-family;
+  font-size: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  max-width: $desktop-width;
+  margin: 0 auto;
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 46px 48px;
+  place-items: center;
+  place-content: center;
+  justify-content: center;
+  align-items: center;
+
+  @include media-query($mobile-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-query($tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-query($desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
