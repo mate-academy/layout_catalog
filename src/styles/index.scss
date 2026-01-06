@@ -33,15 +33,27 @@ a {
 }
 
 .main {
-  max-width: $container-width;
+  max-width: $desktop-width;
   margin: 0 auto;
-  gap: 48px 46px;
   padding: 50px 40px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(1, 1fr);
+  gap: 46px 48px;
   place-items: center;
   place-content: center;
   justify-content: center;
   align-items: center;
+
+  @include media-query($mobile-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-query($tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-query($desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
