@@ -1,0 +1,110 @@
+@use '../variables' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+  padding: 17px;
+  background-color: $card-background-color;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+
+  &__image {
+    display: flex;
+    align-self: center;
+    margin-top: $card-margin-top;
+    margin-bottom: 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    color: $title-text-color;
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    color: $title-secondary-color;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    height: 18px;
+    margin-top: 24px;
+
+    &-name {
+      width: 31px;
+      height: 18px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0;
+      vertical-align: bottom;
+      color: $title-secondary-color;
+    }
+
+    &-value {
+      width: 50px;
+      height: 18px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      vertical-align: bottom;
+      color: $title-text-color;
+    }
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: $card-margin-top;
+    width: 166px;
+    height: 40px;
+
+    &-buy {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 40px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      background-color: $button-background-color;
+      border-radius: 5px;
+      color: $text-button-color;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    &-buy:hover {
+      background-color: $button-background-color-hover;
+      border: 1px solid $border-button-color;
+      color: $text-button-color-hover;
+    }
+  }
+
+  &:hover {
+    scale: 1.2;
+    .card__title {
+      color: $card-title-text-color;
+    }
+  }
+}
