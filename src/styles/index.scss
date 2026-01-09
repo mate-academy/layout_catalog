@@ -1,3 +1,225 @@
-body {
+// Variables
+$color-white: #fff;
+$color-gray-light: #f3f3f3;
+$color-primary: #060b35;
+$color-secondary: #616070;
+$color-accent: #00acdc;
+$color-star: #ffde6a;
+$color-title-hover: #34568b;
+$font-family: 'Roboto', sans-serif;
+$transition-duration: 300ms;
+
+// Reset
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 10px;
+  line-height: 14px;
+  color: $color-secondary;
+  background-color: $color-white;
+}
+
+// Header Block
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__logo-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Nav Block
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-primary;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.is-active {
+      color: $color-accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $color-accent;
+      }
+    }
+  }
+}
+
+// Catalog (Main container)
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+// Card Block
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
+  background-color: $color-white;
+  border: 1px solid $color-gray-light;
+  border-radius: 5px;
+  transition: transform $transition-duration;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-primary;
+    transition: color $transition-duration;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+
+  &__code {
+    margin-bottom: 16px;
+  }
+
+  &__review {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews-count {
+    color: $color-primary;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $color-primary;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid $color-accent;
+    border-radius: 5px;
+    background-color: $color-accent;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    transition:
+      background-color $transition-duration,
+      color $transition-duration;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-accent;
+    }
+  }
+}
+
+// Stars Block
+.stars {
+  display: flex;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
