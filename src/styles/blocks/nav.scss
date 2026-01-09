@@ -31,7 +31,7 @@
 
     font-size: 12px;
     line-height: 60px;
-    color: #060b35;
+    color: $main-accent;
     text-decoration: none;
 
     transition: $transition-time;
@@ -45,20 +45,21 @@
 .is-active {
   position: relative;
   color: $blue-accent;
+  
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+
+    background-color: $blue-accent;
+  }
 }
 
-.is-active::after {
-  content: '';
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  display: block;
-
-  width: 100%;
-  height: 4px;
-  border-radius: 8px;
-
-  background-color: $blue-accent;
-}
