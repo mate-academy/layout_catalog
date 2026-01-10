@@ -1,0 +1,32 @@
+@use '../utils/variables' as *;
+
+.catalog {
+  &__list {
+    padding: 50px 40px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    list-style: none;
+
+    gap: 46px 48px;
+    place-items: center;
+    place-content: space-evenly;
+  }
+
+  @media (min-width: $mobile-large) {
+    .catalog__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    .catalog__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    .catalog__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
