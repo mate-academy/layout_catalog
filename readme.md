@@ -8,7 +8,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - add `data-qa="card"` to the first card
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 - nav links color is not `black` anymore (nav links should have `#060b35` color)
-- add the class `is__active` to the first link (`Apple`) in the navigation
+- add the class `is-active` to the first link (`Apple`) in the navigation
 - use `<main>` tag for cards container
 - use the grid for cards with different numbers of columns:
   - 1 for the smaller screens
