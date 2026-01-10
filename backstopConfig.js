@@ -52,8 +52,8 @@ const config = {
     },
     {
       ...basic,
-      label: 'Link with class_is-active',
-      selectors: ['a.is-active'],
+      label: 'Link with class_is__active',
+      selectors: ['a.is__active'],
     },
     {
       ...basic,
