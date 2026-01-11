@@ -1,3 +1,266 @@
+$main-color: #060b35;
+$second-color: #616070;
+$blue-color: #00acdc;
+$border-color: #f3f3f3;
+$link-color: #060b35;
+$title-color: #34568b;
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  box-sizing: inherit;
+}
+
+.header {
+  width: 100%;
+  box-sizing: inherit;
+
+  &__container {
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: inherit;
+    margin: 0 auto;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-size: 12px;
+    color: $link-color;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  &__link:visited {
+    color: $link-color;
+  }
+
+  &__link.is-active {
+    position: relative;
+    color: $blue-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $blue-color;
+      height: 4px;
+      bottom: 0;
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  &__link:hover {
+    color: $blue-color;
+  }
+}
+
+.catalog {
+  display: grid;
+  padding: 50px 40px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+
+  @media (max-width: 487px) {
+    & {
+      grid-template-columns: repeat(1, 200px);
+    }
+  }
+
+  @media (min-width: 488px) {
+    & {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image.card__image--logo {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 36px;
+  }
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    color: $main-color;
+    margin: 0 16px 4px;
+    transition:
+      color 0.3s,
+      background-color 0.3s;
+  }
+
+  &:hover .card__title {
+    color: $title-color;
+  }
+
+  &__code {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    color: $main-color;
+    margin: 0 0 16px 16px;
+    padding: 0;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 16px 24px;
+  }
+
+  &__reviews {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    color: $main-color;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 16px 16px;
+
+    &-label {
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      color: $second-color;
+    }
+
+    &-value {
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      color: $main-color;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 16px 16px;
+    width: 166px;
+    height: 44px;
+    text-decoration: none;
+    color: #fff;
+    background-color: $blue-color;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    border-radius: 5px;
+    transition:
+      color 0.3s,
+      background-color 0.3s;
+
+    &:hover {
+      border: 1px solid $blue-color;
+      color: $blue-color;
+      background-color: #fff;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/star.svg);
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      .stars__item:nth-child(-n + #{$i}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
 }
