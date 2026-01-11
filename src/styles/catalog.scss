@@ -1,0 +1,14 @@
+.catalog {
+  display: grid;
+  justify-content: center;
+  gap: $catalog-gap;
+  padding: $catalog-padding;
+}
+
+@each $breakpoint, $columns in $responsive-columns {
+  @media (min-width: #{$breakpoint}) {
+    .catalog {
+      grid-template-columns: repeat($columns, $card-width);
+    }
+  }
+}
