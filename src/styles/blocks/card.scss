@@ -1,0 +1,152 @@
+.cards {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    --column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-count: 4;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $card-border;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    &__product-title {
+      color: $title-hover-color;
+    }
+  }
+
+  &__logo {
+    box-sizing: border-box;
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 40px;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    width: 166px;
+    height: 40px;
+    background-color: $link-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $link-text-color;
+    border-radius: 5px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    transition: 0.3s;
+    &:hover {
+      box-sizing: border-box;
+      color: $link-color;
+      background-color: $link-text-color;
+      border: 1px solid $link-color;
+      z-index: 1;
+    }
+  }
+  &__product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__product-title {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    margin: 0;
+    margin-left: 16px;
+    color: $main-color;
+    transition: 0.3s;
+  }
+  &__product-code {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    margin: 0;
+    margin-left: 16px;
+    margin-top: 4px;
+    color: $second-color;
+  }
+  &__product-rating {
+    margin: 0;
+    margin-top: 16px;
+    margin-inline: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__product-reviews {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    color: $main-color;
+  }
+  &__product-price {
+    margin: 0;
+    margin-top: 24px;
+    margin-inline: 16px;
+    height: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-text {
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      vertical-align: bottom;
+      color: $second-color;
+    }
+
+    &-amount {
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      text-align: right;
+      vertical-align: bottom;
+      color: $main-color;
+    }
+  }
+}
