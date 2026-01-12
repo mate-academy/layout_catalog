@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $header-padding-inline;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__logo {
+    display: block;
+  }
+  &__logo-link {
+    display: block;
+  }
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__item + &__item {
+    margin-left: $header-gap;
+  }
+
+  &__link {
+    display: flex;
+    height: $header-heigth;
+    text-decoration: none;
+    color: $main-accent;
+    align-items: center;
+    position: relative;
+    transition-duration: $card-transform-duration;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $active-color;
+    }
+
+    &.is-active {
+      color: $active-color;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $active-color;
+      border-radius: 8px;
+    }
+  }
+}
