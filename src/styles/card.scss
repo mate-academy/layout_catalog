@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  box-sizing: border-box;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+
+  width: $card-w;
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+
+  font-family: $font-main;
+  background-color: $color;
+  transition:
+    transform $transition,
+    box-shadow $transition,
+    border-color $transition;
+  text-align: left;
+
+  &__image {
+    width: 166px;
+    height: 134px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $dark-blue;
+    transition: color $transition;
+  }
+
+  &__code {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $color-code;
+  }
+
+  &__reviews {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: $dark-blue;
+    line-height: 14px;
+  }
+
+  &__reviews-count {
+    margin: 0;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0%;
+    color: $dark-blue;
+  }
+
+  &__price-value {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: $dark-blue;
+    line-height: 18px;
+  }
+
+  &__btn {
+    box-sizing: border-box;
+    height: 40px;
+    font-family: Roboto, sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0%;
+    border-radius: 5px;
+    border: 1px solid $main-blue;
+    background-color: $main-blue;
+    transition:
+      background-color $transition,
+      color $transition,
+      border-color $transition;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: $nav-hover;
+      border-color: $main-blue;
+      background-color: $color-white;
+      outline: none;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+
+    .card__title {
+      color: $card-hover-title;
+    }
+  }
+}
