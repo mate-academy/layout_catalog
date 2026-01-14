@@ -1,0 +1,43 @@
+.navigation {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: $color-main;
+    transition: 0.3s;
+  }
+
+  &__link:hover {
+    color: $color-button;
+  }
+}
+
+.is-active {
+  color: $color-button;
+  position: relative;
+
+  &::after {
+    content: '';
+    background-color: $color-button;
+    width: 37px;
+    height: 4px;
+    position: absolute;
+    top: 56px;
+  }
+}
