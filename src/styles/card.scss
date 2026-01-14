@@ -1,0 +1,43 @@
+@use "sass:color";
+
+.card {
+  width: 200px;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  &__title {
+    color: #000;
+    transition: color 0.3s ease;
+  }
+
+  &:hover &__title {
+    color: $blue;
+  }
+
+  &__button {
+    background-color: $blue;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    display: block;
+
+    &:hover {
+      background-color: color.adjust($blue, $lightness: -10%);
+      color: #fff;
+    }
+  }
+}
