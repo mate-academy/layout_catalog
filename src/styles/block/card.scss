@@ -1,0 +1,113 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: $card-width;
+  height: $card-height;
+  padding: 1px;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+  background-color: $card-background-color;
+  transition:
+    transform $transition-duration,
+    color $transition-duration,
+    background-color $transition-duration;
+
+  &__image {
+    width: $card-width * 0.8;
+    height: $card-image-height;
+    margin: $margin-top auto 0;
+    background-image: url(../images/imac.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__title {
+    height: $card-title-height;
+    width: $card-width * 0.83;
+    margin: $margin-top * 1.25 auto 0;
+    font-weight: $font-weight + 100;
+    font-size: $font-size;
+    transition:
+      transform $transition-duration,
+      color $transition-duration,
+      background-color $transition-duration;
+  }
+
+  &__product-code {
+    height: $product-code-height;
+    width: $card-width * 0.49;
+    margin-top: $margin-top / 8;
+    margin-left: $product-code-margin-left;
+    font-size: $font-size - 2;
+    line-height: $line-height + 4;
+    color: $color-secondary;
+  }
+
+  &__reviews {
+    display: flex;
+    width: $card-width * 0.83;
+    margin: $margin-top * 0.5 auto 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews-text {
+    font-size: $font-size - 2;
+    line-height: $line-height - 4;
+  }
+
+  &__price {
+    display: flex;
+    width: $card-width * 0.83;
+    margin: $margin-top * 0.75 auto 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-text {
+    font-size: $font-size;
+    color: $color-secondary;
+  }
+
+  &__price-number {
+    font-size: $font-size + 4;
+    font-weight: $font-weight + 300;
+  }
+
+  &__buy {
+    display: flex;
+    width: $card-width * 0.83;
+    height: $card-buy-button-height;
+    margin: $margin-top * 0.5 auto 0;
+    background-color: $accent;
+    border-radius: $card-border-radius;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: $font-weight + 300;
+    font-size: $font-size + 2;
+    color: $color-button;
+    text-decoration: none;
+    transition:
+      transform $transition-duration,
+      color $transition-duration,
+      background-color $transition-duration;
+
+    &:hover {
+      background-color: $color-button;
+      border: 1px solid $accent;
+      color: $accent;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card:hover .card__title {
+  color: $card-hover-color;
+}
