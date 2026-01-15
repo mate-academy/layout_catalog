@@ -1,0 +1,130 @@
+@import '../utils/vars';
+
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 50px 40px;
+  gap: 48px 46px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  width: $card-width;
+  height: $card-height;
+
+  &__body {
+    padding: 0 16px 16px;
+  }
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    display: block;
+    width: 160px;
+    height: 134px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 32px auto 40px;
+  }
+
+  &__title {
+    width: 166px;
+    margin-bottom: 4px;
+    margin-top: 0;
+    font-weight: $font-weight-m;
+    font-size: $font-size-s;
+    line-height: 18px;
+    color: $color-text;
+    letter-spacing: 0;
+
+    &:hover {
+      color: $color-title;
+    }
+  }
+
+  &__code {
+    font-weight: $font-weight-s;
+    font-size: $font-size-xs;
+    line-height: 14px;
+    margin-bottom: 16px;
+    color: $color-gray;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: $font-size-s;
+    line-height: 18px;
+    color: $color-gray;
+  }
+
+  &__price-value {
+    font-weight: $font-weight-l;
+    font-size: $font-size-l;
+    line-height: 18px;
+    color: $color-text;
+  }
+
+  &__buy {
+    width: 166px;
+    height: 40px;
+    border-radius: $radius;
+    background-color: $color-button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: $font-weight-l;
+    font-size: $font-size-m;
+    line-height: 16px;
+    color: #fff;
+    transition: 300ms;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-button;
+      border: 1px solid $color-button;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transition: 300ms;
+  }
+}
