@@ -1,0 +1,115 @@
+.container {
+  padding: 50px 40px;
+  max-width: 944px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px 46px;
+  place-items: center;
+  place-content: center;
+  grid-area: container;
+
+  @media (max-width: 487px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 488px) and (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: $card-height;
+  border: 1px solid $gray-elements;
+  border-radius: $border-radius;
+  padding: 32px 16px 16px;
+  transition: all 300ms;
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    height: 134px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: $main-shift * 10;
+  }
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: $letter-spacing;
+    margin-bottom: $main-shift;
+    margin-top: $margin-top;
+  }
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: $letter-spacing;
+    color: $secondary;
+    margin-bottom: $main-shift * 4;
+    margin-top: $margin-top;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18px;
+    margin-bottom: $main-shift * 4;
+  }
+  &__item-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: $letter-spacing;
+    color: $secondary;
+  }
+  &__item-value {
+    color: $main-accent;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: $letter-spacing;
+  }
+
+  &__link {
+    margin-bottom: $main-shift * 4;
+    box-sizing: border-box;
+    background-color: $blue-accent;
+    height: 40px;
+    width: 166px;
+    border: none;
+    border-radius: $border-radius;
+    padding: 0;
+    transition: all 300ms;
+
+    color: $gray-elements;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: $letter-spacing;
+
+    &:hover {
+      border: 1px solid $blue-accent;
+      background-color: $white;
+      color: $blue-accent;
+    }
+  }
+
+  &:hover {
+    scale: 1.2;
+    .card__name {
+      color: $name-hover;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.header {
+  text-transform: uppercase;
+  display: flex;
+  background-color: $white;
+  font-weight: 500;
+  font-size: 12px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  grid-area: header;
+
+  &__logo-image {
+    display: flex;
+    margin: 0 50px;
+    height: $logo-size;
+    width: $logo-size;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  margin-left: 0;
+  padding: 0;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    list-style: none;
+    margin-right: 0;
+    margin-left: 20px;
+    padding: 0;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    height: $link-size;
+    line-height: $link-size;
+    color: $main-accent;
+    white-space: nowrap;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $blue-accent;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $blue-accent;
+      display: flex;
+      align-items: stretch;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        border-radius: 8px;
+        background-color: $blue-accent;
+        align-self: flex-end;
+      }
+    }
+  }
+}
