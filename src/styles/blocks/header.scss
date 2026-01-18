@@ -1,0 +1,54 @@
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: $background-color;
+  justify-content: space-between;
+  padding: 40px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    display: block;
+    width: $logo-size;
+    height: $logo-size;
+  }
+}
+
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  position: relative;
+  height: 60px;
+  text-transform: uppercase;
+  color: $primary-color;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &.is-active {
+    color: $button-color;
+  }
+}
+
+.is-active::after {
+  content: '';
+  background-color: $button-color;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
