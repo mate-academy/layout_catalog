@@ -1,0 +1,223 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0509803922);
+}
+.header__logo {
+  width: 40px;
+  height: 40px;
+}
+.header__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__item + .nav__item {
+  margin-left: 20px;
+}
+.nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #060b35;
+  transition: all 0.3s ease;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+  background-color: #00acdc;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.nav__link:hover {
+  color: #00acdc;
+}
+.nav__link--is-active {
+  color: #00acdc;
+}
+.nav__link--is-active::after {
+  opacity: 1;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  margin: 0;
+  padding: 32px 16px 16px;
+  transition: all 0.3s ease;
+}
+.card__image {
+  width: 160px;
+  height: 134px;
+  margin: 0 auto 40px;
+  object-fit: contain;
+}
+.card__title {
+  margin: 0 0 4px;
+  font-family: Roboto, sans-serif;
+  color: #060b35;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.2);
+}
+.card:hover .card__title {
+  color: #34568b;
+}
+.card__code {
+  margin: 0 0 16px;
+  font-family: Roboto, sans-serif;
+  color: #616070;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+.card__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.card__price-label {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  color: #616070;
+  font-weight: 400;
+  font-size: 12px;
+}
+.card__price-value {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  color: #060b35;
+  font-weight: 700;
+  font-size: 16px;
+}
+.card__button {
+  display: flex;
+  width: 166px;
+  height: 40px;
+  background-color: #00acdc;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card__button:hover {
+  background-color: #fff;
+  color: #00acdc;
+  border-color: #00acdc;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.stars__icons {
+  display: flex;
+}
+.stars__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  background-image: url("../images/star.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.stars__icon:last-child {
+  margin-right: 0;
+}
+.stars__reviews-text {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  text-align: right;
+  vertical-align: bottom;
+  color: #060b35;
+}
+.stars--1 .stars__icon:nth-child(-n+1) {
+  background-image: url("../images/star-active.svg");
+}
+.stars--2 .stars__icon:nth-child(-n+2) {
+  background-image: url("../images/star-active.svg");
+}
+.stars--3 .stars__icon:nth-child(-n+3) {
+  background-image: url("../images/star-active.svg");
+}
+.stars--4 .stars__icon:nth-child(-n+4) {
+  background-image: url("../images/star-active.svg");
+}
+.stars--5 .stars__icon:nth-child(-n+5) {
+  background-image: url("../images/star-active.svg");
+}
+
+.catalog {
+  padding: 50px 40px;
+}
+
+.catalog__cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .catalog__cards {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+@media (min-width: 768px) {
+  .catalog__cards {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+@media (min-width: 1024px) {
+  .catalog__cards {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+body {
+  margin: 0;
+}
+
+/*# sourceMappingURL=index.css.map */
