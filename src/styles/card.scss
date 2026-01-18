@@ -1,0 +1,118 @@
+@use './variables.scss' as *;
+@use './stars.scss' as *;
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.container {
+  display: grid;
+  padding: 50px 40px;
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+.card {
+  width: $card-width;
+  height: $card-height;
+  font-family: Roboto, sans-serif;
+
+  box-sizing: border-box;
+  padding: calc($margin-value * 2) $margin-value $margin-value;
+
+  background-color: $colors--white;
+  border: 1px solid $colors--gray-elements;
+  border-radius: $border-radius;
+  transition-duration: $transition-duration;
+
+  &__picture {
+    display: block;
+    margin: 0 auto calc($margin-value * 2.5);
+    width: 160px;
+    height: 134px;
+  }
+  &__title {
+    margin-bottom: calc($margin-value / 4);
+    font-size: 12px;
+    font-weight: $font-medium-weight;
+    line-height: 18px;
+    color: $colors--main-accent;
+  }
+  &__product-code {
+    margin-bottom: $margin-value;
+    font-size: 10px;
+    font-weight: $font-light-weight;
+    line-height: 14px;
+    color: $colors--secondary;
+  }
+  &__reviews {
+    margin-bottom: calc($margin-value * 1.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    font-size: 10px;
+    font-weight: $font-light-weight;
+    line-height: 14px;
+  }
+  &__price {
+    margin-bottom: $margin-value;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: $font-light-weight;
+    line-height: 18px;
+    color: $colors--secondary;
+    &::after {
+      content: '$2,199';
+      font-size: 16px;
+      font-weight: $font-heavy-weight;
+      color: $colors--main-accent;
+    }
+  }
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $colors--white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: $font-heavy-weight;
+    line-height: 16px;
+
+    background-color: $colors--blue-accent;
+    border: none;
+    border-radius: $border-radius;
+    height: 40px;
+    transition-duration: $transition-duration;
+
+    &:hover {
+      background: $colors--white;
+      border: 1px solid $colors--blue-accent;
+      color: $colors--blue-accent;
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $colors--title-accent;
+    }
+  }
+}
