@@ -1,0 +1,79 @@
+@use '../utils/variables' as *;
+
+@mixin nav-link-common {
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  height: 60px;
+  margin-left: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  font-weight: 500;
+
+  &__logo {
+    align-self: center;
+    display: flex;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  &_list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  &_item {
+    display: flex;
+  }
+
+  &_link {
+    color: $black-color;
+
+    @include nav-link-common;
+
+    &:visited {
+      color: $black-color;
+    }
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &:active {
+      color: $blue-color;
+      position: relative;
+    }
+  }
+}
+
+.is-active {
+  @include nav-link-common;
+
+  position: relative;
+  color: $blue-color;
+  margin-left: 0;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: $blue-color;
+    border-radius: 8px;
+  }
+}
