@@ -1,0 +1,75 @@
+.header {
+  width: 100%;
+  background-color: $bg-main-color; // Змінна з variables.scss
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  // Цей елемент тепер виконує роль контейнера
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__logo {
+    display: block; // Посилання як блок
+
+    &-img {
+      display: block; // Прибирає нижній відступ картинки
+      max-width: 100%;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: $main-accent-color;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $secondary-accent-color;
+    }
+
+    &.is-active {
+      color: $secondary-accent-color;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: $secondary-accent-color;
+      }
+    }
+  }
+}
