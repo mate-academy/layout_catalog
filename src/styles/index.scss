@@ -1,3 +1,48 @@
+@import './variables';
+@import './card';
+@import './stars';
+@import './header';
+
+@font-face {
+  font-family: Roboto;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
+}
+
+.catalog {
+  display: grid;
+  grid-auto-rows: minmax(auto, max-content);
+  grid-template-columns: repeat(1, $grid-size);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+  margin: 0 auto;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $grid-size);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $grid-size);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $grid-size);
+  }
 }
