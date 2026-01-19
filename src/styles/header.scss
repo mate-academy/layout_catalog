@@ -1,0 +1,74 @@
+ul,
+body {
+  margin: 0; /* Обнулення стилів */
+  padding: 0; /* Обнулення стилів */
+}
+
+body {
+  font-family: Roboto, serif;
+  margin: 0;
+  font-weight: 500;
+}
+
+header {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center; /* Картинка по центру по вертикалі */
+  justify-content: space-between;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.header {
+  display: flex;
+  height: 60px; /* Висота header */
+  align-items: center;
+
+  &__ul {
+    display: flex;
+    list-style: none;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__li + &__li {
+    margin-left: 20px; /* Відступ лише між сусідніми елементами */
+  }
+}
+
+a {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+  color: $text-color;
+  transition: all 300ms;
+
+  &:hover {
+    color: #00acdc;
+  }
+
+  /* Для активного посилання */
+  &.is-active {
+    position: relative;
+    color: #00acdc;
+
+    &::after {
+      content: '';
+      display: block;
+      background: #00acdc;
+      height: 4px;
+      width: 100%;
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
