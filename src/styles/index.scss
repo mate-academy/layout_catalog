@@ -1,3 +1,222 @@
-body {
+@import './utils/variables';
+@import './utils/mixins';
+
+html,
+body,
+main,
+div,
+header,
+ul,
+li,
+a,
+h1,
+p,
+img {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include font($size: 10px, $weight: 400, $color: $main-accent-color);
+
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+h1,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  @include flex(row, space-between, center);
+
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    img {
+      @include set-size(40px, 40px);
+
+      display: block;
+    }
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+    }
+    &__item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__link {
+      @include flex($direction: row, $items: center);
+
+      position: relative;
+      height: 60px;
+      color: $main-accent-color;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $blue-accent-color;
+      }
+    }
+    .is-active {
+      color: $blue-accent-color;
+    }
+
+    .is-active::after {
+      @include set-size(100%, 4px);
+
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 8px;
+      background-color: $blue-accent-color;
+    }
+  }
+}
+
+.main {
+  --number-of-columns: 1;
+
+  padding: 50px 40px;
+  &__container {
+    max-width: 944px;
+    display: grid;
+    grid-template-columns: repeat(var(--number-of-columns), 200px);
+    justify-content: center;
+    gap: 46px 48px;
+    position: relative;
+    margin: 0 auto;
+
+    @media (min-width: 488px) {
+      --number-of-columns: 2;
+    }
+
+    @media (min-width: 768px) {
+      --number-of-columns: 3;
+    }
+
+    @media (min-width: 1024px) {
+      --number-of-columns: 4;
+    }
+  }
+}
+
+.card {
+  @include flex($direction: column, $items: center);
+
+  max-width: 200px;
+  width: 100%;
+  border: 1px solid $light-white-color;
+  border-radius: $default-border-radius;
+  background-color: $white-color;
+  padding: 32px 16px 16px;
+
+  &__image {
+    @include set-size(160px, 134px);
+
+    display: block;
+  }
+
+  &__title {
+    @include font(12px, 500, 18px);
+
+    margin-top: 40px;
+  }
+
+  &__product-code {
+    @include font($line-height: 14px, $color: $secondary-color);
+
+    margin-top: 4px;
+  }
+
+  &__product-rating {
+    @include flex(row, space-between, center);
+
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    line-height: 14px;
+    text-align: right;
+  }
+
+  &__price-box {
+    @include flex(row, space-between, center);
+
+    margin-top: 24px;
+  }
+
+  &__price-label {
+    @include font($size: 12px, $line-height: 18px, $color: $secondary-color);
+  }
+
+  &__price-value {
+    @include font($size: 16px, $weight: 700, $line-height: 18px);
+  }
+
+  &__button {
+    @include font(14px, 700, 16px, $white-color);
+
+    border: none;
+    text-transform: uppercase;
+    background-color: $blue-accent-color;
+    border-radius: $default-border-radius;
+    margin-top: 16px;
+    padding: 12px 70px;
+    height: 40px;
+
+    &:hover {
+      color: $blue-accent-color;
+      background-color: $white-color;
+      border: 1px solid $blue-accent-color;
+    }
+  }
+}
+
+.stars {
+  @include flex($direction: row, $items: center);
+
+  &__star {
+    @include set-size(16px, 16px);
+
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+    &:nth-child(-n + 4) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
