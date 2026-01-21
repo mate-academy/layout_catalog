@@ -1,0 +1,62 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    line-height: 60px;
+
+    & > li:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__nav-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+
+    @include transition(color);
+
+    &:link,
+    &:visited {
+      color: $main-color;
+    }
+
+    &:hover,
+    &:active {
+      color: $blue-color;
+    }
+  }
+}
+
+.is-active,
+.is-active:link,
+.is-active:visited {
+  color: $blue-color;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    border-radius: 8px;
+    width: 100%;
+    background-color: $blue-color;
+  }
+}
