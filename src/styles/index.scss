@@ -1,3 +1,243 @@
+$botomn-color: #00acdc;
+$text-color: #060b35;
+$text-code-color: #616070;
+
+:root {
+  --primary-blue: #00acdc;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  padding: 0 50px;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.product-list {
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+
+.product-list__item {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.product-list__item:last-child {
+  margin-right: 0;
+}
+
+.logo {
+  display: flex;
+}
+
+.url {
+  line-height: 60px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  display: block;
+  color: #060b35;
+  position: relative;
+  height: 60px;
+  transition: color 300ms;
+
+  &:hover {
+    color: var(--primary-blue);
+  }
+
+  &.url--is-active {
+    color: var(--primary-blue);
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: var(--primary-blue);
+      border-radius: 8px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &.url--fourth:hover {
+    color: var(--primary-blue);
+  }
+}
+
+.product__name {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: $text-color;
+  margin-bottom: 4px;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding: 0 16px;
+  transition:
+    transform 300ms ease-in-out,
+    box-shadow 300ms ease-in-out,
+    color 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .product__name {
+    color: #34568b;
+  }
+}
+
+.product {
+  display: block;
+  width: 160px;
+  height: 134px;
+  margin: 32px auto 40px;
+}
+
+.product__code {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $text-code-color;
+  margin-bottom: 16px;
+}
+
+.product__rating {
+  display: flex;
+  margin-bottom: 24px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.stars {
+  display: flex;
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__star:last-child {
+    margin-right: 0;
+  }
+
+  &__star:nth-child(-n + 4) {
+    background-image: url('../images/star-active.svg') !important;
+  }
+}
+
+.product__reviews {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.price {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+.product__price {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $text-code-color;
+}
+
+.price_number {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $text-color;
+}
+
+.product__button {
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+  background-color: $botomn-color;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  transition:
+    background-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+
+  &:hover {
+    display: flex;
+    text-decoration: none;
+    color: $botomn-color;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    border: 1px solid $botomn-color;
+    box-sizing: border-box;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 50px 40px;
+  gap: 48px 46px;
+  justify-content: center;
+}
+
+@media (max-width: 488px) {
+  .cards {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+@media (min-width: 488px) {
+  .cards {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
