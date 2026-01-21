@@ -1,0 +1,138 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 944px;
+}
+
+.card {
+  @include border-radius(5px);
+  @include transition-transform;
+
+  box-sizing: border-box;
+  width: 200px;
+  border: 1px solid $border-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 16px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__link-title {
+    @include font-properties(500, 12px, 18px, $color-primary);
+    @include transition-transform;
+
+    text-align: start;
+    margin-bottom: 4px;
+  }
+
+  &:hover &__link-title {
+    color: #34568b;
+  }
+
+  &__product-code {
+    @include font-properties(400, 10px, 14px, $color-secondary);
+
+    margin: 0 0 16px;
+    padding: 0;
+    width: 100%;
+    text-align: start;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 24px;
+  }
+
+  &__review-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include font-properties(400, 10px, 14px, $color-primary);
+
+    padding-top: 2px;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+
+  &__title {
+    @include font-properties(400, 12px, 18px, $color-secondary);
+
+    letter-spacing: 0%;
+    margin: 0;
+  }
+
+  &__value {
+    @include font-properties(700, 16px, 18px, $color-primary);
+
+    width: 50px;
+    letter-spacing: 0%;
+    text-align: right;
+    margin: 0;
+  }
+}
+
+.button {
+  @include font-properties(700, 14px, 16px, $color-white);
+  @include border-radius(5px);
+  @include transition((background-color, color));
+
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0%;
+  text-align: center;
+  background-color: $color-blue;
+  padding: 12px 0;
+
+  &:hover {
+    background-color: $bg-white;
+    border: 1px solid $color-blue;
+    color: $color-blue;
+  }
+}
+
+@media screen and (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 46px 48px;
+    padding: 50px 40px;
+  }
+}
