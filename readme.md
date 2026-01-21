@@ -31,7 +31,6 @@ Make all the changes smooth on hover (during 300ms):
 This is possible because [we use the Parcel library](https://en.parceljs.org/scss.html) to bundle your solution's source code.
 
 ## Checklist
-
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
 - [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
 - [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
