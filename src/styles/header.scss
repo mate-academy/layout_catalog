@@ -1,0 +1,62 @@
+@use './variables' as *;
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  width: 100%;
+  padding: 0 50px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 0 #0000000d;
+}
+
+.header__logo img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.tab-list {
+  display: flex;
+  font-family: Roboto, serif;
+  margin: 0;
+  padding: 0;
+
+  &__element {
+    list-style: none;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $color-text;
+    line-height: $header-height;
+    font-size: 12px;
+    display: inline-block;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.is-active {
+  color: $second-color;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: $second-color;
+    border-radius: 2px;
+  }
+}
