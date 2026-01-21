@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    font-weight: 500;
+    color: var(--main-color);
+    text-transform: uppercase;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--accent-color);
+    }
+
+    &--active {
+      color: var(--accent-color);
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        display: block;
+        height: 4px;
+        width: 100%;
+
+        background-color: var(--accent-color);
+        border-radius: 8px;
+      }
+    }
+  }
+}
