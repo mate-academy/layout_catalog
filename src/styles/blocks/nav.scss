@@ -1,0 +1,42 @@
+.nav {
+  &__menu {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+    position: relative;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+    color: $main-color;
+
+    @include transition;
+  }
+
+  &__link:hover {
+    color: $nav-active-color;
+  }
+}
+
+.is-active {
+  color: $nav-active-color;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 37px;
+  border-bottom: 4px solid $nav-active-color;
+  border-radius: 8px;
+}
