@@ -1,6 +1,6 @@
 # Frontend practice with catalog page
 
-Create an HTML page with a catalog. Develop semantic page structure as shown on [the mockup](https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354).
+Create an HTML page with a catalog. Develop semantic page structure as shown on [the mockup](<https://www.figma.com/file/ojkArVazq7vsX0nbpn9CxZ/Moyo-%2F-Catalog-(ENG)?node-id=32249%3A354>).
 
 - use `Header`, `Stars` and `Card` blocks from previous tasks but rewrite them using BEM and SCSS
 - remove old `data-qa` attributes
@@ -9,7 +9,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 - nav links color is not `black` anymore (nav links should have `#060b35` color)
 - add the class `is-active` to the first link (`Apple`) in the navigation
-- use `<main>` tag for cards container 
+- use `<main>` tag for cards container
 - use the grid for cards with different numbers of columns:
   - 1 for the smaller screens
   - 2 starting at `488px`
@@ -20,6 +20,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - cards container(catalog) have fixed paddings (`50px` vertically and `40px` horizontally)
 
 Make all the changes smooth on hover (during 300ms):
+
 - increase the card by 20 percent (neighboring cards **should not be** affected)
 - change the card title text color to `#34568b` when the card is hovered (`.card:hover .card__title`)
 - change navigation link text color to `#00acdc`
@@ -27,14 +28,15 @@ Make all the changes smooth on hover (during 300ms):
 
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
-*Important note*: In this task, you are allowed to link `*.scss` files directly in HTML `<link>` tags using `href` attribute.
+_Important note_: In this task, you are allowed to link `*.scss` files directly in HTML `<link>` tags using `href` attribute.
 This is possible because [we use the Parcel library](https://en.parceljs.org/scss.html) to bundle your solution's source code.
 
 ## Checklist
 
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_catalog/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_catalog/report/html_report/)
+
+- [DEMO LINK](https://julia303920201.github.io/layout_catalog/)
+- [TEST REPORT LINK](https://julia303920201.github.io/layout_catalog/report/html_report/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
