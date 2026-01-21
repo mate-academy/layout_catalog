@@ -1,3 +1,51 @@
+@import './variables';
+
 body {
   margin: 0;
+
+  font-family: Roboto, sans-serif;
+  font-variation-settings: 'wdth' 100;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.roboto {
+  &-400 {
+    font-weight: 400;
+  }
+  &-500 {
+    font-weight: 500;
+  }
+  &-700 {
+    font-weight: 700;
+  }
+}
+
+.main {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  gap: 48px 46px;
+  place-content: center center;
+
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --column-count: 4;
+  }
 }
