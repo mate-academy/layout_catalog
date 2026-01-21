@@ -1,0 +1,135 @@
+@import './variables';
+
+.card {
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  transition: transform 300ms;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+
+    margin-top: 16px;
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: $font-size-title;
+    font-weight: 500;
+    color: $main-text-color;
+
+    margin-top: 40px;
+    margin-bottom: 4px;
+    line-height: 18px;
+
+    transition: color 300ms;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+
+  &__code {
+    font-size: $font-size-small;
+    color: $gray-text;
+    font-weight: $font-weight-small;
+    margin: 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  &__price-text {
+    color: $gray-text;
+    font-size: $font-size-title;
+    font-weight: $font-weight-small;
+  }
+
+  &__price-amount {
+    font-weight: $font-weight-big;
+    font-size: 16px;
+    color: $main-text-color;
+  }
+
+  &__buy {
+    height: 40px;
+    margin-top: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: $header-blue;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    font-size: 14px;
+    font-weight: $font-weight-big;
+    color: white;
+
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      color: $header-blue;
+      background-color: white;
+      border: 1px solid $header-blue;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 16px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    width: $star-size;
+    height: $star-size;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--4 .stars__item:nth-child(-n + 4) {
+    background-image: url('../images/star-active.svg');
+  }
+
+  &__reviews {
+    font-size: $font-size-small;
+    color: $main-text-color;
+    font-weight: $font-weight-small;
+  }
+}
