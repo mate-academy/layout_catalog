@@ -1,0 +1,176 @@
+.main {
+  padding-top: 50px;
+  padding-inline: 40px;
+  display: grid;
+  gap: 46px 48px;
+  grid-template-columns: repeat(4, minmax(200px, 4fr));
+  margin: 0 auto;
+  margin-bottom: 70px;
+
+  @include onSmall {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
+
+  @include onMobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include onDesktopmax {
+    padding-inline: 128px;
+  }
+}
+
+.card-wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+
+  &__title {
+    width: 100%;
+    margin-top: 10px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main--color;
+    margin-bottom: 4px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+
+  &__container {
+    @include flex-column;
+
+    max-width: 200px;
+    justify-content: center;
+  }
+
+  &__item {
+    @include flex-column;
+
+    background-color: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding-inline: 16px;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    width: 200px;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto 30px;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 16px;
+    color: $secondary--color;
+    margin-top: 0;
+  }
+
+  &__like {
+    @include flex-between-center;
+
+    margin-bottom: 24px;
+    padding-left: 2px;
+  }
+
+  &__info {
+    width: 100%;
+  }
+
+  &__reviews {
+    padding-top: 2px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $main--color;
+  }
+
+  &__reviews-count {
+    line-height: 14px;
+  }
+
+  &__price {
+    @include flex-between-center;
+
+    font-family: inherit;
+    line-height: 18px;
+    color: $secondary--color;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: 12px;
+    color: $secondary--color;
+    margin: 0;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    color: $main--color;
+  }
+
+  &__button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    height: 40px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0 solid transparent;
+    border-radius: 5px;
+    background-color: $third--color;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+
+    &:hover {
+      padding: 11px 69px;
+      box-sizing: border-box;
+      border-width: 1px;
+      background-color: #fff;
+      border-color: $third--color;
+      color: $third--color;
+      transition: color 0.3s ease;
+    }
+  }
+}
