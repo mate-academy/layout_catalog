@@ -1,3 +1,40 @@
-body {
+@import './header';
+@import './card';
+
+body,
+html {
   margin: 0;
+  padding: 0;
+
+  font-family: Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+p,
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  padding: $GridPadding;
+  display: grid;
+  gap: $GridGap;
+  grid-template-columns: repeat(1, $CardWidth);
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $CardWidth);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $CardWidth);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $CardWidth);
+  }
 }

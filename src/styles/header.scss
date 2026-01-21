@@ -1,0 +1,58 @@
+@import './variables';
+
+.header {
+  padding: $HeaderPadding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    height: $HeaderLogo;
+  }
+
+  &__list {
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: $HeaderItemMargin;
+      }
+    }
+
+    &-link {
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: $Main;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 60px;
+      transition: 0.3s;
+
+      &:hover {
+        color: $Blue;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $Blue;
+}
+
+.is-active::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: $Blue;
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+}
