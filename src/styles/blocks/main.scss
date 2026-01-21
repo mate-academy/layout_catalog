@@ -1,0 +1,129 @@
+.cards {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(1, $card_width);
+    justify-content: center;
+    padding: 50px 40px;
+    gap: 46px 48px;
+    perspective: 400px;
+  }
+
+  // #region container_media
+  @media (min-width: 488px) {
+    &__container {
+      grid-template-columns: repeat(2, $card_width);
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__container {
+      grid-template-columns: repeat(3, $card_width);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__container {
+      grid-template-columns: repeat(4, $card_width);
+    }
+  }
+
+  // #endregion card-content
+  &__card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    width: $card_width;
+    padding: 16px;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+
+    transition: transform 300ms;
+
+    // #region card-content
+    &-img {
+      height: 134px;
+      width: 160px;
+      margin: 16px auto 40px;
+      object-fit: fill;
+    }
+
+    &-content {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      color: $card_main_color;
+    }
+
+    &-description {
+      margin-bottom: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+
+    &-code {
+      color: $card_secondary_color;
+      margin-bottom: 16px;
+    }
+
+    &-rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      line-height: 18px;
+      margin-bottom: 16px;
+
+      &-lable {
+        font-size: 12px;
+        color: $card_secondary_color;
+      }
+
+      &-cost {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+    &-button {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-link {
+      height: $card_button_height;
+      line-height: $card_button_height;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      color: $card_button_hover_color;
+      background-color: $card_button_color;
+      border-radius: 5px;
+    }
+
+    &-link:hover {
+      color: $card_button_color;
+      background-color: $card_button_hover_color;
+      box-sizing: border-box;
+      border: 1px solid $card_button_color;
+    }
+
+    // #endregion
+  }
+
+  &__card:hover {
+    transform: scale(1.2);
+  }
+
+  &__card:hover &__card-description {
+    color: $card_hover_desc_color;
+  }
+}
