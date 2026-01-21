@@ -1,0 +1,64 @@
+.header {
+  font-family: $font-family-base;
+  font-weight: 500;
+  font-size: $title-fs;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $header-padding-y $header-padding-x;
+  margin: 0;
+  background: $color-card-bg;
+  box-shadow: 0 2px 4px 0 $color-shadow;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  position: relative;
+  color: $color-heading;
+  display: inline-block;
+  line-height: $lh-60;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0;
+  transition: all $card-transition;
+}
+
+.nav__link:visited {
+  color: $color-black;
+}
+
+.nav__item + .nav__item {
+  margin-left: $margin-left;
+}
+
+.nav__link.is-active {
+  color: $color-primary;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  height: $after-h;
+  background-color: $color-primary;
+  border-radius: $bor-rad;
+  width: $after-w;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.nav__link:hover {
+  position: relative;
+  color: $color-primary;
+}
+
+.header__logo-img {
+  height: $img-height;
+  display: block;
+}
