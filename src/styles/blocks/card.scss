@@ -1,0 +1,143 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: 200px;
+  padding: 16px;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+
+    padding: 16px 0 0 3px;
+  }
+
+  &__name {
+    color: $main-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: justify;
+
+    margin: 0;
+    padding-top: 40px;
+  }
+
+  &__code {
+    color: $secondary-color;
+    font-size: 10px;
+    line-height: 14px;
+
+    margin: 0;
+    padding-top: 4px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 16px;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 16px;
+    color: $main-color;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  &__price {
+    &--container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 24px;
+    }
+
+    &--title {
+      margin: 0;
+      color: $secondary-color;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &--number {
+      margin: 0;
+      color: $main-color;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  transition-duration: $transition-duration;
+
+  &:hover {
+    background-color: #fff;
+    color: $blue-color;
+    border: 1px solid $blue-color;
+
+    .card__name {
+      color: #34568b;
+    }
+
+    transform: scale(1.2);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding: 0;
+
+    background-color: $blue-color;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+
+    margin-top: 16px;
+
+    transition-duration: $transition-duration;
+
+    &:hover {
+      background-color: #fff;
+      color: $blue-color;
+    }
+  }
+
+  &s-container {
+    display: grid;
+    width: 944;
+    padding: 50px 40px;
+    grid-template-columns: repeat(1, 200px);
+    gap: 46px 48px;
+    justify-content: space-between;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
