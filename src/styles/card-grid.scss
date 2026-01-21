@@ -1,0 +1,39 @@
+.card-grid {
+  --column-count: auto-fill;
+
+  list-style: none;
+  margin: 0;
+  padding: $card-grid-padding;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  gap: $col-gap $row-gap;
+  justify-content: center;
+
+  &__item {
+    position: relative;
+
+    @include smooth-hover(transform);
+
+    &:hover {
+      transform: scale($card-scale);
+    }
+  }
+}
+
+@media (min-width: 488px) {
+  .card-grid {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    --column-count: 4;
+  }
+}
