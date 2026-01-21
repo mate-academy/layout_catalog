@@ -1,3 +1,232 @@
+$color-blue: rgba(0, 172, 220, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-dark: rgba(6, 11, 53, 1);
+$font-size-12: 12px;
+$color-grey: rgba(97, 96, 112, 1);
+
+@media (min-width: 488px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 body {
   margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  background-color: $color-white;
+  font-size: $font-size-12;
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.header__nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.header__nav-list li + li {
+  margin-left: 20px;
+}
+
+.header__nav-link {
+  display: inline-block;
+  color: #060b35;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  position: relative;
+}
+
+.header__nav-link:hover {
+  color: #00acdc;
+}
+
+.header__nav-link--is-active {
+  color: $color-blue;
+}
+
+.header__nav-link--is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $color-blue;
+  border-radius: 2px;
+}
+
+.cards {
+  display: grid;
+  gap: 48px 46px;
+  padding: 50px 40px;
+}
+
+.product {
+  width: 200px;
+  padding-top: 32px;
+  transition: transform 300ms ease;
+}
+
+.product:hover {
+  transform: scale(1.2);
+}
+
+.product__img {
+  display: flex;
+  width: 160px;
+  height: 134px;
+  margin-left: 19px;
+  margin-right: 19px;
+}
+
+.product__info--text {
+  font-weight: 500;
+  font-size: $font-size-12;
+  line-height: 18px;
+  color: $color-dark;
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 16px;
+}
+
+.cards__product:hover .product__info--text {
+  color: #34568b;
+}
+
+.product__info--code {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  color: $color-grey;
+  margin-left: 16px;
+  margin-top: 4px;
+}
+
+.product__info--stars--reviews {
+  display: flex;
+  margin-top: 16px;
+  justify-content: space-between;
+}
+
+.product__info--stars {
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 16px;
+  gap: 4px;
+}
+
+.product__info--stars--active {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.5px;
+  background-image: url(../images/star-active.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.product__info--stars--notactive {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.5px;
+  background-image: url(../images/star.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.product__info--reviews {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: right;
+  vertical-align: bottom;
+  color: $color-dark;
+  margin-right: 16px;
+}
+
+.product__info--price {
+  display: flex;
+  margin-top: 24px;
+  justify-content: space-between;
+}
+
+.product__info--price--text {
+  font-weight: 400;
+  font-size: $font-size-12;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+  color: $color-grey;
+  margin-left: 16px;
+}
+
+.product__info--price--dolar {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: right;
+  vertical-align: bottom;
+  color: $color-dark;
+  margin-right: 16px;
+}
+
+.button {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.button__buy {
+  width: 166px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $color-blue;
+  border: none;
+  color: $color-white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.button__buy:hover {
+  background-color: #fff;
+  color: #00acdc;
+  border: 1px solid $color-blue;
 }
