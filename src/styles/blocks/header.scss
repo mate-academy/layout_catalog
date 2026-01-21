@@ -1,0 +1,68 @@
+@import '../utils/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: $header-horizontal-padding;
+
+  box-shadow: 0 2px #0000000d;
+
+  &__logo {
+    display: block;
+  }
+}
+
+.nav {
+  &__link {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: $card-main-text-color;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+
+    &:hover {
+      color: $header-blue;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    list-style-type: none;
+    gap: $nav-item-gap;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav__link.is-active {
+  color: $header-blue;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 56px;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: $header-blue;
+  border-radius: 8px;
+}
