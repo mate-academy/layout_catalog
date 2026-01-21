@@ -1,0 +1,83 @@
+@use '../variables' as vars;
+
+header {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  background-color: vars.$card-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__links {
+    display: flex;
+    list-style: none;
+  }
+
+  &__link {
+    margin-left: 20px;
+  }
+
+  &__item {
+    font-size: 12px;
+    text-decoration: none;
+    color: vars.$color;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    transition: vars.$transition-timing;
+  }
+
+  &__item:hover {
+    color: vars.$active-color;
+  }
+}
+
+.is-active {
+  color: vars.$active-color;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background-color: vars.$active-color;
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+  header {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    max-width: 1024px;
+  }
+}
