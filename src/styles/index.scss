@@ -1,3 +1,41 @@
+@import 'blocks/variables';
+@import 'header';
+@import 'maincards';
+@import 'blocks/button';
+@import 'blocks/roboto';
+@import 'blocks/card';
+@import 'blocks/style';
+@import 'blocks/stars';
+
 body {
-  margin: 0;
+  margin: 0; /* по ідеї не впливає */
+}
+
+.main {
+  --column-count: 1;
+
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .main {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --column-count: 4;
+  }
 }
