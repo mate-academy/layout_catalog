@@ -1,3 +1,119 @@
+@import 'blocks/stars';
+@import 'blocks/product';
+
 body {
   margin: 0;
+}
+
+:root {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 14px;
+
+  --main-color: #00acdc;
+  --text-color: #000;
+  --nav-link-color: #060b35;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+[data-qa='nav-hover']:hover {
+  color: var(--main-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.navigation__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.navigation__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.2s;
+  color: var(--nav-link-color);
+}
+
+.navigation__link:hover {
+  color: var(--main-color);
+}
+
+.is-active {
+  color: var(--main-color);
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--main-color);
+}
+
+html {
+  --primary-color: #00acdc;
+  --text-accent-color: #060b35;
+  --text-color: #616070;
+
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--text-color);
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  justify-items: center;
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@media screen and (min-width: 488px) and (max-width: 768px) {
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 488px) {
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+  }
 }
