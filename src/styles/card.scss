@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.4;
+  color: $secondary;
+}
+
+.card {
+  background: $white;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  width: $card-width;
+  padding: $card-padding;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__picture {
+    margin: 0;
+
+    img {
+      display: block;
+      margin: 0 auto 40px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $main-accent;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+  }
+
+  &__reviews {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    display: block;
+    padding: 11px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid $blue-accent;
+    line-height: 1.14;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    border-radius: $button-border-radius;
+    background: $blue-accent;
+
+    &:hover {
+      background: $white;
+      color: $blue-accent;
+    }
+  }
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
+
+.stars {
+  display: flex;
+  width: fit-content;
+
+  &__star {
+    box-sizing: border-box;
+    width: $stars-size;
+    height: $stars-size;
+    background: url(../images/star.svg) no-repeat center;
+    margin-right: $stars-margine-right;
+  }
+
+  &--1 .stars__star:nth-child(-n + 1),
+  &--2 .stars__star:nth-child(-n + 2),
+  &--3 .stars__star:nth-child(-n + 3),
+  &--4 .stars__star:nth-child(-n + 4),
+  &--5 .stars__star:nth-child(-n + 5) {
+    background: url(../images/star-active.svg) no-repeat center;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  &__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $secondary;
+  }
+
+  &__numbers {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    text-align: right;
+    color: $main-accent;
+  }
+}
+
+.container {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  grid-gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --column-count: 4;
+  }
+}
