@@ -1,3 +1,41 @@
+@import '../styles/card/variables';
+@import '../styles/header';
+@import '../styles/card/card';
+@import '../styles/card/mixin';
+@import '../styles/card/stars';
+
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+main {
+  display: grid;
+  gap: 46px 48px;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
