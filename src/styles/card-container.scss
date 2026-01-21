@@ -1,0 +1,19 @@
+.card-container {
+  padding: 50px 40px;
+  display: grid;
+  justify-content: center;
+  gap: 46px 48px;
+
+  $screen-min-width: (
+    0: 1,
+    488px: 2,
+    768px: 3,
+    1024px: 4,
+  );
+
+  @each $min-width, $columns in $screen-min-width {
+    @media (min-width: #{$min-width}) {
+      grid-template-columns: repeat(#{$columns}, $card-width);
+    }
+  }
+}
