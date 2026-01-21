@@ -1,0 +1,49 @@
+.catalog {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  justify-content: center;
+
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  .card:hover {
+    transform: scale(1.2);
+
+    .card__name {
+      color: $title-hover-color;
+    }
+
+    .card__button {
+      &:hover {
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid $color-blue;
+      }
+
+      &-buy:hover {
+        padding: 15px 80px;
+        color: $color-blue;
+      }
+    }
+  }
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    --column-count: 4;
+  }
+}
