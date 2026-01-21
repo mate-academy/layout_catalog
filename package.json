@@ -4,7 +4,7 @@
   "description": "Frontend practice with catalog page",
   "scripts": {
     "init": "mate-scripts init",
-    "start": "mate-scripts start",
+    "start": "npm-run-all --parallel sass serve",
     "format": "prettier --ignore-path .prettierignore --write './src/**/*.{html,css,scss}'",
     "lint": "npm run format && mate-scripts lint",
     "test:only": "mate-scripts test",
@@ -12,7 +12,10 @@
     "deploy": "mate-scripts deploy",
     "update": "mate-scripts update",
     "postinstall": "npm run update",
-    "test": "npm run lint && npm run test:only"
+    "test": "npm run lint && npm run test:only",
+    "sass": "sass src/styles/style.scss src/styles/style.css --watch",
+    "serve": "live-server src"
+
   },
   "keywords": [],
   "author": "Mate Academy",
@@ -27,8 +30,11 @@
     "@parcel/transformer-sass": "^2.12.0",
     "backstopjs": "6.3.23",
     "jest": "^29.7.0",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
     "parcel": "^2.12.0",
     "prettier": "^3.3.2",
+    "sass": "^1.91.0",
     "stylelint": "^16.7.0",
     "stylelint-scss": "^6.4.1"
   },
@@ -37,5 +43,14 @@
     "linters": {
       "javascript": false
     }
-  }
+  },
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livadin/layout_catalog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/livadin/layout_catalog/issues"
+  },
+  "homepage": "https://github.com/livadin/layout_catalog#readme"
 }

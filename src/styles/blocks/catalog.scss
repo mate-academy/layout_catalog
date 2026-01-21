@@ -1,0 +1,29 @@
+@use '../utils/variables' as *;
+.catalog {
+  --column-count: 1;
+  box-sizing: border-box;
+  padding: $catalog-padding-vert $catalog-padding-hor;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  gap: $catalog-row-gap $catalog-column-gap;
+  justify-content: center;
+  overflow: visible;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    --column-count: 4;
+  }
+}
