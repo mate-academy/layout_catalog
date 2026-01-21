@@ -1,0 +1,90 @@
+@import '../blocks/spec';
+
+.card {
+  width: $card-width;
+  height: 408px;
+  padding: 32px 16px 16px;
+  border: 1px solid $basic-color;
+  border-radius: 5px;
+  background-color: $card-bg;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: transform $transition-duration, background-color $transition-duration, color $transition-duration;
+  &:hover {
+    transform: scale(1.2);
+    position: relative;
+    background-color: $card-bg-hover;
+  }
+  &__price {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    &-label {
+      font-weight: 400;
+      font-size: 12px;
+      color: $basic-color;
+      margin: 0;
+      line-height: 18px;
+    }
+    &-value {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-nav-default;
+      line-height: 18px;
+    }
+  }
+  &__buy {
+    text-decoration: none;
+    border: 1px solid $color-accent;
+    color: white;
+    background-color: $color-accent;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background-color $transition-duration, color $transition-duration;
+    &:hover {
+      color: $color-accent;
+      background-color: #fff;
+    }
+  }
+  &__img {
+    background-image: url('../images/imac.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 134px;
+    width: 160px;
+    margin: 0 3px 40px;
+    background-position: center;
+  }
+  &__text {
+    font-size: 12px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    line-height: 18px;
+    width: 166px;
+    color: $color-nav-default;
+    transition: color $transition-duration;
+    .card:hover & {
+      color: $color-title-hover;
+    }
+  }
+  &__info {
+    &--code {
+      font-size: 10px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: $basic-color;
+      line-height: 14px;
+    }
+    &--button {
+      display: flex;
+      text-align: center;
+    }
+  }
+}
