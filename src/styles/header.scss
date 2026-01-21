@@ -1,0 +1,72 @@
+@use 'variables';
+
+.header {
+  max-width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  .logo__link {
+    display: flex;
+  }
+
+  .nav {
+    display: flex;
+
+    &__list {
+      display: flex;
+      list-style: none;
+      text-transform: uppercase;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      gap: 20px;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: variables.$color-text-dark;
+      display: block;
+      height: 60px;
+      line-height: 60px;
+      position: relative;
+      transition: color 0.3s;
+
+      &:hover {
+        color: variables.$color-accent; // hover для всіх посилань
+      }
+
+      &.is-active {
+        color: variables.$color-accent;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 4px;
+          width: 100%;
+          background-color: variables.$color-accent;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    // Окремо, без вкладення, завжди синій колір для четвертого посилання
+    &__link[data-qa='nav-hover'] {
+      color: variables.$color-accent;
+
+      &:hover {
+        color: variables.$color-accent; // залишається синім при hover
+      }
+    }
+  }
+}
