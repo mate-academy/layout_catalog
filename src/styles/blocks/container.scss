@@ -1,0 +1,25 @@
+@mixin responsive-grid($breakpoints) {
+  @each $min-width, $columns in $breakpoints {
+    @media (min-width: $min-width) {
+      grid-template-columns: repeat($columns, $card-width);
+    }
+  }
+}
+
+.container {
+  padding: $container-padding-vertical $container-padding-horizontal;
+  max-width: $container-max-width;
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $container-gap-vertical $container-gap-horizontal;
+
+  @include responsive-grid(
+    (
+      $bp-sm: 2,
+      $bp-md: 3,
+      $bp-lg: 4,
+    )
+  );
+}
