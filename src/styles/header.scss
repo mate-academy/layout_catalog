@@ -1,0 +1,79 @@
+@import 'variables';
+
+html {
+  font-family: Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+}
+
+.logo__img {
+  display: block; /* so that there is no space under the picture */
+  width: 40px;
+  height: 40px;
+}
+
+.nav__link {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  color: #060b35;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+
+  transition: color 300ms ease;
+
+  &--colors {
+    color: $button-color;
+  }
+}
+
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link[data-qa='nav-hover']:hover {
+  color: $button-color;
+}
+
+.nav__link.is-active {
+  position: relative;
+  color: $button-color;
+}
+
+.nav__link.is-active::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 4px;
+  border-radius: 8px;
+  background-color: $button-color;
+}
+
+.nav__items:not(:first-child) .nav__link {
+  margin-left: 20px; /* remove the indent from the first element */
+}
