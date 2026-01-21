@@ -1,3 +1,235 @@
+$font-family: 'Roboto', sans-serif;
+$main-accent: #060b35;
+$secondary: #616070;
+$white: #fff;
+$blue-accent: #00acdc;
+$gray-elements: #f3f3f3;
+$yellow-stars: #ffde6a;
+
+* {
+  box-sizing: border-box;
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+html {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.4;
+  color: $secondary;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+
+  --color: #00acdc;
+  --count-columns: 1;
+  --tr-dur: 0.3s;
+}
+
+.header__container {
+  max-width: 1200px;
+  padding: 0 50px;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo-img,
+.header__logo-link {
+  display: block;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin: 0 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #060b35;
+  text-decoration: none;
+  transition: color var(--tr-dur) ease;
+
+  &:hover,
+  &:focus {
+    color: var(--color);
+  }
+}
+
+.menu__item:first-child .menu__link {
+  margin-left: 0;
+}
+
+.menu__item:last-child .menu__link {
+  margin-right: 0;
+}
+
+.is-active {
+  color: var(--color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 8px;
+    width: 37px;
+    height: 4px;
+    bottom: 0;
+    background: var(--color);
+  }
+}
+
+.card {
+  max-width: 200px;
+  padding: 32px 16px 16px;
+  background: $white;
+  border: 1px solid $gray-elements;
+  border-radius: 5px;
+  transition: transform var(--tr-dur) ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+
+  &__picture {
+    max-width: 160px;
+    margin: 0 auto 40px;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $main-accent;
+    margin-bottom: 4px;
+    transition: color var(--tr-dur) ease;
+
+    .card:hover & {
+      color: #34568b;
+    }
+  }
+
+  &__code {
+    margin-bottom: 16px;
+  }
+
+  &__reviews {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    display: block;
+    padding: 11px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid $blue-accent;
+    line-height: 1.14;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    border-radius: 5px;
+    background: $blue-accent;
+    transition:
+      color var(--tr-dur) ease,
+      background-color var(--tr-dur) ease;
+
+    &:hover {
+      background-color: $white;
+      color: $blue-accent;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  width: fit-content;
+
+  &__star {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    background: url(../images/star.svg) no-repeat center;
+    margin-right: 4px;
+  }
+
+  &--1 .stars__star:nth-child(-n + 1),
+  &--2 .stars__star:nth-child(-n + 2),
+  &--3 .stars__star:nth-child(-n + 3),
+  &--4 .stars__star:nth-child(-n + 4),
+  &--5 .stars__star:nth-child(-n + 5) {
+    background: url(../images/star-active.svg) no-repeat center;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  &__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $secondary;
+  }
+
+  &__numbers {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    text-align: right;
+    color: $main-accent;
+  }
+}
+
+.catalog {
+  justify-content: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+  display: grid;
+  grid-template-columns: repeat(var(--count-columns), 200px);
+
+  @media (min-width: 488px) {
+    --count-columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    --count-columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --count-columns: 4;
+  }
 }
