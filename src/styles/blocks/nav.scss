@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    height: $header-height;
+    line-height: $header-height;
+    font-size: 12px;
+    font-weight: 500;
+    color: $link-color;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $active-link-color;
+    }
+  }
+}
+
+.is-active {
+  color: $active-link-color;
+}
+
+.is-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background-color: $active-link-color;
+  border-radius: 8px;
+}
