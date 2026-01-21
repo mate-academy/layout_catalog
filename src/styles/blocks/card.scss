@@ -1,0 +1,103 @@
+.main {
+  display: grid;
+  row-gap: $row-gap;
+  grid-column-gap: $column-gap;
+  padding: $margin-height-padding-50 $margin-height-padding-40;
+  justify-content: center;
+
+  @include column-count;
+}
+
+.card {
+  box-sizing: border-box;
+  width: $cars-width;
+  background-color: $white-accent;
+  border: 1px solid $border-accent;
+  border-radius: 5px;
+
+  @include smooth;
+
+  &__image {
+    display: block;
+    height: 134px;
+    width: 160px;
+    margin: 32px 19px $margin-height-padding-40;
+  }
+
+  &__description {
+    margin: 0 $margin-16 $margin-16;
+  }
+
+  &__title {
+    margin-bottom: $margin-height-4;
+    color: $main-accent;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    @include smooth;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    color: $main-accent;
+    height: $height-width-16;
+    text-align: right;
+    margin-top: $margin-16;
+  }
+
+  &__reviews {
+    width: 53px;
+    margin-top: 2px;
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 18px;
+
+    &-value {
+      color: $main-accent;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      text-align: right;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    margin-top: $margin-16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $margin-height-padding-40;
+    width: 166px;
+    border-radius: 5px;
+    background-color: $blue-accent;
+    color: $white-accent;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid $blue-accent;
+
+    @include smooth;
+
+    &:hover {
+      background-color: $white-accent;
+      color: $blue-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $title-hover;
+    }
+  }
+}
