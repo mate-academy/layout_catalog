@@ -1,3 +1,39 @@
+@import 'header';
+@import 'card_styles/style';
+
+$card-width: 200px;
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+
+  padding: 50px 40px;
+  justify-content: center;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
