@@ -1,0 +1,48 @@
+.nav {
+  &__menu {
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__style {
+    margin-right: 20px;
+  }
+
+  &__style:last-child {
+    margin: 0;
+  }
+
+  &__link {
+    font-size: 12px;
+    font-weight: 500;
+    color: $font-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 23px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  &__link:link {
+    color: #000;
+  }
+
+  &__link:hover,
+  &__link.is-active {
+    @include xhover(color, $color-active-link);
+  }
+
+  &__link.is-active::after {
+    content: '';
+    height: 4px;
+    border-radius: 2px;
+    background-color: $color-active-link;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
