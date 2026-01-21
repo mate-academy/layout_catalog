@@ -1,0 +1,22 @@
+.stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 24px;
+
+  .stars__star {
+    width: $stars;
+    height: $stars;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+// Генеруємо активні зірки динамічно
+@for $i from 1 through 5 {
+  .stars--#{$i} .stars__star:nth-child(-n + #{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
