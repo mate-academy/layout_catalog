@@ -1,0 +1,67 @@
+.header {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+}
+
+.nav {
+  display: inline-block;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    list-style: none;
+    position: relative;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    color: $mainAccent;
+
+    &:hover {
+      color: $activeHoverColor;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $activeHoverColor;
+}
+
+.is-active::after {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  bottom: 0;
+  content: '';
+  background-color: $activeHoverColor;
+  border-radius: 2px;
+}
