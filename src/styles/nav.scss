@@ -1,0 +1,50 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    font-weight: 500;
+  }
+
+  &__item {
+    margin-right: 20px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    display: block;
+    padding: 23px 0;
+    text-decoration: none;
+    color: $darkBlueColor;
+    white-space: nowrap;
+  }
+
+  &__link:hover {
+    color: $blueColor;
+  }
+}
+
+.is-active::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: $blueColor;
+}
+
+.is-active {
+  position: relative;
+  color: $blueColor;
+}
