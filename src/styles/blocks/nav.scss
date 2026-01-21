@@ -1,0 +1,51 @@
+.nav {
+  &__list {
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-transform: uppercase;
+  }
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    height: 60px;
+    text-decoration: none;
+    color: $nav__link-color;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 12px;
+    transition: 300ms ease;
+
+    &:hover {
+      color: $--button-buy;
+    }
+  }
+
+  &__link.is-active {
+    position: relative;
+    color: $--button-buy;
+    &::after {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 4px;
+      width: 100%;
+      background: $--button-buy;
+      border-radius: 16px;
+    }
+  }
+}
