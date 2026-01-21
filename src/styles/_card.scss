@@ -1,0 +1,154 @@
+@use 'variables' as *;
+@use 'stars' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 16px;
+  gap: 12px;
+  border: 1px solid $border;
+  border-radius: $radius;
+  background: $bg;
+  overflow: visible;
+  text-align: left;
+  position: relative;
+  transform-origin: center center;
+  box-shadow: none;
+  transition:
+    transform $dur $ease,
+    box-shadow $dur $ease;
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    z-index: 3;
+  }
+}
+
+.card__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 134px;
+  margin-top: 16px;
+  margin-bottom: 28px;
+  background: $bg;
+  overflow: hidden;
+}
+
+.card__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.card__title {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 3px;
+  font-weight: 500;
+  color: $color-base;
+  transition: color $dur $ease;
+}
+
+.card:hover .card__title {
+  color: $color-title-hover;
+}
+
+.card__description {
+  font-size: 10px;
+  color: $muted;
+}
+
+.card__rating {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin: 0 0 7px;
+}
+
+.stars {
+  display: flex;
+  gap: $stars-gap;
+  align-items: flex-start;
+  line-height: 0;
+  margin-left: 2px;
+}
+
+.stars__item {
+  display: block;
+  width: $star-width;
+  height: $star-height;
+  background-image: url('../images/star.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.stars__item--active {
+  background-image: url('../images/star-active.svg');
+}
+
+.card__reviews {
+  font-size: 10px;
+  color: $text;
+}
+
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: $muted;
+  margin: 0 0 4px;
+
+  strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-base;
+  }
+}
+
+.card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: $color-primary;
+  color: #fff;
+  text-decoration: none;
+  transition:
+    background-color $dur,
+    color $dur,
+    border-color $dur;
+
+  &:hover {
+    background: #fff;
+    color: $color-primary;
+    border-color: $color-primary;
+    text-decoration: none;
+  }
+}
