@@ -1,0 +1,123 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+
+  padding: 50px 40px;
+  margin: 0 auto;
+
+  gap: 46px 48px;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  padding: 32px 16px 16px;
+
+  border: 1px solid $border-card-color;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 300ms ease;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+    transition: all 300ms;
+  }
+
+  &__product-code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 4px;
+    color: $secondary-color;
+  }
+
+  &__reviews {
+    display: flex;
+    margin-top: 16px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+    justify-content: space-between;
+    line-height: 18px;
+  }
+
+  &__price-lable {
+    font-weight: 400;
+    font-size: 12px;
+    color: $secondary-color;
+  }
+
+  &__price-amount {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__button {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $accent-color;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $button-hover-color;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms;
+
+    &:hover {
+      color: $accent-color;
+      border: 1px solid $accent-color;
+      background-color: $button-hover-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $title-hover-color;
+    }
+  }
+}
