@@ -1,0 +1,135 @@
+.catalog {
+  padding: 50px 40px;
+
+  &__grid {
+    display: grid;
+    gap: 46px 48px;
+    justify-content: center;
+    grid-template-columns: repeat(1, 200px);
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding-inline: 16px;
+  padding-top: 32px;
+  border: 1px solid $color-border;
+  box-sizing: border-box;
+  border-radius: $radius;
+  padding-bottom: 16px;
+  transform-origin: center;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-inline: 3px;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    color: $color-primary;
+    line-height: 18px;
+    margin: 0;
+    margin-bottom: 4px;
+    transition: 300ms;
+  }
+
+  &:hover .card__title {
+    $color-title-hover: #34568b;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  &__rating-count {
+    text-align: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-primary;
+    margin: 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__price-name {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-secondary;
+    margin: 0;
+  }
+
+  &__price-amount {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: $color-primary;
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    background-color: $color-button;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: $radius;
+    font-weight: 700;
+    font-size: 14px;
+    height: 40px;
+    transition: 300ms;
+
+    &:hover {
+      background-color: $color-card;
+      border: 1px solid $color-button;
+      color: $color-button;
+    }
+  }
+}
