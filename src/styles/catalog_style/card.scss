@@ -1,0 +1,100 @@
+html {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 16px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+
+  &__image {
+    margin: 0 auto;
+    padding-top: 16px;
+
+    img {
+      width: 160px;
+      height: 134px;
+    }
+  }
+
+  &__name {
+    margin-top: 36px;
+    line-height: 18px;
+
+    @include size(12px, 500, $dark-color);
+  }
+
+  &__code {
+    margin-top: 4px;
+    line-height: 14px;
+
+    @include size(10px, 400, $font-color-secondary);
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    line-height: 16px;
+
+    @include size(10px, 400, $dark-color);
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    line-height: 18px;
+    margin-top: 24px;
+
+    p {
+      margin: 0;
+
+      @include size(12px, 400, $font-color-secondary);
+    }
+
+    p:last-child {
+      margin: 0;
+
+      @include size(16px, 700, $dark-color);
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    margin-top: 16px;
+    background-color: $blue-color;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+    a {
+      line-height: 16px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      @include size(14px, 700, $card-white);
+    }
+
+    &:hover {
+      background-color: $card-white;
+      border: 1px solid $blue-color;
+
+      a {
+        color: $blue-color;
+      }
+    }
+  }
+}
