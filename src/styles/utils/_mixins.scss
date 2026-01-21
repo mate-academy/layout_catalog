@@ -1,0 +1,49 @@
+@mixin stars-modifier($i) {
+  &--#{$i} > &__star:nth-child(-n + #{$i}) {
+    background-image: url(../images/star-active.svg);
+  }
+}
+
+@mixin star-size {
+  width: 16px;
+  height: 16px;
+}
+
+@mixin font-weight-regular {
+  font-weight: 400;
+}
+
+@mixin font-weight-medium {
+  font-weight: 500;
+}
+
+@mixin font-weight-bold {
+  font-weight: 700;
+}
+
+@mixin text-compact {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@mixin catalog-columns($columns) {
+  grid-template-columns: repeat($columns, $card-width);
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-large-mobile {
+  @media (min-width: $large-mobile-width) {
+    @content;
+  }
+}
