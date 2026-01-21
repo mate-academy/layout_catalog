@@ -1,0 +1,72 @@
+.header {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  &__container {
+    margin: 0 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo-link {
+  display: block;
+  height: $logo-size;
+  width: $logo-size;
+}
+
+.logo-link__img {
+  width: $logo-size;
+}
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+}
+
+.nav__item ~ .nav__item {
+  margin-left: 20px;
+}
+
+.nav__link {
+  display: block;
+  line-height: $header-height;
+  text-align: center;
+
+  text-decoration: none;
+  color: $nav-link-color;
+
+  transition: all 0.3s linear;
+
+  &:hover {
+    color: $blue-text-color;
+  }
+}
+
+.nav__link.is-active {
+  position: relative;
+  color: $blue-text-color;
+}
+
+.nav__link.is-active::after {
+  position: absolute;
+  display: block;
+
+  content: '';
+  height: 4px;
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+  background-color: $blue-text-color;
+  border-radius: 2px;
+}
