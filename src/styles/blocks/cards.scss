@@ -1,0 +1,114 @@
+$card-width: 200px;
+
+.product-list {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: $card-width;
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: $card-width $card-width;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: $card-width $card-width $card-width;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: $card-width $card-width $card-width $card-width;
+  }
+}
+
+.card {
+  position: relative;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: transform $transition-timing linear;
+  transform-origin: center;
+  z-index: 0;
+  box-sizing: border-box;
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  &__img {
+    padding: 0 3px;
+    line-height: 0;
+    img {
+      width: 100%;
+      height: 134px;
+    }
+  }
+  &__title {
+    font-size: 12px;
+    color: $blue;
+    line-height: 18px;
+    font-weight: 500;
+    transition: color $transition-timing linear;
+    margin-top: 40px;
+  }
+  &:hover &__title {
+    color: $title-hover;
+  }
+  &__code {
+    font-size: 10px;
+    color: $gray;
+    line-height: 14px;
+    margin-top: 4px;
+  }
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+  &__reviews {
+    font-size: 10px;
+    color: $blue;
+    line-height: 14px;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+    margin-top: 24px;
+    &-name {
+      font-size: 12px;
+      color: $gray;
+    }
+    &-sum {
+      font-size: 16px;
+      color: $blue;
+      font-weight: bold;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $gl;
+    background: $gl;
+    font-size: 14px;
+    color: $white;
+    line-height: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 16px;
+    transition:
+      background $transition-timing linear,
+      color $transition-timing linear;
+    box-sizing: border-box;
+    &:hover {
+      background: $white;
+      color: $gl;
+    }
+  }
+}
