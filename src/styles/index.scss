@@ -1,3 +1,44 @@
+@use 'variables';
+@use 'stars';
+@use 'site-nav';
+@use 'card';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  padding-block: 50px;
+  padding-inline: 40px;
+
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(1, variables.$card-width);
+
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, variables.$card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, variables.$card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, variables.$card-width);
+  }
 }
