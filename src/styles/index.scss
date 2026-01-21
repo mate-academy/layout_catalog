@@ -1,3 +1,236 @@
+$blue-color: #00acdc;
+$main-accent: #060b35;
+$secondary: #616070;
+$blue-accent: #00acdc;
+$white-accent: #fff;
+$collum-count: 1;
+
 body {
+  font-family: Roboto, sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #060b35;
+    display: block;
+    line-height: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    position: relative;
+
+    &[data-qa='nav-hover']:hover {
+      color: $blue-color;
+    }
+
+    &.is-active {
+      color: $blue-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $blue-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.stars {
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 16px;
+  display: flex;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-position-x: 50%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} &__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0;
+  }
+}
+
+.main {
+  padding: 50px 40px;
+  justify-content: center;
+
+  @media (min-width: 1200px) {
+    padding-inline: 128px;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 762px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  border: 1px solid $white-accent;
+  border-radius: 5px;
+
+  padding-block: 32px 16px;
+  padding-inline: 16px;
+  width: 200px;
+  box-sizing: border-box;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 1;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &-img {
+      width: 160px;
+      height: 134px;
+    }
+  }
+
+  &__title {
+    color: $main-accent;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-block: 40px 0;
+    font-style: normal;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+
+  &__product-code {
+    color: $secondary;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    width: 98px;
+    height: 14px;
+    margin-block: 4px 16px;
+  }
+
+  &__price {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+
+    &-text {
+      width: 31px;
+      height: 18px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary;
+      margin: 0;
+    }
+
+    &-sum {
+      color: $main-accent;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: $white-accent;
+    background-color: $blue-accent;
+    border: none;
+    font-weight: 700;
+    margin-top: 16px;
+
+    &:hover {
+      color: $blue-accent;
+      background-color: $white-accent;
+      border: 1px solid $blue-accent;
+    }
+  }
 }
