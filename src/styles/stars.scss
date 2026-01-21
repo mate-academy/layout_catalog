@@ -1,0 +1,30 @@
+@import 'variables';
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0;
+  padding: 0;
+
+  &__star {
+    display: inline-flex;
+
+    width: $star-size;
+    height: $star-size;
+
+    text-decoration: none;
+
+    background-image: url($star-image);
+    background-size: contain;
+
+    &:not(:first-child) {
+      margin-left: $star-gap;
+    }
+  }
+
+  &--4 .stars__star:nth-child(-n + 4) {
+    background-image: url($star-image-active);
+  }
+}
