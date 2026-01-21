@@ -1,0 +1,36 @@
+.page {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  width: $catalog-w-h;
+  height: $catalog-w-h;
+  margin: 0;
+}
+
+.catalog {
+  display: grid;
+  grid-row: 2/2;
+  grid-template-columns: repeat(1, $card-width);
+
+  justify-content: center;
+  grid-gap: $gap-x $gap-y;
+  padding: $page-py $page-px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}

@@ -1,0 +1,99 @@
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+:root {
+  --primary-color: #00acdc;
+}
+
+.page__container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: $header-w;
+  margin: 0;
+  grid-row: 1/2;
+
+  padding: 0 50px;
+  text-align: center;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $nav-color;
+  text-transform: uppercase;
+  line-height: 60px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $nav-color;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.nav__item:first-child {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.nav__item:last-child {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.page__logo {
+  display: block;
+  text-decoration: none;
+  width: 40px;
+  height: auto;
+}
+
+.nav__item a.is-active {
+  position: relative;
+  color: var(--primary-color);
+}
+
+.nav__item a.is-active::after {
+  content: '';
+  display: block;
+  width: $header-w;
+  height: 4px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  border-radius: 15px;
+  left: 0;
+}
+
+.page__container--hover:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.page__container--hover:has(:hover) {
+  border: none;
+}
+
+.page__logo--hover:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.nav__link--hover:hover {
+  color: var(--primary-color);
+}
