@@ -1,0 +1,140 @@
+.cards {
+  --cols: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 200px);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .cards {
+    --cols: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    --cols: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    --cols: 4;
+  }
+}
+
+.product-card {
+  width: $card-width;
+  border: 1px solid rgba(243, 243, 243, 1);
+  border-radius: $card-radius;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: $card-padding;
+  padding-right: $card-padding;
+  transition: $transitionTime;
+
+  &:hover {
+      transform: scale(1.2);
+      transition: $transitionTime;
+  }
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    width: 160px;
+    height: 134px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 32px 3px 40px;
+  }
+
+  &__title {
+    color: $primary-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: $transitionTime;
+  }
+
+
+  &__code {
+    color: $secondary-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    align-self: flex-start;
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  &__reviews {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  &__review-count {
+    color: $primary-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    vertical-align: bottom;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: $card-padding;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $secondary-color;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $primary-color;
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    vertical-align: middle;
+    background-color: $links-color;
+    border: 0;
+    border-radius: $card-radius;
+    color: #fff;
+    text-decoration: none;
+    transition: $transitionTime;
+    cursor: pointer;
+    margin-bottom: $card-padding;
+    &:hover {
+      background-color: #fff;
+      color: $links-color;
+      border: 1px solid $links-color;
+      transition: $transitionTime;
+    }
+  }
+
+}
+
+.product-card:hover .product-card__title {
+    color:$cardHoverColor;
+    transition: $transitionTime;
+  }
