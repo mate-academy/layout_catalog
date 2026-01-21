@@ -1,0 +1,25 @@
+@use '../../variables' as *;
+@use '../atoms/font-mixin' as *;
+
+@mixin list-item {
+  .list__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin-left: 20px;
+    color: $link-main-color;
+
+    @include font-mixin(12px, 500, $link-line-height);
+
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    &:first-child {
+      margin-left: 0;
+    }
+    &[data-qa='nav-hover']:hover {
+      color: $link-active-color;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+$initial-star: 1;
+$total-stars: 5;
+$active-stars: 4;
+
+@mixin stars {
+  .stars {
+    @for $star from $initial-star through $total-stars {
+      &__star--#{$star} {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+
+        background-position: center;
+        background-repeat: no-repeat;
+
+        background-image: url(../images/star.svg);
+      }
+
+      &__star--#{$star}:nth-child(-n + #{$active-stars}) {
+        background-image: url(../images/star-active.svg);
+      }
+
+      &__star--#{$star}:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

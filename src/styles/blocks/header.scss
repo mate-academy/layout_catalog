@@ -1,0 +1,20 @@
+@use '../variables' as *;
+@use './atoms/header-logo' as *;
+@use './atoms/header-list-item' as *;
+@use './atoms/header-link' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  padding: $header-padding;
+
+  @include header-logo;
+  &__list {
+    display: flex;
+  }
+
+  @include list-item;
+  @include is-active;
+}
