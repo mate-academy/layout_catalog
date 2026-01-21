@@ -1,0 +1,38 @@
+$valueCenter: center;
+$valueAuto: auto;
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: $valueCenter;
+  align-items: $valueCenter;
+  margin: 0;
+  margin-top: 60px;
+}
+
+.areaCards {
+  width: $valueAuto;
+  height: $valueAuto;
+  display: grid;
+  gap: 50px;
+  margin: 0 $valueAuto;
+
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-areas:
+    'product1 product2 product3 product4'
+    'product5 product6 product7 product8';
+
+  @for $i from 1 through 8 {
+    .containerCard--product_#{$i} {
+      grid-area: product#{$i};
+    }
+  }
+}
