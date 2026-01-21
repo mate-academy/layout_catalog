@@ -1,0 +1,152 @@
+$font-main: Roboto, sans-serif;
+$color-text-main: #060b35;
+$color-text-muted: #616070;
+$color-border: #e0e0e0;
+$color-white: #fff;
+$color-accent: #00acdc;
+$color-accent-hover: #008bbd;
+$font-size-xs: 10px; // extra small
+$font-size-sm: 12px; // small
+$font-size-md: 14px; // medium
+$font-size-lg: 16px; // large
+$line-height-xs: 14px;
+$line-height-sm: 18px;
+$line-height-md: 16px;
+$radius-sm: 5px;
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+html {
+  font-family: $font-main;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
+body {
+  margin: 0;
+}
+
+.card {
+  box-sizing: border-box; // щоб задана ширина (width) і висота (height) елемента включали в себе як сам вміст (content),
+  // так і внутрішні відступи (padding) та рамку (border).
+  width: 200px;
+  padding: 32px 16px 16px;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border;
+  background: $color-white;
+  box-shadow: $shadow-sm;
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    line-height: $line-height-sm;
+    color: $color-text-main;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+    font-size: $font-size-xs;
+    font-weight: 400;
+    line-height: $line-height-xs;
+    color: $color-text-muted;
+  }
+
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; // вирівнювання елементів по нижньому краю
+    margin-bottom: 24px;
+
+    .stars {
+      display: flex;
+
+      &__star {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        background: center no-repeat url(../images/star.svg);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &--1 &__star:nth-child(1) {
+        background-image: url(../images/star-active.svg);
+      }
+
+      &--2 &__star:nth-child(-n + 2) {
+        background-image: url(../images/star-active.svg);
+      }
+
+      &--3 &__star:nth-child(-n + 3) {
+        background-image: url(../images/star-active.svg);
+      }
+
+      &--4 &__star:nth-child(-n + 4) {
+        background: center no-repeat url(../images/star-active.svg);
+      }
+
+      &--5 &__star:nth-child(-n + 5) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+
+    .card__review-count {
+      margin-right: 10px;
+      font-size: $font-size-xs;
+      font-weight: 400;
+      line-height: $line-height-xs;
+      color: $color-text-main;
+    }
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-label {
+      font-size: $font-size-sm;
+      font-weight: 400; // Ensure font-weight is 400 for the label
+      line-height: $line-height-sm;
+      color: $color-text-muted;
+    }
+
+    .card__price {
+      font-size: $font-size-lg;
+      font-weight: 700; // Ensure font-weight is 700 for the price
+      line-height: $line-height-sm;
+      color: $color-text-main;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $color-accent;
+    border-radius: $radius-sm;
+    font-size: $font-size-md;
+    font-weight: 700;
+    line-height: $line-height-md;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $color-accent;
+
+    &:hover {
+      color: $color-accent-hover;
+      background-color: $color-white;
+    }
+  }
+}
