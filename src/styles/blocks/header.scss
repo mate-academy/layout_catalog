@@ -1,0 +1,59 @@
+.header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 50px;
+  margin: 0;
+
+  &__image {
+    display: block;
+    width: $image-size;
+    height: $image-size;
+    margin-left: 50px;
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  &__nav-link {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 60px;
+    margin-right: 20px;
+    transition: color 300ms;
+
+    @include font-style(12px, 500, #060b35, 60px);
+
+    &:hover {
+      color: #00acdc;
+    }
+  }
+
+  &__nav-item:last-of-type > &__nav-link {
+    margin-right: 0;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $active-color;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: $active-color;
+    border-radius: 8px;
+    position: absolute;
+    top: 56px;
+  }
+}
