@@ -1,3 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 500;
+}
+
+@import './variables';
+@import './blocks/card';
+@import './blocks/stars';
+@import './blocks/header';
+@import './blocks/nav';
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  gap: $gap-vertical $gap-horizontal;
+  grid-template-columns: repeat(1, $card-width);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
