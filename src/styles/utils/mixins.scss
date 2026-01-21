@@ -1,0 +1,25 @@
+@mixin cards-layout {
+  display: grid;
+  grid-template-columns: card-grid-template-columns(1);
+  gap: 46px 48px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: card-grid-template-columns(2);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: card-grid-template-columns(3);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: card-grid-template-columns(4);
+  }
+}
+
+@mixin smooth-hover($property: all, $duration: 300ms, $ease: ease-in-out) {
+  transition: $property $duration $ease;
+}
+
+@function card-grid-template-columns($columns) {
+  @return repeat($columns, $card-width);
+}
