@@ -1,0 +1,17 @@
+.container {
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@each $breakpoint, $col-count in $columns {
+  @media (min-width: $breakpoint) {
+    .container {
+      grid-template-columns: repeat($col-count, 200px);
+    }
+  }
+}
