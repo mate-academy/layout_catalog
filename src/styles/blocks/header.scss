@@ -1,0 +1,73 @@
+@use '../utils/variables' as *;
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 $header-shadow;
+
+  &__logo {
+    align-self: center;
+    height: 40px;
+  }
+}
+
+.nav{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+
+  &__box {
+    height: 100%;
+    margin: 0 10px;
+    list-style: none;
+    font-size: 12px;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    line-height: 60px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-accent;
+
+    transition: color 300ms ease-in-out;
+  }
+
+  &__box:first-child {
+    margin-left: 0;
+  }
+
+  &__box:last-child {
+    margin-right: 0;
+  }
+
+  &__link:hover {
+    color: $blue-accent;
+  }
+
+  &__link:focus::after,
+  .is-active::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $blue-accent;
+  }
+}
+
+.is-active {
+  color: $blue-accent;
+}
