@@ -1,0 +1,94 @@
+@use '../variables' as vars;
+@use '../functions' as func;
+
+.header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__container {
+    padding-inline: func.get(vars.$nav, pad-inline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__image {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  margin-left: func.get(vars.$nav, logo-to-first-offset);
+
+  @media (max-width: 1024px) {
+    margin-left: 243px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    & + & {
+      margin-left: func.get(vars.$nav, gap-items);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    height: func.get(vars.$nav, link-h);
+    line-height: func.get(vars.$nav, link-h);
+    text-align: center;
+    text-decoration: none;
+    color: func.get(vars.$nav, color-text-primary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    white-space: nowrap;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &:link,
+    &:visited {
+      color: func.get(vars.$nav, color-text-primary);
+    }
+
+    &:hover {
+      color: func.get(vars.$nav, color-active);
+    }
+
+    &.is-active {
+      color: func.get(vars.$nav, color-active);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100%;
+        height: func.get(vars.$nav, active-line-h);
+        transform: translateX(-50%);
+        border-radius: func.get(vars.$nav, active-line-radius);
+        background-color: func.get(vars.$nav, color-active);
+      }
+    }
+  }
+}
