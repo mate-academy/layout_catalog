@@ -1,0 +1,50 @@
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 808px) {
+      flex-direction: column;
+      align-items: end;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-transform: uppercase;
+    color: $primary-font-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  .is-active {
+    color: $highlight-font-color;
+  }
+
+  .is-active::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: $highlight-font-color;
+    border-radius: 8px;
+    bottom: 0;
+  }
+
+  &__link:hover {
+    color: $highlight-font-color;
+  }
+
+  &__link:active {
+    color: $primary-font-color;
+  }
+}
