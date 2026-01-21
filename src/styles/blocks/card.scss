@@ -1,0 +1,127 @@
+.container {
+  --column-count: 1;
+
+  display: grid;
+  padding: 50px 40px;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --column-count: 4;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  width: 200px;
+  height: 408px;
+  background-color: $white-bg-color;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: $transition-time;
+
+  &__picture-img {
+    display: flex;
+    height: 134px;
+    margin: 0 auto 40px;
+    max-width: 160px;
+  }
+
+  &__name {
+    margin: 0 0 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-color;
+    transition: $transition-time;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__name {
+      color: #34568b;
+    }
+  }
+
+  &__name-code {
+    color: #616070;
+    line-height: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review {
+    color: $price-color;
+    line-height: 16px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-name {
+    font-size: 12px;
+    color: #616070;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    color: $price-color;
+    font-size: 16px;
+  }
+
+  &__button-action {
+    display: flex;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    justify-content: center;
+    background-color: $button-color;
+    color: $white-bg-color;
+    width: 100%;
+    height: 40px;
+    line-height: 16px;
+    border: 1px solid $button-color;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    transition: $transition-time;
+  }
+
+  &__button-action:hover {
+    background-color: #fff;
+    color: $button-color;
+  }
+}
