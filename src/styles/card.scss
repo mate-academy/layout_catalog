@@ -1,0 +1,109 @@
+.card {
+  padding: $card-padding;
+  font-family: $font-family;
+  box-sizing: border-box;
+  width: $card-width;
+  border: $border-width $border-style $card-border-color;
+  border-radius: $card-border-radius;
+  background-color: $color-white;
+  transition: $transition;
+
+  &__img {
+    background-image: url(../images/imac.jpeg);
+    height: $card-img-height;
+    width: $card-img-width;
+    box-sizing: border-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: $img-border-radius;
+    padding: 0;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-size: $font-size-title;
+    font-weight: $font-weight-medium;
+    font-family: $font-family;
+    letter-spacing: $letter-spacing-normal;
+    padding-top: $title-padding-top;
+    transition: color $transition;
+  }
+
+  &__code {
+    padding-top: $code-padding-top;
+    font-size: $font-size-code;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-code;
+    color: $text-color-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-code;
+    font-weight: $font-weight-regular;
+    height: $rating-height;
+    padding-top: $rating-padding-top;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $price-height;
+    padding: $price-padding;
+
+    &-label {
+      padding: 0;
+      font-size: $font-size-price-label;
+      font-weight: $font-weight-regular;
+      color: $text-color-secondary;
+    }
+
+    &-value {
+      padding: 0;
+      font-size: $font-size-price-value;
+      font-weight: $font-weight-bold;
+      color: $color-main;
+    }
+  }
+
+  &__button {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $button-width;
+    height: $button-height;
+    border: $border-width $border-style $color-hover;
+    border-radius: $button-border-radius;
+    background-color: $color-hover;
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-button;
+    text-align: center;
+    transition:
+      background-color $transition,
+      color $transition;
+
+    &--buy {
+      color: $color-white;
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-hover;
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale($card-hover-scale);
+
+    .card__title {
+      color: $card-title-hover-color;
+    }
+  }
+}
