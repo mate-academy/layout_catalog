@@ -1,0 +1,81 @@
+.card {
+  width: $widthCard;
+  height: $heightCard;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--page {
+    padding: 32px 16px 16px;
+  }
+
+  &__image {
+    background-image: url(/src/images/imac.jpeg);
+    width: 160px;
+    height: 134px;
+    background-size: cover;
+  }
+
+  &__description {
+    width: $widthAllFlexBlocks;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+
+    &--image {
+      margin: 40px 0 4px;
+    }
+  }
+
+  &:hover {
+    transform: scale(120%);
+  }
+
+  &:hover &__description {
+    color: #34568b;
+  }
+
+  &__product-code {
+    margin: 0;
+    width: $widthAllFlexBlocks;
+    line-height: $lineHeightcustom;
+    display: flex;
+    justify-content: left;
+    font-size: 10px;
+    font-weight: $fontWeightCustomText;
+    color: $secondaryFontcolor;
+  }
+
+  &__button {
+    padding: 0;
+    border-radius: 5px $mainColor;
+    border: none;
+    background-image: url(/src/images/button-img.png);
+    background-size: cover;
+    height: 40px;
+    width: $widthAllFlexBlocks;
+
+    &:hover {
+      background-image: none;
+      background-color: #fff;
+      transition-duration: 300ms;
+      border-radius: 5px $mainColor;
+
+      &::after {
+        content: 'BUY';
+        font-size: 14px;
+        font-weight: 700;
+        color: #00acdc;
+      }
+    }
+  }
+
+  @for $card from 1 to 6 {
+    &--card#{$card} {
+      grid-area: card#{$card};
+    }
+  }
+}

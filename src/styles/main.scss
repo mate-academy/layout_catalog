@@ -1,0 +1,47 @@
+.main {
+  display: grid;
+  grid-template: repeat(3, $heightCard) / repeat(2, $widthCard);
+  grid-template-areas:
+    'card1 card2 card3'
+    'card4 card5 card6';
+  gap: 48px 46px;
+  justify-content: center;
+  justify-items: center;
+
+  &--menu {
+    padding: 50px 40px;
+  }
+
+  @media (min-width: 320px) {
+    grid-template: repeat(6, $heightCard) / repeat(1, $widthCard);
+    grid-template-areas:
+      'card1'
+      'card2'
+      'card3'
+      'card4'
+      'card5'
+      'card6';
+  }
+
+  @media (min-width: 488px) {
+    grid-template: repeat(3, $heightCard) / repeat(2, $widthCard);
+    grid-template-areas:
+      'card1 card2'
+      'card3 card4'
+      'card5 card6';
+  }
+
+  @media (min-width: 768px) {
+    grid-template: repeat(2, $heightCard) / repeat(3, $widthCard);
+    grid-template-areas:
+      'card1 card2 card3'
+      'card4 card5 card6';
+  }
+
+  @media (min-width: 1024px) {
+    grid-template: repeat(2, $heightCard) / repeat(4, $widthCard);
+    grid-template-areas:
+      'card1 card2 card3 card4'
+      'card5 card6 . .';
+  }
+}
