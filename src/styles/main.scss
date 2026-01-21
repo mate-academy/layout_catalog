@@ -1,0 +1,31 @@
+@use './utils/variables' as *;
+@use './blocks/header/header';
+@use './blocks/nav/nav';
+@use './blocks/card/card';
+@use './blocks/stars/stars';
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  gap: $gap-y $gap-x;
+  padding: $padding-y $padding-x;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
