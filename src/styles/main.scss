@@ -1,0 +1,84 @@
+// Variables
+$card-width: 200px;
+$card-gap-x: 46px;
+$card-gap-y: 48px;
+$nav-color: #060b35;
+$hover-color: #00acdc;
+$hover-title-color: #34568b;
+$hover-duration: 300ms;
+
+// Base styles
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.nav__link {
+  color: $nav-color;
+  text-decoration: none;
+  transition: color $hover-duration;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &.is-active {
+    font-weight: bold;
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $card-gap-y $card-gap-x;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  width: $card-width;
+  transition: transform $hover-duration;
+  text-align: center;
+
+  &__title {
+    font-size: 1rem;
+    margin: 1rem 0;
+    transition: color $hover-duration;
+  }
+
+  &__button {
+    background-color: $hover-color;
+    color: white;
+    border: none;
+    padding: 10px;
+    transition: background $hover-duration, color $hover-duration;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: $hover-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+
+    .card__title {
+      color: $hover-title-color;
+    }
+  }
+}
+
