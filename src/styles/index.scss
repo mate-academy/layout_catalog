@@ -1,3 +1,281 @@
+$border-color: #f3f3f3;
+$main-color: #fff;
+$text-main-color: #060b35;
+$text-secondary-color: #616070;
+$font-family: 'Roboto', sans-serif;
+$duration: 300ms;
+
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  overflow-x: hidden;
 }
+
+p {
+  margin: 0;
+}
+
+/* .container {
+  justify-content: center;
+  align-items: center;
+} */
+
+/* #region header */
+header {
+  width: 100vw;
+  background: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-left: 0;
+  padding: 0 20px;
+  padding-left: 40px;
+  box-shadow: 0 2px 4px #0000000d;
+
+  position: relative;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+nav {
+  margin-left: auto;
+
+  right: 40px;
+  margin-right: 50px;
+  position: relative;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  line-height: 15px;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #060b35;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 60px;
+  display: flex;
+}
+
+nav ul li a.is-active {
+  color: #00acdc;
+  position: relative;
+}
+
+nav ul li a.is-active::after {
+  content: '';
+  width: 37px;
+  height: 4px;
+  background-color: #00acdc;
+  position: absolute;
+  border-radius: 50px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+  color: #00acdc;
+}
+
+/* #endregion */
+
+/* #region card */
+.catalog {
+  padding: 50px 40px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+
+    gap: 46px;
+    column-gap: 48px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 300px) {
+  .catalog__grid {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+@media (min-width: 488px) {
+  .catalog__grid {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog__grid {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog__grid {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  font-family: $font-family;
+  padding: 32px 16px 16px;
+  background: $main-color;
+  justify-content: center;
+  align-items: center;
+
+  :hover {
+    transform: scale(1.2);
+    transition-duration: $duration;
+  }
+
+  &__image {
+    margin: 0 auto 40px;
+    display: block;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $text-main-color;
+    display: flex;
+
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-size: 10px;
+
+    line-height: 14px;
+    font-weight: 400;
+    color: $text-secondary-color;
+
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    &-label {
+      font-size: 12px;
+
+      line-height: 18px;
+      color: $text-secondary-color;
+
+      margin-bottom: 16px;
+    }
+
+    &-value {
+      font-size: 16px;
+
+      line-height: 18px;
+      color: $text-main-color;
+      font-weight: 700;
+
+      margin-bottom: 16px;
+      text-align: right;
+    }
+  }
+
+  &__buy {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    background: #00acdc;
+    color: $main-color;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+
+    &[data-qa='card-hover']:hover {
+      border: 1px solid #00acdc;
+      background: $main-color;
+      color: #00acdc;
+      transition-duration: $duration;
+    }
+  }
+}
+
+.card:hover .card__title {
+  color: #34568b;
+  transition-duration: $duration;
+}
+
+.card__review {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+
+  &-text {
+    font-size: 10px;
+
+    line-height: 14px;
+    color: $text-main-color;
+
+    margin-top: 2px;
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background: url('../images/star.svg') no-repeat center;
+  }
+}
+
+.stars__star:nth-child(-n + 4) {
+  display: flex;
+  gap: 4px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/star-active.svg);
+}
+
+/* #endregion */
