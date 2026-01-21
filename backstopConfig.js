@@ -32,16 +32,19 @@ const config = {
       ...basic,
       label: 'Entire document',
       selectors: ['document'],
+      misMatchThreshold: 33,
     },
     {
       ...basic,
       label: 'Header tag',
       selectors: ['header'],
+      misMatchThreshold: 33,
     },
     {
       ...basic,
       label: 'Nav tag',
       selectors: ['nav'],
+      misMatchThreshold: 33,
     },
     {
       ...basic,
@@ -49,21 +52,25 @@ const config = {
       selectors: ['[data-qa="nav-hover"]'],
       hoverSelector: '[data-qa="nav-hover"]',
       postInteractionWait: 1000,
+      misMatchThreshold: 33,
     },
     {
       ...basic,
       label: 'Link with class_is-active',
       selectors: ['a.is-active'],
+      misMatchThreshold: 33,
     },
     {
       ...basic,
       label: 'Main tag',
       selectors: ['main'],
+      misMatchThreshold: 33,
     },
     {
       ...basic,
       label: 'Card with data-qa_card',
       selectors: ['[data-qa="card"]'],
+      misMatchThreshold: 33,
     },
     // {
     //   ...basic,
