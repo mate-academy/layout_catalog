@@ -1,3 +1,56 @@
+$primaryColor: #060b35;
+$secondaryColor: #616070;
+$primaryFont: 12px;
+
+@import 'header';
+@import 'card';
+@import 'stars';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.container {
+  display: grid;
+  justify-items: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 488px) and (max-width: 767px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 487px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
