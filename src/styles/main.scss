@@ -1,0 +1,35 @@
+@use './utils/variables' as *;
+
+body {
+  margin: 0 auto;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.catalog {
+  display: grid;
+  gap: $gap-y $gap-x;
+  grid-template-columns: repeat(4, $grid-template);
+  padding: $pad-v $pad-h;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 487px) {
+  .catalog {
+    grid-template-columns: repeat(1, $grid-template);
+  }
+}
+
+@media (min-width: 488px) and (max-width: 767px) {
+  .catalog {
+    grid-template-columns: repeat(2, $grid-template);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .catalog {
+    grid-template-columns: repeat(3, $grid-template);
+  }
+}
