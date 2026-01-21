@@ -1,0 +1,73 @@
+@import '../styles/veriables';
+
+.header {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #060b35;
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    text-align: right;
+    margin: 0 10px;
+    align-content: center;
+    height: 60px;
+    font-size: 12px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    &:hover {
+      color: $blue-color;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $blue-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $blue-color;
+        border-radius: 8px;
+      }
+    }
+  }
+}
