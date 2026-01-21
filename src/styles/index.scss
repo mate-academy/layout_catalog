@@ -1,3 +1,120 @@
-body {
+// Змінні
+$nav-link-color: #060b35;
+$hover-color: #00acdc;
+$title-hover-color: #34568b;
+$card-width: 200px;
+$gap-horizontal: 46px;
+$gap-vertical: 48px;
+$transition-time: 300ms;
+
+// Базові стилі
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+// Header & Navigation
+.header {
+  padding: 20px;
+  background: #f8f8f8;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $nav-link-color;
+    transition: color $transition-time;
+    cursor: pointer;
+
+    &:hover {
+      color: $hover-color;
+    }
+
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+}
+
+// Catalog Layout
+.catalog {
+  padding: 50px 40px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $gap-vertical $gap-horizontal;
+    justify-content: center;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
+
+// Card Component
+.card {
+  width: $card-width;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform $transition-time;
+
+  &__title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    transition: color $transition-time;
+  }
+
+  &__button {
+    background: $hover-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all $transition-time;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $title-hover-color;
+    }
+
+    .card__button {
+      background: #fff;
+      color: $hover-color;
+    }
+  }
+
+  .card__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    padding: 16px;
+    text-align: center;
+  }
 }
