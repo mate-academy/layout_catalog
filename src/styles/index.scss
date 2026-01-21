@@ -1,3 +1,79 @@
-body {
-  margin: 0;
+$nav-link-color: #060b35;
+$nav-link-hover: #00acdc;
+$card-width: 200px;
+$catalog-gap-h: 46px;
+$catalog-gap-v: 48px;
+$catalog-padding-v: 50px;
+$catalog-padding-h: 40px;
+$card-title-hover: #34568b;
+$white: #fff;
+$star-color: gold;
+$transition-time: 0.3s;
+
+.stars {
+  &--filled {
+    color: $star-color;
+  }
+}
+
+.nav__link {
+  color: $nav-link-color;
+  text-decoration: none;
+  transition: color $transition-time;
+
+  &.is-active {
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: $nav-link-hover;
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $catalog-gap-v $catalog-gap-h;
+  padding: $catalog-padding-v $catalog-padding-h;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  width: $card-width;
+  transition: transform $transition-time;
+  transform-origin: center;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+
+    .card__title {
+      color: $card-title-hover;
+    }
+  }
+
+  .card__title {
+    transition: color $transition-time;
+  }
+}
+
+.card__button {
+  transition: background-color $transition-time, color $transition-time;
+
+  &:hover {
+    background-color: $white;
+    color: $nav-link-hover;
+  }
 }
