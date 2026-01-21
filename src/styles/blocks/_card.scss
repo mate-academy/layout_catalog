@@ -1,0 +1,111 @@
+@use '../variables/variables' as variables;
+@use 'stars';
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+p {
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  padding: 32px 16px 16px;
+  border-radius: 5px;
+
+  .product-img {
+    display: block;
+    height: 134px;
+    width: 160px;
+    margin: 0 auto 40px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: variables.$main-text-color;
+
+    &:hover {
+      color: #34568b;
+    }
+  }
+
+  &__product-code {
+    font-size: 10px;
+    font-weight: variables.$normal-font-weight;
+    color: variables.$second-text-color;
+    margin-top: 3.5px;
+    line-height: 14px;
+  }
+
+  &__score {
+    display: flex;
+    justify-content: space-between;
+
+    &--review {
+      font-size: 10px;
+      font-weight: variables.$normal-font-weight;
+      color: variables.$main-text-color;
+      align-items: center;
+      margin-top: 16px;
+      line-height: 14px;
+    }
+
+    &--stars {
+      margin-top: 15.9px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+
+    &--price-title {
+      color: variables.$second-text-color;
+      font-size: 12px;
+      font-weight: variables.$normal-font-weight;
+      margin-top: 24px;
+    }
+
+    &--price-value {
+      color: variables.$main-text-color;
+      font-size: 16px;
+      font-weight: variables.$bold-font-weight;
+      margin-top: 24px;
+    }
+  }
+
+  &__button {
+    margin-top: 16.5px;
+    display: flex;
+    width: 166px;
+    height: 40px;
+    border: 1px solid variables.$button-color;
+    border-radius: 5px;
+    background-color: variables.$button-color;
+    color: #fff;
+    font-weight: variables.$bold-font-weight;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+
+    &:hover {
+      color: variables.$edit-text-color;
+      background-color: #fff;
+      border: 1px solid variables.$button-color;
+    }
+  }
+}
