@@ -1,0 +1,66 @@
+.container {
+  display: grid;
+  gap: 46px 48px;
+  padding: 40px 50px;
+  justify-content: center;
+
+  grid-template-columns: repeat(1, 200px);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  .card {
+    @include card;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &__img {
+      @include card-image;
+    }
+
+    &__title {
+      @include card-title;
+    }
+
+    &__code {
+      @include card-code;
+    }
+
+    .price-block {
+      @include price-block;
+
+      .text {
+        @include price-block-text;
+      }
+
+      .price {
+        @include price-block-price;
+      }
+    }
+
+    &__link {
+      @include card-link;
+    }
+
+    &__link:hover {
+      @include card-link-hover;
+    }
+  }
+
+  .card:hover .card__title {
+    color: #34568b;
+  }
+}
