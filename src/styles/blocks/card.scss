@@ -1,0 +1,141 @@
+.catalog {
+  --column: 1;
+
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  display: grid;
+  grid-template-columns: repeat(var(--column), #{$card-width});
+  gap: $gap-row $gap-col;
+  grid-auto-flow: row;
+  justify-content: center;
+  place-items: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    --column: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    --column: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    --column: 4;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $white-border;
+  border-radius: 10px;
+  font-weight: $light-font;
+  width: $card-width;
+  background-color: $white;
+  font-family: Roboto, sans-serif;
+
+  transition: transform $transition-duration ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    display: block;
+    width: $card-content-width;
+    height: 134px;
+    object-fit: contain;
+    margin: 32px auto 40px;
+  }
+
+  &__content {
+    padding: 0 16px 16px;
+  }
+
+  &__title {
+    width: $card-content-width;
+    font-size: $small-semi-size;
+    line-height: 18px;
+    font-weight: $medium-font;
+    margin-bottom: 4px;
+    margin-top: 0;
+    color: $main-text;
+    transition: color $transition-duration;
+  }
+
+  &:hover .card__title {
+    color: $card-title-hover;
+  }
+
+  &__code {
+    font-weight: $light-font;
+    font-size: $small-size;
+    line-height: 14px;
+    margin-bottom: 16px;
+    color: $text;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $card-content-width;
+    margin-bottom: 24px;
+  }
+
+  &__review {
+    font-size: $small-size;
+    line-height: 14px;
+  }
+
+  &__price-container {
+    width: $card-content-width;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: $small-semi-size;
+    line-height: 18px;
+    color: $text;
+  }
+
+  &__price-value {
+    font-weight: $bold-font;
+    font-size: $medium-size;
+    line-height: 18px;
+    color: $main-text;
+  }
+
+  &__btn {
+    width: $card-content-width;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-weight: $bold-font;
+    font-size: 14px;
+    line-height: 16px;
+    color: $white;
+    transition:
+      background-color $transition-duration,
+      border-color $transition-duration,
+      color $transition-duration;
+
+    &:hover {
+      background-color: $white;
+      color: $blue;
+      border: 1px solid $blue;
+    }
+  }
+}
