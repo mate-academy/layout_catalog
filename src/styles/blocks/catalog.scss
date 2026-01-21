@@ -1,0 +1,26 @@
+@import 'vars';
+
+$breakpoint-big: $big-screen-width-min - 1;
+$breakpoint-small: $small-screen-width-min - 1;
+$breakpoint-tablet: $tablet-screen-width-min - 1;
+$grid-breakpoints: (3: $breakpoint-big, 2: $breakpoint-small, 1: $breakpoint-tablet);
+
+@mixin responsive-columns($breakpoints) {
+  @each $columns, $breakpoint in $breakpoints {
+    @media (max-width: $breakpoint) {
+      grid-template-columns: repeat($columns, $card-width);
+    }
+  }
+}
+
+.catalog {
+  $column-count: 4;
+
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+
+  @include responsive-columns($grid-breakpoints);
+}
