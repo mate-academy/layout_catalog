@@ -1,0 +1,113 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $row-gap $column-gap;
+  padding: $padding-50 $padding-40;
+  margin-inline: auto;
+  width: max-content;
+}
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  background-color: $white;
+  overflow: hidden;
+  transition: transform $transition-duration;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    padding: 32px 19px 36px;
+  }
+
+  &__content {
+    padding: 0 $spacing-md;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: $font-sm;
+    line-height: $line-height;
+    color: $primary-color;
+    margin: 0 0 $spacing-xs;
+    transition: color $transition-duration;
+  }
+
+  &__code {
+    font-size: $font-xs;
+    line-height: $line-height;
+    color: $secondary-color;
+    margin: 0 0 $spacing-md;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 $spacing-md $spacing-md;
+  }
+
+  &__reviews {
+    font-size: $font-xs;
+    color: $primary-color;
+    margin: 1px 0 0;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $card-hover-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px $spacing-md $spacing-md;
+
+    &-label {
+      font-size: $font-sm;
+      line-height: $line-height;
+      color: $secondary-color;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: $font-lg;
+      line-height: $line-height;
+      color: $primary-color;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 166px;
+    height: 40px;
+    padding: 11px;
+    margin: 0 $spacing-md $spacing-md;
+    background-color: $blue-color;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $font-md;
+    line-height: $line-height;
+    border-radius: $border-radius;
+    border: 1px solid $blue-color;
+    box-sizing: border-box;
+    transition:
+      background-color $transition-duration,
+      color $transition-duration;
+
+    &:hover,
+    &[data-qa='card-hover']:hover {
+      background-color: $white;
+      color: $blue-color;
+    }
+  }
+}
