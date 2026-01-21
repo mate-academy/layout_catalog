@@ -1,0 +1,64 @@
+@use 'variables' as *;
+@use 'sass:math';
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  &__logo {
+    display: block;
+    padding-top: 10px;
+    padding-left: 50px;
+    flex-grow: 1;
+  }
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    float: left;
+    a {
+      color: $color-text-dark;
+      text-decoration: none;
+      height: $nav-link-height;
+      display: block;
+      align-content: center;
+      margin: 0 $nav-link-margin;
+      text-transform: uppercase;
+      position: relative;
+      transition-duration: $transition;
+    }
+    &--first {
+      a {
+        margin: 0 $nav-link-margin 0 0;
+      }
+    }
+    &--last {
+      a {
+        margin: 0 0 0 $nav-link-margin;
+      }
+    }
+    .is-active {
+      color: $color-highlight;
+      &::after {
+        content: '';
+        border-style: solid;
+        border-radius: $nav-underline-radius;
+        border-width: math.div($nav-underline-radius, 2);
+        position: absolute;
+        top: calc($nav-link-height - $nav-underline-radius);
+        left: 0;
+        width: calc(100% - $nav-underline-radius);
+      }
+    }
+    a:hover {
+      color: $color-highlight;
+    }
+  }
+  &__right-margin {
+    display: block;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+  }
+}

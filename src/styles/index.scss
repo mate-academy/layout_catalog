@@ -1,3 +1,68 @@
-body {
+@use 'variables' as *;
+@use 'sass:math';
+
+html {
+  font-family: Roboto, serif;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0;
   margin: 0;
 }
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  gap: 46px $container-gap-horizontal;
+  width: auto;
+  align-self: center;
+  margin: 0;
+  padding: 50px
+    calc(
+      50% - math.div($card-width-total, 2) * 1 - math.div(
+          $container-gap-horizontal,
+          2
+        ) * 0
+    );
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 488px) {
+    padding: 50px
+      calc(
+        50% - math.div($card-width-total, 2) * 2 - math.div(
+            $container-gap-horizontal,
+            2
+          ) * 1
+      );
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    padding: 50px
+      calc(
+        50% - math.div($card-width-total, 2) * 3 - math.div(
+            $container-gap-horizontal,
+            2
+          ) * 2
+      );
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    padding: 50px
+      calc(
+        50% - math.div($card-width-total, 2) * 4 - math.div(
+            $container-gap-horizontal,
+            2
+          ) * 3
+      );
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@import 'nav';
+@import 'card';
+@import 'stars';
