@@ -1,0 +1,79 @@
+@use '../variables.scss' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-left: 50px;
+  padding-right: 50px;
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      align-items: center;
+
+      &-item {
+        position: relative;
+        margin-right: 20px;
+
+        &-link {
+          position: relative;
+          display: flex;
+          text-align: center;
+
+          height: $nav-link-height;
+
+          font-weight: $nav-link-font-weight;
+          font-size: $nav-link-font-size;
+          line-height: $nav-link-height;
+          text-transform: uppercase;
+
+          color: $main-text-color;
+          cursor: pointer;
+          transition: color 300ms;
+
+          &.is-active::after {
+            content: '';
+            position: absolute;
+
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            border-radius: 2px;
+            background-color: $nav-link-color-on-hover;
+          }
+
+          &:hover {
+            color: $nav-link-color-on-hover;
+          }
+        }
+      }
+
+      &-item:first-child {
+        margin-left: 0;
+      }
+
+      &-item:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $button-color;
+}
