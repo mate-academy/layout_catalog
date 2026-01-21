@@ -1,0 +1,110 @@
+.card {
+  border: 1px solid #f3f3f3;
+  background-color: $white-color;
+  width: $card-width;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition: all 300ms ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  &__img {
+    width: $card-img-width;
+    height: $card-img-height;
+    margin: 0 auto 40px;
+
+    img {
+      width: $card-img-width;
+      height: $card-img-height;
+    }
+  }
+
+  &__title {
+    @include font(12px, 500, 18px, #060b35);
+
+    margin-bottom: 4px;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__code {
+    @include font(10px, 400, 14px, #616070);
+
+    margin-bottom: 16px;
+  }
+
+  &__reviews {
+    @include d-flex;
+
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    & > .stars {
+      display: flex;
+      justify-content: start;
+      gap: 4px;
+
+      li {
+        width: $star-width;
+        height: $star-height;
+        background: transparent url('../images/star-active.svg') no-repeat
+          center;
+      }
+
+      li:nth-child(5) {
+        background: transparent url('../images/star.svg') no-repeat center;
+      }
+    }
+
+    & > .count {
+      @include font(10px, 400, 14px, #060b35);
+    }
+  }
+
+  &__price {
+    @include d-flex;
+
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    & > p {
+      @include font(12px, 400, 18px, #616070);
+    }
+
+    & > span {
+      @include font(16px, 700, 18px, #060b35);
+
+      display: block;
+    }
+  }
+
+  &__button {
+    @include font(14px, 700, 16px, $white-color);
+
+    display: block;
+    border-radius: 5px;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    &:hover,
+    &--hover {
+      color: $primary-color;
+      background-color: $white-color;
+      transition: all 300ms ease;
+    }
+  }
+
+  &:hover &__button {
+    background-color: $white-color;
+    color: $primary-color;
+  }
+}

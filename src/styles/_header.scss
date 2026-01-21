@@ -1,0 +1,56 @@
+.header {
+  width: 100%;
+  box-shadow: 0 2 4 rgba(0, 0, 0, 0.05);
+
+  .container {
+    @include d-flex;
+
+    justify-content: space-between;
+
+    .logo {
+      display: inline-block;
+      width: $logoWidth;
+      height: $logoHeight;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav {
+      &__list {
+        @include d-flex;
+
+        justify-content: center;
+        gap: 20px;
+      }
+
+      &__item {
+        position: relative;
+
+        &:hover a,
+        .is-active {
+          color: $primary-color;
+        }
+
+        &:hover::after,
+        .is-active::after {
+          position: absolute;
+          top: 56px;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 4px;
+          border-radius: 8px;
+          background-color: $primary-color;
+          transition: all 300ms ease;
+        }
+
+        &:nth-child(4):hover::after {
+          display: none;
+        }
+      }
+      &__link {
+        @include link;
+      }
+    }
+  }
+}
