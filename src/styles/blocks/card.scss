@@ -1,0 +1,131 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 0;
+
+  &__item {
+    margin: 0 auto;
+    width: 200px;
+    height: 408px;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 32px 16px 16px;
+    box-sizing: border-box;
+    border: 1px solid #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    transition: transform $transition-duration ease;
+    will-change: transform;
+
+    &:hover {
+      transform: scale(1.2);
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-accent;
+    margin: 40px 0 3px;
+    font-weight: 500;
+    transition: color $transition-duration;
+  }
+  &:hover &__title {
+    color: #34568b;
+  }
+  &__code {
+    display: block;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+    margin: 0 0 17px;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews-text {
+    color: $main-accent;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondary;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    line-height: 2px;
+    font-weight: 700;
+    color: $main-accent;
+  }
+
+  &__buy {
+    width: 164px;
+    height: 38px;
+    display: inline-block;
+    text-align: center;
+
+    text-decoration: none;
+    background-color: $blue-accent;
+    color: $white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    line-height: 39px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition:
+      color $transition-duration ease-in,
+      background-color $transition-duration ease-in;
+
+    &:hover {
+      border: 1px solid $blue-accent;
+      background-color: $white;
+      color: $blue-accent;
+    }
+  }
+}
+
+@media (min-width: 488px) {
+  .card {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
