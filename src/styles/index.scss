@@ -1,3 +1,39 @@
+@import '../styles/variables';
+@import '../styles/header';
+@import '../styles/card';
+@import '../styles/stars';
+
 body {
   margin: 0;
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  padding: $padding-v $padding-h;
+  gap: $gap-y $gap-x;
+}
+
+.catalog__block {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $gap-y $gap-x;
+}
+
+@media (min-width: 488px) {
+  .catalog__block {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog__block {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog__block {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
