@@ -19,24 +19,24 @@
 
     transition: color $main-timer;
 
+    &--is-active {
+      margin-left: 0;
+      color: $main-nav-color;
+    }
+
+    &--is-active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      display: block;
+      background-color: $main-nav-color;
+      height: 4px;
+      border-radius: 8px;
+      bottom: 0;
+    }
+
     &:hover {
       color: $main-nav-color;
     }
   }
-
-  &__item:first-child &__link {
-    margin-left: 0;
-    color: $main-nav-color;
-  }
-}
-
-.is-active::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  display: block;
-  background-color: $main-nav-color;
-  height: 4px;
-  border-radius: 8px;
-  bottom: 0;
 }
