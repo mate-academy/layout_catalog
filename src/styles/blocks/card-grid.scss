@@ -1,0 +1,49 @@
+@use '../vars/breakpoints' as *;
+@use '../vars/card-grid' as *;
+@use '../vars/card' as *;
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+
+  /* row gap, column gap */
+  gap: var(--card-horizontal-gap) var(--card-vertical-gap);
+  justify-content: center;
+
+  /* cards padding */
+  padding: var(--cards-container-padding-vertical)
+    var(--cards-container-padding-vertical);
+  padding-top: 50px;
+}
+
+@media screen and (max-width: $breakpoint-s) {
+  .container {
+    /* 1 column with default width */
+    grid-template-columns: repeat(1, var(--card-width));
+  }
+}
+
+@media screen and (min-width: #{($breakpoint-s + 1px)}) and (max-width: #{($breakpoint-m)}) {
+  .container {
+    /* 2 columns with default width */
+    grid-template-columns: repeat(2, var(--card-width));
+  }
+}
+
+@media screen and (min-width: #{($breakpoint-m + 1px)}) and (max-width: #{($breakpoint-l)}) {
+  .container {
+    /* 3 columns with default width */
+    grid-template-columns: repeat(3, var(--card-width));
+  }
+}
+
+@media screen and (min-width: #{($breakpoint-l + 1px)}) {
+  .container {
+    /* 4 columns with default width */
+    grid-template-columns: repeat(4, var(--card-width));
+  }
+}
