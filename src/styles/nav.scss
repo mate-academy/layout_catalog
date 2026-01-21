@@ -1,0 +1,51 @@
+.nav {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:has(.is-active) {
+      position: relative;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    height: 60px;
+    line-height: 60px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $main-color;
+    padding: 22px 0 23px;
+    transition: color 300ms;
+
+    &:hover {
+      color: $highlight-color;
+    }
+  }
+}
+
+.is-active {
+  color: $highlight-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $highlight-color;
+    border-radius: 8px;
+  }
+}
