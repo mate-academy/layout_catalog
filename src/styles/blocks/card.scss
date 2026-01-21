@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  padding: 40px 50px;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  border: 1px solid #f3f3f3;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: $card-padding;
+
+  transition: $transition;
+
+  &__img {
+    padding: 0 3px;
+    &-img {
+      display: block;
+      background-image: url('../images/imac.jpeg');
+      background-size: cover;
+      height: 134px;
+    }
+  }
+
+  &__header {
+    font-size: $font-size-base;
+    line-height: 18px;
+    font-weight: 500;
+    color: $main-text-color;
+    margin: 0;
+    padding-top: 40px;
+  }
+
+  &__product-code {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $second-text-color;
+    margin: 0;
+    padding-top: 4px;
+  }
+
+  &__response {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    &-reviews {
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+      color: $main-text-color;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+
+    &-price {
+      font-size: $font-size-base;
+      line-height: 18px;
+      font-weight: 400;
+      color: $second-text-color;
+      margin: 0;
+    }
+
+    &-tag {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $main-text-color;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    background-color: $main-button-color;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    width: 166px;
+
+    text-transform: uppercase;
+    font-size: $font-size-base;
+    line-height: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: $transition;
+  }
+
+  &__button:active {
+    border: 1px solid $main-button-color;
+    background-color: #fff;
+    color: $main-button-color;
+  }
+}
+
+.card:hover {
+  transform: scale(120%);
+}
+
+.card:hover .card__header {
+  color: #34568b;
+}
+
+.card__button:hover {
+  background-color: #fff;
+  color: #00acdc;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
