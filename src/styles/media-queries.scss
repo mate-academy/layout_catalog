@@ -1,0 +1,39 @@
+$column-gap: 46px;
+$row-gap: 48px;
+
+@media (max-width: 488px) {
+  .page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 $column-gap;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  gap: $row-gap $column-gap;
+}
+
+@media (min-width: 488px) {
+  .page {
+    @include grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    @include grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    @include grid;
+
+    grid-template-columns: repeat(4, 200px);
+  }
+}
