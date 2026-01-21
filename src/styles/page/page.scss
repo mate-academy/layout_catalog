@@ -1,0 +1,29 @@
+.page {
+  box-sizing: border-box;
+
+  &__header {
+    @include page-block-size($pageMaxWidthBlock);
+
+    box-sizing: border-box;
+  }
+
+  &__container {
+    box-sizing: border-box;
+
+    @include page-block-size($pageMaxWidthBlock);
+
+    padding: $indentVertically $indentHorizontally;
+
+    display: grid;
+    grid-template-columns: repeat(
+      $columnsDefault,
+      minmax($cardWidth, $cardWidth)
+    );
+    gap: $columnGap $rowGap;
+    place-content: center;
+
+    @include respond(small);
+    @include respond(medium);
+    @include respond(large);
+  }
+}
