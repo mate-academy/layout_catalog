@@ -22,7 +22,7 @@ const config = {
       height: 768,
     },
     {
-      name: '1200px',
+      name: '$max-width',
       width: 1200,
       height: 768,
     },
