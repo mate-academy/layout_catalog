@@ -1,3 +1,68 @@
-body {
+@use './variables' as vars;
+@use './mixins' as *;
+@use './header';
+@use './stars';
+@use './product-card';
+
+html,
+body,
+.catalog {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: vars.$font-main;
+  font-weight: 500;
+  font-size: vars.$font-size-s;
+  background-color: #fff;
+  font-style: normal;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 46px 48px;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 40px;
+
+  &-product-card {
+    width: vars.$product-card-width;
+  }
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+    padding: 50px 128px;
+  }
+}
+
+.card {
+  width: 200px;
+  transition: transform 300ms ease;
+  display: block;
+  &__product-card {
+    width: 100%;
+  }
 }

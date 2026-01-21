@@ -1,0 +1,78 @@
+@use './variables' as vars;
+
+.header {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 0;
+}
+
+.header__container {
+  max-width: 1200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: block;
+  margin-left: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.header__logo img {
+  height: 40px;
+}
+
+.nav {
+  margin-right: 50px;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+a.nav__link {
+  display: block;
+  text-decoration: none;
+  color: vars.$color-primary;
+  text-align: center;
+  height: 60px;
+  line-height: vars.$line-height-xl;
+  font-size: vars.$font-size-s;
+  position: relative;
+}
+
+.is-active {
+  line-height: vars.$line-height-xl;
+  color: vars.$color-accent;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  height: 60px;
+  font-size: vars.$font-size-s;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: vars.$color-accent;
+  }
+}
+
+.nav__link:hover {
+  color: vars.$color-accent;
+}
