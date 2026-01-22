@@ -1,0 +1,106 @@
+@import 'variables';
+
+.main {
+  padding: 50px 40px;
+  display: grid;
+
+  grid-template-columns: repeat(1, 200px);
+  gap: 48px 46px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: $card-width;
+  height: $card-height;
+  border: 1px solid $card-border;
+  border-radius: 5px;
+  transition: transform 300ms ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-top: 32px;
+    margin-left: 19px;
+  }
+
+  &__content {
+    margin: 34px 20px 4px 16px;
+
+    .card__title {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18.5px;
+      color: $color-main;
+      text-align: justify;
+      margin-bottom: -5px;
+
+      &:hover {
+        color: #34568b;
+        transition: color 300ms ease;
+      }
+    }
+
+    .card__description {
+      font-size: 10px;
+      font-weight: 400;
+      color: $color-secondary;
+    }
+
+    .card__price {
+      font-size: 12px;
+      font-weight: 400;
+      color: $color-secondary;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card__price-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-main;
+      margin-bottom: 16px;
+    }
+
+    .card__buy-button {
+      width: 166px;
+      height: 40px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      background-color: $color-accent-blue;
+      border: 1px solid $color-accent-blue;
+      border-radius: 5px;
+      transition:
+        background-color 300ms ease,
+        color 300ms ease;
+
+      &:hover {
+        background-color: white;
+        color: $color-accent-blue;
+      }
+    }
+  }
+}
