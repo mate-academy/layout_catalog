@@ -1,0 +1,148 @@
+.catalog {
+  display: grid;
+  gap: $catalog-gap;
+  grid-template-columns: $card-width;
+
+  padding: $catalog-padding;
+
+  @include on-mobile {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  @include on-desktop-1200px {
+    justify-content: center;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $card-width;
+  border-radius: $card-form;
+  border: $border-size solid $card-brdr-color;
+  transition: $transition;
+
+  &__content {
+    margin: $card-content-margin;
+  }
+
+  &__subscription {
+    margin-top: $text-subs-position;
+  }
+
+  &__image {
+    display: flex;
+    margin-block: $card-image-position;
+    margin-inline: auto;
+
+    width: $card-image-width;
+    height: $card-image-height;
+
+    &--imac {
+      background-image: url(../images/imac.jpeg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: $base-font-weight;
+    font-size: $base-font-size;
+    line-height: calc($base-line-height + 4px);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: $hover-card-title;
+  }
+
+  &__text-product {
+    margin-block: $text-product-position;
+
+    font-size: calc($base-font-size - 2px);
+    font-weight: calc($base-font-weight - 100);
+    line-height: $base-line-height;
+    color: $grey-text-color;
+  }
+
+  &__reviews {
+    margin: 0;
+    font-weight: calc($base-font-weight - 100);
+    font-size: calc($base-font-size - 2px);
+    line-height: $base-line-height;
+  }
+
+  &__rating {
+    display: flex;
+    margin-top: $text-rating-position;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    margin-block: $price-block-position;
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      margin: 0;
+      align-self: center;
+
+      font-size: $base-font-size;
+      font-weight: calc($base-font-weight - 100);
+      line-height: calc($base-line-height + 4px);
+      color: $grey-text-color;
+    }
+
+    &-numbers {
+      margin: 0;
+      font-weight: calc($base-font-weight + 200);
+      font-size: calc($base-font-size + 4px);
+      line-height: calc($base-line-height + 4px);
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $button-width;
+    height: $button-height;
+
+    transition: $transition;
+
+    border-radius: $button-form;
+    border: none;
+    background-color: $blue-color;
+    cursor: pointer;
+
+    font-weight: calc($base-font-weight + 200);
+    font-size: calc($base-font-size + 2px);
+    line-height: calc($base-line-height + 2px);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      box-sizing: border-box;
+      color: $blue-color;
+      background-color: $button-text-color;
+      border: $border-size solid $blue-color;
+    }
+  }
+}

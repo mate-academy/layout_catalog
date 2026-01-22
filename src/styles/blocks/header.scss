@@ -1,0 +1,58 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+    margin-left: $header-margin;
+  }
+}
+
+.nav {
+  margin-right: $header-margin;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+  }
+
+  &__item {
+    padding-right: $nav-item-padding;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  &__link {
+    position: relative;
+    line-height: $header-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: $transition;
+
+    color: $nav-link-color;
+
+    &.is-active {
+      color: $blue-color;
+      padding-bottom: $underline-position;
+
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: $underline-size;
+        border-radius: $underline-form;
+        background-color: $blue-color;
+      }
+    }
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+}
