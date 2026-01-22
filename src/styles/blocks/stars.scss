@@ -1,0 +1,25 @@
+@use '../utils/variables' as *;
+
+.stars {
+  display: flex;
+  justify-content: flex-start;
+
+  &__star {
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: $stars-size;
+    height: $stars-size;
+
+    margin-right: 4px;
+  }
+
+  &--1 &__star:first-child,
+  &--2 &__star:nth-last-child(n + 4),
+  &--3 &__star:nth-last-child(n + 3),
+  &--4 &__star:nth-last-child(n + 2),
+  &--5 &__star:nth-last-child(n + 1) {
+    background-image: url('../images/star-active.svg');
+  }
+}
