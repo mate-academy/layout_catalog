@@ -1,0 +1,135 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 48px 46px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:not(:last-of-type) {
+      background-image: url(../images/star-active.svg);
+      margin-right: 4px;
+    }
+  }
+}
+
+.card {
+  align-items: center;
+  transition: transform 300ms;
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__buy-buy {
+    margin: 16px;
+    width: $main-width;
+    height: 40px;
+    background-color: $main-color;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition-duration: all 300ms;
+
+    &:hover {
+      background-color: #fff;
+      border-color: $main-color;
+      border-width: 1px;
+      border-style: solid;
+      color: $main-color;
+    }
+  }
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 134px;
+    width: 160px;
+    margin: 32px 20px 0;
+  }
+  &__price {
+    margin: 24px 16px 0;
+    display: flex;
+    justify-content: space-between;
+    &-price {
+      font-family: $main-font-family;
+      font-weight: $main-font-weight;
+      font-size: 16px;
+      line-height: 18px;
+    }
+    &-dolars {
+      font-family: $main-font-family;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+  &__productCode {
+    font-family: $main-font-family;
+    font-weight: $main-font-weight;
+    font-size: 10px;
+    line-height: 14px;
+    color: #616070;
+    margin: 4px 16px 0;
+  }
+  &__rate {
+    margin: 16px 16px 0;
+    display: flex;
+    justify-content: space-between;
+
+    &-reviews {
+      font-family: $main-font-family;
+      font-weight: $main-font-weight;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-family: $main-font-family;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 40px 16px 0;
+    width: $main-width;
+    color: #060b35;
+    transition: color 300ms;
+  }
+}
+
+.card:hover .card__text {
+  color: #34568b;
+}
