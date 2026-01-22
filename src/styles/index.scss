@@ -1,3 +1,215 @@
-body {
+$color-grey: #616070;
+$color-blue: #00acdc;
+$color-darkblue: #060b35;
+$color-white: white;
+
+body,
+ul,
+ol,
+li {
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
   margin: 0;
+  list-style: none;
+}
+
+.moyo {
+  display: block;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+.head {
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px #0000000d;
+}
+
+.list {
+  display: flex;
+  margin: 0;
+}
+
+.link {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__name {
+    color: $color-darkblue;
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-weight: 500;
+    font-size: 12px;
+
+    &:hover {
+      color: $color-blue;
+      transition: color 300ms ease;
+    }
+  }
+}
+
+.is-active {
+  color: $color-blue;
+  position: relative;
+
+  &::after {
+    background-color: $color-blue;
+    content: '';
+    border-radius: 8px;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    display: block;
+    position: absolute;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  margin: 0;
+  color: $color-darkblue;
+  padding: 50px 40px;
+  font-family: Roboto, serif;
+
+  @media (min-width: 488px) {
+    & {
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
+
+.card {
+  padding: 16px;
+  padding-top: 32px;
+  width: 200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+
+  &__img {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    font-size: 10px;
+    color: $color-grey;
+    margin-bottom: 16px;
+    line-height: 14px;
+  }
+
+  &__opinion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 10px;
+  }
+
+  &__reviews {
+    padding-top: 2px;
+  }
+
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    color: $color-grey;
+    line-height: 18px;
+    font-size: 12px;
+  }
+
+  &__totality {
+    font-weight: 700;
+    line-height: 18px;
+    font-size: 16px;
+  }
+
+  &__button {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-blue;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    color: $color-white;
+
+    &:hover {
+      border: 1px solid $color-blue;
+      background-color: transparent;
+      transition: all 300ms ease;
+      color: $color-blue;
+      cursor: pointer;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    display: flex;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-position: center;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
