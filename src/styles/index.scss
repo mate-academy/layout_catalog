@@ -1,3 +1,55 @@
+@import 'card';
+@import 'stars';
+@import 'header';
+@import 'nav';
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+header {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.06px;
+
+  --blue: #00acdc;
+}
+
+.container {
+  --column-count: 1;
+
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+
+  grid-gap: 46px 48px;
+
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --column-count: 4;
+  }
 }
