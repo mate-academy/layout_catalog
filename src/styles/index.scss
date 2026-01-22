@@ -1,3 +1,235 @@
+// Variables
+$main-color: #060b35;
+$secondary-color: #616070;
+$blue-color: #00acdc;
+$white-color: #fff;
+$font-family: 'Roboto', Arial, Helvetica, sans-serif;
+$font-size-base: 12px;
+$line-height-base: 14px;
+$transition-time: 0.3s;
+
+// Base
 body {
   margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  font-weight: 400;
+  line-height: $line-height-base;
+}
+
+// Header / Navigation
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 50px;
+  box-sizing: border-box;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $main-color;
+    text-decoration: none;
+    position: relative;
+    transition: color $transition-time; // ✅ smooth nav hover
+
+    &:hover,
+    &.is-active {
+      color: $blue-color;
+    }
+
+    &.is-active::after {
+      content: '';
+      background-color: $blue-color;
+      border-radius: 2px;
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+// Main block
+.main {
+  &__catalog {
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+    justify-content: center;
+    gap: 48px 46px; // ✅ row then column
+    padding: 50px 40px;
+  }
+}
+
+// Card
+.card {
+  width: 200px;
+  height: 408px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: transform $transition-time;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 2; // ✅ ensures hover card appears above
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-img {
+      width: 160px;
+      height: 134px;
+    }
+  }
+
+  &__title {
+    margin: 40px 0 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-color;
+    transition: color $transition-time; // ✅ smooth color transition
+
+    .card:hover & {
+      color: #34568b;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $secondary-color;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0 26px;
+    height: 16px;
+
+    &-stars {
+      display: flex;
+
+      // ✅ Corrected nested selector — stars are visible again
+      .card__rating-star {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        background-image: url('../images/star.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:nth-child(-n + 4) {
+          background-image: url('../images/star-active.svg');
+        }
+      }
+    }
+
+    &-reviews {
+      font-size: 10px;
+      font-weight: 400;
+      color: $main-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-name {
+      font-size: 12px;
+      font-weight: 400;
+      color: $secondary-color;
+    }
+
+    &-num {
+      font-size: 16px;
+      font-weight: 700;
+      color: $main-color;
+    }
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    margin-top: 18px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue-color;
+    color: $white-color;
+    border: 1px solid $blue-color;
+    transition:
+      background-color $transition-time,
+      color $transition-time;
+
+    &:hover {
+      background-color: $white-color;
+      color: $blue-color;
+      cursor: pointer;
+    }
+  }
+}
+
+// Grid breakpoints
+@media (min-width: 488px) {
+  .main__catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main__catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main__catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
