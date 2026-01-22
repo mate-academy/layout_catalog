@@ -1,3 +1,49 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap';
+@import './utils/variables';
+
 body {
   margin: 0;
+  font-family: Roboto, serif;
+  box-sizing: border-box;
+  font-size: 12px;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+@import './blocks/header';
+
+.container {
+  --columns: 1;
+
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 200px);
+  justify-content: center;
+  gap: 46px 48px;
+
+  @media (min-width: 488px) {
+    --columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    --columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --columns: 4;
+  }
+}
+
+@import './blocks/card';
