@@ -1,0 +1,104 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 200px);
+  gap: 48px 46px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card-product {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+  perspective: 100px;
+  cursor: pointer;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    margin: 40px 0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $default-font-color;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $grey-font-color;
+  }
+
+  &__price {
+    height: 18px;
+    font-size: 12px;
+    font-weight: 400;
+    color: $grey-font-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      color: $default-font-color;
+    }
+
+    &:hover.card__name {
+      color: #34568b;
+    }
+  }
+
+  &__button-buy {
+    font-weight: 700;
+    margin-top: 16px;
+    font-size: 14px;
+
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    background-color: $neon-light-blue;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #fff;
+      color: $neon-light-blue;
+      border: 1px solid $neon-light-blue;
+      cursor: pointer;
+    }
+  }
+}
