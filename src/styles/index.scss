@@ -13,6 +13,7 @@ body {
 $blue-color: #00acdc;
 $nav-text-color: #060b35;
 $card-title-hover: #34568b;
+$color: #000;
 $catalog-padding-v: 50px;
 $catalog-padding-h: 40px;
 $card-width: 200px;
@@ -23,38 +24,27 @@ $animation-duration: 300ms;
 $star-inactive: '../images/star.svg';
 $star-active: '../images/star-active.svg';
 
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 0 50px;
-
-  background-color: #fff;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-
-  &__logo {
-    display: flex;
-    align-items: center;
-  }
-
-  &__nav-list {
+.nav {
+  &__list {
     display: flex;
     gap: 20px;
-    list-style: none;
+
     margin: 0;
     padding: 0;
+
+    list-style: none;
   }
 
-  &__nav-link {
+  &__item {
+    position: relative;
+  }
+
+  &__item-link {
     font-size: 12px;
     color: $nav-text-color;
     text-decoration: none;
     text-transform: uppercase;
+
     transition: color $animation-duration;
 
     &:hover {
@@ -62,28 +52,30 @@ $star-active: '../images/star-active.svg';
     }
   }
 
-  &__nav-item {
-    position: relative;
+  &__item.is-active &__item-link {
+    font-weight: 700;
+  }
 
-    &.is-active .header__nav-link {
-      font-weight: 700;
-    }
+  &__item.is-active::after {
+    content: '';
 
-    &.is-active::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background-color: $blue-color;
-    }
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: $blue-color;
   }
 }
 
 .catalog {
   display: grid;
+  grid-template-columns: repeat(1, card-width);
   gap: $card-gap-v $card-gap-h;
+  justify-content: center;
+
   padding: $catalog-padding-v $catalog-padding-h;
 
   @media (min-width: 488px) {
@@ -100,14 +92,16 @@ $star-active: '../images/star-active.svg';
 }
 
 .card {
+  position: relative;
+  transform-origin: center top;
+
   width: $card-width;
   height: $card-height;
   padding: 12px;
-
-  background-color: #fff;
   border: 1px solid #f1f1f1;
 
-  transform-origin: center top;
+  background-color: #fff;
+
   transition: transform $animation-duration;
 
   &__image img {
@@ -142,16 +136,23 @@ $star-active: '../images/star-active.svg';
 
   &__buy {
     display: block;
+
     padding: 10px;
+
     font-weight: 700;
     color: #fff;
     text-align: center;
     text-decoration: none;
+
     background-color: $blue-color;
-    transition: background-color $animation-duration, color $animation-duration;
+
+    transition:
+      background-color $animation-duration,
+      color $animation-duration;
   }
 
   &:hover {
+    z-index: 1;
     transform: scale(1.2);
 
     .card__title {
