@@ -1,3 +1,161 @@
+$nav-color: #060b35;
+$hover-color: #00acdc;
+$title-hover: #34568b;
+$card-width: 200px;
+
+$pad-vert: 50px;
+$pad-horiz: 40px;
+$gap-row: 48px;
+$gap-col: 46px;
+$white: #fff;
+$transition-duration: 0.3s;
+
+
+
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
+  background-color: $white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: $white;
+
+  &__logo img {
+    height: 40px;
+  }
+}
+
+.nav {
+  margin-left: 40px;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    color: $nav-color;
+    text-decoration: none;
+    transition: color $transition-duration;
+
+
+    &.is-active {
+      border-bottom: 2px solid $hover-color;
+    }
+
+    &:hover {
+      color: $hover-color;
+      border-bottom: 2px solid $hover-color;
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  padding: $pad-vert $pad-horiz;
+  gap: $gap-row $gap-col;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  width: $card-width;
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: center;
+  transition: transform $transition-duration;
+  position: relative;
+  transform-origin: center;
+
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    font-size: 14px;
+    margin: 12px 0;
+    transition: color $transition-duration;
+  }
+
+  &__code {
+    font-size: 12px;
+    color: #666;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 8px 0;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    background: $hover-color;
+    color: $white;
+    text-decoration: none;
+    transition: background $transition-duration, color $transition-duration;
+
+
+    &:hover {
+      background: $white;
+      color: $hover-color;
+
+      border: 1px solid $hover-color;
+    }
+  }
+
+  &:hover {
+    z-index: 10;
+    transform: scale(1.2);
+
+
+    .card__title {
+      color: $title-hover;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+
+  &__star {
+    width: 10px;
+    height: 10px;
+    background: gold;
+    display: block;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
 }
