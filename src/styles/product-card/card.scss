@@ -1,0 +1,138 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 50px 40px;
+  gap: 46px 48px;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  align-items: center;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $card-border;
+
+  transition: all 0.3s ease;
+  transform-origin: center;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__logo {
+    padding: 32px 19px 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 4px;
+    line-height: 18px;
+    transition: color 0.3s ease;
+  }
+
+  &__code {
+    color: $secondary-color;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 16px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $secondary-color;
+    margin: 0;
+  }
+
+  &__price-amount {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__button {
+    margin: 16px 0;
+    background-color: $button-color;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $button-text;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+
+    &:hover {
+      box-sizing: border-box;
+      color: $button-color;
+      background-color: $button-text;
+      border: 1px solid $button-color;
+    }
+  }
+
+  &:hover &__title {
+    color: $color-hover-title;
+  }
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px 128px 72px;
+  }
+}
