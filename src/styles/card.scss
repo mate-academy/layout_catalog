@@ -1,0 +1,127 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  width: $card-width;
+  box-sizing: border-box;
+  border: 1px solid $color-gray;
+  border-radius: $radius-s;
+  background-color: $color-white;
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-s;
+
+  transition:
+    transform 300ms ease-in-out,
+    box-shadow 300ms ease-in-out;
+
+  &__image {
+    display: block;
+    background-image: url('../images/imac.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: $card-image-height;
+    margin-bottom: $spacing-horizontal;
+  }
+
+  &__title {
+    @include text-info-name;
+
+    color: $color-main;
+    margin: 0;
+
+    padding: 0 $spacing-s;
+    margin-bottom: $spacing-xs;
+
+    transition: color 300ms ease-in-out;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+    z-index: 10;
+    box-shadow: 0 10px 25px $card-box-shadow-color;
+
+    & .card__title {
+      color: $color--title-hover;
+    }
+  }
+
+  &__title-code {
+    @include text-detail-regular;
+
+    color: $color-secondary;
+
+    padding: 0 $spacing-s;
+    margin-top: 0;
+    margin-bottom: $spacing-s;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $spacing-s;
+    margin-bottom: $spacing-l;
+  }
+
+  &__rating-reviews-value {
+    @include text-detail-regular;
+
+    color: $color-main;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $spacing-s;
+    margin-bottom: $spacing-s;
+  }
+
+  &__price-text {
+    @include text-body-regular;
+
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    @include text-price-value;
+
+    color: $color-main;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    padding: 0 $spacing-s;
+  }
+
+  &__buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-accent;
+
+    @include text-button;
+
+    color: $color-white;
+    border: 1px solid $color-accent;
+    width: 100%;
+    height: $spacing-horizontal;
+    border-radius: $radius-s;
+    text-decoration: none;
+    transition:
+      background-color 300ms ease-in-out,
+      color 300ms ease-in-out,
+      border-color 300ms ease-in-out;
+  }
+
+  &__buy-button:hover {
+    background-color: $color-white;
+
+    color: $color-accent;
+    border: 1px solid $color-accent;
+  }
+}
