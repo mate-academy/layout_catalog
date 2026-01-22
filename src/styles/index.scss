@@ -1,3 +1,244 @@
 body {
   margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 50px;
+}
+
+header a {
+  height: 40px;
+  display: inline-block;
+}
+
+a img {
+  width: 40px;
+  height: 40px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  font-size: 12px;
+  list-style: none;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+li a {
+  text-decoration: none;
+  color: #060b35;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a:hover {
+  color: #00acdc;
+}
+
+li .is-active {
+  color: #00acdc;
+  position: relative;
+}
+
+li .is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 37px;
+  height: 4px;
+  border-radius: 8px;
+  background-color: #00acdc;
+}
+
+nav a[data-qa='hover']:hover {
+  color: #00acdc;
+}
+
+.card {
+  width: 200px;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  transform: scale(1);
+  transform-origin: center;
+  transition: all 0.3s ease 300ms;
+  margin-bottom: 46px;
+
+  .card:hover.card__title {
+    color: #34568b;
+  }
+
+  &__content {
+    padding: 0 16px 16px;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    padding-top: 32px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__image img {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    color: #060b35;
+    width: 166px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 40px 0 4px;
+    transition: color 0.3s ease 300ms;
+  }
+
+  &__code {
+    font-size: 10px;
+    color: #616070;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    margin: 16px 0 24px;
+    padding: 0;
+
+    .stars {
+      display: flex;
+
+      &__star {
+        width: 16px;
+        height: 16px;
+        border-radius: 0.5px;
+        background-position: center;
+        background-image: url('../images/star-active.svg');
+        background-repeat: no-repeat;
+        margin-right: 4px;
+
+        &--inactive {
+          margin-right: 0;
+          background-image: url('../images/star.svg');
+        }
+      }
+    }
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    color: #060b35;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+    color: #616070;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #060b35;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #00acdc;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease 300ms;
+
+    &:hover {
+      background-color: #fff;
+      color: #00acdc;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card:nth-last-child(-n + 4) {
+  margin-bottom: 0;
+}
+
+.container {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 248px);
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (min-width: 300px) {
+  .container {
+    grid-template-columns: repeat(1, 248px);
+  }
+}
+
+@media (min-width: 480px) {
+  .container {
+    grid-template-columns: repeat(2, 248px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 248px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 248px);
+  }
 }
