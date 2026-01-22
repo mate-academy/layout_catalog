@@ -1,0 +1,132 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  background-color: $card-background;
+  transition: transform 300ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__product-name {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $font-color;
+    transition: color 300ms ease-in-out;
+  }
+
+  &:hover .card__product-name {
+    color: #34568b;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    align-self: center;
+  }
+
+  &__product-code {
+    margin-top: 4px;
+    width: 98px;
+    height: 14px;
+    font-weight: 400;
+    font-size: 10px;
+    align-self: flex-start;
+    line-height: 14px;
+    color: $font-color-secondary;
+  }
+
+  &__review {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    color: $font-color;
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18px;
+    line-height: 18px;
+  }
+
+  &__price-text {
+    height: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    font-size: 12px;
+    color: $font-color-secondary;
+  }
+
+  &__price-number {
+    font-weight: 700;
+    font-size: 16px;
+    color: $font-color;
+  }
+
+  &__button {
+    margin-top: 16px;
+    width: 166px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    background-color: $button-color;
+    color: $button-color-text;
+    border: none;
+    border-radius: 5px;
+    transition:
+      background-color 300ms ease-in-out,
+      color 300ms ease-in-out;
+
+    &:hover {
+      background-color: $card-background;
+      color: $button-color;
+      border: 1px solid $button-color;
+    }
+  }
+}
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
