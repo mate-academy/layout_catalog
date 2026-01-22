@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.card {
+  width: $card-width;
+  height: 406px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  padding: 8px 16px;
+  transition-duration: 300ms;
+  border: 1px solid #f3f3f3;
+
+  .card__image {
+    width: 160px;
+    height: 134px;
+    opacity: 1;
+  }
+
+  .card__rating {
+    font-size: 10px;
+  }
+
+  .card__title {
+    color: #060b35;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+  }
+
+  .card__code {
+    color: $color-gray-cards;
+    font-family: $text-style;
+    display: flex;
+    width: 100%;
+    gap: 2px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+  }
+
+  .card__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .card__price-text {
+    color: $color-gray-cards;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .card__review {
+    color: #060b35;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .card__button {
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-aqua;
+  }
+
+  .card__button:hover {
+    color: $color-aqua;
+    background-color: $color-white;
+    border: 1px solid $color-aqua;
+  }
+
+  .card__nav {
+    display: flex;
+    text-transform: uppercase;
+    color: $color-white;
+    width: 27px;
+    height: 16px;
+    font-size: 14px;
+    font-family: $text-style;
+  }
+
+  .card__button:hover .card__nav {
+    color: $color-aqua;
+  }
+}
+
+.main .card:hover {
+  transform: scale(1.2);
+}
+
+.card:hover .card__title {
+  color: $color-card-title-hover;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
+  gap: 48px 46px;
+  padding: 50px 40px;
+
+  @media (min-width: 487px) {
+    grid-template-columns: repeat(1, 200px);
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
