@@ -1,0 +1,31 @@
+@mixin configure-font($weight, $size, $height, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin set-inline-and-top-paddings($top, $inline) {
+  padding-top: $top;
+  padding-inline: $inline;
+}
+
+@mixin configure-grid() {
+  display: grid;
+
+  @include configure-grid-on-different-screens(1);
+
+  @each $breakpoint, $columns in $screenSizeBreakpoints {
+    @media (min-width: $breakpoint) {
+      @include configure-grid-on-different-screens($columns);
+    }
+  }
+}
+
+@mixin configure-grid-on-different-screens($gridColumns) {
+  grid-template-columns: repeat($gridColumns, $productCardWidth);
+}
+
+@mixin configure-transition($propertyName) {
+  transition: $propertyName $smoothTransitionTime;
+}
