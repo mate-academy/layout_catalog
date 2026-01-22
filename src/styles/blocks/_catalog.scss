@@ -1,0 +1,25 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as var;
+
+.catalog {
+  --cols: 1;
+
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var.$card-width);
+  justify-content: center;
+  gap: 46px 48px;
+
+  @include mix.responsive(var.$breakpoint-sm) {
+    --cols: 2;
+  }
+
+  @include mix.responsive(var.$breakpoint-md) {
+    --cols: 3;
+  }
+
+  @include mix.responsive(var.$breakpoint-lg) {
+    --cols: 4;
+  }
+}
