@@ -1,0 +1,49 @@
+.nav {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 60px;
+  text-transform: uppercase;
+  margin-left: auto;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-element {
+    display: flex;
+
+    &:last-child a {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    color: $nav-link-color;
+    margin-right: 20px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $main-butter-color;
+    }
+  }
+}
+
+.is-active {
+  color: $main-butter-color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 37px;
+    top: 56px;
+    background-color: $main-butter-color;
+    border-radius: 8px;
+  }
+}
