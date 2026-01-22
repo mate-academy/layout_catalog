@@ -1,0 +1,14 @@
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin grid-columns-down($breakpoints...) {
+  @each $bp, $cols in $breakpoints {
+    @media (max-width: $bp) {
+      grid-template-columns: repeat($cols, 200px);
+    }
+  }
+}
