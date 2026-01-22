@@ -1,0 +1,32 @@
+@import 'mixins';
+@import 'header';
+
+.header__nav {
+  @include display-flex(row, null, center);
+
+  height: 100%;
+}
+
+.navigation {
+  &__link {
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &:hover {
+      color: $color-hover;
+    }
+
+    & > * {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      padding: 23px 0;
+    }
+  }
+}
