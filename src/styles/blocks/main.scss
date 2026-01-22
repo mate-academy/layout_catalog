@@ -1,0 +1,23 @@
+@use './variables' as *;
+@use '../utils/mixins' as *;
+
+.main {
+  display: grid;
+  gap: $gap-vertical $gap-horizontal;
+  justify-content: center;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+
+  @include grid-columns(1);
+
+  @media (min-width: $mobile) {
+    @include grid-columns(2);
+  }
+
+  @media (min-width: $tablet) {
+    @include grid-columns(3);
+  }
+
+  @media (min-width: $desktop) {
+    @include grid-columns(4);
+  }
+}

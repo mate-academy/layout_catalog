@@ -1,0 +1,47 @@
+@use './variables' as *;
+
+.nav {
+  white-space: nowrap;
+  display: flex;
+  line-height: 60px;
+  margin-right: 50px;
+  cursor: pointer;
+
+  &__link {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: $text-color-black;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $text-color-blue;
+      transition-duration: $transition-duration;
+    }
+
+    &.is-active {
+      color: $text-color-blue;
+      position: relative;
+      padding-bottom: 4px;
+      display: inline-flex;
+
+      &::after {
+        display: block;
+        content: '';
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        background-color: $input-color-blue;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}
