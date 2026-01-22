@@ -1,0 +1,58 @@
+@use 'variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  margin-right: 50px;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-left: 50px;
+}
+
+.nav__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  height: 60px;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: variables.$colorNavDefault;
+  line-height: 60px;
+  position: relative;
+  transition: color 300ms;
+
+  &:hover {
+    color: variables.$blueAccent;
+  }
+}
+
+.is-active {
+  color: variables.$blueAccent;
+
+  &::after {
+    display: block;
+    content: '';
+    height: 4px;
+    background-color: variables.$blueAccent;
+    border-radius: 8px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}

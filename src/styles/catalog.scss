@@ -1,0 +1,179 @@
+@use 'mixins';
+@use 'variables';
+
+body * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: variables.$colorNavDefault;
+  font-display: swap;
+}
+
+.catalog {
+  padding: variables.$catalogPadding-y variables.$catalogPadding-x;
+  display: grid;
+  place-content: center center;
+
+  justify-content: center;
+  gap: variables.$gapRow variables.$gapCol;
+  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fill, variables.$cardWidth);
+
+  @media (max-width: 487px) {
+    & {
+      grid-template-columns: repeat(1, variables.$cardWidth);
+    }
+  }
+
+  @media (min-width: 488px) {
+    & {
+      grid-template-columns: repeat(2, variables.$cardWidth);
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      grid-template-columns: repeat(3, variables.$cardWidth);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(4, variables.$cardWidth);
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: variables.$cardWidth;
+  height: 408px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  transition: transform 300ms;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 32px 19px 40px;
+  }
+
+  &__title {
+    @include mixins.font-size-big;
+
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-weight: 500;
+    transition: color 300ms;
+  }
+
+  &__code {
+    @include mixins.font-size-small;
+
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #616070;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    p {
+      margin: 0;
+
+      @include mixins.font-size-small;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 18px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 166px;
+    height: 40px;
+
+    font-size: 14px;
+    font-weight: variables.$fontWidthBold;
+    border: 1px solid variables.$blueAccent;
+    border-radius: 5px;
+    line-height: 16px;
+    color: variables.$colorWhite;
+
+    background-color: variables.$blueAccent;
+    margin-block: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      color 300ms,
+      background-color 300ms;
+  }
+
+  &__button:hover {
+    border-color: variables.$blueAccent;
+    color: variables.$blueAccent;
+    background-color: variables.$colorWhite;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    & .card__title {
+      color: variables.$colorTitleHover;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+
+  &__star:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @for $i from 1 through 5 {
+    &--active-#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url('../images/star-active.svg');
+
+        @include mixins.star(16px);
+      }
+
+      .stars__star:not(:nth-child(-n + #{$i})) {
+        background-image: url('../images/star.svg');
+
+        @include mixins.star(16px);
+      }
+    }
+  }
+}
+
+.price-text {
+  @include mixins.font-size-big;
+
+  color: #616070;
+}
+
+.price-digit {
+  font-size: 16px;
+  font-weight: variables.$fontWidthBold;
+  line-height: 18px;
+}
