@@ -1,3 +1,149 @@
+@import './utils/variables';
+@import './blocks/header';
+@import './blocks/nav';
+@import './blocks/card';
+@import './blocks/stars';
+
 body {
   margin: 0;
+  font-family: $font-main;
 }
+
+.catalog {
+  padding: 50px 40px;
+
+  &__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+    column-gap: 46px;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
+
+$font-main: 'Inter', sans-serif;
+
+$nav-color: #060b35;
+$nav-hover: #00acdc;
+
+$card-title-hover: #34568b;
+$button-hover-bg: #fff;
+$button-hover-text: #00acdc;
+
+$card-width: 200px;
+$transition: 300ms;
+
+.nav {
+  display: flex;
+  gap: 20px;
+
+  &__link {
+    text-decoration: none;
+    color: $nav-color;
+    transition: color $transition;
+
+    &.is-active {
+      font-weight: bold;
+    }
+
+    &:hover {
+      color: $nav-hover;
+    }
+  }
+}
+
+.header {
+  padding: 20px 40px;
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 40px;
+  }
+}
+
+.card {
+  width: $card-width;
+  border: 1px solid #ddd;
+  padding: 10px;
+  transition: transform $transition;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $card-title-hover;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    transition: color $transition;
+  }
+
+  &__price {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  &__buy {
+    display: inline-block;
+    background-color: $nav-hover;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color $transition, color $transition;
+
+    &:hover {
+      background-color: $button-hover-bg;
+      color: $button-hover-text;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  font-size: 16px;
+  color: #ffc107;
+
+  &::before {
+    content: "★★★★★";
+    background: linear-gradient(to right, #ffc107 0%, #ccc 0%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &--1::before { background: linear-gradient(to right, #ffc107 20%, #ccc 20%); }
+  &--2::before { background: linear-gradient(to right, #ffc107 40%, #ccc 40%); }
+  &--3::before { background: linear-gradient(to right, #ffc107 60%, #ccc 60%); }
+  &--4::before { background: linear-gradient(to right, #ffc107 80%, #ccc 80%); }
+  &--5::before { background: linear-gradient(to right, #ffc107 100%, #ccc 0%); }
+}
+
