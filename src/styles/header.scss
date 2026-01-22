@@ -1,0 +1,72 @@
+:root {
+  --active-color: $button-color;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  font-size: 12px;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  padding: 0 50px;
+  margin: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.nav {
+  margin-right: 50px;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link {
+  line-height: 60px;
+  color: $black-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  transition: $transition-duration;
+}
+
+.is-active {
+  color: var(--active-color);
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--active-color);
+}
+
+.nav__link:hover {
+  color: var(--active-color);
+}
