@@ -1,0 +1,156 @@
+.main {
+  .container {
+    padding: $catalog-padding-vertical $catalog-padding-horizontal;
+    display: grid;
+    grid-template-columns: repeat(1, $card-width);
+    gap: $card-vertical-gap $card-horizontal-gap;
+    justify-content: center;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+
+  .card {
+    width: $card-width;
+    border-radius: 5px;
+    border: 1px solid #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    transition: transform $transition-duration;
+
+    &__info-name-products {
+      margin: 0;
+      width: 166px;
+      font-size: 1em;
+      color: $nav-link-color;
+      font-weight: 500;
+      transition: color $transition-duration;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+
+      .card__info-name-products {
+        color: $card-title-hover-color;
+      }
+    }
+
+    &__image {
+      width: 160px;
+      height: 134px;
+      margin-top: 32px;
+    }
+
+    &__info {
+      padding: 40px 16px 16px;
+    }
+
+    &__info-product-id {
+      margin-top: 4px;
+      font-size: 10px;
+      line-height: 14px;
+      color: $nav-link-color;
+      font-weight: 400;
+    }
+
+    .card__info-stars {
+      display: flex;
+
+      &-star {
+        height: 16px;
+        width: 16px;
+        background-image: url(../images/star.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 4px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      &--1 .card__info-stars-star:nth-child(1),
+      &--2 .card__info-stars-star:nth-child(-n + 2),
+      &--3 .card__info-stars-star:nth-child(-n + 3),
+      &--4 .card__info-stars-star:nth-child(-n + 4),
+      &--5 .card__info-stars-star:nth-child(-n + 5) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+
+    &__info-ratings {
+      display: flex;
+      align-items: flex-end;
+      margin-top: 16px;
+      justify-content: space-between;
+    }
+
+    &__info-review {
+      width: 53px;
+      margin: 0;
+      font-size: 10px;
+      line-height: 14px;
+      color: $nav-link-color;
+      font-weight: 400;
+      text-align: right;
+    }
+
+    &__info-prices {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__info-price {
+      margin: 0;
+      font-size: 12px;
+      line-height: 18px;
+      color: $nav-link-color;
+      font-weight: 400;
+    }
+
+    &__info-price-value {
+      margin: 0;
+      font-size: 16px;
+      line-height: 18px;
+      color: $nav-link-color;
+      font-weight: 700;
+    }
+
+    &__info-button-buy {
+      width: 166px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: $button-bg-color;
+      border: 1px solid $button-bg-color;
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      color: $button-text-color;
+      text-decoration: none;
+      transition:
+        background-color $transition-duration,
+        color $transition-duration;
+
+      &:hover {
+        background-color: $button-hover-bg-color;
+        color: $button-hover-text-color;
+      }
+    }
+  }
+}
