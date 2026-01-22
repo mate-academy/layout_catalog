@@ -1,0 +1,89 @@
+.header {
+  @include flex-row;
+
+  background-color: var(--header-bg);
+  padding-inline: var(--container-pad);
+  box-sizing: inherit;
+  align-items: center;
+  font-weight: 500;
+  box-shadow: 0 2px 4px 0 #0000000d;
+}
+
+.logo {
+  text-decoration: none;
+  line-height: 0;
+  box-sizing: inherit;
+}
+
+.moyologo {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu {
+  @include nav-align;
+
+  margin-left: auto;
+  font-size: 12px;
+  display: block;
+  text-transform: uppercase;
+  box-sizing: inherit;
+
+  &-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    float: right;
+    box-sizing: inherit;
+  }
+
+  &-link {
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    white-space: nowrap;
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--active);
+    }
+  }
+}
+
+.is-active {
+  color: var(--active);
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  transition: color var(--transition);
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: var(--underline-w);
+    height: var(--underline-h);
+    background: var(--active);
+    border-radius: 8px;
+  }
+
+  &:hover {
+    color: var(--active);
+  }
+}
+
+.menu-item + .menu-item {
+  margin-left: 20px;
+}
