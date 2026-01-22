@@ -1,0 +1,32 @@
+.catalog {
+  --grid-column: 1;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: $lg-content-size;
+  box-sizing: border-box;
+  padding: 50px 40px;
+
+  &__container {
+    width: 100%;
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-column), $card-width);
+    justify-content: center;
+    gap: 46px 48px;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 488px) and (max-width: 767px) {
+      --grid-column: 2;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      --grid-column: 3;
+    }
+
+    @media screen and (min-width: 1024px) {
+      --grid-column: 4;
+    }
+  }
+}
