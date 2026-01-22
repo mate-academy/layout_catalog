@@ -1,0 +1,59 @@
+$main-color: #060b35;
+$hover--color: #00acdc;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 2px 4px #0000000d;
+
+  &__logo {
+    display: flex;
+  }
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+
+    color: $main-color;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $hover--color;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $hover--color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $hover--color;
+  }
+}
