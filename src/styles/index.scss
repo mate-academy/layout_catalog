@@ -1,3 +1,244 @@
+$blue-color: #00acdc;
+$font-family: Roboto, sans-serif;
+$font-size: 12px;
+$font-weight: 500;
+$base-color: #000;
+
 body {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $base-color;
   margin: 0;
+}
+
+.container {
+  box-sizing: border-box;
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 50px;
+  background-color: #fff;
+
+  img {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    align-items: center;
+  }
+}
+
+.nav_items {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .nav_item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+a {
+  padding: 23px 0;
+  display: flex;
+  text-decoration: none;
+  line-height: 14px;
+  color: $base-color;
+
+  &:hover {
+    color: $blue-color;
+  }
+
+  &.is-active {
+    color: $blue-color;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 37px;
+      height: 4px;
+      left: 0;
+      border-radius: 8px;
+      background-color: $blue-color;
+    }
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 408px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+
+  &__imac-image {
+    box-sizing: border-box;
+    margin: 32px 19px 40px;
+    height: 134px;
+    width: 160px;
+    background-image: url(../images/imac.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  &__description {
+    margin: 39px 16px 4px;
+    width: 166px;
+    height: 36px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+    color: #060b35;
+  }
+
+  &__code {
+    margin-left: 16px;
+    width: 98px;
+    height: 14px;
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #616070;
+  }
+
+  &__evaluation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    height: 16px;
+    margin: 16px;
+
+    .reviews {
+      display: flex;
+      align-items: center;
+      font-family: Roboto, sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      padding-top: 2px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+    margin-top: 24px;
+    width: 166px;
+    height: 18px;
+
+    .title {
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: #616070;
+    }
+
+    .price {
+      box-sizing: border-box;
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+  &__button {
+    box-sizing: border-box;
+    width: 166px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #00acdc;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 16px;
+
+    &:hover {
+      background-color: #fff;
+      color: #00acdc;
+      border: 1px solid #00acdc;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+  height: 16px;
+
+  &_star {
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:nth-child(1) {
+      background-image: url(../images/star-active.svg);
+    }
+    &:nth-child(2) {
+      background-image: url(../images/star-active.svg);
+    }
+    &:nth-child(3) {
+      background-image: url(../images/star-active.svg);
+    }
+    &:nth-child(4) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
 }
