@@ -1,0 +1,41 @@
+$gridColumnsSize: 200px;
+$gridColumns: repeat(4, $gridColumnsSize);
+$layout-1-column: 487px;
+$layout-2-column: 767px;
+$layout-3-column: 1023px;
+
+@mixin grid-columns($light-theme: true) {
+  @if $light-theme {
+    background-color: $light-background;
+    color: $light-text;
+  } @else {
+    background-color: $dark-background;
+    color: $dark-text;
+  }
+}
+
+.container {
+  padding: 50px 40px 72px;
+  display: grid;
+  grid-gap: 46px 48px;
+  justify-content: center;
+  grid-template-columns: $gridColumns;
+}
+
+@media (max-width: $layout-3-column) {
+  .container {
+    grid-template-columns: repeat(3, $gridColumnsSize);
+  }
+}
+
+@media (max-width: $layout-2-column) {
+  .container {
+    grid-template-columns: repeat(2, $gridColumnsSize);
+  }
+}
+
+@media (max-width: $layout-1-column) {
+  .container {
+    grid-template-columns: repeat(1, $gridColumnsSize);
+  }
+}
