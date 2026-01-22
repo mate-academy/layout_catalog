@@ -1,0 +1,85 @@
+.card {
+  width: 200px;
+  padding: 0 16px; /* Спрощений padding */
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: transform 0.3s, background-color 0.3s; /* Загальна transition */
+
+  &:hover {
+    transform: scale(1.2);
+    background-color: #fff;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 32px 0 40px;
+  }
+
+  &__productName {
+    margin-bottom: 16px;
+
+    &Title {
+      margin: 0 0 4px;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      .card:hover & {
+        color: #34568b; /* Використання загального hover */
+      }
+    }
+
+    &Text {
+      margin: 0;
+      color: $secondary-text-color;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 85px;
+    margin-bottom: 16px;
+
+    &Label {
+      font-weight: 400;
+      color: $secondary-text-color;
+    }
+
+    &Value {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 16px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $blue-accent;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      color: $blue-accent;
+      border: 1px solid $blue-accent;
+    }
+  }
+}
