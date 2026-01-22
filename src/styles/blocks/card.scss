@@ -27,7 +27,7 @@
   }
 
   &__title {
-    font-size: 12px;
+    font-size: $font-size-small;
     font-weight: 500;
     line-height: 18px;
     color: $nav-link-color;
@@ -35,13 +35,12 @@
     width: 100%;
     height: 36px;
     overflow: hidden;
-    transition: color 0.3s ease;
 
     @include hover(color);
   }
 
   &__code {
-    font-size: 10px;
+    font-size: $font-size-tiny;
     color: $card-secondary-text-color;
     font-weight: 400;
     line-height: 14px;
@@ -56,7 +55,7 @@
   }
 
   &__reviews {
-    font-size: 10px;
+    font-size: $font-size-tiny;
     color: $nav-link-color;
   }
 
@@ -67,7 +66,7 @@
     margin: 24px 0 16px;
 
     &-label {
-      font-size: 12px;
+      font-size: $font-size-small;
       font-weight: 400;
       line-height: 18px;
       color: $card-secondary-text-color;
@@ -84,7 +83,7 @@
   &__buy {
     display: flex;
     width: 100%;
-    height: 40px;
+    height: $base-size;
     align-items: center;
     justify-content: center;
 
@@ -97,7 +96,7 @@
     letter-spacing: 0;
     border-radius: 5px;
     border: 1px solid transparent;
-    margin-bottom: 16px;
+    margin-bottom: $margin-base;
     text-transform: uppercase;
     text-decoration: none;
 
@@ -109,11 +108,15 @@
       background-color: $background-color;
       color: $blue-color;
       text-decoration: none;
-      transform: scale(1.2);
+    }
+  }
 
-      .card__title {
-        color: $card-title-text-color-hover;
-      }
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $card-title-text-color-hover;
+      transition: color $transition-duration ease;
     }
   }
 }
