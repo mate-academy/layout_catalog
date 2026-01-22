@@ -1,15 +1,29 @@
 @use '../utils/variables.scss' as *;
 
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, $cardWidth);
+  justify-content: center;
+  justify-items: center;
+  gap: 46px 48px;
+  max-width: 1200px;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+
 .card {
+  position: relative;
   font-family: Roboto, Arial, sans-serif;
-  width: 200px;
-  height: 408px;
+  width: $cardWidth;
+  height: $cardHeight;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $borderCardColor;
   border-radius: 5px;
   box-sizing: border-box;
+
+  transition: transform $transformTime;
 }
 
 .card__section--image {
@@ -20,7 +34,7 @@
   margin-top: 32px;
 }
 
-.card__section--article {
+.card__section--title {
   margin-top: 40px;
   line-height: 18px;
   color: $dark;
@@ -29,6 +43,8 @@
   font-weight: 500;
   width: $componentWidth;
   height: 36px;
+
+  transition: color $transformTime;
 }
 
 .card__section--code {
@@ -58,7 +74,7 @@
   text-align: right;
 }
 
-.card__section--price{
+.card__section--price {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,12 +111,45 @@
   line-height: 16px;
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: $white;
+
+  transition:
+    background-color $transformTime ease-in-out,
+    color $transformTime linear;
 
   &:hover {
     box-sizing: border-box;
-    background-color: white;
-    color: #00acdc;
+    background-color: $white;
+    color: $blue;
     border: 1px solid $blue;
   }
+}
+
+$resolutions: (
+  488px: 2,
+  768px: 3,
+  1024px: 4,
+);
+
+@each $resolution, $cards in $resolutions {
+  @media screen and (min-width: $resolution) {
+    .cards-container {
+      grid-template-columns: repeat($cards, $cardWidth);
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cards-container {
+    padding: 50px 128px;
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.card:hover .card__section--title {
+  color: $titleColorHover;
 }
