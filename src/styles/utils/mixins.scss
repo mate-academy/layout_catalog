@@ -1,0 +1,48 @@
+@mixin stars {
+  .stars {
+    display: flex;
+
+    &-star {
+      background-image: url(../images/star.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 16px;
+      width: 16px;
+      margin-left: 4px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &-star:nth-child(-n + 4) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin resolution {
+  @media (min-width: 488px) {
+    .catalog {
+      grid-template-columns: repeat(($column-count + 1), 200px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .catalog {
+      grid-template-columns: repeat(($column-count + 2), 200px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .catalog {
+      grid-template-columns: repeat(($column-count + 3), 200px);
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.catalog {
+  box-sizing: border-box;
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat($column-count, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  justify-items: center;
+}
+
+@include resolution;
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #f3f3f3;
+  width: 200px;
+  background-color: $main-text-color;
+  border-radius: 5px;
+
+  padding: 32px 16px 16px;
+
+  transition: transform 300ms;
+
+  &__img-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #060b35;
+
+    margin-top: $margin-default + 24px;
+    margin-bottom: 4px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__name {
+      color: #34568b;
+    }
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    color: #616070;
+    line-height: 14px;
+    margin: 0;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: $margin-default;
+
+    @include stars;
+
+    &-text {
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      height: 16px;
+      color: #060b35;
+      margin: 0;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: $margin-default + 8px;
+
+    &-text {
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0%;
+      color: #616070;
+      margin: 0;
+    }
+
+    &-amount {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: #060b35;
+      margin: 0;
+    }
+  }
+
+  &__link {
+    @include flex-center;
+
+    background-color: #00acdc;
+    height: 40px;
+    border-radius: 5px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+
+    margin-top: $margin-default;
+  }
+
+  &__link:hover {
+    background-color: #fff;
+    color: #00acdc;
+    border: 1px solid #00acdc;
+  }
+}
