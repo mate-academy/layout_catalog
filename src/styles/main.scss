@@ -1,0 +1,132 @@
+.page-body {
+  margin: 0;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: $page-padding;
+  box-sizing: border-box;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 408px;
+  border: 1px solid $border-bg;
+  border-radius: 5px;
+  background-color: $white;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    padding: 32px 19px 36px;
+  }
+
+  &__content {
+    padding: 0 $spacing-m;
+  }
+
+  &__title {
+    line-height: 18px;
+    color: $main-color;
+    font-weight: 500;
+    font-size: $font-s;
+    margin: 0 0 $spacing-xs;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__code {
+    line-height: 14px;
+    color: $secondary-color;
+    font-size: 10px;
+    margin: 0 0 $spacing-m;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 $spacing-m $spacing-m;
+  }
+
+  &__reviews {
+    font-size: $font-xs;
+    color: $main-color;
+    margin: 1px 0 0;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px $spacing-m 16px;
+
+    &-label {
+      font-size: $font-s;
+      line-height: 18px;
+      color: $secondary-color;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: $font-l;
+      line-height: 18px;
+      color: $main-color;
+    }
+
+    &:hover &__title {
+    color: $hover-color;
+    transform: scale(1.2);
+  }
+  }
+
+  &__button {
+    display: block;
+    width: 166px;
+    height: 40px;
+    padding: 11px;
+    margin: 0 $spacing-m $spacing-m;
+    background-color: $white;
+    color: $accent-color;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: $font-m;
+    line-height: 16px;
+    border-radius: 5px;
+    border: 1px solid $accent-color;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: $white;
+      color: $accent-color;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @for $i from 0 through 5 {
+    &--#{$i} .stars__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}
