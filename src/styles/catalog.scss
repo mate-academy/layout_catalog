@@ -1,16 +1,25 @@
 .card {
   width: $card-width;
   border: 1px solid $border;
-  padding: 16px;
+  padding: $card-padding;
   display: flex;
   flex-direction: column;
 
+  transition:
+    transform $transition-time ease,
+    box-shadow $transition-time ease;
+
+  &:hover {
+    transform: scale(1.2); // Збільшення масштабу до 1.2
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
   &__image {
-    width: 160px;
-    height: 134px;
-    margin-top: 17px;
-    margin-bottom: 32px;
-    margin-left: 3px;
+    width: $card-image-width;
+    height: $card-image-height;
+    margin-top: $card-image-mt;
+    margin-bottom: $card-image-mb;
+    margin-left: $card-image-ml;
   }
 
   &__title {
@@ -18,7 +27,13 @@
     font-size: 12px;
     line-height: 18px;
     color: $main-ac;
-    margin-bottom: -5px;
+    margin-bottom: $card-title-mb;
+
+    transition: color $transition-time ease;
+
+    .card:hover & {
+      color: $card-title-hover-color;
+    }
   }
 
   &__code {
@@ -68,8 +83,8 @@
 
   &__buy {
     width: 100%;
-    height: 40px;
-    border-radius: 5px;
+    height: $card-buy-height;
+    border-radius: $card-buy-radius;
     background-color: $blue;
     text-decoration: none;
     font-weight: 700;
@@ -81,6 +96,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition:
+      background-color $transition-time ease,
+      color $transition-time ease,
+      border $transition-time ease;
 
     &:hover {
       background-color: $white;

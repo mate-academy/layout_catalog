@@ -1,19 +1,19 @@
 .catalog {
   display: grid;
-  grid-template-columns: repeat(4, $card-width);
-  margin: 0 auto;
+  grid-template-columns: repeat(1, minmax(0, $card-width));
+  gap: $catalog-gap-row $catalog-gap-column;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  justify-content: center;
 
-  @media (min-width: 1024px) {
-    max-width: 1024px;
-    gap: 40px 48px;
-    padding-top: 40px; // повертаємо 40px
-    padding-left: 40px;
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, minmax(0, $card-width));
   }
 
-  @media (min-width: 1200px) {
-    max-width: 1200px;
-    gap: 46px 48px;
-    padding-top: 50px; // повертаємо 50px
-    padding-left: 110px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, $card-width));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, minmax(0, $card-width));
   }
 }
