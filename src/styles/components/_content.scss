@@ -1,0 +1,150 @@
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  place-content: center;
+
+  &__grid {
+    display: grid;
+    gap: 46px 48px;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.card {
+  width: 200px;
+  height: 408px;
+  box-sizing: border-box;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  transition: transform $transition;
+
+  &__content {
+    margin: 32px 16px 16px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 166px;
+    height: 40px;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    transition: all $transition;
+    padding: 0;
+    color: $color-white;
+    font-size: $font-size-md;
+    border-radius: 5px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+
+    &:hover {
+      background-color: $color-white;
+      border: 1px solid $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+.product {
+  &__image {
+    margin: 0 0 37px;
+    width: 100%;
+    height: 134px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-text-main;
+
+    .card:hover & {
+      color: $color-hover;
+    }
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    font-size: $font-size-xs;
+    font-weight: 400;
+    line-height: 14px;
+    color: $color-text-secondary;
+  }
+}
+
+.review {
+  margin: 0 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__stars {
+    display: flex;
+    gap: $spacing-xs;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @for $i from 1 through 4 {
+      &:nth-child(-n+#{$i}) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+
+  &__count {
+    margin: 0;
+    font-size: $font-size-xs;
+    line-height: 14px;
+    font-weight: 400;
+    color: $color-text-main;
+  }
+}
+
+.price {
+  margin: 0 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-text-secondary;
+  }
+
+  &__value {
+    font-size: $font-size-lg;
+    line-height: 18px;
+    font-weight: 700;
+    color: $color-text-main;
+  }
+}
