@@ -1,0 +1,45 @@
+@import 'variables';
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    color: $main-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+
+    transition-duration: 300ms;
+  }
+
+  &__link:hover {
+    color: $button-main-color;
+  }
+
+  &__link.is-active {
+    color: $button-main-color;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: $button-main-color;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 8px;
+  }
+}
