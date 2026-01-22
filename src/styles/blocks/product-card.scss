@@ -1,0 +1,135 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  font-family: Roboto, sans-serif;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 408px;
+  }
+}
+
+.product-card {
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 32px 16px 16px;
+  box-sizing: border-box;
+  transition: transform 300ms ease;
+  z-index: 0;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+
+    &__title {
+      color: #34568b;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    width: 166px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 auto 4px;
+    transition: color 0.3s ease;
+  }
+
+  &__text {
+    width: 166px;
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $add-info-color; // змінна SCSS
+    margin-bottom: 16px;
+    letter-spacing: 0%;
+  }
+
+  &__rating {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__rating-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+  }
+
+  &__price {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $add-info-color;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 40px;
+    width: 166px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    background-color: $accent-color; // змінна SCSS
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #fff;
+      color: #00acdc;
+    }
+  }
+}
