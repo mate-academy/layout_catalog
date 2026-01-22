@@ -1,0 +1,105 @@
+@use './vars' as vars;
+
+.card {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 200px;
+  padding: 32px 19px 16px;
+
+  transition: transform 0.3s ease;
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  &__text {
+    line-height: 14px;
+    color: vars.$color-text-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__note {
+    color: vars.$color-text-primary;
+    line-height: 14px;
+    margin-left: 17px;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 18px;
+    color: vars.$color-text-secondary;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: vars.$color-text-primary;
+  }
+
+  &__button {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+
+    padding: 11px 70px;
+
+    border: 1px solid vars.$color-blue-dark;
+    border-radius: 5px;
+    background-color: vars.$color-blue-light;
+
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      color: vars.$color-blue-dark;
+      background-color: vars.$color-white;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
+      transition: color 0.3s ease;
+    }
+  }
+}

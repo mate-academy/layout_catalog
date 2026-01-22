@@ -1,0 +1,46 @@
+@use './vars' as vars;
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    color: vars.$color-text-primary;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      color: vars.$color-blue-dark;
+    }
+  }
+}
+
+.is-active {
+  color: vars.$color-blue-dark;
+  position: relative;
+
+  &::after {
+    content: '';
+    background-color: vars.$color-blue-dark;
+    border-radius: 8px;
+    width: 100%;
+    height: 4px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+}
