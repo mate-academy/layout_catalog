@@ -1,0 +1,79 @@
+@use '../abstracts/variables' as vars;
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: vars.$background-color;
+  padding: 0 20px;
+
+  &__logo img {
+    height: 50px;
+    display: block;
+    align-items: left;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    margin: 0 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: vars.$blue-color;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 400;
+    position: relative;
+
+    &:hover {
+      color: vars.$light-blue-color;
+    }
+
+    &[data-qa='nav-hover'] {
+      color: vars.$light-blue-color;
+    }
+
+    &.is-active {
+      color: vars.$light-blue-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: vars.$light-blue-color;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      margin: 10px 0;
+    }
+  }
+}
