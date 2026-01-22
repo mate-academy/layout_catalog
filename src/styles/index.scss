@@ -1,3 +1,254 @@
+$column-length: 160px;
+$row-length: 408px;
+$basic-font-weight: 500;
+$card-width: 200px;
+$border: 1px;
+$star-size: 16px;
+$card-price-font-weight: 700;
+$hover-color: #00acdc;
+$background-color: #fff;
+$basic-color: rgba(0, 172, 220, 1);
+
 body {
+  color: rgba(6, 11, 53, 1);
   margin: 0;
+  font-family: Roboto, sans-serif;
+  line-height: 14px;
+  font-weight: $basic-font-weight;
+  font-style: normal;
+}
+
+.container {
+  justify-content: center;
+  display: grid;
+
+  grid-template-columns: $column-length $column-length $column-length $column-length;
+  grid-template-rows: $row-length $row-length;
+
+  gap: 46px 48px;
+  padding: 50px 40px;
+  box-sizing: border-box;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width); // 2 columns
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width); // 3 columns
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width); // 4 columns
+  }
+}
+
+.product-card {
+  margin-bottom: 20px;
+  width: $card-width;
+  box-sizing: border-box;
+  background: white;
+  border: $border solid #f3f3f3;
+  padding: 32px $star-size $star-size;
+  grid-area: card;
+}
+
+.product-card__image {
+  width: 160px;
+  height: 134px;
+  display: block;
+  margin: 0 auto 40px;
+}
+
+.product-card__title {
+  color: rgba(6, 11, 53, 1);
+  font-family: Roboto, sans-serif;
+  font-weight: $basic-font-weight;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 0 3px;
+}
+
+.product-card__code {
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  font-size: 10px;
+  line-height: 16px;
+  margin-bottom: 15px;
+  display: block;
+  color: #616070;
+}
+
+.product-card__review {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  align-items: flex-end;
+}
+
+.stars {
+  display: flex;
+}
+
+.stars__star {
+  width: $star-size;
+  height: $star-size;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 4px;
+}
+
+.stars--4 .stars__star:nth-child(-n + 4) {
+  background-image: url(../images/star-active.svg);
+}
+
+.product-card__review-count {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.product-card__price-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.product-card__price-label {
+  font-size: 12px;
+  line-height: 18px;
+  color: #616070;
+}
+
+.product-card__price {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: $card-price-font-weight;
+  color: #060b35;
+}
+
+.product-card__buy {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $hover-color;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: $card-price-font-weight;
+  line-height: 16px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.product-card__buy:hover {
+  border: $border solid $hover-color;
+  background-color: $background-color;
+  color: $hover-color;
+}
+
+.roboto-regular {
+  font-family: Roboto, serif;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: $background-color;
+  padding: 0 20px;
+}
+
+.moyoLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+}
+
+.nav {
+  color: rgba(6, 11, 53, 1);
+  transform: translateX(-30px);
+  height: 60px;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav li + li {
+  margin-left: 20px;
+  line-height: 60px;
+}
+
+.nav__link {
+  font-weight: $basic-font-weight;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(6, 11, 53, 1);
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__link a:hover {
+  color: $basic-color;
+}
+
+
+.is-active {
+  display: flex;
+  color: $basic-color;
+  align-items: center;
+  justify-content: center;
+  background: $background-color;
+  line-height: 60px;
+}
+
+a.is-active {
+  display: flex;
+  align-items: center;
+  background-color: $background-color;
+}
+
+.is-active::after {
+  content: '   ';
+  width: 100%;
+  height: 4px;
+  background-color: $basic-color;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+  html {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    width: 100%;
+  }
 }
