@@ -1,3 +1,256 @@
+:root {
+  --color-accent: #00acdc;
+}
+
+html,
 body {
   margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-inline: 50px;
+  background-color: #fff;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #060b35;
+  font-size: 12px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  letter-spacing: 0;
+  transition: color 0.3s;
+  text-transform: uppercase;
+}
+
+.nav__link:hover {
+  color: var(--color-accent);
+}
+
+.nav__link.is-active {
+  color: var(--color-accent);
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-accent);
+  border-radius: 8px;
+}
+
+.nav__list li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  margin-top: 40px;
+  margin-bottom: 4px;
+  margin-inline: 16px;
+  color: #060b35;
+}
+
+.card__product {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  margin-right: 64px;
+  color: #616070;
+}
+
+.stars {
+  display: flex;
+  margin-top: 16px;
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  background-image: url(../images/star.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  color: #616070;
+}
+
+.stars__text {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: right;
+  padding-left: 16px;
+  color: #060b35;
+}
+
+.stars__star:last-child {
+  margin-right: 0;
+}
+
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(../images/star-active.svg);
+}
+
+.card {
+  width: 200px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 300ms ease;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card__title {
+  transition: color 300ms ease;
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
+
+.card__image {
+  width: 160px;
+  height: 134px;
+  margin-top: 32px;
+  background-image: url(../images/imac.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.card__price {
+  display: flex;
+  margin-top: 24px;
+}
+
+.card__text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: #616070;
+}
+
+.card__cost {
+  margin-left: 86px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: right;
+  vertical-align: bottom;
+}
+
+.card__buy {
+  height: 40px;
+  width: 166px;
+  border-radius: 5px;
+  background-color: #00acdc;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #00acdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  margin-top: 16px;
+
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+.card__buy:hover {
+  color: #00acdc;
+  background-color: #fff;
+  border: 1px solid #00acdc;
+}
+
+.container {
+  --count-column: 1;
+
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--count-column), 200px);
+  gap: 48px 46px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    --count-column: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --count-column: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --count-column: 4;
+  }
 }
