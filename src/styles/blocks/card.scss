@@ -122,33 +122,13 @@
       border: 1px solid $blue;
     }
   }
-}
 
-$resolutions: (
-  488px: 2,
-  768px: 3,
-  1024px: 4,
-);
-
-@each $resolution, $cards in $resolutions {
-  @media screen and (min-width: $resolution) {
-    .cards-container {
-      grid-template-columns: repeat($cards, $cardWidth);
-    }
+  &:hover {
+    transform: scale(1.2);
+    z-index: 2;
   }
-}
 
-@media screen and (min-width: 1200px) {
-  .cards-container {
-    padding: 50px 128px;
+  &:hover &_section--title {
+    color: $titleColorHover;
   }
-}
-
-.card:hover {
-  transform: scale(1.2);
-  z-index: 2;
-}
-
-.card:hover .card__section--title {
-  color: $titleColorHover;
 }

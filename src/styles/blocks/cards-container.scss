@@ -1,0 +1,32 @@
+@use '../utils/variables.scss' as *;
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, $cardWidth);
+  justify-content: center;
+  justify-items: center;
+  gap: 46px 48px;
+  max-width: 1200px;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+
+$resolutions: (
+  488px: 2,
+  768px: 3,
+  1024px: 4,
+);
+
+@each $resolution, $cards in $resolutions {
+  @media screen and (min-width: $resolution) {
+    .cards-container {
+      grid-template-columns: repeat($cards, $cardWidth);
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cards-container {
+    padding: 50px 128px;
+  }
+}
