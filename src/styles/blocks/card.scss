@@ -1,0 +1,115 @@
+.card {
+  font-family: $font-type;
+  width: $card-width;
+  box-sizing: border-box;
+  background-color: $background-color;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform $transition-duration;
+
+  &__top {
+    padding: $card-top-padding;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: block;
+  }
+
+  &__bottom {
+    padding: $card-bottom-padding;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+    margin-bottom: $margin-bottom-card-description-price;
+
+    &-title {
+      font-weight: $font-weight-medium;
+      font-size: $font-size-sm;
+      line-height: $line-height-md;
+      letter-spacing: $letter-spacing-default;
+      margin: 0;
+      color: $main-accent-font-color;
+      transition: color $transition-duration;
+    }
+
+    &-code {
+      font-weight: $font-weight-regular;
+      font-size: $font-size-xs;
+      line-height: $line-height-xs;
+      letter-spacing: $letter-spacing-default;
+      color: $secondary-font-color;
+    }
+  }
+
+  &:hover {
+    transform: $card-hover-scale;
+
+    .card__description-title {
+      color: $card-hovered-title-color;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $margin-bottom-card-description-price;
+    margin-top: 24px;
+
+    &-caption {
+      font-weight: $font-weight-regular;
+      font-size: $font-size-sm;
+      line-height: $line-height-md;
+      letter-spacing: $letter-spacing-default;
+      align-self: flex-end;
+      color: $secondary-font-color;
+    }
+
+    &-digits {
+      font-weight: 700;
+      font-size: $font-size-lg;
+      line-height: $line-height-md;
+      letter-spacing: $letter-spacing-default;
+      align-self: flex-end;
+      color: $main-accent-font-color;
+    }
+  }
+  &__buy {
+    width: 100%;
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 100%;
+      text-decoration: none;
+      color: $background-color;
+      background-color: $is-active-color;
+      font-weight: 700;
+      font-size: $font-size-md;
+      line-height: $line-height-sm;
+      letter-spacing: $letter-spacing-default;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 5px;
+      transition-property: background-color, color;
+      transition-duration: $transition-duration;
+
+      &:hover {
+        box-sizing: border-box;
+        border: 1px solid $is-active-color;
+        background-color: $background-color;
+        color: $is-active-color;
+      }
+    }
+  }
+}
