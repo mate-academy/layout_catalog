@@ -28,10 +28,8 @@ $star-active: '../images/star-active.svg';
   &__list {
     display: flex;
     gap: 20px;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
   }
 
@@ -44,38 +42,34 @@ $star-active: '../images/star-active.svg';
     color: $nav-text-color;
     text-decoration: none;
     text-transform: uppercase;
-
     transition: color $animation-duration;
+    position: relative;
 
     &:hover {
       color: $blue-color;
     }
   }
 
-  &__item.is-active &__item-link {
+  &__item-link.is-active {
     font-weight: 700;
   }
 
-  &__item.is-active::after {
+  &__item-link.is-active::after {
     content: '';
-
     position: absolute;
     bottom: -12px;
     left: 0;
-
     width: 100%;
     height: 4px;
-
     background-color: $blue-color;
   }
 }
 
 .catalog {
   display: grid;
-  grid-template-columns: repeat(1, card-width);
+  grid-template-columns: repeat(1, $card-width);
   gap: $card-gap-v $card-gap-h;
   justify-content: center;
-
   padding: $catalog-padding-v $catalog-padding-h;
 
   @media (min-width: 488px) {
@@ -94,14 +88,11 @@ $star-active: '../images/star-active.svg';
 .card {
   position: relative;
   transform-origin: center top;
-
   width: $card-width;
   height: $card-height;
   padding: 12px;
   border: 1px solid #f1f1f1;
-
   background-color: #fff;
-
   transition: transform $animation-duration;
 
   &__image img {
@@ -112,7 +103,7 @@ $star-active: '../images/star-active.svg';
   &__title {
     margin: 30px 0;
     font-size: 14px;
-    color: #000;
+    color: $color;
     transition: color $animation-duration;
   }
 
@@ -136,19 +127,13 @@ $star-active: '../images/star-active.svg';
 
   &__buy {
     display: block;
-
     padding: 10px;
-
     font-weight: 700;
     color: #fff;
     text-align: center;
     text-decoration: none;
-
     background-color: $blue-color;
-
-    transition:
-      background-color $animation-duration,
-      color $animation-duration;
+    transition: background-color $animation-duration, color $animation-duration;
   }
 
   &:hover {
