@@ -31,3 +31,214 @@ $line-height-m: 18px;
 $header-height: 60px;
 $grid-gap-vertical: 46px;
 $grid-gap-horizontal: 48px;
+
+// Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+  color: $color-secondary;
+  background-color: $color-white;
+}
+
+// Header
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $spacing-huge;
+  background-color: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    width: $size-logo;
+    height: $size-logo;
+  }
+
+  &__logo-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Navigation
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: $spacing-m;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    font-size: $font-size-s;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-primary;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.is-active {
+      color: $color-accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: $spacing-xxs;
+        border-radius: $border-radius-m;
+        background-color: $color-accent;
+      }
+    }
+  }
+}
+
+// Catalog grid
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $size-card-width);
+  gap: $grid-gap-vertical $grid-gap-horizontal;
+  justify-content: center;
+  padding: $spacing-huge $spacing-xxl;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $size-card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $size-card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $size-card-width);
+  }
+}
+
+// Card
+.card {
+  width: $size-card-width;
+  border: 1px solid $color-gray-light;
+  border-radius: $border-radius-s;
+  background-color: $color-white;
+
+  &__inner {
+    padding: $spacing-xl $spacing-s $spacing-s;
+    transition: transform $transition-duration;
+  }
+
+  &:hover .card__inner {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto $spacing-xxl;
+  }
+
+  &__title {
+    margin-bottom: $spacing-xxs;
+    font-size: $font-size-s;
+    font-weight: 500;
+    line-height: $line-height-m;
+    color: $color-primary;
+    transition: color $transition-duration;
+  }
+
+  &__code {
+    margin-bottom: $spacing-s;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-l;
+  }
+
+  &__reviews-count {
+    color: $color-primary;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-s;
+  }
+
+  &__price-label {
+    font-size: $font-size-s;
+    line-height: $line-height-m;
+  }
+
+  &__price-value {
+    font-size: $font-size-l;
+    font-weight: 700;
+    line-height: $line-height-m;
+    color: $color-primary;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size-logo;
+    border: 1px solid $color-accent;
+    border-radius: $border-radius-s;
+    background-color: $color-accent;
+    color: $color-white;
+    font-size: $font-size-m;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color $transition-duration, color $transition-duration;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-accent;
+    }
+  }
+}
+
+// Stars
+.stars {
+  display: flex;
+
+  &__icon {
+    width: $size-star;
+    height: $size-star;
+    margin-right: $spacing-xxs;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
