@@ -1,4 +1,8 @@
+// =======================
 // Variables
+// =======================
+
+// Colors
 $color-white: #fff;
 $color-gray-light: #f3f3f3;
 $color-primary: #060b35;
@@ -6,10 +10,49 @@ $color-secondary: #616070;
 $color-accent: #00acdc;
 $color-star: #ffde6a;
 $color-title-hover: #34568b;
+
+// Typography
 $font-family: 'Roboto', sans-serif;
+
+// Timing
 $transition-duration: 300ms;
 
+// Sizes / Spacing
+$size-card-width: 200px;
+$size-logo: 40px;
+$size-star: 16px;
+
+$spacing-xxs: 4px;
+$spacing-xs: 12px;
+$spacing-s: 16px;
+$spacing-m: 20px;
+$spacing-l: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 40px;
+$spacing-huge: 50px;
+
+$border-radius-s: 5px;
+$border-radius-m: 2px;
+
+$font-size-xs: 10px;
+$font-size-s: 12px;
+$font-size-m: 14px;
+$font-size-l: 16px;
+
+$line-height-xs: 14px;
+$line-height-s: 16px;
+$line-height-m: 18px;
+
+$header-height: 60px;
+
+// Grid
+$grid-gap-vertical: 46px;
+$grid-gap-horizontal: 48px;
+
+// =======================
 // Reset
+// =======================
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,25 +61,28 @@ $transition-duration: 300ms;
 
 body {
   font-family: $font-family;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
   color: $color-secondary;
   background-color: $color-white;
 }
 
+// =======================
 // Header Block
+// =======================
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 $spacing-huge;
   background-color: $color-white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   &__logo {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: $size-logo;
+    height: $size-logo;
   }
 
   &__logo-image {
@@ -45,7 +91,10 @@ body {
   }
 }
 
+// =======================
 // Nav Block
+// =======================
+
 .nav {
   &__list {
     display: flex;
@@ -53,7 +102,7 @@ body {
   }
 
   &__item {
-    margin-left: 20px;
+    margin-left: $spacing-m;
 
     &:first-child {
       margin-left: 0;
@@ -64,8 +113,8 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    height: 60px;
-    font-size: 12px;
+    height: $header-height;
+    font-size: $font-size-s;
     font-weight: 500;
     white-space: nowrap;
     text-decoration: none;
@@ -86,57 +135,62 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
-        height: 4px;
-        border-radius: 2px;
+        height: $spacing-xxs;
+        border-radius: $border-radius-m;
         background-color: $color-accent;
       }
     }
   }
 }
 
-// Catalog (Main container)
+// =======================
+// Catalog (Grid container)
+// =======================
+
 .catalog {
   display: grid;
-  grid-template-columns: repeat(1, 200px);
-  gap: 46px 48px;
+  grid-template-columns: repeat(1, $size-card-width);
+  gap: $grid-gap-vertical $grid-gap-horizontal;
   justify-content: center;
-  padding: 50px 40px;
+  padding: $spacing-huge $spacing-xxl;
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, $size-card-width);
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, $size-card-width);
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, $size-card-width);
   }
 }
 
+// =======================
 // Card Block
+// =======================
+
 .card {
-  box-sizing: border-box;
-  width: 200px;
-  padding: 32px 16px 16px;
+  width: $size-card-width;
+  padding: $spacing-xl $spacing-s $spacing-s;
   background-color: $color-white;
   border: 1px solid $color-gray-light;
-  border-radius: 5px;
+  border-radius: $border-radius-s;
   transition: transform $transition-duration;
 
   &__image {
     display: block;
     width: 160px;
     height: 134px;
-    margin: 0 auto 40px;
+    margin: 0 auto $spacing-xxl;
   }
 
   &__title {
-    margin: 0 0 4px;
-    font-size: 12px;
+    margin-bottom: $spacing-xxs;
+    font-size: $font-size-s;
     font-weight: 500;
-    line-height: 18px;
+    line-height: $line-height-m;
     color: $color-primary;
     transition: color $transition-duration;
   }
@@ -150,14 +204,14 @@ body {
   }
 
   &__code {
-    margin-bottom: 16px;
+    margin-bottom: $spacing-s;
   }
 
   &__review {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: $spacing-l;
   }
 
   &__reviews-count {
@@ -168,18 +222,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: $spacing-s;
   }
 
   &__price-label {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: $font-size-s;
+    line-height: $line-height-m;
   }
 
   &__price-value {
-    font-size: 16px;
+    font-size: $font-size-l;
     font-weight: 700;
-    line-height: 18px;
+    line-height: $line-height-m;
     color: $color-primary;
   }
 
@@ -187,17 +241,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    height: 40px;
+    height: $size-logo;
     border: 1px solid $color-accent;
-    border-radius: 5px;
+    border-radius: $border-radius-s;
     background-color: $color-accent;
     color: $color-white;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: $font-size-m;
     font-weight: 700;
-    line-height: 16px;
+    line-height: $line-height-s;
     transition:
       background-color $transition-duration,
       color $transition-duration;
@@ -209,14 +262,17 @@ body {
   }
 }
 
+// =======================
 // Stars Block
+// =======================
+
 .stars {
   display: flex;
 
   &__icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
+    width: $size-star;
+    height: $size-star;
+    margin-right: $spacing-xxs;
 
     &:last-child {
       margin-right: 0;
