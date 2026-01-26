@@ -1,3 +1,146 @@
-body {
+$blue: #00acdc;
+$dark-blue: #060b35;
+$title-hover-color: #34568b;
+$transition-speed: 300ms;
+$card-width: 200px;
+
+:root {
+  --blue: #{$blue};
+}
+
+.page {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+
+  &__logo {
+    display: flex;
+
+    img {
+      height: 32px;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    color: $dark-blue;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color $transition-speed;
+
+    &:hover {
+      color: var(--blue);
+    }
+
+    &.is-active {
+      position: relative;
+      color: var(--blue);
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background-color: var(--blue);
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+  grid-template-columns: repeat(1, $card-width);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 20px 16px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  transition: transform $transition-speed;
+
+  &__image {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: $dark-blue;
+    transition: color $transition-speed;
+  }
+
+  &__button {
+    display: block;
+    padding: 10px 0;
+    background-color: var(--blue);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid var(--blue);
+    transition: all $transition-speed;
+  }
+
+  &:hover {
+    z-index: 1;
+    transform: scale(1.2);
+
+    &__title {
+      color: $title-hover-color;
+    }
+
+    &__button {
+      background-color: #fff;
+      color: var(--blue);
+    }
+  }
+}
+
+.stars {
+  color: #ffbc00;
 }
