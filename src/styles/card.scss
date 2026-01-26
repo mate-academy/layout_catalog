@@ -1,0 +1,131 @@
+.button {
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  color: $color-white;
+  text-transform: uppercase;
+  line-height: $height-button-box;
+  font-size: $font-md;
+}
+
+.catalog {
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: $cards-padding;
+  gap: $cards-gap;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  height: $card-height;
+  margin: 0;
+  box-sizing: border-box;
+  border: $border-card;
+  padding: $padding-card;
+  border-radius: $border-radius-card-sm;
+  transition: all 300ms;
+
+  &__title {
+    margin-bottom: $margin-bottom-card;
+    font-weight: $font-weight-medium;
+    font-size: $font-sm;
+    line-height: $line-height-md;
+    color: $color-text-main;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__title {
+    color: $color-card-title-hover;
+  }
+
+  &__code {
+    font-size: $font-xs;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-sm;
+    color: $color-text-secondary;
+    margin-bottom: $margin-bottom-code;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $height-image;
+    width: auto;
+    margin-bottom: $margin-bottom-image;
+  }
+
+  &__review-block {
+    display: flex;
+    align-items: center;
+    font-size: $font-xs;
+    gap: $gap-review-block;
+    margin-bottom: $margin-bottom-review-block;
+    margin-right: auto;
+    font-weight: $font-weight-regular;
+    color: $color-text-main;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $margin-bottom-price;
+    font-weight: $font-weight-regular;
+
+    &-name {
+      color: $color-text-secondary;
+      font-size: $font-sm;
+      line-height: $line-height-md;
+    }
+
+    &-cost {
+      color: $color-text-main;
+      line-height: $line-height-md;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary-hover;
+    border: $border-button-box;
+    height: $height-button-box;
+    width: $button-box-width;
+    border-radius: $border-radius-button-box-sm;
+    transition: all 300ms;
+
+    &:hover {
+      background-color: $color-white;
+      border: $border-hover;
+
+      .button {
+        color: $color-primary-hover; // #00acdc
+      }
+    }
+  }
+}
