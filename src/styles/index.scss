@@ -1,3 +1,135 @@
-body {
+/* ===== VARIABLES ===== */
+$color-primary: #00acdc;
+$color-text: #060b35;
+$color-border: #e5e5e5;
+$color-white: #fff;
+$font-main: 'Roboto', Arial, sans-serif;
+$card-width: 200px;
+$gap-row: 46px;
+$gap-column: 48px;
+$catalog-padding-vertical: 50px;
+$catalog-padding-horizontal: 40px;
+$bp-mobile: 488px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-main;
+  color: $color-text;
+}
+
+/* ===== HEADER ===== */
+.header {
+  padding: 20px 40px;
+
+  &__nav {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    padding-bottom: 8px;
+    color: $color-text;
+    text-decoration: none;
+  }
+
+  &__link.is-active {
+    border-bottom: 2px solid $color-primary;
+    color: $color-primary;
+  }
+}
+
+/* ===== CATALOG ===== */
+.catalog {
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, $card-width);
+    justify-content: center;
+    gap: $gap-row $gap-column;
+
+    @media (min-width: $bp-mobile) {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @media (min-width: $bp-tablet) {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media (min-width: $bp-desktop) {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
+
+/* ===== CARD ===== */
+.card {
+  width: $card-width;
+  border: 1px solid $color-border;
+  background-color: $color-white;
+  text-align: center;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 16px auto;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-text;
+  }
+
+  &__code {
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: $color-text;
+  }
+
+  &__stars {
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: $color-text;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__button {
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    margin-bottom: 16px;
+    border: none;
+    background-color: $color-primary;
+    line-height: 40px;
+    color: $color-white;
+    text-align: center;
+    text-decoration: none;
+  }
 }
