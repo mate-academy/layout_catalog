@@ -12,24 +12,21 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(1, $card-width);
-    gap: 46px 48px;  // я не можу поміняти їх місцями бо тоді графічний тест не пройде, вони стоять правильно
+    gap: 46px 48px;
     justify-content: center;
     overflow: visible;
     margin: 0;
     padding: 0;
 
-    /* 2 columns from 488px */
-    @media (min-width: 488px) {
+    @media (min-width: $breakpoint-sm) {
       grid-template-columns: repeat(2, $card-width);
     }
 
-    /* 3 columns from 768px */
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
       grid-template-columns: repeat(3, $card-width);
     }
 
-    /* 4 columns from 1024px */
-    @media (min-width: 1024px) {
+    @media (min-width: $breakpoint-lg) {
       grid-template-columns: repeat(4, $card-width);
       width: 944px;
       margin: 0 auto;
