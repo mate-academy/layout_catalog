@@ -1,0 +1,102 @@
+.main__container {
+  padding: 50px 40px;
+
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .main__container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main__container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main__container {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  transition: transform 0.3s ease;
+
+  &__image {
+    margin-top: 32px;
+    margin-bottom: 40px;
+
+    height: 134px;
+
+    @include bg-center('../images/imac.jpeg');
+
+    background-size: 160px 134px;
+  }
+
+  &__body {
+    padding: 0 16px 16px;
+  }
+
+  &__title {
+    @include text-style(12px, 18px, 500, $color-dark);
+
+    margin-bottom: 4px;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    @include flex-between;
+
+    margin-bottom: 16px;
+
+    &-text {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-value {
+      @include text-style(16px, 18px, 700, $color-dark);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 12px 69px;
+    background-color: $color-primary;
+    color: $color-white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
