@@ -1,0 +1,73 @@
+@use 'variables' as vars;
+
+.card {
+  position: relative;
+  width: vars.$card-width;
+  height: vars.$card-height;
+  padding: 12px;
+  border: 1px solid #f3f3f3;
+  border-radius: 4px;
+  background-color: #fff;
+  transform-origin: center top;
+  transition: transform vars.$animation-duration;
+
+  &__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin: 30px 0;
+    font-size: 14px;
+    color: vars.$color;
+    transition: color vars.$animation-duration;
+  }
+
+  &__code {
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: #616070;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__price-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__buy {
+    display: block;
+    padding: 10px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: vars.$blue-color;
+    transition:
+      background-color vars.$animation-duration,
+      color vars.$animation-duration;
+  }
+
+  &:hover {
+    z-index: 1;
+    transform: scale(1.2);
+    border: 1px solid vars.$blue-color;
+
+    .card__title {
+      color: vars.$card-title-hover;
+    }
+
+    .card__buy {
+      color: vars.$blue-color;
+      background-color: #fff;
+    }
+  }
+}
