@@ -1,0 +1,32 @@
+@use './variables' as *;
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: $spacing-md;
+
+  &__list {
+    display: flex;
+  }
+
+  &__star {
+    width: $star-size;
+    height: $star-size;
+    margin-right: $spacing-xs;
+    background: url('../images/star.svg') center / contain no-repeat;
+  }
+
+  &--1 .stars__star:nth-child(-n + 1),
+  &--2 .stars__star:nth-child(-n + 2),
+  &--3 .stars__star:nth-child(-n + 3),
+  &--4 .stars__star:nth-child(-n + 4),
+  &--5 .stars__star:nth-child(-n + 5) {
+    background-image: url('../images/star-active.svg');
+  }
+
+  &__reviews {
+    font-size: $font-size-sm;
+    color: $color-main;
+  }
+}

@@ -1,0 +1,80 @@
+@use './variables' as *;
+
+.card {
+  width: $card-width;
+  background-color: $color-white;
+  border: $border-width-sm solid $color-border;
+  border-radius: $card-radius;
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition;
+  transform-origin: center;
+
+  &__title {
+    margin: $spacing-40 $spacing-md 0;
+    font-size: $title-size;
+    color: $color-main;
+    transition: color $transition;
+
+    &::after {
+      content: 'Product code: 195434';
+      display: block;
+      font-size: $font-size-sm;
+      color: $color-secondary;
+      margin-top: $spacing-xs;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  &:hover .card__title {
+    color: $color-hover-title;
+  }
+
+  &__image {
+    width: $card-img-width;
+    height: $card-img-height;
+    margin: $spacing-32 auto 0;
+    background: url('../images/imac.jpeg') center / cover no-repeat;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin: $spacing-24 $spacing-md 0;
+
+    &-text {
+      font-size: $text-size;
+      color: $color-secondary;
+    }
+
+    &-value {
+      font-size: $value-size;
+      font-weight: bold;
+      color: $color-main;
+    }
+  }
+
+  &__button {
+    margin: $spacing-md;
+    height: $button-height;
+    background-color: $color-accent;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $card-radius;
+    transition: all $transition;
+    border: $border-width-sm solid $color-accent;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-accent;
+    }
+  }
+}
