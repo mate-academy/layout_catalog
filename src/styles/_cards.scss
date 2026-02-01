@@ -1,0 +1,28 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.cards {
+  max-width: $cards-width;
+  gap: $cards-container-gap;
+  padding: $cards-container-padding;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: $card-width;
+  justify-content: center;
+  box-sizing: border-box;
+
+  @include for-size(tablet) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include for-size(desktop-sm) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include for-size(desktop-lg) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+// NOTE: This file manges the cards container layout (Grid)
+// Children: _card.scss components are placed inside this container

@@ -1,0 +1,118 @@
+@use 'variables' as *;
+
+.card {
+  width: $card-width;
+  background: $bg-card;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $gray-accents;
+  border-radius: $border-radius-md;
+  padding: $spacing-8 $spacing-4 $spacing-4;
+  transition: transform $transition-duration $transition-timing;
+
+  &__image {
+    width: $card-image-width;
+    height: $card-image-height;
+    display: block;
+    margin: 0 auto $spacing-10;
+    object-fit: cover;
+    border-radius: $border-radius-md;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 $spacing-base;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-medium;
+    color: $text-accent-color;
+    transition: color $transition-duration $transition-timing;
+  }
+
+  &__code {
+    margin-bottom: $spacing-4;
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    color: $text-secondary-color;
+  }
+
+  &__review-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-6;
+  }
+
+  &__review-count {
+    color: $text-accent-color;
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-4;
+  }
+
+  &__price-label {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-medium;
+    color: $text-secondary-color;
+  }
+
+  &__price-value {
+    font-size: $font-size-xlarge;
+    font-weight: $font-weight-bold;
+    color: $text-accent-color;
+  }
+
+  &__buy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $card-btn-height;
+    background-color: $blue-primary;
+    border-radius: $border-radius-md;
+    border: 1px solid $blue-primary;
+    color: $bg;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-large;
+    line-height: $line-height-medium-tight;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    transition: all $transition-duration $transition-timing;
+
+    &:hover {
+      background-color: $bg-btn-hover;
+      color: $blue-primary;
+      border: 1px solid $blue-primary;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: scale($card-scale);
+    z-index: 10;
+    box-shadow: 0 10px $spacing-6 $shadow-hover;
+  }
+
+  &:hover &__title,
+  &:focus-visible &__title {
+    color: $text-hover-color;
+  }
+}
+
+// NOTE: This container uses the 'stars' component
+// defined in _stars.scss

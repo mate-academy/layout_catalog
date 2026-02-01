@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+@mixin for-size($size) {
+  @if $size == tablet {
+    @media (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $size == desktop-sm {
+    @media (min-width: $breakpoint-desktop-sm) {
+      @content;
+    }
+  } @else if $size == desktop-lg {
+    @media (min-width: $breakpoint-desktop-lg) {
+      @content;
+    }
+  }
+}
