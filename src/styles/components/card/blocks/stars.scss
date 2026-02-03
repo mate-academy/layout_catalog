@@ -1,0 +1,29 @@
+.stars {
+  display: flex;
+  width: $stars-width;
+  height: $stars-height;
+  margin-block: $stars-margin-block;
+  padding-inline: $stars-padding-inline;
+
+  list-style: none;
+
+  &__star {
+    display: block;
+    width: $star-width;
+    height: $star-height;
+
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:not(:first-child) {
+      margin-left: $stars-margin-left;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} > &__star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}

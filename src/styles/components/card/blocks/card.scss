@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $card-width;
+  padding-block: $card-padding-block-start $card-padding-block-end;
+  padding-inline: $card-padding-inline;
+
+  box-sizing: border-box;
+
+  border: $card-brdr-width solid $card-brdr-color;
+  border-radius: $card-brdr-radius;
+
+  background-color: $card-bg-color;
+
+  transition-duration: $transition-duration;
+
+  &__image {
+    width: $card-image-width;
+    height: $card-image-height;
+    margin-bottom: $card-image-margin-bottom;
+  }
+
+  &__title {
+    margin-top: $card-title-margin-top;
+    margin-bottom: $card-title-margin-bottom;
+
+    font-size: $page-font-size;
+    font-weight: $card-title-font-weight;
+    line-height: $card-title-line-height;
+    color: $page-main-color;
+  }
+
+  &__code {
+    width: $card-code-width;
+    margin-bottom: $card-code-margin-bottom;
+
+    font-size: $card-code-font-size;
+    font-weight: $card-code-font-weight;
+    line-height: $card-code-line-height;
+    color: $page-secondary-color;
+  }
+
+  &__rating {
+    margin-bottom: $card-rating-margin-bottom;
+
+    @include rating-row;
+  }
+
+  &__price {
+    margin-bottom: $card-price-margin-bottom;
+
+    @include rating-row;
+  }
+
+  &:hover {
+    transform: scale($card-transform-scale);
+
+    .card__title {
+      color: $card-title-color-hover;
+    }
+  }
+}

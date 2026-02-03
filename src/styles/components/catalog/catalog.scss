@@ -1,0 +1,15 @@
+@import './utils/mixins';
+@import '../card/card';
+
+.catalog {
+  @include count-columns;
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(var(--columns), $card-width);
+  gap: $catalog-row-gap $catalog-column-gap;
+
+  padding-inline: $catalog-padding-inline;
+  padding-block: $catalog-padding-block;
+  box-sizing: border-box;
+}
