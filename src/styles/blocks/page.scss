@@ -1,0 +1,46 @@
+.body {
+  margin: 0;
+  font-family: Roboto, 'Courier New', Courier, monospace;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-right: $header-padding-inline;
+
+  &__logo {
+    width: $logo-size;
+    height: $logo-size;
+    opacity: 1;
+    padding-left: $header-padding-inline;
+  }
+}
+
+.main {
+  --column-count: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 200px);
+  padding: $main-block-padding $main-inline-padding;
+
+  gap: $grid-gaps-block 46px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .main {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --column-count: 4;
+  }
+}
