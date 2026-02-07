@@ -16,6 +16,7 @@
   }
 }
 
+$border-color: #f3f3f3;
 $main-color: #00acdc;
 $text-accent-color: #060b35;
 $text-secondary-color: #616070;
@@ -24,12 +25,12 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 10px;
   line-height: 14px;
-  color: $text-secondary-color;
+  color: $text-accent-color;
   margin: 0;
 }
 
 :root {
-  --blue: #00acdc;
+  color: $main-color;
 }
 
 .header {
@@ -42,12 +43,12 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.logo {
+.header_logo {
   display: flex;
   align-items: center;
 }
 
-.header_logo {
+.header-logo {
   display: block;
   width: 40px;
   height: 40px;
@@ -90,6 +91,7 @@ body {
 
 .nav__link:hover {
   color: $main-color;
+  transition: color 300ms;
 }
 
 .nav__link.is-active {
@@ -114,7 +116,6 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 50px 40px;
-  grid-template-columns: (1, 200px);
 }
 
 .card {
@@ -124,13 +125,15 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   width: 200px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $border-color;
   border-radius: 5px;
   padding: 32px 16px 16px;
   transition: transform 300ms;
 
   &:hover {
     transform: scale(1.2);
+    color: $text-accent-color;
+    transition: color 300ms;
   }
 
   &__image {
@@ -203,6 +206,7 @@ body {
   &__buy:hover {
     color: $main-color;
     background-color: #fff;
+    transition: color 300ms;
   }
 }
 
