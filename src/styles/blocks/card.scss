@@ -7,6 +7,8 @@
   width: $card-width;
   padding-inline: 16px;
   color: $main-text-color;
+  transition: transform $hover-transition-duration;
+  transform-origin: center;
 
   &__image {
     height: 134px;
@@ -23,7 +25,7 @@
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 4px;
-    transition: all 0.3s;
+    transition: all $hover-transition-duration;
   }
 
   &__product-code {
@@ -77,7 +79,7 @@
     align-items: center;
     text-align: center;
     margin-bottom: 16px;
-    transition: all 0.3s;
+    transition: all $hover-transition-duration;
 
     &-link {
       display: block;
@@ -88,7 +90,7 @@
       font-weight: 700;
       font-size: 14px;
       color: $button-color-text;
-      transition: all 0.3s;
+      transition: all $hover-transition-duration;
 
       &:hover {
         color: $button-color;
@@ -96,13 +98,18 @@
     }
 
     &:hover {
-      background-color: $card-color;
+      background-color: #fff;
       border: 1px solid $button-color;
       box-sizing: border-box;
     }
   }
 
   &:hover &__title {
-    color: #34568b;
+    color: $card-title-hover;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
   }
 }
