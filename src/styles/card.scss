@@ -1,0 +1,122 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $width-columns);
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $width-columns);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $width-columns);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $width-columns);
+  }
+}
+
+.card {
+  height: 408px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding-block: 32px 16px;
+  padding-inline: 16px;
+  width: $width-columns;
+  transition: transform $transition ease, box-shadow $transition ease;
+  transform-origin: center;
+
+  &:hover {
+     transform: scale(1.2); z-index: 2;
+  }
+
+  &__image {
+    background-image: url(../images/imac.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    width: 168px;
+    height: 134px;
+    margin-bottom: 40px;
+  }
+  &__title {
+    display: flex;
+    place-content: center;
+    margin-bottom: 4px;
+    transition: color $transition ease;
+  }
+  &__title-2 {
+    font-family: $font-family;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    color: $color2;
+    margin-bottom: 16px;
+  }
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  &__start-title {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: 10px;
+    color: $color;
+    line-height: 14px;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__price-1 {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: 12px;
+    line-height: $line-height;
+    color: $color2;
+  }
+  &__price-2 {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: $line-height;
+    color: $color;
+  }
+  &__button {
+    display: flex;
+    color: #fff;
+    background-color: $color3;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid $color3;
+    border-radius: 5px;
+    width: 168px;
+    height: 40px;
+    text-transform: uppercase;
+    transition: background-color $transition ease, color $transition ease;
+  }
+  &__button:hover {
+    background-color: #fff;
+    color: $color2;
+  }
+  &:hover .card__title {
+    color: $color3;
+  }
+}
