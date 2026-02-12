@@ -11,8 +11,8 @@ body {
 }
 
 :root {
-  --blue: #00acdc;
-  --header-height: 60px;
+  --blue: $color;
+  --header-height: $header-height;
 }
 
 .header {
@@ -46,6 +46,12 @@ body {
     &:hover {
       color: var(--blue);
     }
+    &.is-active {
+    color: var(--blue);
+    &:hover {
+    color: var(--blue);
+    }
+    }
     &.is-active::after {
       content: '';
       position: absolute;
@@ -62,10 +68,4 @@ body {
   }
 }
 
-.is-active {
-  color: var(--blue);
-  &:hover {
-    color: var(--blue);
-    text-decoration: underline;
-  }
-}
+
