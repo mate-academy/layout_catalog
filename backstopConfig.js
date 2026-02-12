@@ -7,7 +7,9 @@ const { basicScenario } = backstop;
 const basic = {
   ...basicScenario,
   label: 'Elementary test',
-  referenceUrl: basicScenario.referenceUrl + '/catalog/',
+  url: 'https://johannpdaniel.github.io/layout_catalog/',
+  referenceUrl: 'https://johannpdaniel.github.io/layout_catalog/',
+  testUrl: 'https://johannpdaniel.github.io/layout_catalog/',
 };
 
 const config = {
@@ -65,13 +67,13 @@ const config = {
       label: 'Card with data-qa_card',
       selectors: ['[data-qa="card"]'],
     },
-    // {
-    //   ...basic,
-    //   label: 'Card with data-qa_card-hover',
-    //   selectors: ['[data-qa="card"]'],
-    //   hoverSelector: '[data-qa="card-hover"]',
-    //   postInteractionWait: 1000,
-    // },
+    {
+      ...basic,
+      label: 'Card with data-qa_card-hover',
+      selectors: ['[data-qa="card"]'],
+      hoverSelector: '[data-qa="card-hover"]',
+      postInteractionWait: 1000,
+    },
   ],
 };
 
