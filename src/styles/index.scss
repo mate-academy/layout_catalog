@@ -1,3 +1,210 @@
+$accent-color: #00acdc;
+$nav-text-color: #060b35;
+$hover-title-color: #34568b;
+$title-hover-color: #34568b;
+$transition-speed: 0.3s;
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  color: $nav-text-color;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  &__logo {
+    display: block;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: $nav-text-color;
+    position: relative;
+    transition: color $transition-speed;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &.is-active {
+      color: $accent-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $accent-color;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  gap: 46px 48px; // pionowo poziomo
+
+  // Responsywność siatki
+  grid-template-columns: repeat(1, 200px);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+// Karta produktu
+
+.card {
+  width: 200px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  transition:
+    transform $transition-speed,
+    box-shadow $transition-speed;
+  position: relative;
+
+  &__image {
+    display: block;
+    box-sizing: border-box;
+    width: 160px;
+    height: 134px;
+    margin: 32px auto 40px;
+    object-position: center;
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $nav-text-color;
+    margin: 0 0 4px;
+    transition: color $transition-speed;
+  }
+
+  &__code {
+    font-size: 10px;
+    color: #616070;
+    margin: 0 0 16px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    color: $nav-text-color;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-label {
+      font-size: 12px;
+      color: #616070;
+      line-height: 18px;
+    }
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: $nav-text-color;
+      line-height: 18px;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 16px;
+    line-height: 16px;
+    background-color: $accent-color;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid $accent-color;
+    border-radius: 5px;
+    transition: all $transition-speed;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: #fff;
+      color: $accent-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    .card__title {
+      color: $title-hover-color;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} .stars__star:nth-child(-n + #{$i}) {
+      background-image: url('../images/star-active.svg');
+    }
+  }
 }
