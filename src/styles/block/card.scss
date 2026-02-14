@@ -1,0 +1,123 @@
+@use '../utils/mixins' as m;
+@use '../utils/variables' as v;
+
+.product-card {
+  @include m.flex-center;
+
+  width: v.$card-width;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid v.$color-lightGrey;
+  padding: v.$card-padding-top v.$card-padding-horizontal v.$card-padding-bottom;
+  border-radius: v.$card-border-radius;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    width: v.$card-image-width;
+    height: v.$card-image-height;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: v.$card-title-font-size;
+    line-height: v.$card-title-line-height;
+    text-align: left;
+    color: v.$color-darkBlue;
+    margin: v.$card-title-margin-top auto 0;
+
+    transition: color 300ms;
+  }
+
+  &:hover &__title {
+    color: v.$color-greyBlue;
+  }
+
+  &__code {
+    align-self: flex-start;
+    font-weight: 400;
+    margin-top: v.$card-code-margin-top;
+    margin-bottom: 0;
+    font-size: v.$card-code-font-size;
+    line-height: v.$card-code-line-height;
+    color: v.$color-grey;
+  }
+
+  &__reviews {
+    @include m.flex-between;
+
+    margin-top: v.$card-reviews-margin-top;
+    margin-bottom: v.$card-reviews-margin-bottom;
+    width: v.$card-reviews-width;
+    align-items: flex-end;
+  }
+
+  &__reviews-text {
+    font-weight: 400;
+    font-size: v.$card-reviews-text-font-size;
+    line-height: v.$card-reviews-text-line-height;
+    color: v.$color-darkBlue;
+    text-align: right;
+  }
+
+  &__price {
+    @include m.flex-between;
+
+    align-items: center;
+    margin-bottom: v.$card-price-margin-bottom;
+    width: v.$card-reviews-width;
+  }
+
+  &__price-title {
+    width: v.$card-price-title-width;
+    font-weight: 400;
+    font-size: v.$card-price-title-font-size;
+    line-height: v.$card-price-title-line-hight;
+    color: v.$color-grey;
+  }
+
+  &__price-number {
+    width: v.$card-price-number-width;
+    font-weight: 700;
+    font-size: v.$card-price-number-font-size;
+    line-height: v.$card-price-number-line-hight;
+    text-align: right;
+    color: v.$color-darkBlue;
+  }
+
+  &__button-text {
+    font-weight: 700;
+    font-size: v.$card-button-text-font-size;
+    line-height: v.$card-button-text-line-hight;
+    text-align: center;
+    text-transform: uppercase;
+    color: v.$color-white;
+  }
+
+  &__button {
+    @include m.flex-center;
+
+    width: 100%;
+    height: v.$card-button-height;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: v.$card-border-radius;
+    background-color: v.$color-blue;
+    border: 1px solid v.$color-blue;
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      background-color: v.$color-white;
+
+      .product-card__button-text {
+        color: v.$color-blue;
+      }
+    }
+  }
+}

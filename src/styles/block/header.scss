@@ -1,0 +1,74 @@
+@use '../utils/variables' as v;
+
+.header {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+
+  height: 60px;
+  padding: 0 50px;
+  background-color: v.$color-white;
+
+  &__logo-image {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    color: v.$color-darkBlue;
+    transition: color 300ms;
+
+    &:hover {
+      color: v.$color-blue;
+    }
+
+    &.is-active {
+      color: v.$color-blue;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: v.$color-blue;
+    }
+  }
+
+  &__link--wide {
+    white-space: nowrap;
+  }
+}
