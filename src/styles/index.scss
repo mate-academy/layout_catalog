@@ -1,3 +1,78 @@
-body {
+@use './src/styles/blocks/variables';
+@use './src/styles/blocks/stars';
+@use './src/styles/blocks/card';
+@use './src/styles/blocks/catalog';
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+h2,
+p {
   margin: 0;
+}
+
+:root {
+  --header-height: 60px;
+  --blue-color: #00acdc;
+}
+
+.page {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: 50px;
+  box-sizing: border-box;
+}
+
+.header__list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.header__link {
+  // color: $color-main;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 300ms;
+}
+
+.header__link:hover {
+  // color: $color-accent;
+}
+
+.header__link.is-active {
+  position: relative;
+  color: var(--blue-color);
+}
+
+.header__link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 37px;
+  height: 4px;
+  background: var(--blue-color);
+  border-radius: 2px;
 }
