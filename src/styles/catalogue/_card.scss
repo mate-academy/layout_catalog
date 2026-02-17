@@ -1,0 +1,134 @@
+@use 'mixins' as mix;
+@use 'variables' as vars;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, vars.$card-width);
+
+  align-items: start;
+  justify-content: center;
+
+  padding: 50px 40px;
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .wrapper {
+    grid-template-columns: repeat(2, vars.$card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(3, vars.$card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    grid-template-columns: repeat(4, vars.$card-width);
+  }
+}
+
+.card {
+  width: 100%;
+  height: vars.$card-height;
+  box-sizing: border-box;
+
+  border: 1px solid vars.$grey-elements;
+  border-radius: vars.$border-radius;
+  font-family: vars.$font-family;
+
+   transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    width: vars.$image-width;
+    height: vars.$image-height;
+    display: block;
+    margin: 32px auto 0;
+  }
+
+  &__title {
+    width: vars.$width;
+    height: 36px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    color: vars.$main-accent;
+    margin: 40px 16px 0;
+    transition: color 0.3s;
+  }
+
+  &:hover .card__title {
+    color: vars.$card-title;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    color: vars.$secondary-accent;
+    margin: 4px 16px 0;
+  }
+
+  &__price {
+    @include mix.flex-box(space-between, center);
+
+    width: vars.$width;
+    height: 18px;
+    margin: 22px 16px 0;
+
+    &-tag {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      color: vars.$secondary-accent;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      color: vars.$main-accent;
+    }
+  }
+
+  &__button {
+    @include mix.flex-box(center, center);
+
+    margin: 16px;
+    padding: vars.$button-padding;
+
+    background-color: vars.$blue-accent;
+    color: vars.$white-background;
+
+    border: none;
+    border-radius: vars.$border-radius;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      border 0.3s;
+
+    &-text {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      background-color: vars.$white-background;
+      color: vars.$blue-accent;
+      border: 1px solid vars.$blue-accent;
+    }
+  }
+}

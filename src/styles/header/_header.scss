@@ -1,0 +1,83 @@
+@use 'head-variables' as vars;
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+
+  font-family: vars.$font-family;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: vars.$big-margin;
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    margin-left: vars.$big-margin;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &-item {
+      text-align: center;
+
+      & + & {
+        margin-left: vars.$small-margin;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      height: vars.$line-height;
+      line-height: 1;
+      color: vars.$nav-link-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.3s;
+
+      &__is-active {
+        position: relative;
+        color: vars.$bluesky;
+
+        &::after {
+          content: '';
+
+          position: absolute;
+          bottom: 0;
+
+          width: vars.$underline-width;
+          height: vars.$underline-height;
+          border-radius: vars.$border-radius;
+
+          background-color: vars.$bluesky;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: vars.$bluesky;
+      }
+    }
+  }
+}
