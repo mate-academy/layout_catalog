@@ -1,0 +1,106 @@
+$card-width: 200px;
+$gap: 30px;
+$padding: 16px;
+$color-bg: #fff;
+$color-border: #e1e7ed;
+$color-text: #060b35;
+$color-blue: #00acdc;
+$color-blue-hover: #007c9e;
+$title-size: 14px;
+$price-size: 16px;
+$transition: 300ms;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background: $color-bg;
+  color: $color-text;
+}
+
+.header {
+  height: 60px;
+  padding: 0 50px;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  font-size: 14px;
+  text-decoration: none;
+  color: $color-text;
+  padding: 23px 0;
+  display: inline-block;
+  transition: color $transition;
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+.is-active {
+  color: $color-blue;
+  border-bottom: 2px solid $color-blue;
+}
+
+.catalog {
+  padding: 50px;
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $card-width);
+  gap: $gap;
+  justify-content: center;
+}
+
+.card {
+  width: $card-width;
+  padding: $padding;
+  border: 1px solid $color-border;
+  background: $color-bg;
+
+  &__image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: $title-size;
+    margin: 0 0 10px;
+  }
+
+  &__price {
+    font-size: $price-size;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+
+  &__button {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background: $color-blue;
+    transition: background $transition;
+
+    &:hover {
+      background: $color-blue-hover;
+    }
+  }
+}
