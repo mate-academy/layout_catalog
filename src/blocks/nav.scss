@@ -43,6 +43,7 @@ body {
   justify-content: center;
   height: 60px;
   text-transform: uppercase;
+  transition: $anim-delay;
 }
 
 .nav__link.is-active {
@@ -68,22 +69,22 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat($columns-count, 200);
+  grid-template-columns: repeat($columns-count, $card-width);
   grid-template-rows: repeat(2, 1fr);
   gap: 46px 48px;
   width: auto;
 
-  padding: 50px 40px 0;
+  padding: 50px 40px;
 
   @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, $card-width);
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, $card-width);
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, $card-width);
   }
 }
