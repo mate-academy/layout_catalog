@@ -1,0 +1,90 @@
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 50px;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.logo__image {
+  top: 10px;
+}
+
+.nav__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  margin-right: 20px;
+}
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__link {
+  display: flex;
+  text-decoration: none;
+  font-size: 12px;
+  color: #060b35;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  text-transform: uppercase;
+  transition: $anim-delay;
+}
+
+.nav__link.is-active {
+  position: relative;
+  color: $blue;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $blue;
+}
+
+.nav__link:hover {
+  color: $blue;
+}
+
+.main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat($columns-count, $card-width);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 46px 48px;
+  width: auto;
+
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
