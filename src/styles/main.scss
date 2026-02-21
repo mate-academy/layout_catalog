@@ -1,0 +1,42 @@
+@import './header/header';
+@import './card/card';
+@import './card/start';
+@import '/src/styles/card/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.catalog {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 50px 40px;
+  max-width: $card-width;
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  justify-content: center;
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+    max-width: calc(2 * $card-width + 1 * 48px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+    max-width: calc(3 * $card-width + 2 * 48px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+    max-width: calc(4 * $card-width + 3 * 48px);
+  }
+}
