@@ -1,0 +1,48 @@
+.card {
+  @include center;
+
+  box-sizing: border-box;
+  padding: $spacing-sm;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-base;
+  flex-direction: column;
+  width: $card-width;
+  transition: transform $transition-time;
+
+  &__image {
+    margin-top: $spacing-sm;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin-top: $spacing-lm;
+
+    &-text {
+      @include roboto500;
+
+      font-size: $font-size-small;
+      line-height: $line-height-large;
+      color: $color-primary;
+
+      transition: color $transition-time;
+    }
+
+    &-product-code {
+      @include roboto400;
+
+      color: $color-muted;
+      font-size: $font-size-xs;
+      line-height: $line-height-small;
+      margin-top: $star-gap;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title-text {
+    color: $color-accent;
+  }
+}

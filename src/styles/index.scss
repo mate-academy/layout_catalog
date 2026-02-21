@@ -1,3 +1,79 @@
+@import './variables';
+@import './mixins';
+@import './nav';
+@import './card';
+@import './stars';
+@import './price';
+@import './button';
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+header {
+  @include roboto500;
+}
+
+.header {
+  height: $header-height;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 $header-padding-horizontal;
+  background-color: $color-st;
+  box-sizing: border-box;
+
+  &__logo {
+    margin-top: $spacing-xs;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $hover-color;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $size-vs;
+  background-color: $hover-color;
+}
+
+// product card
+main {
+  @include roboto400;
+
+  padding: $header-padding-horizontal $header-padding-vertical;
+}
+
+.catalog {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $gap-vertical $gap-horizontal;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
