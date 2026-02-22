@@ -1,9 +1,21 @@
 .card {
   position: relative;
-  width: 200px;
+  width: $card-width;
   border-radius: 5px;
   border: 1px solid $color-border;
   transition: transform 0.3s ease;
+
+  &__title {
+    margin: 0 0 4px;
+  }
+
+  &__title-link {
+    @include text(12px, 18px, 500);
+
+    text-decoration: none;
+    color: $color-black;
+    transition: color 0.3s ease;
+  }
 
   &:hover  {
     transform: scale(1.2);
@@ -11,7 +23,7 @@
   }
 
   &:hover .card__title-link {
-    color: #34568b;
+    color: $color-title-hover;
   }
 
   &__link {
@@ -28,17 +40,6 @@
 
   &__details {
     margin: 40px 16px 16px;
-  }
-
-  &__title {
-    margin: 0 0 4px;
-  }
-
-  &__title-link {
-    @include text(12px, 18px, 500);
-
-    text-decoration: none;
-    color: $color-black;
   }
 
   &__product-code {
@@ -91,6 +92,11 @@
     text-transform: uppercase;
     text-decoration: none;
     border: 1px solid transparent;
+
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
 
     &:hover {
       background-color: $color-white;
