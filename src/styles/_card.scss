@@ -1,0 +1,132 @@
+@use './variables' as *;
+
+.catalog {
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  display: grid;
+  gap: $card-gap-y $card-gap-x;
+  justify-content: center;
+  place-items: center;
+
+  @media (max-width: 487px) {
+    grid-template-columns: repeat(1, $card-width);
+  }
+
+  @media (min-width: 488px) and (max-width: 766px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $general_width;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 32px 16px 16px;
+  transition: transform $transition-duration;
+
+  &__image-img--one {
+    width: $card-image-width;
+    height: $card-image-height;
+    margin-left: $card-image-margin;
+    margin-right: $card-image-margin;
+    margin-bottom: 40px;
+    display: flex;
+  }
+  &__title {
+    color: $color-text;
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
+    margin-bottom: 4px;
+    margin-top: 0;
+    width: $general_width;
+    transition: color $transition-duration;
+  }
+
+  &__code {
+    color: $color-secondary;
+    font-weight: 400;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    margin-top: 0;
+    margin-bottom: 16px;
+    width: $general_width;
+  }
+  &__product {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+  }
+  &__price {
+    display: flex;
+    height: 18px;
+    align-items: center;
+    margin-bottom: 16px;
+    width: $general_width;
+
+    &-label {
+      color: $color-secondary;
+      font-size: $font-size-medium;
+      font-weight: 400;
+    }
+    &-value {
+      color: $color-text;
+      font-size: $font-size-large;
+      font-weight: 700;
+
+      text-align: right;
+      width: $general_width;
+    }
+  }
+
+  &__button {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    transition:
+      background-color $transition-duration,
+      color $transition-duration;
+
+    &--buy {
+      background-color: $color-primary;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      width: $btn-width;
+      height: $btn-height;
+      border-radius: $btn-radius;
+      border: 1px solid $color-primary;
+      text-decoration: none;
+      text-align: center;
+      line-height: $btn-height;
+    }
+
+    &--buy:hover {
+      border: 1px solid $color-primary;
+      background-color: #fff;
+      color: $color-primary;
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+    z-index: 2;
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+}
