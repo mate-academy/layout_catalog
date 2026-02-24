@@ -1,0 +1,50 @@
+@import '../utils/variables';
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: $height-60;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    font-family: $font-main;
+    font-weight: $font-weight-500;
+    font-size: $font-size-12;
+    line-height: $font-size-12;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    text-decoration: none;
+    color: $main-color;
+    position: relative;
+    transition: color $transition-base;
+
+    // Tylko dla Apple
+    &:first-child:hover,
+    &.is-active {
+      color: $blue;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%; // zaraz pod tekstem linku
+        left: 0;
+        width: 37px;
+        height: $gap;
+        background-color: $blue;
+        border-radius: 8px;
+        opacity: 1;
+        margin-top: -$gap; // odległość od tekstu Apple
+        transition: all $transition-base;
+      }
+    }
+
+    &:hover:not(:first-child) {
+      color: $blue;
+    }
+  }
+}
