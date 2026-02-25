@@ -1,3 +1,45 @@
+@import 'variables';
+@import 'header';
+@import 'stars';
+@import 'cards';
+@import 'button';
+
+html {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 body {
   margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  gap: $gap-grid;
+  padding: $pading-grid;
+  grid-template-columns: 200px;
+}
+
+@media (min-width: $breakpoint-sm) {
+  .grid-container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .grid-container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .grid-container {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
