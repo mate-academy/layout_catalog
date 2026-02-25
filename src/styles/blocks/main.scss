@@ -1,10 +1,15 @@
 .main {
   display: grid;
-  grid-template-columns: repeat(1, 200px);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 1fr);
   gap: $main-column-gap $main-row-gap;
   justify-content: center;
   padding: $main-padding;
+
+  @include count-one {
+    grid-template-columns: repeat(1, 200px);
+    grid-template-rows: repeat(8, 1fr);
+  }
 
   @include count-two {
     grid-template-columns: repeat(2, 200px);
@@ -14,10 +19,5 @@
   @include count-tree {
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(3, 1fr);
-  }
-
-  @include count-four {
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(2, 1fr);
   }
 }
