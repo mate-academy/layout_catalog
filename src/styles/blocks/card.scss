@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 200px;
-  height: 408px;
+  width: $card-width;
+  height: $card-height;
   padding: 32px 16px 16px;
 
   border: 1px solid $border-color;
@@ -33,6 +33,8 @@
     font-weight: $font-weight-medium;
     font-size: 12px;
     line-height: 18px;
+
+    @include hover(color, $card-title-hover-color);
   }
 
   &__descr {
@@ -85,7 +87,7 @@
     font-size: 14px;
     line-height: 16px;
 
-    &:hover {
+    @include hover-card-button {
       background-color: $white-color;
       color: $blue-color;
       border: 1px solid $blue-color;
