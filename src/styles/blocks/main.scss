@@ -1,0 +1,21 @@
+.main__container {
+  display: grid;
+  grid-template-columns: repeat($columns-mobile, $width-card);
+  gap: $grid-gap; /* row-gap: 46px + column-gap: 48px */
+
+  place-content: center; /* align-content: center + justify-content: center */
+
+  padding: $container-padding;
+
+  @include from($breakpoint-sm) {
+    grid-template-columns: repeat($columns-sm, $width-card);
+  }
+
+  @include from($breakpoint-md) {
+    grid-template-columns: repeat($columns-md, $width-card);
+  }
+
+  @include from($breakpoint-lg) {
+    grid-template-columns: repeat($columns-lg, $width-card);
+  }
+}
