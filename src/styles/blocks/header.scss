@@ -1,0 +1,71 @@
+.header {
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: $color-white;
+  box-shadow: 0px 2px 4px 0px $color-shadow;
+
+  &__img {
+    display: block;
+    width: $logo-size;
+    height: $logo-size;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+
+    font-family: $font-main;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $color-link;
+    position: relative;
+
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &--active {
+      color: $color-blue;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 4px;
+        border-radius: 2px;
+        background-color: $color-blue;
+      }
+
+      &:hover {
+        color: $color-blue; /* hover для активного залишає $color-blue */
+      }
+    }
+  }
+}
