@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+$color-gray: #616070;
+$color-blue: #00acdc;
+$color-white: #fff;
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  column-gap: 48px;
+  row-gap: 46px;
+  justify-content: center;
+
+  grid-template-columns: repeat(1, 200px);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  padding: 32px 16px 16px;
+
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+
+    & .card__name {
+      color: #34568b;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    margin-top: 40px;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-gray;
+
+    margin-top: 4px;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 16px;
+
+    &-review {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 24px;
+
+    &-price {
+      font-weight: 400;
+      font-size: inherit;
+      line-height: 18px;
+      color: $color-gray;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__buy-button {
+    height: 40px;
+    width: 100%;
+
+    margin-top: 16px;
+
+    background-color: $color-blue;
+    border: none;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $color-white;
+
+    &:hover {
+      border: 1px solid $color-blue;
+      color: $color-blue;
+      background-color: $color-white;
+      cursor: pointer;
+    }
+  }
+}
