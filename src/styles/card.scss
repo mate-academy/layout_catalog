@@ -1,0 +1,111 @@
+@use 'variables';
+
+.card {
+  width: variables.$card-width;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  padding: variables.$card-padding;
+  border: 1px solid variables.$color-border;
+  border-radius: variables.$border-radius;
+  background: variables.$white-color;
+
+  transition: transform variables.$transition-duration ease;
+
+  &__title {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: variables.$main-color;
+    line-height: 18px;
+
+    transition: color variables.$transition-duration ease;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: variables.$card-title-hover-color;
+  }
+
+  &__image {
+    display: block;
+    max-width: variables.$image-max-width;
+    height: variables.$image-height;
+    width: 100%;
+    margin: variables.$image-margin auto variables.$margin2-image;
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: variables.$secondary-color;
+    margin-top: variables.$code-margin-top;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: variables.$price-height;
+
+    &-label {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: variables.$secondary-color;
+    }
+
+    &-price {
+      color: variables.$main-color;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      text-align: right;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: variables.$white-color;
+    margin-top: variables.$button-margin-top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    background-color: variables.$blue-color;
+    border-radius: variables.$border-radius;
+    width: variables.$button-width;
+    height: variables.$button-height;
+
+    transition: all variables.$transition-duration ease;
+
+    &:hover {
+      border: 1px solid variables.$blue-color;
+      color: variables.$blue-color;
+      background-color: variables.$white-color;
+    }
+  }
+
+  &__testimonials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0 24px;
+    height: variables.$testimonials-height;
+  }
+
+  &__review {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: right;
+    color: variables.$secondary-color;
+  }
+}

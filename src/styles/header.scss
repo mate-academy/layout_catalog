@@ -1,0 +1,75 @@
+@use 'variables';
+
+.header {
+  width: 100%;
+  height: variables.$nav-line-height;
+  background-color: variables.$white-color;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: variables.$max-width-container;
+    margin: 0 auto;
+    padding: 0 variables.$header-horizontal-padding;
+    box-sizing: border-box;
+  }
+}
+
+.logo {
+  display: block;
+  width: variables.$logo-size;
+  height: variables.$logo-size;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: variables.$nav-item-spacing;
+  }
+
+  &__link {
+    display: block;
+    height: variables.$nav-line-height;
+    line-height: variables.$nav-line-height;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: variables.$header-font-size;
+    color: variables.$main-color;
+    text-transform: uppercase;
+    position: relative;
+    transition: color variables.$transition-duration ease;
+
+    &:hover {
+      color: variables.$blue-color;
+    }
+
+    &.is-active {
+      color: variables.$blue-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: variables.$active-underline-height;
+        width: 100%;
+        background-color: variables.$blue-color;
+        border-radius: variables.$header-link-radius variables.$header-link-radius 0 0;
+      }
+    }
+  }
+}
