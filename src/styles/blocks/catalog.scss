@@ -1,12 +1,16 @@
+@use '../utils/variables';
+
 .catalog {
   --repeat-count: 1;
 
-  place-items: center;
   padding: 50px 40px;
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(var(--repeat-count), 200px);
+    grid-template-columns: repeat(
+      var(--repeat-count),
+      #{variables.$card-width}
+    );
     gap: 46px 48px;
     justify-content: center;
 
