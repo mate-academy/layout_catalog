@@ -1,0 +1,255 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header__container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  padding: 0 50px;
+}
+
+.header__logo-img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header__menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  height: 100%;
+}
+
+.header__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  height: 100%;
+  text-decoration: none;
+  color: #060b35;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.header__link:hover {
+  color: #00acdc;
+}
+
+.header__link.is-active {
+  color: #00acdc;
+}
+
+.header__link.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #00acdc;
+  border-radius: 2px;
+}
+
+.catalog {
+  padding: 50px 40px;
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog__list {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog__list {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog__list {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-right: 17px;
+}
+
+.stars__item {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.stars--1 .stars__item:nth-child(-n+1) {
+  background-image: url(../images/star-active.svg);
+}
+
+.stars--2 .stars__item:nth-child(-n+2) {
+  background-image: url(../images/star-active.svg);
+}
+
+.stars--3 .stars__item:nth-child(-n+3) {
+  background-image: url(../images/star-active.svg);
+}
+
+.stars--4 .stars__item:nth-child(-n+4) {
+  background-image: url(../images/star-active.svg);
+}
+
+.stars--5 .stars__item:nth-child(-n+5) {
+  background-image: url(../images/star-active.svg);
+}
+
+.card {
+  width: 200px;
+  padding: 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.card__image {
+  overflow: hidden;
+  display: block;
+  width: 160px;
+  height: 134px;
+  margin: 16px auto 0;
+}
+
+.card__title {
+  width: 100%;
+  margin: 40px 0 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #060b35;
+  transition: color 0.3s ease;
+}
+
+.card__item-code {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #616070;
+}
+
+.card__rating {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.card__reviews {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #060b35;
+}
+
+.card__price {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.card__price-label {
+  margin-right: 86px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #616070;
+}
+
+.card__price-value {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #060b35;
+}
+
+.card__button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #00acdc;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
+
+.card:hover .card__button, .card__button:hover {
+  border: 1px solid #00acdc;
+  color: #00acdc;
+  background-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
