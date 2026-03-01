@@ -1,0 +1,174 @@
+@use 'variables' as *;
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  justify-content: center;
+  place-items: center;
+  grid-area: catalog;
+  gap: $cards-gaps-row $cards-gaps-column;
+  padding: $cards-padding-vertical $cards-padding-horizontal;
+
+  @media (min-width: $breakpoint-two-cloumns) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: $breakpoint-three-cloumns) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: $breakpoint-four-columns) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  &-card {
+    position: relative;
+    box-sizing: border-box;
+    width: $card-width;
+    height: $card-height;
+    border: 1px solid $color-border;
+    border-radius: 5px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+
+      .product-card__item {
+        color: $color-title-hover;
+      }
+    }
+    }
+
+    &__image {
+      position: absolute;
+      top: 33px;
+      left: 20px;
+      align-items: center;
+      width: $image-width;
+      height: $image-height;
+      background-image: url('../images/imac.jpeg');
+      background-size: 100% 100%;
+      background-position: center;
+      image-rendering: optimizeQuality;
+    }
+
+    &__item {
+      position: absolute;
+      top: 207px;
+      left: $spacing-base;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+      width: $objects-width;
+      height: 36px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      color: $color-main-text;
+      vertical-align: bottom;
+      transition: color 300ms;
+    }
+
+    &__code {
+      position: absolute;
+      top: 247px;
+      color: $color-code-text;
+      font-size: 10px;
+      line-height: 14px;
+      letter-spacing: 0%;
+      width: 98px;
+      height: 14px;
+      margin-left: $spacing-base;
+    }
+
+    &__rating {
+      position: absolute;
+      top: 277px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: $objects-width;
+      height: 16px;
+      margin-left: $spacing-base;
+
+      &-reviews {
+        display: inline-block;
+        font-size: 10px;
+        white-space: nowrap;
+        margin: 0;
+        vertical-align: bottom;
+        color: $color-main-text;
+      }
+    }
+
+    &__price {
+      position: absolute;
+      font-weight: 400;
+      top: 317px;
+      display: flex;
+      justify-content: space-between;
+      margin-left: $spacing-base;
+      width: $objects-width;
+      height: 18px;
+
+      &-word {
+        display: inline-block;
+        white-space: nowrap;
+        margin: 0;
+        line-height: 18px;
+        color: $color-code-text;
+        vertical-align: bottom;
+      }
+
+      &-amount {
+        font-weight: 700;
+        font-size: 16px;
+        display: inline-block;
+        margin: 0;
+        line-height: 18px;
+        letter-spacing: 0%;
+        vertical-align: bottom;
+        color: $color-main-text;
+      }
+    }
+
+    &__button {
+      position: absolute;
+      top: 351px;
+      display: block;
+      background-color: $color-button;
+      text-decoration: none;
+      color: $color-white;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+      text-align: center;
+      width: $objects-width;
+      height: 40px;
+      border-radius: 5px;
+      margin-left: $spacing-base;
+      transition-duration: 300ms;
+
+      &:hover {
+        position: absolute;
+        top: 351px;
+        display: block;
+        box-sizing: border-box;
+        background-color: $color-white;
+        border: 1px solid $color-button;
+        text-decoration: none;
+        color: $color-button;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        text-align: center;
+        width: $objects-width;
+        height: 40px;
+        border-radius: 5px;
+        margin-left: $spacing-base;
+      }
+    }
+  }

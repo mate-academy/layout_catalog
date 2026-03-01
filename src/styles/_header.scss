@@ -1,0 +1,80 @@
+@use 'variables' as *;
+
+.header {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  grid-area: header;
+  font-weight: 500;
+}
+
+.logo {
+  margin-left: 50px;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.nav {
+  margin-right: 50px;
+  margin-left: auto;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    height: 60px;
+    color: $color-main-text;
+    text-transform: uppercase;
+    transition-duration: 300ms;
+
+    &:hover {
+      color: $color-button;
+    }
+
+    &.is-active {
+  position: relative;
+  color: $color-button;
+
+    &::after {
+      left: 0;
+      display: block;
+      content: '';
+      position: absolute;
+      width: 100%;
+      color: $color-button;
+      background-color: $color-button;
+      height: 4px;
+      bottom: 0;
+    }
+  }
+  }
+}
+
+
