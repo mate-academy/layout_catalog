@@ -1,0 +1,50 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.nav {
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &__links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: $nav-item-margin;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    height: $nav-link-height;
+    position: relative;
+    text-decoration: none;
+    line-height: 100%;
+    color: $color-text;
+
+    @include smooth;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &.is-active {
+      color: $color-blue;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: $nav-apple-under-height;
+        border-radius: $nav-apple-under-radius;
+        width: 100%;
+        background-color: $color-blue;
+      }
+    }
+  }
+}
