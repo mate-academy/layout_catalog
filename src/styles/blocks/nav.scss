@@ -1,0 +1,54 @@
+.nav {
+  @include flex-between;
+  
+  padding: 0 50px;
+  background-color: $white;
+
+  &__image {
+    display: block;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  &__item {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__element {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-accent;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: $font-sm;
+
+    @include hover(color, $blue-accent);
+
+    &.is-active {
+      position: relative;
+      color: $blue-accent;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $blue-accent;
+      border-radius: 2px;
+    }
+  }
+}
