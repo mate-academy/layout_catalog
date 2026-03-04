@@ -1,0 +1,147 @@
+@use 'variables' as *;
+
+.card {
+  width: $card-width;
+  padding: 0 $card-padding-horizontal;
+  border: $card-border-size solid $card-border-color;
+  border-radius: $card-border-radius;
+  background-color: $background-color-white;
+  transition: color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: $card-photo-width;
+    height: $card-photo-height;
+    margin: 0 auto;
+    margin-top: 32px;
+  }
+
+  &__imac {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: $font-weight-m;
+    font-size: $font-size-s;
+    line-height: $line-height-m;
+    color: $card-name-color;
+    transition: all 0.3s ease;
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-weight: $font-weight-sm;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    color: $card-code-color;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-star {
+      display: flex;
+      background-image: url(../images/star.svg);
+      background-position: center;
+      height: $star-size;
+      width: $star-size;
+      background-repeat: no-repeat;
+      margin-right: $star-margin-right;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__reviews {
+    font-style: normal;
+    font-weight: $font-weight-sm;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    color: $card-name-color;
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-word {
+      font-style: normal;
+      font-weight: $font-weight-sm;
+      font-size: $font-size-s;
+      line-height: $line-height-m;
+      color: $card-code-color;
+    }
+
+    &-value {
+      font-style: normal;
+      font-size: $font-size-l;
+      line-height: $line-height-m;
+      font-weight: $font-weight-l;
+      color: $card-name-color;
+    }
+  }
+
+  &__button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $card-button-margin;
+    margin-bottom: $card-button-margin;
+    height: $card-button-height;
+    background-color: $nav-link-blue;
+    border: $card-border-size solid $nav-link-blue;
+    border-radius: $card-border-radius;
+    font-style: normal;
+    font-weight: $font-weight-l;
+    font-size: $font-size-m;
+    line-height: $line-height-s;
+    text-align: center;
+    text-transform: uppercase;
+    color: $background-color-white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $background-color-white;
+      color: $nav-link-blue;
+    }
+
+
+  }
+
+  &:hover .card__title {
+    color: $card-name-color-hover;
+  }
+}
+
+@for $i from 1 through 5 {
+  .card__stars--#{$i} {
+    .card__stars-star:nth-child(-n + #{$i}) {
+      background-image: url(../images/star-active.svg);
+    }
+  }
+}

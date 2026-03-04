@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+.navigation {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: $nav-link-margin-right;
+  }
+
+  &__link {
+    display: flex;
+    height: $link-height;
+    text-decoration: none;
+    color: $nav-link-color;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: $font-size-s;
+    line-height: $line-height-xs;
+    font-weight: $font-weight-m;
+    font-style: normal;
+    transition: transform 0.3s ease;
+  }
+
+  &__link:hover {
+    color: $nav-link-blue;
+  }
+}
+
+.is-active {
+  color: $nav-link-blue;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  height: $is-active-underline-height;
+  width: 100%;
+  border-radius: $is-active-underline-border-radius;
+  background-color: $nav-link-blue;
+  bottom: 0;
+  left: 0;
+}
