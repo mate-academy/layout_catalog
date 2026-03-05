@@ -1,3 +1,31 @@
-body {
+@use '..//utils/variables' as *;
+@use '../utils/mixins' as *;
+@use '../components/header';
+@use '../components/stars';
+@use '../components/card';
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+
+*,
+*::after {
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.main {
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  gap: $catalog-row-gap $catalog-column-gap;
+  grid-template-columns: 200px;
+
+  @each $cols, $breakpoints in $catalog-breakpoints {
+    @include respond-up($breakpoints) {
+      grid-template-columns: repeat($cols, 200px);
+    }
+  }
 }
