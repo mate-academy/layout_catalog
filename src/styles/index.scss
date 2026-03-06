@@ -1,3 +1,116 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+@import './variables';
+@import '../blocks/cards';
+@import '../blocks/stars';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: $title-color;
+  font-size: 10px;
+  line-height: 140%;
+}
+
+.container {
+  width: 944px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  gap: 46px 48px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: $white;
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 40px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.navbar {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    height: 60px;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $title-color;
+    transition: color 0.3s;
+    position: relative;
+
+    &:hover,
+    &.is-active {
+      color: $blue-accent;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $blue-accent;
+    }
+  }
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.catalog {
+  padding: 50px 40px;
 }
