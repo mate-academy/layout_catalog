@@ -1,0 +1,95 @@
+@use './variables' as *;
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  padding: $card-padding-top $card-padding-h $card-padding-h;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  background: $color-white;
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  &__image {
+    display: block;
+    width: $card-image-width;
+    height: $card-image-height;
+    margin: 0 auto $card-image-margin-bottom;
+  }
+
+  &__title {
+    margin: 0 0 $card-title-margin;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+    font-weight: 500;
+    color: $color-primary;
+    transition: color $transition;
+  }
+
+  &:hover &__title {
+    color: $color-hover-title;
+  }
+
+  &__code {
+    margin-bottom: $card-padding-h;
+  }
+
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $card-review-margin-bottom;
+  }
+
+  &__review-count {
+    color: $color-primary;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $card-padding-h;
+  }
+
+  &__price-label {
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+  }
+
+  &__price {
+    font-size: $font-size-lg;
+    line-height: $line-height-md;
+    font-weight: 700;
+    color: $color-primary;
+  }
+
+  &__buy {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: $button-height;
+    border: 1px solid $color-accent;
+    border-radius: $border-radius;
+    font-size: $font-size-md;
+    font-weight: 700;
+    line-height: $line-height-sm;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $color-accent;
+    transition:
+      background-color $transition,
+      color $transition;
+
+    &:hover {
+      color: $color-accent;
+      background-color: $color-white;
+    }
+  }
+}
