@@ -1,3 +1,36 @@
+@import './variables';
+@import './stars';
+@import './card';
+@import './header';
+
 body {
   margin: 0;
+}
+
+.cards-container {
+  --column-count: 1;
+
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-size);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .cards-container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    --column-count: 4;
+  }
 }
