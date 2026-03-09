@@ -1,0 +1,112 @@
+@use 'base' as *;
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  display: flex;
+  flex-direction: column;
+  border: $card-border-width solid $color-border;
+  padding: $card-padding;
+  padding-top: $card-padding-top;
+  transition: transform $transition-duration ease;
+
+  &__title {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+    letter-spacing: 0;
+    margin-bottom: $card-title-margin-bottom;
+    color: $color-dark;
+    transition: color $transition-duration ease;
+  }
+
+  &__code {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    letter-spacing: 0;
+    color: $color-muted;
+    margin-bottom: $card-code-margin-bottom;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto $card-image-margin-bottom;
+    width: $card-image-width;
+    height: $card-image-height;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $card-review-margin-bottom;
+    align-items: flex-end;
+  }
+
+  &__review-count {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    text-align: right;
+    vertical-align: bottom;
+    color: $color-dark;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $card-padding;
+  }
+
+  &__price-price {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-lg;
+    line-height: $line-height-md;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: bottom;
+    color: $color-dark;
+  }
+
+  &__price-label {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
+    letter-spacing: 0;
+    vertical-align: bottom;
+    color: $color-muted;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: $card-button-height;
+    border: $card-border-width solid $color-accent;
+    background: $color-accent;
+    border-radius: $card-button-border-radius;
+    font-size: $font-size-md;
+    line-height: $line-height-sm;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color $transition-duration ease,
+      color $transition-duration ease;
+
+    &:hover {
+      color: $color-accent;
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    transform: scale($card-hover-scale);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+}

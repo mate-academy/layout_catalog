@@ -1,0 +1,29 @@
+@use 'base' as *;
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: $card-width;
+  gap: $container-row-gap $container-column-gap;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $container-padding-vertical $container-padding-horizontal;
+}
+
+@media (min-width: $breakpoint-sm) {
+  .container {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .container {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
