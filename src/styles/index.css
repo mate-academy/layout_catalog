@@ -1,0 +1,206 @@
+.header {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.header__logo {
+  height: 28px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-weight: 500;
+  color: #060b35;
+  transition: color 300ms;
+}
+
+.nav__link:hover {
+  color: #00acdc;
+}
+
+.is-active {
+  color: #00acdc;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #00acdc;
+}
+
+.card {
+  width: 200px;
+  padding: 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 300ms;
+  will-change: transform;
+
+  /* required selector */
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.card__image {
+  width: 100%;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.card__title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 8px;
+  color: #060b35;
+  transition: color 300ms;
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
+
+.card__code {
+  font-size: 12px;
+  color: #616070;
+  margin-bottom: 12px;
+}
+
+.card__reviews {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card__reviews-count {
+  font-size: 12px;
+  color: #616070;
+}
+
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.card__price-label {
+  font-size: 12px;
+  color: #616070;
+}
+
+.card__price-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #060b35;
+}
+
+.card__buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #00acdc;
+  background: #00acdc;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    background-color 300ms,
+    color 300ms;
+}
+
+.card__buy:hover {
+  background: #fff;
+  color: #00acdc;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../images/star-active.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
+  opacity: 1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.catalog {
+  padding: 50px 40px;
+}
+
+.catalog__grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 200px);
+  gap: 46px 48px;
+}
+
+/* Breakpoints */
+@media (min-width: 488px) {
+  .catalog__grid {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog__grid {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog__grid {
+    grid-template-columns: repeat(4, 200px);
+  }
+}

@@ -1,3 +1,45 @@
+@import './variables';
+@import './blocks/header';
+@import './blocks/card';
+@import './blocks/stars';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.catalog {
+  padding: $padding-big $padding-large;
+
+  &__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, $card-width);
+    gap: $gap-medium $gap-large;
+  }
+}
+
+/* Breakpoints */
+@media (min-width: 488px) {
+  .catalog__grid {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog__grid {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog__grid {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
