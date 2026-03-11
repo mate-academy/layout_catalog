@@ -1,0 +1,122 @@
+.cards {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: $size-50px $size-40px;
+
+  gap: $gap-row $gap-column;
+
+  grid-template-columns: repeat(1, $width-sizing-200px);
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $width-sizing-200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $width-sizing-200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $width-sizing-200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $width-sizing-200px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-small;
+  padding: $card-padding-top $size-16px $size-16px;
+  background: $bckground-white-color;
+
+  transition: transform $transition-duration;
+
+  &__image {
+    display: block;
+    margin: 0 auto $size-40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 0 0 $size-4px;
+    font-size: $font-size-12px;
+    line-height: $card-line-height;
+    font-weight: $base-font-weight500;
+    color: $main-accent-color;
+
+    transition: color $transition-duration;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__title {
+    color: $hover-card-title-color;
+  }
+
+  &__code {
+    margin-bottom: $size-16px;
+  }
+
+  &__review-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review-count {
+    color: $main-accent-color;
+  }
+
+  &__price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $size-16px;
+  }
+
+  &__price-name {
+    font-size: $font-size-12px;
+    line-height: $card-line-height;
+  }
+
+  &__price {
+    font-size: $size-16px;
+    line-height: $card-line-height;
+    font-weight: 700;
+    color: $main-accent-color;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    height: $size-40px;
+    border: 1px solid $main-color;
+    border-radius: $border-radius-small;
+
+    font-size: $base-line-height;
+    line-height: $size-16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: $bckground-white-color;
+    background-color: $main-color;
+
+    transition:
+      color $transition-duration,
+      background-color $transition-duration;
+
+    &:hover {
+      color: $main-color;
+      background-color: $bckground-white-color;
+    }
+  }
+}
