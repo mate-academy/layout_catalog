@@ -1,3 +1,31 @@
+@import 'variables';
+@import 'header';
+@import 'stars';
+@import 'card';
+
 body {
   margin: 0;
+  font-family: $font-main;
+  background-color: $color-bg-page;
+  color: $color-text-main;
+}
+
+.products-container {
+  display: grid;
+  gap: $grid-gap-vertical $grid-gap-horizontal;
+  padding: $header-padding-base $header-padding-side;
+  justify-content: center;
+  grid-template-columns: $card-width;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
