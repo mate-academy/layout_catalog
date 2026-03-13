@@ -4,41 +4,42 @@
   flex-direction: column;
 
   border: 1px solid $wrap-color;
-  border-radius: 5px;
+  border-radius: $card-border-radius;
   letter-spacing: 0;
 
-  width: 200px;
-  min-height: 408px;
-  transition: transform 300ms;
+  width: $card-width;
+  min-height: $card-min-height;
+  transition: transform $card-transition;
 
   &__img {
-    width: 160px;
-    height: 134px;
+    width: $card-img-width;
+    height: $card-img-height;
     margin: 32px 19px 40px;
   }
 
   &__title {
-    font-size: 12px;
+    font-size: $card-title-font-size;
     line-height: 18px;
-    font-weight: 500;
+    font-weight: $card-title-font-weight;
     color: $primary-color;
 
     flex-grow: 1;
 
-    margin: 0 16px 4px;
+    margin: 0 $global-margin 4px;
+    transition: color $card-transition;
   }
 
   &__code {
     display: flex;
     align-items: center;
 
-    font-size: 10px;
+    font-size: $card-small-font-size;
     line-height: 14px;
-    font-weight: 400;
+    font-weight: $card-small-font-weight;
     color: $secondary-color;
 
-    margin: 0 16px;
-    margin-bottom: 16px;
+    margin: 0 $global-margin;
+    margin-bottom: $global-margin;
   }
 
   &__rating {
@@ -47,13 +48,13 @@
     align-items: center;
 
     margin-bottom: 24px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: $global-margin;
+    margin-right: $global-margin;
     gap: 17px;
 
-    font-size: 10px;
+    font-size: $card-small-font-size;
     line-height: 14px;
-    font-weight: 400;
+    font-weight: $card-small-font-weight;
     color: $secondary-color;
   }
 
@@ -61,14 +62,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 16px 16px;
+    margin: 0 $global-margin $global-margin;
     line-height: 1;
     padding: 0;
   }
 
   &__price {
-    font-size: 12px;
-    font-weight: 400;
+    font-size: $card-title-font-size;
+    font-weight: $card-small-font-weight;
 
     margin: 0;
     padding: 0;
@@ -77,8 +78,8 @@
   }
 
   &__value {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: $card-big-font-size;
+    font-weight: $card-big-font-weight;
     line-height: 18px;
 
     margin: 0;
@@ -88,9 +89,9 @@
   }
 
   &__button {
-    margin: 0 16px 16px;
-    width: 166px;
-    height: 40px;
+    margin: 0 $global-margin $global-margin;
+    width: $button-width;
+    height: $button-height;
 
     border: 1px solid $accent-color;
     border-radius: 5px;
@@ -108,7 +109,9 @@
     text-decoration: none;
     color: $forbutton-color;
     font-weight: bold;
-    font-size: 14px;
+    font-size: $button-font-size;
+    transition: color $card-transition;
+    transition: background-color $card-transition;
 
     &:hover {
       background-color: $forbutton-color;
