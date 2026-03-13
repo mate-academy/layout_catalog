@@ -1,0 +1,127 @@
+.container {
+  padding-inline: $padding-inline;
+  padding-block: $padding-block;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  gap: $grid-gap;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+  @media (min-width: 768px) {
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+.card {
+  width: $card-width;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: $color-white;
+  transition: $transition;
+
+  &__title {
+    margin: 40px auto 0;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &:hover{
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title{
+    color: $color-hover-title;
+  }
+
+  &__picture {
+    background-image: url('../images/imac.jpeg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 134px;
+    margin-top: 32px;
+  }
+
+  &__code {
+    margin-left: 16px;
+    color: $color-text-second;
+    margin-top: 4px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 16px 0;
+  }
+
+  &__reviews {
+    font-weight: 400;
+    line-height: 14px;
+    font-size: 10px;
+    color: $color-text-first;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px 16px 0;
+  }
+
+  &__price-label {
+    color: $color-text-second;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    color: $color-text-first;
+    margin: 0;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: 166px;
+    height: 40px;
+    background-color: $color-primary;
+    border-radius: 5px;
+    margin: 16px auto;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    color: $color-white;
+    line-height: 16px;
+    font-size: 14px;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+    }
+  }
+}
