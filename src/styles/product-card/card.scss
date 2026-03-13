@@ -1,0 +1,131 @@
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  border: 1px solid $wrap-color;
+  border-radius: $card-border-radius;
+  letter-spacing: 0;
+
+  width: $card-width;
+  min-height: $card-min-height;
+  transition: transform $card-transition;
+
+  &__img {
+    width: $card-img-width;
+    height: $card-img-height;
+    margin: 32px 19px 40px;
+  }
+
+  &__title {
+    font-size: $card-title-font-size;
+    line-height: 18px;
+    font-weight: $card-title-font-weight;
+    color: $primary-color;
+
+    flex-grow: 1;
+
+    margin: 0 $global-margin 4px;
+    transition: color $card-transition;
+  }
+
+  &__code {
+    display: flex;
+    align-items: center;
+
+    font-size: $card-small-font-size;
+    line-height: 14px;
+    font-weight: $card-small-font-weight;
+    color: $secondary-color;
+
+    margin: 0 $global-margin;
+    margin-bottom: $global-margin;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+    margin-left: $global-margin;
+    margin-right: $global-margin;
+    gap: 17px;
+
+    font-size: $card-small-font-size;
+    line-height: 14px;
+    font-weight: $card-small-font-weight;
+    color: $secondary-color;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 $global-margin $global-margin;
+    line-height: 1;
+    padding: 0;
+  }
+
+  &__price {
+    font-size: $card-title-font-size;
+    font-weight: $card-small-font-weight;
+
+    margin: 0;
+    padding: 0;
+
+    color: $secondary-color;
+  }
+
+  &__value {
+    font-size: $card-big-font-size;
+    font-weight: $card-big-font-weight;
+    line-height: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    color: $primary-color;
+  }
+
+  &__button {
+    margin: 0 $global-margin $global-margin;
+    width: $button-width;
+    height: $button-height;
+
+    border: 1px solid $accent-color;
+    border-radius: 5px;
+    background-color: $accent-color;
+    overflow: hidden;
+  }
+
+  &__button-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    text-decoration: none;
+    color: $forbutton-color;
+    font-weight: bold;
+    font-size: $button-font-size;
+    transition:
+      color $card-transition,
+      background-color $card-transition;
+
+    &:hover {
+      background-color: $forbutton-color;
+      color: $accent-color;
+    }
+  }
+}
+
+.card:hover .card__title {
+  color: $hover-card-title-color;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}

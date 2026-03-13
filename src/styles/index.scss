@@ -1,3 +1,44 @@
+@import '../../src/styles/header/index';
+@import '../../src/styles/product-card/index';
+
+$global-column-size: 200px;
+$global-gap-column: 46px;
+$global-gap-row: 48px;
+$global-padding-vert: 50px;
+$global-padding-left: 40px;
+
 body {
   margin: 0;
+  font-family: $main-font;
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, $global-column-size);
+
+  justify-content: center;
+
+  padding: $global-padding-vert $global-padding-left $global-padding-vert;
+  gap: $global-gap-column $global-gap-row;
+}
+
+@media (min-width: 488px) {
+  .cards-container {
+    grid-template-columns: repeat(2, $global-column-size);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(3, $global-column-size);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(4, $global-column-size);
+  }
 }
