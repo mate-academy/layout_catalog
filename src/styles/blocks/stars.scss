@@ -1,0 +1,25 @@
+@use '../utils/variables.scss' as *;
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: $stars-width;
+    height: $stars-height;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: $stars-star-not-last-child-mr;
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url(../images/star-active.svg);
+      }
+    }
+  }
+}

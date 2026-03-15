@@ -1,0 +1,145 @@
+@use '../utils/variables.scss' as *;
+
+.main {
+  --column-count: 1;
+
+  box-sizing: border-box;
+  padding: $main-padding;
+
+  display: grid;
+  place-content: center;
+
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  gap: $main-gap;
+
+  @media (min-width: 488px) {
+    --column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-count: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-count: 4;
+  }
+}
+
+.card {
+  margin: 0;
+  box-sizing: border-box;
+  color: $main-text-color;
+  background-color: $main-bg-color;
+  width: $card-width;
+  padding-top: $card-padding-top;
+  padding-bottom: $card-padding-bottom;
+  border: $card-border;
+  border-radius: $card-border-radius;
+
+  transition: $body-transition;
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: $card-header-padding-bottom;
+  }
+
+  &__image {
+    width: $card-image-width;
+    height: $card-image-height;
+  }
+
+  &__main {
+    padding-inline: $card-padding-inline;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: $card-title-fz;
+    font-weight: $card-regular-fw;
+    line-height: $card-title-lh;
+
+    transition: $body-transition;
+  }
+
+  &__code {
+    display: block;
+    font-size: $card-code-fz;
+    font-weight: $card-thin-fw;
+    line-height: $card-code-lh;
+    color: $secondary-title-text-color;
+    margin-top: $card-code-mt;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: $card-rating-padding-top;
+  }
+
+  &__reviews {
+    font-size: $card-reviews-fz;
+    font-weight: $card-thin-fw;
+    line-height: $card-code-lh;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $card-price-pt;
+
+    &-title {
+      font-size: $card-price-title-fz;
+      font-weight: $card-thin-fw;
+      line-height: $card-title-lh;
+      color: $secondary-title-text-color;
+    }
+
+    &-value {
+      font-size: $card-price-value-fz;
+      font-weight: $card-bold-fw;
+      line-height: $card-title-lh;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: $card-btn-padding-top;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $card-buy-fz;
+    color: $main-bg-color;
+    background-color: $button-bg-color;
+    font-weight: $card-bold-fw;
+    line-height: $card-buy-line-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: $card-buy-padding;
+    border-radius: $card-buy-border-radius;
+
+    transition: $body-transition;
+
+    &:hover {
+      color: $button-hover-color;
+      background-color: inherit;
+      outline: $card-buy-hover-outline;
+      outline-offset: $card-buy-hover-outline-offset;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $card-hover-text-title-color;
+    }
+  }
+}
