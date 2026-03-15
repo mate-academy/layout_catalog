@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  font-style: normal;
+  color: $color-main;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $catalog-gap-vertical $catalog-gap-horizontal;
+  justify-content: center;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
