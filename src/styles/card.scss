@@ -8,8 +8,8 @@
   background-color: $white;
   border: 1px solid $border-color;
   border-radius: $border-radius;
-  padding: 0 16px;
-  transition: 300ms;
+  padding: $main-card-pd;
+  transition: $transition;
 
   &:hover {
     z-index: 2;
@@ -17,8 +17,8 @@
   }
 
   &__image {
-    margin-top: 32px;
-    margin-bottom: 40px;
+    margin-top: $card-mg-top;
+    margin-bottom: $card-mg-btm;
     height: 134px;
     width: 160px;
     align-self: center;
@@ -29,41 +29,45 @@
   }
 
   &__title {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-weight: $font-five;
+    font-size: $font-size-medium;
+    line-height: $line-height-large;
     color: $main-color;
     margin-bottom: 4px;
-    transition: color 300ms;
+    transition: color $transition;
+  }
+
+  .card:hover & {
+    color: $card-title;
   }
 
   &__code {
     color: $secondary-color;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 14px;
-    margin-bottom: 16px;
+    font-weight: $font-four;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    margin-bottom: $card-code-mg-bt;
   }
 
   &__price {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: $card-code-mg-bt;
     align-items: center;
   }
 
   &__price-label {
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: $font-four;
+    font-size: $font-size-medium;
     color: $secondary-color;
-    line-height: 18px;
+    line-height: $line-height-large;
   }
 
   &__price-value {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
+    font-weight: $font-seven;
+    font-size: $font-size-large;
+    line-height: $line-height-large;
     color: $main-color;
   }
 
@@ -72,23 +76,19 @@
     border: none;
     border-radius: $border-radius;
     color: $white;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
-    margin-bottom: 16px;
-    padding: 12px 70px;
+    font-size: $font-size-md-md;
+    font-weight: $font-seven;
+    line-height: $line-height;
+    margin-bottom: $card-code-mg-bt;
+    padding: $btn-pd;
     text-decoration: none;
     text-transform: uppercase;
-    transition: 300ms;
+    transition: $transition;
 
     &:hover {
       color: $button-color;
-      border: 1px solid $button-color;
+      border: 1px solid transparent;
       background-color: $white;
     }
   }
-}
-
-.card:hover .card__title {
-  color: $card-title;
 }
