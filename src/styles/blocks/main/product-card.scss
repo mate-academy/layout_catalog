@@ -1,0 +1,105 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $product-card-greater-padding $product-card-lesser-padding
+    $product-card-lesser-padding;
+  width: $product-card-width;
+  transition: transform $transition-duration ease;
+
+  @include border(1px, getcolor('border-light-color'));
+
+  border-radius: $product-card-border-radius;
+  background-color: getcolor('background-light-color');
+  &__image {
+    display: block;
+    width: 100%;
+  }
+  &__image img {
+    display: block;
+    width: $product-picture-width;
+    height: $product-picture-height;
+    margin: auto;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: $margin-xl;
+  }
+}
+
+.product {
+  &__title {
+    @include font($font-weight-m, $font-size-s, $line-height-l);
+
+    margin-bottom: $margin-small;
+    transition: color $transition-duration ease;
+  }
+
+  &__code {
+    @include font($font-weight-s, $font-size-xs, $line-height-s);
+
+    color: getcolor('secondary-text-color');
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    margin-bottom: $margin-large;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include font($font-weight-s, $font-size-xs, $line-height-s);
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $margin-medium;
+
+    &-label {
+      @include font($font-weight-s, $font-size-s, $line-height-l);
+
+      color: getcolor('secondary-text-color');
+    }
+
+    &-value {
+      @include font($font-weight-l, $font-size-l, $line-height-l);
+
+      color: getcolor('primary-text-color');
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $product-card-button-height;
+    width: 100%;
+
+    @include border(1px, getcolor('blue-accent-color'));
+
+    border-radius: 5px;
+    background-color: getcolor('blue-accent-color');
+    color: getcolor('primary-white-color');
+
+    @include font($font-weight-l, $font-size-m, $line-height-m);
+
+    text-transform: uppercase;
+    transition: all $transition-duration ease;
+
+    &:hover {
+      background-color: getcolor('primary-white-color');
+      color: getcolor('blue-accent-color');
+    }
+  }
+}
+
+.product-card:hover {
+  transform: scale(1.2);
+
+  .product__title {
+    color: getcolor('product-title-hover-color');
+  }
+}
