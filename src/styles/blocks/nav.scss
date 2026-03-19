@@ -1,0 +1,45 @@
+@use '../utils/variables.scss' as v;
+@use '../utils/mixins.scss' as m;
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__list > .nav__item:not(:last-child) {
+    margin-right: v.$font-size-lg;
+  }
+
+  &__link {
+    height: v.$size-lg;
+    font-size: v.$font-size-xs;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    @include m.transition-smooth(color);
+
+    &:hover {
+      color: v.$blue-accent;
+    }
+
+    &.is-active {
+      color: v.$blue-accent;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: v.$blue-accent;
+        height: v.$size-xxs;
+        border-radius: 8px;
+      }
+    }
+  }
+}

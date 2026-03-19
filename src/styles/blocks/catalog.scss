@@ -1,0 +1,23 @@
+@use '../utils/mixins.scss' as m;
+@use '../utils/variables.scss' as v;
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, v.$withCard);
+
+  @include m.bp-sm {
+    grid-template-columns: repeat(2, v.$withCard);
+  }
+
+  @include m.bp-md {
+    grid-template-columns: repeat(3, v.$withCard);
+  }
+
+  @include m.bp-lg {
+    grid-template-columns: repeat(4, v.$withCard);
+  }
+
+  justify-content: center;
+  gap: 46px 48px;
+}
