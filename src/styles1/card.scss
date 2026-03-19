@@ -1,0 +1,214 @@
+@use 'variables';
+
+.catalog{
+
+  padding:variables.$catalog-padding;
+
+}
+.card {
+
+  box-sizing: border-box;
+  width: variables.$cartao-width;
+
+  padding-top: variables.$cartao-paddingtop;
+
+
+
+
+
+
+
+
+
+
+
+  &__image {
+
+    display: block;
+
+    margin-left: variables.$paddingleftcomputador;
+
+
+    width: variables.$computador-width;
+
+    height: variables.$computador-height;
+
+ background-image: url('../images/imac.jpeg');
+
+
+
+
+
+    background-size: cover;
+    background-position: center;
+
+    margin-bottom: variables.$marginbottomcomputador;
+  }
+
+
+
+  &__product {
+    padding-left: variables.$paddingleftproduto;
+    color: variables.$productcolor;
+
+    font-family: Roboto, sans-serif;
+
+    font-weight: 500;
+    font-size: 12px;
+
+    line-height: 18px;
+    letter-spacing: 0%;
+    margin-bottom: variables.$marginbottomproduto;
+  }
+
+  &__code {
+    padding-left: variables.$paddingleftcodigo;
+    color: variables.$codecolor;
+
+    font-family: Roboto, sans-serif;
+
+    font-weight: 400;
+    font-size: 10px;
+
+    line-height: 14px;
+    letter-spacing: 0%;
+    margin-bottom: variables.$marginbottomcodigo;
+  }
+
+  &__review {
+    padding-left: variables.$paddingleftrevisao;
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: variables.$marginbottomrevisao;
+  }
+
+  &__revquant {
+    padding-right: variables.$paddingrigth;
+    font-family: Roboto, sans-serif;
+
+    font-weight: 400;
+    font-size: 10px;
+
+    line-height: 14px;
+    letter-spacing: 0%;
+    text-align: right;
+    vertical-align: bottom;
+
+    color:  variables.$revquantcolor;
+  }
+
+  &__price {
+    padding-left: variables.$paddingleftpreco;
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: variables.$marginbottompreco;
+  }
+
+  &__pricelabel {
+    font-family: Roboto, sans-serif;
+
+    font-weight: 400;
+    font-size: 12px;
+
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: left;
+    vertical-align: bottom;
+
+    color: variables.$pricelabelcolor;
+  }
+
+  &__pricevalue {
+    padding-right:variables.$paddingrigth;
+    font-family: Roboto, sans-serif;
+
+    font-weight: 700;
+    font-size: 16px;
+
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: right;
+    vertical-align: bottom;
+
+    color:  variables.$pricelabelcolor;
+  }
+
+  &__button {
+    display: block;
+    justify-content: center;
+    padding-right: variables.$paddingleftproduto;
+
+    border: 0;
+    border-radius: 5px;
+    margin-left: variables.$paddingleftproduto;
+    padding-left: variables.$paddingleftproduto;
+
+
+    width: variables.$buttonwidth;
+    height: variables.$buttonheight;
+    background-color: variables.$buttonbackgroundcolor;
+    color: variables.$buttoncolor;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+
+transition: transform 300ms ease, box-shadow 300ms ease;
+transform-origin: center top;
+position: relative;
+
+
+
+}
+
+
+.catalog__grid {
+display: grid;
+justify-content: center; /* centraliza o conjunto de colunas */
+
+gap: variables.$gap-row variables.$gap-col; /* row column */
+
+grid-template-columns: repeat(1, variables.$cartao-width);
+}
+
+@media (min-width: 488px) { .catalog__grid { grid-template-columns: repeat(2, variables.$cartao-width); } }
+@media (min-width: 768px) { .catalog__grid { grid-template-columns: repeat(3, variables.$cartao-width); } }
+@media (min-width: 1024px) { .catalog__grid { grid-template-columns: repeat(4, variables.$cartao-width); } }
+
+
+
+
+.catalog, .catalog__grid { overflow: visible; }
+
+
+.card:hover {
+transform: scale(1.2);
+z-index: 2;
+}
+
+.card__product {
+
+transition: color 300ms ease;
+}
+.card:hover .card__product {
+
+color: variables.card-hover-color;
+}
+.card__button {
+transition: background-color 300ms ease, color 300ms ease;
+}
+.card__button:hover {
+background-color: #fff;
+color: #00acdc;
+}
+
