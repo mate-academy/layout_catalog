@@ -1,0 +1,136 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  height: 408px;
+  color: $main-text-color;
+  border: 1px solid $light-grey;
+  border-radius: 5px;
+  transition: all 300ms;
+
+  grid-template-columns: 200px;
+
+  @media (min-width: 488px) {
+    // 2 columns at 488px and above
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    // 3 columns at 768px and above
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    // 4 columns at 1024px and above
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    color: $terciary-text-color;
+  }
+
+  &__image {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    margin-top: 32px;
+    transition: 300ms;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    text-align: left;
+    color: $second-text-color;
+    margin-top: 4px;
+    transition: 300ms;
+  }
+
+  &__description {
+    align-self: flex-start;
+    margin: 0 16px;
+    transition: 300ms;
+  }
+
+  &__title {
+    padding-top: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+    transition: 300ms;
+  }
+
+  &__review {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $main-size;
+    transition: 300ms;
+
+    &-quantity {
+      font-size: 10px;
+      line-height: 14px;
+      color: $main-text-color;
+    }
+  }
+
+  &__price {
+    width: 166px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: 300ms;
+
+    &-text {
+      line-height: 18px;
+      font-size: 12px;
+      color: $second-text-color;
+      transition: 300ms;
+    }
+
+    &-value {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $main-text-color;
+      transition: 300ms;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+
+    width: 166px;
+    height: 40px;
+
+    background-color: $main-color;
+    color: $white;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    transition: 300ms;
+
+    &:hover {
+      background-color: $white;
+      transition: 300ms;
+      color: $main-color;
+      border: 1px solid $main-color;
+    }
+  }
+}
