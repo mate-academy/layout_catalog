@@ -1,0 +1,106 @@
+@use '../utils/variables.scss' as v;
+@use '../utils/mixins.scss' as m;
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
+  background: v.$white;
+  border: 1px solid v.$gray-elements;
+  border-radius: 5px;
+
+  @include m.transition-smooth(transform);
+
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    max-width: 160px;
+    aspect-ratio: 160 / 134;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: v.$font-size-xs;
+    line-height: 150%;
+    color: v.$main-accent;
+
+    @include m.transition-smooth(color);
+  }
+
+  &:hover &__title {
+    color: v.$blue-dark;
+  }
+
+  &__code {
+    margin-top: 4px;
+    line-height: 140%;
+    font-size: v.$font-size-xxs;
+    color: v.$secondary;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__reviews-count {
+    font-size: v.$font-size-xxs;
+    color: v.$main-accent;
+    line-height: 140%;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  &__price-label {
+    font-size: v.$font-size-xs;
+    line-height: 150%;
+    color: v.$secondary;
+  }
+
+  &__price-count {
+    font-weight: 700;
+    line-height: 113%;
+    font-size: v.$font-size-md;
+    color: v.$main-accent;
+  }
+
+  &__button {
+    margin-top: 16px;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: v.$font-size-sm;
+    line-height: 114%;
+    text-transform: uppercase;
+    text-align: center;
+    color: v.$white;
+    background: v.$blue-accent;
+    border: 1px solid v.$blue-accent;
+    text-decoration: none;
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include m.transition-smooth(all);
+
+    &:hover {
+      color: v.$blue-accent;
+      background: v.$white;
+    }
+  }
+}
