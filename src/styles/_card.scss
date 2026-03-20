@@ -1,0 +1,108 @@
+@use 'variables' as *;
+
+.card {
+display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: 17px;
+  justify-content: center;
+  transition: $transition-duration;
+
+  &:hover {
+    // Змінено на 1.2 (20% збільшення)
+    transform: scale(1.2);
+  }
+
+  &__image {
+    align-self: center;
+    margin: 16px 0 40px;
+    width: 160px;
+    height: 134px;
+    display: flex; // Лишаємо один блок тут
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 4px;
+    color: $main-accent;
+
+  }
+
+  &:hover &__title {
+    color: $card-hover-color;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+
+    align-self: flex-start;
+    color: $secondary;
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    display: flex;
+
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  // ВИПРАВЛЕНО BEM: тепер це елемент блоку .card, а не .card__rating
+  &__reviews {
+    color: $main-accent;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+  }
+
+  &__price {
+    display: flex;
+
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    // ВИПРАВЛЕНО BEM: card__price-label
+    &-label {
+      color: $secondary;
+
+      font-size: 12px;
+      line-height: 18px;
+
+    }
+
+    // ВИПРАВЛЕНО BEM: card__price-value
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+
+      color: $main-accent;
+    }
+  }
+
+  &__button {
+    display: flex;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid $blue-accent;
+    background-color: $blue-accent;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: white;
+      color: $blue-accent;
+    }
+  }
+}

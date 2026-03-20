@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  
+  &__star {
+    // Використовуємо змінну для розміру зірки
+    width: $star-size;
+    height: $star-size;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  // Цикл для генерації класів від stars--1 до stars--5
+  @for $i from 1 to 6 {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+}
