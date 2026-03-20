@@ -2,66 +2,55 @@
 
 .header {
   display: flex;
-  
   justify-content: space-between;
   align-items: center;
-  // Використовуємо зміну для відступу (Checklist #2)
   padding: 0 $header-padding-x;
-
-  & * {
-    // Використовуємо зміну для часу анімації (Checklist #2)
-    transition-duration: $transition-duration;
-  }
 
   &__logo {
     display: flex;
   }
 
   &__list {
-
     display: flex;
-
     list-style: none;
-
     align-items: center;
+    padding: 0;
+    margin: 0;
+  }
 
-    &-item {
-      position: relative;
-      margin-right: 20px;
-      &:last-child {
-        margin-right: 0;
-      }
+  // ТУТ ЗМІНИ: тепер це прямі елементи хедеру
+  &__item {
+    position: relative;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    line-height: 60px;
+    font-family: $font-main;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $main-accent;
+    transition: $transition-duration;
+
+    &:hover,
+    &.is-active {
+      color: $blue-accent;
     }
 
-    &-link {
-      display: flex;
-
-      line-height: 60px;
-      // Використовуємо зміну для шрифту (Checklist #2)
-      font-family: $font-main;
-      font-weight: 500;
-      font-size: 12px;
-
-      text-transform: uppercase;
-      color: $main-accent;
-      &:hover,
-      &.is-active {
-        color: $blue-accent;
-      }
-
-      &.is-active::after {
-
-        position: absolute;
-        content: '';
-        bottom: 0;
-        left: 0;
-        // Видалено color: $blue-accent, бо тут немає тексту
-        // Виправлено назву змінної border-size
-        border: $header-link-border-size solid $blue-accent;
-        border-radius: 16px;
-        width: 100%;
-        // box-sizing: border-box видалено, бо він успадковується з html (index.scss)
-      }
+    &.is-active::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      border: $header-link-border-size solid $blue-accent;
+      border-radius: 16px;
+      width: 100%;
     }
   }
 }
