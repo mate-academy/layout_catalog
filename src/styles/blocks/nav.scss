@@ -1,0 +1,43 @@
+.nav {
+  overflow: hidden;
+
+  &__list {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  &__link {
+    $nav-link-height: 3.75rem;
+
+    display: block;
+    height: $nav-link-height;
+    line-height: $nav-link-height;
+    color: $color-text-primary;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 300ms;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.is-active {
+      position: relative;
+
+      color: $color-accent;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.25rem;
+      border-radius: 0.5rem;
+      background-color: $color-accent;
+    }
+  }
+}
