@@ -1,11 +1,12 @@
 .header {
   &__container {
-    max-width: 1200px;
+    max-width: $container-max-width;
     margin: 0 auto;
     padding: 0 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   }
 
@@ -32,30 +33,30 @@
       align-items: center;
       text-decoration: none;
       font-family: Roboto, sans-serif;
-      font-size: 12px;
+      font-size: $fs-small;
       color: var(--c-main-accent);
       position: relative;
       font-weight: 500;
       text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition: all $transition-duration ease;
 
       &:hover {
         color: var(--c-blue-accent);
       }
-    }
 
-    .is-active {
-      color: var(--c-blue-accent);
+      &.is-active {
+        color: var(--c-blue-accent);
 
-      &::after {
-        content: '';
-        height: 4px;
-        width: 100%;
-        border-radius: 8px;
-        background-color: var(--c-blue-accent);
-        position: absolute;
-        left: 0;
-        bottom: 0;
+        &::after {
+          content: '';
+          height: 4px;
+          width: 100%;
+          border-radius: 8px;
+          background-color: var(--c-blue-accent);
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
       }
     }
   }
