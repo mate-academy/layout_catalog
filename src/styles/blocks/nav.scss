@@ -11,26 +11,20 @@
     height: 60px;
     font-size: 12px;
     font-weight: 500;
-    color: $standardTextColor;
+    color: $standard-text-color;
     text-decoration: none;
     text-transform: uppercase;
     line-height: 60px;
+
+    @include transition-on-hover;
   }
 
-  &__link:hover {
-    color: $colorBlue;
+  &__link--is-active {
+    position: relative;
+    color: $color-blue;
   }
 
-  &__item + .nav__item {
-    margin-left: 20px;
-  }
-}
-
-.is-active {
-  position: relative;
-  color: $colorBlue;
-
-  &::after {
+  &__link--is-active::after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -38,8 +32,16 @@
     display: block;
     height: 4px;
     width: 37px;
-    background-color: $colorBlue;
+    background-color: $color-blue;
     border-radius: 8px;
     border: 0;
+  }
+
+  &__link:hover {
+    color: $color-blue;
+  }
+
+  &__item + .nav__item {
+    margin-left: 20px;
   }
 }
