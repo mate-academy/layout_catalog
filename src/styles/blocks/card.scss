@@ -1,0 +1,101 @@
+.card {
+  display: flex;
+  padding: 2rem 1rem 1rem;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $card-width;
+  border: 0.06rem solid $border-card-color;
+  border-radius: $border-radius;
+  transition: all $transition-delay;
+
+  &:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+  }
+
+  &__title {
+    @include font-standard;
+
+    font-weight: 500;
+    color: $standard-text-color;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  &:hover &__title {
+    color: $title-hover-color;
+  }
+
+  &__img {
+    display: block;
+    align-self: center;
+    width: 10rem;
+    height: 8.38rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__code {
+    @include font-small;
+
+    color: $grey-text-color;
+    align-self: start;
+    margin-top: 0.25rem;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    align-items: center;
+  }
+
+  &__review-text {
+    @include font-small;
+
+    color: $standard-text-color;
+  }
+
+  &__price {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-text {
+    @include font-standard;
+
+    font-weight: 400;
+    color: $grey-text-color;
+  }
+
+  &__price-amount {
+    @include font-price;
+
+    color: $standard-text-color;
+  }
+
+  &__button {
+    margin-top: 1rem;
+    background-color: $color-blue;
+    border: 0.06rem solid transparent;
+    box-sizing: border-box;
+    border-radius: $border-radius;
+    width: 100%;
+    padding: 0.69rem 0;
+    text-align: center;
+
+    @include font-button;
+
+    transition: all $transition-delay;
+    color: $text-button-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $text-button-color;
+      border: 0.06rem solid $color-blue;
+      color: $color-blue;
+    }
+  }
+}
