@@ -8,33 +8,15 @@
 
   &__link {
     display: block;
-    height: 60px;
-    font-size: 12px;
+    height: $nav-link-height;
     font-weight: 500;
     color: $standard-text-color;
     text-decoration: none;
     text-transform: uppercase;
-    line-height: 60px;
 
-    @include transition-on-hover;
-  }
+    @include font-nav;
 
-  &__link--is-active {
-    position: relative;
-    color: $color-blue;
-  }
-
-  &__link--is-active::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    display: block;
-    height: 4px;
-    width: 37px;
-    background-color: $color-blue;
-    border-radius: 8px;
-    border: 0;
+    transition: all $transition-delay;
   }
 
   &__link:hover {
@@ -42,6 +24,24 @@
   }
 
   &__item + .nav__item {
-    margin-left: 20px;
+    margin-left: 1.25rem;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $color-blue;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+    height: $nav-active-line-height;
+    width: $nav-active-line-width;
+    background-color: $color-blue;
+    border-radius: $nav-active-border-radius;
+    border: 0;
   }
 }
