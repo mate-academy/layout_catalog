@@ -1,0 +1,105 @@
+@import '../utils/variables';
+
+:root {
+  --blue-color: #{$main-color};
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  font-family: $font-main;
+  font-weight: 500;
+}
+
+.header {
+  background-color: $background-color;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-transform: uppercase;
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-accent-color;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: color 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--blue-color);
+    }
+  }
+}
+
+.is-active {
+  color: var(--blue-color);
+  position: relative;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: var(--blue-color);
+    border-radius: 2px;
+  }
+}
+
+.blue {
+  color: var(--blue-color);
+}
+
+.logo {
+  padding-left: 50px;
+  vertical-align: bottom;
+
+  &__image {
+    display: block;
+    align-items: start;
+  }
+}

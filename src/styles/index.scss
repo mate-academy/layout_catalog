@@ -1,3 +1,45 @@
+@import '../utils/variables';
+@import '../blocks/card';
+@import '../blocks/stars';
+@import '../blocks/header';
+
+html {
+  font-family: $font-main;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  color: $text-secondary-color;
+}
+
 body {
-  margin: 0;
+  margin: $margin-base;
+  background-color: $background-color;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+.catalog {
+  display: grid;
+  gap: $vertical-gap $horizontal-gap;
+
+  @media (min-width: $breakpoint-1024) {
+    grid-template-columns: auto auto auto auto;
+  }
+
+  @media (max-width: $breakpoint-1023) and (min-width: $breakpoint-768) {
+    grid-template-columns: auto auto auto;
+  }
+
+  @media (max-width: $breakpoint-767) and (min-width: $breakpoint-488) {
+    grid-template-columns: auto auto;
+  }
+
+  @media (max-width: $breakpoint-487) {
+    grid-template-columns: auto;
+  }
 }
