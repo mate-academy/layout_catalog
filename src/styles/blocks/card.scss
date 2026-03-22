@@ -1,0 +1,110 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: $card-padding-top $card-padding $card-padding;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-small;
+  background-color: $white-color;
+  list-style: none;
+  transform-origin: center;
+  transition: transform $transition-duration;
+
+  &:hover {
+    z-index: 1;
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: $card-image-width;
+    height: $card-image-height;
+    margin: 0 auto $card-image-margin-bottom;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-bottom: $card-title-margin-bottom;
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-standard;
+    line-height: $line-height-standard;
+    transition: color $transition-duration;
+  }
+
+  &:hover .card__title {
+    color: $card-title-hover-color;
+  }
+
+  &__code {
+    margin-bottom: $card-code-margin-bottom;
+    color: $secondary-color;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $card-rating-margin-bottom;
+  }
+
+  &__reviews {
+    color: $primary-color;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $price-margin-bottom;
+  }
+
+  &__price-label {
+    color: $secondary-color;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-standard;
+    line-height: $line-height-standard;
+  }
+
+  &__price-value {
+    color: $primary-color;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-price;
+    line-height: $line-height-standard;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $buy-button-height;
+    border: 1px solid transparent;
+    border-radius: $border-radius-small;
+    background-color: $color-main;
+    color: $white-color;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-large;
+    line-height: $line-height-button;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      color $transition-duration,
+      background-color $transition-duration,
+      border-color $transition-duration;
+
+    @media (min-width: $breakpoint-button-hover) {
+      &:hover {
+        border-color: $color-main;
+        background-color: $white-color;
+        color: $color-main;
+      }
+    }
+  }
+}
