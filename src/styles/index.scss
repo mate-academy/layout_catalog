@@ -1,3 +1,262 @@
+$blue: #00acdc;
+$light-grey: #616070;
+$nav-color: #060b35;
+$title-hover: #34568b;
+$card-width: 200px;
+$gap-rows: 46px;
+$gap-cols: 48px;
+$catalog-padding: 50px 40px;
+$border-radius: 5px;
+$font-size-small: 12px;
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.catalog {
+  display: grid;
+  padding: $catalog-padding;
+  gap: $gap-rows $gap-cols;
+  justify-content: center;
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.header {
+  justify-content: space-between;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+
+  &__nav-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__nav-item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav-link {
+    font-weight: 500;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: $font-size-small;
+    color: $nav-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 300ms;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__nav-link.is-active {
+    color: $blue;
+  }
+
+  &__nav-link.is-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: $blue;
+    border-radius: 2px;
+  }
+}
+
+.stars {
+  background-color: #fff;
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    border-radius: 0.5px;
+    background-repeat: no-repeat;
+    background-image: url('../images/star.svg');
+    background-position: center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+}
+
+.card {
+  overflow: visible;
+  width: $card-width;
+  height: 408px;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+
+  &__code-link {
+    text-decoration: none;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    display: block;
+    object-fit: contain;
+  }
+
+  &__title-link {
+    text-decoration: none;
+
+    &:hover {
+      color: $title-hover;
+    }
+  }
+
+  &__title {
+    color: $nav-color;
+    font-weight: 500;
+    font-size: $font-size-small;
+    line-height: 18px;
+    letter-spacing: 0;
+    margin-top: 40px;
+    margin-bottom: 0;
+    transition: color 300ms;
+  }
+
+  &:hover .card__title {
+    color: $title-hover;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid $blue;
+    border-radius: $border-radius;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0;
+    transition:
+      background-color 300ms,
+      color 300ms;
+    background-color: $blue;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+
+    &:hover {
+      background-color: #fff;
+      color: $blue;
+      border-color: $blue;
+    }
+  }
+
+  &__code {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0;
+    color: $light-grey;
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: bottom;
+    color: $nav-color;
+  }
+
+  &__price-label {
+    font-weight: 400;
+    font-size: $font-size-small;
+    line-height: 18px;
+    letter-spacing: 0;
+    vertical-align: bottom;
+    color: $light-grey;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-align: right;
+    vertical-align: bottom;
+    color: $nav-color;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__inner {
+    transition: transform 300ms;
+    transform-origin: center;
+  }
+
+  &:hover .card__inner {
+    transform: scale(1.2);
+  }
 }
