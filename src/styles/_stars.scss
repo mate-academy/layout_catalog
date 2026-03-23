@@ -1,0 +1,25 @@
+.stars {
+  display: flex;
+  gap: $star-gap;
+  box-sizing: border-box;
+
+  &__star {
+    box-sizing: border-box;
+    width: $star-size;
+    height: $star-size;
+
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  // Modifiers for highlighting first N stars using SCSS loop
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+}
