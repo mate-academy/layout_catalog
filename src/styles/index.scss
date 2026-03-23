@@ -1,3 +1,94 @@
+@import 'variables';
+@import 'stars';
+@import 'card';
+
 body {
+  font-family: $font-main;
   margin: 0;
+  background-color: $color-white;
+}
+
+.site-header {
+  &__container {
+    display: flex;
+    align-items: center;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $catalog-padding-horizontal;
+  }
+
+  &__logo {
+    display: block;
+  }
+
+  &__logo-img {
+    height: 40px;
+    display: block;
+  }
+}
+
+.nav {
+  margin-left: auto;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $font-size-m;
+    font-weight: 700;
+    color: $color-nav-text;
+    position: relative;
+    transition: color $transition-speed;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &.is-active {
+      color: $color-primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $color-primary;
+      }
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  gap: $catalog-gap-vertical $catalog-gap-horizontal;
+
+  grid-template-columns: repeat(1, $card-width);
+
+  @media (min-width: $breakpoint-mobile-large) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
