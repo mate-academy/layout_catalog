@@ -6,28 +6,31 @@
   padding: 50px 40px;
   justify-self: center;
   gap: 46px 48px;
+  grid-template-columns: $card-width;
+  box-sizing: border-box;
 
   @include on-small-tablet {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, $card-width);
   }
 
   @include on-tablet {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, $card-width);
   }
 
   @include on-desktop {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, $card-width);
   }
 }
 
 .card {
   border-radius: 5px;
   width: 200px;
+  height: 408px;
   background-color: $white;
   border: 1px solid $border-color;
   box-sizing: border-box;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform $transition-time ease;
 
   &__heading {
     margin: 0 0 4px;
@@ -35,7 +38,7 @@
     font-size: 12px;
     line-height: 18px;
     color: $main-color;
-    transition: color 0.3s ease;
+    transition: color $transition-time ease;
   }
 
   &:hover {
@@ -52,7 +55,11 @@
   }
 
   &__image {
+    display: flex;
+    align-self: center;
     margin-bottom: 40px;
+    width: 160px;
+    height: 134px;
   }
 
   &__code {
@@ -86,7 +93,7 @@
 
   &__review-container {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
   }
@@ -112,7 +119,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
-    transition: all 0.3s ease;
+    transition: all $transition-time ease;
     text-transform: uppercase;
 
     &:hover {
