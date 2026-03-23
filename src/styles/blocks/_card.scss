@@ -1,0 +1,61 @@
+.card {
+  position: relative;
+  width: $card-width;
+  border-radius: $spacing-xs;
+  background-color: $color-card-bg;
+  transition: transform $transition-speed;
+  cursor: pointer;
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__content {
+    padding: 10px;
+  }
+
+  &__title {
+    margin: 10px 0;
+    font-size: 16px;
+    transition: color $transition-speed;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  &__price {
+    font-weight: 700;
+    color: $color-text-nav;
+  }
+
+  &__button {
+    padding: 8px 16px;
+    color: $color-white;
+    text-decoration: none;
+    background-color: $color-accent;
+    border: 1px solid $color-accent;
+    border-radius: $spacing-xs;
+    transition:
+      background-color $transition-speed,
+      color $transition-speed;
+
+    &:hover {
+      color: $color-accent;
+      background-color: $color-white;
+    }
+  }
+
+  &:hover {
+    z-index: 10;
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+}
