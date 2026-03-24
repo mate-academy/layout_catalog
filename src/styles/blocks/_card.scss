@@ -1,0 +1,100 @@
+.card {
+  margin: 0;
+  padding: $padding-mid $padding-sm $padding-sm;
+  width: $card-size;
+  box-sizing: border-box;
+  background-color: $main-bg-color;
+  border-radius: $border-radius;
+  border: $border-width solid $neutral-grey-color;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale($card-hover-scale);
+  }
+
+  &__image {
+    display: block;
+    width: $card-image-width;
+    height: $card-image-height;
+    margin: 0 auto $spacing-lg;
+  }
+
+  &__title {
+    font-size: $text-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-large;
+    color: $main-text-color;
+    margin-bottom: $spacing-xxs;
+    transition: color $transition-duration;
+
+    .card:hover & {
+      color: $text-hover-color;
+    }
+  }
+
+  &__code {
+    font-size: $text-size-xs;
+    line-height: $line-height-main;
+    color: $secondary-text-color;
+  }
+
+  &__rating {
+    @include space-between;
+
+    align-items: center;
+    margin-top: $spacing-sm;
+  }
+
+  &__reviews {
+    margin: 0;
+    font-size: $text-size-xs;
+    line-height: $line-height-main;
+    color: $main-text-color;
+  }
+
+  &__price {
+    @include space-between;
+
+    margin-top: $spacing-md;
+  }
+
+  &__text {
+    font-size: $text-size-sm;
+    line-height: $line-height-large;
+    color: $secondary-text-color;
+  }
+
+  &__number {
+    font-size: $text-size-lg;
+    line-height: $line-height-large;
+    font-weight: $font-weight-bold;
+    color: $main-text-color;
+  }
+
+  &__button {
+    @include center-flex;
+
+    box-sizing: border-box;
+    font-size: $text-size-md;
+    width: 100%;
+    line-height: $line-height-mid;
+    background-color: $blue-accent;
+    color: $main-bg-color;
+    text-transform: uppercase;
+    border-radius: $border-radius;
+    font-weight: $font-weight-bold;
+    padding: $padding-xs 0;
+    margin-top: $spacing-xs;
+    height: $card-button-height;
+    border: $border-width solid $blue-accent;
+    text-decoration: none;
+    transition:
+      background-color $transition-duration,
+      color $transition-duration;
+
+    &:hover {
+      color: $blue-accent;
+      background-color: $main-bg-color;
+    }
+  }
+}
