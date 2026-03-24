@@ -1,0 +1,71 @@
+@mixin on-small-tablet {
+  @media (min-width: $width-smallTablet) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $width-tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $width-desktop) {
+    @content;
+  }
+}
+
+.catalog {
+  // border: 2px dashed black;
+  // background-color: bisque;
+  padding: 50px 40px;
+}
+
+.catalog__content {
+  --columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+
+  // max-width: 1200px;
+  // padding: 20px;
+
+  margin: 0 auto;
+
+  // border: 2px solid black;
+
+  @include on-small-tablet {
+    // grid-template-columns: repeat(2, 1fr);
+    --columns: 2;
+  }
+
+  @include on-tablet {
+    // grid-template-columns: repeat(3, 1fr);
+    --columns: 3;
+
+    // padding: 40px;
+  }
+
+  @include on-desktop {
+    // grid-template-columns: repeat(4, 1fr);
+    --columns: 4;
+  }
+}
+
+// .card {
+// box-sizing: border-box;
+// width: 200px;
+// height: 150px;
+// border: 1px solid blue;
+// background-color: yellowgreen;
+// }
+
+// @for $i from 1 through 8 {
+//   .card:nth-child(#{$i}) {
+//     // display: none;
+//     transition-delay: 1s;
+//   }
+// }
