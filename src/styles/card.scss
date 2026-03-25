@@ -1,0 +1,133 @@
+.catalog {
+  display: grid;
+  gap: $catalog-gap-y $catalog-gap-x;
+  padding: $catalog-padding-y $catalog-padding-x;
+  justify-content: center;
+
+  grid-template-columns: $card-width;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $card-width;
+
+  border-radius: $border-radius;
+  border: 1px solid $color-border;
+  background-color: $color-white;
+  font-family: $font-family-main;
+  transition: transform 0.3s ease;
+
+  &__code {
+    margin-top: 0;
+    margin-bottom: $margid-bottom-size;
+    font-size: $font-size-small;
+    color: $color-text-secondary;
+    line-height: 14px;
+    font-weight: $font-weight-regular;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: $font-size-large;
+    line-height: 18px;
+    font-weight: $font-weight-medium;
+    color: $color-text-main;
+    transition: color 0.3s ease;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    margin: 0;
+    font-size: $font-size-small;
+    line-height: 14px;
+    font-weight: $font-weight-regular;
+    color: $color-text-main;
+  }
+
+  &__image {
+    height: 134px;
+    width: 160px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 32px;
+  }
+
+  &__content {
+    padding: 40px 16px 16px;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $margid-bottom-size;
+  }
+
+  &__price-label {
+    margin: 0;
+    font-size: $font-size-large;
+    line-height: 18px;
+    color: $color-text-secondary;
+    font-weight: $font-weight-regular;
+  }
+
+  &__price-value {
+    line-height: 18px;
+    font-weight: $font-weight-bold;
+    color: $color-text-main;
+    margin: 0;
+  }
+
+  &__buy {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+    font-size: $font-size-extra-large;
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    border-radius: $border-radius;
+    border: 1px solid $color-primary;
+    font-weight: $font-weight-bold;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary;
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+}
