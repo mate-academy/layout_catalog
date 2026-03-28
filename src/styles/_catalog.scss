@@ -1,22 +1,21 @@
+@import './variables';
+
 .catalog {
-  padding: 50px 40px;
+  display: grid;
+  gap: $grid-gap;
+  padding: $catalog-padding;
+  justify-content: center;
+  grid-template-columns: $card-width;
 
-  &__grid {
-    display: grid;
-    justify-content: center;
-    gap: 46px 48px;
-    grid-template-columns: repeat(1, 200px);
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, $card-width);
+  }
 
-    @media (min-width: 488px) {
-      grid-template-columns: repeat(2, 200px);
-    }
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, $card-width);
+  }
 
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 200px);
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, 200px);
-    }
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, $card-width);
   }
 }
