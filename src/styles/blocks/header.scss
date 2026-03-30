@@ -1,0 +1,91 @@
+.header {
+  box-sizing: border-box;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  font-weight: 500;
+  font-size: 12px;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  &__logo-image {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  &__nav-list {
+    box-sizing: border-box;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    * {
+      box-sizing: border-box;
+    }
+  }
+
+  &__nav-item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $header-height;
+
+    text-transform: uppercase;
+    color: $text-black;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $text-blue;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $text-blue;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $text-blue;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $text-blue;
+}
+
+@media (max-width: 1200px) {
+  [data-qa='card-hover']:hover {
+    color: $text-blue;
+  }
+}
+
+@media (max-width: 1024px) {
+  [data-qa='card-hover']:hover {
+    color: $text-blue;
+  }
+}
