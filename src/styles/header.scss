@@ -1,0 +1,60 @@
+.header {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  display: flex;
+  position: relative;
+  width: 100%;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  transition: color $transition-time;
+
+  &__nav {
+    position: relative;
+    right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    position: absolute;
+    left: 50px;
+    top: 10px;
+  }
+
+  &__link {
+    display: inline-block;
+    line-height: 60px;
+    height: 60px;
+    text-decoration: none;
+    color: $text-color;
+    margin-left: 20px;
+    transition: color $transition-time;
+
+    &:hover {
+      color: $button-color;
+    }
+  }
+}
+
+.header__link.is-active {
+  color: $button-color;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 37px;
+    height: 4px;
+    background-color: $button-color;
+    border-radius: 8px;
+  }
+}
