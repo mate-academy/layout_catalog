@@ -1,3 +1,233 @@
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  --color-blue: #00acdc;
+  --color-white: #fff;
+  --color-grey: #616070;
+  --color-black: #060b35;
+}
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+}
+
+.nav {
+  padding: -120px;
+  margin-top: 25px;
+
+  &__list {
+    display: flex;
+    margin: -20px;
+  }
+
+  &__item {
+    margin-right: 20px;
+    list-style: none;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-black);
+    transition: color 300ms;
+  }
+
+  &__link:hover {
+    transform: scale(1.2);
+    color: var(--color-blue);
+  }
+}
+
+.logo {
+  margin-bottom: -3px;
+  margin-left: 0;
+}
+
+.is-active {
+  color: var(--color-blue);
+}
+
+.is-active::after {
+  position: relative;
+  display: block;
+  width: 37px;
+  height: 4px;
+  border-radius: 8px;
+  margin-top: 19px;
+  content: '';
+  background-color: var(--color-blue);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 40px;
+  transition: 300ms;
+  width: 200px;
+  border-radius: 5px;
+  height: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-white);
+
+  &__text {
+    color: var(--color-grey);
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: -26px;
+    margin-top: -1px;
+  }
+
+  &__reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__review {
+    margin-top: 10px;
+    font-size: 10px;
+    margin-right: -22px;
+    font-family: sans-serif;
+  }
+
+  &__inform {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -60px;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    margin-right: -22px;
+    margin-top: -1px;
+  }
+
+  &__code {
+    color: var(--color-grey);
+    font-size: 10px;
+    margin-top: -6px;
+    margin-left: -25px;
+  }
+
+  &__title {
+    margin-top: 40px;
+    margin-right: -35px;
+    transition: 300ms;
+    margin-left: -25px;
+    line-height: 18px;
+  }
+
+  &__title:hover {
+    color: #34568b;
+  }
+
+  &__image {
+      display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 21px;
+  margin-left: -21px;
+  width: 160px;
+  height: 134px;
+  }
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  background-image: url('../images/star-active.svg');
+  width: 100px;
+  margin-left: -24px;
+  margin-top: 10px;
+  height: 100px;
+  background-repeat: no-repeat;
+
+  &__star {
+    background-image: url('../images/star-active.svg');
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+  }
+
+  &--0 &__star:nth-child(n + 5) {
+    background-image: url('../images/star.svg');
+  }
+}
+
+.button {
+  text-align: center;
+  background-color: var(--color-blue);
+  width: 166px;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 300ms;
+  border-radius: 5px;
+  margin-left: -26px;
+  margin-top: 16px;
+  text-transform: uppercase;
+
+  &:hover {
+    border: 1px solid var(--color-blue);
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+    transform: scale(1.2);
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+}
+
+@media (min-width: 1px) {
+  .container {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
