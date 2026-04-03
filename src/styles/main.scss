@@ -1,26 +1,27 @@
 @use './utils/mixins.scss' as mix;
+@use './utils/variables.scss' as vars;
 
 .main {
-  padding: 50px 40px;
+  padding: vars.$main-padding;
   box-sizing: border-box;
   display: grid;
-  gap: 46px 48px;
+  gap: vars.$gap-vert vars.$gap-hori;
   justify-items: center;
   justify-content: center;
 
   @include mix.tiny-screen {
-    grid-template-columns: repeat(1, 200px);
+    grid-template-columns: repeat(1, vars.$card-width);
   }
 
   @include mix.small-screen {
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, vars.$card-width);
   }
 
   @include mix.medium-screen {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, vars.$card-width);
   }
 
   @include mix.large-screen {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, vars.$card-width);
   }
 }
