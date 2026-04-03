@@ -1,0 +1,43 @@
+@use './utils/variables.scss' as vars;
+
+.nav {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  &__list &__item + &__item {
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: vars.$link-color;
+  }
+
+  &__link:hover {
+    color: vars.$theme-color;
+  }
+
+  &__link.is-active {
+    position: relative;
+    color: vars.$theme-color;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    bottom: 0;
+    background-color: vars.$theme-color;
+  }
+}
