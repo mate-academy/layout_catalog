@@ -1,0 +1,46 @@
+@use './utils/variables.scss' as vars;
+@use './utils/mixins.scss' as mix;
+
+.nav {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  &__list &__item + &__item {
+    margin-left: vars.$nav-gap;
+  }
+
+  &__link {
+    display: flex;
+    height: vars.$nav-link-height;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: vars.$link-color;
+
+    @include mix.smooth-operator(vars.$transition-duration);
+  }
+
+  &__link:hover {
+    color: vars.$theme-color;
+  }
+
+  &__link.is-active {
+    position: relative;
+    color: vars.$theme-color;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: vars.$bottom-line;
+    border-radius: vars.$bottom-line-radius;
+    bottom: 0;
+    background-color: vars.$theme-color;
+  }
+}
