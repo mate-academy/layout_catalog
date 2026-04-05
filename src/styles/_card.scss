@@ -1,7 +1,7 @@
 @import './variables';
 
 .card {
-  width: $card-width;
+  width: calc((100% - 60px) / 4);
   height: $card-height;
   padding: $card-padding;
   box-sizing: border-box;
@@ -13,16 +13,17 @@
   justify-content: space-between;
 
   transition: transform $transition-time;
-  transform-origin: center;
 }
 
 .card:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .card__image {
   width: 100%;
-  height: auto;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 .card__content {
@@ -35,11 +36,10 @@
   font-size: 14px;
   font-weight: 500;
   color: $color-dark;
-  transition: color $transition-time;
 }
 
 .card:hover .card__title {
-  color: #34568b;
+  color: $color-primary;
 }
 
 .card__code {
