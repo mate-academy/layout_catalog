@@ -1,75 +1,99 @@
 @use '../utils/variables' as *;
 
 .card {
-  color: $color-black;
-  box-sizing: border-box;
-  width: 200px;
-  padding: 32px 16px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
   border: 1px solid $card-border-color;
   border-radius: 5px;
+  color: $color-black;
+  transition: transform 300ms;
+  transform-origin: center;
+
+  &:hover {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.2);
+  }
 
   &__image {
     display: block;
-    height: 134px;
     width: 160px;
+    height: 134px;
     margin: 0 auto;
   }
+
   &__title {
     margin: 40px 0 0;
-    font-size: 12px;
     font-weight: 500;
+    font-size: 12px;
     line-height: 18px;
+    transition: color 300ms;
   }
+
+  &:hover &__title {
+    color: $card-title-hover-color;
+  }
+
   &__code {
     margin-top: 4px;
     font-weight: 400;
     font-size: 10px;
-    color: $color-secondary;
     line-height: 14px;
+    color: $color-secondary;
   }
+
   &__reviews {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-weight: 400;
     font-size: 10px;
     line-height: 14px;
-    font-weight: 400;
-    margin-top: 16px;
-    justify-content: space-between;
   }
+
   &__price-box {
-    margin-top: 24px;
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
+    margin-top: 24px;
     font-weight: 400;
-    color: $color-secondary;
+    font-size: 12px;
     line-height: 18px;
+    color: $color-secondary;
   }
+
   &__cost {
     font-size: 16px;
     line-height: 18px;
     color: $color-black;
   }
+
   &__button {
-    text-align: center;
+    width: 100%;
     margin-top: 16px;
     padding: 11px;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: $color-white;
-    background-color: $button-primary-color;
     border: 1px solid $button-primary-color;
     border-radius: 5px;
-    width: 100%;
+    background-color: $button-primary-color;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    transition:
+      background-color 300ms,
+      color 300ms,
+      border-color 300ms;
+
     &:hover {
+      border-color: $button-primary-color;
       background-color: $color-white;
       color: $button-primary-color;
-      border-color: $button-primary-color;
     }
   }
 }
