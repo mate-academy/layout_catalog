@@ -1,0 +1,89 @@
+.card {
+  width: $card-width;
+  background-color: $surface;
+  border: $border-width solid $grey;
+  border-radius: $border-radius;
+  padding: $main-offset;
+  transition: transform $transition-duration ease-in-out;
+
+  &__image {
+    display: block;
+    margin: $main-offset auto 0;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: $section-offset-secondary 0 0;
+    color: $primary;
+    transition: color $transition-duration ease-in-out;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 1.4;
+    color: $secondary;
+    margin: $card-code-offset 0 0;
+  }
+
+  &__price {
+    margin-top: $card-price-offset;
+    display: flex;
+    justify-content: space-between;
+
+    &-label {
+      font-size: 12px;
+      line-height: 1.5;
+      color: $secondary;
+    }
+
+    &-value {
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: $card-action-height;
+    background-color: $accent;
+    border: $border-width solid $accent;
+    border-radius: $border-radius;
+    color: $surface;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    margin: $main-offset 0 0;
+    transition:
+      background-color $transition-duration ease-in-out,
+      color $transition-duration ease-in-out;
+    outline: none;
+
+    &:hover {
+      background-color: $surface;
+      color: $accent;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &:hover {
+    position: relative;
+    z-index: 1;
+    transform-origin: center;
+    transform: scale(1.2);
+
+    .card__title {
+      color: $primary-lighten;
+    }
+  }
+}
