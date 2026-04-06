@@ -1,3 +1,245 @@
+$black: #000;
+$white: #fff;
+$blue: #00acdc;
+$text-main: #060b35;
+$text-secondary: #616070;
+$text-dark: #060b32;
+$border-light: #f3f3f3;
+$card-width: 200px;
+$radius: 5px;
+$blue-dark: #34568b;
+
 body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+h2,
+p {
+  margin: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.header {
+  &__container {
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav {
+    margin-left: auto;
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-block: 0;
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  &__nav-item {
+    & + & {
+      margin-left: 20px;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    display: block;
+    line-height: 60px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text-main;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &.is-active {
+      color: $blue;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $blue;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .cards {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  width: $card-width;
+  border-radius: $radius;
+  border: 1px solid $border-light;
+  background-color: $white;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+
+  &__container {
+    padding: 32px 16px 16px;
+    text-align: center;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+  }
+
+  &__content {
+    text-align: left;
+    max-width: 166px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 36px 0 4px;
+    line-height: 18px;
+    font-size: 12px;
+    color: $text-main;
+    transition: color 0.3s ease;
+  }
+
+  &__description {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $text-secondary;
+  }
+
+  &__rating {
+    padding: 16px 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__rating-text {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $text-secondary;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $text-dark;
+  }
+
+  &__button {
+    margin-top: 16px;
+    padding: 11px 0;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 164px;
+
+    border: 1px solid transparent;
+    border-radius: $radius;
+    background-color: $blue;
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  &:hover &__button {
+    background-color: $white;
+    border-color: $blue;
+    color: $blue;
+  }
+
+  &:hover &__title {
+    color: $blue-dark;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__star + &__star {
+    margin-left: 4px;
+  }
+
+  &--4 &__star:nth-child(-n + 4) {
+    background-image: url('../images/star-active.svg');
+  }
 }
