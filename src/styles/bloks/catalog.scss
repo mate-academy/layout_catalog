@@ -1,23 +1,24 @@
+@use '../utils/variables' as *;
+
 .catalog {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(1, $width-card);
-  gap: 46px 48px;
-  padding: 50px 40px;
+  gap: $catalog-gap;
+  padding: $catalog-padding;
   margin-right: auto;
   margin-left: auto;
   justify-content: center;
-  max-width: 1024px;
 
-  @media (min-width: 488px) {
+  @media (min-width: $mobile-breakpoint) {
     grid-template-columns: repeat(2, $width-card);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $tablet-breakpoint) {
     grid-template-columns: repeat(3, $width-card);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: $desktop-breakpoint) {
     grid-template-columns: repeat(4, $width-card);
   }
 }
