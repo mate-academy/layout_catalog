@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  gap: $nav-gap;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $nav-height;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $primary;
+    font-weight: 500;
+    font-size: 12px;
+    transition: ease-in-out $transition-duration color;
+    position: relative;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &.is-active {
+      color: $accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $nav-after-height;
+        background-color: $accent;
+        border-radius: $border-radius;
+      }
+    }
+  }
+}
+
+.nav__link:focus,
+.nav__link:focus-visible {
+  outline: none;
+}
