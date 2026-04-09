@@ -1,0 +1,25 @@
+@mixin flex-container() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @content;
+}
+
+@mixin text($size, $weight, $line-height, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin break-point-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin break-point-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

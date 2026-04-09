@@ -1,0 +1,109 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.grid {
+  --column-count-grid: 1;
+
+  display: grid;
+  gap: 46px 48px;
+  justify-content: center;
+  grid-template-columns: repeat(var(--column-count-grid), 200px);
+  padding: 50px 40px;
+
+  @include break-point-min($bp-sm) {
+    --column-count-grid: 2;
+  }
+
+  @include break-point-min($bp-md) {
+    --column-count-grid: 3;
+  }
+
+  @include break-point-min($bp-lg) {
+    --column-count-grid: 4;
+  }
+}
+
+.card {
+  border: 1px solid $border-color;
+  padding: 32px 16px 16px;
+  border-radius: 5px;
+  background-color: $background-color;
+  font-family: $font;
+
+  transition: $transition-transform;
+  transform-origin: center;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    @include text(12px, 500, 18px, $color-primary);
+
+    margin: 0 0 4px;
+    transition: $transition-color;
+  }
+
+  &:hover &__name {
+    color: $color-hover;
+  }
+
+  &__code {
+    @include text(10px, 400, 14px, $color-secondary);
+
+    margin-bottom: 16px;
+  }
+
+  &__rating {
+    @include flex-container {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__reviews {
+    @include text(10px, 400, 14px, $color-primary);
+  }
+
+  &__footer {
+    @include flex-container {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__price-label {
+    @include text(12px, 400, 18px, $color-secondary);
+  }
+
+  &__price {
+    @include text(16px, 700, 18px, $color-primary);
+  }
+
+  &__button {
+    @include text(14px, 700, 16px, #fff);
+
+    box-sizing: border-box;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: $color-accent;
+
+    width: 100%;
+    padding-block: 11px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: $transition-color, $transition-background, $transition-border;
+
+    &:hover {
+      background-color: $background-color;
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+  }
+}

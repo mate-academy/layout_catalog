@@ -1,0 +1,52 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.header {
+  @include flex-container {
+    padding: 0 50px;
+  }
+
+  @include break-point-max($bp-xl) {
+    max-width: $bp-xl;
+  }
+
+  @include break-point-max($bp-lg) {
+    max-width: $bp-lg;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    @include flex-container;
+
+    color: $color-primary;
+    height: 60px;
+    text-transform: uppercase;
+    transition: $transition-color;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $color-accent;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: $color-accent;
+  }
+}
