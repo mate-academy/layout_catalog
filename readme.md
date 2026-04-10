@@ -22,7 +22,6 @@ Follow these steps to set up the project locally
 ```
 git clone https://github.com/GabrielSpelchuk/layout_catalog.git
 cd layout_catalog
-git switch develop
 ```
 2. Install dependencies
 ```
