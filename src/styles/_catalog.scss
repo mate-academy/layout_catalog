@@ -1,0 +1,33 @@
+.catalog {
+  --column-count: 1;
+
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  padding: $container-vertical-padding $container-horizontal-padding;
+  gap: $vertical-gap $gorisontal-gap;
+
+  // 1. По умолчанию (самые маленькие экраны)
+  grid-template-columns: repeat(var(--column-count), $card-width);
+}
+
+// 2. От 488px (2 колонки)
+@media (min-width: 488px) {
+  .catalog {
+    --column-count: 2;
+  }
+}
+
+// 3. От 768px (3 колонки)
+@media (min-width: 768px) {
+  .catalog {
+    --column-count: 3;
+  }
+}
+
+// 4. От 1024px (4 колонки)
+@media (min-width: 1024px) {
+  .catalog {
+    --column-count: 4;
+  }
+}
