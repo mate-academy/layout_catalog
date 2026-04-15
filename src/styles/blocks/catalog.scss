@@ -1,0 +1,37 @@
+@use '../utils/variables' as vars;
+
+.catalog {
+  --column-number: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-number), vars.$card-width);
+  padding: 50px 40px;
+
+  place-content: center center;
+  place-items: center center;
+  gap: 46px 48px;
+
+  @media (min-width: 488px) {
+    --column-number: 2;
+  }
+
+  @media (min-width: 768px) {
+    --column-number: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --column-number: 4;
+  }
+
+  &__card {
+    transition: transform 300ms;
+  }
+
+  &__card:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    .card__title {
+      color: vars.$card-title-color;
+    }
+  }
+}
