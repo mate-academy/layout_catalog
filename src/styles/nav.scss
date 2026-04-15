@@ -1,0 +1,56 @@
+@import 'variables';
+
+.nav {
+  display: flex;
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $title-color;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 300ms;
+
+    &:hover {
+      color: var(--blue);
+    }
+
+    &.is-active {
+      color: var(--blue);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: var(--blue);
+        border-radius: 2px;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
