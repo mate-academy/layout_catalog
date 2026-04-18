@@ -1,3 +1,4 @@
+
 'use strict';
 // https://github.com/garris/BackstopJS#advanced-scenarios
 
