@@ -1,0 +1,44 @@
+@import './variables';
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
+
+  &__link {
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    color: $nav-color;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    transition: color 300ms;
+    display: block;
+    position: relative;
+
+    &:hover {
+      color: $nav-hover;
+    }
+
+    &.is-active {
+      color: $nav-hover;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $nav-hover;
+        border-radius: 5px;
+      }
+    }
+  }
+}
