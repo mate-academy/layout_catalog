@@ -1,0 +1,132 @@
+.card {
+  height: $card-height;
+  width: $card-width;
+  background-color: $background-color;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+
+  transition: transform $transition-time;
+
+  &:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+    z-index: 1;
+  }
+
+  &__image {
+    height: $card-image-height;
+    width: $card-image-width;
+    margin-top: 32px;
+    margin-inline: 19px;
+  }
+
+  &__name {
+    color: $main-text-color;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    margin-top: 36px;
+    margin-bottom: 0;
+
+    transition: color $transition-time;
+
+    @include content-margin-inline;
+  }
+
+  &:hover .card__name {
+    color: $selected-text-color;
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary-text-color;
+
+    @include content-margin-inline;
+  }
+
+  &__reviews {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include content-margin-inline;
+
+    font-size: 10px;
+    line-height: 14px;
+    color: $main-text-color;
+  }
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    height: $review-star-size;
+    width: $review-star-size;
+
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--active {
+      background-image: url(../images/star-active.svg);
+    }
+
+    &:not(:first-child) {
+      margin-left: 4px;
+    }
+  }
+
+  &__price {
+    margin-top: 24px;
+
+    @include content-margin-inline;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    line-height: 18px;
+    color: $secondary-text-color;
+
+    &-amount {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $main-text-color;
+    }
+  }
+
+  &__button {
+    display: flex;
+    box-sizing: border-box;
+    margin: 16px;
+
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $background-color;
+    background-color: $selected-color;
+    border-radius: 5px;
+    width: $button-width;
+    height: $button-height;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition-property: background-color color;
+    transition-duration: $transition-time;
+
+    &:hover {
+      background-color: $background-color;
+      border: 1px solid $selected-color;
+      color: $selected-color;
+    }
+  }
+}
