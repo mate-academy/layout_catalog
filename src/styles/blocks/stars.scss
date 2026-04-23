@@ -1,0 +1,29 @@
+@use '../variables' as v;
+
+.stars {
+  display: flex;
+  align-items: center;
+  width: 96px;
+
+  &__star {
+    cursor: pointer;
+
+    width: v.$stars-width;
+    height: v.$stars-height;
+
+    background-image: v.$stars-image;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: v.$stars-width v.$stars-height;
+  }
+
+  &__star:not(:last-child) {
+    margin-right: v.$stars-gap;
+  }
+
+  @for $i from 1 through v.$stars-count {
+    &--#{$i} .stars__star:nth-child(-n + #{$i}) {
+      background-image: v.$stars-active-image;
+    }
+  }
+}
