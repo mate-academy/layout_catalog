@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  margin-right: 50px;
+
+  &__link {
+    position: relative;
+    color: #060b35;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      bottom: -24px;
+      width: 100%;
+      height: 4px;
+      background-color: $button-color;
+      border-radius: 8px;
+      transition: opacity 300ms ease;
+    }
+
+    &.is-active::after {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: $button-color;
+    }
+  }
+}
