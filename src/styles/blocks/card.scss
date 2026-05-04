@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  width: $carfWidth;
+  height: $cardHeight;
+  transition-duration: $hoverTransitionDuration;
+
+  // background-color: grey;
+  border: 1px solid rgba(243, 243, 243, 1);
+  border-radius: 5px;
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin-inline: 19px;
+    margin-top: 32px;
+  }
+
+  &__buy {
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 166px;
+    height: 40px;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: $cardBlueColor;
+    border: 1px solid $cardBlueColor;
+    color: $cardMainColor;
+    margin: 0 16px 16px;
+    font-size: 14px;
+    transition-duration: $hoverTransitionDuration;
+    &:hover {
+      background-color: $cardMainColor;
+      border-color: $cardBlueColor;
+      color: $cardBlueColor;
+    }
+  }
+}
+
+.content {
+  margin: 40px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: $cardContentTextColor;
+
+  &__title {
+    margin-bottom: 4px;
+    line-height: 18px;
+    font-size: 12px;
+    transition-duration: $hoverTransitionDuration;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    color: $cardCaptionColor;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 16px 0 24px;
+    line-height: 16px;
+    box-sizing: border-box;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  &__text-price {
+    font-size: 12px;
+    font-weight: 400;
+    color: $cardCaptionColor;
+  }
+
+  &__amount-price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+}
+
+.card:hover {
+  transform: scale($cardIncreaser);
+  .content__title {
+    color: $cardContentTextColorOnHover;
+  }
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap'); // stylelint-disable-line
+
+:root {
+  --blue-underline: #00acdc;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  color: $navColor;
+
+  &__logo {
+    display: flex;
+  }
+
+  .nav {
+    display: flex;
+    align-items: stretch;
+    transition-duration: $hoverTransitionDuration;
+
+    // #region NavList
+    &__list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    // #endregion
+
+    // #region NavItem
+    &__item {
+      display: flex;
+      list-style: none;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+
+      &:hover {
+        color: var(--blue-underline);
+      }
+    }
+
+    // #endregion
+
+    // #region NavLink
+    &__link {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      position: relative;
+      transition-duration: $hoverTransitionDuration;
+    }
+
+    // #endregion
+  }
+}
+
+.is-active {
+  color: var(--blue-underline);
+
+  &::after {
+    content: '';
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    background-color: var(--blue-underline);
+    position: absolute;
+    border-radius: 8px;
+  }
+}
