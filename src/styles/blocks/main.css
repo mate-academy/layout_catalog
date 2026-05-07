@@ -1,0 +1,267 @@
+.catalog {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 200px);
+  padding: 50px 40px;
+  gap: 46px 48px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 0 16px 16px;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  transition: transform 0.3s;
+}
+
+.card__image {
+  padding: 32px 3px 40px;
+}
+
+.card__photo {
+  width: 100%;
+  height: 134px;
+  display: block;
+}
+
+.card__apple {
+  margin-top: 25px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  transition: color 0.3s;
+}
+
+.card__code {
+  color: #616070;
+  margin-bottom: 16px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.card__reviews {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: right;
+  vertical-align: bottom;
+}
+
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.card__price-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+}
+
+.card__price-value {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card__rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.card__buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background-color: #00acdc;
+  border: 1px solid #00acdc;
+  transition: all 0.3s;
+}
+
+.card__buy:hover {
+  background-color: #fff;
+  color: #00acdc;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.card__title {
+  transition: color 0.3s;
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.stars {
+  display: flex;
+}
+
+.stars__star {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  background-image: url(/src/images/star.svg);
+  background-repeat: no-repeat;
+}
+
+.stars--1 .stars__star:nth-child(-n + 1) {
+  background-image: url(/src/images/star-active.svg);
+}
+
+.stars--2 .stars__star:nth-child(-n + 2) {
+  background-image: url(/src/images/star-active.svg);
+}
+
+.stars--3 .stars__star:nth-child(-n + 3) {
+  background-image: url(/src/images/star-active.svg);
+}
+
+.stars--4 .stars__star:nth-child(-n + 4) {
+  background-image: url(/src/images/star-active.svg);
+}
+
+.stars--5 .stars__star:nth-child(-n + 5) {
+  background-image: url(/src/images/star-active.svg);
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+
+:root {
+  --blue-color: #00acdc;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 50px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo-link {
+  display: flex;
+  height: 40px;
+  width: 40px;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  color: black;
+  font-size: 12px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.nav li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link:hover {
+  color: var(--blue-color);
+}
+
+.nav__link.is-active {
+  color: var(--blue-color);
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--blue-color);
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #060b35;
+  font-family: Roboto, sans-serif;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */
