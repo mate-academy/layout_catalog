@@ -1,0 +1,96 @@
+@use '../abstracts/styles' as *;
+
+.card {
+  width: $card-size;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $text-color-main;
+  transition: transform 300ms;
+
+  &__product-pic {
+    width: 160px;
+    height: 134px;
+    margin: 32px 0 40px;
+  }
+
+  &__product-name {
+    font-weight: $text-normal;
+    font-size: $text-middle;
+    line-height: $line-middle;
+    padding-bottom: 4px;
+    margin: 0;
+  }
+
+  &__product-code {
+    color: $text-color-small;
+    font-weight: $text-thin;
+    font-size: $text-small;
+    line-height: $line-small;
+    margin: 0;
+    padding-bottom: 16px;
+    width: 100%;
+  }
+
+  &__price {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 16px;
+
+    &-part {
+      margin: 0;
+      line-height: $line-middle;
+
+      &--text {
+        color: $text-color-small;
+        font-size: $text-middle;
+        font-weight: $text-thin;
+      }
+
+      &--nums {
+        font-weight: $text-bold;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__buy-link {
+    width: 166px;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: $secondary-color-second;
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+    border-radius: $border-radius;
+    margin: 0 auto;
+    line-height: $line-tall;
+    text-transform: uppercase;
+    font-weight: $text-bold;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    & .card__product-name {
+      color: $title-color;
+    }
+
+    & .card__buy-link {
+      color: $secondary-color;
+      background-color: $secondary-color-second;
+      border: 1px solid $secondary-color;
+    }
+  }
+}
