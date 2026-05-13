@@ -1,0 +1,10 @@
+@use 'variables' as *;
+@use 'sass:map';
+
+@mixin grid($mw) {
+  $size: map.get($breakpoints, $mw);
+
+  @media (max-width: $size) {
+    @content;
+  }
+}
