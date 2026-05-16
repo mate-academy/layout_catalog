@@ -1,0 +1,124 @@
+.card {
+  position: relative;
+  z-index: 1;
+
+  width: var(--card-width);
+  padding: 32px 16px 16px;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-border-radius);
+
+  background-color: var(--white-color);
+
+  font-family: Roboto, sans-serif;
+
+  transition: transform var(--transition-duration);
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 40px;
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+
+    object-fit: contain;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+
+    color: var(--norm-color);
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    transition: color var(--transition-duration);
+  }
+
+  &:hover {
+    z-index: 2;
+    transform: scale(1.2);
+  }
+
+  &:hover .card__title {
+    color: var(--title-hover-color);
+  }
+
+  &__code {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: var(--color-code);
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+
+    background-image: url('/src/images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--active {
+      background-image: url('/src/images/star-active.svg');
+    }
+  }
+
+  &__review-count {
+    color: var(--norm-color);
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    color: var(--color-code);
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price {
+    color: var(--norm-color);
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+}
