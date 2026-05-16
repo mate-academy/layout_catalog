@@ -27,21 +27,6 @@
   margin-left: 20px;
 }
 
-.is-active {
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: $accent-color;
-    border-radius: 8px;
-  }
-}
-
 .nav__link {
   display: flex;
   align-items: center;
@@ -51,7 +36,23 @@
   text-transform: uppercase;
   transition: all 300ms;
 
-  &:hover .is-active {
+  &:hover {
     color: $accent-color;
+  }
+
+  &.is-active {
+    position: relative;
+    color: $accent-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $accent-color;
+      border-radius: 8px;
+    }
   }
 }
