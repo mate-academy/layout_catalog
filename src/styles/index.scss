@@ -1,3 +1,39 @@
+@import './variables';
+@import './mixins';
+@import './header';
+@import './card';
+@import './stars';
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.container {
+  display: grid;
+  padding: 50px 40px;
+  gap: 46px 48px;
+  justify-content: center;
+
+  @include grid-card-scale;
+}
+
+.card {
+  transition: 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      transition: 300ms;
+      color: #34568b;
+    }
+
+    .card__button {
+      transition: 300ms;
+      background-color: #fff;
+      color: $blue-color;
+    }
+  }
 }
