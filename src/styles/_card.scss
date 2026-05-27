@@ -1,0 +1,114 @@
+@use './variables' as *;
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  padding: 16px;
+  padding-top: 32px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+
+  font-family: $font-main;
+
+  background-color: $color-background;
+
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-text-primary;
+
+    .card:hover & {
+      color: #34568b;
+    }
+  }
+
+  &__description {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $color-text-secondary;
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__reviews-label {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    white-space: nowrap;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 16px;
+
+    &-label {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: $color-text-secondary;
+    }
+
+    &-value {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: $color-text-primary;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 40px;
+    margin: 16px 0 0;
+    border: 1px solid $color-button;
+    border-radius: 5px;
+
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $color-background;
+    text-transform: uppercase;
+
+    background-color: $color-button;
+    box-shadow: none;
+
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      color: $color-button;
+      background-color: $color-background;
+    }
+  }
+}
