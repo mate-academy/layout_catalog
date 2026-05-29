@@ -1,0 +1,32 @@
+@use '../utils/variables';
+@use '../utils/mixins';
+
+.page__body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: variables.$main-text-color;
+  min-height: 100vh;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  grid-template-columns: repeat(1, variables.$cart-width);
+  gap: 46px 48px;
+
+  @include mixins.on-small {
+    grid-template-columns: repeat(2, variables.$cart-width);
+  }
+
+  @include mixins.on-middle {
+    grid-template-columns: repeat(3, variables.$cart-width);
+  }
+
+  @include mixins.on-big {
+    grid-template-columns: repeat(4, variables.$cart-width);
+  }
+}
