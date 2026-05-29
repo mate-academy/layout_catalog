@@ -1,0 +1,69 @@
+@use '../utils/variables';
+
+.main-header {
+  max-width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  margin: 0 auto;
+
+  &__logo {
+    img {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0;
+      list-style: none;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      font-size: 12px;
+      text-decoration: none;
+      color: #060b35;
+      display: flex;
+      align-items: center;
+      height: variables.$height-nav;
+      position: relative;
+      font-family: Roboto, sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-variation-settings: 'wdth' 100;
+      text-transform: uppercase;
+
+      &:hover {
+        color: variables.$color-nav-active;
+      }
+    }
+
+    .is-active {
+      color: variables.$color-nav-active;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: ' ';
+        height: 4px;
+        width: 100%;
+        background-color: variables.$color-nav-active;
+        bottom: 0;
+        border-radius: 8px;
+      }
+    }
+  }
+}
