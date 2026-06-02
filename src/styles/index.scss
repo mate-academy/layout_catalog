@@ -1,3 +1,259 @@
+// ─── Variables ────────────────────────────────────────────────────────────
+$color-main: #00acdc;
+$color-bg: #fff;
+$color-text-accent: #060b35;
+$color-text-secondary: #616070;
+$color-nav-text: #060b35;
+$color-nav-hover: #00acdc;
+$color-title-hover: #34568b;
+$color-border: #f3f3f3;
+$card-width: 200px;
+$gap-h: 48px;
+$gap-v: 46px;
+$catalog-padding-v: 50px;
+$catalog-padding-h: 40px;
+$transition: 300ms ease;
+$bp-2col: 488px;
+$bp-3col: 768px;
+$bp-4col: 1024px;
+
+// ─── Reset & Base ─────────────────────────────────────────────────────────
+* {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   margin: 0;
+}
+
+// ─── Logo ─────────────────────────────────────────────────────────────────
+.logo {
+  display: block;
+  height: 40px;
+  width: 40px;
+  flex-shrink: 0;
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: $color-bg;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+// ─── Nav ──────────────────────────────────────────────────────────────────
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-nav-text;
+    transition: color $transition;
+
+    &:hover {
+      color: $color-nav-hover;
+    }
+
+    &.is-active {
+      color: $color-nav-hover;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $color-nav-hover;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+// ─── Catalog (main grid) ──────────────────────────────────────────────────
+.catalog {
+  padding: $catalog-padding-v $catalog-padding-h;
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $gap-v $gap-h;
+  justify-content: center;
+
+  @media (min-width: $bp-2col) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: $bp-3col) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: $bp-4col) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  background: $color-bg;
+  position: relative;
+  z-index: 1;
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-text-accent;
+    transition: color $transition;
+
+    .card:hover & {
+      color: $color-title-hover;
+    }
+  }
+
+  &__code {
+    margin-top: 4px;
+    margin-bottom: 14px;
+    color: $color-text-secondary;
+    font-size: 10px;
+  }
+
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  &__review-count {
+    color: $color-text-accent;
+    margin-bottom: 0;
+    font-size: 10px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-text-secondary;
+    font-weight: 400;
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    color: $color-text-accent;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid $color-main;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-bg;
+    background-color: $color-main;
+    transition:
+      color $transition,
+      background-color $transition;
+
+    &:hover {
+      color: $color-main;
+      background-color: $color-bg;
+    }
+
+    .card:hover & {
+      color: $color-main;
+      background-color: $color-bg;
+    }
+  }
+}
+
+// ─── Stars ────────────────────────────────────────────────────────────────
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--1 &__star:nth-child(-n + 1),
+  &--2 &__star:nth-child(-n + 2),
+  &--3 &__star:nth-child(-n + 3),
+  &--4 &__star:nth-child(-n + 4),
+  &--5 &__star:nth-child(-n + 5) {
+    background-image: url(../images/star-active.svg);
+  }
 }
