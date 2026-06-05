@@ -1,0 +1,29 @@
+@import '../blocks/card';
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 40px;
+  &__cards {
+    display: grid;
+    gap: 46px;
+    column-gap: 48px;
+
+    @include small-smartphones {
+      grid-template-columns: repeat(1, $card-width);
+    }
+
+    @include smartphones {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @include tablets {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @include computers {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
