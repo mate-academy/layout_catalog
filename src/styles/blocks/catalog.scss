@@ -1,0 +1,26 @@
+@use '../utils/variables.scss';
+
+.catalog {
+  --grid-columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), variables.$card-width);
+  place-items: center;
+  justify-content: center;
+  gap: 46px 48px;
+  overflow: hidden;
+
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    --grid-columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    --grid-columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --grid-columns: 4;
+  }
+}
