@@ -1,3 +1,170 @@
+@import './utils/variables';
+@import 'stars';
+@import 'button';
+
 body {
   margin: 0;
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: $nav-height;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    width: $logo-size;
+    height: $logo-size;
+  }
+}
+
+.nav {
+  height: 100%;
+  &__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    color: $main-accent;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    transition: color 300ms linear;
+
+    &:hover {
+      color: $blue-accent;
+    }
+    &.is-active {
+      color: $blue-accent;
+      position: relative;
+    }
+    &.is-active::after {
+      position: absolute;
+      content: '';
+      height: 4px;
+      border-radius: 8px;
+      background-color: $blue-accent;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.container {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+
+  justify-content: center;
+
+  @media screen and (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  gap: 46px 48px;
+}
+
+.card {
+  box-sizing: border-box;
+  max-width: 200px;
+  border-radius: 5px;
+  border: 1px solid rgba(243, 243, 243, 1);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 32px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 300ms linear;
+
+  &__title {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-accent;
+    margin-bottom: 4px;
+    transition: color 300ms linear;
+  }
+
+  &:hover .card__title {
+    color: $active-color;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+    align-self: center;
+  }
+
+  &__code {
+    font-family: Roboto, sans-serif;
+    color: $secondary-color;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  &__reviews {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    color: $main-accent;
+    line-height: 14px;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__price-title {
+    color: $secondary-color;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: Roboto, sans-serif;
+  }
+  &__price-price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $main-accent;
+    font-family: Roboto, sans-serif;
+  }
 }
