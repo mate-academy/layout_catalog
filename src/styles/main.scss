@@ -1,0 +1,61 @@
+@use './nav.scss';
+@use './logo.scss';
+@use './card.scss';
+@use './starts.scss';
+@use './variables' as *;
+
+:root {
+  --moyo-color: #00acdc;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-inline: 50px;
+  justify-content: space-between;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+  margin-inline: auto;
+}
+
+@media (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}

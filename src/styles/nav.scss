@@ -1,0 +1,52 @@
+@use './variables' as *;
+
+.nav {
+  display: flex;
+  margin-left: auto;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $card-text-color;
+    position: relative;
+    transition: color $transition-duration;
+  }
+
+  &__link--blue {
+    color: var(--moyo-color);
+  }
+
+  &__link:hover {
+    color: var(--moyo-color);
+  }
+
+  &__link.is-active {
+    color: var(--moyo-color);
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--moyo-color);
+  }
+}
