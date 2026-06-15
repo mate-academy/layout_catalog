@@ -1,18 +1,20 @@
 .stars {
   display: flex;
   gap: 4px;
-  width: 96px;
-  height: 16px;
 
-  &__item {
+  &__star {
     width: 16px;
     height: 16px;
     background-image: url('../images/star.svg');
-    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+  }
 
-    &--active {
-      background-image: url('../images/star-active.svg');
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url('../images/star-active.svg');
+      }
     }
   }
 }
