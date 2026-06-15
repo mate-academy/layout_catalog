@@ -1,0 +1,133 @@
+@use 'variables' as *;
+
+$color-border: #f3f3f3;
+$color-title-hover: #34568b;
+
+.catalog {
+  display: grid;
+  grid-template-columns: 200px;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  transition: transform 300ms;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 408px;
+    background: #fff;
+    border: 1px solid $color-border;
+    border-radius: 5px;
+    padding: 33px 17px 17px;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    width: 166px;
+    margin: 40px 0 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-main;
+    text-align: center;
+    transition: color 300ms;
+  }
+
+  &__code {
+    margin: 4px 0 0;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+  }
+
+  &__review {
+    display: flex;
+    align-items: flex-end;
+    gap: 19px;
+    width: 166px;
+    margin: 16px 0 0;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-main;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 166px;
+    margin: 24px 0 0;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $color-main;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 40px;
+    margin-top: auto;
+    background: $color-blue;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    transition:
+      background 300ms,
+      color 300ms;
+
+    &:hover {
+      background: #fff;
+      color: $color-blue;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+}
