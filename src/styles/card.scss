@@ -7,11 +7,10 @@
   border-radius: 5px;
   background-color: $white-color;
 
-  &__image {
-    display: block;
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 40px;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
   }
 
   &__title {
@@ -21,6 +20,19 @@
     line-height: 18px;
     font-weight: 500;
     color: $main-color;
+
+    transition: color 300ms;
+  }
+
+  &:hover .card__title {
+    color: $title-hover-color;
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
   }
 
   &__code {
@@ -84,6 +96,10 @@
 
     background-color: $accent-color;
     cursor: pointer;
+
+    transition:
+      color 300ms,
+      background-color 300ms;
 
     &:hover {
       color: $accent-color;
