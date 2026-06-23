@@ -1,3 +1,35 @@
+@use './untils/variables';
+@use './blocks/header.scss';
+@use './blocks/card.scss';
+@use './blocks/stars.scss';
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.catalog {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: variables.$width-column-grid;
+  gap: 46px 48px;
+  justify-content: center;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, variables.$width-column-grid);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, variables.$width-column-grid);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, variables.$width-column-grid);
+  }
 }
