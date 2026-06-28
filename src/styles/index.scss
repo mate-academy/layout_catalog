@@ -1,3 +1,193 @@
+@import './header';
+@import './variables';
+
 body {
   margin: 0;
+}
+
+main {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, $width__card);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 300px) {
+  main {
+    grid-template-columns: repeat(1, $width__card);
+  }
+}
+
+@media (min-width: 488px) {
+  main {
+    grid-template-columns: repeat(2, $width__card);
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(3, $width__card);
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(4, $width__card);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $width__card;
+  border: $border-card 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: transform 300ms;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    background-image: url(../images/imac.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+    margin-top: 32px;
+  }
+
+  &__info {
+    width: 166px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    color: $main-accent;
+  }
+
+  &:hover &__title {
+    transition: color 300ms ease;
+    color: $title-hovered;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+  &__code {
+    margin-bottom: 16px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+  }
+
+  &__button {
+    background-color: $blue-accent;
+    border-radius: 5px;
+    width: 166px;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    align-items: center;
+
+    color: $color-button;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    transition:
+      color 300ms,
+      background-color 300ms,
+      border-color 300ms;
+
+    &:hover {
+      color: $blue-accent;
+      background-color: $color-button;
+      border: 1px $blue-accent solid;
+      box-sizing: border-box;
+    }
+  }
+
+  &__price {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-between;
+    width: 166px;
+  }
+
+  &__price-label {
+    color: $secondary;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    margin-left: 85px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.card__rating {
+  display: flex;
+}
+
+.rating {
+  &__stars {
+    display: flex;
+  }
+  &__star {
+    background-image: url(../images/star.svg);
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__reviews {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    margin-left: 17px;
+    align-self: center;
+  }
+
+  &__stars--1 &__star:nth-child(-n + 1) {
+    background-image: url('../images/star-active.svg');
+  }
+
+  &__stars--2 &__star:nth-child(-n + 2) {
+    background-image: url('../images/star-active.svg');
+  }
+
+  &__stars--3 &__star:nth-child(-n + 3) {
+    background-image: url('../images/star-active.svg');
+  }
+
+  &__stars--4 &__star:nth-child(-n + 4) {
+    background-image: url('../images/star-active.svg');
+  }
+
+  &__stars--5 &__star:nth-child(-n + 5) {
+    background-image: url('../images/star-active.svg');
+  }
 }
