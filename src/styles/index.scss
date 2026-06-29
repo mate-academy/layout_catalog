@@ -1,3 +1,256 @@
-body {
+// ZMIENNE
+$color-main-accent: #060b35;
+$color-secondary: #616070;
+$color-white: #fff;
+$color-blue-accent: #00acdc;
+$color-gray-elements: #f3f3f3;
+$font-main: 'Roboto', sans-serif;
+$card-width: 200px;
+$card-height: 408px;
+$color-text: #000;
+
+// RESET BAZOWY
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $color-white;
+}
+
+// HEADER & NAV
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 50px;
+  background-color: $color-white;
+
+  &__logo {
+    display: block;
+  }
+
+  &__logo-img {
+    display: block;
+  }
+}
+
+.nav {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%;
+  }
+
+  &__item {
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: $font-main;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 100%;
+    color: $color-main-accent;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.is-active {
+      color: $color-blue-accent;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $color-blue-accent;
+    }
+  }
+}
+
+// CATALOG CONTAINER (GRID)
+.catalog {
+  display: grid;
+  grid-template-columns: $card-width;
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+// KARTA (CARD)
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: $card-width;
+  min-height: $card-height;
+  background-color: $color-white;
+  border: 1px solid $color-gray-elements;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 16px 16px;
+  transition: transform 0.3s ease;
+
+  &__image {
+    display: block;
+    margin-top: 32px;
+    align-self: center;
+    width: 160px;
+    height: 134px;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-top: 40px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-main-accent;
+    transition: color 0.3s ease;
+  }
+
+  &__code {
+    margin-top: 4px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-secondary;
+  }
+
+  &__reviews {
+    display: flex;
+    margin-top: 16px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &-text {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: $color-main-accent;
+    }
+  }
+
+  &__price {
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: auto;
+
+    &-label {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: $color-secondary;
+    }
+
+    &-value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $color-main-accent;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    background-color: $color-blue-accent;
+    color: $color-white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-family: $font-main;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue-accent;
+      border: 1px solid $color-blue-accent;
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+
+    .card__title {
+      color: #34568b;
+    }
+  }
+}
+
+// GWIAZDKI (STARS)
+.stars {
+  display: flex;
+  justify-content: space-between;
+  width: 96px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../images/star.svg');
+  }
+
+  @for $i from 1 through 5 {
+    &--#{$i} {
+      .stars__star:nth-child(-n + #{$i}) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
 }
