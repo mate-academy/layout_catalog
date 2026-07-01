@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+.cards-container {
+  display: grid;
+  grid-template-columns: $card-width;
+  justify-content: center;
+  gap: $gap-vertical $gap-horizontal;
+  padding: $container-padding-vertical $container-padding-horizontal;
+  max-width: calc(#{$card-width} * 4 + #{$gap-horizontal} * 3 + #{$container-padding-horizontal} * 2);
+  margin: 0 auto;
+}
+
+@media (min-width: 488px) {
+  .cards-container {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
