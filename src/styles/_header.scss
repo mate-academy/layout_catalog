@@ -1,70 +1,72 @@
+@use 'variables' as *;
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
   box-sizing: border-box;
-}
 
-.logo {
-  display: flex;
-  align-items: center;
+  &__logo {
+    display: flex;
+    align-items: center;
 
-  img {
-    display: block;
-    height: 40px;
-    width: auto;
-  }
-}
-
-.navigation {
-  height: 100%;
-}
-
-.nav-list {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.nav-item {
-  margin-right: 20px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.nav-link {
-  position: relative;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  color: #000;
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 14px;
-  transition: color 0.3s;
-
-  &:hover {
-    color: var(--main-color);
+    img {
+      display: block;
+      height: 40px;
+      width: auto;
+    }
   }
 
-  &--active {
-    color: var(--main-color);
+  &__nav {
+    height: 100%;
+  }
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      background-color: var(--main-color);
-      border-radius: 8px;
+  &__nav-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    color: $color-text-primary;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 14px;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $main-color;
+    }
+
+    &.is-active {
+      color: $main-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $main-color;
+        border-radius: 8px;
+      }
     }
   }
 }
