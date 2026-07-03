@@ -1,0 +1,65 @@
+@import 'vars';
+
+:root {
+  --blue: #00acdc;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    display: block;
+    color: $color-text-main;
+    margin-right: 20px;
+  }
+
+  &__link.is-active,
+  &__link:hover {
+    color: var(--blue);
+  }
+
+  &__link.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--blue);
+    border-radius: 8px;
+  }
+
+  &__link.the-last-child {
+    margin-right: 0;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+}
