@@ -1,0 +1,136 @@
+@import './stars';
+@import '../variables/variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $card-width;
+  background-color: $white;
+  font-family: $font-main;
+  border: 1px solid $gray-elements;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 16px 16px;
+  position: relative;
+  z-index: 1;
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    z-index 300ms ease;
+  transform-origin: center center;
+  backface-visibility: hidden;
+
+  &__image {
+    display: block;
+    margin-top: 32px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    width: 100%;
+    height: 36px;
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $main-accent;
+    text-align: left;
+    transition: color 300ms ease;
+  }
+
+  &__code {
+    margin-top: 4px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+    text-align: left;
+  }
+
+  &__reviews {
+    display: flex;
+    margin-top: 16px;
+    width: 100%;
+    height: 16px;
+    justify-content: space-between;
+
+    &_stars {
+      flex-shrink: 0;
+    }
+
+    &_text {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      color: $main-accent;
+    }
+  }
+
+  &__price {
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+    height: 18px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: auto;
+
+    &_label {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary;
+    }
+
+    &_value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: $main-accent;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    background-color: $accent-color;
+    color: $white;
+    border-radius: 5px;
+    border: none;
+    font-family: $font-main;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease,
+      box-shadow 300ms ease;
+
+    &:hover {
+      background-color: $white;
+      color: $accent-color;
+      box-shadow: inset 0 0 0 1px $accent-color;
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    z-index: 10;
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    .card__name {
+      color: $card-title-hover;
+    }
+  }
+}
