@@ -1,3 +1,44 @@
-body {
+@import './utils/variables';
+@import './utils/mixins';
+@import './blocks/header';
+@import './blocks/nav';
+@import './blocks/stars';
+@import './blocks/card';
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $mainText;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contant {
+  padding: 50px 40px;
+  display: grid;
+
+  @include quantity-coloms(1);
+
+  gap: 46px 48px;
+  place-content: center;
+
+  @include tablet {
+    @include quantity-coloms(2);
+  }
+
+  @include laptop {
+    @include quantity-coloms(3);
+  }
+
+  @include notebook {
+    @include quantity-coloms(4);
+  }
 }
