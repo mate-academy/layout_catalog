@@ -1,0 +1,106 @@
+@use '../utils/variables' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-base;
+  background-color: $color-white;
+  transform-origin: center center;
+  transition: transform $transition-standart-duration;
+
+  &__img {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 40px 0 0;
+    font-weight: 500;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    transition: color $transition-standart-duration;
+  }
+
+  &__code {
+    margin: 4px 0 0;
+    font-weight: 400;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    color: $color-secondary;
+  }
+
+  &__stars-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    margin: 0;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    &-text {
+      margin: 0;
+      color: $color-secondary;
+    }
+
+    &-amount {
+      margin: 0;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+  &__button-buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    border: 1px solid $color-active;
+    border-radius: $border-radius-base;
+    background-color: $color-active;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition:
+      background-color $transition-standart-duration,
+      color $transition-standart-duration;
+
+    &:hover,
+    &:focus {
+      background-color: $color-white;
+      color: $color-active;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  &:hover &__title {
+    color: $color-title-hover;
+  }
+}
