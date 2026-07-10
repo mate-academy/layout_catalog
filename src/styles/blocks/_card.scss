@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 200px;
+  width: $card-width;
   padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-  background-color: #fff;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-base;
+  background-color: $color-white;
   transform-origin: center center;
-  transition: transform 300ms ease;
+  transition: transform $transition-standart-duration;
 
   &__img {
     align-self: center;
@@ -23,7 +23,7 @@
     font-weight: 500;
     font-size: $font-size-base;
     line-height: $line-height-base;
-    transition: color 300ms;
+    transition: color $transition-standart-duration;
   }
 
   &__code {
@@ -69,24 +69,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     width: 100%;
     height: 40px;
-    box-sizing: border-box;
     margin-top: 16px;
-    border: 1px solid #00acdc;
-    border-radius: 5px;
-    background-color: #00acdc;
-    color: #fff;
+    border: 1px solid $color-active;
+    border-radius: $border-radius-base;
+    background-color: $color-active;
+    color: $color-white;
     text-decoration: none;
     font-weight: 700;
     font-size: 14px;
     transition:
-      background-color 300ms ease,
-      color 300ms ease;
+      background-color $transition-standart-duration,
+      color $transition-standart-duration;
 
     &:hover,
     &:focus {
-      background-color: #fff;
+      background-color: $color-white;
       color: $color-active;
     }
 
@@ -97,9 +97,10 @@
 
   &:hover {
     transform: scale(1.2);
+    z-index: 1;
   }
 
   &:hover &__title {
-    color: #34568b;
+    color: $color-title-hover;
   }
 }
