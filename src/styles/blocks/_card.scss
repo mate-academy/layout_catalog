@@ -1,0 +1,105 @@
+@use '../utils/variables' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  transform-origin: center center;
+  transition: transform 300ms ease;
+
+  &__img {
+    align-self: center;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    margin: 40px 0 0;
+    font-weight: 500;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    transition: color 300ms;
+  }
+
+  &__code {
+    margin: 4px 0 0;
+    font-weight: 400;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    color: $color-secondary;
+  }
+
+  &__stars-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    margin: 0;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    &-text {
+      margin: 0;
+      color: $color-secondary;
+    }
+
+    &-amount {
+      margin: 0;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+  &__button-buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    margin-top: 16px;
+    border: 1px solid #00acdc;
+    border-radius: 5px;
+    background-color: #00acdc;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+
+    &:hover,
+    &:focus {
+      background-color: #fff;
+      color: $color-active;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+}
