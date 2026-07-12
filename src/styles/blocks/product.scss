@@ -33,11 +33,6 @@
   &-item {
     list-style: none;
     width: $card-width;
-    transition-duration: $animation-duration;
-
-    &:hover {
-      transform: scale(1.2);
-    }
   }
 
   &-card {
@@ -47,9 +42,14 @@
     border: 1px solid $border-color;
     border-radius: $radius;
     width: $card-width;
+    transition: transform $animation-duration;
 
     font-family: $font-family-base;
     font-weight: $font-weight-normal;
+
+    .product-item:hover & {
+      transform: scale(1.2);
+    }
 
     &__image {
       display: block;
@@ -68,7 +68,7 @@
       font-size: 12px;
       line-height: 18px;
       color: $main-color;
-      transition-duration: $animation-duration;
+      transition: color $animation-duration;
 
       .product-item:hover & {
         color: $card-title-hover-color;
@@ -141,12 +141,12 @@
       font-weight: 700;
       line-height: 16px;
       text-transform: uppercase;
-      color: #fff;
+      color: $white;
       text-decoration: none;
-      transition-duration: $animation-duration;
+      transition: background-color $animation-duration, border-color $animation-duration, color $animation-duration;
 
       &:hover {
-        background-color: #fff;
+        background-color: $white;
         border-color: $button-color;
         color: $button-color;
       }
