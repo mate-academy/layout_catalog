@@ -1,0 +1,17 @@
+@use 'sass:list';
+@use '../utils/variables' as *;
+
+@mixin font-style($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin transition-style($properties, $time: $transition-time, $style: ease) {
+  $list: ();
+
+  @each $prop in $properties {
+    $list: list.append($list, $time $style $prop, comma);
+  }
+
+  transition: $list;
+}
