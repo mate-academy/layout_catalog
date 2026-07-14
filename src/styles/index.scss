@@ -1,3 +1,243 @@
+$color-text: #060b35;
+$color-accent: #00acdc;
+$color-title-hover: #34568b;
+$color-white: #fff;
+$color-border: #f3f3f3;
+$color-secondary: #616070;
+$font-family: 'Roboto', Arial, sans-serif;
+$card-width: 200px;
+$card-height: 406px;
+$card-gap-x: 48px;
+$card-gap-y: 46px;
+$catalog-padding-y: 50px;
+$catalog-padding-x: 40px;
+$header-height: 60px;
+$header-padding-x: 50px;
+$logo-size: 40px;
+$transition-duration: 300ms;
+$card-scale-hover: 1.2;
+$active-underline-width: 37px;
+
 body {
   margin: 0;
+  font-family: $font-family;
+  color: $color-text;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: $header-height;
+  border-bottom: 1px solid $color-border;
+
+  &__container {
+    height: 100%;
+    padding: 0 $header-padding-x;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo img {
+    width: $logo-size;
+    height: $logo-size;
+    display: block;
+  }
+
+  &__nav {
+    margin-left: auto;
+    height: 100%;
+  }
+
+  &__nav-list {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+  }
+
+  &__nav-item {
+    height: 100%;
+  }
+
+  &__nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $color-text;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.is-active {
+      color: $color-accent;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: $active-underline-width;
+      height: 4px;
+      background: $color-accent;
+      border-radius: 8px;
+    }
+  }
+}
+
+.catalog {
+  &__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, $card-width);
+    gap: $card-gap-y $card-gap-x;
+    padding: $catalog-padding-y $catalog-padding-x;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, $card-width);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, $card-width);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
+
+.card {
+  width: $card-width;
+  height: $card-height;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  background: $color-white;
+  padding: 32px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale($card-scale-hover);
+    z-index: 2;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: block;
+    margin: 0 auto 39px;
+  }
+
+  &__title {
+    width: 166px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    margin: 2px 0;
+    color: $color-text;
+    transition: color $transition-duration;
+    font-family: $font-family;
+  }
+
+  &:hover &__title {
+    color: $color-title-hover;
+  }
+
+  &__code {
+    font-size: 10px;
+    color: $color-secondary;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-text;
+  }
+
+  &__price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    color: $color-secondary;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__buy {
+    width: 166px;
+    height: 36px;
+    margin: 0 auto;
+    border: 1px solid $color-accent;
+    border-radius: 5px;
+    background: $color-accent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $color-white;
+
+    transition: background $transition-duration, color $transition-duration;
+
+    &:hover {
+      background: $color-white;
+      color: $color-accent;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 6px;
+
+  &__icon {
+    width: 13px;
+    height: 13px;
+    border-radius: 0.5px;
+    display: block;
+  }
 }
