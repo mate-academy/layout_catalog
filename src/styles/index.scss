@@ -1,3 +1,39 @@
-body {
+@use 'variables' as *;
+@use 'card';
+@use 'stars';
+@use 'header';
+
+* {
   margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.catalog {
+  --grid-columns: 1;
+
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  grid-template-columns: repeat(var(--grid-columns), $card-width);
+  gap: 46px 48px;
+
+  @media (min-width: 488px) {
+    --grid-columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    --grid-columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --grid-columns: 4;
+  }
 }
