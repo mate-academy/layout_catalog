@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  height: $header-height;
 
   &__link {
     position: relative;
@@ -9,7 +9,8 @@
     display: flex;
     align-items: center;
 
-    height: 60px;
+    height: $header-height;
+    padding: 0 20px;
 
     text-decoration: none;
     text-transform: uppercase;
@@ -19,30 +20,30 @@
 
     color: $color-dark;
 
-    transition: color 300ms;
+    transition: color $transition;
 
     &:hover {
       color: $color-primary;
     }
   }
-}
+  &.is-active {
+    color: $color-primary;
 
-.is-active {
-  color: $color-primary;
+    &::after {
+      content: '';
 
-  &::after {
-    content: "";
+      position: absolute;
 
-    position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
+      height: 4px;
 
-    height: 4px;
+      border-radius: 8px;
 
-    border-radius: 8px;
-
-    background: $color-primary;
+      background: $color-primary;
+    }
   }
 }
+
