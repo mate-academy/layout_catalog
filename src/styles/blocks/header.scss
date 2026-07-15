@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 0 50px;
   box-sizing: border-box;
+  font-weight: 500;
 }
 
 .logo {
@@ -13,6 +14,7 @@
 }
 
 .nav {
+  box-sizing: border-box;
   margin: 0;
   display: flex;
   align-items: center;
@@ -35,34 +37,31 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: 0;
-    box-sizing: border-box;
-
-    font-family: $main-font-family;
+    letter-spacing: 0%;
     color: $main-text-color;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color 0.3s;
 
     &:hover {
-      color: $hover-color;
-      text-decoration: none;
+      color: $hover-nav-color;
     }
   }
+}
 
-  &__item li:first-child .nav__link {
-    margin-left: 0;
-  }
+.nav__item li:first-child .nav__link {
+  margin-left: 0;
+}
 
-  &__item li:last-child .nav__link {
-    margin-right: 0;
-  }
+.nav__item li:last-child .nav__link {
+  margin-right: 0;
 }
 
 .is-active {
   position: relative;
-  color: $hover-color;
+  color: $hover-nav-color;
   text-decoration: none;
 
   &::after {
@@ -72,7 +71,7 @@
     right: 0;
     bottom: 0;
     height: 4px;
-    background-color: $hover-color;
+    background-color: $hover-nav-color;
     border-radius: 9px;
   }
 }

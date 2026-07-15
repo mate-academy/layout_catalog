@@ -13,10 +13,26 @@
 
   font-family: $main-font-family;
 
-  background-color: white;
-  transition: all 0.3s;
+  background-color: $white;
+  transition:
+    transform 0.3s,
+    color 0.3s;
 
-  &__link {
+  &__logo {
+    width: 160px;
+    height: 134px;
+
+    background-image: url('../images/imac.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__info {
+    letter-spacing: 0;
+  }
+
+  &__title {
     display: flex;
     align-self: stretch;
 
@@ -35,23 +51,8 @@
   &:hover {
     transform: scale(1.2);
   }
-
-  &:hover .card__link {
-    color: $hover-color-card-title;
-  }
-
-  &__logo {
-    width: 160px;
-    height: 134px;
-
-    background-image: url('../images/imac.jpeg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-  &__info {
-    letter-spacing: 0;
+  &:hover .card__title {
+    color: $hover-card-title-color;
   }
 
   &__code {
@@ -74,8 +75,8 @@
 
   &__reviews {
     display: flex;
-    align-items: end;
-    justify-content: right;
+    align-items: flex-end;
+    justify-content: flex-end;
 
     width: 53px;
     height: 16px;
@@ -83,8 +84,8 @@
     font-size: 10px;
     font-weight: 400;
     line-height: 14px;
+    letter-spacing: 0%;
     color: $main-text-color;
-    letter-spacing: 0;
   }
 
   &__price {
@@ -122,22 +123,20 @@
     box-sizing: border-box;
     width: 166px;
     height: 40px;
-    border: 1px solid #00acdc;
+    border: 1px solid $hover-nav-color;
     border-radius: 5px;
 
     font-size: 14px;
     font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 0;
-    color: white;
+    color: $white;
     text-decoration: none;
     text-transform: uppercase;
 
-    background-color: #00acdc;
+    background-color: $hover-nav-color;
 
     &:hover {
-      color: $hover-color;
-      background-color: white;
+      color: $hover-nav-color;
+      background-color: $white;
     }
   }
 }
