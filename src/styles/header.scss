@@ -7,13 +7,15 @@
   padding: 0 50px;
 
   background-color: $color-white;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
 
   &__logo {
     display: flex;
+    align-items: center;
   }
 
   &__logo-image {
+    display: block;
+
     width: 40px;
     height: 40px;
   }
@@ -28,14 +30,18 @@
   }
 
   &__item {
-    display: flex;
+    height: 100%;
   }
 
   &__link {
+    position: relative;
+
     display: flex;
     align-items: center;
 
-    padding: 0 20px;
+    height: 100%;
+
+    padding: 0 10px;
 
     font-size: 12px;
     font-weight: 500;
@@ -46,12 +52,28 @@
 
     transition: color $transition;
 
-    &:hover {
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+
+      border-radius: 8px;
+
+      background-color: transparent;
+    }
+
+    &:hover,
+    &.is-active {
       color: $color-blue;
     }
 
-    &.is-active {
-      color: $color-blue;
+    &.is-active::after {
+      background-color: $color-blue;
     }
   }
 }
