@@ -1,0 +1,38 @@
+@mixin with-centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin on-phone {
+  @media (min-width: 488px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// @mixin hover ($property, $toValue) {
+//   &:hover {
+//     #{$property}: $toValue;
+//   }
+// }
+
+@mixin hover-smooth($dur: $duration) {
+  transition: all $dur ease;
+
+  &:hover {
+    @content;
+  }
+}

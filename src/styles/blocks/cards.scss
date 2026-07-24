@@ -1,0 +1,24 @@
+.cards {
+  --column-count: 1;
+
+  padding: 50px 40px;
+  display: grid;
+
+  // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  grid-template-columns: repeat(var(--column-count), 200px);
+  justify-content: center;
+  gap: 46px 48px;
+
+  @include on-phone {
+    --column-count: 2;
+  }
+
+  @include on-tablet {
+    --column-count: 3;
+  }
+
+  @include on-desktop {
+    --column-count: 4;
+  }
+}
