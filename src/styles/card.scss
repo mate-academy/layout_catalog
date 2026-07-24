@@ -1,18 +1,107 @@
 .card {
-  width: $card-width;
-  height: $card-height;
+  display: flex;
+  flex-direction: column;
 
+  width: $card-width;
   padding: 32px 16px 16px;
 
   border: 1px solid $color-border;
   border-radius: $card-border-radius;
 
-  background: $color-white;
+  box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
+  &__image {
+    display: block;
 
-  transition: transform $transition;
+    width: 160px;
+    height: 134px;
 
-  // restante do arquivo permanece igual
+    margin: 0 auto 20px;
+
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+
+    color: $color-dark;
+  }
+
+  &__code {
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    line-height: 14px;
+
+    color: $color-gray;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+
+    color: $color-gray;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    font-size: 12px;
+    line-height: 18px;
+
+    color: $color-gray;
+
+    strong {
+      font-size: 16px;
+      line-height: 18px;
+
+      color: $color-dark;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $button-height;
+
+    border-radius: $button-radius;
+
+    border: 1px solid $color-blue;
+
+    background-color: $color-blue;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+
+    color: $color-white;
+    text-transform: uppercase;
+
+    transition:
+      background-color $transition,
+      color $transition;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue;
+    }
+  }
 }
