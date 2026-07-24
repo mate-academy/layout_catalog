@@ -1,0 +1,107 @@
+@use '../variables' as *;
+
+.card {
+  position: relative;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  background-color: $color-white;
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-top: 40px;
+    height: 36px; /* Зафиксированная высота для 2 строк текста */
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-dark;
+    overflow: hidden;
+
+    transition: color $transition-duration ease;
+
+    .card:hover & {
+      color: $color-title-hover;
+    }
+  }
+
+  &__code {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $color-code;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $color-dark;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    span {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $color-code;
+    }
+
+    strong {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $color-dark;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    margin-top: 16px;
+
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+
+    background-color: $color-blue;
+    color: $color-white;
+
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    transition:
+      background-color $transition-duration ease,
+      color $transition-duration ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-blue;
+      border-color: $color-blue;
+    }
+  }
+}
