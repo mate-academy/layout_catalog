@@ -45,6 +45,7 @@ body {
             text-decoration: none;
             display: block;
             line-height: 60px;
+            transition: all 300ms;
 
             &:hover {
               color: $blue;
@@ -79,10 +80,22 @@ body {
   main {
     padding: 50px 40px;
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(2, 408px);
+    grid-template-columns: repeat(1, 200px);
+    grid-auto-rows: 408px;
     gap: 46px 48px;
     justify-content: center;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, 200px);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 200px);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 200px);
+    }
 
     .card {
       text-align: center;
@@ -91,12 +104,7 @@ body {
       border: solid 1px $borderColor;
       border-radius: 5px;
       box-sizing: border-box;
-
-      &_imac {
-        margin: 32px 0 36px;
-        width: 160px;
-        height: 134px;
-      }
+      transition: all 300ms;
 
       &_title {
         font-size: 12px;
@@ -105,12 +113,27 @@ body {
         text-align: left;
         display: block;
         width: 166px;
+        transition: all 300ms;
 
         padding: 0 $padInline 4px;
         margin: 0;
         color: $blackText;
 
         @include roboto-style(500);
+      }
+
+      &:hover {
+        transform: scale(1.2);
+
+        .card_title {
+          color: $hoverTitle;
+        }
+      }
+
+      &_imac {
+        margin: 32px 0 36px;
+        width: 160px;
+        height: 134px;
       }
 
       &_code {
@@ -128,7 +151,7 @@ body {
         @include roboto-style(400);
       }
 
-      &_block_stars {
+      &__stars {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -145,7 +168,7 @@ body {
         }
       }
 
-      &_block_price {
+      &__price-block {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -184,6 +207,7 @@ body {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        transition: all 300ms;
 
         @include roboto-style(700);
 
