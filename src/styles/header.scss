@@ -1,0 +1,72 @@
+@use './variables' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 $header-padding-x;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $nav-link-height;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-text;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.is-active {
+      color: $color-accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $color-accent;
+      }
+    }
+  }
+}
