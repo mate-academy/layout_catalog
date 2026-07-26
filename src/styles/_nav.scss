@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+.nav {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    height: 100%;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $color-dark;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &.is-active {
+      color: $color-blue;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $color-blue;
+      }
+    }
+  }
+}

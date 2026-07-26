@@ -1,105 +1,116 @@
-@import 'variables';
+@use 'variables' as *;
+
+@mixin text-settings($font-weight, $font-size, $line-height, $letter-spacing) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: Roboto, Arial, sans-serif;
+}
 
 .card {
   box-sizing: border-box;
+  padding: 32px 16px 16px;
+  width: 200px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  width: $card-width;
-  height: $card-height;
-  padding: 32px 16px 16px;
-  border: 1px solid $color-border;
-  border-radius: 6px;
+  font-family: Roboto, sans-serif;
   background-color: $color-white;
-  font-family: $font-main;
+}
 
-  &__image {
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 40px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url('../images/imac.jpeg');
-  }
+.card__image {
+  height: 134px;
+  width: 160px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../images/imac.jpeg');
+  margin: 0 auto 40px;
+}
 
-  &__title {
-    margin: 0;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 18px;
-    color: $color-dark;
-    height: 36px;
-  }
+.card__title {
+  @include text-settings(500, 12px, 18px, 0);
 
-  &__description {
-    margin: 4px 0 0;
-    height: 14px;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    color: $color-grey;
-  }
+  color: $color-dark;
+  margin: 0;
+}
 
-  &__rating {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 16px 0 0;
-  }
+.card__title-line {
+  display: block;
+  white-space: nowrap;
+}
 
-  &__review {
-    width: 53px;
-    height: 14px;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    text-align: right;
-    color: $color-dark;
-  }
+.card__description {
+  @include text-settings(400, 10px, 14px, 0);
 
-  &__price {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 24px 0 0;
-  }
+  margin: 4px 0 0;
+  color: $color-grey;
+  align-self: flex-start;
+}
 
-  &__price-label {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    color: $color-grey;
-  }
+.card__rating {
+  margin: 16px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  &__price-value {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
-    color: $color-dark;
-  }
+.card__review {
+  @include text-settings(400, 10px, 14px, 0);
 
-  &__buy {
-    display: block;
-    box-sizing: border-box;
-    height: 40px;
-    margin-top: 16px;
-    padding: 12px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: $color-blue;
-    color: $color-white;
-    line-height: 16px;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
+  text-align: right;
+  vertical-align: bottom;
+  align-self: flex-end;
+  color: $color-dark;
+}
 
-    &:hover {
-      padding: 11px 0;
-      border: 1px solid $color-blue;
-      background-color: $color-white;
-      color: $color-blue;
-    }
+.card__price {
+  margin: 24px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__price-label {
+  @include text-settings(400, 12px, 18px, 0);
+
+  vertical-align: bottom;
+  color: $color-grey;
+}
+
+.card__price-value {
+  @include text-settings(700, 16px, 18px, 0);
+
+  text-align: right;
+  vertical-align: bottom;
+  color: $color-dark;
+}
+
+.card__buy {
+  @include text-settings(700, 14px, 38px, 0);
+
+  margin-top: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  color: $color-white;
+  background-color: $color-blue;
+  border: 1px solid $color-blue;
+  border-radius: 5px;
+
+  &:hover {
+    color: $color-blue;
+    background-color: $color-white;
   }
 }
