@@ -1,55 +1,52 @@
 @use 'variables' as *;
 
 .nav {
-  height: 100%;
-
   &__list {
     display: flex;
-    align-items: center;
-    height: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  &__item {
-    height: 100%;
-
-    &:not(:first-child) {
-      margin-left: 20px;
-    }
+  &__item:not(:last-child) {
+    margin-right: 20px;
   }
 
   &__link {
     position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    color: $color-dark;
+
+    display: inline-block;
+
+    height: 60px;
+
     font-size: 12px;
     font-weight: 500;
-    line-height: 14px;
-    text-decoration: none;
+    line-height: 60px;
+    color: $color-default;
     text-transform: uppercase;
-    transition: color $transition-duration;
 
-    &:hover {
-      color: $color-blue;
-    }
+    transition: all $transition-duration-default;
 
     &.is-active {
-      color: $color-blue;
+      color: $color-primary;
 
       &::after {
         content: '';
+
         position: absolute;
         right: 0;
         bottom: 0;
         left: 0;
+
         height: 4px;
         border-radius: 8px;
-        background-color: $color-blue;
+
+        background-color: $color-primary;
       }
+    }
+
+    &:hover {
+      color: $color-primary;
     }
   }
 }
