@@ -1,3 +1,95 @@
+@import 'product_cards';
+
 body {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  font-style: normal;
   margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 60px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  font-style: normal;
+  margin: 0;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+
+.nav__list {
+  display: flex;
+  padding: 0;
+  margin-block: 0;
+}
+
+.nav__item {
+  display: flex;
+  text-transform: uppercase;
+  margin-right: 20px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__link,
+.header__link {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  line-height: 60px;
+  color: $color-accent;
+  text-decoration: none;
+  cursor: pointer;
+  align-items: center;
+}
+
+.nav__link:hover {
+  color: $color-light-blue;
+}
+
+.is-active {
+  color: $color-light-blue;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  background-color: $color-light-blue;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 8px;
+  display: block;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+
+  grid-template-columns: repeat(1, 200px);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
