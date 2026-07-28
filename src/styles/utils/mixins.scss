@@ -1,0 +1,39 @@
+@use '../utils/variables' as v;
+
+@mixin on-tablet-small {
+  @media (min-width: v.$tablet-small-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: v.$tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: v.$desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin grid-columns {
+  grid-template-columns: repeat(1, v.$card-width);
+
+  @include on-tablet-small {
+    grid-template-columns: repeat(2, v.$card-width);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, v.$card-width);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, v.$card-width);
+  }
+}
+
+@mixin smooth-hover($properties: all, $duration: 300ms, $timing: ease) {
+  transition: $properties $duration $timing;
+}
