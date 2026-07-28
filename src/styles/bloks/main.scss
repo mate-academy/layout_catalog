@@ -1,0 +1,38 @@
+@use './main_cards/stars';
+@use './main_cards/card.scss';
+@use '../variable/variables' as colors;
+
+:root {
+  --grid-columns-counts: 1;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns-counts), 1fr);
+
+  padding: 50px 40px;
+  gap: 46px 48px;
+}
+
+@media (min-width: 488px) {
+  :root {
+    --grid-columns-counts: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --grid-columns-counts: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --grid-columns-counts: 4;
+  }
+}
