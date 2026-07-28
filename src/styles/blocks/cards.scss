@@ -1,5 +1,5 @@
 .card {
-  width: 200px;
+  width: $card-width;
   padding: 16px;
   border: 1px solid $color-border;
   border-radius: 5px;
@@ -7,8 +7,7 @@
   color: $color-text-secondary;
   font-family: $font-family;
   box-sizing: border-box;
-  transition: 300ms;
-
+  transition: transform 300ms;
 
   &__image {
     display: block;
@@ -19,11 +18,10 @@
 
   &__name {
     margin-bottom: 4px;
-    font-family: Roboto;
+    font-family: $font-family;
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
-    letter-spacing: 0%;
   }
 
   &__link {
@@ -43,7 +41,7 @@
 
   &__rating {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
   }
@@ -89,7 +87,9 @@
     line-height: 16px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: 300ms;
+    transition:
+      background-color 300ms,
+      color 300ms;
 
     &:hover {
       background-color: $color-white;
@@ -101,11 +101,7 @@
     transform: scale(1.2);
   }
 
-  &__link:hover {
-    color: #34568b;
-  }
-
-  &__button:hover {
-    color: $color-accent;
+  .card:hover &__link {
+    color: $color-title-hover;
   }
 }
