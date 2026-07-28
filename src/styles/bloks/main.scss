@@ -2,6 +2,10 @@
 @use './main_cards/card.scss';
 @use '../variable/variables' as colors;
 
+:root {
+  --grid-columns-counts: 1;
+}
+
 .main {
   display: flex;
   justify-content: center;
@@ -9,10 +13,26 @@
 
 .cards-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(var(--grid-columns-counts), 1fr);
 
-  width: 944px;
   margin: 50px 40px 72px;
   gap: 46px 48px;
+}
+
+@media (min-width: 488) {
+  :root {
+    --grid-columns-counts: 2;
+  }
+}
+
+@media (min-width: 768) {
+  :root {
+    --grid-columns-counts: 3;
+  }
+}
+
+@media (min-width: 1024) {
+  :root {
+    --grid-columns-counts: 4;
+  }
 }
