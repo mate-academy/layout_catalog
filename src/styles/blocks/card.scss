@@ -1,0 +1,126 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins.scss' as m;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 200px;
+
+  padding: 32px 16px 16px;
+  border: 1px solid v.$gray-elements;
+  border-radius: 5px;
+
+  color: v.$text;
+
+  @include m.smooth-hover;
+
+  &__image {
+    display: block;
+
+    box-sizing: border-box;
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+
+    background-color: v.$white;
+  }
+
+  &__title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    text-overflow: ellipsis;
+
+    @include m.smooth-hover;
+  }
+
+  &__code {
+    align-self: flex-start;
+
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    line-height: 140%;
+    color: v.$secondary;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    line-height: 150%;
+    color: v.$secondary;
+  }
+
+  &__price-value {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 113%;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: v.$title-hover;
+    }
+  }
+
+  &__buy-button {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    margin-top: auto;
+    border-radius: 5px;
+
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 700;
+    color: v.$white;
+    text-align: center;
+    text-transform: uppercase;
+
+    background-color: v.$button;
+
+    @include m.smooth-hover;
+
+    &:hover {
+      box-sizing: border-box;
+      border: 1px solid v.$button;
+      color: v.$button;
+      background: v.$white;
+    }
+  }
+}

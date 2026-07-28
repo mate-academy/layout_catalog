@@ -1,0 +1,54 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+
+  .nav__link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+
+    position: relative;
+
+    align-items: center;
+
+    @include m.smooth-hover;
+
+    min-height: v.$header-hight;
+
+    &:hover {
+      color: v.$button;
+    }
+
+    &.is-active {
+      color: v.$button;
+
+      &::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 8px;
+
+        @include m.smooth-hover;
+
+        background-color: v.$button;
+        left: 0;
+      }
+    }
+  }
+}
+
+.nav__item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
