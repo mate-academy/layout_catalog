@@ -1,3 +1,101 @@
+@import './variables';
+@import './card';
+@import './stars';
+@import './catalog';
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+
+  padding-left: 50px;
+  padding-right: 10px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.nav {
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.nav__list-item {
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+
+  margin-left: 20px;
+}
+
+.nav__list-item:first-child {
+  margin-left: 0;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  height: 60px;
+
+  color: #060b35;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.nav__item:hover {
+  color: $button-color;
+}
+
+.nav__item.is-active {
+  color: $button-color;
+}
+
+.nav__item.is-active::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 4px;
+
+  border-radius: 8px;
+  background-color: $button-color;
 }
