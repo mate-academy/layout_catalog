@@ -1,0 +1,116 @@
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 406px;
+
+  // Ваша ідеальна формула відступів!
+  padding: 32px 16px 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid $color-border;
+  border-radius: $card-border-radius;
+  background: $color-white;
+
+  &__image-wrap {
+    width: 100%; // Займе всі доступні 166px контенту
+    height: 134px; // Точна висота картинки
+    margin-bottom: 40px; // Відступ до заголовка (якраз дасть 207px від верху)
+
+    display: flex;
+    justify-content: center; // Центруємо картинку (160px) всередині обгортки (166px)
+    align-items: center;
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    display: block; // Прибираємо небажаний відступ знизу
+    object-fit: contain;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    width: 100%;
+    font-size: $font-size-title;
+    font-weight: 500;
+    line-height: $line-height-title;
+    color: $color-dark;
+    text-align: left; // <-- Додати
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: $color-secondary;
+    text-align: left; // <-- Додати
+  }
+
+  &__rating-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: $font-size-code;
+    line-height: $line-height-code;
+    color: $color-dark;
+  }
+
+  &__price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__price-label {
+    font-size: $font-size-title;
+    line-height: $line-height-title;
+    color: $color-secondary;
+  }
+
+  &__price-value {
+    font-size: $font-size-price;
+    font-weight: 700;
+    line-height: $line-height-title;
+    color: $color-dark;
+  }
+
+  &__button {
+    width: 100%; // Ідеально займе 166px
+    height: $button-height;
+    margin-top: auto; // Притискає кнопку до самого низу (до padding-bottom: 16px)
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $color-primary;
+    border-radius: 5px;
+    background: $color-primary;
+    color: $color-white;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $font-size-button;
+    font-weight: 700;
+    line-height: $line-height-button;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+
+    &:hover {
+      background: $color-white;
+      color: $color-primary;
+    }
+  }
+}
