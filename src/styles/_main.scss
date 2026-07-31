@@ -13,7 +13,19 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 46px;
-  padding: 0 40px;
+  padding: 50px 40px;
+}
+
+@media (min-width: 488px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -31,13 +43,18 @@ body {
 }
 
 .card {
-  width: 198px;
+  width: 200px;
   height: 406px;
   display: flex;
   flex-direction: column;
   background-color: $background-color-card;
   border: 1px solid $gray-elements;
   border-radius: 5px;
+  transition: all 300ms;
+}
+
+.card:hover {
+  transform: scale(1.2);
 }
 
 .card__image {
@@ -62,6 +79,10 @@ body {
   letter-spacing: 0%;
   color: $main-color;
   padding-top: 40px;
+}
+
+.card:hover .card__title {
+  color: #34568b;
 }
 
 .card__code {
