@@ -6,6 +6,7 @@ $border-color: #f3f3f3;
 $card-width: 200px;
 $transition-duration: 300ms;
 
+// Reset compartilhado para deixar os tamanhos dos componentes previsiveis.
 * {
   box-sizing: border-box;
 }
@@ -23,6 +24,10 @@ $transition-duration: 300ms;
   height: 60px;
   padding: 0 50px;
 
+  @media (max-width: 767px) {
+    padding: 0 16px;
+  }
+
   &__logo {
     display: flex;
     flex-shrink: 0;
@@ -37,10 +42,13 @@ $transition-duration: 300ms;
 
 .nav {
   height: 100%;
+  min-width: 0;
+  overflow-x: auto;
 
   &__list {
     display: flex;
     height: 100%;
+    width: max-content;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -92,6 +100,7 @@ $transition-duration: 300ms;
   justify-content: center;
   padding: 50px 40px;
 
+  // Adiciona colunas apenas quando a tela comporta cards e espacos fixos.
   @media (min-width: 488px) {
     grid-template-columns: repeat(2, $card-width);
   }
@@ -226,6 +235,7 @@ $transition-duration: 300ms;
     }
   }
 
+  // A classe modificadora decide quantas estrelas recebem o icone ativo.
   @for $star-count from 1 through 5 {
     &--#{$star-count} &__star:nth-child(-n + #{$star-count}) {
       background-image: url('../images/star-active.svg');
