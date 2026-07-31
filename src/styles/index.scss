@@ -1,3 +1,244 @@
-body {
+$main-color: #060b35;
+$secondary-color: #616070;
+$accent-color: #00acdc;
+$title-hover-color: #34568b;
+$border-color: #f3f3f3;
+$card-width: 200px;
+$transition-duration: 300ms;
+
+// Reset compartilhado para deixar os tamanhos dos componentes previsiveis.
+* {
+  box-sizing: border-box;
+}
+
+.page {
   margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  color: $main-color;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+
+  @media (max-width: 767px) {
+    padding: 0 16px;
+  }
+
+  &__logo {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  &__logo-image {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  height: 100%;
+  min-width: 0;
+  overflow-x: auto;
+
+  &__list {
+    display: flex;
+    height: 100%;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $main-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color $transition-duration;
+
+    &:hover,
+    &.is-active {
+      color: $accent-color;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $accent-color;
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+  padding: 50px 40px;
+
+  // Adiciona colunas apenas quando a tela comporta cards e espacos fixos.
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    color: $main-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color $transition-duration;
+  }
+
+  &:hover &__title {
+    color: $title-hover-color;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    color: $secondary-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__rating,
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__rating {
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    margin: 0;
+    color: $main-color;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__price {
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    margin: 0;
+    color: $secondary-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    margin: 0;
+    color: $main-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    border: 1px solid $accent-color;
+    border-radius: 5px;
+    background-color: $accent-color;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color $transition-duration,
+      color $transition-duration;
+
+    &:hover {
+      background-color: #fff;
+      color: $accent-color;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  // A classe modificadora decide quantas estrelas recebem o icone ativo.
+  @for $star-count from 1 through 5 {
+    &--#{$star-count} &__star:nth-child(-n + #{$star-count}) {
+      background-image: url('../images/star-active.svg');
+    }
+  }
 }
