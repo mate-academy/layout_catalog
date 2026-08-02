@@ -1,0 +1,51 @@
+@use './variables' as *;
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: $header-height;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $card-color;
+    transition: color 300ms;
+  }
+
+  &__link.is-active {
+    color: $active-color;
+  }
+
+  &__link:hover {
+    color: $active-color;
+  }
+
+  &__link.is-active::after {
+    content: '';
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
+    background-color: $active-color;
+  }
+}
