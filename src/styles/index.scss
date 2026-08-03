@@ -1,3 +1,237 @@
+$main-color: #00acdc;
+$text-color: #060b35;
+$secondary-color: #616070;
+$transition-duration: 300ms;
+$card-width: 200px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: $secondary-color;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: flex;
+  }
+
+  &__logo-image {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    height: 100%;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $text-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color $transition-duration;
+
+    &:hover,
+    &.is-active {
+      color: $main-color;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $main-color;
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: $card-width;
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+.card {
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    color: $text-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color $transition-duration;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    color: $secondary-color;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__review-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__review-count {
+    margin: 0;
+    color: $text-color;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    color: $secondary-color;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__price {
+    color: $text-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    background-color: $main-color;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      color $transition-duration,
+      background-color $transition-duration;
+
+    &:hover {
+      background-color: #fff;
+      color: $main-color;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/star.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+
+  @for $rating from 1 through 5 {
+    &--#{$rating} &__star:nth-child(-n + #{$rating}) {
+      background-image: url('../images/star-active.svg');
+    }
+  }
+}
+
+@media (min-width: 488px) {
+  .cards {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
