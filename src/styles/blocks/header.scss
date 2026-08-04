@@ -1,0 +1,69 @@
+.header {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 0 50px;
+
+  background-color: $white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 2px 4px $shadow;
+
+  &__logo {
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav-list {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-item + &__nav-item {
+    margin-left: 20px;
+  }
+
+  &__nav-link {
+    height: 60px;
+
+    color: $main-accent;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    transition: transform 300ms;
+
+    &:hover {
+      color: $blue-accent;
+    }
+
+    &--active {
+      color: $blue-accent;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 4px;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        background-color: $blue-accent;
+        border-radius: 8px;
+      }
+    }
+  }
+}
