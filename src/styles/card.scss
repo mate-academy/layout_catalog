@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  padding: $card-padding-top $space-small $space-small;
+  border: 1px solid $color-border;
+  border-radius: $card-radius;
+  background-color: $color-white;
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale($card-scale);
+  }
+
+  &__photo {
+    display: block;
+    width: $photo-width;
+    height: $photo-height;
+    margin: 0 auto $space-large;
+  }
+
+  &__title {
+    margin: 0 0 $space-tiny;
+    font-size: $font-size-medium;
+    font-weight: 500;
+    line-height: $line-height-large;
+    color: $color-main;
+    transition: color $transition-duration;
+  }
+
+  &__code {
+    margin: 0 0 $space-small;
+  }
+
+  &__review {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $space-medium;
+  }
+
+  &__reviews {
+    color: $color-main;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $space-small;
+  }
+
+  &__price-label {
+    font-size: $font-size-medium;
+    line-height: $line-height-large;
+  }
+
+  &__price-value {
+    font-size: $font-size-price;
+    font-weight: 700;
+    line-height: $line-height-large;
+    color: $color-main;
+  }
+
+  &__buy {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    height: $button-height;
+    border: 1px solid $color-accent;
+    border-radius: $card-radius;
+    font-size: $font-size-large;
+    font-weight: 700;
+    line-height: $line-height-medium;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-accent;
+    transition:
+      color $transition-duration,
+      background-color $transition-duration;
+
+    &:hover {
+      color: $color-accent;
+      background-color: $color-white;
+    }
+  }
+
+  &:hover &__title {
+    color: $color-title-hover;
+  }
+}

@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+.nav {
+  &__list {
+    display: flex;
+    column-gap: $nav-gap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    font-size: $font-size-medium;
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-main;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.is-active {
+      color: $color-accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: $nav-line-height;
+        border-radius: $nav-line-height * 0.5;
+        background-color: $color-accent;
+      }
+    }
+  }
+}
