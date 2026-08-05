@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+.stars {
+  display: flex;
+  column-gap: $space-tiny;
+
+  &__star {
+    width: $star-size;
+    height: $star-size;
+    background-image: url('../images/star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @for $rating from 1 through 5 {
+    &--#{$rating} {
+      .stars__star:nth-child(-n + #{$rating}) {
+        background-image: url('../images/star-active.svg');
+      }
+    }
+  }
+}
