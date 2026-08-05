@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: $card-background;
@@ -10,9 +11,11 @@
   box-sizing: border-box;
   width: $card-width;
   border: 1px solid $border-card;
-  transition: all 0.3s;
+  transition: transform 0.3s ease;
+
   &:hover {
-    transform: scale(120%);
+    transform: scale(1.2);
+    z-index: 2;
   }
 
   &__image {
@@ -31,10 +34,11 @@
     width: 166px;
     height: 36px;
     margin: 0;
+    transition: color 0.3s ease;
   }
 
-  &:hover .card__title {
-    color: #34568b;
+  &:hover &__title {
+    color: $title-hover-color;
   }
 
   &__raiting {
@@ -60,9 +64,9 @@
     color: $text-color;
     font-weight: 400;
     font-size: 10px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
+    text-align: right;
+    margin: 0;
+    line-height: 140%;
   }
 
   &__price {
@@ -72,14 +76,14 @@
     margin-top: 24px;
   }
 
-  &-label {
+  &__price-label {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
     color: $color-price;
   }
 
-  &-value {
+  &__price-value {
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
@@ -87,7 +91,8 @@
   }
 
   &__button {
-    display: block;
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     border: 1px solid $bottom-color;
     border-radius: 5px;
@@ -98,12 +103,16 @@
     width: calc(166px - 1px);
     font-size: 14px;
     font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
     transition:
       background-color 0.3s ease,
       color 0.3s ease,
       border 0.3s ease;
     align-self: center;
     margin-bottom: 16px;
+
     &:hover {
       background-color: $card-background;
       color: $bottom-color;
