@@ -1,0 +1,116 @@
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border: $card-border;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition-duration: 0.3s;
+
+  &__image {
+    background-image: url('../images/imac.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    cursor: pointer;
+    font-size: $font-size-t;
+    font-weight: $font-w5;
+    line-height: 18px;
+    transition-duration: 0.3s;
+
+    &--ident {
+      margin-top: 40px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__code {
+    font-size: $font-size-code;
+    color: $text-secondary;
+    line-height: 14px;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--indent {
+      margin: 16px 0 24px;
+    }
+
+    &--viewers {
+      font-size: $font-size-code;
+      line-height: 14px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &--label {
+      color: $color-text-secondary;
+      font-size: $font-size-t;
+      line-height: 18px;
+    }
+
+    &--value {
+      font-size: $font-size-pv;
+      font-weight: $font-w7;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    font-size: $font-size-btn;
+    font-weight: $font-w7;
+    line-height: 16px;
+    transition-duration: 0.3s;
+    border-radius: 5px;
+    background-color: $color-primary;
+    color: $color-white;
+    border-style: none;
+
+    &--indent {
+      margin-top: 16px;
+    }
+
+    &:hover {
+      color: $color-primary;
+      background-color: $color-white;
+      border: $Bottom-border;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 1;
+
+  .card__title {
+    color: $accent-color2;
+  }
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  gap: $gap-vertical $gap-horizontal;
+  padding: $padding-vertical $padding-horizontal;
+  grid-template-columns: repeat(1, auto);
+
+  @include on-mobile;
+  @include on-tablet;
+  @include on-desktop;
+}
