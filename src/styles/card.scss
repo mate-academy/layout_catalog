@@ -11,7 +11,7 @@
   border-radius: 5px;
   background-color: $primary-color;
 
-  transition: transform, $transition-base-duration;
+  transition: transform, 300ms ease;
 
   &__image {
     width: 160px;
@@ -24,7 +24,7 @@
     margin-bottom: 16px;
   }
 
-  &__product-name {
+  &__title {
     margin: 0 0 4px;
 
     font-size: 12px;
@@ -32,6 +32,8 @@
     line-height: 18px;
 
     color: $product-card-primary-color;
+
+    transition: color 300ms ease;
   }
 
   &__product-code {
@@ -43,6 +45,8 @@
     font-weight: 400;
     line-height: 14px;
     color: $product-card-accent-color;
+
+    transition: color 300ms ease;
   }
 
   &__rating {
@@ -62,6 +66,7 @@
     line-height: 14px;
 
     color: $product-card-primary-color;
+    transition: color 300ms ease;
   }
 
   &__price {
@@ -72,6 +77,8 @@
     height: fit-content;
     margin-bottom: 16px;
 
+    transition: color 300ms ease;
+
     &-text {
       display: block;
 
@@ -81,6 +88,7 @@
       font-weight: 400;
       line-height: 18px;
       color: $product-card-accent-color;
+      transition: color 300ms ease;
     }
 
     &-summ {
@@ -93,6 +101,7 @@
       line-height: 18px;
 
       color: $product-card-primary-color;
+      transition: color 300ms ease;
     }
   }
 
@@ -110,26 +119,27 @@
     text-align: center;
     text-transform: uppercase;
     background-color: $secondary-color;
+    transition: background-color 300ms ease, color 300ms ease;
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $secondary-color;
+        color: $secondary-color;
+        background-color: transparent;
+      }
   }
 
-  &__button:hover {
-    cursor: pointer;
-    border: 1px solid $secondary-color;
-    color: $secondary-color;
-    background-color: transparent;
-  }
+
 
   // Ховер карточки товара
 
   &:hover {
     transform: scale(1.2);
-    & .card__product-name {
+    & .card__title  {
       color: $card-title-hover-color;
     }
     & .card__button {
       background-color: $primary-color;
-    }
-    & :not(.card__product-name) {
       color: $secondary-color;
     }
   }
