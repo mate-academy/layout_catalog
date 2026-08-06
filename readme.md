@@ -9,7 +9,7 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - add `data-qa="card-hover"` (not just `hover`) to the link `Buy` inside the first card
 - nav links color is not `black` anymore (nav links should have `#060b35` color)
 - add the class `is-active` to the first link (`Apple`) in the navigation
-- use `<main>` tag for cards container 
+- use `<main>` tag for cards container
 - use the grid for cards with different numbers of columns:
   - 1 for the smaller screens
   - 2 starting at `488px`
@@ -18,6 +18,13 @@ Create an HTML page with a catalog. Develop semantic page structure as shown on 
 - cards have fixed width - `200px`
 - the gap between cards should be - `48px` horizontally and `46px` vertically
 - cards container(catalog) have fixed paddings (`50px` vertically and `40px` horizontally)
+
+    ^
+    |
+    |
+    |
+
+!ЗДЕСЬ! неоднозначно всё, ибо сказано в пункте на строке 12 о том что карточки должны лежать в теге <main> но при этом в этом пункте говорится про какой-то контейнер с как я понимаю классом catalog. Если тесты или ревью не пройдут - создай либо новую обёртку для артикла, либо для класса артикла добавь эти паддинги, должно пофиксится. Сейчас у тебя эти паддинги в файле /main.scss\
 
 Make all the changes smooth on hover (during 300ms):
 - increase the card by 20 percent (neighboring cards **should not be** affected)
