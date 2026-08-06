@@ -1,0 +1,118 @@
+@import 'variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $card-width;
+  border: $card-border;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  transition:
+    transform $transition-duration ease,
+    box-shadow $transition-duration ease;
+  position: relative;
+  z-index: 1;
+
+  &__title {
+    font-size: $font-size-small;
+    font-weight: $font-weight-normal;
+    line-height: $title-line-height;
+    margin: $title-margin;
+    color: $color-dark;
+    transition: color $transition-duration ease;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    .card__title {
+      color: $title-hover-color;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: $image-height;
+    width: $image-width;
+    margin: $image-margin;
+  }
+
+  &__code {
+    width: $full-width;
+    font-weight: $font-weight-light;
+    font-size: $font-size-verysmall;
+    line-height: $base-line-height;
+    margin: $code-margin;
+    color: $color-muted;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-verysmall;
+    line-height: $base-line-height;
+    font-weight: $font-weight-light;
+    width: $full-width;
+    margin: $reviews-margin;
+  }
+
+  &__reviews-count {
+    margin: 0;
+    font-weight: $font-weight-light;
+    font-size: $font-size-verysmall;
+    line-height: $base-line-height;
+    color: $color-dark;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-verysmall;
+    width: $full-width;
+    margin: $price-margin;
+  }
+
+  &__price-label {
+    margin: 0;
+    font-weight: $font-weight-light;
+    font-size: $font-size-small;
+    line-height: $price-line-height;
+    color: $color-muted;
+  }
+
+  &__price-value {
+    margin: 0;
+    font-size: $font-size-big;
+    font-weight: $font-weight-heavy;
+    line-height: $price-line-height;
+    color: $color-dark;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $full-width;
+    height: $buy-height;
+    border-radius: $buy-border-radius;
+    background-color: $color-accent;
+    color: $color-white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-heavy;
+    line-height: $buy-line-height;
+    transition:
+      background-color $transition-duration ease,
+      color $transition-duration ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-accent;
+      border: $buy-hover-border;
+    }
+  }
+}
