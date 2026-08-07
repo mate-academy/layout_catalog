@@ -21,6 +21,7 @@
     font-size: $font-size-t;
     font-weight: $font-w5;
     line-height: 18px;
+    margin: 0 0 4px;
     transition-duration: 0.3s;
 
     &--indent {
@@ -32,7 +33,7 @@
   &__code {
     font-size: $font-size-code;
     color: $text-secondary;
-    line-height: 14px;
+    margin: 0 0 16px;
   }
 
   &__meta {
@@ -41,19 +42,18 @@
     align-items: center;
 
     &--indent {
-      margin: 16px 0 24px;
+      margin-bottom: 24px;
     }
 
     &--viewers {
       font-size: $font-size-code;
-      line-height: 14px;
     }
   }
 
   &__price {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 
     &--label {
       color: $color-text-secondary;
@@ -69,6 +69,10 @@
   }
 
   &__button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     cursor: pointer;
     width: 100%;
@@ -108,15 +112,26 @@
   place-content: center;
   gap: $gap-vertical $gap-horizontal;
   padding: $padding-vertical $padding-horizontal;
+
   grid-template-columns: repeat(1, auto);
 
-  @include on-mobile{
+  @include on-mobile {
     grid-template-columns: repeat(2, auto);
   }
-  @include on-tablet{
+
+  @include on-tablet {
     grid-template-columns: repeat(3, auto);
   }
-  @include on-desktop{
+
+  @include on-desktop {
     grid-template-columns: repeat(4, auto);
+  }
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
   }
 }

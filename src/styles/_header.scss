@@ -1,67 +1,63 @@
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 0 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
   .logo {
     display: block;
     height: 40px;
     width: 40px;
   }
-
   &__nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    a {
+    &--list {
       display: flex;
-      padding: 23px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    &--item {
+      margin-left: 20px;
+    }
+
+    &--item:first-child {
+      margin-left: 0;
+    }
+
+    &--link.is-active {
+      color: $accent-color;
+    }
+
+    &--link {
+      position: relative;
+      display: flex;
+      align-items: center;
       text-decoration: none;
+      height: 60px;
+      font-family: $font-family;
+      font-size: $font-size-t;
+      font-weight: $font-w5;
+      white-space: nowrap;
       text-transform: uppercase;
-      color: $color-text;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 14px;
+      color: $text-color;
+      transition: color 0.3s;
     }
 
-    a:hover {
-      color: $color-primary;
-    }
-
-    .is-active::after {
+    &--link.is-active::after {
       content: '';
       position: absolute;
-      height: 4px;
-      width: 100%;
-      background-color: $color-primary;
-      border-radius: 8px;
-      left: 0;
       bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $accent-color;
     }
 
-    .is-active {
-      position: relative;
-      color: $color-primary;
+    &--link:hover {
+      color: $accent-color;
     }
-
-
   }
-
-  &__link:first-child {
-    margin-left: 0;
-  }
-
-  &__link{
-    margin-right: 20px;
-  }
-
-  &__link:not(:last-child) {
-      margin-right: 20px;
-  }
-
 }
