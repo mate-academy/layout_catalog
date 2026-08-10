@@ -1,0 +1,24 @@
+@use 'variables';
+
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: variables.$catalog-gap-vertical variables.$catalog-gap-horizontal;
+  justify-content: center;
+
+  margin: 0 auto;
+  padding: variables.$catalog-padding-vertical
+    variables.$catalog-padding-horizontal;
+
+  @media (min-width: variables.$breakpoint-small) {
+    grid-template-columns: repeat(2, variables.$card-width);
+  }
+
+  @media (min-width: variables.$breakpoint-medium) {
+    grid-template-columns: repeat(3, variables.$card-width);
+  }
+
+  @media (min-width: variables.$breakpoint-large) {
+    grid-template-columns: repeat(4, variables.$card-width);
+  }
+}

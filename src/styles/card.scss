@@ -1,0 +1,127 @@
+@use 'variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  width: variables.$card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid variables.$color-card-border;
+  border-radius: variables.$radius;
+
+  transition: transform 300ms ease;
+
+  &:hover {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    min-height: 36px;
+    margin-top: 40px;
+    margin-bottom: 0;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: variables.$color-text;
+
+    transition: color 300ms ease;
+  }
+
+  &:hover &__title {
+    color: #34568b;
+  }
+
+  &__code {
+    margin: 4px 0 0;
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: variables.$color-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    flex-shrink: 0;
+
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 14px;
+    color: variables.$color-text;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: bottom;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: variables.$color-secondary;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: variables.$color-text;
+    letter-spacing: normal;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 40px;
+    margin-top: 16px;
+    border: 1px solid variables.$color-accent;
+    border-radius: variables.$radius;
+
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 16px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: normal;
+
+    background-color: variables.$color-accent;
+
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+
+    &:hover {
+      color: variables.$color-accent;
+      background-color: #fff;
+    }
+  }
+}
