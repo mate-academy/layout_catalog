@@ -1,0 +1,137 @@
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  border: $card-border;
+  border-radius: 5px;
+  padding: 32px 16px 16px;
+  transition-duration: 0.3s;
+
+  &__image {
+    background-image: url('../images/imac.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
+    height: 134px;
+  }
+
+  &__title {
+    cursor: pointer;
+    font-size: $font-size-t;
+    font-weight: $font-w5;
+    line-height: 18px;
+    margin: 0 0 4px;
+    transition-duration: 0.3s;
+
+    &--indent {
+      margin-top: 40px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__code {
+    font-size: $font-size-code;
+    color: $text-secondary;
+    margin: 0 0 16px;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--indent {
+      margin-bottom: 24px;
+    }
+
+    &--viewers {
+      font-size: $font-size-code;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--label {
+      color: $color-text-secondary;
+      font-size: $font-size-t;
+      line-height: 18px;
+    }
+
+    &--value {
+      font-size: $font-size-pv;
+      font-weight: $font-w7;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    font-size: $font-size-btn;
+    font-weight: $font-w7;
+    line-height: 16px;
+    transition-duration: 0.3s;
+    border-radius: 5px;
+    background-color: $color-primary;
+    color: $color-white;
+    border-style: none;
+
+    &--indent {
+      margin-top: 16px;
+    }
+
+    &:hover {
+      color: $color-primary;
+      background-color: $color-white;
+      border: $Bottom-border;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 1;
+
+  .card__title {
+    color: $accent-color2;
+  }
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  gap: $gap-vertical $gap-horizontal;
+  padding: $padding-vertical $padding-horizontal;
+
+  grid-template-columns: repeat(1, $card-width);
+
+  @include on-mobile {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(4, $card-width);
+  }
+
+  & .card:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  & .card:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+}
