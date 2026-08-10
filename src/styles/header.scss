@@ -1,7 +1,6 @@
 @use 'variables';
 
 :root {
-  --link-color: #00acdc;
   --header-height: 60px;
 }
 
@@ -9,7 +8,7 @@
   width: 100%;
   height: var(--header-height);
 
-  background-color: #fff;
+  background-color: variables.$color-white;
 
   &__inner {
     display: flex;
@@ -45,10 +44,6 @@
     &:first-child {
       margin-left: 0;
     }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 
   &__link {
@@ -73,11 +68,11 @@
     transition: color 300ms ease;
 
     &:hover {
-      color: var(--link-color);
+      color: variables.$color-accent;
     }
 
     &.is-active {
-      color: var(--link-color);
+      color: variables.$color-accent;
 
       &::after {
         content: '';
@@ -89,7 +84,8 @@
         width: 100%;
         height: 4px;
         border-radius: 2px;
-        background-color: var(--link-color);
+
+        background-color: variables.$color-accent;
       }
     }
   }
