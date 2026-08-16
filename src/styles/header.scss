@@ -1,0 +1,65 @@
+@import './variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 60px;
+  padding: 0 50px;
+}
+
+.img-logo {
+  display: block;
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    height: 60px;
+
+    color: $color-primary;
+    transition: color 300ms;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-botton;
+    }
+
+    &.is-active {
+      color: $color-botton;
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 4px;
+
+        background-color: $color-botton;
+        border-radius: 8px;
+      }
+    }
+  }
+}
