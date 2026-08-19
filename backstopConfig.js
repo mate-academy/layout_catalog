@@ -13,6 +13,7 @@ const basic = {
 const config = {
   ...backstop,
   fileNameTemplate: '{scenarioLabel}_{viewportLabel}',
+
   onBeforeScript: 'puppet/onBefore.js',
   onReadyScript: 'puppet/onReady.js',
   viewports: [
