@@ -1,3 +1,50 @@
-body {
-  margin: 0;
+@import './utils/variables';
+@import './blocks/nav';
+@import './blocks/body';
+@import './blocks/card';
+@import './blocks/stars';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  display: flex;
+}
+
+.container {
+  --column-count: 4;
+
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (max-width: 488px) {
+  .container {
+    --column-count: 1;
+  }
+}
+
+@media (min-width: 488px) {
+  .container {
+    --column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    --column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --column-count: 4;
+  }
 }
