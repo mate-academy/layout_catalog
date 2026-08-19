@@ -1,0 +1,51 @@
+@use './variables' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin: auto;
+  line-height: 1;
+  display: grid;
+  grid-template-columns: repeat(1, v.$card-width);
+
+  justify-content: center;
+  align-items: center;
+
+  gap: v.$row-gap v.$column-gap;
+  padding: v.$catalog-padding-y v.$catalog-padding-x;
+
+  box-sizing: border-box;
+}
+
+@media (min-width: 488px) {
+  main {
+    grid-template-columns: repeat(2, v.$card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(3, v.$card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(4, v.$card-width);
+  }
+}
+
+html {
+  font-family: v.$font-family;
+  line-height: 1;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1;
+}
