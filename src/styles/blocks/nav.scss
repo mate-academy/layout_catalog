@@ -1,0 +1,55 @@
+@use '/src/styles/utils/variables.scss' as *;
+
+.nav {
+  &__list {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    color: $main-accent;
+    height: var(--main-height);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $main-color;
+      text-decoration-color: var(--accent);
+    }
+  }
+
+  .is-active {
+    color: var(--accent);
+  }
+
+  .is-active::after {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 4px;
+    background-color: var(--accent);
+    bottom: 0;
+  }
+
+  .nav__item:first-child {
+    margin-left: 0;
+  }
+
+  // [data-qa='hover']:hover {
+  //   text-decoration: none;
+  //   color: var(--accent);
+  // }
+}
