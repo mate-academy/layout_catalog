@@ -49,24 +49,19 @@ body {
 }
 
 .nav__link {
-  display: flex;
-  align-items: center;
-  position: relative;
-  text-decoration: none;
-  height: 60px;
+  // ... propriedades existentes ...
   color: $color-nav-link;
-  font-weight: 500;
-  font-size: 12px;
-  text-transform: uppercase;
-  white-space: nowrap;
   transition: color $transition-duration ease;
 
-  &.is-active,
+  // Apenas o hover muda a cor do texto
   &:hover {
     color: $color-nav-hover;
   }
 
+  // O is-active mantém a cor padrão do texto, mas adiciona o sublinhado
   &.is-active {
+    color: $color-nav-link; // Mantém a cor escura padrão no texto
+
     &::after {
       content: '';
       position: absolute;
@@ -215,10 +210,12 @@ body {
   border: 1px solid $color-btn-bg;
   transition:
     background-color $transition-duration ease,
-    color $transition-duration ease;
+    color $transition-duration ease,
+    border-color $transition-duration ease; // Adicionado para transição suave da borda
 
   &:hover {
     background-color: #fff;
     color: $color-btn-bg;
+    border-color: $color-btn-bg; // Garante que a borda acompanhe a cor correta
   }
 }
