@@ -1,3 +1,224 @@
-body {
+$color-nav-link: #060b35;
+$color-nav-hover: #00acdc;
+$color-card-title-hover: #34568b;
+$color-btn-bg: #00acdc;
+$color-btn-text: #fff;
+$transition-duration: 300ms;
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  color: #616070;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  height: 60px;
+  color: $color-nav-link;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color $transition-duration ease;
+
+  &.is-active,
+  &:hover {
+    color: $color-nav-hover;
+  }
+
+  &.is-active {
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $color-nav-hover;
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  gap: 46px 48px;
+  justify-content: center;
+  grid-template-columns: 200px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 16px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+  background-color: #fff;
+  transition:
+    transform $transition-duration ease,
+    box-shadow $transition-duration ease;
+  position: relative;
+  z-index: 1;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+    object-fit: contain;
+  }
+
+  &__title {
+    color: $color-nav-link;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 18px;
+    transition: color $transition-duration ease;
+  }
+
+  &__code {
+    font-size: 10px;
+    font-weight: 400;
+    color: #616070;
+    margin-bottom: 16px;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__reviews-text {
+    font-size: 10px;
+    font-weight: 400;
+    color: $color-nav-link;
+  }
+
+  &__price-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    color: #616070;
+    line-height: 18px;
+  }
+
+  &__price-value {
+    color: $color-nav-link;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    .card__title {
+      color: $color-card-title-hover;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    display: block;
+    object-fit: contain;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  background-color: $color-btn-bg;
+  color: $color-btn-text;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 1px solid $color-btn-bg;
+  transition:
+    background-color $transition-duration ease,
+    color $transition-duration ease;
+
+  &:hover {
+    background-color: #fff;
+    color: $color-btn-bg;
+  }
 }
