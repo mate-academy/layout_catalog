@@ -1,0 +1,18 @@
+.stars {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 4px;
+  grid-template-columns: repeat(auto-fill, 16px);
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@for $number from 1 through 5 {
+  @include active-stars($number);
+}
