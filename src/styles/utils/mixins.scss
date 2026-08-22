@@ -1,0 +1,44 @@
+@mixin flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin grid-between-center {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(1, $card-width);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin header-transition($property) {
+  transition: #{$property} $nav-transition-duration ease;
+}
+
+@mixin header-after {
+  opacity: 0;
+  position: absolute;
+  display: block;
+  content: '';
+
+  bottom: 0;
+  height: $nav-after-height;
+  width: 100%;
+  border-radius: $nav-after-bradius;
+  background-color: $nav-text-hover-color;
+
+  @include header-transition(opacity);
+}
+
+@mixin active-stars($number) {
+  .stars--#{$number} .stars__star:nth-child(-1n + #{$number}) {
+    background-image: url(../images/star-active.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
