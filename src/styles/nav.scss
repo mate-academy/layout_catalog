@@ -1,0 +1,49 @@
+@use 'variables';
+
+.nav__link {
+  color: variables.$main-color;
+  font-size: 12px;
+  text-align: center;
+  line-height: variables.$header-height;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  transition: color variables.$transition-duration;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin-right: 20px;
+}
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__link:hover {
+  color: variables.$color-blue;
+}
+
+.nav__link.is-active {
+  color: variables.$color-blue;
+  position: relative;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 8px;
+  width: 100%;
+  background: variables.$color-blue;
+}
