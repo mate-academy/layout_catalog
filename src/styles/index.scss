@@ -1,4 +1,5 @@
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Roboto, sans-serif;
@@ -15,64 +16,84 @@ body {
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 50px;
+  width: 100%;
   background-color: var(--white);
   box-shadow: 0 0 4px 0 #0000000d;
+
+  &__container {
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    box-sizing: border-box;
+  }
 
   &__logo {
     width: 40px;
     height: 40px;
   }
-}
 
-.nav {
-  &__block {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  &__item {
-    list-style: none;
-  }
-
-  &__link {
-    position: relative;
-    color: var(--main-accent);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 100%;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      color: var(--blue-accent);
+  &__nav {
+    &-list {
+      flex-wrap: nowrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
     }
-  }
 
-  &__link.is-active {
-    color: var(--blue-accent);
+    &-item {
+      list-style: none;
 
-    &::after {
-      position: absolute;
-      content: '';
-      width: 100%;
-      height: 4px;
-      left: 0;
-      right: 0;
-      bottom: -19px;
-      border-radius: 8px;
-      background-color: var(--blue-accent);
+      &:nth-child(n + 2) {
+        margin-left: 20px;
+      }
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      height: 60px;
+      position: relative;
+      color: var(--main-accent);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 100%;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--blue-accent);
+      }
+    }
+
+    &-link.is-active {
+      color: var(--blue-accent);
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 37px;
+        height: 4px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 8px;
+        background-color: var(--blue-accent);
+      }
     }
   }
 }
 
 .main {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(1, 200px);
   gap: 46px 48px;
   padding: 50px 40px;
@@ -91,11 +112,9 @@ body {
 }
 
 .card {
+  box-sizing: border-box;
   width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 16px;
+  padding: 32px 16px 16px;
   border: 1px solid var(--gray-elements);
   border-radius: 5px;
   background-color: var(--white);
@@ -113,12 +132,12 @@ body {
     background-size: 160px 134px;
     width: 160px;
     height: 134px;
-    margin: 16px auto 0;
-    line-height: 18px;
+    margin: 0 auto 40px;
+    display: block;
   }
 
   &__title {
-    margin-top: 40px;
+    margin: 0 0 4px;
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
@@ -130,9 +149,9 @@ body {
   }
 
   &__code {
-    margin-top: 4px;
+    margin-top: 0;
+    margin-bottom: 16px;
     font-size: 10px;
-    font-weight: 400;
     line-height: 14px;
     color: var(--secondary);
   }
@@ -140,22 +159,24 @@ body {
   &__reviews {
     font-size: 10px;
     font-weight: 400;
-    line-height: 14px;
     color: var(--main-accent);
   }
 
   &__meta {
     display: flex;
     justify-content: space-between;
-    text-align: center;
     align-items: center;
-    margin-top: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 0;
+    height: 16px;
   }
 
   &__price {
-    margin-top: 24px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__price-label {
@@ -173,20 +194,22 @@ body {
   }
 
   &__buy {
-    display: block;
-    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
-    margin-top: 16px;
     border: 1px solid var(--blue-accent);
     border-radius: 5px;
     background-color: var(--blue-accent);
     font-size: 14px;
     font-weight: 700;
-    line-height: 38px;
+    line-height: 16px;
     color: var(--white);
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       background-color: #fff;
