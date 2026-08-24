@@ -1,0 +1,19 @@
+@use 'sass:list';
+
+@mixin grid-columns($cols) {
+  grid-template-columns: repeat($cols, 200px);
+}
+
+@mixin transition($properties...) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: list.append(
+      $transitions,
+      $property $transition-duration,
+      comma
+    );
+  }
+
+  transition: $transitions;
+}
