@@ -1,0 +1,22 @@
+@use '../variables' as v;
+
+.catalog {
+  display: grid;
+  grid-template-columns: v.$card-width;
+  gap: v.$catalog-row-gap v.$catalog-column-gap;
+  justify-content: center;
+
+  padding: v.$catalog-padding-vertical v.$catalog-padding-horizontal;
+
+  @media (min-width: v.$tablet-min-width) {
+    grid-template-columns: repeat(2, v.$card-width);
+  }
+
+  @media (min-width: v.$desktop-min-width) {
+    grid-template-columns: repeat(3, v.$card-width);
+  }
+
+  @media (min-width: v.$large-desktop-min-width) {
+    grid-template-columns: repeat(4, v.$card-width);
+  }
+}
