@@ -1,0 +1,138 @@
+@use '../variables' as v;
+
+.card {
+  width: v.$card-width;
+  font-family: v.$font-family;
+
+  &__inner {
+    transform-origin: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 32px v.$card-padding v.$card-padding;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius;
+
+    background-color: v.$color-white;
+
+    transition: transform v.$transition-duration;
+  }
+
+  &:hover &__inner {
+    transform: scale(v.$card-hover-scale);
+  }
+
+  &__image {
+    display: block;
+    align-self: center;
+
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
+
+    object-fit: contain;
+  }
+
+  &__title {
+    align-self: stretch;
+
+    margin: 0 0 4px;
+
+    font-size: v.$font-size-base;
+    font-weight: 500;
+    line-height: v.$line-height-base;
+    color: v.$color-main;
+
+    transition: color v.$transition-duration;
+  }
+
+  &:hover &__title {
+    color: v.$color-title-hover;
+  }
+
+  &__code {
+    align-self: stretch;
+
+    margin: 0 0 v.$card-padding;
+
+    font-size: v.$font-size-small;
+    font-weight: 400;
+    line-height: v.$line-height-small;
+    color: v.$color-secondary;
+  }
+
+  &__review {
+    display: flex;
+    align-items: flex-end;
+    align-self: stretch;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+  }
+
+  &__count {
+    font-size: v.$font-size-small;
+    font-weight: 400;
+    line-height: v.$line-height-small;
+    color: v.$color-main;
+    text-align: right;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+
+    margin-bottom: v.$card-padding;
+  }
+
+  &__price-label {
+    font-size: v.$font-size-base;
+    font-weight: 400;
+    line-height: v.$line-height-base;
+    color: v.$color-secondary;
+  }
+
+  &__price-value {
+    font-size: v.$font-size-price;
+    font-weight: 700;
+    line-height: v.$line-height-base;
+    color: v.$color-main;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid v.$color-accent;
+    border-radius: v.$border-radius;
+
+    font-size: v.$font-size-button;
+    font-weight: 700;
+    line-height: 16px;
+    color: v.$color-white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    background-color: v.$color-accent;
+
+    transition:
+      color v.$transition-duration,
+      background-color v.$transition-duration;
+
+    &:hover {
+      color: v.$color-accent;
+      background-color: v.$color-white;
+    }
+  }
+}
