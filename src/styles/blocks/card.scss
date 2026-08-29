@@ -1,23 +1,28 @@
 @use '../variables' as v;
 
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  box-sizing: border-box;
   width: v.$card-width;
-  padding: 32px v.$card-padding v.$card-padding;
-  border: 1px solid v.$color-border;
-  border-radius: v.$border-radius;
-
   font-family: v.$font-family;
 
-  background-color: v.$color-white;
+  &__inner {
+    transform-origin: center;
 
-  transition: transform v.$transition-duration;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  &:hover {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 32px v.$card-padding v.$card-padding;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius;
+
+    background-color: v.$color-white;
+
+    transition: transform v.$transition-duration;
+  }
+
+  &:hover &__inner {
     transform: scale(v.$card-hover-scale);
   }
 
