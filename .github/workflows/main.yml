@@ -3,6 +3,7 @@ name: GPT Review
 permissions:
   contents: read
   pull-requests: write
+  issues: read
 
 on:
   pull_request:
@@ -16,7 +17,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # Optional
+          # Opcional
           LANGUAGE: English
           MODEL: GPT-4
           top_p: 1
