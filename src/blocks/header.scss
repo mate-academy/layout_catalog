@@ -1,0 +1,56 @@
+@use '../utils/variables' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 50px;
+  box-sizing: border-box;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+  }
+
+  &__menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    color: $color-font-major;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 300ms;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  &__menu-link:hover {
+    color: $color-font-hover;
+  }
+
+  &__menu-link.is-active {
+    color: $color-font-hover;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      background-color: $color-font-hover;
+    }
+  }
+}
