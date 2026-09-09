@@ -1,3 +1,31 @@
+@import 'variables';
+@import '../blocks/header/header';
+@import '../blocks/stars/stars';
+@import '../blocks/card/card';
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: $card-gap-y $card-gap-x;
+  padding: $catalog-padding-y $catalog-padding-x;
+  box-sizing: border-box;
+  width: 1024px;
+  margin: 0 auto;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, $card-width);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, $card-width);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
