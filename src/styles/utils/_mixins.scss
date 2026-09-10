@@ -1,0 +1,24 @@
+@mixin flex-justify-align($a, $b, $c) {
+  display: $a;
+  justify-content: $b;
+  align-items: $c;
+}
+
+@mixin media-queries-grid(
+  $type,
+  $min-width: 0,
+  $max-width: 0,
+  $number-of-columns
+) {
+  @media #{$type} and (min-width: $min-width) and (max-width: $max-width) {
+    grid-template-columns: repeat($number-of-columns, 200px);
+  }
+}
+
+@mixin text($font-weight, $font-size, $line-height, $letter-spacing, $color) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}

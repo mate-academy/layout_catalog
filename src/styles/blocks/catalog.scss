@@ -1,28 +1,17 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins' as *;
 
-
 .catalog {
   padding: $catalog-padding-vertical $catalog-padding-horizontal;
   display: grid;
-  grid-auto-rows: auto;
   width: 100%;
+  justify-content: center;
+  grid-auto-rows: auto;
   box-sizing: border-box;
   gap: $catalog-row-gap $catalog-column-gap;
+  grid-template-columns: repeat(4, 200px);
 
-  @media screen and (max-height: 487px) {
-    grid-template-columns: 200px;
-  }
-
-  @media screen and (min-height: 488px) and (max-height: 767px) {
-    grid-template-columns: 200px 200px;
-  }
-
-  @media screen and (min-height: 768px) and (max-height: 1023px) {
-    grid-template-columns: 200px 200px 200px;
-  }
-
-  @media screen and (min-height: 1024px) {
-    grid-template-columns: 200px 200px 200px 200px;
-  }
+  @include media-queries-grid(screen, 768px, 1023px, 3);
+  @include media-queries-grid(screen, 488px, 767px, 2);
+  @include media-queries-grid(screen, 0, 488px, 1);
 }
