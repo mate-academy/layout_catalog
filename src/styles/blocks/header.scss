@@ -1,0 +1,64 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.top-header {
+  @include flex-justify-align(flex, space-between, center);
+
+  padding-left: $header-padding;
+  padding-right: $header-padding;
+
+  &__logo {
+    @include flex-justify-align(flex, center, center);
+  }
+
+  &__nav {
+    @include flex-justify-align(flex, center, center);
+  }
+
+  box-shadow: 0 2px 4px rgba($color: #000, $alpha: 5%);
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__list .nav__item:not(:last-child) {
+    margin-right: $header-links-right-margin;
+  }
+
+  &__link {
+    @include flex-justify-align(flex, center, center);
+
+    color: $header-link-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: $header-link-font-size;
+    font-weight: $header-link-font-weight;
+    height: $header-link-height;
+    text-align: center;
+    transition: 0.3s color;
+  }
+
+  &__link:hover {
+    color: $header-link-color-blue;
+  }
+
+  &__link.is-active {
+    position: relative;
+    color: $header-link-color-blue;
+  }
+
+  &__link.is-active::after {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    content: '';
+    border-top: 4px solid $header-link-color-blue;
+    border-radius: 8px;
+  }
+}
