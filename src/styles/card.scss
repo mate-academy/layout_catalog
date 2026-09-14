@@ -1,0 +1,114 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  padding: $card-padding;
+  border: 1px solid $color-border;
+  border-radius: $card-radius;
+  background-color: $color-white;
+  font-family: $font-family;
+  transition: transform $card-hover-duration;
+
+  &__image {
+    display: block;
+    align-self: center;
+    width: $image-width;
+    height: $image-height;
+  }
+
+  &__title {
+    margin: 40px 0 0;
+    color: $color-main;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color $card-hover-duration;
+  }
+
+  &__code {
+    margin: 4px 0 0;
+    color: $color-secondary;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &__reviews {
+    margin: 0;
+    color: $color-main;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: right;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    &-label {
+      margin: 0;
+      color: $color-secondary;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    &-value {
+      margin: 0;
+      color: $color-main;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      text-align: right;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    border: 1px solid $color-accent;
+    border-radius: $card-radius;
+    background-color: $color-accent;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color $card-hover-duration,
+      color $card-hover-duration,
+      border-color $card-hover-duration;
+
+    &:hover {
+      border-color: $color-accent;
+      background-color: $color-white;
+      color: $color-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale($card-hover-scale);
+
+    .card__title {
+      color: $card-hover-color;
+    }
+  }
+}
