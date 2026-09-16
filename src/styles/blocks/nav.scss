@@ -1,0 +1,61 @@
+.nav {
+  display: block;
+  height: 100%;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    margin-block: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list-item {
+    & + & {
+      margin-left: 20px;
+    }
+  }
+
+  &__item-link {
+    position: relative;
+    display: block;
+    height: 100%;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $color-text-main;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: $main-color;
+    }
+
+    /* Медіа: ховаємо лінки на малих екранах */
+    @media (max-width: 1023px) {
+      display: none;
+    }
+
+    /* Modifier: active state (BEM) */
+    &.is-active {
+      color: $main-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $main-color;
+      }
+    }
+  }
+}
