@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+.catalog {
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, $card-width);
+    justify-content: center;
+    gap: $card-gap-vertical $card-gap-horizontal;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  @media (min-width: 488px) {
+    &__list {
+      grid-template-columns: repeat(2, $card-width);
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__list {
+      grid-template-columns: repeat(3, $card-width);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__list {
+      grid-template-columns: repeat(4, $card-width);
+    }
+  }
+}
