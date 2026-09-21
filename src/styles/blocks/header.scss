@@ -1,60 +1,58 @@
 @use '../utils/variables';
 
-.logo {
-  display: block;
-}
-
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-}
 
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  &__nav {
+    margin: 0;
+  }
 
-nav li {
-  margin: 0 10px;
-}
+  &__logo {
+    display: block;
+  }
 
-nav li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: variables.$nav-link-color;
-  display: inline-block;
-  line-height: 60px;
-  position: relative;
-  font-weight: 500;
-}
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
 
-nav li:first-child {
-  margin-left: 0;
-}
+  &__item {
+    margin: 0px;
+  }
 
-nav li:last-child {
-  margin-right: 0;
-}
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: variables.$nav-link-color;
+    display: inline-block;
+    line-height: 60px;
+    position: relative;
+    font-weight: 500;
+    transition: color 300ms;
 
-nav li a:hover {
-  color: variables.$nav-active-link-color;
-}
+    &:hover {
+      color: variables.$nav-active-link-color;
+    }
 
-nav li a.is-active {
-  color: variables.$nav-active-link-color;
-}
+    &.is-active {
+      color: variables.$nav-active-link-color;
 
-nav li a.is-active::after {
-  content: '';
-  display: block;
-  background: variables.$nav-active-link-color;
-  height: 4px;
-  border-radius: 8px;
-  bottom: 0;
-  width: 100%;
-  position: absolute;
+      &::after {
+        content: '';
+        display: block;
+        background: variables.$nav-active-link-color;
+        height: 4px;
+        border-radius: 8px;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+      }
+    }
+  }
 }

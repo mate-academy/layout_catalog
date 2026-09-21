@@ -11,6 +11,7 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid #f3f3f3;
+  transition: transform 300ms;
 
   &__title {
     font-size: 12px;
@@ -18,6 +19,7 @@
     font-weight: 500;
     color: variables.$main-color;
     margin: 40px 16px 0;
+    transition: color 300ms;
   }
 
   &__description {
@@ -92,11 +94,23 @@
     font-family: Roboto, sans-serif;
     height: 40px;
     align-items: center;
+    transition:
+      background 300ms,
+      border-color 300ms,
+      color 300ms;
 
     &:hover {
       background-color: white;
       border: 1px solid variables.$action-color;
       color: variables.$action-color;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: #34568b;
     }
   }
 }
