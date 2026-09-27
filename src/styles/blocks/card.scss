@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 32px 16px 16px;
   width: 200px;
-  background: #fff;
+  background: $white-background;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
@@ -20,6 +20,11 @@
   &__name {
     font-weight: 500;
     padding-bottom: 4px;
+    transition: color 0.3s;
+  }
+
+  &:hover .card__name {
+    color: $dark-blue-accent;
   }
 
   &__product-code {
@@ -53,7 +58,7 @@
   }
 
   &__price-title {
-    color: #616070;
+    color: $secondary;
   }
 
   &__value {
@@ -66,13 +71,13 @@
     height: 40px;
     border-radius: 5px;
     background-color: $blue-accent;
-    color: #fff;
+    color: $white-background;
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
     text-transform: uppercase;
 
-    @include hover(background-color, #fff);
+    @include hover(background-color, $white-background);
     @include hover(color, $blue-accent);
     &:hover {
       border: 1px solid $blue-accent;
@@ -80,9 +85,4 @@
   }
 
   @include hover(transform, scale(1.2));
-
-  &:hover .card__name {
-    transition: color 0.3s;
-    color: #34568b;
-  }
 }
