@@ -1,0 +1,41 @@
+@use '../utils/variables' as *;
+
+
+.header {
+  background-color: $color-header-background;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px 0 #0000000D;
+
+  &__logo {
+    width: 40px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.is-active {
+  color: $color-primary;
+
+  &::after {
+    /* LINE ABOVE TEXT - attach pseudo element */
+    display: block; /* LINE ABOVE TEXT - moves line abowe the text (to width and height work well) */
+    content: ''; /* LINE ABOVE TEXT - required line for ::after */
+    position: absolute; /* LINE ABOVE TEXT - Breaks the line out of the normal flow of the page (to use left right top and bottom */
+    left: 0; /* LINE ABOVE TEXT - Snaps the line to the left edge of the link. */
+    height: 4px; /* line thickness */
+    width: 100%; /* line width */
+    bottom: 0; /* LINE ABOVE TEXT - Snaps the line to the bottom edge of the link. */
+    background-color: $color-primary;
+
+    border-radius: 2px;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,21 @@
+@use '../utils/variables.scss' as *;
+@use '../utils/mixins.scss' as *;
+
+.container{
+  margin: 0;
+  padding: 40px 50px;
+  justify-content: center;
+
+  display:grid;
+  grid-template-columns: repeat(1, $card-width);
+  grid-template-rows: repeat(1, $card-height);
+  gap: 46px 48px;
+
+  @each $devise, $count in $columns-for-cards {
+    @include screen-options($devise) {
+      grid-template-columns: repeat($count, $card-width);
+    }
+  }
+
+
+}
