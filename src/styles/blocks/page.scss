@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $font-main;
+}
+
+body {
+  margin: 0;
+  background-color: $color-page-bg;
+}
+
+.catalog {
+  padding: $catalog-padds;
+
+  display: grid;
+  justify-content: center;
+
+  gap: $catalog-gaps;
+
+  grid-template-columns: repeat(1, $card-width);
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
