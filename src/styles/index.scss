@@ -1,3 +1,244 @@
+$color-primary: #060b35;
+$color-accent: #00acdc;
+$color-title-hover: #34568b;
+$color-secondary: #616070;
+$color-white: #fff;
+$color-border: #f3f3f3;
+$card-width: 200px;
+$card-image-width: 160px;
+$card-image-height: 134px;
+$catalog-padding-vertical: 50px;
+$catalog-padding-horizontal: 40px;
+$button-height: 40px;
+$nav-list-padding-left: 40px;
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  box-sizing: border-box;
+  height: 60px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  &__top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+  &__nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: $color-primary;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    height: 60px;
+    padding: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    transition: color 300ms;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.is-active {
+      color: $color-accent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 37px;
+        height: 4px;
+        background-color: $color-accent;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: $card-width;
+  height: 406px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  background-color: $color-white;
+  transition: transform 300ms;
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-primary;
+    margin: 40px 16px 0;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $color-title-hover;
+    }
+  }
+
+  &__image {
+    width: $card-image-width;
+    height: $card-image-height;
+    margin-top: 32px;
+  }
+
+  &__code {
+    align-self: flex-start;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $color-secondary;
+    margin: 4px 16px 0;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin-top: 16px;
+  }
+
+  &__stars {
+    gap: 4px;
+    display: flex;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/star.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &--active {
+      background-image: url('../images/star-active.svg');
+    }
+  }
+
+  &__reviews {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+    color: $color-primary;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin-top: 24px;
+
+    &-label {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $color-secondary;
+    }
+
+    &-value {
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $color-primary;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166px;
+    height: $button-height;
+    background-color: $color-accent;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-top: 16px;
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-accent;
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  position: relative;
+  grid-template-columns: $card-width;
+  gap: 48px;
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
