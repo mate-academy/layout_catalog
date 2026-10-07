@@ -1,3 +1,261 @@
+$cards-row: 4;
+$header-accent: #00acdc;
+$main-accent: #060b35;
+$secondary: #616070;
+$blue-accent: #00acdc;
+$transition: 300ms;
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
 body {
   margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    &-item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &-link {
+      position: relative;
+      display: block;
+      padding: 23px 0;
+      color: $main-accent;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14px;
+      text-align: center;
+      text-decoration: none;
+      transition: color $transition;
+
+      &:hover {
+        color: $header-accent;
+      }
+
+      &.is-active {
+        color: $header-accent;
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-color: $header-accent;
+          border-radius: 8px;
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+  padding: 50px 40px;
+
+  width: 1024px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: 200px;
+
+  margin-right: 48px;
+  margin-bottom: 46px;
+
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+
+  transition: transform $transition;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+
+  &__images {
+    width: 160px;
+    height: 134px;
+
+    margin: 32px auto 40px;
+  }
+
+  &__text {
+    padding: 0 16px;
+
+    color: $main-accent;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+
+    transition: color $transition;
+  }
+
+  &__code {
+    padding: 4px 16px 0;
+
+    color: $secondary;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 24px 16px 0;
+  }
+
+  &__price-text {
+    color: $secondary;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__price-sum {
+    color: $main-accent;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    margin: 16px;
+
+    background: $blue-accent;
+    border: 1px solid $blue-accent;
+    border-radius: 5px;
+
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+      background-color $transition,
+      color $transition;
+
+    &:hover {
+      background: #fff;
+      color: $blue-accent;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover &__text {
+    color: #34568b;
+  }
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+
+  padding: 16px 16px 0;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+
+    margin-right: 4px;
+
+    background-image: url('../images/star.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--4 &__star:nth-child(-n + 4) {
+    background-image: url('../images/star-active.svg');
+  }
+
+  &__reviews {
+    display: flex;
+    align-items: flex-end;
+
+    padding-left: 18.5px;
+
+    color: $main-accent;
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    padding: 50px 128px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 1024px;
+    padding: 50px 40px;
+  }
 }
