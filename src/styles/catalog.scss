@@ -1,0 +1,22 @@
+.catalog {
+  --columns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), $catalog-width);
+  gap: $catalog-gap-rows $catalog-gap-cols;
+  justify-content: center;
+
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
+
+  @media (min-width: 488px) {
+    --columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    --columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    --columns: 4;
+  }
+}
