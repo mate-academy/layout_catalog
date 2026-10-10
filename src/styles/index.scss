@@ -102,6 +102,12 @@ body {
   border: 1px solid $card-border;
   box-sizing: border-box;
   border-radius: 5px;
+  overflow: visible;
+
+  &__inner {
+    transition: transform 300ms;
+    transform-origin: center;
+  }
 
   &__image {
     background-image: url('../images/imac.jpeg');
@@ -118,6 +124,7 @@ body {
     font-weight: 500;
     margin: 0 16px 4px;
     color: $Main-accent;
+    transition: color 300ms;
   }
   &__code {
     font-size: 10px;
@@ -161,6 +168,10 @@ body {
     border-radius: 5px;
     background-color: $accent;
     margin: 0 16px 16px;
+    transition:
+      background-color 300ms,
+      color 300ms,
+      border-color 300ms;
   }
 
   &__button:hover {
@@ -183,6 +194,14 @@ body {
     margin: 0;
     letter-spacing: 0;
     color: $Main-accent;
+  }
+  &:hover {
+    .card__inner {
+      transform: scale(1.2);
+    }
+    .card__title {
+      color: #34568b;
+    }
   }
 }
 
