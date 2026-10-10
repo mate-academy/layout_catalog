@@ -26,7 +26,7 @@
       margin: 0;
       padding: 0;
 
-      &-link {
+      &__link {
         display: flex;
         align-items: center;
         position: relative;
@@ -41,7 +41,7 @@
         }
       }
 
-      &-item {
+      &__item {
         margin-left: 20px;
 
         &:first-child {
@@ -50,24 +50,24 @@
       }
     }
   }
+
+  .is-active {
+    color: $blue-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      background-color: $blue-color;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 2px;
+      transition: width 0.25s ease;
+    }
+  }
 }
 
 [data-qa='nav-hover']:hover {
   color: $blue-color;
-}
-
-.is-active {
-  color: $blue-color;
-
-  &::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: $blue-color;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    border-radius: 2px;
-    transition: width 0.25s ease;
-  }
 }
