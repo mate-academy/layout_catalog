@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      &-link {
+        display: flex;
+        align-items: center;
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $nav-link-color;
+        transition: color 0.3s ease;
+        height: 60px;
+
+        &:hover {
+          color: $blue-color;
+        }
+      }
+
+      &-item {
+        margin-left: 20px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .is-active {
+    color: $blue-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      background-color: $blue-color;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 2px;
+      transition: width 0.25s ease;
+    }
+  }
+}
+
+[data-qa='nav-hover']:hover {
+  color: $blue-color;
+}
