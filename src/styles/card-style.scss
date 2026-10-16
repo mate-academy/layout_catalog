@@ -1,0 +1,141 @@
+.products {
+  display: flex;
+  padding: 50px 40px;
+  justify-content: space-evenly;
+
+  &__card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 46px 48px;
+    justify-items: center;
+
+    @media (min-width: 488px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 32px 16px 16px;
+  border: $border-color 1px solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+
+  @include on-hover(transform, scale(120%));
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 16px;
+  }
+
+  &__img {
+    height: 134px;
+    width: 160px;
+    object-fit: contain;
+    box-sizing: border-box;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    line-height: 18px;
+    color: $main-color-text;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  &__product-code {
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+
+    color: $second-color-text;
+  }
+
+  &__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 18px;
+
+    &-text {
+      font-weight: 400;
+      font-size: 12px;
+      color: $second-color-text;
+    }
+
+    &-sum {
+      font-weight: 700;
+      font-size: 16px;
+      color: $main-color-text;
+    }
+  }
+
+  &__buy {
+    box-sizing: border-box;
+    display: flex;
+    width: 166px;
+    height: 40px;
+    margin-top: 16px;
+
+    align-items: center;
+    justify-content: center;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+
+      background-color: $button-color;
+
+      border: $button-border-color 1px solid;
+      border-radius: 5px;
+
+      text-transform: uppercase;
+
+      color: #fff;
+      text-decoration: none;
+
+      @include on-hover(background-color, $button-background-hovered);
+      @include on-hover(color, $button-text-hovered);
+    }
+  }
+
+  &__reviews {
+    color: $main-color-text;
+    font-size: 10px;
+    font-weight: 400;
+    align-content: end;
+  }
+
+  &:hover {
+    .card__title {
+      color: $card-title-hovered;
+    }
+  }
+}
+
