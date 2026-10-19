@@ -12,10 +12,36 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
 .card {
   width: 200px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
+  background-color: white;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
     display: block;
@@ -31,6 +57,11 @@ body {
     font-weight: 500;
     font-size: 12px;
     line-height: 18px;
+    transition: color 0.3s ease;
+  }
+
+  &:hover &__title {
+    color: $color-card-hover;
   }
 
   &__code {
@@ -80,7 +111,7 @@ body {
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: white;
+      background-color: #fff;
       color: $background-color;
     }
   }
