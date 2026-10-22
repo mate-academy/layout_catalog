@@ -1,3 +1,206 @@
+$color-navy: #060b35;
+$color-blue: #00acdc;
+$color-title-hover: #34568b;
+$color-muted: #616070;
+$color-border: #f3f3f3;
+$color-star: #ffc900;
+$card-width: 200px;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  color: $color-navy;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
+
+  &__logo {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+  }
+
+  &__logo img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $color-navy;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 300ms;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &.is-active {
+      color: $color-blue;
+    }
+
+    &.is-active::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background-color: $color-blue;
+      content: '';
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+.card {
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  transition: transform 300ms;
+
+  &:hover {
+    position: relative;
+    z-index: 1;
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+    object-fit: contain;
+  }
+
+  &__title {
+    min-height: 36px;
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color 300ms;
+  }
+
+  &:hover .card__title {
+    color: $color-title-hover;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    color: $color-muted;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: 10px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: $color-muted;
+    font-size: 10px;
+    line-height: 14px;
+
+    strong {
+      color: $color-navy;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    background-color: $color-blue;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-blue;
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+
+  &__star {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
