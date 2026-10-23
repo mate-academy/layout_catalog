@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  &__link {
+    position: relative;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $header-height;
+    color: #060b35;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 300ms;
+
+    &:hover,
+    &.is-active {
+      color: $accent-color;
+    }
+
+    &.is-active::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $accent-color;
+    }
+  }
+}
