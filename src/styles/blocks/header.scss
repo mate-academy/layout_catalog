@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  height: 60px;
+  padding: 0 50px;
+
+  background-color: $color-white;
+  box-shadow: 0 2px 4px 0 #0000000d;
+
+  &__logo {
+    place-self: center;
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/logo.png');
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      gap: 20px;
+
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    &-link {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      height: 60px;
+
+      font-family: $font-family;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15px;
+      color: $color-main;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0;
+
+      &:hover {
+        color: $color-blue;
+      }
+
+      &.is-active {
+        color: $color-blue;
+
+        &::after {
+          content: '';
+
+          position: absolute;
+          bottom: 0;
+
+          display: block;
+
+          width: 100%;
+          height: 4px;
+          border-radius: 8px;
+
+          background-color: $color-blue;
+        }
+      }
+    }
+  }
+}
