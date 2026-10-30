@@ -1,0 +1,127 @@
+.catalog {
+  display: grid;
+  justify-content: center;
+  padding: 50px 40px;
+  gap: 46px 48px;
+  grid-template-columns: repeat(1, 200px);
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 200px;
+  height: 408px;
+  border: 1px solid $card-border-color;
+  border-radius: 5px;
+  background-color: $white;
+  transform-origin: center top;
+  transition: transform 300ms;
+
+  &__image {
+    box-sizing: border-box;
+    margin: 32px 19px 0;
+
+    & img {
+      width: 160px;
+      height: 134px;
+      object-fit: fill;
+    }
+  }
+
+  &__description {
+    width: 166px;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $main-accent;
+    letter-spacing: 0%;
+    margin: 36px 16px 0;
+    transition: color 300ms;
+  }
+
+  &__code {
+    width: 98px;
+    height: 14px;
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary-accent;
+    letter-spacing: 0%;
+    margin: 4px 0 0 16px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 166px;
+    height: 18px;
+    margin: 22px 16px 0;
+
+    &-word {
+      width: 31px;
+      height: 18px;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary-accent;
+      letter-spacing: 0%;
+      margin: 0;
+    }
+
+    &-number {
+      width: 50px;
+      height: 18px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: $main-accent;
+      letter-spacing: 0%;
+      text-align: right;
+      margin: 0;
+    }
+  }
+
+  &__buy {
+    box-sizing: border-box;
+    display: flex;
+    width: 166px;
+    height: 40px;
+    border: 1px solid $blue-accent;
+    border-radius: 5px;
+    background-color: $blue-accent;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 16px;
+    transition:
+      background-color 300ms,
+      color 300ms;
+
+    &:hover {
+      background-color: $white;
+      color: $blue-accent;
+    }
+  }
+  &:hover {
+    transform: scale(1.2);
+    .card__description {
+      color: $hover-title-color;
+    }
+  }
+}
