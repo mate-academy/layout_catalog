@@ -1,11 +1,18 @@
+@use './variables.scss' as vars;
+
 .card {
   display: flex;
   flex-direction: column;
   width: 200px;
   padding: 32px 16px 16px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid vars.$border-color;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: vars.$white;
+  transition: transform vars.$transition-duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
     display: block;
@@ -20,11 +27,16 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
+    transition: color vars.$transition-duration;
+
+    .card:hover & {
+      color: vars.$title-hover-color;
+    }
   }
 
   &__code {
     margin: 0 0 16px;
-    color: #616070;
+    color: vars.$secondary-color;
     font-size: 10px;
     line-height: 14px;
   }
@@ -38,6 +50,7 @@
 
   &__reviews-count {
     font-size: 10px;
+    line-height: 14px;
   }
 
   &__price {
@@ -48,13 +61,15 @@
   }
 
   &__price-label {
-    color: #616070;
+    color: vars.$secondary-color;
     font-size: 12px;
+    line-height: 18px;
   }
 
   &__price-value {
     font-size: 16px;
     font-weight: 700;
+    line-height: 18px;
   }
 
   &__buy {
@@ -63,20 +78,20 @@
     align-items: center;
     height: 40px;
     margin-top: auto;
-    border: 1px solid #00acdc;
+    border: 1px solid vars.$accent-color;
     border-radius: 5px;
-    background-color: #00acdc;
-    color: #fff;
+    background-color: vars.$accent-color;
+    color: vars.$white;
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
     transition:
-      background-color 300ms,
-      color 300ms;
+      background-color vars.$transition-duration,
+      color vars.$transition-duration;
 
     &:hover {
-      background-color: #fff;
-      color: #00acdc;
+      background-color: vars.$white;
+      color: vars.$accent-color;
     }
   }
 }
