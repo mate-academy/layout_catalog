@@ -1,0 +1,116 @@
+@use './utils/variables' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 32px 16px 16px;
+  border: 1px solid rgba($color-tertiary, 0.1);
+  border-radius: 5px;
+
+  transition: transform 300ms linear;
+
+  &__title {
+    margin-bottom: 4px;
+
+    font-size: $font-size-base;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-primary;
+
+    transition: color 300ms linear;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $hover-color;
+    }
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__code {
+    margin-bottom: 16px;
+
+    font-size: $font-size-small;
+    font-weight: 400;
+    line-height: 14px;
+    color: $color-tertiary;
+  }
+
+  &__reviews-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  &__reviews {
+    margin-bottom: 16px;
+
+    font-size: $font-size-small;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: right;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    line-height: 18px;
+
+    &-label {
+      font-size: $font-size-base;
+      color: $color-tertiary;
+    }
+
+    &-value {
+      font-size: $font-size-xl;
+      font-weight: 700;
+      color: $color-primary;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+
+    font-size: $font-size-large;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+    color: $color-secondary;
+    text-decoration: none;
+    border: 1px solid $background-color;
+
+    background-color: $background-color;
+
+    transition:
+      color 300ms linear,
+      background-color 300ms linear,
+      border 300ms linear;
+
+    &:hover {
+      border: 1px solid $background-color;
+      color: $background-color;
+      text-decoration: none;
+      background-color: $color-secondary;
+    }
+  }
+}

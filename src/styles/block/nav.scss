@@ -1,0 +1,65 @@
+@use './utils/variables' as *;
+
+.nav {
+  display: flex;
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  height: 60px;
+
+  font-size: $font-size-base;
+  font-weight: 500;
+
+  transition: color 300ms linear;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link:link {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.nav__link:visited {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+  color: $background-color;
+}
+
+.nav__link.is-active::after {
+  content: '';
+  display: block;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 8px;
+
+  margin: 0;
+
+  background-color: $background-color;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
