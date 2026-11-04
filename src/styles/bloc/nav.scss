@@ -1,49 +1,44 @@
-.nav {
+body {
+  margin: 0;
+  font-family: Roboto, serif;
+}
+
+.nav__link {
   text-transform: uppercase;
+  color: #060b35;
+  font-size: 12px;
+  line-height: 60px;
+  text-decoration: none;
+  display: block;
+}
 
-  &__list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__item {
-    margin-left: 20px;
-    line-height: 60px;
-
-    &:first-of-type {
-      margin-left: 0;
-      color: $link-color;
-      position: relative;
-
-      &::after {
-        position: absolute;
-        content: '';
-        color: $link-color;
-        background-color: $link-color;
-        display: block;
-        height: 4px;
-        width: 100%;
-        border-radius: 8px;
-        bottom: 0;
-        left: 0;
-      }
-    }
-  }
-
-  &__link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    height: 60px;
-
-    &:hover {
-      color: $link-color;
-    }
-  }
+.nav__link:hover {
+  color: $link-color;
 }
 
 .is-active {
-  background-color: inherit;
+  color: $link-color;
+  position: relative;
+}
+
+.is-active::after {
+  content: '';
+  background-color: $link-color;
+  border-radius: 8px;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.catalog {
+  padding-top: 50px;
+  padding-bottom: 72px;
+  gap: 46px 48px;
+  padding-inline: 40px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(minmax(200px, 1fr));
 }
