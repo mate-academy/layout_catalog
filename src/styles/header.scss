@@ -1,0 +1,73 @@
+.header {
+  height: $header-height;
+  background-color: $white;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+    padding: 0 50px;
+  }
+
+  &__logo-link {
+    display: flex;
+    flex: none;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  min-width: 0;
+  overflow-x: auto;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    color: $main-color;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color $hover-duration;
+
+    &:hover,
+    &.is-active {
+      color: $accent-color;
+    }
+
+    &.is-active::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $accent-color;
+      content: '';
+    }
+    &--accent {
+      color: $accent-color;
+    }
+  }
+}
