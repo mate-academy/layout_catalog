@@ -9,15 +9,7 @@
 
   background-color: $white;
 
-  &__image {
-    display: block;
-
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 40px;
-
-    object-fit: contain;
-  }
+  transition: transform 300ms ease;
 
   &__title {
     margin: 0 0 4px;
@@ -26,6 +18,26 @@
     font-weight: 500;
     line-height: 18px;
     color: $text-accent-color;
+
+    transition: color 300ms ease;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+
+    .card__title {
+      color: $card-title-hover-color;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+
+    object-fit: contain;
   }
 
   &__code {
@@ -85,6 +97,10 @@
     text-transform: uppercase;
 
     background-color: $main-color;
+
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
 
     &:hover {
       color: $main-color;
