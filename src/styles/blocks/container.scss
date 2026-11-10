@@ -1,0 +1,34 @@
+@use '../utils/variables' as *;
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(1, $product-card-width);
+  gap: $grid-gap-y $grid-gap-x;
+  padding: $grid-padding-y $grid-padding-x;
+
+  @media (min-width: $min-width-mobile) {
+    grid-template-columns: repeat(2, $product-card-width);
+  }
+
+  @media (min-width: $min-width-tablet) {
+    grid-template-columns: repeat(3, $product-card-width);
+  }
+
+  @media (min-width: $min-width-pc) {
+    grid-template-columns: repeat(4, $product-card-width);
+  }
+}
