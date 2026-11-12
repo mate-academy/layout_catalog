@@ -1,3 +1,231 @@
+$color-blue: #00acdc;
+$color-dark: #060b35;
+$color-border: #f3f3f3;
+$color-muted: #616070;
+$card-width: 200px;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Roboto, sans-serif;
+  color: $color-dark;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 50px;
+  background-color: #fff;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.nav {
+  height: 100%;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    line-height: 60px;
+    color: $color-dark;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    &.is-active {
+      color: $color-blue;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $color-blue;
+        content: '';
+      }
+    }
+  }
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  justify-content: center;
+  gap: 46px 48px;
+  padding: 50px 40px;
+}
+
+.card {
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  transition: transform 0.3s;
+
+  &:hover {
+    z-index: 1;
+    transform: scale(1.2);
+  }
+
+  &__image {
+    display: block;
+    width: 160px;
+    height: 134px;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    min-height: 36px;
+    margin: 0 0 4px;
+    color: $color-dark;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    transition: color 0.3s;
+  }
+
+  &__code {
+    margin: 0 0 16px;
+    color: $color-muted;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    margin: 0;
+    color: $color-dark;
+    font-size: 10px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: $color-muted;
+    font-size: 10px;
+
+    strong {
+      color: $color-dark;
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    border: 1px solid $color-blue;
+    border-radius: 5px;
+    background-color: $color-blue;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      color: $color-blue;
+    }
+  }
+}
+
+.card:hover .card__title {
+  color: #34568b;
+}
+
+.stars {
+  display: flex;
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url('../images/star.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--1 &__star:nth-child(-n + 1),
+  &--2 &__star:nth-child(-n + 2),
+  &--3 &__star:nth-child(-n + 3),
+  &--4 &__star:nth-child(-n + 4),
+  &--5 &__star:nth-child(-n + 5) {
+    background-image: url('../images/star-active.svg');
+  }
+}
+
+@media (min-width: 488px) {
+  .catalog {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .catalog {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
