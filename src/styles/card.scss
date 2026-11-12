@@ -1,0 +1,125 @@
+@use 'sass:color';
+
+.container {
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, $card-width);
+  gap: 46px 48px;
+  justify-content: center;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $card-width);
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: $card-width;
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  background-color: $color-bg;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__img {
+    width: 160px;
+    height: 134px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 40px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $color-text;
+    margin: 0 0 4px;
+    transition: color 300ms;
+  }
+
+  &:hover &__title {
+    color: $color-title-hover;
+  }
+
+  &__code {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-code;
+    margin: 0 0 16px;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 24px;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $color-text;
+    margin: 0 0 16px;
+  }
+
+  &__price-label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-code;
+  }
+
+  &__reviews {
+    font-size: 10px;
+    color: $color-code;
+  }
+
+  &__buy {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+
+    color: $color-bg;
+    background-color: $main-accent;
+    border: 1px solid $main-accent;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: color 300ms, background-color 300ms;
+
+    &:hover {
+      color: $main-accent;
+      background-color: $color-bg;
+    }
+  }
+}
