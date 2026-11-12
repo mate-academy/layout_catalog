@@ -1,19 +1,43 @@
 @use 'sass:color';
 
 .container {
-  padding: 50px 20px;
+  padding: 50px 40px;
   display: grid;
-  grid-template-columns: repeat(2, $card-width);
+  grid-template-columns: repeat(1, $card-width);
   gap: 46px 48px;
   justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
+}
+
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, $card-width);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, $card-width);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, $card-width);
+  }
 }
 
 .card {
+  box-sizing: border-box;
   width: $card-width;
-  border: 1px solid #f3f3f3;
-  background-color: #fff;
+  padding: 32px 16px 16px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  background-color: $color-bg;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__img {
     width: 160px;
@@ -27,8 +51,13 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    color: #060835;
+    color: $color-text;
     margin: 0 0 4px;
+    transition: color 300ms;
+  }
+
+  &:hover &__title {
+    color: $color-title-hover;
   }
 
   &__code {
@@ -75,9 +104,9 @@
     justify-content: center;
     height: 40px;
 
-    color: #fff;
-    background-color: #00acdc;
-    border: 1px solid #00acdc;
+    color: $color-bg;
+    background-color: $main-accent;
+    border: 1px solid $main-accent;
     border-radius: 5px;
 
     font-size: 14px;
@@ -86,28 +115,11 @@
     text-decoration: none;
     text-transform: uppercase;
 
+    transition: color 300ms, background-color 300ms;
+
     &:hover {
-      color: #00acdc;
-      background-color: #fff;
+      color: $main-accent;
+      background-color: $color-bg;
     }
-  }
-}
-
-
-@media (min-width: 768px) {
-  .container {
-    grid-template-columns: repeat(2, $card-width);
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    grid-template-columns: repeat(3, $card-width);
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    grid-template-columns: repeat(4, $card-width);
   }
 }
