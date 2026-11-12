@@ -3,7 +3,6 @@ $color-dark: #060b35;
 $color-border: #f3f3f3;
 $color-muted: #616070;
 $card-width: 200px;
-$transition-duration: 300ms;
 
 * {
   box-sizing: border-box;
@@ -11,7 +10,7 @@ $transition-duration: 300ms;
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   color: $color-dark;
 }
 
@@ -57,24 +56,34 @@ body {
   }
 
   &__link {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    border-bottom: 3px solid transparent;
+    position: relative;
+    display: block;
+    line-height: 60px;
     color: $color-dark;
-    font-size: 11px;
-    font-weight: 600;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color $transition-duration;
+    transition: color 0.3s;
 
     &:hover {
       color: $color-blue;
     }
 
     &.is-active {
-      border-bottom-color: $color-blue;
       color: $color-blue;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 8px;
+        background-color: $color-blue;
+        content: '';
+      }
     }
   }
 }
@@ -88,16 +97,11 @@ body {
 }
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   width: $card-width;
-  height: 406px;
-  padding: 16px;
+  padding: 32px 16px 16px;
   border: 1px solid $color-border;
   border-radius: 5px;
-  background-color: #fff;
-  transition: transform $transition-duration;
+  transition: transform 0.3s;
 
   &:hover {
     z-index: 1;
@@ -108,8 +112,7 @@ body {
     display: block;
     width: 160px;
     height: 134px;
-    margin: 0 auto 16px;
-    object-fit: contain;
+    margin: 0 auto 40px;
   }
 
   &__title {
@@ -119,7 +122,7 @@ body {
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
-    transition: color $transition-duration;
+    transition: color 0.3s;
   }
 
   &__code {
@@ -133,7 +136,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   &__reviews {
@@ -162,7 +165,6 @@ body {
     justify-content: center;
     width: 100%;
     height: 40px;
-    margin-top: auto;
     border: 1px solid $color-blue;
     border-radius: 5px;
     background-color: $color-blue;
@@ -171,8 +173,8 @@ body {
     font-weight: 700;
     text-decoration: none;
     transition:
-      background-color $transition-duration,
-      color $transition-duration;
+      background-color 0.3s,
+      color 0.3s;
 
     &:hover {
       background-color: #fff;
@@ -187,13 +189,26 @@ body {
 
 .stars {
   display: flex;
-  align-items: center;
-  gap: 2px;
 
   &__star {
-    display: block;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url('../images/star.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--1 &__star:nth-child(-n + 1),
+  &--2 &__star:nth-child(-n + 2),
+  &--3 &__star:nth-child(-n + 3),
+  &--4 &__star:nth-child(-n + 4),
+  &--5 &__star:nth-child(-n + 5) {
+    background-image: url('../images/star-active.svg');
   }
 }
 
