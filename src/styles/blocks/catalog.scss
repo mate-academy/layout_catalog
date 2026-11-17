@@ -1,0 +1,24 @@
+@use '../utils/variables';
+@use '../utils/mixins';
+
+.catalog {
+  --columns: 1;
+
+  display: grid;
+  gap: variables.$card-gap-y variables.$card-gap-x;
+  justify-content: center;
+  padding: variables.$catalog-padding-y variables.$catalog-padding-x;
+  grid-template-columns: repeat(var(--columns), variables.$card-width);
+
+  @include mixins.on-mobile-large {
+    --columns: 2;
+  }
+
+  @include mixins.on-tablet {
+    --columns: 3;
+  }
+
+  @include mixins.on-desktop {
+    --columns: 4;
+  }
+}
