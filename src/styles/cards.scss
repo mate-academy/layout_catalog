@@ -1,0 +1,133 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 200px;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  background-color: $white;
+
+  &__image {
+    box-sizing: border-box;
+    width: 160px;
+    height: 134;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    margin-inline: 3px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+
+  &__product-code {
+    align-self: start;
+
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary-color;
+    letter-spacing: 0;
+  }
+
+  &__review {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    width: 166px;
+    margin: 0;
+
+    &-text {
+      display: block;
+
+      margin-block: 0;
+
+      font-size: 10px;
+      line-height: 13px;
+      letter-spacing: 0;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    align-self: normal;
+    justify-content: space-between;
+
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    &-text {
+      margin: 0;
+
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary-color;
+      letter-spacing: 0;
+    }
+
+    &-number {
+      margin: 0;
+
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      color: $main-color;
+      letter-spacing: 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 166px;
+    height: $card-button-height;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: $card-button-height;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    background-color: $blue-accent;
+
+    @include hoverTransition;
+
+    &:hover {
+      border: 1px solid $blue-accent;
+      color: $blue-accent;
+      background-color: $white;
+    }
+  }
+
+  @include hoverTransition;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+
+    & .card__title {
+      color: $card-title-hover-color;
+    }
+  }
+}
