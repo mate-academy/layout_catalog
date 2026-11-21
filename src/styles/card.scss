@@ -1,0 +1,109 @@
+@use './variables' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: $card-width;
+  border: 1px solid $color-border;
+
+  transition: transform 300ms;
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    width: $card-content-width;
+    margin-bottom: 4px;
+
+    font-size: $font-size-title;
+    font-weight: 500;
+    line-height: $line-height-title;
+  }
+
+  &__code {
+    align-self: start;
+
+    margin-bottom: 16px;
+    margin-left: 16px;
+
+    font-size: $font-size-small;
+    font-weight: 400;
+    color: $color-secondary;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    width: $card-content-width;
+    margin-bottom: 24px;
+  }
+
+  &__reviews {
+    font-size: $font-size-small;
+    font-weight: 400;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: $card-content-width;
+    margin-bottom: 16px;
+
+    &-label {
+      font-size: $font-size-title;
+      font-weight: 400;
+      line-height: $line-height-title;
+      color: $color-secondary;
+    }
+
+    &-value {
+      font-size: $font-size-price;
+      font-weight: 700;
+      line-height: $line-height-title;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: $card-content-width;
+    height: 40px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+
+    font-size: $font-size-button;
+    font-weight: 700;
+    line-height: $line-height-button;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    background-color: $color-button;
+  }
+
+  &__button:hover {
+    border: 1px solid $color-button;
+    color: $color-button;
+    background-color: $color-white;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    .card__title {
+      color: #34568b;
+    }
+  }
+}
