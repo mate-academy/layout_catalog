@@ -1,3 +1,57 @@
+@import './vars';
+@import './card';
+@import './stars';
+@import './header';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+ul {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 46px 48px;
+
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+
+@media (max-width: 1023px) {
+  .catalog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 487px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
 }
