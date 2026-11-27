@@ -1,0 +1,28 @@
+@use 'variable';
+
+.catalog {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, variable.$card-width);
+  gap: variable.$card-gap-vertical variable.$card-gap-horizontal;
+  padding: variable.$catalog-padding-vertical
+    variable.$catalog-padding-horizontal;
+}
+
+@media (max-width: 1023px) {
+  .catalog {
+    grid-template-columns: repeat(3, variable.$card-width);
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog {
+    grid-template-columns: repeat(2, variable.$card-width);
+  }
+}
+
+@media (max-width: 487px) {
+  .catalog {
+    grid-template-columns: repeat(1, variable.$card-width);
+  }
+}
